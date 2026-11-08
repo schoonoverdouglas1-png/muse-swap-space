@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Usage and Efficiency Charts",
+  "slug": "usage-and-efficiency-charts",
+  "managedCronJobs": []
+}

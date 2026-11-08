@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Mosquito and Tick Shared Viruses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,800;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <style>
+      :root{
+        --bg:#f6f1e6; --bg2:#efe7d6; --surface:#fffdf6; --surface2:#f1ead9;
+        --ink:#1c2a21; --ink2:#47564c; --ink3:#6d7d72;
+        --line:#d8cdb4; --line2:#c4b892;
+        --forest:#17573f; --forest2:#0f4230;
+        --rust:#b6491f; --rust-bg:#f9e8dd;
+        --teal:#14655a; --teal-bg:#dff0ea;
+        --amber:#8a6100; --amber-bg:#f7ecd0;
+        --red:#9c2b1e; --red-bg:#f8e2de;
+        --gray-bg:#ece9df;
+        --shadow:0 1px 2px rgba(28,42,33,.07),0 10px 30px -18px rgba(28,42,33,.35);
+        --radius:14px;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#101713; --bg2:#0c120e; --surface:#18211b; --surface2:#1e2a21;
+          --ink:#ecf1e8; --ink2:#b9c6b8; --ink3:#8b9a8d;
+          --line:#2e3d33; --line2:#3d5143;
+          --forest:#7fc9a3; --forest2:#a8dcbf;
+          --rust:#f0926a; --rust-bg:#3a241a;
+          --teal:#6fd3bd; --teal-bg:#17332c;
+          --amber:#eec26a; --amber-bg:#332a14;
+          --red:#f0927f; --red-bg:#381e19;
+          --gray-bg:#232d26;
+          --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -18px rgba(0,0,0,.7);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+      body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+      a{color:var(--forest);text-underline-offset:3px}
+      .wrap{max-width:1120px;margin:0 auto;padding:0 20px 72px}
+      .mono{font-family:"IBM Plex Mono",monospace}
+      i.lucide{width:18px;height:18px;flex:none}
+
+      /* ---------- Hero ---------- */
+      .hero{padding:44px 0 8px}
+      .theory{border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:14px 18px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow)}
+      .theory i{color:var(--rust);margin-top:3px}
+      .theory p{margin:0;font-size:.95rem;color:var(--ink2)}
+      .theory p strong{color:var(--ink)}
+      h1{font-family:"Newsreader",Georgia,serif;font-weight:800;font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.04;letter-spacing:-.015em;margin:28px 0 14px;max-width:16ch}
+      h1 em{font-style:italic;font-weight:600;color:var(--forest)}
+      .lede{font-size:clamp(1.05rem,2.4vw,1.25rem);line-height:1.55;color:var(--ink2);max-width:68ch;margin:0 0 10px}
+      .lede strong{color:var(--ink)}
+
+      .verdict{margin:26px 0 0;border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--forest);background:var(--surface);box-shadow:var(--shadow)}
+      .verdict-head{background:var(--forest);color:#f4f8f1;padding:14px 20px;display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+      @media (prefers-color-scheme: dark){ .verdict-head{background:#1e4634;color:#ecf6ee} }
+      .verdict-body{padding:20px}
+      .verdict-body p{margin:0 0 12px;font-size:1.05rem}
+      .verdict-body p:last-child{margin-bottom:0}
+      .conf{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+      .conf span{font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--gray-bg);color:var(--ink2);display:inline-flex;gap:6px;align-items:center}
+      .conf span b{color:var(--ink)}
+
+      .tracks{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+      .track{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+      .track .t-head{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.92rem;margin-bottom:4px}
+      .track .t-head i{color:var(--forest)}
+      .track p{margin:0;font-size:.84rem;color:var(--ink2);line-height:1.5}
+      @media(max-width:760px){.tracks{grid-template-columns:1fr 1fr}}
+      @media(max-width:440px){.tracks{grid-template-columns:1fr}}
+
+      /* ---------- Sections ---------- */
+      section{margin-top:56px}
+      .sec-head{max-width:72ch}
+      .sec-head h2{font-family:"Newsreader",Georgia,serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em}
+      .sec-head p{margin:0;color:var(--ink2);font-size:1rem}
+      .plain{margin-top:16px;background:var(--teal-bg);border-radius:var(--radius);padding:16px 18px;display:flex;gap:12px}
+      .plain i{color:var(--teal);margin-top:3px}
+      .plain p{margin:0;font-size:.97rem}
+      .plain .pl-label{font-weight:700;display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+
+      /* ---------- Ladder ---------- */
+      .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+      @media(max-width:820px){.ladder{grid-template-columns:1fr}}
+      .rung{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+      .rung .step{font-family:"IBM Plex Mono",monospace;font-size:.75rem;font-weight:600;color:var(--ink3);letter-spacing:.08em}
+      .rung h3{margin:6px 0 6px;font-size:1.05rem}
+      .rung p{margin:0;font-size:.9rem;color:var(--ink2)}
+      .rung .who{margin-top:10px;font-size:.82rem;font-weight:600;padding:7px 10px;border-radius:8px;background:var(--amber-bg);color:var(--amber)}
+      .ladder-note{margin-top:12px;font-size:.92rem;color:var(--ink2)}
+      .ladder-note strong{color:var(--ink)}
+
+      /* ---------- Controls / table ---------- */
+      .controls{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+      .searchbox{flex:1 1 240px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line2);border-radius:10px;padding:9px 12px}
+      .searchbox i{color:var(--ink3)}
+      .searchbox input{border:0;background:transparent;color:var(--ink);font:inherit;font-size:.95rem;width:100%;outline:none}
+      .chips{display:flex;flex-wrap:wrap;gap:7px}
+      .chip{font:inherit;font-size:.83rem;font-weight:600;padding:8px 13px;border-radius:999px;border:1px solid var(--line2);background:var(--surface);color:var(--ink2);cursor:pointer}
+      .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#f4f8f1}
+      @media (prefers-color-scheme: dark){ .chip[aria-pressed="true"]{color:#0e1a12} }
+      .count-line{font-size:.85rem;color:var(--ink3);margin:12px 2px 0}
+
+      .tablewrap{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+      table{width:100%;border-collapse:collapse;font-size:.92rem}
+      thead th{text-align:left;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);padding:12px 14px;border-bottom:1.5px solid var(--line2);background:var(--surface2);vertical-align:top}
+      tbody td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+      tbody tr:last-child td{border-bottom:0}
+      .vname{font-weight:700;font-size:.98rem}
+      .vname .fam{display:block;font-weight:500;font-size:.8rem;color:var(--ink3);margin-top:2px}
+      .ev{font-size:.88rem;color:var(--ink2);line-height:1.55}
+      .ev strong{color:var(--ink)}
+      .grade{display:inline-block;font-size:.76rem;font-weight:700;padding:5px 10px;border-radius:999px;line-height:1.35}
+      .g-field{background:var(--amber-bg);color:var(--amber)}
+      .g-hist{background:var(--gray-bg);color:var(--ink2)}
+      .g-lab{background:var(--teal-bg);color:var(--teal)}
+      .g-weak{background:var(--rust-bg);color:var(--rust)}
+      .g-excl{background:var(--red-bg);color:var(--red)}
+      tr.excluded td{opacity:.82}
+      .empty-msg{padding:26px;text-align:center;color:var(--ink3);display:none}
+      @media(max-width:820px){
+        table,thead,tbody,tr,td{display:block}
+        thead{display:none}
+        tbody td{border-bottom:0;padding:6px 16px}
+        tbody tr{border-bottom:1px solid var(--line);padding:12px 0}
+        tbody tr:last-child{border-bottom:0}
+        td::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px}
+        td.nolabel::before{display:none}
+      }
+
+      /* ---------- Regions ---------- */
+      .region-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+      .rtab{font:inherit;font-size:.88rem;font-weight:600;padding:9px 15px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);color:var(--ink2);cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+      .rtab[aria-selected="true"]{background:var(--forest);color:#f4f8f1;border-color:var(--forest)}
+      @media (prefers-color-scheme: dark){ .rtab[aria-selected="true"]{color:#0e1a12} }
+      .panel{display:none;margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+      .panel.active{display:block}
+      .panel .stamp{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.82rem;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+      .stamp.no{background:var(--red-bg);color:var(--red)}
+      .stamp.partial{background:var(--amber-bg);color:var(--amber)}
+      .stamp.neg{background:var(--teal-bg);color:var(--teal)}
+      .panel h3{font-family:"Newsreader",Georgia,serif;font-size:1.35rem;margin:0 0 8px}
+      .panel p{color:var(--ink2);margin:0 0 12px;max-width:74ch}
+      .panel p strong{color:var(--ink)}
+      .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+      @media(max-width:700px){.pairgrid{grid-template-columns:1fr}}
+      .pair{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--surface2)}
+      .pair h4{margin:0 0 6px;font-size:.95rem;display:flex;gap:7px;align-items:center}
+      .pair h4 i{color:var(--forest)}
+      .pair ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--ink2)}
+      .pair li{margin-bottom:4px}
+      .gapflag{border-left:4px solid var(--rust);background:var(--rust-bg);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.92rem;margin-top:12px}
+      .gapflag strong{color:var(--rust)}
+
+      /* ---------- Control lists ---------- */
+      .seg{display:inline-flex;background:var(--surface2);border:1px solid var(--line2);border-radius:11px;padding:4px;gap:4px;margin-top:20px;flex-wrap:wrap}
+      .seg button{font:inherit;font-size:.88rem;font-weight:600;border:0;background:transparent;color:var(--ink2);padding:8px 16px;border-radius:8px;cursor:pointer}
+      .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+      .cdc-note{margin-top:14px;font-size:.95rem;color:var(--ink2);max-width:74ch}
+      .cdc-note strong{color:var(--ink)}
+      .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+      @media(max-width:820px){.cols{grid-template-columns:1fr}}
+      .col{border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+      .col-head{padding:14px 18px;display:flex;gap:9px;align-items:center;font-weight:700;border-bottom:1px solid var(--line)}
+      .col-head .n{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink3)}
+      .col.mosq .col-head{background:var(--teal-bg)} .col.mosq .col-head i{color:var(--teal)}
+      .col.tick .col-head{background:var(--rust-bg)} .col.tick .col-head i{color:var(--rust)}
+      .col ul{list-style:none;margin:0;padding:8px 0}
+      .col li{padding:9px 18px;border-bottom:1px dashed var(--line)}
+      .col li:last-child{border-bottom:0}
+      .col li b{display:block;font-size:.96rem}
+      .col li span{font-size:.86rem;color:var(--ink2);display:block;line-height:1.5}
+      .col li .fam{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--ink3)}
+      .pattern{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;font-size:.95rem;color:var(--ink2);box-shadow:var(--shadow)}
+      .pattern strong{color:var(--ink)}
+
+      /* ---------- Mechanisms ---------- */
+      .mech{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+      @media(max-width:820px){.mech{grid-template-columns:1fr}}
+      .mech-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+      .mech-card h3{margin:0 0 8px;font-size:1.02rem;display:flex;gap:9px;align-items:center}
+      .mech-card h3 i{color:var(--forest)}
+      .mech-card p{margin:0 0 10px;font-size:.92rem;color:var(--ink2)}
+      .mech-card p:last-child{margin-bottom:0}
+      .mech-card p strong,.mech-card li strong{color:var(--ink)}
+      .mech-card ul{margin:0;padding-left:18px;font-size:.92rem;color:var(--ink2)}
+      .mech-card li{margin-bottom:6px}
+      .barriers{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
+      .barriers .b{font-size:.8rem;font-weight:600;background:var(--amber-bg);color:var(--amber);padding:6px 10px;border-radius:8px}
+      .barriers .arr{color:var(--ink3);font-weight:700}
+      .sizechart{margin-top:12px}
+      .sizechart svg{width:100%;height:auto;display:block}
+      .size-verdict{margin-top:10px;font-weight:600;font-size:.95rem}
+      .size-verdict i{color:var(--red);vertical-align:-3px;margin-right:5px}
+
+      /* ---------- Gaps ---------- */
+      .gaps{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      @media(max-width:820px){.gaps{grid-template-columns:1fr}}
+      .gap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+      .gap .gn{font-family:"IBM Plex Mono",monospace;font-size:.75rem;font-weight:600;color:var(--rust);letter-spacing:.06em}
+      .gap h3{margin:4px 0 5px;font-size:1rem}
+      .gap p{margin:0;font-size:.9rem;color:var(--ink2)}
+      .couldnot{margin-top:14px;border:1.5px dashed var(--line2);border-radius:var(--radius);padding:16px 18px}
+      .couldnot h3{margin:0 0 8px;font-size:1rem;display:flex;gap:8px;align-items:center}
+      .couldnot h3 i{color:var(--ink3)}
+      .couldnot ul{margin:0;padding-left:18px;color:var(--ink2);font-size:.92rem}
+      .couldnot li{margin-bottom:5px}
+
+      /* ---------- Sources ---------- */
+      .sources{margin-top:56px;border-top:1.5px solid var(--line2);padding-top:24px}
+      .sources h2{font-family:"Newsreader",Georgia,serif;font-size:1.5rem;margin:0 0 6px}
+      .sources p{color:var(--ink2);font-size:.92rem;max-width:72ch}
+      .sources ol{padding-left:20px;font-size:.85rem;color:var(--ink2);columns:2;column-gap:36px}
+      @media(max-width:760px){.sources ol{columns:1}}
+      .sources li{margin-bottom:7px;break-inside:avoid}
+      .sources a{word-break:break-all}
+      .foot{margin-top:28px;font-size:.85rem;color:var(--ink3);max-width:72ch}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ================= HERO ================= -->
+      <header class="hero">
+        <div class="theory">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>The theory under test:</strong> mosquitoes and ticks might carry the same viruses, in the same indigenous areas — so the research needs to be looked upon. This page is that look: which viruses are actually documented in <em>both</em> bug groups in nature, where, and how strong the evidence is. Research read 3 November 2026; a general analysis, not medical advice.</p>
+        </div>
+
+        <h1>Same bugs' viruses? <em>Almost never — and never proven end&#8209;to&#8209;end.</em></h1>
+        <p class="lede">Mosquitoes and ticks overlap on the map and in the season, but the major viruses they carry are <strong>almost all single-vector-group viruses</strong>. A small number of viruses have been <strong>detected</strong> in both groups in nature — yet <strong>no major human pathogen</strong> was found with an established, sustained cycle that runs through both a mosquito and a tick in the same place and time.</p>
+
+        <div class="verdict">
+          <div class="verdict-head"><i data-lucide="scale"></i> The verdict on the theory</div>
+          <div class="verdict-body">
+            <p><strong>Overlap of bugs: yes. Overlap of viruses: mostly no.</strong> Where both bugs live in the same area — the Cascades, the Northeast, the Great Lakes — they carry <em>different</em> viruses. A person can catch a mosquito virus and a tick virus in the same season, from two different bites. That is co-exposure, not a shared virus.</p>
+            <p>The strongest “shared” cases are all edge cases: viruses found in both groups where transmission by one group is unproven, historical isolations from the 1970s with no modern cycle shown, or laboratory results that never became a cycle in nature. Each one is graded below, never upgraded.</p>
+            <div class="conf">
+              <span>Control list &amp; “no dual cycle”: <b>moderate–high confidence</b></span>
+              <span>Jingmenvirus / Thogotovirus detail: <b>moderate</b></span>
+              <span>Any specific Cascade locality: <b>low</b> — surveillance is state-level</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tracks" aria-label="Four tracks kept separate">
+          <div class="track"><div class="t-head"><i data-lucide="bug"></i> Virus</div><p>The virus species itself. A name in this column says nothing yet about what carries it.</p></div>
+          <div class="track"><div class="t-head"><i data-lucide="locate-fixed"></i> Vector</div><p>The mosquito or tick species. Detection in a tick pool is not proof the tick transmits — an engorged tick may just hold a recent blood meal.</p></div>
+          <div class="track"><div class="t-head"><i data-lucide="heart-pulse"></i> Disease</div><p>The human illness. Antibodies in a patient show exposure — not which bug delivered the virus.</p></div>
+          <div class="track"><div class="t-head"><i data-lucide="flask-conical"></i> Test</div><p>PCR or isolation in a bug pool, serology in a host, a clinical test in a patient — three different kinds of evidence, never interchangeable.</p></div>
+        </div>
+      </header>
+
+      <!-- ================= EVIDENCE LADDER ================= -->
+      <section id="ladder">
+        <div class="sec-head">
+          <h2>What “shared” would actually have to prove</h2>
+          <p>Before the table: the bar. A virus earns “established dual-vector cycle” only by clearing all three rungs. Every dual-detection case in the research stalls on rung 1, 2, or 3 — and the table below says exactly where.</p>
+        </div>
+        <div class="ladder">
+          <div class="rung">
+            <span class="step">RUNG 1 — FIELD</span>
+            <h3>Found in both, in the same focus</h3>
+            <p>Repeated field isolation of the same virus species from both mosquitoes and ticks in the same place.</p>
+            <div class="who">Jingmenviruses clear this rung — and stop here.</div>
+          </div>
+          <div class="rung">
+            <span class="step">RUNG 2 — LABORATORY</span>
+            <h3>Each bug can actually pass it on</h3>
+            <p>Each vector group acquires the virus by feeding, it replicates and reaches the salivary glands, and the bug transmits it by bite to a susceptible host.</p>
+            <div class="who">Sindbis virus clears this rung in ticks — in the lab only.</div>
+          </div>
+          <div class="rung">
+            <span class="step">RUNG 3 — NATURE</span>
+            <h3>The cycle sustains itself outdoors</h3>
+            <p>Evidence the two-vector cycle is maintained in nature, not just possible under glass.</p>
+            <div class="who">No virus in the research clears all three rungs.</div>
+          </div>
+        </div>
+        <p class="ladder-note">A review cited in the vesicular stomatitis literature makes the same general point: individual arboviruses are transmitted by a single type of vector — the one named exception, vesicular stomatitis virus, is carried by <strong>sandflies and mosquitoes, not ticks</strong>, so it does not join the mosquito–tick list (see Gap 7).</p>
+      </section>
+
+      <!-- ================= DUAL TABLE ================= -->
+      <section id="dual">
+        <div class="sec-head">
+          <h2>Viruses detected in both mosquitoes and ticks</h2>
+          <p>Same virus species, detected in both vector groups in nature — graded honestly. “Detected in both” is the ceiling for every row here; none is an established dual transmission cycle. Two famous names at the bottom are <em>excluded</em>, with the reason stated.</p>
+        </div>
+        <div class="plain">
+          <i data-lucide="messages-square"></i>
+          <p><span class="pl-label">In plain words</span>Scientists have occasionally <em>found</em> the same virus inside both a mosquito and a tick. But finding a virus inside a bug is like finding a letter inside a mailbox — it doesn't prove that mailbox delivers. Delivery — bite transmission — is what's missing in every case below.</p>
+        </div>
+
+        <div class="controls">
+          <label class="searchbox"><i data-lucide="search"></i><input id="q" type="search" placeholder="Search virus, family, place, or bug…" aria-label="Search the dual-detection table" /></label>
+          <div class="chips" role="group" aria-label="Filter by evidence grade">
+            <button class="chip" data-grade="all" aria-pressed="true">All rows</button>
+            <button class="chip" data-grade="field" aria-pressed="false">Field-detected in both</button>
+            <button class="chip" data-grade="hist" aria-pressed="false">Historical</button>
+            <button class="chip" data-grade="lab" aria-pressed="false">Lab competence only</button>
+            <button class="chip" data-grade="weak" aria-pressed="false">Isolation / persistence only</button>
+            <button class="chip" data-grade="excl" aria-pressed="false">Excluded — not shared</button>
+          </div>
+        </div>
+        <p class="count-line" id="countLine" aria-live="polite"></p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th style="width:19%">Virus</th><th style="width:27%">Mosquito evidence</th><th style="width:30%">Tick evidence</th><th style="width:24%">Grade</th></tr></thead>
+            <tbody id="dualBody">
+              <tr data-grade="field" data-search="jingmen tick virus jmtv jingmenvirus flaviviridae cameroon china aedes culex anopheles rhipicephalus haemaphysalis">
+                <td class="nolabel"><span class="vname">Jingmen tick virus (JMTV) &amp; related Jingmenviruses<span class="fam">Flaviviridae · Jingmenvirus group · segmented, flavivirus-like</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Cameroon 2022–2023: human-derived Jingmenvirus RNA in <em>Aedes albopictus</em>, <em>Culex quinquefasciatus</em>, <em>Cx. wansoni</em> (Yaoundé) and <em>Anopheles gambiae</em> s.l. (Garoua), 0.9% prevalence, 96.4–98.9% identical to a febrile patient's plasma virus from the same area. Earlier detections in <em>Armigeres</em>, <em>Anopheles</em>, <em>Aedes vexans</em> and others, at lower prevalence than in ticks.</span></td>
+                <td data-l="Tick evidence"><span class="ev">First found 2014 in <em>Rhipicephalus microplus</em>, Jingmen, China; since in <em>Haemaphysalis longicornis</em>, <em>R. sanguineus</em>, <em>Ixodes sinensis</em> and others. Passes tick-to-egg in <em>H. longicornis</em>; accumulates in tick salivary glands and midgut; human cases with tick-bite history in China.</span></td>
+                <td data-l="Grade"><span class="grade g-field">Field-detected in both — mosquito transmission NOT proven</span><br /><span class="ev">The authors' own wording: mosquitoes as “potential vectors, alongside ticks.”</span></td>
+              </tr>
+              <tr data-grade="field" data-search="alongshan virus alsv flaviviridae jingmenvirus china russia finland france germany ixodes anopheles aedes culex">
+                <td class="nolabel"><span class="vname">Alongshan virus (ALSV)<span class="fam">Flaviviridae · Jingmenvirus group · virion ~40.5 nm</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">China: <em>Anopheles yatsushiroensis</em>, <em>Aedes vexans</em>, <em>Culex pipiens pallens</em>, <em>Cx. tritaeniorhynchus</em>.</span></td>
+                <td data-l="Tick evidence"><span class="ev">China / Russia / Finland / France / Germany: <em>Ixodes persulcatus</em>, <em>I. ricinus</em>. A 2026 laboratory study found <em>I. persulcatus</em> competent by microinjection, with egg-to-offspring and bite transmission to mice. Human febrile cases with tick-bite history, China 2017.</span></td>
+                <td data-l="Grade"><span class="grade g-field">Field-detected in both — tick competence shown in lab, mosquito competence NOT demonstrated</span></td>
+              </tr>
+              <tr data-grade="hist" data-search="batken virus thogotovirus orthomyxoviridae kyrgyzstan hyalomma aedes caspius culex hortensis sheep">
+                <td class="nolabel"><span class="vname">Batken virus<span class="fam">Orthomyxoviridae · Thogotovirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Kyrgyzstan: a mixed pool of <em>Aedes caspius</em> + <em>Culex hortensis</em> mosquitoes.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Kyrgyzstan: <em>Hyalomma marginatum</em> ticks from sheep (1970 prototype); also <em>Ornithodoros lahorensis</em> and <em>Dermacentor marginatus</em> in Transcaucasia.</span></td>
+                <td data-l="Grade"><span class="grade g-hist">Historical field isolation in both — no modern transmission cycle demonstrated</span></td>
+              </tr>
+              <tr data-grade="hist" data-search="dhori virus thogotovirus orthomyxoviridae russia volga india egypt portugal hyalomma anopheles hyrcanus">
+                <td class="nolabel"><span class="vname">Dhori virus<span class="fam">Orthomyxoviridae · Thogotovirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Russia, Volga River estuary: <em>Anopheles hyrcanus</em> mosquitoes.</span></td>
+                <td data-l="Tick evidence"><span class="ev">India / Egypt / Portugal / Russia / Transcaucasia: <em>Hyalomma dromedarii</em>, <em>H. plumbeum</em>; also hares, camels, livestock, and humans (antibodies; one vector-free / aerosol report).</span></td>
+                <td data-l="Grade"><span class="grade g-hist">Historical field isolation in both — mosquito role unquantified</span></td>
+              </tr>
+              <tr data-grade="lab" data-search="sindbis virus sinv togaviridae alphavirus sicily hyalomma rhipicephalus culex birds nile delta">
+                <td class="nolabel"><span class="vname">Sindbis virus (SINV)<span class="fam">Togaviridae · Alphavirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev"><strong>The established cycle.</strong> <em>Culex pipiens</em>, <em>Cx. univittatus</em>, <em>Aedes</em>, <em>Culiseta</em>, <em>Anopheles</em>, <em>Mansonia</em> spp.; wild birds are the reservoir; first isolated 1952 from <em>Culex</em> in the Nile Delta.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Sicily: isolated from <em>Hyalomma marginatum</em> (1978). Laboratory, 2024: <em>Rhipicephalus haemaphysaloides</em> larvae/nymphs infected by feeding on infected mice; virus replicated, moved midgut → salivary glands during feeding, and was transmitted to a new host; replication also in <em>Hyalomma asiaticum</em> after microinjection.</span></td>
+                <td data-l="Grade"><span class="grade g-lab">Established mosquito cycle + tick isolation + laboratory tick competence — NOT an established natural dual cycle</span><br /><span class="ev">The authors present it as a model system precisely because it is weakly pathogenic and not a classical tick-borne virus.</span></td>
+              </tr>
+              <tr data-grade="weak" data-search="west nile virus wnv flaviviridae orthoflavivirus kenya ijara rhipicephalus amblyomma ornithodoros ixodes culex birds">
+                <td class="nolabel"><span class="vname">West Nile virus (WNV)<span class="fam">Flaviviridae · Orthoflavivirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev"><strong>The established cycle.</strong> <em>Culex pipiens</em> (north/east US), <em>Cx. quinquefasciatus</em> (south), <em>Cx. tarsalis</em> (west); 43+ US mosquito species; birds are the amplifying hosts.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Kenya (Ijara): isolated from <em>Rhipicephalus pulchellus</em> on cattle and <em>Amblyomma gemma</em> on warthogs; also North Africa / Europe isolations. Experiments: the soft tick <em>Ornithodoros moubata</em> held virus ≥132 days, through a moult and second blood meal, and transmitted to rodents at a low level; <em>Ixodes ricinus</em> became infected but could not maintain the virus, and females did not transmit while feeding; a US ixodid study found acquisition and passage across moults in 3 species but <strong>vector competency was not demonstrated</strong> — naive hosts fed on by exposed nymphs did not become infected.</span></td>
+                <td data-l="Grade"><span class="grade g-weak">Detection + persistence in ticks — tick transmission inefficient or absent in hard ticks. Classified mosquito-borne</span><br /><span class="ev">The tick role, if any, is an overwintering-reservoir hypothesis, not a maintenance cycle.</span></td>
+              </tr>
+              <tr data-grade="weak" data-search="bunyamwera virus peribunyaviridae orthobunyavirus kenya ijara ticks 44 isolates mosquito">
+                <td class="nolabel"><span class="vname">Bunyamwera virus<span class="fam">Peribunyaviridae · Orthobunyavirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Mosquito-borne, with a classic mosquito cycle; also found in northern-Canadian mosquito pools in the cited survey context.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Kenya (Ijara): <strong>44 isolates</strong> from ticks — predominantly <em>Rh. pulchellus</em> from cattle, goats, sheep and warthogs, also giraffe. The authors call it a “previously unreported detection of mosquito-borne … Bunyamwera viruses in ticks.”</span></td>
+                <td data-l="Grade"><span class="grade g-weak">Field isolation in ticks only — tick transmission not demonstrated</span></td>
+              </tr>
+              <tr data-grade="weak" data-search="semliki forest virus togaviridae alphavirus kenya ijara rhipicephalus amblyomma hyalomma mosquito">
+                <td class="nolabel"><span class="vname">Semliki Forest virus<span class="fam">Togaviridae · Alphavirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Mosquito-borne; Kenyan mosquito strains from North Eastern Province cluster closely with the tick isolate.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Kenya (Ijara): <strong>25 isolates</strong> from <em>Rh. pulchellus</em>, <em>A. gemma</em>, <em>A. lepidum</em> and <em>Hy. truncatum</em> from wildlife and livestock.</span></td>
+                <td data-l="Grade"><span class="grade g-weak">Field isolation in ticks only — tick transmission not demonstrated</span></td>
+              </tr>
+              <tr data-grade="weak" data-search="ndumu virus togaviridae alphavirus kenya ijara south africa mansonia aedes culex anopheles rhipicephalus">
+                <td class="nolabel"><span class="vname">Ndumu virus<span class="fam">Togaviridae · Alphavirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Mosquito-borne: described from <em>Mansonia uniformis</em> and <em>Aedes circumluteolus</em> (Ndumu, South Africa); also <em>Culex pipiens</em>, <em>Cx. rubinotus</em>, <em>Anopheles</em> spp.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Kenya (Ijara): 2 isolates, including from <em>Rh. pulchellus</em>. A review summary: “actual role of ticks in maintenance and transmission remains unknown.”</span></td>
+                <td data-l="Grade"><span class="grade g-weak">Field isolation in ticks only</span></td>
+              </tr>
+              <tr data-grade="weak" data-search="thogoto virus orthomyxoviridae thogotovirus amblyomma hyalomma rhipicephalus subtype mosquito unresolved gap">
+                <td class="nolabel"><span class="vname">Thogoto virus (sensu stricto)<span class="fam">Orthomyxoviridae · Thogotovirus</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">One subtype “also isolated from mosquitoes,” per a secondary summary — the species/subtype was not specified in the sources found.</span></td>
+                <td data-l="Tick evidence"><span class="ev"><em>Amblyomma</em>, <em>Hyalomma</em>, <em>Rhipicephalus</em> ticks; a classic tick-borne cycle, with non-viraemic co-feeding transmission demonstrated in <em>Rhipicephalus appendiculatus</em>.</span></td>
+                <td data-l="Grade"><span class="grade g-weak">GAP — do not list as a confirmed dual-vector species on current evidence</span><br /><span class="ev">The mosquito isolate is attributed to a subtype, not resolved to species level.</span></td>
+              </tr>
+              <tr class="excluded" data-grade="excl" data-search="rift valley fever virus rvfv phenuiviridae phlebovirus mosquito aedes culex hyalomma inoculated excluded">
+                <td class="nolabel"><span class="vname">Rift Valley fever virus (RVFV)<span class="fam">Phenuiviridae · Phlebovirus — NOT counted as shared</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">Mosquito-borne: isolated from 50+ mosquito species; <em>Aedes</em> + <em>Culex</em> are the principal vectors. Senegal 2022–2024: detected exclusively in <em>Aedes vexans</em> mosquito pools.</span></td>
+                <td data-l="Tick evidence"><span class="ev">Experimentally <em>inoculated</em> <em>Hyalomma truncatum</em> transmitted by bite — but transmission attempts with several tick species <em>fed on viraemic hosts</em> were unsuccessful. “Ticks are not thought to play a role in the epidemiology.”</span></td>
+                <td data-l="Grade"><span class="grade g-excl">Excluded — experimental-only artefact</span><br /><span class="ev">Inoculation bypasses the midgut barrier a real blood meal must cross.</span></td>
+              </tr>
+              <tr class="excluded" data-grade="excl" data-search="powassan virus powv flaviviridae orthoflavivirus ixodes scapularis cookei marxi aedes aegypti persisted excluded deer tick">
+                <td class="nolabel"><span class="vname">Powassan virus (POWV)<span class="fam">Flaviviridae · Orthoflavivirus — NOT counted as shared</span></span></td>
+                <td data-l="Mosquito evidence"><span class="ev">1982: the virus did <strong>not</strong> multiply in <em>Aedes aegypti</em>; it persisted ~2 weeks in mosquitoes and cell culture. A review: “no evidence of human POWV disease transmitted by mosquitoes, nor … mosquitoes are a competent vector.”</span></td>
+                <td data-l="Tick evidence"><span class="ev"><strong>The established cycle — tick-borne.</strong> <em>Ixodes scapularis</em> (lineage 2 / deer tick virus), <em>I. cookei</em>, <em>I. marxi</em> (lineage 1); transmission to a new host within ~15 minutes of attachment reported for <em>I. scapularis</em>.</span></td>
+                <td data-l="Grade"><span class="grade g-excl">Excluded — persistence ≠ replication ≠ transmission</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="empty-msg" id="emptyMsg">No rows match that search and filter together. Clear the search or choose “All rows.”</div>
+        </div>
+      </section>
+
+      <!-- ================= REGIONS ================= -->
+      <section id="regions">
+        <div class="sec-head">
+          <h2>Same indigenous areas? The bugs overlap — the viruses don't</h2>
+          <p>Region by region, with the mosquito species, tick species, and virus named, and whether detection was ever in the same place and time. Two regions get a flat “no.” Two get “same region, transmission unproven.” One study is a clean negative control.</p>
+        </div>
+
+        <div class="region-tabs" role="tablist" aria-label="Regions">
+          <button class="rtab" role="tab" data-panel="p-cascade" aria-selected="true"><i data-lucide="mountain"></i>Cascades / Pacific NW</button>
+          <button class="rtab" role="tab" data-panel="p-northeast" aria-selected="false"><i data-lucide="trees"></i>Northeast / Great Lakes</button>
+          <button class="rtab" role="tab" data-panel="p-kenya" aria-selected="false"><i data-lucide="sun"></i>Ijara, Kenya</button>
+          <button class="rtab" role="tab" data-panel="p-others" aria-selected="false"><i data-lucide="globe-2"></i>Cameroon · China · Kyrgyzstan</button>
+          <button class="rtab" role="tab" data-panel="p-senegal" aria-selected="false"><i data-lucide="split"></i>Senegal — negative control</button>
+        </div>
+
+        <div class="panel active" id="p-cascade" role="tabpanel">
+          <span class="stamp no"><i data-lucide="x-circle"></i> NO shared virus documented</span>
+          <h3>Cascade Range / Pacific Northwest</h3>
+          <p>Vectors overlap; viruses do not, on the sources found. The mosquito side and the tick side of the same states carry entirely different virus lists:</p>
+          <div class="pairgrid">
+            <div class="pair"><h4><i data-lucide="bug"></i> Mosquito side</h4><ul>
+              <li><strong>West Nile virus</strong> — <em>Culex pipiens</em>, <em>Cx. tarsalis</em>; Jackson County, Oregon tests <em>Culex</em> pools for WNV/WEE by RT-PCR.</li>
+              <li><strong>Western equine encephalitis virus</strong> — <em>Culex tarsalis</em>; prevalent in eastern Washington (Yakima Valley).</li>
+              <li><strong>St. Louis encephalitis virus</strong> — <em>Culex tarsalis</em> in the western US.</li>
+              <li><strong>Jamestown Canyon / snowshoe hare viruses</strong> — California-serogroup mosquitoes occur in western Canada / PNW-adjacent areas; <em>Culiseta inornata</em> is a northern vector.</li>
+            </ul></div>
+            <div class="pair"><h4><i data-lucide="bug"></i> Tick side</h4><ul>
+              <li><strong>Colorado tick fever virus</strong> — <em>Dermacentor andersoni</em> (Rocky Mountain wood tick), across the western US including Washington, Oregon and Idaho at ~4,000–10,000 ft; hosts are ground squirrels, marmots and chipmunks.</li>
+              <li><strong>West Nile in ticks?</strong> Isolations exist elsewhere (Kenya, Europe) — no PNW tick cycle was found.</li>
+              <li><strong>Powassan?</strong> Washington DOH lists it for reporting, but its recent-trends note names no locally acquired Powassan case; other than WNV, the last locally acquired arboviral infection in WA was St. Louis encephalitis in 2023, before that Western equine encephalitis in 1988.</li>
+            </ul></div>
+          </div>
+          <div class="gapflag"><strong>Gap, stated plainly:</strong> <em>Ixodes pacificus</em> is the PNW <em>Ixodes</em> species, but the sources name it for Lyme, anaplasmosis and relapsing fever (bacterial) — <strong>not</strong> for Powassan virus. Do not transfer the Northeast <em>I. scapularis</em>–Powassan association to <em>I. pacificus</em>. And no Cascade-specific (as opposed to state-level) vector–virus survey was found at all, so a claim that “the Cascades have a shared mosquito–tick virus” is unsupported.</div>
+        </div>
+
+        <div class="panel" id="p-northeast" role="tabpanel">
+          <span class="stamp no"><i data-lucide="x-circle"></i> NO shared virus — co-exposure only</span>
+          <h3>US Northeast / Great Lakes</h3>
+          <p>Both vector groups are indigenous, both virus groups concentrate in the same states, and both peak bimodally in spring and late summer. Minnesota starts testing Powassan on 1 April (tick activity above 40&nbsp;°F) and Jamestown Canyon on 1 April (post-snowmelt mosquitoes) — so one person can be exposed to both in a single season. That is the whole story; it is not a shared virus.</p>
+          <div class="pairgrid">
+            <div class="pair"><h4><i data-lucide="bug"></i> Mosquito-only here</h4><ul>
+              <li><strong>Jamestown Canyon virus</strong> — <em>Aedes</em>, <em>Culiseta</em>, <em>Coquillettidia</em> spp. (26+ species reported capable); white-tailed deer amplify it.</li>
+              <li><strong>West Nile virus</strong> — <em>Culex pipiens</em> / <em>Cx. restuans</em>.</li>
+              <li><strong>Eastern equine encephalitis virus</strong> — <em>Culiseta melanura</em> (enzootic), bridge vectors <em>Coquillettidia</em> / <em>Aedes</em>.</li>
+              <li><strong>La Crosse virus</strong> — <em>Aedes triseriatus</em>.</li>
+            </ul></div>
+            <div class="pair"><h4><i data-lucide="bug"></i> Tick-only here</h4><ul>
+              <li><strong>Powassan virus</strong> — <em>Ixodes scapularis</em> (lineage 2, Northeast); <em>I. cookei</em> / <em>I. marxi</em> (lineage 1, Great Lakes).</li>
+            </ul></div>
+          </div>
+          <p><strong>What the case reports actually prove:</strong> a 2023 case describes Lyme disease (tick, <em>Borrelia burgdorferi</em>) plus Jamestown Canyon (mosquito) in one patient — “contracted … through a tick bite and … through a mosquito bite,” enabled by “overlapping geographical areas of these two vectors.” A 2025 case had Powassan encephalitis plus Jamestown Canyon seropositivity as a diagnostic dilemma. <strong>Neither case shows one virus in both vectors.</strong></p>
+        </div>
+
+        <div class="panel" id="p-kenya" role="tabpanel">
+          <span class="stamp partial"><i data-lucide="alert-triangle"></i> Same region, probable same milieu — transmission unproven</span>
+          <h3>Ijara District, north-eastern Kenya — the strongest same-focus field evidence</h3>
+          <p>A pastoralist / wildlife interface where 10,488 ticks from livestock and wildlife were pooled (1,520 pools; 76% <em>Rhipicephalus pulchellus</em>, plus <em>Hyalomma truncatum</em>, <em>Amblyomma gemma</em>, <em>A. lepidum</em>).</p>
+          <div class="pairgrid">
+            <div class="pair"><h4><i data-lucide="bug"></i> Tick isolates</h4><ul>
+              <li>Bunyamwera <strong>44</strong> · Semliki Forest <strong>25</strong> · West Nile <strong>3</strong> · Ndumu <strong>2</strong> — all mosquito-borne viruses found inside ticks.</li>
+              <li>Thogoto <strong>3</strong> and Dugbe <strong>5</strong> — tick-borne, as expected.</li>
+            </ul></div>
+            <div class="pair"><h4><i data-lucide="search-check"></i> Why it still isn't proof</h4><ul>
+              <li>Mosquito strains of Semliki Forest virus from the same North Eastern Province cluster closely with the tick isolate, and WNV had previously been isolated from Kenyan mosquitoes — closely related strains, same province.</li>
+              <li>But the study did <strong>not</strong> sample mosquitoes and ticks simultaneously at one site and date, and did <strong>not</strong> demonstrate tick-to-host transmission.</li>
+              <li>The likely explanation is shared hosts: warthogs, cattle, sheep and goats in one pastoralist system are bitten by both mosquitoes and several tick species — maximising cross-detection, blood meals included.</li>
+            </ul></div>
+          </div>
+        </div>
+
+        <div class="panel" id="p-others" role="tabpanel">
+          <span class="stamp partial"><i data-lucide="alert-triangle"></i> Same virus, different studies — never one focus, one time, with transmission</span>
+          <h3>Cameroon · China · Kyrgyzstan / Volga</h3>
+          <p><strong>Yaoundé / Garoua, Cameroon (Jingmenvirus):</strong> mosquito sampling in 2022–2023 across rainy and dry seasons and two biotopes found human-derived Jingmenvirus in 4 mosquito species, and the near-identical human plasma virus came from the same area. But tick sampling for that same strain in the same area and time was not reported — the tick link is imported from the wider Jingmenvirus literature (China, Brazil, etc.). Same area for mosquito + human; no Cameroon tick–mosquito pair.</p>
+          <p><strong>China (ALSV / JMTV) and Russia / Finland / France / Germany (ALSV):</strong> tick detections (<em>Ixodes persulcatus</em>, <em>I. ricinus</em>) and mosquito detections (<em>Anopheles yatsushiroensis</em>, <em>Aedes vexans</em>, <em>Culex pipiens pallens</em>, <em>Cx. tritaeniorhynchus</em>) are reported for the same virus species — in different studies, years and regions. No single study in the sources found reports both vector groups from one focus at one time with a transmission demonstration.</p>
+          <p><strong>Kyrgyzstan (Batken) / Volga estuary, Russia (Dhori):</strong> historical isolations from both ticks and mosquitoes in the same broad region, from the 1970s, without modern follow-up in the sources found.</p>
+        </div>
+
+        <div class="panel" id="p-senegal" role="tabpanel">
+          <span class="stamp neg"><i data-lucide="check-circle-2"></i> Clean negative control — strictly segregated</span>
+          <h3>Senegal (Matam + Thiès), Sep 2022 – Mar 2024</h3>
+          <p>One integrated study sampled <strong>6,558 mosquitoes (23 species)</strong> and <strong>1,904 ticks (7 species)</strong> over two seasons, in overlapping geography, at the same time — exactly the design that could catch a shared virus if one were there.</p>
+          <div class="pairgrid">
+            <div class="pair"><h4><i data-lucide="bug"></i> In mosquitoes only</h4><ul><li><strong>Rift Valley fever virus</strong> — found <em>exclusively</em> in <em>Aedes vexans</em> mosquito pools (Matam).</li></ul></div>
+            <div class="pair"><h4><i data-lucide="bug"></i> In ticks only</h4><ul><li><strong>Crimean–Congo haemorrhagic fever virus</strong> — in multiple tick species, both regions, both seasons; <em>Hyalomma rufipes</em> predominant in the dry season.</li></ul></div>
+          </div>
+          <p>Same study, same seasons, overlapping geography — <strong>different viruses, strictly segregated by vector group.</strong> Overlap alone does not mix the virus lists.</p>
+        </div>
+      </section>
+
+      <!-- ================= CONTROL LISTS ================= -->
+      <section id="controls">
+        <div class="sec-head">
+          <h2>The control lists — so “shared” is never overstated</h2>
+          <p>The anchor is the CDC's own summary for the continental US: of the common nationally notifiable domestic arboviral diseases, <strong>five are mosquito-borne</strong> (West Nile, La Crosse, Jamestown Canyon, eastern equine encephalitis, St. Louis encephalitis) and <strong>one is tick-borne</strong> (Powassan).</p>
+        </div>
+        <div class="seg" role="group" aria-label="Control list view">
+          <button data-view="both" aria-pressed="true">Both lists</button>
+          <button data-view="mosq" aria-pressed="false">Mosquito-only</button>
+          <button data-view="tick" aria-pressed="false">Tick-only</button>
+        </div>
+        <div class="cols">
+          <div class="col mosq" id="colMosq">
+            <div class="col-head"><i data-lucide="bug"></i> Mosquito-only <span class="n">no credible tick cycle found</span></div>
+            <ul>
+              <li><b>Eastern equine encephalitis virus (EEEV)</b><span class="fam">Togaviridae · Alphavirus</span><span><em>Culiseta melanura</em> enzootic; Atlantic/Gulf coasts, upper New York, Michigan, eastern Canada.</span></li>
+              <li><b>Western equine encephalitis virus (WEEV)</b><span class="fam">Togaviridae · Alphavirus</span><span><em>Culex tarsalis</em>; western US/Canada, incl. eastern Washington's Yakima Valley.</span></li>
+              <li><b>Venezuelan equine encephalitis virus (VEEV)</b><span class="fam">Togaviridae · Alphavirus</span><span><em>Culex</em> + <em>Aedes</em> spp. (10+ species); Mexico, Texas, Florida (enzootic) / South America (epizootic); rodents, not birds, as reservoirs.</span></li>
+              <li><b>West Nile virus (WNV)</b><span class="fam">Flaviviridae · Orthoflavivirus</span><span><em>Culex</em> spp. Tick detection exists, but tick transmission is inefficient/absent — still classified mosquito-borne.</span></li>
+              <li><b>St. Louis encephalitis virus (SLEV)</b><span class="fam">Flaviviridae · Orthoflavivirus</span><span><em>Culex pipiens</em> / <em>quinquefasciatus</em> (east), <em>Cx. tarsalis</em> (west); birds.</span></li>
+              <li><b>La Crosse virus (LACV)</b><span class="fam">Peribunyaviridae · Orthobunyavirus · California serogroup</span><span><em>Aedes triseriatus</em>; chipmunks/squirrels; most common arboviral disease in US children (CDC 2024: 37 cases).</span></li>
+              <li><b>Jamestown Canyon virus (JCV)</b><span class="fam">Peribunyaviridae · Orthobunyavirus · California serogroup</span><span><em>Aedes</em>, <em>Culiseta</em>, <em>Coquillettidia</em> spp.; white-tailed deer.</span></li>
+              <li><b>Dengue, Zika, chikungunya, yellow fever</b><span class="fam">Flaviviridae / Togaviridae (chikungunya)</span><span><em>Aedes aegypti</em> / <em>Ae. albopictus</em>. No tick cycle found; travel-associated in the US, not indigenous overlap cases.</span></li>
+              <li><b>Rift Valley fever virus (RVFV)</b><span class="fam">Phenuiviridae · Phlebovirus</span><span><em>Aedes</em> + <em>Culex</em> spp.; tick role excluded (see table above).</span></li>
+              <li><b>Japanese encephalitis virus</b><span class="fam">Flaviviridae</span><span><em>Culex tritaeniorhynchus</em> (Asia); pigs/birds.</span></li>
+            </ul>
+          </div>
+          <div class="col tick" id="colTick">
+            <div class="col-head"><i data-lucide="bug"></i> Tick-only <span class="n">no credible mosquito cycle found</span></div>
+            <ul>
+              <li><b>Powassan virus (POWV, incl. deer tick virus)</b><span class="fam">Flaviviridae · Orthoflavivirus</span><span><em>Ixodes scapularis</em>, <em>I. cookei</em>, <em>I. marxi</em>; Northeast + Great Lakes; mosquito persistence only.</span></li>
+              <li><b>Tick-borne encephalitis virus (TBEV)</b><span class="fam">Flaviviridae · Orthoflavivirus</span><span><em>Ixodes ricinus</em> (Europe), <em>I. persulcatus</em> (Asia). Sporadic historical isolation from mosquitoes/flies/fleas/lice is noted, but a “role in transmission to humans has not been demonstrated”; a 1950 experimental mosquito study did not establish a cycle.</span></li>
+              <li><b>Crimean–Congo haemorrhagic fever virus (CCHFV)</b><span class="fam">Nairoviridae · Orthonairovirus</span><span><em>Hyalomma</em> spp. (esp. <em>H. rufipes</em>, <em>H. marginatum</em>); Africa, southern/central Europe, Middle East, Central Asia; also contact with infected blood/tissue.</span></li>
+              <li><b>Colorado tick fever virus (CTFV)</b><span class="fam">Spinareoviridae (cited sources use Reoviridae) · Coltivirus</span><span><em>Dermacentor andersoni</em>; Rocky Mountain / western US + Canada, 4,000–10,000 ft.</span></li>
+              <li><b>Louping ill virus</b><span class="fam">Flaviviridae</span><span><em>Ixodes ricinus</em>; UK/Europe sheep.</span></li>
+              <li><b>Kyasanur Forest disease &amp; Omsk haemorrhagic fever viruses</b><span class="fam">Flaviviridae</span><span><em>Haemaphysalis</em> spp. (India) and <em>Dermacentor</em> spp. (Siberia) respectively; no mosquito cycle found.</span></li>
+              <li><b>Heartland virus</b><span class="fam">Phenuiviridae · Bandavirus</span><span><em>Amblyomma americanum</em>; US Midwest/South.</span></li>
+              <li><b>Bourbon virus</b><span class="fam">Orthomyxoviridae · Thogotovirus</span><span><em>Amblyomma americanum</em> (primary); <em>Haemaphysalis longicornis</em> detection in Virginia noted as a potential secondary role. Tick-only among this genus's US representatives — unlike Batken/Dhori.</span></li>
+              <li><b>Severe fever with thrombocytopenia syndrome virus (SFTSV)</b><span class="fam">Phenuiviridae · Bandavirus</span><span><em>Haemaphysalis longicornis</em> and others. Mosquitoes tested (<em>Cx. pipiens pallens</em>, <em>Ae. aegypti</em>, <em>An. sinensis</em>) acquired the virus but titres fell with no replication — “mosquitoes are not vectors for SFTSV.” A useful negative control.</span></li>
+              <li><b>African swine fever virus</b><span class="fam">Asfarviridae · not a human arbovirus</span><span><em>Ornithodoros</em> soft ticks; no mosquito cycle. Listed to prevent over-generalisation.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pattern"><strong>The pattern underneath:</strong> within a single genus, vector group is usually conserved. <em>Orthoflavivirus</em> splits into a mosquito-borne branch (West Nile, St. Louis, dengue, yellow fever, Japanese encephalitis) and a tick-borne branch (TBEV, Powassan, louping ill, Kyasanur) — roughly 50% of flaviviruses are mosquito-borne and ~28% tick-borne (ICTV 9th Report). The Jingmenviruses are the exception that proves the pattern is ecological, not a law of taxonomy.</div>
+      </section>
+
+      <!-- ================= MECHANISMS ================= -->
+      <section id="mechanisms">
+        <div class="sec-head">
+          <h2>What lets a virus use both bugs — and what blocks it</h2>
+          <p>Six mechanisms were checked against the sources, including the size question. Five shape the answer. One — virus size — does not, and the chart below shows why.</p>
+        </div>
+        <div class="mech">
+          <div class="mech-card">
+            <h3><i data-lucide="door-open"></i> 1 · Vector competence is a chain of barriers</h3>
+            <p>Competence means: acquire the virus in a blood meal → infect the midgut → escape the midgut → spread through the body → infect the salivary glands → leave in saliva at the next bite. <strong>Fail at any barrier and the bug is incompetent — even if the virus is detectable inside it.</strong> That single fact explains most of the table above.</p>
+            <div class="barriers"><span class="b">Midgut infection barrier</span><span class="arr">→</span><span class="b">Midgut escape barrier</span><span class="arr">→</span><span class="b">Salivary gland barrier</span></div>
+            <p>Ticks don't map neatly onto the mosquito model: their salivary glands are grape-like branched acini (mosquito glands are lobed), and one review raises the possibility that tick-borne viruses pass from body cavity to saliva without infecting the glands at all.</p>
+          </div>
+          <div class="mech-card">
+            <h3><i data-lucide="key-round"></i> 2 · Entry receptors: permissive, not decisive</h3>
+            <p>Alphaviruses (Sindbis, Semliki Forest, the equine viruses) use LDL-receptor family members and their invertebrate counterparts in <strong>both</strong> mammal and mosquito cells — a key that fits locks on both sides of the divide. Flaviviruses use a broad kit of attachment molecules (C-type lectins, TIM/TAM receptors, integrins, claudin-1, and others).</p>
+            <p>But <strong>no source found identifies a tick-specific receptor whose absence blocks mosquito viruses, or the reverse.</strong> Receptors are permissive background; the discriminating steps are downstream — midgut escape, spread, salivary glands — and ecological.</p>
+          </div>
+          <div class="mech-card">
+            <h3><i data-lucide="thermometer"></i> 3 · Temperature and time</h3>
+            <p>Higher temperature generally shortens the virus's incubation period inside the bug and raises transmission efficiency; fluctuating natural temperatures change competence. A virus whose incubation outlasts the vector's life or feeding interval cannot be transmitted by that vector, however well its cells grow in a dish.</p>
+            <p>The two bugs run on different clocks: <strong>mosquitoes live weeks and feed in minutes</strong>, needing fast spread; <strong>ticks feed for days and live months to years</strong>, and can carry virus across moults and into their eggs — which is how a tick-persistent virus like West Nile in <em>Ornithodoros</em> can look like a reservoir without being an efficient vector.</p>
+          </div>
+          <div class="mech-card">
+            <h3><i data-lucide="users"></i> 4 · Host range and the viraemia threshold</h3>
+            <p>A bug can only pick up a virus from a host that is <strong>viraemic enough, for long enough, and that the bug actually bites</strong>: West Nile needs viraemic passerine birds for <em>Culex</em>; Jamestown Canyon needs white-tailed deer; Powassan needs small mammals and woodchucks; Colorado tick fever needs ground squirrels, marmots and chipmunks.</p>
+            <p>A narrow host range that one bug group rarely bites starves the other group of chances — whatever its cells could do. The Kenya pattern is the mirror image: one shared pool of warthogs, cattle, sheep and goats, bitten by everything. Co-feeding transmission (uninfected bugs picking up virus beside infected ones, shown for Thogoto virus in ticks) can bypass viraemia — but it <strong>has not been shown to build a mosquito–tick bridge for any virus</strong> in the sources.</p>
+          </div>
+          <div class="mech-card">
+            <h3><i data-lucide="shield"></i> 5 · Innate immunity: a dimmer, not the switch</h3>
+            <ul>
+              <li><strong>RNA interference</strong> is described as the most important antiviral response in mosquitoes and “likely” in all arthropods, acting as a midgut gatekeeper — but for ticks, reviews state plainly: “we know little about the role of RNAi in ticks.”</li>
+              <li><strong>JAK/STAT, Toll and Imd</strong> pathways are implicated in insect antiviral defence; in Sindbis-infected ticks, early autophagy then rising cell death were observed.</li>
+              <li><strong>Microbiota:</strong> <em>Wolbachia</em> in mosquitoes competes for the cholesterol enveloped viruses need; tick microbiomes are less characterised for this.</li>
+            </ul>
+            <p>Net effect: immunity tunes <em>efficiency</em> within a pairing that already works. Co-evolution matters more — a virus adapted to one vector's immunity may be cleared by, or may kill, the other.</p>
+          </div>
+          <div class="mech-card">
+            <h3><i data-lucide="ruler"></i> 6 · Does virus size play a role? Tested — no</h3>
+            <p>Virion sizes overlap completely across the mosquito/tick divide, so diameter cannot be what sorts viruses into one camp or the other:</p>
+            <div class="sizechart" role="img" aria-label="Virion size ranges in nanometres. Flaviviruses 40 to 60 nanometres on both sides of the divide; Alongshan virus about 40.5; alphaviruses 60 to 70; thogotoviruses 75 to 140; bunyaviruses about 100. The ranges overlap across mosquito-borne and tick-borne viruses.">
+              <svg viewBox="0 0 560 218" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, sans-serif">
+                <g font-size="10.5" fill="var(--ink3)">
+                  <text x="150" y="206">0</text><text x="232" y="206">40 nm</text><text x="322" y="206">80 nm</text><text x="408" y="206">120 nm</text><text x="492" y="206">160 nm</text>
+                </g>
+                <g stroke="var(--line)" stroke-width="1">
+                  <line x1="238" y1="8" x2="238" y2="192"/><line x1="328" y1="8" x2="328" y2="192"/><line x1="418" y1="8" x2="418" y2="192"/><line x1="508" y1="8" x2="508" y2="192"/>
+                </g>
+                <!-- rows: x = 148 + nm*2.25 -->
+                <text x="0" y="30" font-size="12" font-weight="600" fill="var(--ink)">Flaviviruses</text>
+                <text x="0" y="45" font-size="10.5" fill="var(--ink3)">both camps, same genus</text>
+                <rect x="238" y="16" width="45" height="14" rx="7" fill="var(--teal)" opacity=".85"/>
+                <text x="290" y="27" font-size="11" fill="var(--ink2)">40–60 nm — WNV/dengue AND TBEV/Powassan</text>
+                <text x="0" y="72" font-size="12" font-weight="600" fill="var(--ink)">Alongshan virus</text>
+                <text x="0" y="87" font-size="10.5" fill="var(--ink3)">detected in both</text>
+                <circle cx="239" cy="65" r="5" fill="var(--amber)"/>
+                <text x="252" y="69" font-size="11" fill="var(--ink2)">~40.5 nm</text>
+                <text x="0" y="114" font-size="12" font-weight="600" fill="var(--ink)">Alphaviruses</text>
+                <text x="0" y="129" font-size="10.5" fill="var(--ink3)">mosquito-borne, tick-isolated</text>
+                <rect x="283" y="100" width="23" height="14" rx="7" fill="var(--teal)" opacity=".85"/>
+                <text x="313" y="111" font-size="11" fill="var(--ink2)">60–70 nm — Sindbis, Semliki Forest</text>
+                <text x="0" y="156" font-size="12" font-weight="600" fill="var(--ink)">Thogotoviruses</text>
+                <text x="0" y="171" font-size="10.5" fill="var(--ink3)">tick-borne + mosquito-isolated</text>
+                <rect x="317" y="142" width="146" height="14" rx="7" fill="var(--rust)" opacity=".85"/>
+                <text x="470" y="153" font-size="11" fill="var(--ink2)">75–140 nm</text>
+                <text x="0" y="198" font-size="12" font-weight="600" fill="var(--ink)">Bunyaviruses</text>
+                <rect x="373" y="184" width="10" height="14" rx="5" fill="var(--teal)" opacity=".85"/>
+                <text x="392" y="195" font-size="11" fill="var(--ink2)">~100 nm</text>
+              </svg>
+            </div>
+            <p>The one size-related barrier in the sources — the mosquito midgut's basal lamina, whose pores are smaller than a virus particle — applies to <em>all</em> arboviruses in mosquitoes alike. And the “body size” literature is about the <em>bug's</em> size, not the virus's. Genome organisation doesn't discriminate either: dual-detected, mosquito-only and tick-only viruses all include both segmented and non-segmented genomes.</p>
+            <p class="size-verdict"><i data-lucide="x-circle"></i>Conclusion: size is not a discriminating mechanism on current evidence.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GAPS ================= -->
+      <section id="gaps">
+        <div class="sec-head">
+          <h2>Where the evidence is thin — all eleven gaps, marked</h2>
+          <p>Nothing in this section is smoothed over. If a claim you have heard isn't supported, it is here, named.</p>
+        </div>
+        <div class="gaps">
+          <div class="gap"><span class="gn">GAP 1</span><h3>No established dual cycle — for any major human virus</h3><p>Every dual-detection case downgrades to detection-only, historical-only, or laboratory-only on inspection.</p></div>
+          <div class="gap"><span class="gn">GAP 2</span><h3>Cascades / PNW shared virus</h3><p>No source documents the same virus in both a mosquito and a tick in the Cascades. <em>Ixodes pacificus</em>–Powassan in the PNW is unverified — never infer it from <em>I. scapularis</em>–Powassan in the Northeast.</p></div>
+          <div class="gap"><span class="gn">GAP 3</span><h3>Northeast / Great Lakes shared virus</h3><p>Powassan and Jamestown Canyon co-occur regionally and seasonally and can co-infect a person via two bites — but no source shows Jamestown Canyon in a tick, or Powassan in a mosquito, as a natural cycle.</p></div>
+          <div class="gap"><span class="gn">GAP 4</span><h3>Jingmenvirus mosquito transmission: unproven</h3><p>Sequence detection in mosquitoes plus a near-identical human case nearby is suggestive, not proof. No mosquito acquisition → spread → bite-transmission study was found.</p></div>
+          <div class="gap"><span class="gn">GAP 5</span><h3>Kenya tick isolates: transmission unproven</h3><p>Isolation from engorged ticks on viraemic hosts cannot distinguish a blood-meal passenger from a replicating, transmissible infection. The authors themselves say “potential role” / “remains unknown.”</p></div>
+          <div class="gap"><span class="gn">GAP 6</span><h3>Thogoto virus mosquito isolate: unresolved</h3><p>Attributed to “one subtype” without species-level resolution. Do not cite Thogoto virus as dual-vector without that qualifier.</p></div>
+          <div class="gap"><span class="gn">GAP 7</span><h3>Vesicular stomatitis virus is NOT a mosquito–tick case</h3><p>It is the cited exception to single-vector transmission — for sandflies + mosquitoes (and blackflies/midges, partly mechanical). No biological tick transmission was verified. Do not add it to the shared list.</p></div>
+          <div class="gap"><span class="gn">GAP 8</span><h3>TBEV in mosquitoes: historical only</h3><p>Sporadic isolation from mosquitoes, flies, fleas and lice is noted, with the transmission role “not demonstrated.” A 1950 experimental study does not change the classification.</p></div>
+          <div class="gap"><span class="gn">GAP 9</span><h3>Serology is not vector proof</h3><p>Antibodies in a host (Jingmenvirus seroprevalence in China/France; Thogoto/Dhori antibodies in livestock and humans) show exposure, not which arthropod delivered the virus. A positive clinical test in a patient does not identify the vector either.</p></div>
+          <div class="gap"><span class="gn">GAP 10</span><h3>Surveillance asymmetry</h3><p>Mosquito pools are routinely tested for WNV/EEE/SLEV/JCV (New Jersey tested 7,099 pools in 2026); tick testing is usually targeted and rarely includes mosquito viruses — and vice versa. So “not detected in the other bug” is weaker evidence than it looks. The experimental incompetence results, though, stand independent of that asymmetry.</p></div>
+          <div class="gap"><span class="gn">GAP 11</span><h3>Taxonomy drift</h3><p>California serogroup viruses were Bunyaviridae in older sources, Peribunyaviridae now; Colorado tick fever virus was Reoviridae, now Spinareoviridae. Family names in older papers should be translated, not quoted as conflicts.</p></div>
+          <div class="gap"><span class="gn">ALSO OPEN</span><h3>The research question itself stays open</h3><p>The honest summary is asymmetrical: the <em>negative</em> (no proven dual cycle) is well supported by experiments; the <em>positives</em> (Jingmenviruses especially) are recent and partly sequence-only. “Not proven” is not “disproven” — it is where the next study belongs.</p></div>
+        </div>
+        <div class="couldnot">
+          <h3><i data-lucide="file-question"></i> Could not verify</h3>
+          <ul>
+            <li>Any Cascade-specific (county / elevation-band) mosquito + tick virus survey.</li>
+            <li>Mosquito competence for JMTV/ALSV, Batken, Dhori, Bunyamwera, Semliki Forest or Ndumu viruses — no transmission study found.</li>
+            <li>Tick competence for any California-serogroup virus, EEEV, WEEV, VEEV, SLEV, dengue, Zika or chikungunya — no positive study found (not the same as a published negative for every pairing).</li>
+            <li>A virion-size threshold or mechanism separating mosquito from tick viruses — no source found.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= SOURCES ================= -->
+      <div class="sources">
+        <h2>Sources</h2>
+        <p>All sources were read on 3 November 2026 via web index for the underlying research report (index-flagged; none live-browser verified in that run). URLs are given verbatim.</p>
+        <ol>
+          <li>Jingmenvirus, Cameroon — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12723927/">pmc.ncbi.nlm.nih.gov/articles/PMC12723927</a></li>
+          <li>Jingmenvirus follow-up — <a href="https://link.springer.com/article/10.1186/s13071-025-07111-4">link.springer.com/article/10.1186/s13071-025-07111-4</a></li>
+          <li>JMTV survey — <a href="https://www.mdpi.com/1999-4915/11/11/1071">mdpi.com/1999-4915/11/11/1071</a></li>
+          <li>Alongshan virus — <a href="https://WWW.mdpi.com/1999-4915/12/4/362">WWW.mdpi.com/1999-4915/12/4/362</a></li>
+          <li>ALSV, Russian journal — <a href="https://microbiol.crie.ru/jour/article/view/18829">microbiol.crie.ru/jour/article/view/18829</a></li>
+          <li>ALSV, DOAJ record — <a href="https://doaj.org/article/a397145f16454146b370dd7c9370ab57">doaj.org/article/a397145f16454146b370dd7c9370ab57</a></li>
+          <li>Sindbis virus in ticks (2024) — <a href="https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2024.1334351">frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2024.1334351</a></li>
+          <li>Sindbis, Sicily isolation — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2600146/">pmc.ncbi.nlm.nih.gov/articles/PMC2600146</a></li>
+          <li>Thogotovirus overview — <a href="https://en.wikipedia.org/wiki/Thogotovirus">en.wikipedia.org/wiki/Thogotovirus</a></li>
+          <li>Thogotovirus topic page — <a href="https://www.sciencedirect.com/topics/neuroscience/thogotovirus">sciencedirect.com/topics/neuroscience/thogotovirus</a></li>
+          <li>Kenya Ijara tick survey — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3777299/">pmc.ncbi.nlm.nih.gov/articles/PMC3777299</a></li>
+          <li>Kenya Ijara, IJID — <a href="https://www.ijidonline.com/article/S1201-9712(14)00874-1/fulltext">ijidonline.com/article/S1201-9712(14)00874-1/fulltext</a></li>
+          <li>Kenya Ijara, Parasites &amp; Vectors — <a href="https://link.springer.com/article/10.1186/s13071-014-0542-2">link.springer.com/article/10.1186/s13071-014-0542-2</a></li>
+          <li>WNV in <em>Ornithodoros</em> — <a href="https://pubmed.ncbi.nlm.nih.gov/15200855/">pubmed.ncbi.nlm.nih.gov/15200855</a></li>
+          <li>WNV tick experiments — <a href="https://www.mdpi.com/2076-0817/9/10/780/htm">mdpi.com/2076-0817/9/10/780/htm</a></li>
+          <li>WNV in <em>Ixodes ricinus</em> — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6493942/">pmc.ncbi.nlm.nih.gov/articles/PMC6493942</a></li>
+          <li>Rift Valley fever, tick role — <a href="https://anipedia.up.ac.za/resources/rift-valley-fever/1167.html">anipedia.up.ac.za/resources/rift-valley-fever/1167.html</a></li>
+          <li>Powassan in <em>Aedes aegypti</em> (1982) — <a href="https://eurekamag.com/research/044/207/044207418.php">eurekamag.com/research/044/207/044207418.php</a></li>
+          <li>Powassan review — <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC4850925/">pmc.ncbi.nlm.nih.gov:443/articles/PMC4850925</a></li>
+          <li>CDC MMWR, notifiable arboviral diseases — <a href="https://www.cdc.gov/mmwr/volumes/75/wr/mm7529a1.htm">cdc.gov/mmwr/volumes/75/wr/mm7529a1.htm</a></li>
+          <li>Powassan + Jamestown Canyon case, 2025 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12457053/">pmc.ncbi.nlm.nih.gov/articles/PMC12457053</a></li>
+          <li>Lyme + Jamestown Canyon co-infection, 2023 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10332484/">pmc.ncbi.nlm.nih.gov/articles/PMC10332484</a></li>
+          <li>Minnesota arbovirus testing — <a href="https://www.health.state.mn.us/about/org/phl/annualreports/2026/arbovirus.html">health.state.mn.us/about/org/phl/annualreports/2026/arbovirus.html</a></li>
+          <li>Washington DOH, arboviral disease — <a href="https://doh.wa.gov/public-health-provider-resources/notifiable-conditions/arboviral-disease">doh.wa.gov/public-health-provider-resources/notifiable-conditions/arboviral-disease</a></li>
+          <li>Arbovirus disease overview — <a href="https://www.brainkart.com/article/Arbovirus-Disease--Specific-Arboviruses_20607/">brainkart.com/article/Arbovirus-Disease--Specific-Arboviruses_20607</a></li>
+          <li>Jackson County OR mosquito surveillance — <a href="https://jcvcd.gov/mosquito/surveillance/">jcvcd.gov/mosquito/surveillance</a></li>
+          <li>Colorado tick fever, elevation &amp; hosts — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2866042/">pmc.ncbi.nlm.nih.gov/articles/PMC2866042</a></li>
+          <li>Senegal integrated mosquito + tick study — <a href="https://mdpi-res.com/d_attachment/tropicalmed/tropicalmed-11-00173/article_deploy/tropicalmed-11-00173-v2.pdf?version=1782985840">mdpi-res.com (TropicalMed 11-00173, PDF)</a></li>
+          <li>Vector competence barriers — <a href="https://www.frontiersin.org/article/10.3389/fmicb.2021.773211">frontiersin.org/article/10.3389/fmicb.2021.773211</a></li>
+          <li>Tick vs mosquito barriers &amp; immunity — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9121816/">pmc.ncbi.nlm.nih.gov/articles/PMC9121816</a></li>
+          <li>Arbovirus immunity (RNAi) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4188209/">pmc.ncbi.nlm.nih.gov/articles/PMC4188209</a></li>
+          <li>Entry receptors review — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12558446/">pmc.ncbi.nlm.nih.gov/articles/PMC12558446</a></li>
+          <li>Flavivirus entry — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11462183/">pmc.ncbi.nlm.nih.gov/articles/PMC11462183</a></li>
+          <li>Salivary gland barriers — <a href="https://www.clinicalmicrobiologyandinfection.org/article/S1198-743X(14)60438-9/pdf">clinicalmicrobiologyandinfection.org/article/S1198-743X(14)60438-9/pdf</a></li>
+          <li>ICTV 9th Report, Flaviviridae — <a href="https://ictv.global/report_9th/RNApos/Flaviviridae">ictv.global/report_9th/RNApos/Flaviviridae</a></li>
+          <li>Medical Microbiology, arbovirus chapter — <a href="http://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=mmed.section.2894">ncbi.nlm.nih.gov/books/bv.fcgi?rid=mmed.section.2894</a></li>
+          <li>SFTSV vector competence — <a href="https://infactpublications.com/article/1000203/sftsv-detection-in-blood-sucking-arthropods-and-vector-competence-of-tick-species-for-sftsv">infactpublications.com/article/1000203</a></li>
+          <li>CCHF &amp; RVF overview — <a href="https://www.impactglobalhealth.org/insights/health-areas/crimean-congo-haemorrhagic-fever-and-rift-valley-fever">impactglobalhealth.org/insights/health-areas/crimean-congo-haemorrhagic-fever-and-rift-valley-fever</a></li>
+        </ol>
+        <p class="foot">This page is a general research analysis of a theory — not a medical recommendation, test order, or guide to any individual's care. Virus, vector, disease, and test are kept as separate tracks throughout, as the research report requires: detection in a bug is never presented here as transmission by that bug.</p>
+      </div>
+    </div>
+
+    <script>
+      if (window.lucide) { lucide.createIcons(); }
+
+      /* ---- Dual table: search + grade filter ---- */
+      var rows = Array.prototype.slice.call(document.querySelectorAll('#dualBody tr'));
+      var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+      var q = document.getElementById('q');
+      var countLine = document.getElementById('countLine');
+      var emptyMsg = document.getElementById('emptyMsg');
+      var activeGrade = 'all';
+      function applyFilter(){
+        var term = (q.value || '').trim().toLowerCase();
+        var shown = 0;
+        rows.forEach(function(r){
+          var okGrade = (activeGrade === 'all' || r.getAttribute('data-grade') === activeGrade);
+          var hay = (r.textContent + ' ' + (r.getAttribute('data-search') || '')).toLowerCase();
+          var okTerm = (!term || hay.indexOf(term) !== -1);
+          var vis = okGrade && okTerm;
+          r.style.display = vis ? '' : 'none';
+          if (vis) shown++;
+        });
+        countLine.textContent = 'Showing ' + shown + ' of ' + rows.length + ' rows' + (activeGrade !== 'all' ? ' in this grade' : '') + (term ? ' matching “' + q.value.trim() + '”' : '') + '.';
+        emptyMsg.style.display = shown ? 'none' : 'block';
+      }
+      chips.forEach(function(c){
+        c.addEventListener('click', function(){
+          chips.forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+          c.setAttribute('aria-pressed','true');
+          activeGrade = c.getAttribute('data-grade');
+          applyFilter();
+        });
+      });
+      q.addEventListener('input', applyFilter);
+      applyFilter();
+
+      /* ---- Region tabs ---- */
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.rtab'));
+      tabs.forEach(function(t){
+        t.addEventListener('click', function(){
+          tabs.forEach(function(x){ x.setAttribute('aria-selected','false'); });
+          t.setAttribute('aria-selected','true');
+          document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+          document.getElementById(t.getAttribute('data-panel')).classList.add('active');
+        });
+      });
+
+      /* ---- Control list view toggle ---- */
+      var segBtns = Array.prototype.slice.call(document.querySelectorAll('.seg button'));
+      var colM = document.getElementById('colMosq'), colT = document.getElementById('colTick');
+      segBtns.forEach(function(b){
+        b.addEventListener('click', function(){
+          segBtns.forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+          b.setAttribute('aria-pressed','true');
+          var v = b.getAttribute('data-view');
+          colM.style.display = (v === 'tick') ? 'none' : '';
+          colT.style.display = (v === 'mosq') ? 'none' : '';
+          document.querySelector('.cols').style.gridTemplateColumns = (v === 'both') ? '' : '1fr';
+        });
+      });
+    </script>
+  </body>
+</html>

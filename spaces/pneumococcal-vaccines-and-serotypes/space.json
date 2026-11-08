@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Pneumococcal Vaccines and Serotypes",
+  "slug": "pneumococcal-vaccines-and-serotypes",
+  "managedCronJobs": []
+}

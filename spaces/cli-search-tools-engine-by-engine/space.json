@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "CLI search tools, engine by engine",
+  "slug": "cli-search-tools-engine-by-engine",
+  "managedCronJobs": []
+}

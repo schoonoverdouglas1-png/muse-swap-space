@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "CLI apps for Messenger, Muse, and Meta AI",
+  "slug": "cli-apps-for-messenger-muse-and-meta-ai",
+  "managedCronJobs": []
+}

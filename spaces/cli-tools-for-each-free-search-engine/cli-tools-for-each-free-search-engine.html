@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>CLI tools for each free search engine — Ubuntu backend guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f5f3; --surface:#ffffff; --surface2:#eef0ec; --ink:#171a17; --muted:#5b625b; --line:#d8dcd6;
+    --orange:#c7470f; --orange-soft:#fdeee6; --green:#166534; --green-bg:#e6f4ea; --amber:#92400e; --amber-bg:#fef3c7;
+    --red:#991b1b; --red-bg:#fee2e2; --teal:#0f766e; --code-bg:#111512; --code-ink:#e8ede8; --code-dim:#9fb0a0;
+    --chip:#e7eae5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1210; --surface:#171b18; --surface2:#1e2420; --ink:#eef1ee; --muted:#a7b0a7; --line:#2c332d;
+      --orange:#ff7a3d; --orange-soft:#2b1d14; --green:#4ade80; --green-bg:#14281c; --amber:#fbbf24; --amber-bg:#2b2110;
+      --red:#f87171; --red-bg:#2b1414; --teal:#2dd4bf; --code-bg:#0a0c0a; --code-ink:#e8ede8; --code-dim:#8a9a8c;
+      --chip:#242b26;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--orange);text-decoration-thickness:1px;text-underline-offset:2px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+  /* HERO */
+  .hero{padding:36px 0 8px}
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600}
+  h1{font-size:clamp(30px,5.2vw,52px);line-height:1.02;letter-spacing:-.02em;margin:10px 0 14px;font-weight:800;max-width:820px}
+  .lede{font-size:17px;color:var(--muted);max-width:760px;margin:0}
+  .lede strong{color:var(--ink)}
+  .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-top:14px}
+  /* terminal */
+  .term{margin-top:22px;background:var(--code-bg);color:var(--code-ink);border-radius:10px;overflow:hidden;border:1px solid #00000033}
+  .term-bar{display:flex;gap:7px;align-items:center;padding:10px 14px;border-bottom:1px solid #ffffff1f;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--code-dim)}
+  .dot{width:10px;height:10px;border-radius:50%}
+  .term pre{margin:0;padding:16px 18px 18px;font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.75;overflow-x:auto;white-space:pre}
+  .term .c{color:var(--code-dim)} .term .p{color:#ff9a5c} .term .g{color:#7ee2a0}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 6px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .stat b{font-size:30px;display:block;line-height:1;letter-spacing:-.02em}
+  .stat span{font-size:13px;color:var(--muted);display:block;margin-top:6px;line-height:1.4}
+  /* sections */
+  h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 6px}
+  h2+p.sub{color:var(--muted);margin:0 0 16px;max-width:760px;font-size:15px}
+  /* winner cards */
+  .winners{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .win{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:10px;padding:18px}
+  .win h3{margin:0 0 4px;font-size:18px}
+  .win .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--green);font-weight:600}
+  .win p{font-size:14px;color:var(--muted);margin:8px 0 12px}
+  .win p strong{color:var(--ink)}
+  code,.mono{font-family:"IBM Plex Mono",monospace;font-size:.92em}
+  .codeblock{background:var(--code-bg);color:var(--code-ink);border-radius:8px;padding:12px 14px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.65;overflow-x:auto;white-space:pre;position:relative}
+  .copybtn{position:absolute;top:8px;right:8px;background:#ffffff1a;color:#fff;border:1px solid #ffffff33;border-radius:6px;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:4px 9px;cursor:pointer}
+  .copybtn:active{transform:scale(.97)}
+  /* controls */
+  .controls{position:sticky;top:0;z-index:20;background:var(--bg);padding:14px 0 10px;border-bottom:1px solid var(--line);margin-top:34px}
+  .controls-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .chipbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+  .chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .searchbox{flex:1;min-width:180px}
+  .searchbox input{width:100%;padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;font-family:inherit}
+  .countline{font-size:13px;color:var(--muted);margin-top:8px;font-family:"IBM Plex Mono",monospace}
+  /* engine cards */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+  .card.hide{display:none}
+  .card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .card h3{margin:0;font-size:19px;letter-spacing:-.01em}
+  .card h3 .num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);font-weight:500;margin-right:6px}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap}
+  .b-yes{background:var(--green-bg);color:var(--green)} .b-warn{background:var(--amber-bg);color:var(--amber)} .b-no{background:var(--red-bg);color:var(--red)}
+  .method{font-size:14px;margin:8px 0 0}
+  .method strong{color:var(--ink)}
+  dl.facts{display:grid;grid-template-columns:86px 1fr;gap:5px 10px;font-size:13.5px;margin:14px 0;padding:12px;background:var(--surface2);border-radius:8px}
+  dl.facts dt{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+  dl.facts dd{margin:0}
+  .verdict{font-size:14px;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+  .verdict strong{display:block;margin-bottom:2px}
+  .src{font-size:12px;color:var(--muted);margin-top:10px;word-break:break-word}
+  .src a{font-size:12px}
+  /* stack / steps */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .step .n{width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;margin-bottom:10px}
+  .step h3{margin:0 0 6px;font-size:16px}
+  .step p{font-size:14px;color:var(--muted);margin:0 0 12px}
+  .step p strong{color:var(--ink)}
+  .note{background:var(--orange-soft);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:14px;margin-top:14px}
+  .note strong{color:var(--ink)}
+  /* table -> stacked on mobile */
+  .tablewrap{overflow:visible;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{ text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line)}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:break-word}
+  td code{overflow-wrap:anywhere}
+  td a{overflow-wrap:anywhere}
+  tr:last-child td{border-bottom:none}
+  /* open questions */
+  .oq{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 20px}
+  .oq li{margin:12px 0;font-size:14.5px}
+  .oq li::marker{color:var(--orange)}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted)}
+  footer ul{columns:2;column-gap:28px;padding-left:18px}
+  footer li{margin:5px 0;break-inside:avoid;word-break:break-word}
+  @media (max-width:860px){
+    .term pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12.5px}
+    .stats{grid-template-columns:1fr 1fr}
+    .winners,.grid,.steps{grid-template-columns:1fr}
+    footer ul{columns:1}
+    .tablewrap{border:none;background:transparent}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    tr{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:6px 0}
+    td{border-bottom:none;padding:6px 14px}
+    td::before{content:attr(data-l);display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Ubuntu · Terminal · Search — status checked 8 Nov 2026 · Maximum research mode</div>
+    <h1>Every free search engine, from one Ubuntu terminal</h1>
+    <p class="lede">You asked for the search engines assimilated into the Ubuntu backend — command-line ways to query the web, and a way to ask an AI to search for you. Here is the honest result: <strong>only three routes are both legitimate and genuinely free with no payment card</strong> — Tavily, Marginalia, and a self-hosted SearXNG. Everything else is card-gated, grey scraping, retired, or has no programmatic route at all. <strong>The maximum-research pass below goes further:</strong> every repository-style route beyond apt, desktop GUI apps, Android companions, and GNOME / OS-level integration — checked with variant phrasings before any “does not exist” verdict.</p>
+    <p class="meta">11 engines / services checked · 4 integration questions answered · Each verdict carries its source · Hedges and open questions are kept, not smoothed over · Second pass scope: Ubuntu 24.04 (Noble), late 2026</p>
+
+    <div class="term" aria-label="Terminal example">
+      <div class="term-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span style="margin-left:6px">douglas@ubuntu: ~/search</span></div>
+<pre><span class="c"># Works right now with no signup at all — Marginalia, key is literally "public":</span>
+<span class="p">$</span> curl <span class="g">"https://api2.marginalia-search.com/search?query=ubuntu+cli"</span> \
+    -H <span class="g">"API-Key: public"</span>
+<span class="c"># Works after a free sign-up for a key (no card) — Tavily, 1,000 credits/mo:</span>
+<span class="p">$</span> curl <span class="g">"https://api.tavily.com/search"</span> \
+    -H <span class="g">"Authorization: Bearer $TAVILY_API_KEY"</span> \
+    -d <span class="g">'{"query":"ubuntu cli search tools"}'</span></pre>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>3</b><span>Legitimate, card-free routes: Tavily, Marginalia, self-hosted SearXNG</span></div>
+      <div class="stat"><b>3</b><span>Legitimate but card-gated “free”: Brave, Gemini grounding, Mojeek trial</span></div>
+      <div class="stat"><b>2</b><span>Tools actually in Ubuntu apt: <code>ddgr</code> and <code>googler</code> — both grey scrapers</span></div>
+      <div class="stat"><b>4</b><span>No route at all: Bing API (retired), Ecosia, Startpage, Duck.ai</span></div>
+    </div>
+  </header>
+
+  <!-- WINNERS -->
+  <h2>Start here — the three that actually work for free</h2>
+  <p class="sub">If you install nothing else, install these. They are the only sanctioned, no-card paths to real web results from a Linux terminal today.</p>
+  <div class="winners">
+    <article class="win">
+      <div class="tag">✅ Best general web · Official · Pending sign-up</div>
+      <h3>1 · Tavily</h3>
+      <p><strong>1,000 API credits/month, no credit card required</strong> — requests hard-stop at zero. Basic search = 1 credit, advanced = 2. Called with <code>curl</code> to <code>api.tavily.com</code> or the pip SDK <code>tavily-python</code>. No apt package. <strong>Status on Ember’s box: pending your sign-up decision — not yet obtained.</strong></p>
+      <div class="codeblock"><button class="copybtn" data-copy="pip install tavily-python">Copy</button>pip install tavily-python
+# or plain curl — see terminal above</div>
+      <p class="src">Source: Tavily pricing, verified live 2026-11-08 — <a href="https://www.tavily.com/pricing">tavily.com/pricing</a></p>
+    </article>
+    <article class="win">
+      <div class="tag">✅ Keyless · Official · Nothing to install</div>
+      <h3>2 · Marginalia Search</h3>
+      <p>Official public API with the shared key literally <strong><code>public</code></strong> — just <code>curl</code>. Heavily rate-limited (HTTP 503 when the shared limit is hit) and a small, non-commercial index: strong on personal sites, blogs, wikis and forums; weak or absent for news and commerce, and it does not index Reddit in tests. Results are CC-BY-NC-SA 4.0. A free personal key is available by emailing contact@marginalia-search.com.</p>
+      <div class="codeblock"><button class="copybtn" data-copy='curl "https://api2.marginalia-search.com/search?query=YOUR+QUERY" -H "API-Key: public"'>Copy</button>curl "https://api2.marginalia-search.com/search?query=…" \
+  -H "API-Key: public"</div>
+      <p class="src">Source: Marginalia API docs, verified live 2026-11-08 — <a href="https://about.marginalia-search.com/article/api/">about.marginalia-search.com/article/api</a></p>
+    </article>
+    <article class="win">
+      <div class="tag">✅ Free forever · You run it · Grey upstreams</div>
+      <h3>3 · SearXNG (self-hosted)</h3>
+      <p>Open-source metasearch aggregating 70+ engines. Not a CLI — a Docker service you run: <strong>256 MB RAM minimum, 512 MB recommended, +50–100 MB for Valkey/Redis</strong>. Enable <code>json</code> in <code>settings.yml</code> (otherwise JSON requests get 403), then query it locally. Free, no key, no apt package. Caveat: upstream it still scrapes engines, so several engines block it — and public instances usually disable JSON, so self-hosting is the reliable path.</p>
+      <div class="codeblock"><button class="copybtn" data-copy='curl "http://localhost:8080/search?q=YOUR+QUERY&format=json"'>Copy</button>curl "http://localhost:8080/search?q=…&amp;format=json"</div>
+      <p class="src">Sources: <a href="https://selfhosting.sh/apps/searxng/">selfhosting.sh/apps/searxng</a> · <a href="https://railway.com/deploy/searxng-search-api">railway.com/deploy/searxng-search-api</a> · <a href="https://www.bitdoze.com/searxng-self-host-privacy-search/">bitdoze.com</a></p>
+    </article>
+  </div>
+
+  <!-- UBUNTU REPO INTEGRATION -->
+  <h2>Integrating through Ubuntu’s own repository interface</h2>
+  <p class="sub">This was the second half of your ask — can the engines come in through apt itself? Partly. Only two search tools live in the Ubuntu repositories, and both are grey scrapers. Everything official arrives by pip, npm, <code>curl</code>, or Docker — there is no apt package for any official search API.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Enable Universe, install the two apt tools</h3><p><strong><code>ddgr 2.2-1 [universe]</code></strong> (Ubuntu noble) for DuckDuckGo and <strong><code>googler 4.3.13-1 [universe]</code></strong> (Ubuntu questing listing) for Google are real apt packages — packaging exists even though the upstream services block the technique. Both scrape the consumer results page; neither is sanctioned.</p><div class="codeblock"><button class="copybtn" data-copy="sudo add-apt-repository universe && sudo apt update && sudo apt install ddgr googler">Copy</button>sudo add-apt-repository universe
+sudo apt update
+sudo apt install ddgr googler</div></div>
+    <div class="step"><div class="n">2</div><h3>Add the pip layer for the official APIs</h3><p>Tavily (<code>tavily-python</code>), DuckDuckGo’s library form (<code>ddgs</code>, pip only, formerly <code>duckduckgo_search</code>), and Gemini (<code>google-genai</code>) all install via pip. Serper, Brave and Mojeek need no install at all — just <code>curl</code> with a key header.</p><div class="codeblock"><button class="copybtn" data-copy="pip install tavily-python ddgs google-genai">Copy</button>pip install tavily-python ddgs google-genai</div></div>
+    <div class="step"><div class="n">3</div><h3>Run SearXNG as your local metasearch service</h3><p>Docker is the deployment route (Docker image / pip; no apt package). Budget <strong>512 MB RAM</strong> in typical Docker Compose guidance — the report confirms the ~150–300 MB ballpark only at the very low end (256 MB minimum). Turn on the <code>json</code> format in <code>settings.yml</code> or your agents will get 403s.</p><div class="codeblock"><button class="copybtn" data-copy='curl "http://localhost:8080/search?q=test&format=json"'>Copy</button># after starting the SearXNG container on :8080
+curl "http://localhost:8080/search?q=test&amp;format=json"</div></div>
+    <div class="step"><div class="n">4</div><h3>Ask an AI to search for you</h3><p>Two sanctioned shapes exist, and they are not the same product. <strong>Tavily / Serper / SerpApi return a results list</strong> an agent can read. <strong>Gemini with the <code>google_search</code> tool returns a model-written answer with citations</strong> — not raw results — and for Gemini 3+ it is <strong>not available on the API Free Tier</strong>: without billing enabled, calls return HTTP 429. With billing on, 5,000 grounded searches/month are included, then $14 per 1,000, plus token charges. Agent wrappers in this slot include <code>eggsearch</code> (single Rust binary, MCP + CLI), <code>ketch</code>, and Hermes Agent’s <code>web_search</code>.</p><div class="codeblock"><button class="copybtn" data-copy="pip install google-genai">Copy</button>pip install google-genai   # Gemini grounding
+npm i @google/gemini-cli   # or the gemini CLI</div></div>
+  </div>
+  <div class="note"><strong>Watch the upstream risk on Google results:</strong> Serper (2,500 free queries, one-time, no card) and SerpApi (250 searches/month free) are sanctioned by the vendor you pay — but upstream they obtain Google results Google does not offer via an official API. Google sued SerpApi in Dec 2025 over anti-bot circumvention; the case was unresolved as of Aug 2026. Treat that whole route as grey upstream, with continuity risk.</div>
+
+  <!-- MAXIMUM RESEARCH MODE — BEYOND APT -->
+  <h2>Maximum research mode — beyond apt, there is a lot more</h2>
+  <p class="sub">Question 1: beyond apt, what repository-style routes exist — PPAs, Snap, Flatpak / Flathub, vendor .deb, pip / npm / cargo? <strong>Verdict: EXISTS — many.</strong> The strongest official ones are Tavily via PyPI / npm, Brave via its own vendor apt repository / Snap / Flathub, and SearXNG and Marginalia via official Docker / install-script self-hosting (not a store package). <strong>No official PPA, Snap, or Flatpak was found for Tavily, Marginalia, or SearXNG itself.</strong> Method note for this whole pass: all evidence is from web search / page fetch (index); the live research browser failed to open Flathub (<code>page_gone</code>, no tabs retained), so no claim in this pass is flagged “verified live.”</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tool / engine</th><th>Route</th><th>Package / command</th><th>Official?</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td data-l="Tool"><strong>Tavily</strong> — search API for AI agents</td><td data-l="Route">PyPI — CLI</td><td data-l="Package"><code>pip install tavily-cli</code> → <code>tvly login</code>, <code>tvly search "…"</code>; also <code>curl -fsSL https://cli.tavily.com/install.sh | bash</code></td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://docs.tavily.com/llms.txt">docs.tavily.com/llms.txt</a> · <a href="https://pypi.org/project/tavily-cli/0.1.1/">pypi.org/project/tavily-cli/0.1.1</a></td></tr>
+      <tr><td data-l="Tool"><strong>Tavily</strong></td><td data-l="Route">PyPI — SDK</td><td data-l="Package"><code>pip install tavily-python</code> (<code>TavilyClient</code>)</td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://docs.tavily.com/llms.txt">docs.tavily.com/llms.txt</a> · <a href="https://pypi.org/project/tavily-python/0.7.24/">pypi.org/project/tavily-python/0.7.24</a></td></tr>
+      <tr><td data-l="Tool"><strong>Tavily</strong></td><td data-l="Route">npm</td><td data-l="Package"><code>npm i @tavily/core</code> (JS/TS SDK)</td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://docs.tavily.com/sdk/javascript/quick-start">docs.tavily.com/sdk/javascript/quick-start</a></td></tr>
+      <tr><td data-l="Tool"><strong>Tavily</strong></td><td data-l="Route">npm / remote — MCP</td><td data-l="Package"><code>npx -y tavily-mcp@latest</code>, or remote <code>https://mcp.tavily.com/mcp/</code></td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://mcp.so/servers/tavily-mcp">mcp.so/servers/tavily-mcp</a></td></tr>
+      <tr><td data-l="Tool"><strong>Brave Browser / Brave Search</strong></td><td data-l="Route">Vendor apt repository (not a PPA)</td><td data-l="Package">Add <code>brave-browser-archive-keyring.gpg</code> + <code>brave-browser.sources</code>, then <code>sudo apt install brave-browser</code>; also one-liner <code>curl -fsS https://dl.brave.com/install.sh | sh</code></td><td data-l="Official?">✅ Official — Brave’s recommended route</td><td data-l="Source"><a href="https://brave.com/linux/?ref=sebday.dev">brave.com/linux</a></td></tr>
+      <tr><td data-l="Tool"><strong>Brave Browser</strong></td><td data-l="Route">Snap Store</td><td data-l="Package"><code>sudo snap install brave</code> — Brave Software, verified publisher, “This package is official”, updated 5 Nov 2026</td><td data-l="Official?">✅ Official, but Brave says it is “not yet working as well” as native packages</td><td data-l="Source"><a href="https://snapcraft.io/install/brave/ubuntu">snapcraft.io/install/brave/ubuntu</a> · <a href="https://brave.com/linux/?ref=sebday.dev">brave.com/linux</a></td></tr>
+      <tr><td data-l="Tool"><strong>Brave Browser</strong></td><td data-l="Route">Flatpak / Flathub</td><td data-l="Package"><code>flatpak install flathub com.brave.Browser</code> — maintained by Brave Software, same caveat / recommendation to prefer the apt repo</td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://brave.com/linux/?ref=sebday.dev">brave.com/linux</a></td></tr>
+      <tr><td data-l="Tool"><strong>Brave Browser</strong></td><td data-l="Route">Vendor .deb</td><td data-l="Package">(Pre-)releases for all channels on GitHub in DEB / RPM / ZIP formats</td><td data-l="Official?">✅ Official</td><td data-l="Source"><a href="https://brave.com/linux/?ref=sebday.dev">brave.com/linux</a></td></tr>
+      <tr><td data-l="Tool"><strong>Brave Search API</strong></td><td data-l="Route">npm (third-party wrappers) / Brave MCP</td><td data-l="Package">e.g. <code>npm install brave-search</code> — explicitly “not officially associated with Brave Software”; Brave’s own agent route is its MCP server <code>@brave/brave-search-mcp-server</code> (per secondary cataloguing)</td><td data-l="Official?">Mixed: wrapper third-party</td><td data-l="Source"><a href="https://jsr.io/@tyr/brave-search">jsr.io/@tyr/brave-search</a></td></tr>
+      <tr><td data-l="Tool"><strong>SearXNG</strong> — self-hosted metasearch</td><td data-l="Route">Docker (official image / compose)</td><td data-l="Package">Compose file now in main repo <code>container/docker-compose.yml</code>, image <code>docker.io/searxng/searxng</code>; <code>docker compose up -d</code> on Ubuntu 24.04</td><td data-l="Official?">✅ Official project</td><td data-l="Source"><a href="https://www.ssdnodes.com/learn/searxng-self-hosted-search">ssdnodes.com/learn/searxng-self-hosted-search</a></td></tr>
+      <tr><td data-l="Tool"><strong>SearXNG</strong></td><td data-l="Route">Official install script (bare metal)</td><td data-l="Package"><code>git clone https://github.com/searxng/searxng.git &amp;&amp; sudo -H ./utils/searxng.sh install all</code></td><td data-l="Official?">✅ Official project</td><td data-l="Source"><a href="https://www.ssdnodes.com/learn/searx-vs-searxng">ssdnodes.com/learn/searx-vs-searxng</a></td></tr>
+      <tr><td data-l="Tool"><strong>SearXNG in apt</strong></td><td data-l="Route">—</td><td data-l="Package"><strong>Gone in 24.04:</strong> predecessor <code>searx</code> was deleted before 24.04 (last shipped 23.10); <code>apt install searx</code> fails on Noble. No SearXNG Snap or Flathub package was found (<code>site:flathub.org</code> / <code>site:snapcraft.io</code> searches returned no results).</td><td data-l="Official?">—</td><td data-l="Source"><a href="https://www.ssdnodes.com/learn/searx-vs-searxng">ssdnodes.com/learn/searx-vs-searxng</a></td></tr>
+      <tr><td data-l="Tool"><strong>Marginalia Search</strong> — self-hosted engine</td><td data-l="Route">Git + install script / Docker</td><td data-l="Package">x86-64 Linux only tested, JDK 25 + Docker, <code>run/install.sh</code> with “Full Marginalia Search instance” mode; web UI at localhost:8080</td><td data-l="Official?">✅ Official project (server, not a client)</td><td data-l="Source"><a href="https://deepwiki.com/MarginaliaSearch/MarginaliaSearch/11.1-setup-installation-and-configuration">deepwiki.com/MarginaliaSearch — setup</a></td></tr>
+      <tr><td data-l="Tool"><strong>Marginalia Search</strong></td><td data-l="Route">HTTP API — <strong>no SDK package</strong></td><td data-l="Package"><code>api2.marginalia-search.com</code>, header <code>API-Key: public</code> (shared / rate-limited) or a key by email; docs give only <code>curl</code> and Python <code>requests</code> samples</td><td data-l="Official?">✅ Official API, no pip/npm/cargo package</td><td data-l="Source"><a href="https://about.marginalia-search.com/article/api/">about.marginalia-search.com/article/api</a></td></tr>
+      <tr><td data-l="Tool"><strong>Marginalia Search</strong></td><td data-l="Route">npm-from-source (MCP server)</td><td data-l="Package"><code>marginalia-mcp-server</code> by bmorphism: clone, <code>npm install</code>, <code>npm run build</code>; <code>MARGINALIA_API_KEY</code> optional, defaults to public</td><td data-l="Official?">Third-party</td><td data-l="Source"><a href="https://mcpservers.org/servers/bmorphism/marginalia-mcp-server">mcpservers.org/servers/bmorphism/marginalia-mcp-server</a></td></tr>
+      <tr><td data-l="Tool"><strong>DuckDuckGo</strong> — modern ddgr alternative</td><td data-l="Route">PyPI</td><td data-l="Package"><code>pip install ddgs</code> (current name; formerly <code>pip install -U duckduckgo_search</code>) → CLI <code>ddgs text -k "…"</code></td><td data-l="Official?">Unofficial scraper (same class as ddgr/googler)</td><td data-l="Source"><a href="https://pypi.org/project/duckduckgo-search/7.0.1/">pypi.org/project/duckduckgo-search/7.0.1</a></td></tr>
+      <tr><td data-l="Tool"><strong>DuckDuckGo / SearXNG / Serper-Google</strong></td><td data-l="Route">Cargo (crates.io)</td><td data-l="Package"><code>cargo install hodis</code> — terminal search for people and agents, DuckDuckGo with no setup, SearXNG (your instance or one it sets up), or Google via Serper key; also an MCP tool</td><td data-l="Official?">Third-party, small/recent — treat as experimental. No direct crates.io link is cited: the crates.io URL itself was not returned verbatim in the research.</td><td data-l="Source">Crates.io <code>hodis</code> listing, via search result (index snippet)</td></tr>
+      <tr><td data-l="Tool"><strong>DuckDuckGo</strong></td><td data-l="Route">Cargo</td><td data-l="Package"><code>cargo install duckduckgo-search-cli</code>; also a <code>web-search</code> crate (<code>cargo install web-search</code>, 40 providers incl. Google/Bing/DDG/Searx/Brave/Mojeek)</td><td data-l="Official?">Third-party — search-index snippets only; no verbatim crates.io URL was returned, so these are named without a link rather than with a reconstructed one</td><td data-l="Source">Search-index snippets only</td></tr>
+      <tr><td data-l="Tool"><strong>ddgr</strong></td><td data-l="Route">PPA (historical)</td><td data-l="Package"><code>ppa:twodopeshaggy/jarun</code> is cited in 2017-era guides as maintained by ddgr’s developer</td><td data-l="Official?">Third-party/developer PPA, <strong>not verified as current for Noble (24.04)</strong> — do not rely on it without checking Launchpad first</td><td data-l="Source"><a href="https://en.ubunlog.com/ddgr-looks-for-duckduckgo-terminal/">en.ubunlog.com/ddgr-looks-for-duckduckgo-terminal</a></td></tr>
+    </tbody></table></div>
+  <div class="note"><strong>Name collisions — read before you install:</strong> PyPI <code>marginalia</code> (<code>pip install marginalia</code>) is <strong>not</strong> Marginalia Search — it is an unrelated Obsidian / Markdown-vault toolkit (<a href="https://pypi.org/project/marginalia/">pypi.org/project/marginalia</a>). And npm <code>tavily-cli</code> is reported by a third-party install guide to be a squatter — the official CLI is the <strong>PyPI</strong> <code>tavily-cli</code> (guide: <a href="https://github.com/elnora-ai/elnora-websearch-tools/blob/HEAD/INSTALL_FOR_AGENTS.md">github.com/elnora-ai/elnora-websearch-tools</a>). No official PPA was found for any of Tavily, Marginalia, SearXNG, or Brave — Brave uses its own apt repo, which is the vendor-repo equivalent, not a Launchpad PPA.</div>
+
+  <!-- WHAT THIS MEANS ON EMBER'S BOX -->
+  <h2>What this means on Ember’s Ubuntu box today</h2>
+  <p class="sub">How the usable sanctioned lanes actually assimilate into this backend — Ember’s own assimilation, from her measurements and a three-pass AI check tonight (8 Nov 2026). This section supersedes and merges the earlier engine-by-engine page on the same research; the full per-engine record follows below.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Working from her terminal today</h3><p>The sanctioned lanes that work today are <strong>the connector web-search CLI already in hand</strong> and <strong>Marginalia’s official keyless API</strong> (<code>api2.marginalia-search.com</code>, header <code>API-Key: public</code>). The box’s earlier Marginalia tests failed only because they used the wrong endpoint shape — <strong>a keyless retest with the documented shape is the owed next step</strong>.</p><div class="codeblock"><button class="copybtn" data-copy='curl "https://api2.marginalia-search.com/search?query=YOUR+QUERY" -H "API-Key: public"'>Copy</button>curl "https://api2.marginalia-search.com/search?query=…" \
+  -H "API-Key: public"</div></div>
+    <div class="step"><div class="n">2</div><h3>Tavily — lead new lane, pending your word</h3><p>Tavily (<strong>1,000 credits/month, no card</strong>) is the lead <strong>new</strong> lane — but its sign-up is <strong>your per-candidate decision</strong>. It is presented here as <strong>pending your word, not obtained</strong>: no Tavily key exists on this box until you say go.</p></div>
+    <div class="step"><div class="n">3</div><h3>What apt actually carries for this shelf</h3><p>Ubuntu apt carries <strong>only <code>ddgr 2.2-1</code> and <code>googler 4.3.13-1</code></strong> for this shelf — both grey scrapers. <strong>Nothing sanctioned installs from apt</strong>: there is no apt package for Tavily, Marginalia, or SearXNG (pip / <code>curl</code> / Docker respectively).</p></div>
+    <div class="step"><div class="n">4</div><h3>Gateway design — a separate pending decision</h3><p>The gateway design — <strong>one local OpenAI-compatible interface fanning out to free model lanes</strong> — remains a <strong>separate pending decision</strong>: build her own stdlib gateway vs verify an existing router first. Nothing on this page settles that choice.</p></div>
+  </div>
+
+  <!-- DESKTOP GUI + ANDROID -->
+  <h2>Desktop GUI apps — none official for Tavily or Marginalia</h2>
+  <p class="sub">Question 2: are there Ubuntu desktop (GUI) apps for Tavily or Marginalia Search? <strong>Verdict: No official desktop GUI exists for either engine. Plainly: Tavily ships only API / SDK / CLI / MCP; Marginalia ships only a website, an API, and self-hostable server code.</strong> Evidence for the negative: Tavily deployment listings classify it as Web-Based Yes, Windows No, Mac No, Linux No, Android No (<a href="https://slashdot.org/software/comparison/Alpha-Inquire-vs-Tavily/">slashdot.org</a> · <a href="https://sourceforge.net/software/compare/Apify-vs-Tavily/">sourceforge.net</a>). Variant searches tried included “Tavily desktop app Linux Ubuntu GUI”, <code>"Tavily" app Linux download deb snap flatpak</code>, <code>"Marginalia Search" Linux install PPA snap flatpak</code>, <code>"Marginalia Search" GUI client app download</code>, and <code>"SearXNG" desktop app Linux GUI client download</code> — none returned a dedicated official GUI for either engine. Credible third-party options that do exist:</p>
+  <div class="steps">
+    <div class="step"><h3>Newelle — the closest thing to a “Tavily GUI”</h3><p><code>flatpak install flathub io.github.qwersyk.Newelle</code> — GNOME AI assistant / chatbot GUI on Flathub. Web Search is implemented <strong>with SearXNG, DuckDuckGo, and Tavily</strong> (v0.9.5, per GNOME’s This Week in GNOME). This is an assistant that can call Tavily, not a Tavily search client. <strong>No Marginalia backend was listed.</strong></p><p class="src">Sources: <a href="https://flathub.org/en/apps/io.github.qwersyk.Newelle">flathub.org/en/apps/io.github.qwersyk.Newelle</a> · <a href="https://discourse.gnome.org/t/198-two-more-weeks/28665.rss">discourse.gnome.org (TWIG)</a></p></div>
+    <div class="step"><h3>WebCatalog wrappers — Tavily &amp; SearXNG</h3><p>WebCatalog turns the Tavily website into a desktop-app window on Linux. Explicitly unofficial: “WebCatalog is not affiliated, associated, authorized, endorsed by or in any way officially connected to Tavily.” The same wrapper treatment exists for a SearXNG instance / site, with the same not-affiliated disclaimer — included as the analogous SearXNG GUI route; there is no native Flathub SearXNG client.</p><p class="src">Sources: <a href="https://WebCatalog.io/en/apps/tavily">WebCatalog.io/en/apps/tavily</a> · <a href="https://webcatalog.io/en/apps/searxng">webcatalog.io/en/apps/searxng</a></p></div>
+    <div class="step"><h3>Marginalia Search — Firefox add-on (by NUH)</h3><p>Browser add-on, not a standalone app: “Easily add Marginalia as a search engine in Firefox”, v2.0.0, updated 1 Apr 2025. <strong>The only named Marginalia “client” for the desktop found.</strong> On Ubuntu this is the practical GUI integration: Marginalia becomes a Firefox address-bar search engine.</p><p class="src">Source: <a href="https://addons.mozilla.org/en-US/firefox/addon/marginalia-search/">addons.mozilla.org — marginalia-search</a></p></div>
+    <div class="step"><h3>Self-hosted web UI — Marginalia / SearXNG</h3><p>If you install the engine itself (see the routes table above), its own web interface serves locally — Marginalia install docs put the web interface at <code>http://localhost:8080</code>. Official web UI, but it is a server you run, not a client app.</p><p class="src">Source: <a href="https://deepwiki.com/MarginaliaSearch/MarginaliaSearch/11-deployment-and-configuration">deepwiki.com/MarginaliaSearch — deployment</a></p></div>
+  </div>
+  <div class="note"><strong>Found incidentally, not counted:</strong> Penguin Mail — a Linux GTK mail GUI whose assistant can web-search via Brave or your own SearXNG, distributed via its own Flatpak repo / .deb / snap per its README (<a href="https://github.com/c9dev/penguin-mail/blob/HEAD/README.md">github.com/c9dev/penguin-mail</a>) — was found incidentally; it was not fully vetted and is not counted as a search client. It is a mail app with a search-using assistant, and it does not use Tavily / Marginalia.</div>
+
+  <h2>Android apps — none official for Tavily or Marginalia either</h2>
+  <p class="sub">Question 3: Android apps that complement Tavily or Marginalia? <strong>Verdict: No official Android app exists for either engine, and no dedicated third-party Tavily or Marginalia search app was found on Google Play or F-Droid</strong> (no Google Play or F-Droid listing). Variants tried included “Tavily Android app Google Play”, <code>site:play.google.com Tavily search AI</code> (returned only unrelated apps: TAVILI wholesale food ordering, Taviliro medication tracker, TAV Mobile airports), <code>site:f-droid.org Tavily</code> (no results), “Marginalia Search Android app F-Droid”, and <code>site:f-droid.org Marginalia search</code> (no results). Every Android app actually named “Marginalia” found is an unrelated reading / library app (e.g. AppBrain’s Marginalia, a book / library tracker — <a href="https://www.appbrain.com/app/marginalia/com.brulo.folio.aveni.reader">appbrain.com/app/marginalia</a>). Tavily’s deployment listings also say Android App: No. What does exist:</p>
+  <div class="steps">
+    <div class="step"><h3>WM Keyboard — a genuine Tavily complement</h3><p><code>com.wasimaster.wmkeyboard</code> on F-Droid (also other builds). An Android keyboard whose Web / image search tool is backed by <strong>Brave by default, Tavily with a key of your own (from app.tavily.com, free plan 1,000 credits/month), or a SearXNG instance you name</strong>. Search from any app’s text field — but it is a keyboard with a search tool, not a Tavily app, and no build ships a Tavily key.</p><p class="src">Sources: <a href="https://wmkeyboard.app/tools/search/">wmkeyboard.app/tools/search</a> · <a href="https://f-droid.org/en/packages/com.wasimaster.wmkeyboard/">f-droid.org — com.wasimaster.wmkeyboard</a></p></div>
+    <div class="step"><h3>Firefox for Android — manual custom search engine</h3><p>Browser, not an app-store listing for Marginalia. Firefox for Android’s Default-search-engine screen has <strong>Add search engine</strong> taking a name and a search-string URL with <code>%s</code> — the documented way to add engines like Marginalia that “rarely appear preinstalled”. <strong>No Marginalia-specific Android add-on compatibility was verified</strong> (the NUH add-on above is listed for Firefox generally).</p><p class="src">Source: <a href="https://www.searchengines.net/how-to/change-default-search-engine-android/">searchengines.net — change default search engine on Android</a></p></div>
+    <div class="step"><h3>searxist — for comparison, SearXNG only</h3><p>F-Droid, v2026.10.10. Shows what a real client looks like when one exists: wraps SearXNG (and 4get / Degoog) in a WebView with Material You, system search-bar widget and popup text action, public or own instances, Android 5+. <strong>It does not support Tavily or Marginalia.</strong></p><p class="src">Source (opened in the research): <a href="https://f-droid.org/packages/xyz.linerly.searxist/">f-droid.org/packages/xyz.linerly.searxist</a></p></div>
+    <div class="step"><h3>So on Android, the honest setup is…</h3><p>Your own Tavily key inside WM Keyboard for search-from-anywhere, or Marginalia added by hand as a custom search engine in Firefox for Android. There is no official app to install for either engine — anyone offering one under those names is not the engine’s own app.</p></div>
+  </div>
+
+  <!-- GNOME / OS INTEGRATION -->
+  <h2>Piped into the OS itself? Not for these three engines</h2>
+  <p class="sub">Question 4: any Ubuntu lens / scope, GNOME Shell search provider, or desktop-environment integration that pipes web search results from these engines into the OS? <strong>For Tavily / Marginalia / SearXNG specifically: DOES NOT EXIST.</strong> Variant searches — “GNOME search provider SearXNG Tavily Marginalia extension”, “Tavily search provider GNOME Shell OR KDE OR Albert OR Ulauncher OR Rofi”, “Marginalia search provider GNOME OR KDE OR Ulauncher OR Albert plugin” — returned no provider, lens, scope, runner, or launcher plugin for any of those three engines. <strong>For web search generally: EXISTS, but generic (Google / DuckDuckGo / Bing), and the first-party Ubuntu one is 26.04-only.</strong></p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Integration</th><th>Ubuntu version</th><th>Behaviour</th><th>Official?</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td data-l="Integration"><strong>GNOME Web (Epiphany) search provider</strong></td><td data-l="Version">24.04-available (install Epiphany: apt <code>epiphany-browser</code> 46.x in Noble, or <code>flatpak install flathub org.gnome.Epiphany</code>)</td><td data-l="Behaviour">GNOME Web “has offered its own search provider for years” — enable “Web” in Settings → Search and results / a web-search entry appear in the Overview. Engine is whatever Epiphany is configured with (DuckDuckGo / Bing / Google presets), not Tavily / Marginalia.</td><td data-l="Official?">Upstream GNOME</td><td data-l="Source"><a href="https://www.omgubuntu.co.uk/2026/03/ubuntu-2604-gnome-search-extensions">omgubuntu.co.uk</a> · <a href="https://www.zdnet.com/article/6-hidden-gnome-search-tricks-every-linux-user-should-try/">zdnet.com</a></td></tr>
+      <tr><td data-l="Integration"><strong>Web Search Provider (Ubuntu)</strong></td><td data-l="Version"><strong>26.04 only — NOT in 24.04</strong></td><td data-l="Behaviour">Ubuntu release notes: “Added a GNOME Shell search provider for web search — You can now initiate a web search with your default browser from the GNOME Shell global search”. OMG! Ubuntu clarifies: it only <em>initiates</em> a Google search — on explicit click it opens Firefox with the pre-filled query (with Ubuntu referral parameters); the query is not sent anywhere by typing alone.</td><td data-l="Official?">✅ Official Ubuntu</td><td data-l="Source"><a href="https://documentation.ubuntu.com/release-notes/26.04/changes-since-previous-interim/">documentation.ubuntu.com — 26.04 release notes</a> · <a href="https://www.omgubuntu.co.uk/2026/03/ubuntu-2604-gnome-search-extensions">omgubuntu.co.uk</a></td></tr>
+      <tr><td data-l="Integration"><strong>Snap Search Provider (Ubuntu)</strong></td><td data-l="Version"><strong>26.04 only</strong></td><td data-l="Behaviour">Matches Overview typing against uninstalled Snap Store apps via <code>snapd</code>, opens App Center on click. App discovery, not web search.</td><td data-l="Official?">✅ Official Ubuntu</td><td data-l="Source">Same two sources as above</td></tr>
+      <tr><td data-l="Integration"><strong>Browser Search Provider (GNOME extension)</strong></td><td data-l="Version">24.04-compatible extension model</td><td data-l="Behaviour">Adds a provider to open links / search Google (<code>g</code>), DuckDuckGo (<code>d</code>), Bing (<code>b</code>), YouTube (<code>y</code>) in the default browser straight from Shell search. Opens the browser — does not render results in the Shell.</td><td data-l="Official?">Third-party</td><td data-l="Source"><a href="https://extensions.gnome.org/extension/7454/browser-search-provider/">extensions.gnome.org/extension/7454</a></td></tr>
+      <tr><td data-l="Integration"><strong>DuckDuckGo / Google Search Provider (GNOME extensions)</strong></td><td data-l="Version">—</td><td data-l="Behaviour">Uses DuckDuckGo’s Instant Answer API (<code>api.duckduckgo.com</code>) to show an instant-answer result in the Shell, linking out to the engine.</td><td data-l="Official?">Third-party</td><td data-l="Source"><a href="https://extensions.gnome.org/review/17658">extensions.gnome.org/review/17658</a></td></tr>
+      <tr><td data-l="Integration"><strong>Web Search Dialog (GNOME extension)</strong></td><td data-l="Version">—</td><td data-l="Behaviour">Ctrl+Space dialog, DuckDuckGo instant result / definition inside the dialog, choose / add multiple search engines with keywords, Enter opens the result in the default browser. Custom engines can be added, which in principle could point at a Marginalia / SearXNG URL — but that is user configuration, not a shipped Marginalia / SearXNG provider.</td><td data-l="Official?">Third-party</td><td data-l="Source"><a href="https://extensions.gnome.org/extension/549/web-search-dialog/">extensions.gnome.org/extension/549</a></td></tr>
+      <tr><td data-l="Integration"><strong>Search Does Search (GNOME extension, in review)</strong></td><td data-l="Version">Needs <code>gir1.2-webkit2-4.1</code> on Debian/Ubuntu</td><td data-l="Behaviour">The most “piped-in” design found: the engine’s own results page <strong>renders right there in the GNOME Overview search list</strong> — read / scroll / click without leaving the Overview. Engines offered in settings: <strong>DuckDuckGo or Google only</strong>.</td><td data-l="Official?">Third-party, still in review at time of the review page</td><td data-l="Source"><a href="https://extensions.gnome.org/review/75841">extensions.gnome.org/review/75841</a></td></tr>
+      <tr><td data-l="Integration"><strong>Unity Lens / Scope (historical)</strong></td><td data-l="Version">Pre-GNOME Ubuntu (Unity 7/8)</td><td data-l="Behaviour">Scopes were “gracefully retired”; the Amazon shopping lens and online scopes were turned off by default / removed from 16.04 onward. There is no current Unity lens for these engines on 24.04’s GNOME desktop.</td><td data-l="Official?">Retired Canonical tech</td><td data-l="Source">ubuntu.com/blog (via search snippet) and The Register’s scopes-retirement coverage found in search</td></tr>
+    </tbody></table></div>
+  <div class="note"><strong>Practical implication for a 24.04 user:</strong> to get OS-level web search today you either (a) install Epiphany and enable its Web provider, (b) install one of the third-party extensions above (Google / DuckDuckGo only), or (c) upgrade to 26.04 for Ubuntu’s built-in Google Web Search Provider. <strong>None of these routes delivers Tavily, Marginalia, or SearXNG results into the Shell out of the box.</strong></div>
+
+  <!-- FILTER + ALL ENGINES -->
+  <div class="controls" id="engines">
+    <div class="controls-row" role="group" aria-label="Filter engines by verdict">
+      <button class="chipbtn" data-filter="all" aria-pressed="true">All 11</button>
+      <button class="chipbtn" data-filter="yes" aria-pressed="false">✅ Usable free</button>
+      <button class="chipbtn" data-filter="warn" aria-pressed="false">⚠️ Card-gated / grey</button>
+      <button class="chipbtn" data-filter="no" aria-pressed="false">❌ No free route</button>
+      <div class="searchbox"><input type="search" id="q" placeholder="Filter by name or tool — e.g. ddgr, Tavily, SearXNG…" aria-label="Search engines"></div>
+    </div>
+    <div class="countline" id="countline">Showing all 11 engines</div>
+  </div>
+
+  <div class="grid" id="grid">
+    <!-- 1 Tavily -->
+    <article class="card" data-status="yes" data-text="tavily serper serpapi eggsearch ketch hermes hosted developer search api curl pip">
+      <div class="card-head"><h3><span class="num">§1</span>Hosted developer search — Tavily</h3><span class="badge b-yes">✅ Usable free</span></div>
+      <p class="method"><strong>Best method:</strong> Tavily API via <code>curl</code> / pip SDK. Alternatives in the same slot: Serper (<code>google.serper.dev/search</code>, header <code>X-API-KEY</code>), SerpApi, and agent CLIs <code>eggsearch</code>, <code>ketch</code>, Hermes <code>web_search</code>.</p>
+      <dl class="facts"><dt>Official?</dt><dd>✅ Official — Tavily is the vendor’s own product. Serper/SerpApi are vendor-sanctioned but grey upstream (see note above).</dd><dt>Key?</dt><dd>Yes — free signup</dd><dt>Card?</dt><dd><strong>No</strong></dd><dt>Free limit</dt><dd>Tavily: 1,000 credits/mo. Serper alt: 2,500 one-time. SerpApi: 250/mo.</dd><dt>Packaging</dt><dd>pip / curl. <code>eggsearch</code> = standalone Rust binary (GitHub/cargo), not apt/pip.</dd><dt>On this box</dt><dd>Tavily is the lead new lane but <strong>pending Douglas’s sign-up decision — not obtained</strong></dd></dl>
+      <div class="verdict"><strong>Verdict</strong>The cleanest legitimate free route in this whole guide.</div>
+      <p class="src">Sources: <a href="https://www.tavily.com/pricing">tavily.com/pricing</a> (verified live) · <a href="https://parallel.ai/articles/best-free-web-search-api">parallel.ai/articles/best-free-web-search-api</a></p>
+    </article>
+
+    <!-- 2 Bing -->
+    <article class="card" data-status="no" data-text="bing microsoft azure grounding retired api">
+      <div class="card-head"><h3><span class="num">§2</span>Bing (Microsoft)</h3><span class="badge b-no">❌ No</span></div>
+      <p class="method"><strong>Best method:</strong> None. Formerly Bing Web Search API v7 via Azure. Successor “Grounding with Bing Search” in Azure AI Foundry returns an LLM answer with citations — Microsoft states developers have <strong>no access to the raw content</strong>. Grey fallback: scraping <code>bing.com/search</code> via SearXNG / <code>openserp</code> / a SERP API.</p>
+      <dl class="facts"><dt>Official?</dt><dd>Was official — <strong>retired 11 Aug 2025</strong>; endpoints now return HTTP 410 Gone, no new keys</dd><dt>Key?</dt><dd>No new keys</dd><dt>Card?</dt><dd>N/A</dd><dt>Free limit</dt><dd>None. Grounding: $14 per 1,000 transactions (Sept 2026 listing; some Oct 2026 reads still cite $35/1,000 — price in flux), paid Azure only</dd><dt>Packaging</dt><dd>Azure SDKs (pip <code>azure-ai-*</code>); no apt CLI</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>No official Bing results API exists any more — only paid Azure grounding (answers, not results) or grey, captcha-prone scraping.</div>
+      <p class="src">Sources: <a href="https://www.searxncrawl.io/bing-google-search-api-alternative/">searxncrawl.io</a> · <a href="https://fe.tonywang.io/blog/bing-search-api-alternatives">fe.tonywang.io</a> · <a href="https://serplify.io/blog/bing-search-api-alternatives/">serplify.io</a> — all quoting Microsoft Learn</p>
+    </article>
+
+    <!-- 3 DDG -->
+    <article class="card" data-status="warn" data-text="duckduckgo ddgr ddgs instant answer api scrape html">
+      <div class="card-head"><h3><span class="num">§3</span>DuckDuckGo</h3><span class="badge b-warn">⚠️ Grey only</span></div>
+      <p class="method"><strong>Best method:</strong> <code>ddgr</code> (CLI, scrapes the HTML version) or <code>ddgs</code> (pip library + CLI). The official Instant Answer API (<code>api.duckduckgo.com/?q=…&amp;format=json</code>) is sanctioned but is <strong>not web search</strong> — Wikipedia-style abstracts, empty for most queries.</p>
+      <dl class="facts"><dt>Official?</dt><dd>⚠️ Grey for results — <code>ddgr</code> itself states it “isn’t affiliated to DuckDuckGo in any way”; DDG terms prohibit scraping. Official only for Instant Answers.</dd><dt>Key?</dt><dd>No</dd><dt>Card?</dt><dd>No</dd><dt>Free limit</dt><dd>Unlimited in theory; in practice <code>ddgs</code> raises <code>RatelimitException: 202 Ratelimit</code>, datacenter/VPN IPs throttled almost immediately, bot-check/captcha pages. ~1 req/s is the community-safe pace.</dd><dt>Packaging</dt><dd><strong>apt: <code>ddgr 2.2-1 [universe]</code></strong>, also snap and .deb; <code>ddgs</code> via pip</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Works free at low volume from a residential IP; unreliable under automation.</div>
+      <p class="src">Sources: <a href="https://packages.ubuntu.com/eu/noble/misc/">packages.ubuntu.com (noble)</a> · <a href="https://www.browserfoundry.cloud/blog/duckduckgo-search-api">browserfoundry.cloud</a> · <a href="https://link.sc/blog/duckduckgo-search-api-guide">link.sc</a></p>
+    </article>
+
+    <!-- 4 Brave -->
+    <article class="card" data-status="warn" data-text="brave search api subscription token mcp npm">
+      <div class="card-head"><h3><span class="num">§4</span>Brave Search</h3><span class="badge b-warn">⚠️ Card required</span></div>
+      <p class="method"><strong>Best method:</strong> Brave Search API — <code>GET https://api.search.brave.com/res/v1/web/search</code> with header <code>X-Subscription-Token</code>, via <code>curl</code>, community SDKs, or Brave’s official MCP server (npm <code>@brave/brave-search-mcp-server</code>). Own independent index, 30B+ pages.</p>
+      <dl class="facts"><dt>Official?</dt><dd>✅ Official API. Scraping <code>search.brave.com</code> is grey.</dd><dt>Key?</dt><dd>Yes</dd><dt>Card?</dt><dd><strong>Yes</strong> — required to activate any plan, including to use the free credits (Brave: anti-fraud)</dd><dt>Free limit</dt><dd>Old 2,000/mo free plan ended <strong>Feb 2026</strong>. Now $5 per 1,000 requests with <strong>$5 in free credits every month (≈1,000 requests)</strong>, 50 req/s; attribution required to keep the credit</dd><dt>Packaging</dt><dd>No apt/pip first-party CLI; curl or npm MCP server</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Legitimate and usable — but not card-free. Grey scrape of the consumer page rate-limits hard: persistent HTTP 429s that ~20 minutes of paced retries never cleared in a Jul 2026 live test.</div>
+      <p class="src">Sources: <a href="https://api-dashboard.search.brave.com/documentation/pricing">api-dashboard.search.brave.com (official pricing)</a> · <a href="https://apiserpent.com/blog/free-brave-search-api">apiserpent.com</a> · <a href="https://scrapegraphai.com/blog/brave-search-api">scrapegraphai.com</a></p>
+    </article>
+
+    <!-- 5 Google -->
+    <article class="card" data-status="no" data-text="google googler custom search cse programmable search api">
+      <div class="card-head"><h3><span class="num">§5</span>Google (web results)</h3><span class="badge b-no">❌ No new route</span></div>
+      <p class="method"><strong>Best method:</strong> None legitimate for a new user. <code>googler</code> is a grey scraper; the official Custom Search JSON API (<code>googleapis.com/customsearch/v1</code>) returned results from a configured Programmable Search Engine, not google.com as such.</p>
+      <dl class="facts"><dt>Official?</dt><dd>⚠️ Grey scrape / official-but-closing. Google terms prohibit automated access; <code>robots.txt</code> disallows <code>/search</code>.</dd><dt>Status</dt><dd>Custom Search <strong>closed to new customers</strong>; new engines since 20 Jan 2026 limited to ≤50 designated sites; <strong>discontinued 1 Jan 2027</strong></dd><dt>Free limit</dt><dd>Existing customers only: 100 free queries/day, then $5/1,000, cap 10,000/day — until 1 Jan 2027</dd><dt>Raw page</dt><dd>Since Jan 2025 Google requires JavaScript; plain HTTP gets a JS shell, consent interstitial, or “unusual traffic” page (sometimes 200, sometimes 429)</dd><dt>Packaging</dt><dd><strong>apt: <code>googler 4.3.13-1 [universe]</code></strong>, plus standalone GitHub script</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>The practical free-ish Google route is a third-party SERP API trial (Serper 2,500 one-time, no card) — vendor-sanctioned, grey upstream.</div>
+      <p class="src">Sources: <a href="https://cloro.dev/blog/google-search-api/">cloro.dev</a> · <a href="https://www.browserfoundry.cloud/blog/google-custom-search-api-alternative">browserfoundry.cloud</a> · <a href="https://packages.ubuntu.com/fi/questing/misc/">packages.ubuntu.com (questing)</a> · <a href="https://webscraping.ai/blog/scrape-google-search-results">webscraping.ai</a></p>
+    </article>
+
+    <!-- 6 Mojeek -->
+    <article class="card" data-status="no" data-text="mojeek search api independent index">
+      <div class="card-head"><h3><span class="num">§6</span>Mojeek</h3><span class="badge b-no">❌ No ongoing free</span></div>
+      <p class="method"><strong>Best method:</strong> Mojeek Search API (official, JSON/XML, <code>curl</code> with API key) over its own independent index (~9B pages).</p>
+      <dl class="facts"><dt>Official?</dt><dd>✅ Official API. HTML scraping is grey and blocked.</dd><dt>Key?</dt><dd>Yes</dd><dt>Card?</dt><dd><strong>Yes</strong> — “a bank card is required to open an account” (Mojeek FAQ; Stripe, no automatic payments)</dd><dt>Free limit</dt><dd>No recurring free tier — one-off free credit on the Startup Plan, then PAYG (Startup ≈£2 per 1,000 in the Jul 2026 read; a £1/1,000 Personal tier is cited elsewhere — check the live pricing page)</dd><dt>HTML</dt><dd>Bare request HTTP 403; with a browser user-agent, HTTP 200 serving an ALTCHA/captcha page, not results</dd><dt>Packaging</dt><dd>No apt/pip CLI; API key + curl</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Official and legit — but free use is a one-off trial credit behind a bank card.</div>
+      <p class="src">Source: <a href="https://www.mojeek.com/services/search/web-search-api/">mojeek.com/services/search/web-search-api</a> (official, FAQ)</p>
+    </article>
+
+    <!-- 7 Ecosia -->
+    <article class="card" data-status="no" data-text="ecosia no api staan eusp openserp searxng">
+      <div class="card-head"><h3><span class="num">§7</span>Ecosia</h3><span class="badge b-no">❌ None</span></div>
+      <p class="method"><strong>Best method:</strong> None. No named CLI and no public developer search API was found. Grey options only: SearXNG’s ecosia engine, <code>openserp</code>, eggsearch-style scrapers.</p>
+      <dl class="facts"><dt>Official?</dt><dd>❌ Grey only. Historically Bing/Google-backed; since Aug 2025 partly its own EUSP/Staan index (France/Germany) — Staan is B2B partner infrastructure with <strong>no free public developer API, key signup, or pricing documented</strong></dd><dt>Free limit</dt><dd>N/A — no API to have one</dd><dt>HTML</dt><dd>HTTP 403 to automated callers in repeated Jul 2026 live tests; sits behind Cloudflare</dd><dt>Packaging</dt><dd>None</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Do not build on Ecosia scraping.</div>
+      <p class="src">Sources: <a href="https://github.com/katrielmoses/mailaccess/blob/HEAD/docs/research/search-engine-federation-2026-07-15.md">github.com/katrielmoses (federation live test)</a> · <a href="https://ppc.land/ecosia-launches-european-search-index-in-france/">ppc.land (Staan background)</a></p>
+    </article>
+
+    <!-- 8 Startpage -->
+    <article class="card" data-status="no" data-text="startpage no api captcha proof of work searxng eggsearch">
+      <div class="card-head"><h3><span class="num">§8</span>Startpage</h3><span class="badge b-no">❌ None reliable</span></div>
+      <p class="method"><strong>Best method:</strong> None. No official API or CLI. Grey scrapers only: SearXNG’s startpage engine, <code>eggsearch</code>’s vendored Startpage HTML scraper.</p>
+      <dl class="facts"><dt>Official?</dt><dd>❌ Grey only. No index of its own — relays queries to <strong>Google and Bing</strong> — and actively defends against automation, including captcha and, per one survey, a <strong>proof-of-work challenge</strong> on result pages</dd><dt>Free limit</dt><dd>N/A — no API</dd><dt>Live tests</dt><dd>“Flatly refused” in the Jul 2026 cross-engine test series; captcha-detection is a routine failure mode in tooling docs</dd><dt>Packaging</dt><dd>None</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>No legitimate programmatic route exists, and grey scraping is specifically targeted by Startpage’s anti-abuse system.</div>
+      <p class="src">Sources: <a href="https://www.searchengines.net/startpage/">searchengines.net/startpage</a> · <a href="https://fe.tonywang.io/docs/startpage">fe.tonywang.io/docs/startpage</a></p>
+    </article>
+
+    <!-- 9 Marginalia -->
+    <article class="card" data-status="yes" data-text="marginalia public api curl keyless non-commercial index">
+      <div class="card-head"><h3><span class="num">§9</span>Marginalia Search</h3><span class="badge b-yes">✅ Usable free</span></div>
+      <p class="method"><strong>Best method:</strong> Official public API — plain <code>curl</code> to <code>api2.marginalia-search.com/search</code> with header <code>API-Key: public</code>. Old API (<code>api.marginalia.nu/public/search/…</code>) is deprecated. Also usable via SearXNG’s marginalia engine.</p>
+      <dl class="facts"><dt>Official?</dt><dd>✅ Official / sanctioned — Marginalia’s documented developer API. Results CC-BY-NC-SA 4.0 (commercial use needs a commercial key by email)</dd><dt>Key?</dt><dd>Shared key <code>public</code>; own free key by emailing contact@marginalia-search.com</dd><dt>Card?</dt><dd><strong>No</strong> — no signup, no card</dd><dt>Free limit</dt><dd>Shared limit → HTTP 503 when hit; shared key cannot use custom filters</dd><dt>Coverage</dt><dd>Small independent index biased to the non-commercial, text-heavy web — a complement, not a Google replacement</dd><dt>Packaging</dt><dd>Nothing to install — curl on any Ubuntu box</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>The only engine-native, keyless, card-free official API in this list. Expect 503s on the shared key at busy times.</div>
+      <p class="src">Source: <a href="https://about.marginalia-search.com/article/api/">about.marginalia-search.com/article/api</a> (verified live 2026-11-08)</p>
+    </article>
+
+    <!-- 10 Gemini -->
+    <article class="card" data-status="warn" data-text="gemini google search grounding ai studio google-genai gemini cli billing">
+      <div class="card-head"><h3><span class="num">§10</span>Gemini + Search grounding</h3><span class="badge b-warn">⚠️ Billing required</span></div>
+      <p class="method"><strong>Best method:</strong> Gemini API with the <code>google_search</code> tool — via <code>curl</code>, pip <code>google-genai</code>, or Google’s <code>gemini</code> CLI, key from Google AI Studio. Returns a <strong>model-written answer with citations, not a raw results list</strong>.</p>
+      <dl class="facts"><dt>Official?</dt><dd>✅ Official — Google’s sanctioned replacement story for programmatic Google-grounded answers</dd><dt>Key?</dt><dd>Yes</dd><dt>Card?</dt><dd><strong>Yes</strong> — billing must be enabled on the project</dd><dt>Free limit</dt><dd>For Gemini 3+: grounding is <strong>“Not available” on the Free Tier</strong> — no-billing calls return HTTP 429 (Google staff reply, Oct/Nov 2026). Billing-enabled projects: 5,000 free search requests/month (shared across Gemini 3+ models, daily cap 1,500/day), then $14/1,000 + token charges; one prompt can trigger several billable queries</dd><dt>Legacy note</dt><dd>Gemini 2.5 Flash/Flash-Lite lists 500 grounded RPD free — but new users report 2.5 models returning 404 / “no longer available to new users”, so do not plan on it</dd><dt>Packaging</dt><dd>pip (<code>google-genai</code>) / npm (<code>@google/gemini-cli</code>) / curl; no apt</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Excellent for grounded answers, but not free from a terminal without enabling billing. Interactive use in AI Studio’s web UI is free to try — that is not a CLI route.</div>
+      <p class="src">Sources: <a href="https://discuss.ai.google.dev/t/google-search-grounding/191945">discuss.ai.google.dev (Google staff answer)</a> · <a href="https://aistudio.google.com/docs/pricing">aistudio.google.com/docs/pricing</a> · <a href="https://infro.io/blog/gemini-api-pricing-2026">infro.io</a></p>
+    </article>
+
+    <!-- 11 Duck.ai -->
+    <article class="card" data-status="no" data-text="duck.ai duckapi duckai2api playwright chrome no api ban">
+      <div class="card-head"><h3><span class="num">§11</span>Duck.ai (DuckDuckGo AI chat)</h3><span class="badge b-no">❌ No API</span></div>
+      <p class="method"><strong>Best method:</strong> None legitimate. Unofficial bridges only — e.g. <code>duckapi</code> / DuckAI2API projects exposing an OpenAI-compatible endpoint by driving the real duck.ai site in Chrome via Playwright or reverse-engineering its XHR/SSE protocol (anti-bot tokens such as <code>x-fe-signals</code> / <code>X-Vqd-Hash-1</code> / <code>vqd</code>).</p>
+      <dl class="facts"><dt>Official?</dt><dd>❌ Grey / reverse-engineered. The bridge projects themselves state: “Duck.ai has no public API” — and warn use may violate Duck.ai’s terms</dd><dt>Free limit</dt><dd>Duck.ai is free/anonymous in a browser with a daily usage limit (resetting midnight UTC, exact count unpublished) — but there is no sanctioned programmatic way to consume it</dd><dt>Risk</dt><dd>Bridges risk a <strong>persistent per-IP ban: HTTP 418 <code>ERR_BN_LIMIT</code></strong> with no Retry-After/cooldown</dd><dt>Packaging</dt><dd>GitHub clones / pip installs of unofficial projects only; nothing in apt, nothing official on pip/npm</dd></dl>
+      <div class="verdict"><strong>Verdict</strong>Do not build an agent on the unofficial bridges — they work until they break or get the IP banned.</div>
+      <p class="src">Sources: <a href="https://github.com/hirotomasato/duckapi/blob/main/README.md">github.com/hirotomasato/duckapi</a> · <a href="https://github.com/wuyouseo/DuckAI2API">github.com/wuyouseo/DuckAI2API</a> · <a href="https://github.com/emahboubinia/duckai-openai-api">github.com/emahboubinia/duckai-openai-api</a></p>
+    </article>
+  </div>
+
+  <!-- AT A GLANCE TABLE -->
+  <h2>At a glance</h2>
+  <p class="sub">The full per-engine table from the research. SearXNG is the cross-cutting free option for the ❌ rows — free infrastructure, grey upstreams.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Engine</th><th>Best terminal method</th><th>Official?</th><th>Card for free?</th><th>Free limit</th><th>Package</th><th>Usable free?</th></tr></thead>
+    <tbody>
+      <tr><td data-l="Engine"><strong>Tavily et al.</strong></td><td data-l="Method">Tavily API via curl / pip SDK</td><td data-l="Official?">✅ Official</td><td data-l="Card?"><strong>No</strong></td><td data-l="Free limit">1,000 credits/mo</td><td data-l="Package">pip / curl</td><td data-l="Usable?">✅ Yes</td></tr>
+      <tr><td data-l="Engine"><strong>Bing</strong></td><td data-l="Method">— (was Bing API v7)</td><td data-l="Official?">Retired 11 Aug 2025</td><td data-l="Card?">N/A</td><td data-l="Free limit">None</td><td data-l="Package">Azure pip SDKs</td><td data-l="Usable?">❌ No</td></tr>
+      <tr><td data-l="Engine"><strong>DuckDuckGo</strong></td><td data-l="Method">ddgr / ddgs (scrape)</td><td data-l="Official?">⚠️ Grey for results</td><td data-l="Card?">No</td><td data-l="Free limit">Unlimited in theory; 202/captcha in practice</td><td data-l="Package">apt: ddgr 2.2-1; pip: ddgs</td><td data-l="Usable?">⚠️ Grey, low volume</td></tr>
+      <tr><td data-l="Engine"><strong>Brave</strong></td><td data-l="Method">Brave Search API</td><td data-l="Official?">✅ Official</td><td data-l="Card?"><strong>Yes</strong></td><td data-l="Free limit">$5 credit/mo ≈1,000 req</td><td data-l="Package">curl / npm MCP</td><td data-l="Usable?">⚠️ If card OK</td></tr>
+      <tr><td data-l="Engine"><strong>Google</strong></td><td data-l="Method">googler (scrape); CSE existing only</td><td data-l="Official?">⚠️ Grey / closing</td><td data-l="Card?">CSE billing for paid tier</td><td data-l="Free limit">CSE existing: 100/day until 1 Jan 2027</td><td data-l="Package">apt: googler 4.3.13-1</td><td data-l="Usable?">❌ No new route</td></tr>
+      <tr><td data-l="Engine"><strong>Mojeek</strong></td><td data-l="Method">Mojeek Search API</td><td data-l="Official?">✅ Official</td><td data-l="Card?"><strong>Yes</strong></td><td data-l="Free limit">One-off trial credit only</td><td data-l="Package">curl only</td><td data-l="Usable?">❌ No ongoing free</td></tr>
+      <tr><td data-l="Engine"><strong>Ecosia</strong></td><td data-l="Method">—</td><td data-l="Official?">❌ No API</td><td data-l="Card?">—</td><td data-l="Free limit">None; page 403</td><td data-l="Package">None</td><td data-l="Usable?">❌ No</td></tr>
+      <tr><td data-l="Engine"><strong>Startpage</strong></td><td data-l="Method">— (scrapers only)</td><td data-l="Official?">❌ No API</td><td data-l="Card?">—</td><td data-l="Free limit">None; captcha / proof-of-work</td><td data-l="Package">None</td><td data-l="Usable?">❌ No</td></tr>
+      <tr><td data-l="Engine"><strong>Marginalia</strong></td><td data-l="Method">curl, API-Key: public</td><td data-l="Official?">✅ Official</td><td data-l="Card?"><strong>No</strong></td><td data-l="Free limit">Shared limit → 503</td><td data-l="Package">curl (nothing to install)</td><td data-l="Usable?">✅ Yes (niche)</td></tr>
+      <tr><td data-l="Engine"><strong>Gemini grounding</strong></td><td data-l="Method">Gemini API google_search tool</td><td data-l="Official?">✅ Official</td><td data-l="Card?"><strong>Yes (billing)</strong></td><td data-l="Free limit">5,000/mo on billing-enabled projects, then $14/1k</td><td data-l="Package">pip / npm / curl</td><td data-l="Usable?">⚠️ Only with billing</td></tr>
+      <tr><td data-l="Engine"><strong>Duck.ai</strong></td><td data-l="Method">— (unofficial bridges)</td><td data-l="Official?">❌ No API</td><td data-l="Card?">No</td><td data-l="Free limit">Browser-only daily limit; bridges risk 418 ban</td><td data-l="Package">GitHub only</td><td data-l="Usable?">❌ No</td></tr>
+    </tbody></table></div>
+
+  <!-- OPEN QUESTIONS -->
+  <h2>Open questions — stated plainly</h2>
+  <p class="sub">Things the research could not settle. Nothing here is guessed.</p>
+  <ul class="oq">
+    <li><strong>Which hosted service is “the” one?</strong> The original ask named no single vendor for the hosted developer-search category. Tavily is reported as the archetype — if you meant one specific backend (e.g. behind a particular agent framework’s <code>web_search</code> tool), its numbers should be re-checked: Exa, Parallel, Firecrawl and Keenable all have differing no-card free allowances in the same category.</li>
+    <li><strong>Duck.ai → Instant Answers redirection:</strong> Multiple sources confirm Instant Answers is DuckDuckGo’s only developer API and Duck.ai has none — but no primary DuckDuckGo help page was found that explicitly directs Duck.ai developers to the Instant Answers API. Treat that specific wording as plausible, not primary-source-verified.</li>
+    <li><strong>Bing Grounding price conflict:</strong> $14/1,000 (Sept 2026 Microsoft-derived listings) vs $35/1,000 (older/other reads). Either way it is paid-Azure-only with no free tier, so the verdict is unaffected.</li>
+    <li><strong>Mojeek tier ladder:</strong> £1/1,000 “Personal” vs £2/1,000 “Startup” appears inconsistently across sources. The card-required free-credit fact comes from Mojeek’s own FAQ and is solid.</li>
+    <li><strong>Bot-block behaviour is IP- and time-dependent</strong> (DDG captcha, Brave 429, Mojeek/Ecosia 403, Google unusual-traffic). The figures above come from published Jul–Oct 2026 live tests, not a fresh test in this run.</li>
+    <li><strong>ddgr PPA currency:</strong> Whether the ddgr PPA <code>ppa:twodopeshaggy/jarun</code> still publishes Noble (24.04) builds could not be verified — only 2017-era articles cite it; Launchpad was not opened.</li>
+    <li><strong>Cargo crates’ direct URLs:</strong> Direct crates.io URLs for <code>hodis</code>, <code>duckduckgo-search-cli</code>, and <code>web-search</code> could not be verified — the search tool did not return verbatim URLs for those listings (it suppressed some result URLs), so they are named without links rather than with reconstructed URLs. Their existence and <code>cargo install</code> commands come from index snippets.</li>
+    <li><strong>Marginalia add-on on Android:</strong> Whether the NUH “Marginalia Search” Firefox add-on installs / works on Firefox for Android specifically could not be verified — its AMO page does not state Android compatibility in the fetched text.</li>
+    <li><strong>Flathub / Snap storefronts not live-checked:</strong> Flathub / Snap storefront pages could not be checked in the live research browser (window returned <code>page_gone</code>); Brave / Newelle store claims rest on the vendors’ own pages plus index fetches of the store listings, which agree with each other.</li>
+  </ul>
+
+  <div class="note" style="margin-top:22px"><strong>Bottom line for your backend:</strong> wire Tavily as the general-web default (free key, 1,000/mo), Marginalia as the zero-setup fallback (<code>API-Key: public</code>), and SearXNG in Docker as the keyless metasearch layer — accepting that its upstreams are grey. Add Brave or Gemini grounding only if a card on file is acceptable. Don’t build on Bing, Ecosia, Startpage, or Duck.ai programmatic access: there is none. <strong>And on integration:</strong> install Tavily via PyPI (<code>tavily-cli</code> / <code>tavily-python</code>) or npm, Brave via its vendor apt repo — and don’t wait for an official Tavily or Marginalia desktop GUI, Android app, or GNOME provider: the maximum-research pass found none exists. The working substitutes are Newelle (Flathub, calls Tavily), WM Keyboard on Android (your own Tavily key), the Marginalia Firefox add-on, and — for OS-level search on 24.04 — Epiphany’s Web provider or a third-party Google / DuckDuckGo extension.</div>
+
+  <footer>
+    <p><strong>Sources</strong> — all read 2026-11-08. “Verified live” = fetched in full during the research run; other links were read via search-index full text. Bot-block behaviour rests on published Jul–Oct 2026 live tests and is IP-dependent.</p>
+    <ul>
+      <li>Tavily Pricing (verified live) — https://www.tavily.com/pricing</li>
+      <li>Marginalia Search API (verified live) — https://about.marginalia-search.com/article/api/</li>
+      <li>Brave Search API pricing (official) — https://api-dashboard.search.brave.com/documentation/pricing</li>
+      <li>Mojeek Search API (official) — https://www.mojeek.com/services/search/web-search-api/</li>
+      <li>Gemini pricing (Google) — https://aistudio.google.com/docs/pricing</li>
+      <li>Gemini grounding staff reply — https://discuss.ai.google.dev/t/google-search-grounding/191945</li>
+      <li>Ubuntu noble packages — https://packages.ubuntu.com/eu/noble/misc/</li>
+      <li>Ubuntu questing packages — https://packages.ubuntu.com/fi/questing/misc/</li>
+      <li>SearXNG self-hosting — https://selfhosting.sh/apps/searxng/</li>
+      <li>Best free web search APIs — https://parallel.ai/articles/best-free-web-search-api</li>
+      <li>Tavily docs index (CLI, SDKs, MCP) — https://docs.tavily.com/llms.txt</li>
+      <li>Tavily CLI on PyPI — https://pypi.org/project/tavily-cli/0.1.1/</li>
+      <li>Tavily Python on PyPI — https://pypi.org/project/tavily-python/0.7.24/</li>
+      <li>Brave on Linux (vendor apt repo, Snap, Flatpak, .deb) — https://brave.com/linux/?ref=sebday.dev</li>
+      <li>Brave Snap (Ubuntu) — https://snapcraft.io/install/brave/ubuntu</li>
+      <li>SearXNG self-hosting / Docker Compose — https://www.ssdnodes.com/learn/searxng-self-hosted-search</li>
+      <li>Marginalia self-host setup — https://deepwiki.com/MarginaliaSearch/MarginaliaSearch/11.1-setup-installation-and-configuration</li>
+      <li>Marginalia MCP server (third-party) — https://mcpservers.org/servers/bmorphism/marginalia-mcp-server</li>
+      <li>Marginalia Firefox add-on — https://addons.mozilla.org/en-US/firefox/addon/marginalia-search/</li>
+      <li>Newelle on Flathub — https://flathub.org/en/apps/io.github.qwersyk.Newelle</li>
+      <li>WM Keyboard search tool — https://wmkeyboard.app/tools/search/</li>
+      <li>WM Keyboard on F-Droid — https://f-droid.org/en/packages/com.wasimaster.wmkeyboard/</li>
+      <li>searxist on F-Droid — https://f-droid.org/packages/xyz.linerly.searxist/</li>
+      <li>Ubuntu 26.04 release notes (web + snap providers) — https://documentation.ubuntu.com/release-notes/26.04/changes-since-previous-interim/</li>
+      <li>Ubuntu 26.04 search providers explained — https://www.omgubuntu.co.uk/2026/03/ubuntu-2604-gnome-search-extensions</li>
+      <li>GNOME Browser Search Provider — https://extensions.gnome.org/extension/7454/browser-search-provider/</li>
+      <li>GNOME Web Search Dialog — https://extensions.gnome.org/extension/549/web-search-dialog/</li>
+      <li>GNOME Search Does Search (review) — https://extensions.gnome.org/review/75841</li>
+    </ul>
+    <p>Full source lists are in the research reports behind this page, including the Bing/Google retirement corroboration, the Jul 2026 cross-engine live tests, the SearXNG deployment guides, and the maximum-research pass on repository routes, desktop and Android apps, and GNOME integration (all read 2026-11-08 via web index; the Flathub live check failed with <code>page_gone</code>, as noted above).</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.chipbtn'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var q = document.getElementById('q');
+  var countline = document.getElementById('countline');
+  var active = 'all';
+  function apply(){
+    var term = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var okStatus = (active === 'all' || c.getAttribute('data-status') === active);
+      var okText = (!term || (c.getAttribute('data-text') + ' ' + c.textContent.toLowerCase()).indexOf(term) !== -1);
+      var show = okStatus && okText;
+      c.classList.toggle('hide', !show);
+      if (show) shown++;
+    });
+    countline.textContent = 'Showing ' + shown + ' of 11 engines' + (active !== 'all' || term ? ' — filtered' : '');
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      active = b.getAttribute('data-filter');
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+  // copy buttons
+  Array.prototype.forEach.call(document.querySelectorAll('.copybtn'), function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.getAttribute('data-copy') || '';
+      var fired = false;
+      function done(){ if (fired) return; fired = true; var old = 'Copy'; btn.textContent = 'Copied ✓'; setTimeout(function(){ btn.textContent = old; }, 1400); }
+      var ok = false;
+      try {
+        var ta = document.createElement('textarea'); ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch(e){}
+      if (ok) { done(); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, done);
+        setTimeout(done, 1200);
+      } else { done(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

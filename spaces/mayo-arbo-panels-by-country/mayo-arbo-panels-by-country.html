@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Mayo ARBO Panels by Country</title>
+<style>
+  :root{
+    --bg:#f7f6f2;
+    --surface:#ffffff;
+    --surface-2:#eef2ef;
+    --ink:#1a2320;
+    --ink-2:#4a5751;
+    --ink-3:#6b7a72;
+    --line:#d9ddd7;
+    --teal:#0d5c4d;
+    --teal-soft:#dcebe5;
+    --teal-ink:#0a463a;
+    --amber:#8a5a00;
+    --amber-bg:#fbf0d2;
+    --amber-line:#e3c87a;
+    --red:#8c2f22;
+    --red-bg:#fbe9e5;
+    --blue:#1e4d7a;
+    --blue-bg:#e3ecf5;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(20,30,25,.06), 0 8px 24px rgba(20,30,25,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121613;
+      --surface:#1b211e;
+      --surface-2:#232b27;
+      --ink:#eef2ee;
+      --ink-2:#b9c4bc;
+      --ink-3:#8fa097;
+      --line:#333c37;
+      --teal:#5ec2a8;
+      --teal-soft:#1e332c;
+      --teal-ink:#a9e0cf;
+      --amber:#e8c06a;
+      --amber-bg:#332a12;
+      --amber-line:#6b5620;
+      --red:#f0a08f;
+      --red-bg:#3a1e19;
+      --blue:#9ec2e8;
+      --blue-bg:#1d2c3d;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal); text-underline-offset:2px}
+  @media (prefers-color-scheme: dark){ a{color:var(--teal)} }
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px 72px}
+
+  /* ---------- Header ---------- */
+  header{padding:36px 0 8px}
+  .kicker{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--teal);font-weight:700;margin:0 0 10px;
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:clamp(30px,5.4vw,46px);
+    line-height:1.08;
+    letter-spacing:-.01em;
+    margin:0 0 14px;
+    max-width:16ch;
+  }
+  .lede{font-size:17px;color:var(--ink-2);max-width:62ch;margin:0 0 18px}
+  .lede strong{color:var(--ink)}
+
+  .correction{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--amber-bg);border:1px solid var(--amber-line);
+    border-radius:12px;padding:14px 16px;margin:18px 0 26px;
+    font-size:14px;
+  }
+  .correction .badge{
+    flex:0 0 auto;font-weight:800;font-size:11px;letter-spacing:.08em;
+    background:var(--amber);color:#fff;padding:4px 8px;border-radius:99px;margin-top:1px;
+  }
+  @media (prefers-color-scheme: dark){ .correction .badge{color:#1a1608} }
+  @media (max-width:560px){ .correction{flex-direction:column;gap:8px} }
+  .correction p{margin:0;color:var(--ink)}
+  .correction dl{margin:6px 0 0;display:grid;gap:2px}
+  .correction dt{display:inline;font-weight:700}
+  .correction dd{display:inline;margin:0}
+
+  /* ---------- Answer verdict ---------- */
+  .verdict{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 10px;
+  }
+  @media (max-width:680px){ .verdict{grid-template-columns:1fr} }
+  .verdict-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);
+  }
+  .verdict-card h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
+  .dot.same{background:var(--teal)}
+  .dot.diff{background:var(--red)}
+  .verdict-card.same h2{color:var(--teal-ink)}
+  .verdict-card.diff h2{color:var(--red)}
+  .verdict-card p{margin:0;font-size:15px;color:var(--ink-2)}
+  .verdict-card p strong{color:var(--ink)}
+  .verdict-card .big{font-family:Georgia,serif;font-size:26px;line-height:1.15;color:var(--ink);margin:0 0 8px}
+
+  .answer-line{
+    margin:16px 0 0;padding:16px 18px;border-radius:12px;
+    background:var(--teal-soft);border:1px solid var(--line);
+    font-size:15.5px;
+  }
+  .answer-line strong{color:var(--teal-ink)}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:44px}
+  .sec-head{margin-bottom:16px}
+  .sec-head h2{
+    font-family:Georgia,serif;font-weight:600;
+    font-size:clamp(22px,3.4vw,28px);line-height:1.15;margin:0 0 6px;
+  }
+  .sec-head p{margin:0;color:var(--ink-2);max-width:68ch;font-size:15px}
+  .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--teal);color:#fff;font-size:13px;font-weight:800;
+    font-family:-apple-system,sans-serif;margin-right:8px;vertical-align:2px;
+  }
+  @media (prefers-color-scheme: dark){ .num{color:#0c1a15} }
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);
+  }
+
+  /* Baseline panel */
+  .panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:680px){ .panel-grid{grid-template-columns:1fr} }
+  .panel-card{padding:20px}
+  .panel-card h3{margin:0 0 2px;font-size:17px}
+  .panel-card .id{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--teal)}
+  .panel-card .meta{font-size:13.5px;color:var(--ink-2);margin:6px 0 14px}
+  .virus-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .virus{
+    background:var(--surface-2);border-radius:10px;padding:10px 12px;
+  }
+  .virus b{display:block;font-size:13.5px;line-height:1.3}
+  .virus span{font-size:12px;color:var(--ink-3)}
+  .count-line{margin-top:14px;font-size:13.5px;border-top:1px solid var(--line);padding-top:12px;color:var(--ink-2)}
+  .count-line strong{color:var(--ink)}
+  .absent{
+    margin-top:14px;padding:14px 18px;border-radius:12px;
+    background:var(--red-bg);border:1px solid var(--line);font-size:14.5px;
+  }
+  .absent strong{color:var(--red)}
+
+  /* Tables — desktop table, mobile stacked */
+  .table-wrap{overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  caption{text-align:left;padding:16px 18px 4px;font-weight:700;font-size:15px}
+  th,td{text-align:left;padding:12px 18px;vertical-align:top;border-top:1px solid var(--line)}
+  thead th{border-top:none;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2)}
+  tbody tr:first-child td{border-top:none}
+  td strong{color:var(--ink)}
+  .code{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+  @media (max-width:680px){
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    tr{padding:12px 0;border-top:1px solid var(--line)}
+    tr:first-child{border-top:none}
+    td{border-top:none;padding:3px 18px}
+    td::before{
+      content:attr(data-label);display:block;font-size:11px;font-weight:700;
+      letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1px;
+    }
+    td:first-child::before{display:none}
+    td:first-child{font-size:15.5px}
+  }
+
+  /* Checklist rule */
+  .rule-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media (max-width:820px){ .rule-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:460px){ .rule-grid{grid-template-columns:1fr} }
+  .rule-step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+  .rule-step .n{font-family:Georgia,serif;font-size:22px;color:var(--teal);line-height:1}
+  .rule-step h3{margin:8px 0 4px;font-size:14.5px}
+  .rule-step p{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .rule-note{margin-top:12px;font-size:14px;color:var(--ink-2)}
+  .rule-note strong{color:var(--ink)}
+
+  /* Filter */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+  .filters button{
+    appearance:none;border:1px solid var(--line);background:var(--surface);
+    color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;
+    padding:8px 14px;border-radius:99px;cursor:pointer;
+  }
+  .filters button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+  @media (prefers-color-scheme: dark){ .filters button[aria-pressed="true"]{color:#0c1a15} }
+  .filters button:focus-visible, a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+  .panel-list{display:grid;gap:12px}
+  .diff-card{padding:18px 20px}
+  .diff-card.hidden{display:none}
+  .diff-top{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+  .diff-top h3{margin:0;font-size:16.5px}
+  .tag{
+    font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    padding:4px 9px;border-radius:99px;white-space:nowrap;
+  }
+  .tag.nonmayo{background:var(--red-bg);color:var(--red)}
+  .tag.kit{background:var(--blue-bg);color:var(--blue)}
+  .diff-card p{margin:0 0 8px;font-size:14.5px;color:var(--ink-2)}
+  .diff-card p strong{color:var(--ink)}
+  .diff-card .src{font-size:13px;margin:0}
+
+  .alias-list{display:grid;gap:0}
+  .alias-row{
+    display:grid;grid-template-columns:1.1fr 1fr 1.4fr;gap:6px 18px;
+    padding:14px 18px;border-top:1px solid var(--line);font-size:14.5px;
+  }
+  .alias-row:first-child{border-top:none}
+  @media (max-width:680px){ .alias-row{grid-template-columns:1fr} }
+  .alias-row b{font-size:15px}
+  .alias-row .local{color:var(--ink-2)}
+  .alias-row .local code{background:var(--surface-2);padding:1px 6px;border-radius:6px;font-size:13px}
+
+  .note-box{
+    padding:16px 18px;border-radius:12px;background:var(--surface-2);
+    border:1px solid var(--line);font-size:14.5px;margin-top:14px;
+  }
+  .note-box h3{margin:0 0 6px;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  .note-box p{margin:0 0 8px;color:var(--ink-2)}
+  .note-box p:last-child{margin-bottom:0}
+  .note-box strong{color:var(--ink)}
+
+  .gaps{padding:6px 20px 10px}
+  .gaps li{margin:10px 0;font-size:14.5px;color:var(--ink-2)}
+  .gaps li strong{color:var(--ink)}
+
+  .sources{font-size:13.5px;color:var(--ink-2)}
+  .sources li{margin:7px 0;overflow-wrap:anywhere}
+  .sources .grp{font-weight:700;color:var(--ink);list-style:none;margin:16px 0 6px -18px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+  .sources .grp:first-child{margin-top:4px}
+
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+  .updated{font-size:12.5px;color:var(--ink-3);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">Mayo Clinic Laboratories · Arbovirus (ARBO) testing</p>
+    <h1>One Mayo panel, many names — and different panels abroad</h1>
+    <p class="lede">You asked whether other countries get a <strong>different Mayo ARBO panel</strong> than the one here, or whether it's <strong>the same test under different names</strong>. The answer is <strong>both happen — but not inside Mayo</strong>. Mayo itself runs one panel worldwide. The different panels belong to other countries' own laboratories.</p>
+
+    <div class="correction" role="note" aria-label="Transcription correction">
+      <span class="badge">CORRECTION 0–1–2</span>
+      <div>
+        <p>So the correction stays visible:</p>
+        <dl>
+          <div><dt>0 — what came in:</dt> <dd>“herbal panel tests”</dd></div>
+          <div><dt>1 — what it was first heard as:</dt> <dd>herbal supplement panels</dd></div>
+          <div><dt>2 — what it was corrected to:</dt> <dd><strong>ARBO panel tests</strong> — you said <em>arbo</em>, not <em>herbal</em>, each time. “Herbal” was transcription. This page is about arbovirus panels only.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <div class="verdict-card same">
+        <h2><span class="dot same"></span> Inside Mayo</h2>
+        <p class="big">Same test, different local codes</p>
+        <p>Mayo publishes <strong>one open-access test catalog, updated daily</strong>, performs the ARBO panel in <strong>Rochester</strong>, and states its protocols are applied <strong>uniformly regardless of geographic origin</strong>. Client labs abroad and in the US order that same Rochester test under their own local codes and names.</p>
+      </div>
+      <div class="verdict-card diff">
+        <h2><span class="dot diff"></span> Outside Mayo</h2>
+        <p class="big">Different tests, similar name</p>
+        <p>Other countries' own labs run <strong>genuinely different “arbovirus panels”</strong> — different viruses, different methods. New Zealand's is only chikungunya, dengue and Zika by PCR. Australia's includes Ross River and Murray Valley. The name “ARBO” alone <strong>does not</strong> mean Mayo's 4-virus panel.</p>
+      </div>
+    </div>
+
+    <p class="answer-line"><strong>Direct answer:</strong> No country-specific Mayo ARBO panel was found. What changes by country or travel exposure is <strong>which separate tests get added</strong> — dengue, Zika, chikungunya, West Nile — not the ARBO panel itself. Those are individual Mayo test IDs, never bundled into ARBOP.</p>
+    <p class="updated">Researched from Mayo Clinic Laboratories catalog pages and the labs' own pages, read 2 Nov 2026. Catalog facts are from index/catalog fetches — Mayo's live pages could not be opened in the research window, so a live re-check before ordering is prudent. See “What could not be verified” below.</p>
+  </header>
+
+  <!-- 1. US baseline -->
+  <section aria-labelledby="s1">
+    <div class="sec-head">
+      <h2 id="s1"><span class="num">1</span>Your US panel — confirmed exactly as you described it</h2>
+      <p>Mayo's serum ARBO panel is 8 results: 4 viruses × IgG + IgM. There is <strong>no separate Jamestown Canyon analyte</strong> and <strong>no coronavirus analyte</strong> in it. The spinal-fluid version carries the same 4 viruses.</p>
+    </div>
+
+    <div class="panel-grid">
+      <article class="card panel-card">
+        <span class="id">MAYO TEST ID · ARBOP</span>
+        <h3>Arbovirus Antibody Panel, IgG and IgM, Serum</h3>
+        <p class="meta">Serum, 0.5 mL (min 0.15 mL) · Immunofluorescence Assay (IFA) · Performed at Mayo Clinic Laboratories – Rochester · Reference: &lt;1:10 for IgG and IgM, all four viruses, all ages</p>
+        <div class="virus-grid">
+          <div class="virus"><b>California (La Crosse)</b><span>CAVP · IgG + IgM</span></div>
+          <div class="virus"><b>Eastern equine</b><span>EEEP · IgG + IgM</span></div>
+          <div class="virus"><b>St. Louis</b><span>STLP · IgG + IgM</span></div>
+          <div class="virus"><b>Western equine</b><span>WEEP · IgG + IgM</span></div>
+        </div>
+        <p class="count-line"><strong>4 viruses × 2 antibodies = 8 results.</strong> Every component is always performed, and none is available separately within the panel. Mayo's own “Useful For”: aiding diagnosis of arboviral encephalitis due to those four viruses — no other virus is named.</p>
+        <p class="src" style="font-size:13px;margin:12px 0 0"><a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">Mayo catalog — ARBOP (overview 83267)</a></p>
+      </article>
+
+      <article class="card panel-card">
+        <span class="id">MAYO TEST ID · ABOPC</span>
+        <h3>Arbovirus Antibody Panel, IgG and IgM, Spinal Fluid</h3>
+        <p class="meta">Spinal fluid / CSF, 0.7 mL · Immunofluorescence Assay (IFA) · Performed at Mayo Clinic Laboratories – Rochester · Reference: &lt;1:1 for IgG and IgM, all four viruses</p>
+        <div class="virus-grid">
+          <div class="virus"><b>California (La Crosse)</b><span>CAVPC · IgG + IgM</span></div>
+          <div class="virus"><b>Eastern equine</b><span>EEPC · IgG + IgM</span></div>
+          <div class="virus"><b>St. Louis</b><span>STLPC · IgG + IgM</span></div>
+          <div class="virus"><b>Western equine</b><span>WEEPC · IgG + IgM</span></div>
+        </div>
+        <p class="count-line"><strong>Same 4 viruses as the serum panel.</strong> One US-only wrinkle: ABOPC is <strong>not available for specimens originating in New York</strong> (ARBOP is). That is a state restriction, not a country-specific panel.</p>
+        <p class="src" style="font-size:13px;margin:12px 0 0"><a href="https://www.mayocliniclabs.com/test-catalog/overview/83897">Mayo catalog — ABOPC (overview 83897)</a></p>
+      </article>
+    </div>
+
+    <div class="absent"><strong>About Jamestown Canyon:</strong> it is <strong>not</strong> a separate analyte in ARBOP or ABOPC. It appears in Mayo's mosquito-borne algorithm only as a virus to consider for <strong>CDC / public-health testing</strong>. La Crosse and Jamestown Canyon are both California-serogroup viruses and Mayo's page warns about cross-reactivity in general — but it does <strong>not</strong> say a positive California (La Crosse) result equals a Jamestown Canyon result. Don't treat it as one.</div>
+  </section>
+
+  <!-- 2. Why one catalog -->
+  <section aria-labelledby="s2">
+    <div class="sec-head">
+      <h2 id="s2"><span class="num">2</span>Why there is no “Mayo panel for other countries”</h2>
+      <p>Mayo Clinic Laboratories is one reference laboratory in Rochester serving, per its international shipping guide, more than 3,400 hospitals and laboratories in more than 60 countries. The differences abroad are shipping, customs and specimen-export rules — not a different test menu.</p>
+    </div>
+    <div class="card">
+      <table>
+        <caption>What Mayo itself says</caption>
+        <thead><tr><th scope="col">Point</th><th scope="col">What the source says</th><th scope="col">Source</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Point"><strong>One catalog</strong></td>
+            <td data-label="What the source says">An “open-access test catalog, which is updated daily.” MayoLINK ordering is “available in eight languages” — translation of ordering, not a different menu.</td>
+            <td data-label="Source"><a href="https://news.mayocliniclabs.com/international/global-capabilities/?pg=13">Mayo global capabilities</a></td>
+          </tr>
+          <tr>
+            <td data-label="Point"><strong>Uniform protocols</strong></td>
+            <td data-label="What the source says">“Testing protocols applied uniformly for all specimens received, no matter their geographic origin… each sample receives the same treatment,” with partners getting “access to Mayo Clinic Laboratories' full menu.”</td>
+            <td data-label="Source"><a href="https://news.mayocliniclabs.com/commercial-laboratories/?pg=2">Mayo commercial laboratories</a></td>
+          </tr>
+          <tr>
+            <td data-label="Point"><strong>One shipping route</strong></td>
+            <td data-label="What the source says">The international document is a <em>shipping</em> guide, not a separate catalog — it tells international clients to check specimen requirements in the same test catalog.</td>
+            <td data-label="Source"><a href="https://test.mayocliniclabs.com/-/media/it-mmfiles/Special-Instructions/D/1/F/international-shipping-guide">Mayo international shipping guide (PDF)</a></td>
+          </tr>
+          <tr>
+            <td data-label="Point"><strong>Same testing worldwide</strong></td>
+            <td data-label="What the source says">“The testing used to diagnose and treat Mayo Clinic patients is available to patients around the world through Mayo Clinic Laboratories.”</td>
+            <td data-label="Source"><a href="https://test.mayocliniclabs.com/test-catalog/specialty-testing">Mayo specialty testing</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <h3>Don't confuse the names</h3>
+      <p><strong>Mayo Clinic Laboratories</strong> = the Rochester reference lab that performs ARBOP/ABOPC. That is the panel in question.</p>
+      <p><strong>Mayo Clinic Healthcare, London</strong> = a clinic at 15 Portland Place, not a separate laboratory catalog. No London-specific ARBO panel was found; secondary UK sources describe London patients as having access to Mayo Clinic Laboratories testing.</p>
+      <p><strong>Mayo representative offices</strong> (e.g. in the Caribbean) coordinate appointments and travel — they provide no clinical care or testing themselves. A local hospital abroad that lists a “Mayo test” is ordering the Rochester test as a send-out, not running a local Mayo variant.</p>
+      <p><strong>One real exception, and it isn't a panel:</strong> some countries do not allow specimens to leave the country at all (China is the example given in a secondary magazine account), in which case Mayo partners locally. That changes where a specimen can go — not what ARBOP contains.</p>
+    </div>
+  </section>
+
+  <!-- 3. Exposure-based selection -->
+  <section aria-labelledby="s3">
+    <div class="sec-head">
+      <h2 id="s3"><span class="num">3</span>What actually changes: test selection by exposure</h2>
+      <p>Mayo does <strong>not</strong> fold travel-region viruses into ARBOP. Its mosquito-borne testing algorithm branches on where the exposure happened, and the extra viruses are ordered as <strong>separate tests</strong> alongside the panel.</p>
+    </div>
+    <div class="card table-wrap">
+      <table>
+        <thead><tr><th scope="col">Exposure</th><th scope="col">Mayo tests to consider</th><th scope="col">Test IDs</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Exposure"><strong>Mosquito exposure in the US</strong></td>
+            <td data-label="Mayo tests to consider">The ARBO panel itself, serum and/or spinal fluid — plus the same four viruses as single-virus panels.</td>
+            <td data-label="Test IDs"><span class="code">ARBOP / ABOPC</span>; CAVP/CAVPC, EEEP/EEPC, STLP/STLPC, WEEP/WEEPC</td>
+          </tr>
+          <tr>
+            <td data-label="Exposure"><strong>Mosquito exposure outside the US</strong></td>
+            <td data-label="Mayo tests to consider"><strong>Add separately:</strong> chikungunya antibody and PCR (serum and spinal fluid); dengue antibody, antibody/antigen panel, NS1 antigen and PCR; Zika IgM and PCR (serum and urine).</td>
+            <td data-label="Test IDs"><span class="code">CHIKV, CHIKS, CHIKC</span> · <span class="code">DENGM, DENVP, DNSAG, DENGS, DENGC</span> · <span class="code">VZIKM, VZIKS, VZIKU</span></td>
+          </tr>
+          <tr>
+            <td data-label="Exposure"><strong>Any region</strong></td>
+            <td data-label="Mayo tests to consider"><strong>Add separately:</strong> West Nile virus antibody (serum and spinal fluid) and West Nile PCR (serum, blood, urine, spinal fluid). West Nile is never inside ARBOP.</td>
+            <td data-label="Test IDs"><span class="code">WNS, WNC</span> · <span class="code">WNVS, WNVBL, WNVUR, WNCSF</span></td>
+          </tr>
+          <tr>
+            <td data-label="Exposure"><strong>Powassan / Heartland / Jamestown Canyon / Bourbon suspected</strong></td>
+            <td data-label="Mayo tests to consider">The algorithm points to <strong>CDC / public-health testing</strong> — not a Mayo panel. Mayo does separately offer Powassan tests (IgM ELISA; PCR in blood, serum, urine), listed under tick-borne rather than mosquito-borne testing.</td>
+            <td data-label="Test IDs"><span class="code">POWV, POWVB, POWVS, POWVU</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box">
+      <h3>Two viruses with no Mayo test found</h3>
+      <p><strong>Yellow fever — no Mayo test ID found.</strong> Catalog searches returned no Mayo yellow-fever test; it appears on Mayo pages only as a cross-reactivity / specificity organism in other tests. Don't assume Mayo offers it.</p>
+      <p><strong>Japanese encephalitis — no Mayo test ID found.</strong> Same pattern. Per CDC, JE diagnosis is serum/CSF IgM, and confirmatory neutralising-antibody testing is “only available at CDC and a few specialized reference laboratories,” with specimens routed via state/local health departments to CDC's Arbovirus Diagnostic Laboratory — a non-Mayo route. <a href="https://www.cdc.gov/japanese-encephalitis/hcp/clinical-diagnosis/index.html">CDC: JE clinical diagnosis</a></p>
+      <p><strong>Bottom line:</strong> no combined Mayo “international ARBO panel” bundling dengue + Zika + chikungunya + yellow fever + JE was found. Sources: <a href="https://news.mayocliniclabs.com/n1/96e99366cea7b0de/uploads/2025/05/Mosquito-borne_Disease_Laboratory_Testing.pdf">Mayo mosquito-borne algorithm (PDF)</a> · <a href="https://news.mayocliniclabs.com/infectious-disease/vector-borne-diseases/mosquito-borne-disease/">Mayo mosquito-borne disease menu</a> · <a href="https://www.mayocliniclabs.com/test-catalog/Overview/83865">DENGM</a> · <a href="https://www.mayocliniclabs.com/test-catalog/overview/603833">CHIKS</a> · <a href="https://www.mayocliniclabs.com/test-catalog/Overview/619432">VZIKS</a></p>
+    </div>
+  </section>
+
+  <!-- 4. Same test, different names -->
+  <section aria-labelledby="s4">
+    <div class="sec-head">
+      <h2 id="s4"><span class="num">4</span>Same Mayo test, different name or code — yes, this is common</h2>
+      <p>Every listing below is the <strong>same</strong> Rochester test: same 4 viruses, same IFA method, Mayo Test ID ARBOP/ABOPC. Only the ordering system's local code or name differs. These examples are US client labs — the same send-out pattern applies to any Mayo client abroad.</p>
+    </div>
+    <div class="card alias-list">
+      <div class="alias-row">
+        <b>UW Medicine — Laboratory Test Guide</b>
+        <span class="local">Lab Code <code>646</code> · “Arbovirus Antibody Panel, IgG and IgM (Sendout)”</span>
+        <span>External Test ID ABOPC / ARBOP — serum → order ARBOP, CSF → order ABOPC. <a href="https://testguide.labmed.uw.edu/view/646?tabs=yes">UW test guide 646</a></span>
+      </div>
+      <div class="alias-row">
+        <b>Children's Minnesota</b>
+        <span class="local">Local order code <code>ARBS</code></span>
+        <span>“Arbovirus Antibody Panel, IgG/IgM,” referred to Mayo Medical Laboratories (MML Test: ARBOP). <a href="https://www.childrensmn.org/References/Lab/serology/arbovirus-antibody-panel-blood.pdf">Children's Minnesota lab reference (PDF)</a></span>
+      </div>
+      <div class="alias-row">
+        <b>CentraCare</b>
+        <span class="local">Local code <code>LAB0298463</code></span>
+        <span>Mayo Test ID ARBOP; performing lab Mayo Clinic Laboratories in Rochester. <a href="https://centracarelaboratoryservices.testcatalog.org/show/LAB0298463">CentraCare test catalog</a></span>
+      </div>
+      <div class="alias-row">
+        <b>WakeMed</b>
+        <span class="local">Code <code>ABOPC / LAB3972</code></span>
+        <span>“Arbovirus Antibody Panel, IgG and IgM, CSF. Mayo, RefLab.” <a href="https://www.wakemed.org/for-providers/refer-to-us/pathology/find-a-test?page=87&combine&order=field_wm_softlab_order_code&sort=desc">WakeMed find-a-test</a></span>
+      </div>
+      <div class="alias-row">
+        <b>HealthLab</b>
+        <span class="local">Test Code <code>2192910</code></span>
+        <span>Alias list includes ARBOP; performing lab Mayo Clinic Dept of Lab Med &amp; Pathology #ARBOP. <a href="https://www.healthlabtesting.com/Test%20Directory/Test%20Directory%20Item%20Print.aspx?testGuid=06d75641-560c-4288-a99b-86fd2852ef82">HealthLab test directory</a></span>
+      </div>
+      <div class="alias-row">
+        <b>Mayo's own short names</b>
+        <span class="local">Report names</span>
+        <span>“Arbovirus Ab Panel IgG and IgM, S” (serum) and “Arbovirus Ab Panel IgG and IgM, CSF.” Mayo's catalog aliases for the panel also include “Arbovirus Serology” and “Central Nervous System Screen.”</span>
+      </div>
+    </div>
+
+    <h3 style="font-family:Georgia,serif;font-size:19px;margin:26px 0 10px">The 4-point check: is it really the Mayo test?</h3>
+    <div class="rule-grid">
+      <div class="rule-step"><span class="n">1</span><h3>Performing lab</h3><p>Mayo Clinic Laboratories in <strong>Rochester</strong>.</p></div>
+      <div class="rule-step"><span class="n">2</span><h3>Mayo Test ID</h3><p><strong>ARBOP</strong> (serum) or <strong>ABOPC</strong> (spinal fluid).</p></div>
+      <div class="rule-step"><span class="n">3</span><h3>Method</h3><p><strong>IFA</strong> — immunofluorescence assay.</p></div>
+      <div class="rule-step"><span class="n">4</span><h3>Virus list</h3><p>Exactly <strong>California (La Crosse), Eastern equine, St. Louis, Western equine</strong>.</p></div>
+    </div>
+    <p class="rule-note">If <strong>any</strong> of the four differs — PCR instead of IFA, dengue/Zika/Ross River in the list, a public-health lab as the performer — it is a <strong>different test</strong>, even if it is called an “arbovirus panel.”</p>
+  </section>
+
+  <!-- 5. Different tests -->
+  <section aria-labelledby="s5">
+    <div class="sec-head">
+      <h2 id="s5"><span class="num">5</span>Different tests entirely, under a similar name</h2>
+      <p>These are <strong>not Mayo tests</strong>. Each lab's own page lists a different composition from ARBOP. Filter by place, or show everything:</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter panels by place">
+      <button type="button" data-filter="all" aria-pressed="true">All panels</button>
+      <button type="button" data-filter="intl" aria-pressed="false">Outside the US</button>
+      <button type="button" data-filter="us" aria-pressed="false">US public health</button>
+      <button type="button" data-filter="kit" aria-pressed="false">Assay kits (not lab panels)</button>
+    </div>
+
+    <div class="panel-list" id="panelList">
+      <article class="card diff-card" data-cat="intl">
+        <div class="diff-top"><h3>Canterbury Health Laboratories — New Zealand</h3><span class="tag nonmayo">Non-Mayo</span></div>
+        <p><strong>“Arbovirus PCR”</strong> — Test Code 9273, Delphic PARB. A PCR panel of <strong>only chikungunya, dengue and Zika</strong>. No California / EEE / St. Louis / WEE, and no serology at all — the near-opposite of Mayo's panel.</p>
+        <p class="src"><a href="https://www.chl.co.nz/test/arbovirus-pcr/">chl.co.nz — Arbovirus PCR</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="intl">
+        <div class="diff-top"><h3>PathWest — Western Australia</h3><span class="tag nonmayo">Non-Mayo</span></div>
+        <p><strong>“Arbovirus Serology”</strong> — serum SEARB / CSF SEARC. A <strong>history-selected</strong> panel, IgM + IgG per selected virus: flaviviruses <strong>dengue, Zika, Japanese encephalitis, Murray Valley encephalitis, Kunjin/West Nile, yellow fever</strong>, plus alphaviruses <strong>chikungunya, Ross River, Barmah Forest</strong>. Ross River, Barmah Forest and Murray Valley are Australian-region viruses that are absent from Mayo ARBOP.</p>
+        <p class="src"><a href="https://pathwesttd.health.wa.gov.au/testdirectory/testdetail.aspx?TestID=1792">PathWest test directory — Arbovirus Serology</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="intl">
+        <div class="diff-top"><h3>UKHSA Rare &amp; Imported Pathogens Laboratory — United Kingdom</h3><span class="tag nonmayo">Non-Mayo</span></div>
+        <p><strong>Geographic panels</strong> — no fixed “ARBO panel” name found. The panel is <strong>chosen by the laboratory</strong> based on region, symptoms, travel and duration. For acutely unwell returning travellers, Zika testing is done as part of a geographic PCR + serology panel without Zika having to be specifically requested. Covers dengue, chikungunya, Zika, West Nile and others as selected — not Mayo's fixed 4-virus IFA.</p>
+        <p class="src"><a href="https://www.gov.uk/guidance/zika-virus-sample-testing-advice">GOV.UK — Zika virus sample testing advice</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="us">
+        <div class="diff-top"><h3>Minnesota Dept. of Health — United States</h3><span class="tag nonmayo">Non-Mayo · Public health</span></div>
+        <p><strong>“Arbovirus – Serum (ARBO)” / “Arbovirus – CSF (ARBOCSF)”</strong> — the clearest warning case. Same “ARBO” stem as Mayo, different test: the panel “may change throughout the testing season” and <strong>may include West Nile, Powassan, Jamestown Canyon</strong>, EEE, WEE, California-group and St. Louis — broader than ARBOP, and it includes the Jamestown Canyon analyte Mayo's panel lacks.</p>
+        <p class="src"><a href="https://forms.web.health.state.mn.us/idl/test/861">Minnesota — Arbovirus, Serum (test 861)</a> · <a href="https://forms.web.health.state.mn.us/idl/test/860">Arbovirus, CSF (test 860)</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="us">
+        <div class="diff-top"><h3>Wadsworth Center — New York State, United States</h3><span class="tag nonmayo">Non-Mayo · Public health</span></div>
+        <p><strong>“Travel-Associated Arbovirus Panel”</strong> — Test Catalog ID 6150, PCR: <strong>dengue, chikungunya, Oropouche, Zika</strong>. Kept separate from its Arbovirus Summer Panel 5470 (serum/urine/whole blood) and Viral Encephalitis Panel – Summer 686 (CSF) for endemic viruses.</p>
+        <p class="src"><a href="https://wadsworth.org/node/3278/printable/print">Wadsworth Center — Arbovirus Testing</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="us">
+        <div class="diff-top"><h3>Maryland Dept. of Health — United States</h3><span class="tag nonmayo">Non-Mayo · Public health</span></div>
+        <p><strong>“Arbovirus Endemic Panel” vs “Arbovirus Travel-Associated Panel.”</strong> Endemic: <strong>West Nile, St. Louis, Eastern equine IgM</strong> (plus La Crosse by history). Travel-Associated: <strong>dengue, chikungunya, Zika IgM</strong>. A different split from Mayo — and West Nile sits <em>inside</em> the endemic panel, where Mayo keeps it as a separate test (WNS/WNC).</p>
+        <p class="src"><a href="http://health.maryland.gov/laboratories/Pages/Arbovirus-Serology.aspx">Maryland Laboratories — Arbovirus Serology</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="us">
+        <div class="diff-top"><h3>Virginia DCLS — United States</h3><span class="tag nonmayo">Non-Mayo · Public health</span></div>
+        <p><strong>“Human Arbo Viral Panel”</strong> — IgM microsphere immunoassay/ELISA plus IgG ELISA, serum/CSF, <strong>approval required</strong>. A public-health panel, not a Mayo catalog ID.</p>
+        <p class="src"><a href="https://dgs.virginia.gov/division-of-consolidated-laboratory-services/resources/test-catalog/human-arbo-viral-panel">Virginia DCLS — Human Arbo Viral Panel</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="us">
+        <div class="diff-top"><h3>CDC / APHL Arbovirus Reference Center — United States</h3><span class="tag nonmayo">Non-Mayo · Reference center</span></div>
+        <p><strong>A per-virus menu, not one fixed panel</strong> (Sept 2026 menu): molecular RT-PCR, IgM MIA/ELISA, IgG IFA and PRNT by virus — e.g. Jamestown Canyon IgG IFA 606 + PRNT 3170; Arbovirus Travel Panel PCR 6150; Arbovirus Summer Panel (Molecular) 5470. This is also the confirmatory PRNT route for flavivirus cross-reactivity.</p>
+        <p class="src"><a href="https://aphl.org/docs/default-source/infectious-diseases-documents/vector-borne-diseases/arbovirusreferencecenter_testmenus.pdf?sfvrsn=75ba9d05_2">APHL — Arbovirus Reference Center test menu (PDF)</a></p>
+      </article>
+
+      <article class="card diff-card" data-cat="kit">
+        <div class="diff-top"><h3>bioMérieux VIDAS® &amp; EUROIMMUN — commercial assay kits</h3><span class="tag kit">Kit · Not a lab panel</span></div>
+        <p>These are <strong>reagents local labs abroad run</strong>, not panels offered by a laboratory and not Mayo tests: bioMérieux <strong>VIDAS® Dengue Panel</strong> (NS1 antigen + anti-dengue IgM + IgG) and <strong>VIDAS® Chikungunya Panel</strong> (IgM + IgG); EUROIMMUN <strong>Arbovirus Fever Mosaic 2</strong> (Zika, chikungunya, dengue 1–4, by IFA). A lab using one of these kits is still not running Mayo's ARBOP.</p>
+        <p class="src"><a href="https://www.biomerieux.com/corp/en/our-offer/clinical-products/vidas-arboviruses-panel.html">bioMérieux — VIDAS Arboviruses Panel</a></p>
+      </article>
+    </div>
+    <p id="filterStatus" class="rule-note" aria-live="polite"></p>
+  </section>
+
+  <!-- 6. Gaps -->
+  <section aria-labelledby="s6">
+    <div class="sec-head">
+      <h2 id="s6"><span class="num">6</span>What could not be verified — open questions, stated plainly</h2>
+    </div>
+    <div class="card">
+      <ul class="gaps">
+        <li><strong>No explicit Mayo denial exists in the sources found.</strong> Mayo does not publish a statement saying “there is no country-specific catalog.” The one-catalog conclusion rests on the single daily-updated catalog, the uniform-protocol statements, and the absence of any country-specific ARBO listing in searches. Confidence: high for ARBOP/ABOPC's composition; medium for the absence of a country-specific panel.</li>
+        <li><strong>Yellow fever and Japanese encephalitis at Mayo: not found, not proven absent.</strong> No Mayo test ID for either was returned by catalog searches — they appear only as cross-reactivity/specificity organisms. Mayo's referred-tests list was not fully searchable, so a referral route via Mayo cannot be ruled out. No such Mayo ID is cited on this page.</li>
+        <li><strong>No country-by-country Mayo price or availability table exists in the sources found.</strong> Fees are account-specific (“contact your U.S. or International Regional Manager”). Whether a specimen may legally leave a specific country must be checked with Mayo's global team and that country's export rules at order time.</li>
+        <li><strong>Jamestown Canyon cross-reactivity is unverified.</strong> Whether a California-serogroup (La Crosse) IFA result in ARBOP would cross-react with Jamestown Canyon antigen is not stated on Mayo's ARBOP page, which discusses dengue and EEE/WEE cross-reactivity only. Do not infer a Jamestown Canyon result from ARBOP.</li>
+        <li><strong>Live-page check failed during research.</strong> Two attempts to open Mayo's ARBOP page in a live browser returned an error with no page. Every Mayo fact here comes from catalog/index fetches (pages crawled 28–30 Oct 2026, plus the mosquito-borne algorithm PDF) and is consistent across Mayo and multiple client-lab relistings — but re-check the live catalog before ordering.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <section aria-labelledby="s7">
+    <div class="sec-head">
+      <h2 id="s7">Sources</h2>
+      <p>All read 2 Nov 2026. Mayo pages via catalog/index fetch; see the live-check caveat above.</p>
+    </div>
+    <ul class="sources">
+      <li class="grp">Mayo Clinic Laboratories — the panel &amp; the catalog</li>
+      <li>ARBOP: <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">mayocliniclabs.com/test-catalog/overview/83267</a></li>
+      <li>ABOPC: <a href="https://www.mayocliniclabs.com/test-catalog/overview/83897">mayocliniclabs.com/test-catalog/overview/83897</a></li>
+      <li>Global capabilities: <a href="https://news.mayocliniclabs.com/international/global-capabilities/?pg=13">news.mayocliniclabs.com/international/global-capabilities</a></li>
+      <li>Commercial laboratories (uniform protocols): <a href="https://news.mayocliniclabs.com/commercial-laboratories/?pg=2">news.mayocliniclabs.com/commercial-laboratories</a></li>
+      <li>International shipping guide: <a href="https://test.mayocliniclabs.com/-/media/it-mmfiles/Special-Instructions/D/1/F/international-shipping-guide">test.mayocliniclabs.com — international shipping guide</a></li>
+      <li>Specialty testing: <a href="https://test.mayocliniclabs.com/test-catalog/specialty-testing">test.mayocliniclabs.com/test-catalog/specialty-testing</a></li>
+      <li class="grp">Mayo — exposure-based selection &amp; separate tests</li>
+      <li>Mosquito-borne algorithm (PDF): <a href="https://news.mayocliniclabs.com/n1/96e99366cea7b0de/uploads/2025/05/Mosquito-borne_Disease_Laboratory_Testing.pdf">news.mayocliniclabs.com — Mosquito-borne Disease Laboratory Testing</a></li>
+      <li>Mosquito-borne disease menu: <a href="https://news.mayocliniclabs.com/infectious-disease/vector-borne-diseases/mosquito-borne-disease/">news.mayocliniclabs.com — mosquito-borne disease</a></li>
+      <li>DENGM: <a href="https://www.mayocliniclabs.com/test-catalog/Overview/83865">mayocliniclabs.com/test-catalog/Overview/83865</a> · CHIKS: <a href="https://www.mayocliniclabs.com/test-catalog/overview/603833">overview/603833</a> · VZIKS: <a href="https://www.mayocliniclabs.com/test-catalog/Overview/619432">Overview/619432</a></li>
+      <li>CDC — Japanese encephalitis diagnosis: <a href="https://www.cdc.gov/japanese-encephalitis/hcp/clinical-diagnosis/index.html">cdc.gov/japanese-encephalitis/hcp/clinical-diagnosis</a></li>
+      <li class="grp">Same Mayo test under local codes</li>
+      <li>UW Medicine: <a href="https://testguide.labmed.uw.edu/view/646?tabs=yes">testguide.labmed.uw.edu/view/646</a> · Children's Minnesota: <a href="https://www.childrensmn.org/References/Lab/serology/arbovirus-antibody-panel-blood.pdf">childrensmn.org — arbovirus antibody panel (PDF)</a> · CentraCare: <a href="https://centracarelaboratoryservices.testcatalog.org/show/LAB0298463">centracarelaboratoryservices.testcatalog.org/show/LAB0298463</a> · WakeMed: <a href="https://www.wakemed.org/for-providers/refer-to-us/pathology/find-a-test?page=87&combine&order=field_wm_softlab_order_code&sort=desc">wakemed.org — find a test</a> · HealthLab: <a href="https://www.healthlabtesting.com/Test%20Directory/Test%20Directory%20Item%20Print.aspx?testGuid=06d75641-560c-4288-a99b-86fd2852ef82">healthlabtesting.com — test directory item</a></li>
+      <li class="grp">Different panels — other labs</li>
+      <li>Canterbury (NZ): <a href="https://www.chl.co.nz/test/arbovirus-pcr/">chl.co.nz/test/arbovirus-pcr</a> · PathWest (Australia): <a href="https://pathwesttd.health.wa.gov.au/testdirectory/testdetail.aspx?TestID=1792">pathwesttd.health.wa.gov.au — test 1792</a> · UKHSA RIPL: <a href="https://www.gov.uk/guidance/zika-virus-sample-testing-advice">gov.uk — Zika sample testing advice</a></li>
+      <li>Wadsworth (NY): <a href="https://wadsworth.org/node/3278/printable/print">wadsworth.org/node/3278</a> · Maryland: <a href="http://health.maryland.gov/laboratories/Pages/Arbovirus-Serology.aspx">health.maryland.gov — Arbovirus Serology</a> · Minnesota: <a href="https://forms.web.health.state.mn.us/idl/test/861">test 861 (serum)</a> / <a href="https://forms.web.health.state.mn.us/idl/test/860">test 860 (CSF)</a> · Virginia DCLS: <a href="https://dgs.virginia.gov/division-of-consolidated-laboratory-services/resources/test-catalog/human-arbo-viral-panel">dgs.virginia.gov — Human Arbo Viral Panel</a></li>
+      <li>CDC/APHL Reference Center menu: <a href="https://aphl.org/docs/default-source/infectious-diseases-documents/vector-borne-diseases/arbovirusreferencecenter_testmenus.pdf?sfvrsn=75ba9d05_2">aphl.org — Arbovirus Reference Center test menu (PDF)</a> · bioMérieux VIDAS: <a href="https://www.biomerieux.com/corp/en/our-offer/clinical-products/vidas-arboviruses-panel.html">biomerieux.com — VIDAS Arboviruses Panel</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    This page summarizes published laboratory catalogs for reference. It is not medical advice, and it does not interpret any person's test results — testing decisions belong with your treating clinicians and the performing laboratory.
+  </footer>
+
+</div>
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('#panelList .diff-card');
+  var status = document.getElementById('filterStatus');
+  var labels = { all:'all panels', intl:'panels outside the US', us:'US public-health panels', kit:'assay kits' };
+  function apply(filter){
+    var shown = 0;
+    cards.forEach(function(card){
+      var match = filter === 'all' || card.getAttribute('data-cat') === filter;
+      card.classList.toggle('hidden', !match);
+      if (match) shown++;
+    });
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-filter') === filter ? 'true' : 'false');
+    });
+    status.textContent = 'Showing ' + shown + ' of ' + cards.length + ' — ' + labels[filter] + '.';
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-filter')); });
+  });
+  apply('all');
+})();
+</script>
+</body>
+</html>

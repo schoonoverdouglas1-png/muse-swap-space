@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Mayo Encephalitis and Meningitis PCR Panels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f4ee; --surface:#fffdf8; --surface2:#efe9dc; --ink:#1a2220; --muted:#5b6862; --line:#ddd5c4;
+    --teal:#0d6e63; --teal-dark:#084f47; --teal-soft:#dff0ec; --amber:#b45309; --amber-soft:#fdf0d9; --rust:#9a3412; --rust-soft:#fde8dd;
+    --blue-soft:#e3ecf5; --blue:#2b5a83;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#121614; --surface:#1b201e; --surface2:#232a27; --ink:#eef2ef; --muted:#a8b5ae; --line:#394540; --teal:#4cc2b2; --teal-dark:#8fe0d3; --teal-soft:#15332e; --amber:#f0a84a; --amber-soft:#35260f; --rust:#ff9a6b; --rust-soft:#3a2118; --blue-soft:#1d2f40; --blue:#8fc0e8; }
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55}
+  a{color:var(--teal);text-underline-offset:3px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 64px}
+  /* Hero */
+  .hero{padding:36px 0 8px}
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:600}
+  h1{font-family:"IBM Plex Serif",serif;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.05;margin:.35em 0 .4em;letter-spacing:-.01em}
+  .lede{font-size:1.12rem;color:var(--muted);max-width:720px;margin:0}
+  .verdict{margin:28px 0 0;background:var(--teal-dark);color:#fff;border-radius:18px;padding:26px 26px 22px;position:relative;overflow:hidden}
+  @media (prefers-color-scheme: dark){.verdict{background:#0e3a34}}
+  .verdict h2{font-family:"IBM Plex Serif",serif;font-size:clamp(1.35rem,3.5vw,1.9rem);line-height:1.2;margin:0 0 10px;color:#fff}
+  .verdict p{margin:0;color:#d7ece8;max-width:760px}
+  .verdict p strong{color:#fff}
+  .verdict-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .vcard{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 15px}
+  .vcard b{display:block;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:#9fe3d6;margin-bottom:5px}
+  .vcard span{font-size:.92rem;color:#eef7f4;line-height:1.45;display:block}
+  /* Caveat */
+  .caveat{margin:16px 0 0;background:var(--amber-soft);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink)}
+  .caveat strong{color:var(--amber)}
+  /* Nav chips */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 4px}
+  .chips a{font-size:.85rem;font-weight:600;text-decoration:none;background:var(--surface);border:1px solid var(--line);color:var(--ink);padding:7px 13px;border-radius:999px}
+  .chips a:hover{border-color:var(--teal);color:var(--teal)}
+  /* Sections */
+  section{margin-top:44px}
+  .sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+  .num{font-family:"IBM Plex Mono",monospace;font-weight:600;background:var(--teal);color:#fff;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:none;font-size:.95rem}
+  h2.sec{font-family:"IBM Plex Serif",serif;font-size:1.55rem;line-height:1.2;margin:2px 0 4px}
+  .sec-sub{color:var(--muted);margin:0;max-width:720px}
+  /* Panel card */
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .panel + .panel{margin-top:14px}
+  .panel-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+  .id{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:1.25rem;letter-spacing:.02em}
+  .badges{display:flex;flex-wrap:wrap;gap:6px}
+  .badge{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line)}
+  .badge.csf{background:var(--blue-soft);color:var(--blue);border-color:transparent}
+  .badge.blood{background:var(--rust-soft);color:var(--rust);border-color:transparent}
+  .badge.no{background:#f3d9d4;color:#8a2a1a;border-color:transparent}
+  .badge.yes{background:var(--teal-soft);color:var(--teal);border-color:transparent}
+  @media (prefers-color-scheme: dark){.badge.no{background:#4a2320;color:#ffb59d}}
+  .panel-name{font-weight:600;margin:6px 0 2px}
+  .panel-meta{color:var(--muted);font-size:.92rem;margin:0}
+  /* Organism viz */
+  .org-viz{display:grid;grid-template-columns:1.1fr 1.2fr .7fr;gap:12px;margin-top:18px}
+  .org-col{border-radius:12px;padding:15px}
+  .org-col h3{margin:0 0 8px;font-size:.82rem;letter-spacing:.07em;text-transform:uppercase}
+  .org-col ul{margin:0;padding-left:18px;font-size:.92rem}
+  .org-col li{margin:3px 0}
+  .org-bact{background:var(--blue-soft)} .org-vir{background:var(--teal-soft)} .org-fung{background:var(--amber-soft)}
+  .count{font-family:"IBM Plex Mono",monospace;font-size:2rem;font-weight:600;line-height:1}
+  .note{font-size:.9rem;color:var(--muted);margin-top:14px}
+  .note strong{color:var(--ink)}
+  /* Two col cards */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .mini{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .mini h3{margin:8px 0 4px;font-size:1.05rem}
+  .mini p,.mini li{font-size:.93rem;color:var(--muted)}
+  .mini ul{padding-left:18px;margin:8px 0}
+  .mini li{margin:4px 0;color:var(--ink)}
+  .mini li span{color:var(--muted)}
+  .excl{background:var(--rust-soft);border-radius:10px;padding:10px 13px;font-size:.9rem;margin-top:12px}
+  /* Filter + table */
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 12px}
+  .fbtn{font:inherit;font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+  .fbtn[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+  .search{flex:1;min-width:180px}
+  .search input{width:100%;font:inherit;padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:.93rem}
+  th{text-align:left;font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line);background:var(--surface2)}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.idcell{font-family:"IBM Plex Mono",monospace;font-weight:600;white-space:nowrap}
+  .empty-row td{text-align:center;color:var(--muted);padding:22px}
+  /* Callout */
+  .callout{border-radius:var(--radius);padding:22px;border:1px solid var(--line)}
+  .callout.arbo{background:var(--amber-soft)}
+  .callout h3{font-family:"IBM Plex Serif",serif;font-size:1.3rem;margin:0 0 8px}
+  .arbo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  .arbo-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px}
+  .arbo-card .id{font-size:1.05rem}
+  /* Vary list */
+  .vary{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .vary-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .vary-card h3{margin:0 0 6px;font-size:1rem}
+  .vary-card p{margin:0;font-size:.93rem;color:var(--muted)}
+  .vary-card p strong{color:var(--ink)}
+  .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:14px}
+  .vs-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .vs-mid{display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--muted)}
+  .vs-card h3{margin:0 0 4px}
+  .bigcount{font-family:"IBM Plex Serif",serif;font-size:2.2rem;line-height:1}
+  /* Lists */
+  .plain{padding-left:20px} .plain li{margin:7px 0}
+  .gapbox{background:var(--surface);border:1px dashed var(--muted);border-radius:var(--radius);padding:20px 22px}
+  .sources{font-size:.88rem;color:var(--muted)}
+  .sources li{margin:6px 0;word-break:break-word}
+  footer{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:.88rem}
+  @media (max-width:720px){
+    .verdict-grid,.org-viz,.grid2,.arbo-grid,.vary,.vs{grid-template-columns:1fr}
+    .vs-mid{padding:2px}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    td{border-bottom:none;padding:6px 14px}
+    tr{border-bottom:1px solid var(--line);padding:10px 0;display:block}
+    tr:last-child{border-bottom:none}
+    td.idcell{font-size:1.05rem}
+    td::before{content:attr(data-l);display:block;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    td.idcell::before{display:none}
+  }
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Mayo Clinic Laboratories · Test catalog research · Oct 30 – Nov 2, 2026</div>
+  <h1>There is no Mayo blood version of the meningitis / encephalitis PCR panel.</h1>
+  <p class="lede">Mayo's only syndromic meningitis/encephalitis PCR panel is <strong>CSFME — spinal fluid only</strong>. For blood, Mayo offers two tick-borne panels and a set of single-organism PCRs you order one at a time. And the catalog is the same worldwide — what changes is the site, the state, and the exposure, not the country.</p>
+
+  <div class="verdict">
+    <h2>The three answers, up front</h2>
+    <p>Everything below is the evidence for these three points, with exact test IDs, specimen types, and organism lists from Mayo's catalog.</p>
+    <div class="verdict-grid">
+      <div class="vcard"><b>1 · Blood panel?</b><span><strong>No multiplex blood panel</strong> reproduces the CSF panel's 14 organisms. Blood PCR is TIKLB + BRBST (tick-borne) plus single-organism tests.</span></div>
+      <div class="vcard"><b>2 · Different by country?</b><span><strong>Not supported.</strong> One Mayo catalog, shipped to Rochester from 80–130+ countries. Different lists abroad are usually local, non-Mayo panels.</span></div>
+      <div class="vcard"><b>3 · Is “ARBO” a panel?</b><span><strong>No Mayo ID “ARBO” exists.</strong> The closest are ARBOP / ABOPC — arbovirus <em>antibody</em> panels (IFA), not PCR.</span></div>
+    </div>
+  </div>
+
+  <div class="caveat"><strong>Verification note:</strong> All Mayo facts are from Mayo's official catalog and algorithm pages as indexed / crawled Oct 30 – Nov 2, 2026, cross-checked against client test-catalog mirrors. The research browser could not do a live-window read, so this is <strong>index-verified, not live-window-verified</strong> — re-check CSFME and TIKLB on mayocliniclabs.com before ordering.</div>
+
+  <nav class="chips" aria-label="On this page">
+    <a href="#csfme">CSFME — the CSF panel</a><a href="#blood">True blood panels</a><a href="#single">Single-organism blood PCRs</a><a href="#arbo">The “ARBO” question</a><a href="#autoimmune">Autoimmune (not PCR)</a><a href="#world">Other countries</a><a href="#cdc">CDC routing</a><a href="#gaps">Open questions</a>
+  </nav>
+</header>
+
+<!-- 1 CSFME -->
+<section id="csfme">
+  <div class="sec-head"><div class="num">1</div><div><h2 class="sec">CSFME — the one syndromic panel, CSF only</h2><p class="sec-sub">Meningitis/Encephalitis Pathogen Panel, PCR, Spinal Fluid · Multiplex PCR (BioFire FilmArray) · CSF only — sterile vial, 1 mL, refrigerated ≤7 days; frozen specimens and shunt fluid rejected.</p></div></div>
+  <div class="panel">
+    <div class="panel-top"><span class="id">CSFME</span><span class="badges"><span class="badge csf">CSF only</span><span class="badge">Multiplex PCR</span><span class="badge no">NY: No</span></span></div>
+    <p class="panel-name">14 organisms — in spinal fluid, never in blood</p>
+    <div class="org-viz">
+      <div class="org-col org-bact"><div class="count">6</div><h3>Bacteria</h3><ul><li><em>E. coli</em> K1</li><li><em>H. influenzae</em></li><li><em>L. monocytogenes</em></li><li><em>N. meningitidis</em> (encapsulated only)</li><li><em>S. agalactiae</em></li><li><em>S. pneumoniae</em></li></ul></div>
+      <div class="org-col org-vir"><div class="count">7</div><h3>Viruses</h3><ul><li>Cytomegalovirus (CMV)</li><li>Enterovirus</li><li>HSV-1</li><li>HSV-2</li><li>HHV-6</li><li>Human parechovirus</li><li>Varicella-zoster virus (VZV)</li></ul></div>
+      <div class="org-col org-fung"><div class="count">1</div><h3>Fungus</h3><ul><li><em>Cryptococcus neoformans / gattii</em></li></ul></div>
+    </div>
+    <p class="note"><strong>Meningitis workup, per Mayo's algorithm:</strong> for acute illness (&lt;8 days) it starts with lumbar puncture + CSFME if on-site CSF testing is available, plus <strong>blood cultures (culture, not PCR)</strong>, CSF cell count / protein / glucose, Gram stain and bacterial culture. Mayo says it is “not usually recommended” to also order CMVPV, LENT, HSVC or VZVPV when CSFME is ordered, and local public-health requirements may require additional testing on positives — retain an aliquot. <a href="https://www.mayocliniclabs.com/test-catalog/Overview/622764">Mayo CSFME catalog page</a> · <a href="https://www.mayocliniclabs.com/en/articles/resources/-/media/it-mmfiles/special%20instructions/a/a/5/meningitis-encephalitis_panel_algorithm.pdf">Meningitis/Encephalitis Panel Algorithm (PDF)</a></p>
+  </div>
+</section>
+
+<!-- 2 Blood panels -->
+<section id="blood">
+  <div class="sec-head"><div class="num">2</div><div><h2 class="sec">The only true multi-organism blood panels</h2><p class="sec-sub">Both are tick-borne panels on whole blood. Neither is a meningitis panel, and neither reproduces the CSFME list.</p></div></div>
+  <div class="grid2">
+    <div class="mini">
+      <span class="id">TIKLB</span>
+      <h3>Tick-Borne Panel, Molecular Detection, PCR, Blood</h3>
+      <span class="badges"><span class="badge blood">Whole blood EDTA · 1 mL</span><span class="badge yes">NY: Yes</span></span>
+      <ul>
+        <li><strong>BABPB</strong> — <em>Babesia</em> spp. <span>(<em>B. microti, B. duncani, B. divergens</em>, MO-1)</span></li>
+        <li><strong>EPCRB</strong> — <em>Ehrlichia / Anaplasma</em> <span>(<em>E. chaffeensis, E. ewingii/canis, E. muris eauclairensis, A. phagocytophilum</em>)</span></li>
+        <li><strong>BMIPB</strong> — <em>Borrelia miyamotoi</em> <span>(relapsing-fever <em>B. hermsii / parkeri / turicatae</em> may also be detected at a different Tm)</span></li>
+      </ul>
+      <div class="excl"><strong>Does not detect</strong> <em>B. burgdorferi</em> or <em>B. mayonii</em> (Lyme). <a href="https://www.mayocliniclabs.com/test-catalog/overview/618311">Mayo TIKLB page</a></div>
+    </div>
+    <div class="mini">
+      <span class="id">BRBST</span>
+      <h3>Tickborne Bacterial, PCR and Sequencing, Blood</h3>
+      <span class="badges"><span class="badge blood">Whole blood EDTA · 1 mL</span></span>
+      <p>Broad 16S rRNA PCR + next-generation sequencing identification of pathogenic tick-borne bacteria in blood, including organisms with a similar presentation — e.g. <em>Coxiella burnetii</em> (Q fever) and leptospirosis.</p>
+      <div class="excl"><strong>Not first-tier</strong> — only when routine testing is negative. Not a meningitis panel and not marketed for encephalitis. <a href="https://mml.testcatalog.org/show/BRBST">BRBST catalog mirror</a></div>
+      <p style="margin-top:12px"><strong>Not a blood panel:</strong> BRBPS (Broad Range Bacterial PCR and Sequencing, Varies) covers sterile body fluids including CSF, and tissue — do not cite it as a blood panel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 Single organism -->
+<section id="single">
+  <div class="sec-head"><div class="num">3</div><div><h2 class="sec">Single-organism blood PCRs — ordered one at a time</h2><p class="sec-sub">These are the blood, serum, and plasma PCRs relevant to encephalitis and meningitis. There is no panel bundling them. Filter by specimen or search by virus or test ID.</p></div></div>
+
+  <div class="toolbar" role="group" aria-label="Filter by specimen">
+    <button class="fbtn" data-f="all" aria-pressed="true">All specimens</button>
+    <button class="fbtn" data-f="whole" aria-pressed="false">Whole blood</button>
+    <button class="fbtn" data-f="serum" aria-pressed="false">Serum</button>
+    <button class="fbtn" data-f="plasma" aria-pressed="false">Plasma</button>
+    <label class="search"><span style="position:absolute;left:-9999px">Search tests</span><input id="q" type="search" placeholder="Search — e.g. West Nile, HSV, POWVB…"></label>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Test ID</th><th>Exact catalog name</th><th>Specimen</th><th>Organism / note</th></tr></thead>
+      <tbody id="rows">
+        <tr data-spec="whole" data-text="wnvbl west nile virus rna pcr blood"><td class="idcell">WNVBL</td><td data-l="Name">West Nile Virus, RNA, PCR, Molecular Detection, Blood</td><td data-l="Specimen">Whole blood EDTA</td><td data-l="Organism">West Nile virus lineages 1+2. Mayo: whole-blood PCR up to 87% sensitive in acute disease vs serum 26%.</td></tr>
+        <tr data-spec="serum" data-text="wnvs west nile virus rna pcr serum"><td class="idcell">WNVS</td><td data-l="Name">West Nile Virus, RNA, PCR, Molecular Detection, Serum</td><td data-l="Specimen">Serum, 0.5 mL · NY: Yes</td><td data-l="Organism">West Nile virus. <a href="https://www.mayocliniclabs.com/test-catalog/overview/608436">Catalog</a>. Urine (WNVUR) and CSF (WNCSF) versions also exist — not blood.</td></tr>
+        <tr data-spec="whole" data-text="powvb powassan virus rna pcr blood"><td class="idcell">POWVB</td><td data-l="Name">Powassan Virus, RNA, Molecular Detection, PCR, Blood</td><td data-l="Specimen">Whole blood</td><td data-l="Organism">Powassan virus lineages 1+2, early infection.</td></tr>
+        <tr data-spec="serum" data-text="powvs powvc powvu powassan serum spinal fluid urine"><td class="idcell">POWVS / POWVC / POWVU</td><td data-l="Name">Powassan Virus, RNA, PCR — Serum / Spinal Fluid / Urine</td><td data-l="Specimen">Serum / CSF / Urine</td><td data-l="Organism">Same virus; urine may stay positive ≥7 days. POWVC NY: Yes. <a href="https://www.mayocliniclabs.com/test-catalog/Overview/617485">POWVC catalog</a></td></tr>
+        <tr data-spec="serum" data-text="hrtvs heartland virus rna pcr serum"><td class="idcell">HRTVS</td><td data-l="Name">Heartland Virus, RNA, Molecular Detection, PCR, Serum</td><td data-l="Specimen">Serum, 0.5 mL · NY: Yes</td><td data-l="Organism">Heartland virus. HRTVC is the CSF version. <a href="https://www.mayocliniclabs.com/test-catalog/download-setup?format=pdf&unit_code=620057">Definition (PDF)</a></td></tr>
+        <tr data-spec="whole" data-text="hsvpb herpes simplex virus hsv pcr blood"><td class="idcell">HSVPB</td><td data-l="Name">Herpes Simplex Virus (HSV), Molecular Detection, PCR, Blood</td><td data-l="Specimen">Whole blood EDTA, 1 mL</td><td data-l="Organism">HSV-1 + HSV-2, disseminated disease. Jacksonville duplicate: LHSVB. <a href="https://microbiology.testcatalog.org/show/HSVPB">Catalog mirror</a></td></tr>
+        <tr data-spec="plasma" data-text="entp enterovirus pcr plasma"><td class="idcell">ENTP</td><td data-l="Name">Enterovirus, Molecular Detection, PCR, Plasma</td><td data-l="Specimen">Plasma EDTA, 1 mL</td><td data-l="Organism">Enterovirus (no serotyping). <a href="https://www.mayocliniclabs.com/test-catalog/Overview/89893">Catalog</a></td></tr>
+        <tr data-spec="plasma" data-text="qhv6p human herpesvirus 6 hhv-6 plasma"><td class="idcell">QHV6P</td><td data-l="Name">Human Herpesvirus-6 A and B DNA Detection and Quantification, PCR, Plasma</td><td data-l="Specimen">Plasma EDTA, 1 mL · NY: Yes</td><td data-l="Organism">HHV-6 A/B, quantitative. <a href="https://www.mayocliniclabs.com/test-catalog/overview/619925">Catalog</a></td></tr>
+        <tr data-spec="plasma" data-text="cmvqn cytomegalovirus cmv dna pcr plasma"><td class="idcell">CMVQN</td><td data-l="Name">Cytomegalovirus (CMV) DNA Detection and Quantification by Real-Time PCR, Plasma</td><td data-l="Specimen">Plasma</td><td data-l="Organism">CMV, quantitative. For plasma Mayo directs to CMVQN; CMVPV “Varies” is body fluids including CSF. <a href="https://www.mayocliniclabs.com/test-catalog/Overview/618968">CMVPV page</a></td></tr>
+        <tr data-spec="serum" data-text="dengs dengue virus pcr serum outside us"><td class="idcell">DENGS</td><td data-l="Name">Dengue Virus, Molecular Detection, PCR, Serum</td><td data-l="Specimen">Serum</td><td data-l="Organism">Dengue virus — listed for outside-US mosquito exposure.</td></tr>
+        <tr data-spec="serum" data-text="chiks chikungunya virus pcr serum outside us"><td class="idcell">CHIKS</td><td data-l="Name">Chikungunya Virus, PCR, Molecular Detection, Serum</td><td data-l="Specimen">Serum</td><td data-l="Organism">Chikungunya virus — outside-US exposure.</td></tr>
+        <tr data-spec="serum" data-text="vziks zika virus pcr serum"><td class="idcell">VZIKS</td><td data-l="Name">Zika Virus, PCR, Molecular Detection, Serum</td><td data-l="Specimen">Serum</td><td data-l="Organism">Zika virus — any-region exposure. VZIKU is the urine version.</td></tr>
+        <tr id="noresults" class="empty-row" hidden><td colspan="4">No tests match that filter and search together.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" style="margin-top:14px">
+    <p class="panel-name">No blood counterpart was found for these CSFME targets — do not assume one exists</p>
+    <p class="note" style="margin-top:6px">The six CSFME bacteria as a blood multiplex · human parechovirus as a standalone blood/plasma PCR · VZV as a standalone blood PCR (VZVPV “Varies” lists CSF, body fluid, swab, respiratory and tissue — blood is not listed) · <em>Cryptococcus</em> by blood PCR (diagnosis on blood is antigen-based, not a Mayo blood PCR panel).</p>
+    <p class="panel-name" style="margin-top:16px">Broad tests that are <em>not</em> PCR panels — do not mislabel them</p>
+    <ul class="plain" style="margin:6px 0 0">
+      <li><strong>MSCSF</strong> — Bacteria, Virus, Fungus, and Parasite Metagenomic Sequencing, Spinal Fluid. CSF 2 mL, metagenomic NGS (not PCR), lumbar-puncture CSF only; shunt/ventricular fluid not acceptable. NY: Yes.</li>
+      <li><strong>KPLA / KDPLA</strong> — Karius Spectrum, Plasma. Microbial cell-free DNA metagenomic sequencing, &gt;1,000 organisms, <strong>performed by Karius Laboratory</strong>, ordered through Mayo. Not a Mayo PCR panel, not encephalitis/meningitis-specific.</li>
+      <li><strong>FLARP</strong> — Free-Living Amebae, Molecular Detection, PCR, Varies. CSF 0.5 mL or tissue only — <em>Acanthamoeba</em> spp., <em>Naegleria fowleri</em>, <em>Balamuthia mandrillaris</em>. <strong>Not blood.</strong> NY: Yes.</li>
+    </ul>
+  </div>
+
+  <div class="panel" style="margin-top:14px">
+    <p class="panel-name">By pathogen class — the short map</p>
+    <ul class="plain" style="margin:6px 0 0">
+      <li><strong>Viral, blood PCR:</strong> West Nile, Powassan, Heartland, HSV, enterovirus (plasma), HHV-6 (plasma), CMV (plasma), dengue / chikungunya / Zika (serum).</li>
+      <li><strong>Bacterial:</strong> no blood meningitis multiplex. Blood is TIKLB + BRBST only. CSF/other: CSFME bacteria, BRBPS, MTBRP (<em>M. tuberculosis</em> complex), LYMPV (Lyme PCR, Varies).</li>
+      <li><strong>Fungal:</strong> <em>Cryptococcus</em> in CSFME is the only fungal target in a syndromic panel. No blood fungal PCR panel found.</li>
+      <li><strong>Parasitic:</strong> no blood parasitic encephalitis PCR panel found. CSF/tissue: FLARP. <strong>TOXB</strong> (<em>Toxoplasma gondii</em> PCR, Blood) appears on Mayo's microbiology request form as a single-organism test — its full catalog page was not verified here (see Open questions).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 ARBO -->
+<section id="arbo">
+  <div class="sec-head"><div class="num">4</div><div><h2 class="sec">The “ARBO” question</h2><p class="sec-sub">You asked whether ARBO is a code for the meningitis panel. In Mayo's catalog, it is not — and it is not a PCR test at all.</p></div></div>
+  <div class="callout arbo">
+    <h3>No Mayo test ID “ARBO” exists.</h3>
+    <p style="margin:0">“ARBO” / “ARBS” appear as <strong>local client / EHR codes</strong> that map to Mayo ARBOP — for example, Children's Minnesota lists lab code ARBS, “Referred to: Mayo Medical Laboratories (MML Test: ARBOP).” If a record says “ARBO panel,” check whether it means ARBOP, ABOPC, or a non-Mayo local arbovirus panel. It does not denote a Mayo PCR panel.</p>
+    <div class="arbo-grid">
+      <div class="arbo-card"><span class="id">ARBOP</span><p class="panel-name">Arbovirus Antibody Panel, IgG and IgM, Serum</p><p class="panel-meta">Serum, 0.5 mL · Method: IFA (antibody) · NY: Yes</p><p style="font-size:.92rem;margin:8px 0 0">California (La Crosse), Eastern equine, St. Louis, Western equine — CAVP, EEEP, STLP, WEEP. <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">Catalog</a></p></div>
+      <div class="arbo-card"><span class="id">ABOPC</span><p class="panel-name">Arbovirus Antibody Panel, IgG and IgM, Spinal Fluid</p><p class="panel-meta">CSF, 0.7 mL · Method: IFA (antibody)</p><p style="font-size:.92rem;margin:8px 0 0">Same 4 viruses — CAVPC, EEPC, STLPC, WEEPC. <strong>Not available for New York-origin specimens.</strong> <a href="https://www.mayocliniclabs.com/test-catalog/overview/83897">Catalog</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Autoimmune -->
+<section id="autoimmune">
+  <div class="sec-head"><div class="num">5</div><div><h2 class="sec">Autoimmune encephalitis — antibody-based, not PCR</h2><p class="sec-sub">Kept separate on purpose: none of these is a PCR test, and none should be cited as an “encephalitis PCR panel.”</p></div></div>
+  <div class="grid2">
+    <div class="mini"><span class="id">ENS2</span><h3>Encephalopathy, Autoimmune / Paraneoplastic Evaluation, Serum</h3><span class="badges"><span class="badge">Serum</span><span class="badge">Antibody</span><span class="badge yes">NY: Yes</span></span><p>Methods: IFA, cell-binding assay (CBA), ELISA, RIA, Western blot, immunoblot + interpretation.</p><p style="color:var(--ink)">Antibodies include: AMPA-R, amphiphysin, AGNA-1, ANNA-1/2/3, CASPR2, CRMP-5, DPPX, GABA-A/B-R, GAD65, IgLON5, KLHL11, LGI1, Ma2, mGluR1/5, neurochondrin, NMDA-R, PDE10A, PCA-1/2/Tr, septin-7, TRIM46, AK5.</p><p><a href="https://www.mayocliniclabs.com/test-catalog/Overview/92116">Mayo ENS2 page</a></p></div>
+    <div class="mini"><span class="id">ENC2</span><h3>Encephalopathy, Autoimmune / Paraneoplastic Evaluation, Spinal Fluid</h3><span class="badges"><span class="badge csf">CSF</span><span class="badge">Antibody</span><span class="badge">Adults ≥18</span></span><p>Same antibody methods and antibody set, in CSF form. <a href="https://www.mayocliniclabs.com/test-catalog/download-setup?format=pdf&unit_code=92117">ENC2 definition (PDF)</a></p><p style="color:var(--ink)"><strong>Pediatric counterpart:</strong> PCDES (serum) / PCDEC (CSF). ENC2 ordered for a patient under 18 is cancelled and auto-reordered as PCDEC; ENS2 likewise maps to PCDES.</p><p>Mayo guidance: order the phenotype evaluation in <strong>both</strong> serum and CSF — some antibodies are more sensitive in one fluid (NMDA, GFAP, NIF better in CSF; LGI1, CASPR2 better in serum). <a href="https://news.mayocliniclabs.com/autoimmune-testing-education/">Mayo autoimmune testing education</a></p></div>
+  </div>
+</section>
+
+<!-- 6 World -->
+<section id="world">
+  <div class="sec-head"><div class="num">6</div><div><h2 class="sec">Other countries: one catalog, four things that actually vary</h2><p class="sec-sub">Mayo describes one open-access catalog, updated daily, whose tests are “available to patients around the world through Mayo Clinic Laboratories,” with MayoLINK ordering in eight languages and global logistics to extend specimen stability in transit. No country-specific Mayo encephalitis/meningitis PCR panel, renamed panel, or different organism list was found. <a href="https://test.mayocliniclabs.com/test-catalog/specialty-testing">Specialty Testing</a> · <a href="https://news.mayocliniclabs.com/international/global-capabilities/">Global Capabilities</a></p></div></div>
+  <div class="vary">
+    <div class="vary-card"><h3>A · Performing site, inside the US — Rochester vs Jacksonville</h3><p>Jacksonville-only IDs, with Rochester equivalents for all other clients: <strong>LHSV / LHSVB</strong> (= HSVPV / HSVPB), <strong>LCMV</strong> (= CMVPV), <strong>LVZV</strong> (= VZVPV), <strong>LHSVZ</strong> (= HSVPV + VZVPV). One of these IDs on a report means the specimen went to Jacksonville, FL — not a different assay or country.</p></div>
+    <div class="vary-card"><h3>B · State — New York</h3><p>The only state-level split found. <strong>CSFME = No</strong> and <strong>ABOPC = not available</strong> for NY-origin specimens, while ARBOP, WNVS, TIKLB, ENS2, MSCSF, POWVC, HRTVS, FLARP, and QHV6P = <strong>Yes</strong>. Each Mayo page carries its own “NY State Available” field.</p></div>
+    <div class="vary-card"><h3>C · Exposure geography — same IDs, different selection</h3><p>Mayo's Mosquito-borne Disease algorithm (Mar 2024) branches on exposure: <strong>US exposure</strong> → ARBOP / ABOPC + individual virus panels; <strong>outside-US exposure</strong> → add chikungunya, dengue, Zika tests; <strong>any region</strong> → West Nile antibody + PCR. A non-US exposure gets a different <em>selection</em>, not a different panel. <a href="https://news.mayocliniclabs.com/n1/96e99366cea7b0de/uploads/2025/05/Mosquito-borne_Disease_Laboratory_Testing.pdf">Algorithm (PDF)</a></p></div>
+    <div class="vary-card"><h3>D · Practical limits — stability and shipping</h3><p>Specimen stability windows (e.g. CSFME refrigerated ≤7 days; serum arbovirus panels 14 days) and customs / import logistics are the binding international constraints found. Mayo addresses them with tailored packaging and carrier handling — not with a second catalog.</p></div>
+  </div>
+
+  <h3 style="font-family:'IBM Plex Serif',serif;margin:26px 0 4px">Where “different panels in different countries” really comes from: on-site panels abroad</h3>
+  <p class="sec-sub" style="color:var(--muted);margin:0">Both are CSF-only. Neither is validated for blood. A clinician abroad reporting a “meningitis panel” with a different organism list is almost certainly reporting a local on-site panel like one of these — not a different Mayo panel.</p>
+  <div class="vs">
+    <div class="vs-card"><div class="bigcount">14 targets</div><h3>BioFire FilmArray ME</h3><p style="color:var(--muted);font-size:.93rem;margin:0">The assay behind Mayo CSFME. Used in the US, India, Morocco, and elsewhere. Includes CMV.</p></div>
+    <div class="vs-mid">vs</div>
+    <div class="vs-card"><div class="bigcount">15 targets</div><h3>QIAstat-Dx ME (Qiagen)</h3><p style="color:var(--muted);font-size:.93rem;margin:0">CE-IVD, introduced in Europe in 2022. <strong>Adds</strong> <em>Streptococcus pyogenes</em> and <em>Mycoplasma pneumoniae</em>; <strong>does not include CMV</strong> in head-to-head tables. Target list is from comparative literature, not Qiagen's current instructions for use — see Open questions.</p></div>
+  </div>
+  <p class="note">Comparison sources (secondary literature, not Mayo): <a href="https://journals.asm.org/doi/10.1128/spectrum.05144-22">ASM Spectrum</a> · <a href="https://www2.mdpi.com/2075-4418/14/8/802">MDPI Diagnostics</a></p>
+</section>
+
+<!-- 7 CDC -->
+<section id="cdc">
+  <div class="sec-head"><div class="num">7</div><div><h2 class="sec">Routed to CDC / public health instead of Mayo</h2><p class="sec-sub">No Mayo test ID was found for these — the route is your local public health department or the CDC.</p></div></div>
+  <div class="panel">
+    <ul class="plain" style="margin:0">
+      <li><strong>Bourbon virus and Jamestown Canyon virus:</strong> Mayo's mosquito algorithm says, if suspected, “contact your local public health department or the CDC for testing options.” No Mayo PCR or antibody ID for either was found.</li>
+      <li><strong>Heartland virus serology:</strong> Mayo's HRTVS definition states patients with symptoms &gt;1 week may be PCR-negative and “may require serologic testing, which is available through the Centers for Disease Control and Prevention.” Mayo's Heartland PCR itself is in-house.</li>
+      <li><strong>CSFME positives:</strong> Mayo warns there may be local public-health requirements requiring additional testing on positive specimens — retain an aliquot. This is a downstream obligation, not a Mayo-to-CDC referral of the panel itself.</li>
+      <li><strong>Arbovirus confirmation:</strong> closely related flaviviruses cross-react serologically, and plaque-reduction neutralization may be needed — the kind of confirmatory work typically done by state public-health / CDC laboratories. No specific Mayo “send to CDC” panel ID was verified (open question).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 Gaps -->
+<section id="gaps">
+  <div class="sec-head"><div class="num">8</div><div><h2 class="sec">Open questions — stated plainly</h2><p class="sec-sub">What the research could not verify. Nothing here was filled in by guessing.</p></div></div>
+  <div class="gapbox">
+    <ol class="plain" style="margin:0">
+      <li><strong>Live-window verification failed</strong> (the research browser returned no tabs, twice). Facts are index-verified from catalog pages crawled Oct 30 – Nov 2, 2026 and cross-checked against client mirrors — strong, but re-check CSFME and TIKLB on mayocliniclabs.com before ordering.</li>
+      <li><strong>Absence of blood IDs</strong> for parechovirus, standalone VZV-in-blood, <em>Cryptococcus</em> blood PCR, and a blood bacterial multiplex rests on catalog and algorithm searches, not an exhaustive Mayo catalog dump. If a new ID exists, it was not surfaced.</li>
+      <li><strong>TOXB</strong> (<em>Toxoplasma gondii</em> PCR, Blood) appears on Mayo's microbiology request form, but its full catalog entry — specimen volume, NY status — was not opened. No details beyond name and ID are claimed.</li>
+      <li><strong>Japanese encephalitis and tick-borne encephalitis virus</strong> testing via Mayo: no Mayo ID found; both appear in Mayo pages only as cross-reactivity controls for West Nile / Powassan assays. Whether state or CDC labs offer them is outside the Mayo catalog evidence gathered.</li>
+      <li><strong>QIAstat-Dx target list</strong> comes from comparative literature (ASM / MDPI); the “no CMV” point rests on head-to-head tables listing CMV as FilmArray-only. Verify against the current QIAstat-Dx instructions for use before citing it clinically.</li>
+      <li><strong>Pricing, turnaround times, and current NY status</strong> change frequently and were not the focus — re-check each Mayo page's “NY State Available” and “Report Available” fields at order time.</li>
+    </ol>
+  </div>
+
+  <h3 style="font-family:'IBM Plex Serif',serif;margin:28px 0 6px">Sources</h3>
+  <ul class="sources">
+    <li>CSFME overview — <a href="https://www.mayocliniclabs.com/test-catalog/Overview/622764">mayocliniclabs.com/test-catalog/Overview/622764</a></li>
+    <li>TIKLB overview — <a href="https://www.mayocliniclabs.com/test-catalog/overview/618311">mayocliniclabs.com/test-catalog/overview/618311</a></li>
+    <li>ARBOP overview — <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">mayocliniclabs.com/test-catalog/overview/83267</a> · ABOPC — <a href="https://www.mayocliniclabs.com/test-catalog/overview/83897">mayocliniclabs.com/test-catalog/overview/83897</a></li>
+    <li>ENS2 overview — <a href="https://www.mayocliniclabs.com/test-catalog/Overview/92116">mayocliniclabs.com/test-catalog/Overview/92116</a></li>
+    <li>WNVS — <a href="https://www.mayocliniclabs.com/test-catalog/overview/608436">mayocliniclabs.com/test-catalog/overview/608436</a> · POWVC — <a href="https://www.mayocliniclabs.com/test-catalog/Overview/617485">mayocliniclabs.com/test-catalog/Overview/617485</a> · ENTP — <a href="https://www.mayocliniclabs.com/test-catalog/Overview/89893">mayocliniclabs.com/test-catalog/Overview/89893</a> · QHV6P — <a href="https://www.mayocliniclabs.com/test-catalog/overview/619925">mayocliniclabs.com/test-catalog/overview/619925</a></li>
+    <li>Mosquito-borne Disease Laboratory Testing algorithm (Mayo PDF, Mar 2024) — <a href="https://news.mayocliniclabs.com/n1/96e99366cea7b0de/uploads/2025/05/Mosquito-borne_Disease_Laboratory_Testing.pdf">news.mayocliniclabs.com PDF</a></li>
+    <li>Mayo Specialty Testing — <a href="https://test.mayocliniclabs.com/test-catalog/specialty-testing">test.mayocliniclabs.com/test-catalog/specialty-testing</a> · Global Capabilities — <a href="https://news.mayocliniclabs.com/international/global-capabilities/">news.mayocliniclabs.com/international/global-capabilities</a></li>
+    <li>QIAstat-Dx vs FilmArray comparisons — <a href="https://journals.asm.org/doi/10.1128/spectrum.05144-22">ASM Spectrum</a> · <a href="https://www2.mdpi.com/2075-4418/14/8/802">MDPI Diagnostics 14(8):802</a></li>
+  </ul>
+</section>
+
+<footer>Research summary built from Mayo Clinic Laboratories catalog and algorithm pages indexed Oct 30 – Nov 2, 2026. This page is a catalog reference, not medical advice — test selection and interpretation belong to your treating clinicians.</footer>
+</div>
+
+<script>
+(function(){
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+  var input = document.getElementById('q');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#rows tr[data-spec]'));
+  var none = document.getElementById('noresults');
+  var active = 'all';
+  function apply(){
+    var q = (input.value||'').toLowerCase().trim();
+    var visible = 0;
+    rows.forEach(function(r){
+      var okSpec = active==='all' || r.getAttribute('data-spec')===active;
+      var hay = (r.getAttribute('data-text')+' '+r.textContent).toLowerCase();
+      var okQ = !q || hay.indexOf(q)>-1;
+      var show = okSpec && okQ;
+      r.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    none.hidden = visible!==0;
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      active = b.getAttribute('data-f');
+      apply();
+    });
+  });
+  input.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>

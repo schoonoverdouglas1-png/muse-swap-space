@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Serotyping and Serology — Serotype → Disease → Illness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650;6..72,800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#FAF7F0; --surface:#FFFFFF; --surface2:#F3EFE4; --ink:#1D2420; --muted:#5C665E;
+  --accent:#0E5A46; --accent-soft:#E3EFE8; --amber:#9A6A12; --amber-soft:#FBF0D3;
+  --rose:#8C3A2E; --rose-soft:#F7E4DE; --blue:#2C4A6B; --blue-soft:#E2EAF3;
+  --line:#E0DACE; --line2:#CFC7B2; --chip:#EFEAD9;
+  --m:#0E5A46; --mv:#7A4E9E; --v:#2C4A6B; --l:#9A6A12;
+  --shadow:0 1px 2px rgba(29,36,32,.06),0 10px 28px -18px rgba(29,36,32,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#141815; --surface:#1D2320; --surface2:#232A26; --ink:#EDE9DC; --muted:#A9B2AA;
+    --accent:#4CC4A4; --accent-soft:#1E332B; --amber:#E3B34E; --amber-soft:#38300F;
+    --rose:#E08A76; --rose-soft:#3A2620; --blue:#8FB2D9; --blue-soft:#223146;
+    --line:#303832; --line2:#454F47; --chip:#2A312C;
+    --m:#4CC4A4; --mv:#C39BDB; --v:#8FB2D9; --l:#E3B34E;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.7);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.12;margin:0}
+h2{font-size:clamp(26px,4.5vw,36px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:650}
+p{margin:0}
+a{color:var(--accent)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.small{font-size:13.5px;color:var(--muted)}
+section{padding:44px 0 8px}
+.sec-head{max-width:760px;margin-bottom:20px}
+.sec-head p{margin-top:10px;color:var(--muted);font-size:16.5px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+
+/* top nav */
+.topnav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topnav-in{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;max-width:1120px;margin:0 auto;scrollbar-width:none}
+.topnav-in::-webkit-scrollbar{display:none}
+.topnav a{flex:none;text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.topnav a:active,.topnav a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* hero */
+.hero{padding:38px 0 6px}
+.hero h1{font-size:clamp(34px,7vw,58px);font-weight:800;letter-spacing:-.015em;max-width:820px}
+.hero .lede{margin-top:16px;font-size:clamp(16.5px,2.6vw,19px);color:var(--muted);max-width:760px}
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:26px 0 6px}
+.chain .node{flex:1 1 130px;background:var(--surface);border:1px solid var(--line2);border-radius:10px;padding:13px 14px;box-shadow:var(--shadow)}
+.chain .node b{display:block;font-family:"Newsreader",serif;font-size:19px}
+.chain .node span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+.chain .arrow{align-self:center;font-size:20px;color:var(--accent);font-weight:700;padding:0 2px}
+@media(max-width:680px){.chain{flex-direction:column}.chain .node{flex:none}.chain .arrow{transform:rotate(90deg);padding:2px 0}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0 4px}
+.stat{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:14px 15px}
+.stat b{font-family:"IBM Plex Mono",monospace;font-size:26px;font-weight:600;display:block}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+.notice{margin-top:20px;border:1px solid var(--amber);background:var(--amber-soft);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55}
+.notice b{color:var(--amber)}
+
+/* dual register */
+.regbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 4px}
+.regbar .lbl{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.regbtn{appearance:none;border:1px solid var(--line2);background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.regbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.regbtn[aria-pressed="true"]{color:#0E1A15}}
+body.reg-plain-only .reg-full{display:none}
+body.reg-full-only .reg-plain{display:none}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+@media(max-width:680px){.dual{grid-template-columns:1fr}}
+.reg-card{border-radius:10px;padding:16px 17px;border:1px solid var(--line)}
+.reg-card.plain{background:var(--accent-soft)}
+.reg-card.full{background:var(--surface);box-shadow:var(--shadow)}
+.reg-card .tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.reg-card.plain .tag{color:var(--accent)}
+.reg-card p{font-size:15px}
+.reg-card.full p{font-size:14.5px;color:var(--muted)}
+
+/* six tracks */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.track{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;padding:17px;box-shadow:var(--shadow)}
+.track:nth-child(2){border-top-color:var(--blue)} .track:nth-child(3){border-top-color:var(--amber)}
+.track:nth-child(4){border-top-color:var(--rose)} .track:nth-child(5){border-top-color:#5B7A3A}
+.track:nth-child(6){border-top-color:#6B5B8C}
+@media (prefers-color-scheme: dark){.track:nth-child(5){border-top-color:#9DBE6E}.track:nth-child(6){border-top-color:#B39DDB}}
+.track .num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.track h3{margin:4px 0 7px;font-size:22px}
+.track p{font-size:14px;color:var(--muted)}
+.track .lat{margin-top:9px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink);background:var(--chip);border-radius:6px;padding:6px 8px}
+
+/* labels */
+.labels{display:flex;flex-wrap:wrap;gap:8px}
+.lab{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px;font-size:13px;flex:1 1 200px}
+.lab b{font-family:"IBM Plex Mono",monospace;font-size:13px}
+.shiro{margin-top:12px;border:1px dashed var(--amber);border-radius:10px;padding:14px 16px;background:var(--amber-soft);font-size:14px}
+.shiro b{color:var(--amber)}
+
+/* serotype explorer */
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.controls input[type="search"]{flex:1 1 220px;font:inherit;font-size:15px;padding:11px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);color:var(--ink);min-height:46px}
+.fchips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 16px}
+.fchip{appearance:none;border:1px solid var(--line2);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;cursor:pointer;min-height:38px}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count-line{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+@media(max-width:420px){.cards{grid-template-columns:1fr}}
+.scard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px}
+.scard-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.sname{font-family:"Newsreader",serif;font-size:27px;font-weight:800}
+.sval{text-align:right}
+.sval b{font-family:"IBM Plex Mono",monospace;font-size:19px;font-weight:600;display:block}
+.sval span{font-size:11.5px;color:var(--muted)}
+.pillrow{display:flex;flex-wrap:wrap;gap:5px}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.pill.vax{background:var(--blue-soft);color:var(--blue)}
+.pill.grp{background:var(--accent-soft);color:var(--accent)}
+.pill.warn{background:var(--rose-soft);color:var(--rose)}
+.scard p{font-size:13.5px;color:var(--muted);line-height:1.5}
+.scard p b{color:var(--ink)}
+.scard .his{font-size:13.5px;border-top:1px solid var(--line);padding-top:8px}
+.scard .his b{color:var(--amber);font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:3px}
+.bar{height:8px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:99px}
+.bar-lab{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted)}
+.empty-note{display:none;border:1px dashed var(--line2);border-radius:10px;padding:18px;text-align:center;color:var(--muted);font-size:14.5px}
+
+/* matrix */
+.matrix-wrap{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.mgrid{display:grid;grid-template-columns:64px repeat(4,1fr);gap:5px;max-width:560px}
+.mgrid .mh{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;text-align:center;color:var(--muted);padding:4px 0}
+.mgrid .mr{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;display:flex;align-items:center}
+.cell{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;border-radius:7px;padding:8px 2px;border:1px solid var(--line)}
+.cell.M{background:var(--accent-soft);color:var(--m);border-color:transparent}
+.cell.MV{background:color-mix(in srgb,var(--mv) 18%,var(--surface));color:var(--mv);border-color:transparent}
+.cell.V{background:var(--blue-soft);color:var(--v);border-color:transparent}
+.cell.L{background:var(--amber-soft);color:var(--l);border-color:transparent}
+.cell.none{color:var(--muted);opacity:.55}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend b{font-family:"IBM Plex Mono",monospace}
+
+/* tables */
+.tblwrap{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-align:left;background:var(--surface2);color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.mono,th.mono{font-family:"IBM Plex Mono",monospace}
+.yes{color:var(--accent);font-weight:600}
+@media(max-width:680px){
+  .stack-tbl thead{display:none}
+  .stack-tbl,.stack-tbl tbody,.stack-tbl tr,.stack-tbl td{display:block;width:100%}
+  .stack-tbl tr{border-bottom:2px solid var(--line2);padding:8px 0}
+  .stack-tbl td{border-bottom:none;padding:5px 14px}
+  .stack-tbl td::before{content:attr(data-l);display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1px}
+}
+
+/* intertwined */
+.snake{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.snake .pair{display:flex;align-items:center;gap:7px}
+.snake .st{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:14px;background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:8px 12px;box-shadow:var(--shadow)}
+.snake .st.big{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.snake .conn{color:var(--accent);font-weight:700}
+
+/* A vs B */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:680px){.ab{grid-template-columns:1fr}}
+.abcard{border-radius:12px;padding:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.abcard.ga{border-top:5px solid var(--rose)} .abcard.gb{border-top:5px solid var(--blue)}
+.abcard h3{font-size:24px;margin-bottom:2px}
+.abcard .sp{font-style:italic;color:var(--muted);font-size:14px;margin-bottom:12px}
+.abcard dl{margin:0;display:grid;gap:9px}
+.abcard dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.abcard dd{margin:1px 0 0;font-size:14px}
+
+/* vaccine matrix cards */
+.vrows{display:grid;gap:10px}
+.vrow{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 17px;box-shadow:var(--shadow)}
+.vrow-top{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between}
+.vrow h3{font-size:19px}
+.verdict{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.verdict.fix{background:var(--amber-soft);color:var(--amber)}
+.vrow .meta{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0}
+.vrow p{font-size:13.5px;color:var(--muted)}
+
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.repo{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow);color:var(--ink)}
+.repo:hover{border-color:var(--accent)}
+.repo .rn{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15.5px;color:var(--accent);word-break:break-all}
+.repo p{font-size:13.5px;color:var(--muted);margin-top:7px}
+.repo .go{margin-top:12px;font-size:13px;font-weight:700;color:var(--accent)}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px}
+footer ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
+footer li{margin:3px 0}
+.disc{margin-top:16px;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--surface)}
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Sections">
+  <div class="topnav-in">
+    <a href="#chain">The chain</a>
+    <a href="#tracks">Six tracks</a>
+    <a href="#twentythree">The 23 serotypes</a>
+    <a href="#matrix">Cross-reference matrix</a>
+    <a href="#serogroups">Serogroups</a>
+    <a href="#disease-table">Disease table</a>
+    <a href="#ab">Group A vs B</a>
+    <a href="#vaccines">Vaccine &amp; toxoid matrix</a>
+    <a href="#panels">The two panels</a>
+    <a href="#repos">Repositories</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO / CHAIN -->
+  <header class="hero" id="chain">
+    <div class="kicker">Serotyping · Serology · The Mycelial Transposition research</div>
+    <h1>From a sugar coat to a sickness, step by step.</h1>
+    <p class="lede">A serotype is the sugar coat a germ wears. Serology is reading the blood's answer to that coat. This page connects the two — <strong>serotype / serogroup → disease → illness</strong> — using the Serology Cross-Reference Book, the corrected serogroup tables, the intertwined Disease Table, the Streptococcus Group A vs Group B file, and the Vaccine &amp; Toxoid Comparative Matrix, with every claim carrying its evidence label.</p>
+
+    <div class="chain" aria-label="The chain from serotype to illness">
+      <div class="node"><b>Serotype</b><span>The capsular sugar itself — serotype <em>is</em> its sugar, 100%. [D]</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><b>Serogroup</b><span>Serotypes that share sugar chemistry, grouped — 21 groups, 59 named serotypes in the corrected table.</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><b>Disease</b><span>The named condition a vaccine label or the record attaches to that capsule — invasive disease, pneumonia, meningitis, otitis media.</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node"><b>Illness</b><span>How it shows in a person — fever, headache, altered mental status, meningismus — where bacterial meningitis and viral encephalitis overlap. [D]</span></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>23</b><span>pneumococcal serotypes on the Mayo PN23M panel — exactly the PPSV23 list</span></div>
+      <div class="stat"><b>21 / 59</b><span>serogroups / named serotypes in Serogroup Table Corrected Copy 3 (Nov 4, 2026)</span></div>
+      <div class="stat"><b>32</b><span>serotypes in the disease union of the intertwined Disease Table</span></div>
+      <div class="stat"><b>72</b><span>cross-links in the Cross-Reference Book matrix — 65 of 92 cells, plus 7 cousin-virus links</span></div>
+      <div class="stat"><b>8</b><span>arbovirus analytes per panel — California (La Crosse), Eastern Equine, St. Louis, Western Equine × IgG / IgM</span></div>
+    </div>
+
+    <div class="notice"><b>Read this first —</b> this is a creative-manuscript research reference, <strong>not medical advice</strong>. Panel values below are quoted numbers from the record, stated as arithmetic only — where a number falls against a line is never a verdict here. What any result means for any person belongs to their clinician (in this research, Kelsey Meyer, NP). Framework claims that extend past the documented record are labelled as Douglas's [H] and the seam is shown.</div>
+
+    <div class="regbar" role="group" aria-label="Reading level">
+      <span class="lbl">Dual register</span>
+      <button class="regbtn" id="regBoth" aria-pressed="true">Both tellings</button>
+      <button class="regbtn" id="regPlain" aria-pressed="false">Plain telling first</button>
+      <button class="regbtn" id="regFull" aria-pressed="false">Full detail first</button>
+    </div>
+
+    <div class="dual">
+      <div class="reg-card plain reg-plain">
+        <div class="tag">Plain telling · 6th–8th grade</div>
+        <p>Germs wear sugar coats. Each different coat has a name and number — that is a <strong>serotype</strong>. Coats that are alike sit together in a <strong>serogroup</strong>. A blood test can show whether your blood has learned a coat — that learning-test is <strong>serology</strong>. When a germ with that coat gets into the wrong place — the lungs, the blood, the coverings of the brain — it causes a named sickness, a <strong>disease</strong>. How sick you feel is the <strong>illness</strong>. Vaccines teach the blood a coat ahead of time, often by gluing the sugar to a harmless helper protein called a toxoid carrier.</p>
+      </div>
+      <div class="reg-card full reg-full">
+        <div class="tag">Full detail · 13th grade</div>
+        <p>Serotype = capsular polysaccharide (CPS) type of <em>Streptococcus pneumoniae</em>, defined by the <em>cps</em> locus; the capsule is the serotype. Serology here runs in two directions: the PN23M panel is an <strong>antibody</strong> test (bead-based multiplex immunoassay for IgG against 23 capsules), while a cryptococcal antigen test is an <strong>antigen</strong> test — same fluids, opposite directions of looking [D]. Conjugate vaccines (CRM197-linked) convert a T-independent polysaccharide response into functional, opsonophagocytic IgG with memory; PPSV23 (plain polysaccharide) asks only for binding IgG, with no T-cell help and no booster effect [D]. Disease terms in the Disease Table are vaccine-level, not per-serotype — no retrieved label assigns a different Latin disease name per serotype.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIX TRACKS -->
+  <section id="tracks">
+    <div class="sec-head">
+      <div class="kicker">Kept separate, on purpose</div>
+      <h2>The six tracks</h2>
+      <p>Douglas's standing rule: these six are separate tracks for thinking — technically one at the root, never collapsed into each other in the tables. Vaccine ≠ virus ≠ disease ≠ illness ≠ sickness ≠ infection.</p>
+    </div>
+    <div class="tracks">
+      <div class="track"><div class="num">TRACK 1</div><h3>Virus</h3><p>The viral agent itself and its family — e.g. La Crosse (bunyavirus, California serogroup), St. Louis (flavivirus), Eastern &amp; Western Equine (alphaviruses). Cross-reactivity follows family, not panel order [D].</p><div class="lat">American first: La Crosse virus · Latin second: Orthobunyavirus</div></div>
+      <div class="track"><div class="num">TRACK 2</div><h3>Disease</h3><p>The named condition in the record or on a vaccine label — invasive pneumococcal disease, pneumonia, meningitis, otitis media, La Crosse encephalitis. Disease terms here are vaccine-level [D].</p><div class="lat">American first: Lou Gehrig's disease pattern · Latin second where the record gives it</div></div>
+      <div class="track"><div class="num">TRACK 3</div><h3>Illness</h3><p>How the disease shows in the person. Bacterial meningitis and viral encephalitis share a showing — fever, headache, altered mental status, meningismus [D] — which is why the meningitis track links serotypes to all four analytes.</p><div class="lat">The showing is shared even when the pathogen differs [D]</div></div>
+      <div class="track"><div class="num">TRACK 4</div><h3>Sickness</h3><p>Filed as its own track beside disease and illness. Douglas's thesis (§208): disease and sickness are technically the same thing — kept as separate tracks for thinking, one at the root [H].</p><div class="lat">Separate track · same root [H]</div></div>
+      <div class="track"><div class="num">TRACK 5</div><h3>Infection</h3><p>The sixth track, added Oct 18, 2026 (§209). Douglas's definition: group bacterial, fungal, and yeast under infection [H] — while bacteria / fungi / yeast / mold themselves stay separate inside it.</p><div class="lat">Infection = bacterial + fungal + yeast, grouped [H]</div></div>
+      <div class="track"><div class="num">TRACK 6</div><h3>Vaccine</h3><p>What each product asks the blood to do — PPSV23, PCV13, PCV15, PCV20, PCV21 — and its carrier. Inclusion ≠ control: serotype 7F sits in all five vaccines yet is a documented vaccine-failure serotype [D].</p><div class="lat">The vaccine list and the controlled-disease list are different lists [LOGIC]</div></div>
+    </div>
+
+    <div style="margin-top:22px">
+      <div class="kicker">Evidence labels used on every claim</div>
+      <div class="labels">
+        <div class="lab"><b>[D]</b> — documented in a source</div>
+        <div class="lab"><b>[H]</b> — Douglas's, filed as his</div>
+        <div class="lab"><b>[H→D]</b> — his, with a documented foothold</div>
+        <div class="lab"><b>[LOGIC]</b> — extension of his framework, steps shown</div>
+        <div class="lab"><b>[GAP]</b> — unknown; left open, never filled by invention</div>
+        <div class="lab"><b>[PARTIAL]</b> / <b>[SINGLE-SOURCE]</b> — partly or singly sourced, flagged as such</div>
+      </div>
+      <div class="shiro"><b>Shiro — the wild card (Douglas, Nov 4, 2026).</b> Shiro is no longer a serological grouping and its original meaning is not guessed. It is the column where Ember puts additional information of her own — questions for Douglas, questions for herself, and labelled random additions when she is unsure where something belongs — shown openly, never hidden, for Douglas to judge. Coinages by Douglas are marked <span class="mono">"term" (DRS)</span> on first use.</div>
+    </div>
+  </section>
+
+  <!-- THE 23 -->
+  <section id="twentythree">
+    <div class="sec-head">
+      <div class="kicker">The Serology Cross-Reference Book · Part 2</div>
+      <h2>The 23 serotypes, one by one</h2>
+      <p>Mayo PN23M, collected Oct 29, 2025, ordered by Rick Klein, D.O. The lab's line is ≥1.0 mcg/mL; Douglas's grouping line is 0.1 [H]. Thirteen serotypes sit in his ≥0.2 group, eight sit exactly on his line, two fall below it — and only 10A (1.6) stands above the lab's line. All of that is arithmetic, not a verdict. His account: PPSV23 received ~5–6 years before the panel (~2019–2020) [H]; whether any conjugate was received is not in the record [GAP].</p>
+    </div>
+    <div class="controls">
+      <input type="search" id="sq" placeholder="Search a serotype, vaccine, or word — try 19A, meningitis, biofilm…" aria-label="Search serotypes" />
+    </div>
+    <div class="fchips" id="fchips" role="group" aria-label="Filter serotypes">
+      <button class="fchip" data-f="all" aria-pressed="true">All 23</button>
+      <button class="fchip" data-f="ge" aria-pressed="false">≥0.2 group (13)</button>
+      <button class="fchip" data-f="line" aria-pressed="false">On his line · 0.1 (8)</button>
+      <button class="fchip" data-f="below" aria-pressed="false">Below line (2)</button>
+      <button class="fchip" data-f="watch" aria-pressed="false">Meningitis-watch (4)</button>
+      <button class="fchip" data-f="all5" aria-pressed="false">In all five vaccines (3)</button>
+      <button class="fchip" data-f="ppsv" aria-pressed="false">PPSV23 only (2)</button>
+      <button class="fchip" data-f="resist" aria-pressed="false">Resistance-linked</button>
+    </div>
+    <div class="count-line" id="countLine"></div>
+    <div class="cards" id="cards"></div>
+    <div class="empty-note" id="emptyNote">No serotype matches that search. Try a number (19A), a vaccine (PCV21), or a word (carriage, outbreak, meningitis).</div>
+
+    <div class="dual">
+      <div class="reg-card plain reg-plain">
+        <div class="tag">Plain telling</div>
+        <p>Think of the value as how loudly the blood answered for that coat. Douglas draws his own line low, at 0.1, to sort the answers into groups for study. The lab draws its line at 1.0. Only one coat — 10A — answered above the lab's line. That is counting, not a grade on anyone's health.</p>
+      </div>
+      <div class="reg-card full reg-full">
+        <div class="tag">Full detail</div>
+        <p>&lt;0.1 means below the limit of quantification, not a "minimal reaction" [D]. The meningitis-watch four — 1, 5, 12F, 14 — none reaches 0.2 on this panel [D, arithmetic]. In all five vaccines: 3, 7F, 19A. PPSV23 only: 2, 20. PCV21 carries 20A, not 20 — cross-protection against serotype 20 is unestablished [GAP]. PCV20's serotypes are grown in soy peptone broth [D].</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATRIX -->
+  <section id="matrix">
+    <div class="sec-head">
+      <div class="kicker">The Serology Cross-Reference Book · Part 4 — the heart of the book</div>
+      <h2>Cross-reference matrix: 23 serotypes × 4 analytes</h2>
+      <p>65 of 92 cells carry a stated link under three rules, plus 7 cousin-virus links = <strong>72 cross-links</strong>. <strong>M</strong> = meningitis-track (documented meningitis association; the showing is shared with encephalitis [D] + his concurrence thesis [H]). <strong>V</strong> = virus-gated (documented post-viral amplification or ICI-class overrepresentation [D]). <strong>L</strong> = La Crosse marker link — his thesis that California (La Crosse) encephalitis is the disease, with bacterial and fungal markers between it and <em>S. pneumoniae</em> [H]. The 27 empty cells are stated, not hidden — they are the research program.</p>
+    </div>
+    <div class="matrix-wrap">
+      <div class="mgrid" id="mgrid" role="table" aria-label="Serotype by analyte cross-reference matrix"></div>
+      <div class="legend">
+        <span><b>M</b> meningitis-track · 48 cells</span>
+        <span><b>MV</b> both M and V</span>
+        <span><b>V</b> virus-gated · adds 8 cells (19F, 9V)</span>
+        <span><b>L</b> La Crosse marker [H] · adds 9 cells</span>
+        <span><b>–</b> no link claimed · 27 cells</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEROGROUPS -->
+  <section id="serogroups">
+    <div class="sec-head">
+      <div class="kicker">Serogroup Table — Corrected Copy 3 · Nov 4, 2026</div>
+      <h2>Serogroups and the vaccine map</h2>
+      <p>21 groups, 59 named serotypes. Copy 3 fixed two memberships and nothing else: Group 9 is now 9A, 9L, 9N, 9V (9F removed, 9L added), and Group 33 grew to 33A, 33B, 33C, 33D, 33F. Neither fix changed any vaccine column. Groups 13, 16, 21, 24–32 and beyond 33 remain [GAP] in this table. Shiro: PENDING throughout, per the standing rule in that copy.</p>
+    </div>
+    <div class="tblwrap">
+      <table class="stack-tbl" id="sgTable">
+        <thead><tr><th>Group</th><th>Serotypes in group</th><th>PCV13</th><th>PCV15</th><th>PCV20</th><th>PCV21</th><th>PPSV23</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:10px">Verified lists [D]: PCV13 — 1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 18C, 19A, 19F, 23F · PCV15 = PCV13 + 22F, 33F · PCV20 = PCV15 + 8, 10A, 11A, 12F, 15B · PCV21 — 3, 6A, 7F, 8, 9N, 10A, 11A, 12F, 15A, 15B, 16F, 17F, 19A, 20A, 22F, 23A, 23B, 24F, 31, 33F, 35B · PPSV23 — the panel's 23. PCV7 / PCV10 membership is carried as pasted, not re-verified in this copy.</p>
+  </section>
+
+  <!-- DISEASE TABLE -->
+  <section id="disease-table">
+    <div class="sec-head">
+      <div class="kicker">Disease Table — Smallest Serotypes Intertwined with Largest · Nov 4, 2026</div>
+      <h2>Smallest intertwined with largest</h2>
+      <p>The disease union holds 32 serotypes. The table reads them smallest-remaining, then largest-remaining, alternating — 1, 35B, 2, 33F … — so the two ends of the range stay in conversation the whole way down. Small pairs with large:</p>
+    </div>
+    <div class="snake" id="snake" aria-label="Intertwined serotype order"></div>
+    <div class="dual">
+      <div class="reg-card plain reg-plain">
+        <div class="tag">Plain telling</div>
+        <p>Smallest coat, biggest coat, next-smallest, next-biggest — all the way to the middle, where 15A and 15B meet. Douglas's question sits right there: is that meeting point a key in the framework, or just arithmetic? It is filed as a question, not an answer.</p>
+      </div>
+      <div class="reg-card full reg-full">
+        <div class="tag">Full detail — hard restrictions kept in every row</div>
+        <p>PCV13's otitis media claim covers only the seven PCV7 serotypes; 1, 3, 5, 6A, 7F, 19A have no otitis media efficacy data in that label. PCV21 pneumonia <em>excludes</em> 15B while PCV21 invasive disease <em>includes</em> 15B and 15C — and 15C is reached, not formulated, via de-O-acetylated 15B. Fungal relationship: [GAP] for every row — <em>Cryptococcus</em> serotypes A/B/C/D are a separate GXM system; no pneumococcal serogroup maps onto them in retrieved sources. Mitis relationship: DOCUMENTED in detail only for serotype 5 (76–99% identity, Quellung+, OPK); PARTIAL for 12F, 15A, 18C, 33F.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP A vs B -->
+  <section id="ab">
+    <div class="sec-head">
+      <div class="kicker">Streptococcus Species — Group A vs Group B · Nov 4, 2026</div>
+      <h2>Group A is not Group B — and neither is the panel</h2>
+      <p>First, the correction that file leads with: PN23M tests <strong>one species only</strong> — <em>Streptococcus pneumoniae</em> and its capsules. It does not test <em>S. pyogenes</em>, <em>S. agalactiae</em>, <em>S. mitis</em>, or any other streptococcus; the Mitis-group relatives are a bridge only through cross-reactivity. Group A and Group B are <strong>different species</strong>, separated by the Lancefield cell-wall carbohydrate — not variants of one species. Both are beta-haemolytic Gram-positive cocci in chains, so shape and haemolysis alone cannot tell them apart.</p>
+    </div>
+    <div class="ab">
+      <div class="abcard ga">
+        <h3>Group A</h3>
+        <div class="sp">Streptococcus pyogenes (GAS)</div>
+        <dl>
+          <div><dt>Lancefield antigen</dt><dd>Group A carbohydrate — rhamnose backbone, N-acetylglucosamine side chains</dd></div>
+          <div><dt>Lab discrimination</dt><dd>Bacitracin <strong>sensitive</strong> · PYR <strong>positive</strong> · CAMP negative · Hippurate negative · Larger colonies (&gt;0.5 mm)</dd></div>
+          <div><dt>Lives in</dt><dd>Throat and skin</dd></div>
+          <div><dt>Classic diseases</dt><dd>Pharyngitis ("strep throat"), impetigo, cellulitis, erysipelas, toxic shock — plus immune sequelae after infection: rheumatic fever, glomerulonephritis</dd></div>
+          <div><dt>Virulence, in brief</dt><dd>M protein (many M types), streptolysins O/S, hyaluronic-acid capsule that mimics host</dd></div>
+          <div><dt>Vaccine</dt><dd>None licensed — M-protein diversity is the barrier</dd></div>
+        </dl>
+      </div>
+      <div class="abcard gb">
+        <h3>Group B</h3>
+        <div class="sp">Streptococcus agalactiae (GBS)</div>
+        <dl>
+          <div><dt>Lancefield antigen</dt><dd>Group B carbohydrate — rhamnose, glucosamine, galactose, glucose; different structure, different antiserum</dd></div>
+          <div><dt>Lab discrimination</dt><dd>Bacitracin <strong>resistant</strong> · PYR <strong>negative</strong> · CAMP <strong>positive</strong> · Hippurate <strong>positive</strong> · Smaller colonies</dd></div>
+          <div><dt>Lives in</dt><dd>Lower GI tract and vaginal mucosa — asymptomatic carriage common</dd></div>
+          <div><dt>Classic diseases</dt><dd>Neonatal sepsis and meningitis (early- and late-onset), maternal postpartum infection, adult bacteraemia, UTI, meningitis in adults</dd></div>
+          <div><dt>Virulence, in brief</dt><dd>Own capsular serotypes Ia, Ib, II–IX (sialic acid, mimics host), beta-haemolysin/cytolysin, CAMP factor</dd></div>
+          <div><dt>Vaccine</dt><dd>None licensed for routine use — maternal GBS conjugates are investigational (see the toxoid matrix below)</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="shiro"><b>Shiro — Ember's addition, from that file:</b> the CAMP test reveals Group B by using <em>another</em> bacterium (<em>S. aureus</em>) — discrimination by interaction, not by looking at the streptococcus alone. Question for Douglas: does that interaction model fit your intertwining idea? &nbsp;·&nbsp; <b>More complete testing?</b> PN23M is an antibody panel (23 capsules). For naming an isolate's serotype, Quellung, multiplex PCR, and whole-genome sequencing (SeroBA / PneumoCaT, 92 serotypes + 2 subtypes) go further — but they need a cultured isolate, not serum. No routine serum panel covers all 100+ pneumococcal serotypes [D].</div>
+  </section>
+
+  <!-- VACCINE & TOXOID MATRIX -->
+  <section id="vaccines">
+    <div class="sec-head">
+      <div class="kicker">Vaccine and Toxoid Comparative Matrix · Nov 5, 2026</div>
+      <h2>One trick, many germs: sugar coat + toxoid carrier</h2>
+      <p>Douglas's table, tested row by row by Ember. Verdict: it <strong>holds at the 51% bar with one correction</strong> — the pneumococcal carrier cell. Toxoids in his fourfold framing (Nov 4, 2026): parts of the disease, parts of the vaccine, parts of the human immunity response, and part of the key [H].</p>
+    </div>
+    <div class="dual" style="margin:0 0 16px">
+      <div class="reg-card plain reg-plain">
+        <div class="tag">Plain telling</div>
+        <p>Take the sugar coat off a germ, glue it to a harmless toxoid helper, and the immune system learns the coat and remembers it. Pneumococcus, meningococcus, Hib, typhoid, and Group B strep all use that trick. Meningococcus B's coat looks too much like a human nerve protein, so it uses proteins instead. For the fungus <em>Cryptococcus</em>, the same trick is still mouse research only — no licensed fungal vaccine yet.</p>
+      </div>
+      <div class="reg-card full reg-full">
+        <div class="tag">Full detail</div>
+        <p>Conjugation converts a T-independent polysaccharide antigen into a T-dependent one: CRM197 is a non-toxic diphtheria-toxin mutant; TT and DT are formalin-inactivated toxins that serve both as vaccines in their own right (DTaP/Tdap) and as carrier platforms. A carrier is attached to the polysaccharide — it is not intrinsic to the serotype. MenB required recombinant proteins (fHbp, NadA, NHBA) and OMV because its capsule, poly-α-2,8-N-acetylneuraminic acid, mimics human NCAM [D].</p>
+      </div>
+    </div>
+    <div class="vrows" id="vrows"></div>
+  </section>
+
+  <!-- PANELS -->
+  <section id="panels">
+    <div class="sec-head">
+      <div class="kicker">The Serology Cross-Reference Book · Parts 1 &amp; 3</div>
+      <h2>The two records, and the four analytes</h2>
+      <p>Record B is the arbovirus panel, run twice, six weeks apart. Panel 2 — fully negative on all eight analytes — is Douglas's control and zero-point [H]: one analyte speaking in Panel 1 (California (La Crosse) IgG 1:20, flagged abnormal) against that silence is a difference, not just a number. Dr. Brown's note reads the IgG as past exposure [D]. His antibody-persistence thesis stands beside it, unreconciled [H vs D] — what it means for any person is the clinician's call. Panel mechanics: 2-stage indirect IFA, reference &lt;1:10 on every analyte [D]. No coronavirus on either panel [D].</p>
+    </div>
+    <div class="tblwrap">
+      <table class="stack-tbl">
+        <thead><tr><th>Analyte</th><th>Family</th><th>Panel 1 — Sep 16, 2025 (Brown, M.D.)</th><th>Panel 2 — Oct 29, 2025 (Klein, D.O.) · the control</th></tr></thead>
+        <tbody>
+          <tr><td data-l="Analyte"><strong>California (La Crosse)</strong> — treehole mosquito <em>Aedes triseriatus</em>; chipmunks &amp; squirrels; La Crosse encephalitis, first recognized in La Crosse, WI, 1964; the most common cause of pediatric arboviral encephalitis in the US</td><td data-l="Family" class="mono">Bunyavirus · California serogroup</td><td data-l="Panel 1">IgG <strong>1:20, flagged abnormal</strong> · IgM &lt;1:10</td><td data-l="Panel 2">IgG &lt;1:10 · IgM &lt;1:10</td></tr>
+          <tr><td data-l="Analyte"><strong>Eastern Equine</strong> — swamp cycle, birds + <em>Culiseta melanura</em>, bridge vectors to people; the most severe encephalitic alphavirus; 5–10 US cases/yr; no human vaccine</td><td data-l="Family" class="mono">Alphavirus</td><td data-l="Panel 1">&lt;1:10 / &lt;1:10</td><td data-l="Panel 2">&lt;1:10 / &lt;1:10</td></tr>
+          <tr><td data-l="Analyte"><strong>St. Louis</strong> — <em>Culex</em> mosquitoes, birds; the quiet flavivirus on the panel, and the door to the largest cousin family</td><td data-l="Family" class="mono">Flavivirus · JE serocomplex</td><td data-l="Panel 1">&lt;1:10 / &lt;1:10</td><td data-l="Panel 2">&lt;1:10 / &lt;1:10</td></tr>
+          <tr><td data-l="Analyte"><strong>Western Equine</strong> — <em>Culex tarsalis</em>, birds, horses the classic victims; west of the Mississippi, also Illinois</td><td data-l="Family" class="mono">Alphavirus</td><td data-l="Panel 1">&lt;1:10 / &lt;1:10</td><td data-l="Panel 2">&lt;1:10 / &lt;1:10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shiro"><b>The cousin rules [D] — the documented shape of his top/bottom pattern [H→D].</b> Flavivirus antibodies cross-react across the family (dengue, Zika, West Nile, St. Louis, Japanese encephalitis, yellow fever), and asymmetrically: St. Louis antibodies light up West Nile antigen more than the reverse — one positive implying another, in one direction, exactly the shape of Douglas's top/bottom pattern. The mechanism (shared envelope-protein epitopes) is documented; that his pattern <em>is</em> this mechanism is his thesis [H]. The two alphaviruses (EEE/WEE) cross-react with each other, not with flaviviruses; La Crosse cross-reacts within the California serogroup — where his Jamestown Canyon pairing sits, same family, not on his panel [H]. His panel rename hangs on the La Crosse analyte: "Encephalopathy Meningeal Testing" [H].</div>
+  </section>
+
+  <!-- REPOS -->
+  <section id="repos">
+    <div class="sec-head">
+      <div class="kicker">The work, saved</div>
+      <h2>GitHub repositories</h2>
+      <p>Public research repositories, per Douglas's Nov 5, 2026 ruling — saved for research; the peer-review gate for a formal book release still stands separately.</p>
+    </div>
+    <div class="repos">
+      <a class="repo" href="https://github.com/schoonoverdouglas1-png/the-mycelial-transposition" target="_blank" rel="noopener">
+        <div class="rn">the-mycelial-transposition</div>
+        <p>The manuscript home — The Mycelial Transposition, including the Serology Cross-Reference Book and the serotype trees the tables on this page are drawn from.</p>
+        <div class="go">Open on GitHub →</div>
+      </a>
+      <a class="repo" href="https://github.com/schoonoverdouglas1-png/serotype-disease-groupings" target="_blank" rel="noopener">
+        <div class="rn">serotype-disease-groupings</div>
+        <p>The grouping work — serogroup tables, the disease table (smallest intertwined with largest), and the multi-model serotype-and-disease grouping assimilations.</p>
+        <div class="go">Open on GitHub →</div>
+      </a>
+      <a class="repo" href="https://github.com/schoonoverdouglas1-png/vaccine-toxoid-research" target="_blank" rel="noopener">
+        <div class="rn">vaccine-toxoid-research</div>
+        <p>The vaccine and toxoid work — the Vaccine and Toxoid Comparative Matrix (pathogen by carrier), the toxoid postulate, and carrier architecture.</p>
+        <div class="go">Open on GitHub →</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="kicker">Sources on file</div>
+    <ul>
+      <li><em>The Serology Cross-Reference Book — Corrected Copy with Generic Elements</em> (Oct 31, 2026) — the 23 serotypes one by one, both panels in full, the 23 × 4 matrix and its counting rules, the GAP ledger. Generic-elements ruling recorded; no grid cells changed in that copy, by its own stop condition.</li>
+      <li><em>Serogroup Table — Corrected Copy 3, Membership Fixes Groups 9 and 33</em> (Nov 4, 2026) — 21 groups, 59 serotypes, vaccine map as shown.</li>
+      <li><em>Disease Table — Smallest Serotypes Intertwined with Largest</em> (Nov 4, 2026) — 32-serotype disease union, vaccine-level disease terms, Shiro wild-card column.</li>
+      <li><em>Streptococcus Species — Serotype Panel, Group A vs Group B</em> (Nov 4, 2026) — genus by group, what PN23M does and does not test, Lancefield discrimination.</li>
+      <li><em>Table — Vaccine and Toxoid Comparative Matrix, Pathogen by Carrier</em> (Nov 5, 2026) — Douglas's table as given, with Ember's row-by-row test and the one carrier correction filed beside it, old-with-new.</li>
+    </ul>
+    <div class="disc">This page is a research and manuscript reference built from Douglas Roy Schoonover's files. It is not medical advice, draws no conclusion about any individual's immunity, health, or vaccination status, and makes no treatment recommendation. Documented claims [D], Douglas's framework [H], and open gaps [GAP] are labelled throughout and never blended. The 27 empty matrix cells and every [GAP] on this page are left open on purpose — they are where the next dictation, the next test, and the next paper go.</div>
+  </footer>
+</div>
+
+<script>
+/* ---------- dual register toggle ---------- */
+(function(){
+  var b=document.body;
+  var btns={both:document.getElementById('regBoth'),plain:document.getElementById('regPlain'),full:document.getElementById('regFull')};
+  function set(mode){
+    b.classList.toggle('reg-plain-only',mode==='full');
+    b.classList.toggle('reg-full-only',mode==='plain');
+    btns.both.setAttribute('aria-pressed',mode==='both'?'true':'false');
+    btns.plain.setAttribute('aria-pressed',mode==='plain'?'true':'false');
+    btns.full.setAttribute('aria-pressed',mode==='full'?'true':'false');
+  }
+  btns.both.addEventListener('click',function(){set('both')});
+  btns.plain.addEventListener('click',function(){set('plain')});
+  btns.full.addEventListener('click',function(){set('full')});
+})();
+
+/* ---------- the 23 serotypes ---------- */
+var SERO=[
+{n:"1",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Meningitis","Pneumonia","Bacteremia","Outbreak"],watch:1,note:"<b>The epidemic serotype.</b> Meningitis outbreaks in the African meningitis belt with the seasonality and clonal dominance of meningococcal epidemics [D]. Rarely carried — high invasive potential. Historically penicillin-susceptible; capsule thickens under stress [D].",his:"Meningitis-watch serotype (with 5, 12F, 14) — none of the four reaches 0.2 on the panel. The traveling pair with 5."},
+{n:"2",v:0.3,vl:"0.3",g:"ge",vax:["PPSV23 only"],grp:["Outbreak","Archive"],ppsv:1,note:"<b>The archive serotype.</b> Rare in modern disease. D39 — the laboratory strain that taught microbiology the pneumococcus — is serotype 2, and the foundational influenza–pneumococcus coinfection model was built on it [D].",his:"The museum-piece problem [LOGIC]: the mechanistic map of viral–pneumococcal pneumonia was drawn from a serotype modern patients almost never meet."},
+{n:"3",v:0,vl:"<0.1",g:"below",vax:["All five vaccines"],grp:["Meningitis","Pneumonia","Otitis","Bacteremia","Outbreak","Persister"],all5:1,note:"<b>The persister.</b> Most prevalent adult pneumonia strain in an 18-country review; sheds its capsule polysaccharide, defeating antibody killing; strongest biofilm architecture measured; ~40% of PCV13-era vaccine failures in one review — yet 100% penicillin-susceptible [D].",his:"Three defeats at once [LOGIC]: shed the target, out-build the shelter, out-last the pressure. The capsule IS the resistance — it wins unarmed. Fungal column: empty [GAP]."},
+{n:"4",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Meningitis","Pneumonia","Bacteremia","Outbreak"],watch:1,note:"<b>The virus-gated bacterium.</b> The largest flu-driven amplification measured: under influenza, pneumonia 58%→100%, bacteremia 21%→90%, mortality 0%→79% [D]. Adult meningitis via the bloodstream at 48% mortality [D].",his:"His marker thesis's cleanest foothold [H→D]: the virus marks the bacterial element's path. Without influenza, containable; with it, catastrophic [LOGIC]."},
+{n:"5",v:0,vl:"<0.1",g:"below",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Outbreak only"],watch:1,note:"<b>The narrowest membership in the file</b> — outbreak group only. Outbreaks in crowded settings (camps, prisons, shelters); with serotype 1, over 30% of Gambian invasive disease [D]. The one serotype with a DOCUMENTED Mitis link in detail (76–99% identity) in the Disease Table.",his:"\"The one labeled outbreak\" — the serotype to name when the outbreak group needs a name. The traveling pair with 1."},
+{n:"6B",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Otitis","Carriage","Resistant"],resist:1,note:"<b>The carriage specialist</b> — longest nasopharynx residence, top-4 pre-PCV otitis pathogen. Classic MDR: international clone Spain6B-2; penicillin-susceptible only 8.7% [D]. With 19F, over two-thirds of early PCV vaccine failures [D].",his:"Carriage duration × antibiotic exposure = resistance [LOGIC]. After PCV7 cleared 6B, staph nasal colonization in children doubled — the niche-reshuffle debt [D]."},
+{n:"7F",v:0.2,vl:"0.2",g:"ge",vax:["All five vaccines"],grp:["Meningitis","Outbreak","Persister"],all5:1,note:"<b>The persister without armor.</b> In every vaccine generation, yet among the serotypes most related to vaccine failures, and a documented riser in adult invasive disease after PCV7 cleared others [D]. Generally susceptible, not MDR [D].",his:"Inclusion ≠ control [LOGIC] — the vaccine list and the controlled-disease list are different lists, and 7F is the proof."},
+{n:"8",v:0.7,vl:"0.7",g:"ge",vax:["PPSV23","PCV20","PCV21"],grp:["Pneumonia","Outbreak","Resistance watchlist","Replacement"],resist:1,note:"<b>The predicted replacement.</b> Emerging adult invasive disease post-PCV13 — 10.0% of IPD in adults ≥65, second most reported; in Sweden it dominated IPD (21%) while rare in respiratory isolates — invasion, not carriage [D].",his:"Replacement by capsule economics [LOGIC]: the vaccine cleared the room, and metabolically cheaper capsules chose the successor."},
+{n:"9N",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV21"],grp:["Bacteremia","Replacement","Archive"],note:"<b>The orphan rescue</b> (with 17F). Skipped by PCV13/15/20, picked up only by PCV21. Adult invasive disease, 5.1% of adult IPD post-PCV13; Spanish clones generally susceptible [D].",his:"The coat-change mechanic [H→D]: one documented clone (ST-156 lineage) wears multiple capsules — 9V, 14, 11A, 15C, 19F — and the 23F clone expresses 9N among others [D]."},
+{n:"9V",v:0.4,vl:"0.4",g:"ge",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Otitis","Resistant"],resist:1,note:"<b>The triple-threat template.</b> Classic otitis serotype; MDR clone ST-156 expressing five capsules (9V, 14, 11A, 15C, 19F); penicillin-resistant 42.9% [D]. Biofilm Group II architecture [D].",his:"No trade-off required [LOGIC] — resistance, invasiveness, and biofilm competence in one capsule. Every resistance machine on 9V is bacterial machinery [D]."},
+{n:"10A",v:1.6,vl:"1.6",g:"ge",vax:["PPSV23","PCV20","PCV21"],grp:["Replacement · susceptible counterweight"],note:"<b>The lone value above the lab's line</b> — the only one of the 23 at or above ≥1.0 [D, arithmetic]. Severe invasive disease in children, with penicillin-nonsusceptible 0%, MDR 0% [D].",his:"Virulence without armor [LOGIC]: the serotype that wins unarmed is his strongest case that the capsule, not the drug machinery, is the unit that matters [H→D]."},
+{n:"11A",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV20","PCV21"],grp:["Otitis","Carriage","Resistant","Replacement"],resist:1,note:"<b>The second coat-change.</b> Severe adult IPD; resistant clone CC156 led Madrid's penicillin-non-susceptible rise to 34% in the late PCV13 period — a clone previously tied to vaccine serotypes, now wearing the 11A capsule [D].",his:"The resistance lives in the clone, the capsule is the disguise [LOGIC]. The sugars are swappable while the machinery persists [H→D]."},
+{n:"12F",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV20","PCV21"],grp:["Meningitis","Pneumonia","Bacteremia","Outbreak","Replacement"],watch:1,note:"<b>Eruption without carriage.</b> Adult meningitis is its featured complication — 33% meningitis among outbreak cases [D]. Outbreaks in daycares, military groups, a jail, a shelter; a documented failure at becoming a colonizer [D].",his:"Meningitis-watch serotype. Its two endpoints — adult meningitis (his fungal element) and outbreak pneumonia (his bacterial element) — stay on separate tracks under one capsule [H]."},
+{n:"14",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Meningitis","Pneumonia","Otitis","Bacteremia","Carriage","Outbreak","Resistant"],watch:1,resist:1,note:"<b>Seven disease groups — the most of any serotype</b> (with 23F). The #1 meningitis serotype pre-PCV7 in Europe and Brazil; dual strategy, carriage AND invasion; classic MDR clone CC230 [D]. In the biofilm-five with staph [D].",his:"Meningitis-watch. One capsule carrying both of his elements — meningitis (fungal) and bacteremia/pneumonia (bacterial) — an illness distinction, never a capsule distinction [H]."},
+{n:"15B",v:0.4,vl:"0.4",g:"ge",vax:["PPSV23","PCV20","PCV21"],grp:["Meningitis","Otitis","Carriage","Resistant (moderate)","Replacement"],resist:1,note:"<b>The replacement that arrived armed.</b> A Belgian reference note ranks 15B \"much higher in meningitis compared to overall IPD\" [D]. Oral-penicillin nonsusceptible 51.7% — highest among the PCV20-unique set; erythromycin 62.1% [D]. Note: PCV15 does NOT contain 15B, and PCV21 pneumonia excludes 15B.",his:"The meninges-leaning serotype whose armor is antibiotic-side [LOGIC] — the field saying what he says about the fungal element's terrain [H→D]."},
+{n:"17F",v:0.2,vl:"0.2",g:"ge",vax:["PPSV23","PCV21"],grp:["Meningitis","Replacement","Archive"],note:"<b>The thinnest record in the file.</b> One documented neonatal meningitis case (vertical transmission probable); otherwise honestly [GAP]. Skipped by both 2021 conjugates, rescued by PCV21 [D].",his:"The rescue pair with 9N. Its only documented case sits on his meningitis track with no bacterial-element literature to balance it [H]. The lowest-confidence entry — his to fill [GAP]."},
+{n:"18C",v:0.5,vl:"0.5",g:"ge",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Meningitis","Pneumonia","Otitis","Bacteremia"],note:"<b>Shelter without armor.</b> Highly invasive in children (Portugal, OR 4.76); 100% penicillin-susceptible — yet it sits in mixed biofilms with staph, in the biofilm-five, on zero resistance [D].",his:"The biofilm is shelter, not just a resistance bunker [LOGIC]. Against serotype 14 — same bench, one with armor, one without — invasiveness survives the subtraction [D]."},
+{n:"19A",v:0.3,vl:"0.3",g:"ge",vax:["All five vaccines"],grp:["Pneumonia","Otitis","Bacteremia","Resistant","Persister"],all5:1,resist:1,note:"<b>The replacement-disease serotype.</b> Not in PCV7; emerged after it as the prevalent, clinically important, highly MDR serotype. ST320: oral-penicillin NS 93.3%, erythromycin 93.3% [D]. Originated by capsular switch from the MDR 19F clone Taiwan19F-ST236 [D].",his:"19 = the human part [H]; the A/B after = the insects, then insects-with-insects [H]. The entire thesis in miniature: genes borrowed, capsule borrowed, armor kept through the costume change [H→D]."},
+{n:"19F",v:0.3,vl:"0.3",g:"ge",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Pneumonia","Otitis","Carriage","Resistant","Persister"],resist:1,note:"<b>The carriage specialist and 19A's ancestor.</b> Leading pre-PCV otopathogen; classic MDR (susceptible only 19%); its biofilm — the thinnest measured — generates capsule variants at 55× mutation frequency [D]. Under influenza: mortality 0%→63% [D].",his:"19 = the human part (with 19A) [H]. Its biofilm is not a fortress; it is a workshop [LOGIC] — thin shelter, fast evolution."},
+{n:"20",v:0.3,vl:"0.3",g:"ge",vax:["PPSV23 only"],grp:["Outbreak","Archive"],ppsv:1,note:"<b>The nomenclature trap.</b> Named among outbreak-reported serotypes; modern profile thin [GAP]. PCV21 carries <b>20A, not 20</b> — cross-protection against serotype 20 is not established [GAP]. One of two serotypes no conjugate ever carried (with 2).",his:"The archive member no conjugate generation has yet found worth retrieving. The record gives neither element's names to weigh here — his balance is his to dictate [GAP]."},
+{n:"22F",v:0.3,vl:"0.3",g:"ge",vax:["PPSV23","PCV15","PCV20","PCV21"],grp:["Pneumonia","Replacement · susceptible counterweight"],note:"<b>The clean replacement.</b> 8.2% of IPD in adults ≥65 post-PCV13, with penicillin-nonsusceptible 0% and MDR 0% [D]. PPSV23 effectiveness against 22F measured at 88% in Denmark — the highest figure in the file [D]. With 33F, the PCV15 pair.",his:"Whatever nourishes that sugar, it is not drug-armor [H]. Documented in pneumonia — his bacterial element — with no meningitis name on the fungal side [H]."},
+{n:"23F",v:0.1,vl:"0.1",g:"line",vax:["PPSV23","PCV13","PCV15","PCV20"],grp:["Meningitis","Otitis","Bacteremia","Carriage","Outbreak","Resistant"],resist:1,note:"<b>The complete package.</b> The carriage king — longest documented niche residence of the classic set; Ghana meningitis outbreak cases; classic resistant clone Spain23F-1 (susceptible only 3.8%); second-strongest biofilm architecture measured [D]. Settled ruling (Oct 29, 2026): 23F belongs in pneumonia.",his:"Carriage, biofilm, resistance, both elements named — and the value sits exactly on his line. The serotype where his bacterial/fungal equilibrium has documented names on both sides [H]."},
+{n:"33F",v:0.5,vl:"0.5",g:"ge",vax:["PPSV23","PCV15","PCV20","PCV21"],grp:["Resistant (erythromycin)","Replacement"],resist:1,note:"<b>The newest emergency on the list.</b> Absent from PCV13; non-PCV13 serotypes including 33F drove 73–92% of IPD-related deaths in children in England and Wales after PCV13 [D]. Erythromycin 100% nonsusceptible, ceftriaxone 0% — armor with gaps [D].",his:"Named by the vaccines only after it wrote itself into the pediatric mortality record. \"Resistant\" is never a complete sentence — the record must always ask: to what?"}
+];
+var GLAB={ge:"≥0.2 group",line:"on his line · 0.1",below:"below his line"};
+function glabCls(g){return g==='ge'?'grp':(g==='below'?'warn':'')}
+var cardsEl=document.getElementById('cards'),countEl=document.getElementById('countLine'),emptyEl=document.getElementById('emptyNote');
+var curFilter='all';
+function matches(s){
+  if(curFilter==='ge')return s.g==='ge';
+  if(curFilter==='line')return s.g==='line';
+  if(curFilter==='below')return s.g==='below';
+  if(curFilter==='watch')return !!s.watch;
+  if(curFilter==='all5')return !!s.all5;
+  if(curFilter==='ppsv')return !!s.ppsv;
+  if(curFilter==='resist')return !!s.resist;
+  return true;
+}
+function render(){
+  var q=(document.getElementById('sq').value||'').toLowerCase().trim();
+  var shown=0;cardsEl.innerHTML='';
+  SERO.forEach(function(s){
+    if(!matches(s))return;
+    var hay=(s.n+' '+s.vax.join(' ')+' '+s.grp.join(' ')+' '+s.note+' '+s.his).toLowerCase();
+    if(q&&hay.indexOf(q)===-1)return;
+    shown++;
+    var pct=Math.min(100,(s.v/1.6)*100);
+    var d=document.createElement('article');d.className='scard';
+    d.innerHTML='<div class="scard-top"><div class="sname">'+s.n+'</div><div class="sval"><b>'+s.vl+'</b><span>mcg/mL</span></div></div>'
+      +'<div class="bar" aria-hidden="true"><i style="width:'+Math.max(pct,2)+'%"></i></div>'
+      +'<div class="bar-lab"><span>0</span><span>his line 0.1</span><span>lab line 1.0</span><span>1.6 max</span></div>'
+      +'<div class="pillrow"><span class="pill '+glabCls(s.g)+'">'+GLAB[s.g]+'</span>'+s.vax.map(function(v){return '<span class="pill vax">'+v+'</span>'}).join('')+'</div>'
+      +'<div class="pillrow">'+s.grp.map(function(v){return '<span class="pill">'+v+'</span>'}).join('')+'</div>'
+      +'<p>'+s.note+'</p>'
+      +'<div class="his"><b>His framework [H]</b>'+s.his+'</div>';
+    cardsEl.appendChild(d);
+  });
+  countEl.textContent='Showing '+shown+' of 23 serotypes · values are quoted numbers from the record — arithmetic only, never a verdict';
+  emptyEl.style.display=shown?'none':'block';
+}
+document.getElementById('sq').addEventListener('input',render);
+var chips=document.querySelectorAll('#fchips .fchip');
+chips.forEach(function(c){c.addEventListener('click',function(){
+  chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+  c.setAttribute('aria-pressed','true');curFilter=c.getAttribute('data-f');render();
+})});
+render();
+
+/* ---------- matrix ---------- */
+var MX={"1":"MMMM","2":"L---","3":"MMMM","4":"XXXX","5":"MMMM","6B":"L---","7F":"XXXX","8":"XXXX","9N":"L---","9V":"VVVV","10A":"L---","11A":"L---","12F":"XXXX","14":"XXXX","15B":"MMMM","17F":"MMMM","18C":"XXXX","19A":"L---","19F":"VVVV","20":"L---","22F":"L---","23F":"MMMM","33F":"L---"};
+var ORDER=["1","2","3","4","5","6B","7F","8","9N","9V","10A","11A","12F","14","15B","17F","18C","19A","19F","20","22F","23F","33F"];
+var mg=document.getElementById('mgrid');
+var head=['<div class="mh"></div>','<div class="mh">LAC</div>','<div class="mh">EEE</div>','<div class="mh">SLE</div>','<div class="mh">WEE</div>'].join('');
+mg.innerHTML=head+ORDER.map(function(k){
+  var row='<div class="mr">'+k+'</div>';
+  MX[k].split('').forEach(function(c){
+    if(c==='M')row+='<div class="cell M">M</div>';
+    else if(c==='X')row+='<div class="cell MV">MV</div>';
+    else if(c==='V')row+='<div class="cell V">V</div>';
+    else if(c==='L')row+='<div class="cell L">L</div>';
+    else row+='<div class="cell none">–</div>';
+  });
+  return row;
+}).join('');
+
+/* ---------- serogroup table ---------- */
+var SG=[
+["1","1","1","1","1","—","1"],["2","2","—","—","—","—","2"],["3","3","3","3","3","3","3"],
+["4","4","4","4","4","—","4"],["5","5","5","5","5","—","5"],["6","6A, 6B, 6C, 6D","6A, 6B","6A, 6B","6A, 6B","6A","6B"],
+["7","7A, 7B, 7C, 7F","7F","7F","7F","7F","7F"],["8","8","—","—","8","8","8"],
+["9","9A, 9L, 9N, 9V","9V","9V","9V","9N","9N, 9V"],["10","10A, 10B, 10C, 10F","—","—","10A","10A","10A"],
+["11","11A, 11B, 11C, 11D, 11E, 11F","—","—","11A","11A","11A"],["12","12A, 12B, 12F","—","—","12F","12F","12F"],
+["14","14","14","14","14","—","14"],["15","15A, 15B, 15C, 15F","—","—","15B","15A, 15B","15B"],
+["17","17A, 17F","—","—","—","17F","17F"],["18","18A, 18B, 18C, 18F","18C","18C","18C","—","18C"],
+["19","19A, 19F, 19B, 19C","19A, 19F","19A, 19F","19A, 19F","19A","19A, 19F"],["20","20, 20A, 20B","—","—","—","20A","20"],
+["22","22A, 22F","—","22F","22F","22F","22F"],["23","23A, 23B, 23F","23F","23F","23F","23A, 23B","23F"],
+["33","33A, 33B, 33C, 33D, 33F","—","33F","33F","33F","33F"]];
+var sgt=document.querySelector('#sgTable tbody');
+sgt.innerHTML=SG.map(function(r){
+  var cells=['Group '+r[0],r[1],r[2],r[3],r[4],r[5],r[6]];
+  var labs=['Group','Serotypes in group','PCV13','PCV15','PCV20','PCV21','PPSV23'];
+  return '<tr>'+cells.map(function(c,i){
+    var cls=(c!=='—'&&i>=2)?' class="yes"':'';
+    return '<td data-l="'+labs[i]+'"'+cls+'>'+c+'</td>';
+  }).join('')+'</tr>';
+}).join('');
+
+/* ---------- intertwined snake ---------- */
+var PAIRS=[["1","35B"],["2","33F"],["3","31"],["4","24F"],["5","23F"],["6A","23B"],["6B","23A"],["7F","22F"],["8","20 / 20A"],["9N","19F"],["9V","19A"],["10A","18C"],["11A","17F"],["12F","16F"],["14","15C"],["15A","15B"]];
+document.getElementById('snake').innerHTML=PAIRS.map(function(p,i){
+  return '<span class="pair"><span class="st">'+p[0]+'</span><span class="conn">↔</span><span class="st big">'+p[1]+'</span></span>'+(i<PAIRS.length-1?'<span class="conn">·</span>':'');
+}).join('');
+
+/* ---------- vaccine & toxoid matrix ---------- */
+var VX=[
+{t:"Streptococcus pneumoniae",vax:"PCV7 / PCV13 / PCV20 / PPSV23",cov:"PCV7: 4, 6B, 9V, 14, 18C, 19F, 23F · PCV13 adds 1, 3, 5, 6A, 7F, 19A · PCV20 adds 8, 10A, 11A, 12F, 15B, 22F, 33F · PPSV23: 23 valences",car:"CRM197 (Prevnar) — corrected cell",mech:"Capsular polysaccharide conjugated to carrier (T-independent → T-dependent); PPSV23 is pure unconjugated CPS",note:"Serotype lists HOLD [H→D]. Correction filed beside the row: TT / DT are carriers in other conjugate products, not Prevnar carriers — the original cell overstated it. Danish numerical serotyping note: [PARTIAL].",fix:1},
+{t:"Neisseria meningitidis",vax:"MenACWY / MenB",cov:"Serogroups A, C, W-135, Y (MenACWY) · Serogroup B (MenB)",car:"CRM197, DT, or TT (MenACWY) · OMV / fHbp, NadA, NHBA (MenB)",mech:"Conjugate CPS for MenACWY; recombinant proteins for MenB",note:"HOLDS [H→D]. MenB capsule mimics human NCAM, so protein antigens replace CPS conjugation [D].",fix:0},
+{t:"Haemophilus influenzae type b",vax:"Hib conjugate",cov:"Polyribosylribitol phosphate (PRP) capsule",car:"CRM197, TT, DT (PRP-D), or OMPC / PRP-OMP",mech:"PRP polysaccharide conjugated to protein carrier",note:"HOLDS [H→D]. Converts the weak pediatric T-independent response into T-cell-dependent memory [D].",fix:0},
+{t:"Salmonella enterica serovar Typhi",vax:"Vi conjugate (TCV)",cov:"Vi capsular polysaccharide",car:"rEPA or TT",mech:"Vi polysaccharide–protein conjugate",note:"HOLDS, with a status note [H→D]: Vi-rEPA (89% efficacy) is early / not commercial; Vi-TT is the licensed one.",fix:0},
+{t:"Streptococcus agalactiae (GBS)",vax:"Investigational GBS conjugate",cov:"Serotypes Ia, Ib, II, III, IV, V — over 97% of infant disease globally [D]",car:"CRM197 or TT",mech:"Capsular polysaccharide conjugate",note:"HOLDS [H→D]. Maternal immunization, protecting neonates by transplacental IgG. No GBS vaccine licensed.",fix:0},
+{t:"Corynebacterium diphtheriae",vax:"Diphtheria toxoid (in DTaP / Tdap)",cov:"Toxigenic strains producing diphtheria toxin",car:"Formalin-inactivated diphtheria toxin (DT) — itself",mech:"Inactivated bacterial exotoxin",note:"HOLDS [H→D]. Both a disease-preventing toxoid vaccine and a primary carrier platform for conjugates.",fix:0},
+{t:"Clostridium tetani",vax:"Tetanus toxoid (in DTaP / Tdap)",cov:"Toxin-producing vegetative cells",car:"Formalin-inactivated tetanus toxin (TT) — itself",mech:"Inactivated bacterial exotoxin",note:"HOLDS [H→D]. Anti-tetanospasmin immunization and a universal carrier protein — e.g. Synflorix's 18C row rides on TT.",fix:0},
+{t:"Cryptococcus neoformans / gattii (fungal cross-ref)",vax:"Experimental fungal conjugates",cov:"GXM capsule serotypes — GXM ~90% / GalXM ~10%; serotypes B and C are C. gattii",car:"CRM197 or TT (research models)",mech:"Fungal capsular polysaccharide–toxoid conjugate",note:"HOLDS as experimental [H→D]. GXM-TT protected mice; CRM197 semisynthetic M2 motif gave modest protection. No fungal vaccine is licensed for clinical use; no gattii-specific conjugate efficacy is claimed.",fix:0}
+];
+document.getElementById('vrows').innerHTML=VX.map(function(r){
+  return '<div class="vrow"><div class="vrow-top"><h3>'+r.t+'</h3><span class="verdict'+(r.fix?' fix':'')+'">'+(r.fix?'HOLDS · 1 CORRECTION':'HOLDS [H→D]')+'</span></div>'
+  +'<div class="meta"><span class="pill vax">'+r.vax+'</span><span class="pill">Carrier: '+r.car+'</span></div>'
+  +'<p><b style="color:var(--ink)">Covers:</b> '+r.cov+'</p>'
+  +'<p><b style="color:var(--ink)">Mechanism:</b> '+r.mech+'</p>'
+  +'<p>'+r.note+'</p></div>';
+}).join('');
+</script>
+</body>
+</html>

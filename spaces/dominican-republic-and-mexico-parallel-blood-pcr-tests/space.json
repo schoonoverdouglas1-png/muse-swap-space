@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Dominican Republic and Mexico Parallel Blood PCR Tests",
+  "slug": "dominican-republic-and-mexico-parallel-blood-pcr-tests",
+  "managedCronJobs": []
+}

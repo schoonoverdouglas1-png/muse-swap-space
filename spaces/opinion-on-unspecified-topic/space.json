@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Opinion on Unspecified Topic",
+  "slug": "opinion-on-unspecified-topic",
+  "managedCronJobs": []
+}

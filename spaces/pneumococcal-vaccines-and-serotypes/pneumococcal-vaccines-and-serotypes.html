@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Pneumococcal Vaccines and Serotypes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,650;0,6..72,800;1,6..72,500&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f4ec;
+        --surface: #fffdf7;
+        --surface-2: #efe9db;
+        --ink: #1c2422;
+        --ink-soft: #44514c;
+        --line: #d8d0bd;
+        --teal: #0e5a52;
+        --teal-deep: #083f39;
+        --teal-tint: #dcebe4;
+        --amber: #9a5b12;
+        --amber-tint: #f6e7c8;
+        --rust: #a33327;
+        --rust-tint: #f7ddd6;
+        --green: #1e6b3a;
+        --green-tint: #ddefdc;
+        --chip-off: #e9e3d2;
+        --shadow: 0 1px 2px rgba(28,36,34,.08), 0 8px 24px rgba(28,36,34,.06);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101614;
+          --surface: #182019;
+          --surface-2: #212a22;
+          --ink: #ece7d8;
+          --ink-soft: #b3bfae;
+          --line: #3a443a;
+          --teal: #5cc4b2;
+          --teal-deep: #9adfd2;
+          --teal-tint: #1d3833;
+          --amber: #e3ac55;
+          --amber-tint: #3d2f14;
+          --rust: #ef9a8b;
+          --rust-tint: #40211c;
+          --green: #8fd69e;
+          --green-tint: #1e3524;
+          --chip-off: #2a332a;
+          --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+        }
+      }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      h1, h2, h3 { font-family: "Newsreader", Georgia, serif; line-height: 1.15; margin: 0; }
+      p { margin: 0; }
+      a { color: var(--teal); }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- header ---------- */
+      header.hero {
+        background: var(--teal-deep);
+        color: #f2efe4;
+        padding: 44px 0 36px;
+        border-bottom: 6px solid var(--amber);
+      }
+      @media (prefers-color-scheme: dark) {
+        header.hero { background: #0b2b27; color: #ece7d8; border-bottom-color: var(--amber); }
+      }
+      .hero .kicker {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+        color: #d9b36a; margin-bottom: 14px;
+      }
+      .hero h1 { font-size: clamp(32px, 6vw, 54px); font-weight: 800; max-width: 18ch; }
+      .hero .lede { margin-top: 16px; font-size: 19px; max-width: 62ch; color: #ddd8c6; }
+      .hero .lede em { color: #fff; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+      .stat {
+        background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.22);
+        border-radius: 10px; padding: 10px 16px; min-width: 128px;
+      }
+      .stat b { display: block; font-family: "Newsreader", serif; font-size: 26px; font-weight: 800; }
+      .stat span { font-size: 13.5px; color: #cfc9b4; }
+
+      nav.toc {
+        position: sticky; top: 0; z-index: 20;
+        background: var(--surface); border-bottom: 1px solid var(--line);
+      }
+      nav.toc .wrap { display: flex; flex-wrap: wrap; gap: 4px; padding-top: 0; padding-bottom: 0; }
+      nav.toc a {
+        color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 15px;
+        padding: 12px 10px; white-space: nowrap; border-bottom: 3px solid transparent;
+      }
+      nav.toc a:hover, nav.toc a:focus-visible { color: var(--teal); border-bottom-color: var(--teal); }
+
+      section { padding: 44px 0 8px; }
+      section > .wrap > h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; }
+      .section-intro { margin-top: 10px; color: var(--ink-soft); max-width: 72ch; }
+      .section-intro + .grid, .section-intro + .card, .section-intro + div { margin-top: 22px; }
+
+      /* ---------- provenance / callouts ---------- */
+      .callout {
+        border: 1px solid var(--line); border-left: 6px solid var(--amber);
+        background: var(--surface); border-radius: 8px; padding: 18px 20px; box-shadow: var(--shadow);
+      }
+      .callout.rust { border-left-color: var(--rust); }
+      .callout.teal { border-left-color: var(--teal); }
+      .callout h3 { font-size: 20px; margin-bottom: 8px; }
+      .callout p + p { margin-top: 8px; }
+      .callout ul { margin: 8px 0 0; padding-left: 20px; }
+      .callout li + li { margin-top: 4px; }
+
+      .badge {
+        display: inline-block; font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+        padding: 3px 9px; border-radius: 999px; vertical-align: middle; white-space: nowrap;
+      }
+      .badge.doc { background: var(--green-tint); color: var(--green); }
+      .badge.part { background: var(--amber-tint); color: var(--amber); }
+      .badge.gap { background: var(--rust-tint); color: var(--rust); }
+      .badge.refuted { background: var(--rust); color: #fff; }
+      @media (prefers-color-scheme: dark) { .badge.refuted { color: #1c0f0c; } }
+
+      .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; }
+      .legend div { display: flex; gap: 8px; align-items: baseline; max-width: 34ch; font-size: 15px; color: var(--ink-soft); }
+
+      /* ---------- chain ---------- */
+      .chain { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; margin-top: 22px; }
+      .chain-step {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+        padding: 12px 14px; flex: 1 1 150px; box-shadow: var(--shadow);
+      }
+      .chain-step b { font-family: "Newsreader", serif; font-size: 20px; display: block; }
+      .chain-step .adds { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--teal); font-weight: 600; }
+      .chain-step p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+      .chain-arrow { align-self: center; font-size: 20px; color: var(--amber); font-weight: 700; }
+      .chain-break { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin-top: 12px; }
+      @media (max-width: 640px) { .chain-break { grid-template-columns: 1fr; } .chain-arrow { display: none; } }
+
+      /* ---------- cards & chips ---------- */
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+      @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+        padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
+      }
+      .card .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+      .card h3 { font-size: 23px; font-weight: 800; }
+      .card .brand { color: var(--ink-soft); font-size: 15px; }
+      .card .meta { font-size: 15px; color: var(--ink-soft); }
+      .card .meta b { color: var(--ink); }
+      .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+      .chip {
+        font-family: "IBM Plex Mono", monospace; font-size: 13.5px; font-weight: 600;
+        background: var(--teal-tint); color: var(--teal-deep);
+        border: 1px solid transparent; border-radius: 7px; padding: 3px 9px;
+      }
+      @media (prefers-color-scheme: dark) { .chip { color: var(--teal); } }
+      .chip.off { background: var(--chip-off); color: var(--ink-soft); font-weight: 500; }
+      .chip.cross { background: var(--amber-tint); color: var(--amber); border-style: dashed; border-color: var(--amber); }
+      .carrier { background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: 15px; }
+      .carrier b { display: block; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 3px; font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+      .src { font-size: 13.5px; color: var(--ink-soft); margin-top: auto; }
+      .src a { word-break: break-word; }
+
+      /* ---------- controls ---------- */
+      .controls {
+        display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+        padding: 14px 16px; box-shadow: var(--shadow);
+      }
+      .controls label { font-weight: 700; font-size: 15px; }
+      .controls input[type="search"], .controls select {
+        font: inherit; font-size: 16px; color: var(--ink);
+        background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px;
+      }
+      .controls input[type="search"] { flex: 1 1 200px; }
+      .filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+      .fbtn {
+        font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer;
+        background: var(--surface); color: var(--ink-soft);
+        border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; min-height: 40px;
+      }
+      .fbtn[aria-pressed="true"] { background: var(--teal-deep); color: #f2efe4; border-color: var(--teal-deep); }
+      @media (prefers-color-scheme: dark) { .fbtn[aria-pressed="true"] { background: var(--teal); color: #0b2b27; border-color: var(--teal); } }
+      .fbtn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+      /* serotype index cards */
+      .sero-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-top: 16px; }
+      @media (max-width: 380px) { .sero-grid { grid-template-columns: 1fr; } }
+      .sero {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px;
+      }
+      .sero .sero-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+      .sero .sero-name { font-family: "Newsreader", serif; font-size: 27px; font-weight: 800; }
+      .sero .sero-group { font-size: 13.5px; color: var(--ink-soft); font-family: "IBM Plex Mono", monospace; }
+      .sero .vax-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+      .vchip {
+        font-size: 12.5px; font-weight: 700; font-family: "IBM Plex Mono", monospace;
+        border-radius: 6px; padding: 2px 7px; background: var(--chip-off); color: var(--ink-soft);
+      }
+      .vchip.on { background: var(--teal); color: #fff; }
+      @media (prefers-color-scheme: dark) { .vchip.on { background: var(--teal); color: #0b2b27; } }
+      .vchip.cross { background: var(--amber-tint); color: var(--amber); border: 1px dashed var(--amber); }
+      .sero .note { font-size: 13.5px; color: var(--ink-soft); margin-top: 8px; }
+      .empty-msg { margin-top: 16px; color: var(--ink-soft); font-style: italic; }
+
+      /* compare */
+      .compare-out { margin-top: 16px; display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+      @media (max-width: 760px) { .compare-out { grid-template-columns: 1fr; } }
+      .compare-col { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+      .compare-col h4 { margin: 0 0 10px; font-family: "Newsreader", serif; font-size: 18px; }
+
+      /* tables that stack */
+      .tbl { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+      .tbl th, .tbl td { text-align: left; padding: 12px 14px; vertical-align: top; border-bottom: 1px solid var(--line); }
+      .tbl th { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); background: var(--surface-2); }
+      .tbl tr:last-child td { border-bottom: none; }
+      .tbl td:first-child { font-weight: 700; }
+      @media (max-width: 700px) {
+        .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; width: 100%; }
+        .tbl thead { display: none; }
+        .tbl tr { border-bottom: 2px solid var(--line); padding: 8px 0; }
+        .tbl td { border-bottom: none; padding: 6px 14px; }
+        .tbl td::before { content: attr(data-h); display: block; font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 2px; }
+        .tbl td:first-child::before { display: none; }
+        .tbl td:first-child { font-size: 19px; font-family: "Newsreader", serif; }
+      }
+
+      .audit-list { display: grid; gap: 12px; }
+      .audit-item { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; box-shadow: var(--shadow); }
+      .audit-item h3 { font-size: 19px; margin-bottom: 6px; }
+      .audit-item p { color: var(--ink-soft); font-size: 15.5px; }
+      .audit-item p b { color: var(--ink); }
+
+      .src-list { columns: 2; column-gap: 36px; font-size: 14.5px; }
+      @media (max-width: 700px) { .src-list { columns: 1; } }
+      .src-list li { margin-bottom: 8px; break-inside: avoid; }
+      .src-list a { word-break: break-all; }
+      ul.plain { margin: 10px 0 0; padding-left: 20px; }
+      ul.plain li + li { margin-top: 6px; }
+
+      footer { margin-top: 56px; border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--ink-soft); font-size: 14.5px; }
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <p class="kicker">Reverse-engineered from the vaccines outward · Research completed 4 November 2026</p>
+        <h1>Pneumococcal Vaccines &amp; Serotypes</h1>
+        <p class="lede">Every pneumococcal vaccine taken apart into the serotypes it covers, the carrier protein each serotype is conjugated to, and the one thing that connects them all — the <em>serogroup</em>: the capsular polysaccharide family a serotype belongs to. The organism throughout is <em>Streptococcus pneumoniae</em>.</p>
+        <div class="stat-row">
+          <div class="stat"><b>8</b><span>vaccine products (PCV10 is two different vaccines)</span></div>
+          <div class="stat"><b>32</b><span>distinct disease serotypes across all of them</span></div>
+          <div class="stat"><b>25</b><span>vaccine-relevant serogroups, checked one by one</span></div>
+          <div class="stat"><b>8</b><span>serogroups with a single serotype</span></div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Page sections">
+      <div class="wrap">
+        <a href="#vaccines">Vaccines</a>
+        <a href="#conjugates">Conjugates</a>
+        <a href="#index">Serotype index</a>
+        <a href="#compare">Compare</a>
+        <a href="#serogroups">Serogroups</a>
+        <a href="#latin">Latin disease names</a>
+        <a href="#relationships">Bacterial &amp; fungal links</a>
+        <a href="#audit">Discriminative audit</a>
+        <a href="#open">Open questions</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </nav>
+
+    <section aria-labelledby="how-h">
+      <div class="wrap">
+        <h2 id="how-h">Read the evidence labels first</h2>
+        <p class="section-intro">Nothing in this list is presented as more certain than the research behind it. Every entry carries one of these labels, and the labels come from checking each item against more than one source — never from a single website taken at face value.</p>
+        <div class="legend">
+          <div><span class="badge doc">Documented</span><span>Confirmed by two or more independent primary, regulatory, or peer-reviewed sources that agree.</span></div>
+          <div><span class="badge part">Partially documented</span><span>One strong source, or sources that agree in part but conflict or are incomplete on the detail.</span></div>
+          <div><span class="badge gap">Gap</span><span>No retrieved source settles the point. The point is not asserted — do not copy it into a book or paper as fact.</span></div>
+        </div>
+        <div class="callout" style="margin-top:22px">
+          <h3>Provenance warning — the single-source serotype table</h3>
+          <p>One serotype's grouping information in an earlier table came from a single website — described as the only place on earth where it was found — with no bibliography attached, drawn from the internet rather than entered by hand. <b>Which serotype it was has never been named, so this page does not guess.</b></p>
+          <p>Because of that, every serogroup entry here is treated as externally drawn and bibliography-missing until a second source confirms it — and each one below shows whether that second source was found. A candidate matching that description was identified during the research: a commercial two-page PDF from Sunfire Biotechnologies, <i>Pneumococcal Serotypes and Their Capsular Structures</i>, whose Table 1 lists serogroups 1–47, whose Table 2 literally says “Info coming soon!”, and which contains no bibliography, methods, or discovery dates. It fits the profile — but it is <b>not</b> asserted to be the source. It is the prime candidate to check cell by cell.</p>
+          <p>That candidate table is also demonstrably out of date: written in 2022, it predates nine serotypes discovered since 2020, so it is missing 15D, 20C, 24C, 33E/G/H, 36A/B, 10D, and serogroup 48 entirely.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="vaccines" aria-labelledby="vaccines-h">
+      <div class="wrap">
+        <h2 id="vaccines-h">The vaccines, reverse-engineered</h2>
+        <p class="section-intro">The seven named vaccines are not a simple ladder. Five of them form a strict chain — each one contains everything in the one before it, plus additions. PCV21 breaks the chain on purpose, and PPSV23 stands apart as the only unconjugated one. And “PCV10” is not one vaccine at all: GSK's Synflorix and Serum Institute's Pneumosil differ in four serotypes.</p>
+
+        <div class="chain" aria-label="The strict superset chain">
+          <div class="chain-step"><b>PCV7</b><span class="adds">7 serotypes</span><p>The original Prevnar set.</p></div>
+          <div class="chain-arrow" aria-hidden="true">→</div>
+          <div class="chain-step"><b>PCV10-GSK</b><span class="adds">+ 1, 5, 7F</span><p>Synflorix adds three.</p></div>
+          <div class="chain-arrow" aria-hidden="true">→</div>
+          <div class="chain-step"><b>PCV13</b><span class="adds">+ 3, 6A, 19A</span><p>Prevnar 13 adds three.</p></div>
+          <div class="chain-arrow" aria-hidden="true">→</div>
+          <div class="chain-step"><b>PCV15</b><span class="adds">+ 22F, 33F</span><p>Vaxneuvance adds two.</p></div>
+          <div class="chain-arrow" aria-hidden="true">→</div>
+          <div class="chain-step"><b>PCV20</b><span class="adds">+ 8, 10A, 11A, 12F, 15B</span><p>Prevnar 20 adds five.</p></div>
+        </div>
+        <div class="chain-break">
+          <div class="callout rust">
+            <h3>PCV21 breaks the chain</h3>
+            <p>Capvaxive shares only 10 polysaccharides with PCV20 (plus its modified 15B). It <b>drops nine</b> PCV20 serotypes — 1, 4, 5, 6B, 9V, 14, 18C, 19F, 23F — and <b>adds ten</b> of its own: 9N, 15A, 16F, 17F, 20A, 23A, 23B, 24F, 31, 35B, plus 15C reached by cross-reactivity. It is an adult-targeted set, not a “PCV20 plus one.”</p>
+          </div>
+          <div class="callout teal">
+            <h3>PPSV23 stands apart</h3>
+            <p>Pneumovax 23 is unconjugated and is neither a superset nor a subset of any conjugate vaccine. Against PCV20 it adds 2, 9N, 17F and 20/20A — and 6A is the only PCV20 serotype it lacks.</p>
+          </div>
+        </div>
+
+        <div class="grid" id="vaccine-grid" style="margin-top:22px"></div>
+      </div>
+    </section>
+
+    <section id="conjugates" aria-labelledby="conj-h">
+      <div class="wrap">
+        <h2 id="conj-h">Conjugate information — what each serotype is attached to</h2>
+        <p class="section-intro">A conjugate vaccine works by chemically attaching each capsular polysaccharide to a carrier protein, so the immune system responds to it as it would to a protein. Almost every product here uses the same carrier, CRM197 — a non-toxic variant of diphtheria toxin from <i>Corynebacterium diphtheriae</i>. The one real exception is Synflorix, which uses three different carriers. <span class="badge doc">Documented</span> for every row.</p>
+        <div style="margin-top:22px; overflow-x:auto">
+          <table class="tbl">
+            <thead><tr><th scope="col">Vaccine</th><th scope="col">Carrier protein(s)</th><th scope="col">Dose detail</th></tr></thead>
+            <tbody>
+              <tr><td data-h="Vaccine">PCV7 — Prevnar</td><td data-h="Carrier">CRM197 for all 7 serotypes</td><td data-h="Dose">—</td></tr>
+              <tr><td data-h="Vaccine">PCV10-GSK — Synflorix</td><td data-h="Carrier"><b>Mixed:</b> protein D from non-typeable <i>Haemophilus influenzae</i> for 1, 4, 5, 6B, 7F, 9V, 14, 23F · <b>tetanus toxoid for 18C</b> · <b>diphtheria toxoid for 19F</b></td><td data-h="Dose">1 µg each, except 4, 18C, 19F at 3 µg</td></tr>
+              <tr><td data-h="Vaccine">PCV10-SII — Pneumosil</td><td data-h="Carrier">CRM197 for all 10 (CDAP chemistry)</td><td data-h="Dose">2 µg each, except 6B at 4 µg</td></tr>
+              <tr><td data-h="Vaccine">PCV13 — Prevnar 13</td><td data-h="Carrier">CRM197 for all 13</td><td data-h="Dose">2.2 µg each, except 6B at 4.4 µg</td></tr>
+              <tr><td data-h="Vaccine">PCV15 — Vaxneuvance</td><td data-h="Carrier">CRM197 for all 15</td><td data-h="Dose">2.0 µg each, except 6B at 4.0 µg; ~30 µg CRM197 per dose</td></tr>
+              <tr><td data-h="Vaccine">PCV20 — Prevnar 20</td><td data-h="Carrier">CRM197 for all 20</td><td data-h="Dose">2.2 µg each, except 6B at 4.4 µg; 51 µg CRM197 per dose</td></tr>
+              <tr><td data-h="Vaccine">PCV21 — Capvaxive</td><td data-h="Carrier">CRM197 for all 21 conjugates. The 15B polysaccharide is <b>de-O-acetylated before conjugation</b> (deOAc15B) — the chemical basis for its 15C cross-reactivity</td><td data-h="Dose">4 µg each polysaccharide (84 µg total); ~65 µg CRM197 per dose</td></tr>
+              <tr><td data-h="Vaccine">PPSV23 — Pneumovax 23</td><td data-h="Carrier"><b>None — unconjugated.</b> Purified capsular polysaccharides only</td><td data-h="Dose">25 µg of each of the 23 per dose</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section-intro" style="margin-top:14px">One manufacturing note, labelled honestly: Pfizer's CRM197 comes from <i>C. diphtheriae</i> C7 (β197), while Merck's is expressed recombinantly in <i>Pseudomonas fluorescens</i>. No retrieved source directly compares the two preparations' immunology, so that distinction is <span class="badge part">Partially documented</span> — a manufacturing detail, not a different carrier.</p>
+      </div>
+    </section>
+
+    <section id="index" aria-labelledby="index-h">
+      <div class="wrap">
+        <h2 id="index-h">Serotype index — all 32, and which vaccines carry each</h2>
+        <p class="section-intro">The union across all eight products: 32 distinct disease serotypes. That count treats 15C as a disease serotype reached by PCV21's modified 15B antigen, and serogroup 20 as one “20/20A” entry — both judgement calls are audited below (§6.2–§6.3 of the research). Search by serotype, or filter to a single vaccine to see exactly its set.</p>
+        <div class="controls" style="margin-top:22px">
+          <label for="sero-search">Find a serotype</label>
+          <input type="search" id="sero-search" placeholder="Try 19A, 15, 23…" autocomplete="off" />
+        </div>
+        <div class="filter-row" id="vax-filters" role="group" aria-label="Filter serotypes by vaccine"></div>
+        <div class="sero-grid" id="sero-grid"></div>
+        <p class="empty-msg hidden" id="sero-empty">No serotype matches that search under the current filter.</p>
+      </div>
+    </section>
+
+    <section id="compare" aria-labelledby="compare-h">
+      <div class="wrap">
+        <h2 id="compare-h">Compare any two vaccines</h2>
+        <p class="section-intro">Pick two products and see exactly what they share, and what each one has that the other doesn't — computed directly from the documented lists above.</p>
+        <div class="controls" style="margin-top:22px">
+          <label for="cmp-a">First vaccine</label>
+          <select id="cmp-a"></select>
+          <label for="cmp-b">Second vaccine</label>
+          <select id="cmp-b"></select>
+        </div>
+        <div class="compare-out" id="compare-out"></div>
+      </div>
+    </section>
+
+    <section id="serogroups" aria-labelledby="sg-h">
+      <div class="wrap">
+        <h2 id="sg-h">Grouped by the one connecting thing: serogroup</h2>
+        <p class="section-intro">A serogroup is an <i>antigenic</i> grouping in the Danish system (Statens Serum Institut): serotypes whose capsular polysaccharides cross-react with the same typing antisera in the Quellung reaction. The number names the group; the trailing letter distinguishes members — serogroup 19, for example, is 19F first, then 19A, 19B, 19C.</p>
+        <div class="callout teal">
+          <h3>What a serogroup is not</h3>
+          <ul>
+            <li><b>Not a genetic cluster.</b> Grouping by the <i>cps</i> gene locus disagrees with Quellung serogroups in places — in six cases, serotypes in one serogroup fall in different genetic subclusters, and nine subclusters mix serogroups. Serotype 14 is serologically alone, yet its <i>cps</i> locus is clearly related to serogroup 15's. Name the grouping system every time: “Danish/Quellung serogroup,” “<i>cps</i>-locus cluster,” or “PCR genogroup.”</li>
+            <li><b>Not vaccine coverage.</b> Vaccinating against one member does not cover the group: 6B does not cover 6C/6D, 15B does not cover 15A/15F/15D, and 23F does not cover 23A/23B — except where a specific cross-reactivity claim is documented on the card.</li>
+            <li><b>Not a species or fungal group.</b> The Mitis group of streptococci and the <i>Cryptococcus</i> fungal serotypes are separate systems — see Relationships below.</li>
+          </ul>
+        </div>
+        <p class="section-intro" style="margin-top:18px">Single-serotype groups (in the serological sense, among vaccine-relevant groups): <b>1, 2, 3, 4, 5, 8, 14, 31</b>. “Single” must always be qualified — a future <i>cps</i> variant could split any of them, as has already happened to groups 15, 20, 33 and 36.</p>
+        <div class="filter-row" id="sg-filters" role="group" aria-label="Filter serogroups by evidence status">
+          <button type="button" class="fbtn" data-sg="all" aria-pressed="true">All 25 groups</button>
+          <button type="button" class="fbtn" data-sg="doc" aria-pressed="false">Documented</button>
+          <button type="button" class="fbtn" data-sg="part" aria-pressed="false">Partially documented</button>
+          <button type="button" class="fbtn" data-sg="single" aria-pressed="false">Single-serotype groups</button>
+        </div>
+        <div class="grid" id="sg-grid" style="margin-top:16px"></div>
+        <div class="callout" style="margin-top:22px">
+          <h3>Beyond the vaccine set — summary only</h3>
+          <p>The candidate single-source table also lists groups 13, 21, 25, 26, 27, 28, 29, 30, 32, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 and 47. Two corrections from second sources: <b>serogroup 48 exists</b> (the SSI latex-pool list includes it; the candidate table stops at 47, so it is incomplete even on its own terms), and <b>group 36 splits into 36A/36B</b>. No source retrieved gives a complete, bibliography-backed table of all 107 serotypes by group — so this page does not pretend to one. The re-sourcing target is the SeroBAnk atlas, which was cited but not read group-by-group.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="latin" aria-labelledby="latin-h">
+      <div class="wrap">
+        <h2 id="latin-h">Latin disease names — what is documented, and what is a gap</h2>
+        <p class="section-intro">The organism's name <i>is</i> Latin: <i>Streptococcus pneumoniae</i> (Klein 1884) Chester 1901 — formerly <i>Diplococcus pneumoniae</i> (1920–1974). The carrier organisms are Latin too: <i>Corynebacterium diphtheriae</i> (CRM197), <i>Haemophilus influenzae</i> (protein D), <i>Clostridium tetani</i> (tetanus toxoid). Those binomials are the only per-organism Latin names this research can attach to the vaccines. <span class="badge doc">Documented</span></p>
+        <div class="callout rust">
+          <h3>Per-serotype Latin disease names: <span class="badge gap">Gap</span></h3>
+          <p><b>No source retrieved assigns a different Latin disease name to each serotype</b> — nothing that gives serotype 3 one set of names, serotype 8 another, serotype 19A another. A targeted deeper search for Latin disease phrases (“pneumonia pneumococcica”, “meningitis pneumococcica”) returned no such nomenclature anywhere. Disease names in the labels are modern medical terms of Latin/Greek derivation, used in English: <i>pneumonia, meningitis, sepsis, bacteraemia, otitis media, sinusitis, empyema, peritonitis</i>, and so on.</p>
+          <p>So the honest table is one row per <i>vaccine</i> (below), not one row per serotype. A per-serotype Latin-disease table built from this evidence would be invented — do not publish one. Surveillance papers do associate serotypes with <i>frequencies</i> of invasive disease, meningitis, or case-fatality, but those are epidemiological associations that vary by age and country, not disease-name assignments.</p>
+        </div>
+        <div style="margin-top:22px; overflow-x:auto">
+          <table class="tbl">
+            <thead><tr><th scope="col">Vaccine</th><th scope="col">Disease terms in its licensed indication</th><th scope="col">Restriction that matters</th></tr></thead>
+            <tbody>
+              <tr><td data-h="Vaccine">PCV7 (historical)</td><td data-h="Disease terms">Invasive disease, including bacteraemia and meningitis</td><td data-h="Restriction">Otitis media for the PCV7 serotypes is documented via the PCV13 label, not a retrieved PCV7 label — <span class="badge part">Partially documented</span></td></tr>
+              <tr><td data-h="Vaccine">PCV10-GSK — Synflorix</td><td data-h="Disease terms">Sepsis, meningitis, pneumonia, bacteraemia &amp; acute otitis media</td><td data-h="Restriction">—</td></tr>
+              <tr><td data-h="Vaccine">PCV10-SII — Pneumosil</td><td data-h="Disease terms">Invasive disease, pneumonia and acute otitis media</td><td data-h="Restriction">Indication age-limited to infants/toddlers 6 weeks–2 years</td></tr>
+              <tr><td data-h="Vaccine">PCV13 — Prevnar 13</td><td data-h="Disease terms">Children: invasive disease (all 13) + otitis media (PCV7 serotypes only). Adults: pneumonia and invasive disease (all 13). Invasive disease as defined = sepsis and bacteraemia, meningitis, bacteraemic pneumonia, empyema</td><td data-h="Restriction"><b>Hard restriction:</b> the label states “No otitis media efficacy data are available for serotypes 1, 3, 5, 6A, 7F, and 19A” — do not extend the otitis-media claim to them</td></tr>
+              <tr><td data-h="Vaccine">PCV15 — Vaxneuvance</td><td data-h="Disease terms">Invasive disease for all 15 (US). EU wording adds pneumonia and acute otitis media in children</td><td data-h="Restriction">Jurisdiction/age variation, not one global list — <span class="badge part">Partially documented</span> as a uniform list</td></tr>
+              <tr><td data-h="Vaccine">PCV20 — Prevnar 20</td><td data-h="Disease terms">Adults ≥18: pneumonia and invasive disease for all 20</td><td data-h="Restriction">A paediatric otitis-media claim for seven serotypes appeared in a secondary summary but was not verified in label text — <span class="badge part">Partially documented</span></td></tr>
+              <tr><td data-h="Vaccine">PCV21 — Capvaxive</td><td data-h="Disease terms">Adults: invasive disease for 22 disease serotypes (incl. 15B <i>and</i> 15C) and pneumonia for 21 (incl. 15C, <i>excl.</i> 15B). Children 2–17 at increased risk (June 2026 expansion): invasive disease only. No otitis-media indication retrieved</td><td data-h="Restriction"><b>Hard restriction:</b> the pneumonia list ≠ the invasive list; 15B is the difference</td></tr>
+              <tr><td data-h="Vaccine">PPSV23 — Pneumovax 23</td><td data-h="Disease terms">“Pneumococcal disease” caused by the 23 serotypes — the label does not subdivide by disease per serotype</td><td data-h="Restriction">Do not subdivide PPSV23 by disease term per serotype from this label</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section-intro" style="margin-top:14px">At organism level only (not per vaccine, not per serotype, and a secondary source — <span class="badge part">Partially documented</span>): <i>S. pneumoniae</i> as a species is documented as also causing bronchitis, rhinitis, acute sinusitis, conjunctivitis, osteomyelitis, septic arthritis, endocarditis, peritonitis, pericarditis, cellulitis and brain abscess. The <b>Austrian syndrome / Osler's triad</b> is a documented combination, not a serotype trait: pneumonia + endocarditis + meningitis in the same patient.</p>
+      </div>
+    </section>
+
+    <section id="relationships" aria-labelledby="rel-h">
+      <div class="wrap">
+        <h2 id="rel-h">Bacterial &amp; fungal relationships — by name, not blurred</h2>
+        <p class="section-intro">Five different systems get called “groupings” in this field. Keep their names separate: <b>(1)</b> Danish/Quellung serogroup, <b>(2)</b> <i>cps</i>-locus cluster / genogroup, <b>(3)</b> the Mitis group of streptococcal species, <b>(4)</b> vaccine group, <b>(5)</b> the fungal (<i>Cryptococcus</i>) serotype system. Only system 3 gives documented cross-species relationships for pneumococcal serotypes — and only for a few.</p>
+        <h3 style="font-size:22px; margin-top:26px">Bacterial: the Mitis group</h3>
+        <p class="section-intro"><i>S. pneumoniae</i> sits in the Mitis group of viridans streptococci (about 20 species); its “Pneumoniae subclade” groups <i>S. pneumoniae, S. pseudopneumoniae, S. mitis, S. oralis, S. infantis, S. peroris</i> and <i>S. timonensis</i>. <i>S. pneumoniae</i> and <i>S. mitis</i> are thought to have evolved from a common precursor. Some of those commensal relatives carry capsule (<i>cps</i>) loci highly similar to specific pneumococcal serotypes — documented serotype by serotype, never generalise:</p>
+        <div style="margin-top:16px; overflow-x:auto">
+          <table class="tbl">
+            <thead><tr><th scope="col">Pneumococcal serotype</th><th scope="col">Documented Mitis-group relationship</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><td data-h="Serotype">5</td><td data-h="Relationship"><i>S. mitis, S. oralis</i> and <i>S. infantis</i> strains carry a <i>cps5</i> locus in the same gene order as pneumococcal serotype 5, at 76–99% identity in serotype-5-specific genes; they react with serotype-5 typing sera, and anti–<i>S. mitis</i> antiserum gives a positive Quellung reaction on serotype-5 pneumococci and stimulates serotype-5-specific killing</td><td data-h="Status"><span class="badge doc">Documented</span></td></tr>
+              <tr><td data-h="Serotype">12F, 15A, 18C, 33F</td><td data-h="Relationship">Commensal strains in the same study showed loci “highly homologous” to these pneumococcal serotypes (PCR / <i>wzy</i> homology). Antigenic confirmation in the retrieved text is weaker than for serotype 5</td><td data-h="Status"><span class="badge part">Partially documented</span></td></tr>
+              <tr><td data-h="Serotype">2, 4, 9A, 13, 23A</td><td data-h="Relationship">A second paper describes non-pneumococcal strains carrying close <i>cps</i> homologues and cross-reactivity for these serotypes, including <i>cps4</i> strains whose antiserum kills serotype-4 pneumococci. That paper was not opened in full in this research — do not quote its details beyond this summary without re-opening it</td><td data-h="Status"><span class="badge part">Partially documented</span></td></tr>
+              <tr><td data-h="Serotype">1</td><td data-h="Relationship">A related-work title (“<i>Streptococcus mitis</i> expressing pneumococcal serotype 1 capsule”) exists, but no serotype-1 Mitis data was retrieved in full. A title is not a finding</td><td data-h="Status"><span class="badge gap">Gap</span></td></tr>
+              <tr><td data-h="Serotype">All other vaccine serotypes</td><td data-h="Relationship">No Mitis-group <i>cps</i> homologue retrieved for that specific serotype. The source papers' suggestion that “most, or possibly all” serotypes <i>may</i> have commensal counterparts is a hypothesis, framed as one — not documentation for any individual serotype</td><td data-h="Status"><span class="badge gap">Gap per serotype</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section-intro" style="margin-top:12px">And a caution that runs through all of it: “carries a similar <i>cps</i> locus” ≠ “expresses a pneumococcal serotype.” Most <i>S. mitis/oralis/infantis</i> strains examined carry full-length <i>cps</i> operons, but only a minority react with pneumococcal typing sera.</p>
+
+        <h3 style="font-size:22px; margin-top:28px">Fungal: no mapping exists</h3>
+        <div class="callout rust">
+          <h3>Per-serotype fungal relationships: <span class="badge gap">Gap</span></h3>
+          <p><i>Cryptococcus neoformans</i> and <i>Cryptococcus gattii</i> are encapsulated fungi whose capsules are primarily glucuronoxylomannan (GXM) — a different chemistry from pneumococcal capsule repeats. Their serotypes are <b>A, D and AD</b> (<i>neoformans</i>) and <b>B and C</b> (<i>gattii</i>), defined by GXM reactivity. <b>No retrieved source maps any of those letters onto a pneumococcal serogroup, and none should be created</b> — a table equating, say, pneumococcal serogroup 15 with a fungal serotype would be invented.</p>
+          <p>The single retrieved bridge is one chapter summary: the cryptococcal capsule “is known to share some antigenic determinants with <b>certain</b> pneumococcal polysaccharides” — with the pneumococcal serotype(s) <b>not named</b>. The genuine parallel is conceptual: in both kingdoms the capsule is an antiphagocytic virulence factor and the basis of serotyping. That is a parallel, not a relationship.</p>
+          <p>Other encapsulated bacteria run parallel capsule systems of their own — <i>Neisseria meningitidis</i> serogroups A, B, C, W135, X, Y; <i>Haemophilus influenzae</i> serotypes a–f; <i>Escherichia coli</i> K1; Group B <i>Streptococcus</i> serotypes. Parallels, not relatives: meningococcal “B” ≠ pneumococcal “6B” ≠ cryptococcal “B.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit" aria-labelledby="audit-h">
+      <div class="wrap">
+        <h2 id="audit-h">Discriminative audit — disputed items, checked one by one</h2>
+        <p class="section-intro">Each item below started as a claim that two sources stated differently, or that rested on a single source. For each one, a deeper search was run before anything was settled — and where the deeper search still didn't settle it, the item stays flagged instead of being smoothed over.</p>
+        <div class="audit-list" style="margin-top:22px">
+          <div class="audit-item"><h3>6.1 · PCV20: “15B/C” or “15B”? <span class="badge doc">Settled</span></h3><p>A reporting convention, not a composition difference. PCV20's antigen is <b>15B</b>; “15B/C” in surveillance means the assay cannot reliably split 15B and 15C, which interconvert. Write “15B (reported as 15B/C in surveillance).”</p></div>
+          <div class="audit-item"><h3>6.2 · PPSV23 “20” vs PCV21 “20A” — same or different? <span class="badge doc">Documented</span></h3><p><b>The same antigen under old vs new nomenclature.</b> PPSV23's “20” is 20A in modern terms — the only 20A strain described globally is the PPSV23 strain, and 20A is rare while 20B is common. 20B and the newer 20C are in neither licensed vaccine.</p></div>
+          <div class="audit-item"><h3>6.3 · PCV21: 21 or 22 serotypes? “8 unique” or “11 added”? <span class="badge doc">Documented, wording trap</span></h3><p>Formulation = <b>21</b> polysaccharides including de-O-acetylated 15B. Disease coverage = <b>22</b> for invasive disease (15B + 15C), <b>21</b> for pneumonia (15C, not 15B). “8 unique” counts against <i>any</i> other licensed vaccine; “11 added” counts against PCV20 only. Both numbers are correct under different denominators — state the denominator every time. Separately: a Canadian summary once listed 6C in PCV21's invasive-disease line, but the current FDA insert does <b>not</b> — 6C is excluded here. <span class="badge part">6C: partially documented, jurisdiction-specific</span></p></div>
+          <div class="audit-item"><h3>6.4 · Is “PCV10” one vaccine? Is Synflorix's 18C on tetanus or diphtheria? <span class="badge doc">Documented</span></h3><p>The singular “PCV10” is <b>refuted</b>: two products, four serotypes different. The Synflorix carrier mapping (18C → tetanus toxoid, 19F → diphtheria toxoid, the other eight → protein D) is consistent across the EMA decision, the Egyptian assessment report, and the SmPC — an earlier secondary summary that blurred it was not relied on.</p></div>
+          <div class="audit-item"><h3>6.5 · Serogroup 6: is 6E a serotype? Are 6F/6G/6H real? <span class="badge refuted">6E refuted</span></h3><p><b>“6E” is not a separate serotype</b> — its <i>cps</i> locus produces polysaccharide identical to 6B (it is 6B class 2 / 6Bii). Any table with 6E as its own row is wrong. 6F and 6G are documented hybrid serotypes; 6H exists in listings but the SeroBA v2.0 tool cannot identify it, so routine identification is not established. <span class="badge part">6H: partially documented</span></p></div>
+          <div class="audit-item"><h3>6.6 · Serogroup 15: four members or five? <span class="badge doc">Documented: five</span></h3><p>Five since 2021, when 15D was added with its own factor reactivity. Any four-member list (15A, 15B, 15C, 15F) is pre-2021 and must not be copied without the update. 15B and 15C interconvert by reversible switching of one gene (<i>wciZ</i>, O-acetylation on/off) — which is exactly why PCV21's de-O-acetylated 15B reaches both.</p></div>
+          <div class="audit-item"><h3>6.7 · Per-serotype Latin disease names <span class="badge gap">Gap</span></h3><p>Targeted searches of Latin disease phrases, every vaccine label, organism-level disease lists, and the Austrian-syndrome literature found <b>no</b> per-serotype Latin nomenclature. The gap is stated, not filled — see the Latin names section.</p></div>
+          <div class="audit-item"><h3>6.8 · Bacterial/fungal relationships by serogroup <span class="badge part">Narrowly documented, broadly gap</span></h3><p>Documented only in the narrow Mitis-group form in the Relationships section. No source maps pneumococcal serogroups onto fungal serotypes, and no source documents Mitis homologues for most vaccine serotypes.</p></div>
+          <div class="audit-item"><h3>6.9 · The candidate single-source table — is it complete? <span class="badge part">Partially documented, demonstrably incomplete</span></h3><p>Read in full, not just as a search snippet: two pages, serogroups 1–47, Table 2 “Info coming soon!”, no references. Checked group-by-group against the SSI latex-pool list (which includes serogroup 48 and omits 11E) and the 2025 list of nine new serotypes. Usable as a <i>candidate</i> for the single-source table — never as a verified complete table, and never asserted to be the actual source, since the serotype in question was never named.</p></div>
+          <div class="audit-item"><h3>6.10 · Are groups 1, 3, 14, 31 really single? <span class="badge doc">Documented, with caveats</span></h3><p>No second member appears for 1, 2, 3, 4, 5, 8, 14 or 31 in any retrieved source. Caveats kept: serotype 14's <i>cps</i> locus is genetically related to serogroup 15 despite no serological cross-reaction, and serotype 3 is a structural outlier made by a synthase pathway unlike most serotypes. “Single” means single in the Danish/Quellung system as retrieved.</p></div>
+          <div class="audit-item"><h3>6.11 · PCV20 children's otitis media; PCV15 pneumonia wording <span class="badge part">Partially documented</span></h3><p>Only secondary summaries were retrieved for the PCV20 paediatric otitis-media claim, and PCV15's pneumonia/otitis wording splits by jurisdiction. Both are flagged in the Latin names table, not asserted as settled — re-check the current FDA labels before using either in print.</p></div>
+          <div class="audit-item"><h3>6.12 · “Serotype 20” in old papers vs “20A/20B/20C” in new ones <span class="badge doc">Documented nomenclature trap</span></h3><p>Pipeline work reclassified a former “20B variant” as 20C in 2024 — so a 2023 table saying “20B” and a 2026 table saying “20C” may describe the <i>same</i> antigen, not two. Always date-stamp serogroup-20 entries and state which naming era the source uses.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="open" aria-labelledby="open-h">
+      <div class="wrap">
+        <h2 id="open-h">Open questions — stated plainly</h2>
+        <div class="callout" style="margin-top:22px">
+          <ul class="plain" style="margin-top:0">
+            <li><b>Which serotype in the earlier table came from the single website?</b> Never named, never guessed here. The check to perform: compare that table cell by cell against the candidate table and against SSI/SeroBA. Any cell matching the candidate alone — especially 11E, a missing serogroup 48, or a pre-2021 four-member group 15, two-member group 20, or five-member group 33 — is the likeliest candidate. That is a check, not a finding.</li>
+            <li><b>A complete 107-serotype-by-group table</b> was not verified in this research. Re-sourcing targets: the SeroBAnk atlas and SSI's <i>Key to pneumococcal factor sera</i> (5th ed.).</li>
+            <li><b>Per-serotype Latin disease names and per-serotype fungal relationships</b> were not found — and may not exist as documented concepts. Do not assume a missing source rather than a non-existent mapping.</li>
+            <li><b>7D, 24B, 24C, 6H, 10D, 33E/G/H, 36A/B and 33X</b> are documented as existing, but their structures and serology beyond that are a gap in the retrieved text.</li>
+            <li><b>PCV20 paediatric otitis media and PCV15's global pneumonia/otitis wording</b> remain partially documented (§6.11).</li>
+            <li><b>PCV21 and 6C</b> — the Canadian line vs the current FDA insert; jurisdiction-specific, excluded from the main list pending a current Canadian monograph check.</li>
+            <li><b>Mitis homologues for 2, 4, 9A, 13, 23A</b> rest on a second paper not opened in full. Re-open it before quoting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" aria-labelledby="sources-h">
+      <div class="wrap">
+        <h2 id="sources-h">Sources</h2>
+        <p class="section-intro">Web research completed 4 November 2026. The FDA Capvaxive insert retrieved is revised 6/2026 and includes the paediatric expansion; vaccine lists are otherwise stable across the sources retrieved.</p>
+        <h3 style="font-size:20px; margin-top:24px">Vaccine lists &amp; conjugates</h3>
+        <ul class="src-list" style="list-style:none; padding-left:0; margin-top:12px">
+          <li>CDC — pneumococcal vaccine recommendations (PCV15/20/21): <a href="https://www.cdc.gov/vaccines/hcp/by-disease/pneumo.html">cdc.gov/vaccines/hcp/by-disease/pneumo.html</a></li>
+          <li>CDC MMWR 2010 — PCV13 licensure (PCV7/PCV13 lists): <a href="https://www.cdc.gov/MMWr/preview/mmwrhtml/mm5909a2.htm?s_cid=mm5909a2_w">cdc.gov MMWR mm5909a2</a></li>
+          <li>PCV13 CRM197 development paper: <a href="https://pubmed.ncbi.nlm.nih.gov/22830997/">pubmed.ncbi.nlm.nih.gov/22830997</a></li>
+          <li>DailyMed — Prevnar 13 label (rev. 5/2024): <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e8c6b638-c22f-4c20-ba40-b9d5e85c9541">dailymed.nlm.nih.gov — Prevnar 13</a></li>
+          <li>DailyMed — Pneumovax 23 label (rev. 4/2023): <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?audience=consumer&setid=bb362a20-6d91-4ae8-bebb-9ee8b2591814">dailymed.nlm.nih.gov — Pneumovax 23</a></li>
+          <li>UK SmPC — Pneumovax 23: <a href="https://www.medicines.org.uk/emc/product/9692/smpc/print">medicines.org.uk/emc/product/9692</a></li>
+          <li>UK SmPC — Vaxneuvance (PCV15): <a href="https://www.medicines.org.uk/emc/product/13754/smpc">medicines.org.uk/emc/product/13754</a></li>
+          <li>Merck — FDA approval of Vaxneuvance for infants and children: <a href="https://www.merck.com/news/u-s-fda-approves-mercks-vaxneuvance-pneumococcal-15-valent-conjugate-vaccine-for-the-prevention-of-invasive-pneumococcal-disease-in-infants-and-children/">merck.com — Vaxneuvance</a></li>
+          <li>Pfizer Canada — Prevnar 20 product monograph: <a href="https://cnnb-opinb.ca/media/documents/Prevnar_20-en.pdf">cnnb-opinb.ca — Prevnar 20 (PDF)</a></li>
+          <li>FDA — Capvaxive (PCV21) package insert, rev. 6/2026: <a href="https://www.fda.gov/media/179426/download?attachment">fda.gov/media/179426</a></li>
+          <li>Merck — Capvaxive paediatric expansion, June 2026: <a href="https://www.merck.com/news/u-s-fda-approves-an-additional-indication-for-capvaxive-pneumococcal-21-valent-conjugate-vaccine-in-children-and-adolescents-aged-2-through-17-at-increased-risk-for-pneumococcal-disease/">merck.com — Capvaxive expansion</a></li>
+          <li>EMA — Synflorix paediatric investigation plan decision (carriers): <a href="https://www.ema.europa.eu/en/documents/pip-decision/p-0162-2012-ema-decision-23-july-2012-acceptance-modification-agreed-paediatric-investigation-plan-pneumococcal-polysaccharide-serotype-1-conjugated-protein-d-derived-non-typeable-haem_en.pdf">ema.europa.eu — Synflorix PIP (PDF)</a></li>
+          <li>Egyptian Drug Authority — Synflorix public assessment report: <a href="https://edaegypt.gov.eg/media/ufwj4fjb/par-synflorix.pdf">edaegypt.gov.eg — Synflorix PAR (PDF)</a></li>
+          <li>Serum Institute of India — Pneumosil product page: <a href="https://www.seruminstitute.com/product_ind_pneumosil.php">seruminstitute.com — Pneumosil</a></li>
+          <li>Egyptian Drug Authority — Pneumosil public assessment report: <a href="https://edaegypt.gov.eg/media/q5cng1iz/par-pneumosil.pdf">edaegypt.gov.eg — Pneumosil PAR (PDF)</a></li>
+          <li>Global serotype/vaccine review (chain confirmation): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11869777/">pmc.ncbi.nlm.nih.gov — PMC11869777</a></li>
+        </ul>
+        <h3 style="font-size:20px; margin-top:24px">Serogroups, cross-reactivity &amp; provenance</h3>
+        <ul class="src-list" style="list-style:none; padding-left:0; margin-top:12px">
+          <li>Candidate single-source table (Sunfire Biotechnologies, 2022 — no bibliography in retrieved text): <a href="https://sunfirebio.com/wp-content/uploads/2022/08/Resources_Pneumo_Serotypes.pdf">sunfirebio.com — Pneumococcal Serotypes (PDF)</a></li>
+          <li>SSI pneumococcal latex pool antisera (Veritas insert): <a href="https://www.veritastk.co.jp/products/pdf/Insert.Pneumococcal_Latex_Pool%20Antisera_54684_ver_2.pdf">veritastk.co.jp — SSI latex pools (PDF)</a></li>
+          <li>Geno et al. 2015 — pneumococcal capsules, past/present/future: <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC4475641/">pmc.ncbi.nlm.nih.gov — PMC4475641</a></li>
+          <li>Mavroidi et al. 2007 — <i>cps</i> relatedness and clusters: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2168730/">pmc.ncbi.nlm.nih.gov — PMC2168730</a></li>
+          <li>Pimenta et al. 2021 — serotype 15D: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8091843/">pmc.ncbi.nlm.nih.gov — PMC8091843</a></li>
+          <li>2025 capsule-types update (20A/20B/20C, 22A, 23A/B): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11905375/">pmc.ncbi.nlm.nih.gov — PMC11905375</a></li>
+          <li>Cross-reactivity / cross-protection review, 2024: <a href="https://www.mdpi.com/2076-393X/12/9/974">mdpi.com/2076-393X/12/9/974</a></li>
+          <li>Burton et al. 2016 — “6E” is 6B: <a href="https://journals.asm.org/doi/10.1128/jcm.03194-15">journals.asm.org — 10.1128/jcm.03194-15</a></li>
+          <li>SeroBA v2.0 / SeroBAnk, 2025 (107 serotypes, nine new, five exceptions): <a href="https://rucforsk.ruc.dk/ws/files/113450431/mgen001483.pdf">rucforsk.ruc.dk — SeroBA v2.0 (PDF)</a></li>
+          <li>SeroBAnk atlas (re-sourcing target — cited, not read group-by-group): <a href="https://www.pneumogen.net/gps/#/serobank">pneumogen.net/gps/#/serobank</a></li>
+          <li>Sheffield Laboratory Medicine — Danish vs American numbering, serogroup 19: <a href="https://sheffieldlaboratorymedicine.nhs.uk/search-test.php?search=3380">sheffieldlaboratorymedicine.nhs.uk</a></li>
+        </ul>
+        <h3 style="font-size:20px; margin-top:24px">Latin names &amp; bacterial/fungal relationships</h3>
+        <ul class="src-list" style="list-style:none; padding-left:0; margin-top:12px">
+          <li>Austrian syndrome (Osler's triad) case review, 2023: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10542100/">pmc.ncbi.nlm.nih.gov — PMC10542100</a></li>
+          <li>Pimenta et al. 2019 — Mitis-group <i>cps5</i> and 12F/15A/18C/33F homologues: <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2018.03199/full">frontiersin.org — 10.3389/fmicb.2018.03199</a></li>
+          <li>Mitis group definition, Pneumoniae subclade: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7669753/">pmc.ncbi.nlm.nih.gov — PMC7669753</a></li>
+          <li>Mitis-group encapsulation, common precursor (2025): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12473126/">pmc.ncbi.nlm.nih.gov — PMC12473126</a></li>
+          <li>Cryptococcus serotypes A–D/AD, GXM capsule: <a href="https://clinicalpub.com/cryptococcosis-cryptococcus-neoformans-and-cryptococcus-gattii/">clinicalpub.com — Cryptococcosis</a></li>
+          <li>Cryptococcus varieties and serotypes: <a href="https://www.antiinfectivemeds.com/articles/cryptococcus-neoformans/">antiinfectivemeds.com — Cryptococcus neoformans</a></li>
+          <li>Zaragoza et al. — the capsule of <i>Cryptococcus neoformans</i> (shared antigenic determinants note; serotypes unnamed — gap): <a href="https://www.academia.edu/29950718/Chapter_4_The_Capsule_of_the_Fungal_Pathogen_Cryptococcus_neoformans">academia.edu — Cryptococcus capsule chapter</a></li>
+          <li>SSI — <i>Key to pneumococcal factor sera</i>, 5th ed. (re-sourcing target): <a href="https://ssid.vps.webdock.cloud/wp-content/uploads/2024/02/BROCHURE-Key-to-pneumococcal-factor-antisera-18058-5.pdf">ssid.vps.webdock.cloud — factor antisera key (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>Built from deep web research completed 4 November 2026, checked item by item against primary labels, regulators, and peer-reviewed sources. Serotype discovery is still moving — nine new serotypes since 2020 — so any serogroup table dated before 2025 is out of date by construction, including parts of the candidate single-source table flagged above. This page is a research reference, not medical advice.</p>
+      </div>
+    </footer>
+
+    <script>
+      "use strict";
+      /* ---------------- data (from the research report, 2026-11-04) ---------------- */
+      var VAXKEYS = [
+        { key: "pcv7",  short: "PCV7",     name: "PCV7" },
+        { key: "gsk",   short: "PCV10-GSK", name: "PCV10 · Synflorix" },
+        { key: "sii",   short: "PCV10-SII", name: "PCV10 · Pneumosil" },
+        { key: "pcv13", short: "PCV13",    name: "PCV13" },
+        { key: "pcv15", short: "PCV15",    name: "PCV15" },
+        { key: "pcv20", short: "PCV20",    name: "PCV20" },
+        { key: "pcv21", short: "PCV21",    name: "PCV21" },
+        { key: "ppsv",  short: "PPSV23",   name: "PPSV23" }
+      ];
+
+      var VACCINES = [
+        { key: "pcv7", title: "PCV7", brand: "Prevnar — Wyeth LLC, marketed by Pfizer · discontinued",
+          serotypes: ["4","6B","9V","14","18C","19F","23F"],
+          carrier: "CRM197 for all 7 serotypes.",
+          note: "The starting point of the chain — every later conjugate in the chain contains all seven of these.",
+          src: [["CDC MMWR 2010", "https://www.cdc.gov/MMWr/preview/mmwrhtml/mm5909a2.htm?s_cid=mm5909a2_w"], ["Pfizer/Prevnar 13 development paper", "https://pubmed.ncbi.nlm.nih.gov/22830997/"]] },
+        { key: "gsk", title: "PCV10-GSK", brand: "Synflorix — GlaxoSmithKline Biologicals S.A.",
+          serotypes: ["1","4","5","6B","7F","9V","14","18C","19F","23F"],
+          carrier: "Mixed carriers — protein D for eight serotypes, tetanus toxoid for 18C, diphtheria toxoid for 19F (see Conjugates).",
+          note: "PCV7 + 1, 5, 7F. Not the same vaccine as Pneumosil — see the comparison below.",
+          src: [["EMA PIP decision 2012", "https://www.ema.europa.eu/en/documents/pip-decision/p-0162-2012-ema-decision-23-july-2012-acceptance-modification-agreed-paediatric-investigation-plan-pneumococcal-polysaccharide-serotype-1-conjugated-protein-d-derived-non-typeable-haem_en.pdf"], ["Egypt Synflorix PAR", "https://edaegypt.gov.eg/media/ufwj4fjb/par-synflorix.pdf"]] },
+        { key: "sii", title: "PCV10-SII", brand: "Pneumosil — Serum Institute of India Pvt. Ltd.",
+          serotypes: ["1","5","6A","6B","7F","9V","14","19A","19F","23F"],
+          carrier: "CRM197 for all 10 serotypes.",
+          note: "The second “PCV10”: Synflorix minus 4 and 18C, plus 6A and 19A. It is PCV13 minus 3, 4, 18C — neither a subset nor a superset of Synflorix.",
+          src: [["Serum Institute product page", "https://www.seruminstitute.com/product_ind_pneumosil.php"], ["Egypt Pneumosil PAR", "https://edaegypt.gov.eg/media/q5cng1iz/par-pneumosil.pdf"]] },
+        { key: "pcv13", title: "PCV13", brand: "Prevnar 13 / Prevenar 13 — Wyeth LLC / Pfizer",
+          serotypes: ["1","3","4","5","6A","6B","7F","9V","14","18C","19A","19F","23F"],
+          carrier: "CRM197 for all 13 serotypes.",
+          note: "PCV10-GSK + 3, 6A, 19A.",
+          src: [["CDC MMWR 2010", "https://www.cdc.gov/MMWr/preview/mmwrhtml/mm5909a2.htm?s_cid=mm5909a2_w"], ["DailyMed Prevnar 13 label", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e8c6b638-c22f-4c20-ba40-b9d5e85c9541"]] },
+        { key: "pcv15", title: "PCV15", brand: "Vaxneuvance (V114) — Merck Sharp & Dohme",
+          serotypes: ["1","3","4","5","6A","6B","7F","9V","14","18C","19A","19F","22F","23F","33F"],
+          carrier: "CRM197 for all 15 serotypes.",
+          note: "PCV13 + 22F, 33F.",
+          src: [["CDC HCP page", "https://www.cdc.gov/vaccines/hcp/by-disease/pneumo.html"], ["UK SmPC", "https://www.medicines.org.uk/emc/product/13754/smpc"]] },
+        { key: "pcv20", title: "PCV20", brand: "Prevnar 20 (US) / Apexxnar (EU) — Wyeth LLC / Pfizer",
+          serotypes: ["1","3","4","5","6A","6B","7F","8","9V","10A","11A","12F","14","15B","18C","19A","19F","22F","23F","33F"],
+          carrier: "CRM197 for all 20 serotypes.",
+          note: "PCV15 + 8, 10A, 11A, 12F, 15B. Its 15B is sometimes written “15B/C” in surveillance — a reporting convention, audited at 6.1.",
+          src: [["CDC HCP page", "https://www.cdc.gov/vaccines/hcp/by-disease/pneumo.html"], ["Prevnar 20 monograph (Pfizer Canada)", "https://cnnb-opinb.ca/media/documents/Prevnar_20-en.pdf"]] },
+        { key: "pcv21", title: "PCV21", brand: "Capvaxive (V116) — Merck Sharp & Dohme",
+          serotypes: ["3","6A","7F","8","9N","10A","11A","12F","15A","15B","16F","17F","19A","20A","22F","23A","23B","24F","31","33F","35B"],
+          cross: ["15C"],
+          carrier: "CRM197 for all 21 conjugates; the 15B polysaccharide is de-O-acetylated before conjugation.",
+          note: "21 formulation polysaccharides, but 22 disease serotypes for invasive disease: de-O-acetylated 15B also covers 15C. For pneumonia the count is 21 — 15C in, 15B out. Eight of its serotypes (15A, 15C, 16F, 23A, 23B, 24F, 31, 35B) are in no other licensed vaccine.",
+          src: [["CDC HCP page", "https://www.cdc.gov/vaccines/hcp/by-disease/pneumo.html"], ["FDA Capvaxive insert, rev. 6/2026", "https://www.fda.gov/media/179426/download?attachment"]] },
+        { key: "ppsv", title: "PPSV23", brand: "Pneumovax 23 — Merck & Co. · unconjugated",
+          serotypes: ["1","2","3","4","5","6B","7F","8","9N","9V","10A","11A","12F","14","15B","17F","18C","19A","19F","20","22F","23F","33F"],
+          carrier: "None — unconjugated purified capsular polysaccharides, 25 µg each.",
+          note: "Its “20” is 20A in modern nomenclature (audit 6.2). The only vaccine here containing serotype 2.",
+          src: [["DailyMed Pneumovax 23 label", "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?audience=consumer&setid=bb362a20-6d91-4ae8-bebb-9ee8b2591814"], ["UK SmPC", "https://www.medicines.org.uk/emc/product/9692/smpc/print"]] }
+      ];
+
+      /* serotype -> { group, in: {vaxkey: true}, cross: {vaxkey: true}, note } */
+      var SEROTYPES = [
+        { s: "1",   g: "1",  in: ["gsk","sii","pcv13","pcv15","pcv20","ppsv"] },
+        { s: "2",   g: "2",  in: ["ppsv"], note: "Only PPSV23 carries serotype 2." },
+        { s: "3",   g: "3",  in: ["pcv13","pcv15","pcv20","pcv21","ppsv"], note: "Made by a synthase pathway, unlike most serotypes — a structural outlier." },
+        { s: "4",   g: "4",  in: ["pcv7","gsk","pcv13","pcv15","pcv20","ppsv"], note: "Absent from Pneumosil and PCV21." },
+        { s: "5",   g: "5",  in: ["gsk","sii","pcv13","pcv15","pcv20","ppsv"], note: "The one serotype with a fully documented Mitis-group capsule homologue (see Relationships)." },
+        { s: "6A",  g: "6",  in: ["sii","pcv13","pcv15","pcv20","pcv21"], note: "The only PCV20 serotype absent from PPSV23." },
+        { s: "6B",  g: "6",  in: ["pcv7","gsk","sii","pcv13","pcv15","pcv20","ppsv"], note: "“6E” is not a separate serotype — it is 6B (audit 6.5)." },
+        { s: "7F",  g: "7",  in: ["gsk","sii","pcv13","pcv15","pcv20","pcv21","ppsv"] },
+        { s: "8",   g: "8",  in: ["pcv20","pcv21","ppsv"] },
+        { s: "9N",  g: "9",  in: ["pcv21","ppsv"], note: "In PPSV14 it was expected to cross-protect within serogroup 9 — and failed. Do not assume 9N ↔ 9V protection." },
+        { s: "9V",  g: "9",  in: ["pcv7","gsk","sii","pcv13","pcv15","pcv20","ppsv"] },
+        { s: "10A", g: "10", in: ["pcv20","pcv21","ppsv"] },
+        { s: "11A", g: "11", in: ["pcv20","pcv21","ppsv"] },
+        { s: "12F", g: "12", in: ["pcv20","pcv21","ppsv"], note: "A Mitis-group cps homologue is partially documented (see Relationships)." },
+        { s: "14",  g: "14", in: ["pcv7","gsk","sii","pcv13","pcv15","pcv20","ppsv"], note: "Serologically single — but its cps locus is genetically related to serogroup 15." },
+        { s: "15A", g: "15", in: ["pcv21"], note: "PCV21 only. A Mitis-group cps homologue is partially documented." },
+        { s: "15B", g: "15", in: ["pcv20","pcv21","ppsv"], note: "In PCV21 it is de-O-acetylated before conjugation. Interconverts with 15C; excluded from PCV21's pneumonia indication." },
+        { s: "15C", g: "15", in: [], cross: ["pcv21"], note: "Not a formulation polysaccharide anywhere — reached only by PCV21's de-O-acetylated 15B cross-reactivity." },
+        { s: "16F", g: "16", in: ["pcv21"] },
+        { s: "17F", g: "17", in: ["pcv21","ppsv"] },
+        { s: "18C", g: "18", in: ["pcv7","gsk","pcv13","pcv15","pcv20","ppsv"], note: "In Synflorix, uniquely conjugated to tetanus toxoid. A Mitis-group cps homologue is partially documented." },
+        { s: "19A", g: "19", in: ["sii","pcv13","pcv15","pcv20","pcv21","ppsv"], note: "19F was expected to cross-protect to 19A in PPSV14 — and failed; Synflorix evidence is limited. Not full protection." },
+        { s: "19F", g: "19", in: ["pcv7","gsk","sii","pcv13","pcv15","pcv20","ppsv"], note: "In Synflorix, uniquely conjugated to diphtheria toxoid." },
+        { s: "20/20A", g: "20", in: ["pcv21","ppsv"], note: "One entry, two naming eras: PPSV23 labels it “20”, PCV21 labels it 20A — the same antigen (audit 6.2)." },
+        { s: "22F", g: "22", in: ["pcv15","pcv20","pcv21","ppsv"] },
+        { s: "23A", g: "23", in: ["pcv21"] },
+        { s: "23B", g: "23", in: ["pcv21"], note: "Lacks 23F's immunodominant α-rhamnose side chain — cross-protection from 23F is not assumed." },
+        { s: "23F", g: "23", in: ["pcv7","gsk","sii","pcv13","pcv15","pcv20","ppsv"] },
+        { s: "24F", g: "24", in: ["pcv21"], note: "Even this vaccine serotype is in SeroBA v2.0's cannot-identify exception list — a tool limitation, not evidence against it." },
+        { s: "31",  g: "31", in: ["pcv21"], note: "Single-serotype group; PCV21 only." },
+        { s: "33F", g: "33", in: ["pcv15","pcv20","pcv21","ppsv"], note: "A Mitis-group cps homologue is partially documented." },
+        { s: "35B", g: "35", in: ["pcv21"], note: "Mouse-only cross-reaction to serotype 29 was reported — limited clinical evidence across serogroups; do not present as protection." }
+      ];
+
+      /* serogroups: members marked v:true are in at least one vaccine */
+      var SEROGROUPS = [
+        { g: "1", status: "doc", single: true, members: [{s:"1",v:1}], note: "Confirmed wherever PCV lists are given; no other member asserted in any retrieved source." },
+        { g: "2", status: "doc", single: true, members: [{s:"2",v:1}], note: "PPSV23-only serotype; no other member asserted." },
+        { g: "3", status: "doc", single: true, members: [{s:"3",v:1}], note: "Synthesised by a synthase pathway, unlike most serotypes — a structural outlier, not a group." },
+        { g: "4", status: "doc", single: true, members: [{s:"4",v:1}], note: "In PCV7, PCV10-GSK, PCV13, PCV15, PCV20, PPSV23 — not in Pneumosil, not in PCV21." },
+        { g: "5", status: "doc", single: true, members: [{s:"5",v:1}], note: "Mitis-group cps5 homologues exist — that is a species relationship, not an extra serogroup member." },
+        { g: "6", status: "part", members: [{s:"6A",v:1},{s:"6B",v:1},{s:"6C"},{s:"6D"},{s:"6F"},{s:"6G"},{s:"6H"}], note: "Core 6A/6B/6C/6D documented; 6F/6G documented as hybrid serotypes; 6H cannot be identified by SeroBA v2.0. “6E” is refuted — it is 6B. Cross-protection: 6B → 6A yes, → 6C much less." },
+        { g: "7", status: "part", members: [{s:"7F",v:1},{s:"7A"},{s:"7B"},{s:"7C"}], note: "Four members agree across the candidate table and SSI latex pools. 7D appears only as a SeroBA exception (“cannot identify 7D”) — do not add it on that basis alone. 7D: gap." },
+        { g: "8", status: "doc", single: true, members: [{s:"8",v:1}], note: "Confirmed; no other member asserted." },
+        { g: "9", status: "doc", members: [{s:"9A"},{s:"9L"},{s:"9N",v:1},{s:"9V",v:1}], note: "Membership documented. Cross-protection is not assumed: PPSV14's 9N was expected to cross-protect within the group and failed." },
+        { g: "10", status: "part", members: [{s:"10F"},{s:"10A",v:1},{s:"10B"},{s:"10C"},{s:"10D"}], note: "Four members documented; 10D is one of the nine serotypes discovered since 2020, so the 2022 candidate table predates it. 10D detail beyond existence: gap." },
+        { g: "11", status: "part", members: [{s:"11F"},{s:"11A",v:1},{s:"11B"},{s:"11C"},{s:"11D"},{s:"11E"}], note: "Conflict: the SSI latex-pool list has 11F, 11A, 11B, 11C, 11D — no 11E. Older molecular literature lists 11E as a type not distinguishable with current commercial sera. In this research 11E is single-source and disputed." },
+        { g: "12", status: "doc", members: [{s:"12F",v:1},{s:"12A"},{s:"12B"}], note: "Types 44 and 46 co-amplify in PCR with this group but are separate types — do not merge them into group 12." },
+        { g: "14", status: "doc", single: true, members: [{s:"14",v:1}], note: "Single serologically, with a genetic caveat: its cps locus is clearly related to serogroup 15's, though it shares no significant serological cross-reaction with group 15." },
+        { g: "15", status: "part", members: [{s:"15F"},{s:"15A",v:1},{s:"15B",v:1},{s:"15C",v:1},{s:"15D"}], note: "Documented as a five-member group since 15D was added in 2021; the four-member version is out of date. 15B ↔ 15C interconvert by reversible wciZ switching and are routinely reported as “15B/C”." },
+        { g: "16", status: "doc", members: [{s:"16F",v:1},{s:"16A"}], note: "Confirmed (2025 review: 16F + 16A, structures determined 2019). Only 16F is in a vaccine (PCV21)." },
+        { g: "17", status: "doc", members: [{s:"17F",v:1},{s:"17A"}], note: "SSI latex pools agree: 17F, 17A. Only 17F is vaccinated against (PCV21, PPSV23)." },
+        { g: "18", status: "doc", members: [{s:"18F"},{s:"18A"},{s:"18B"},{s:"18C",v:1}], note: "SSI pools and PCR grouping agree. The Mitis cps18 homologue is a species relationship, not a fifth member." },
+        { g: "19", status: "doc", members: [{s:"19F",v:1},{s:"19A",v:1},{s:"19B"},{s:"19C"}], note: "Membership documented. But 19F → 19A protection failed in PPSV14, and Synflorix notes only limited cross-reactive 19A evidence — partial at best, never present it as full protection." },
+        { g: "20", status: "part", members: [{s:"20A",v:1},{s:"20B"},{s:"20C"}], note: "Documented as a three-subtype group after 20C was described in 2024 (a wciG-deficient variant of 20B, serologically indistinguishable from 20A/20B — separable only by cps sequencing). PPSV23's “20” = 20A; PCV21 contains 20A, not 20B/20C." },
+        { g: "22", status: "doc", members: [{s:"22F",v:1},{s:"22A"}], note: "Confirmed (2025 review). 22A shares 22F's hexasaccharide repeat except a galactose-vs-glucose branch. Only 22F is vaccinated against." },
+        { g: "23", status: "doc", members: [{s:"23F",v:1},{s:"23A",v:1},{s:"23B",v:1}], note: "All three members are in vaccines — 23F almost everywhere except PCV21; 23A and 23B only in PCV21. 23B lacks 23F's immunodominant α-rhamnose side chain, so 23F → 23B cross-protection is not assumed." },
+        { g: "24", status: "part", members: [{s:"24F",v:1},{s:"24A"},{s:"24B"},{s:"24C"}], note: "24C is one of the nine new serotypes since 2020. Identification gap: SeroBA v2.0 cannot identify 24B, 24C or even the vaccine serotype 24F — a tool limitation, not evidence against 24F (it is in the FDA label). 24B/24C detail: gap." },
+        { g: "31", status: "doc", single: true, members: [{s:"31",v:1}], note: "Confirmed single in the candidate table and the SSI pool grouping. (The chimeric “33X” locus involves serogroups 35, 10 and 33 — it is not a member of group 31.)" },
+        { g: "33", status: "part", members: [{s:"33F",v:1},{s:"33A"},{s:"33B"},{s:"33C"},{s:"33D"},{s:"33E"},{s:"33G"},{s:"33H"}], note: "The five-member list is pre-2020: 33E, 33G and 33H have since been added, plus a putative chimeric 33X (proposed, not established as a routine serotype). Only 33F is vaccinated against." },
+        { g: "35", status: "doc", members: [{s:"35F"},{s:"35A"},{s:"35B",v:1},{s:"35C"}], note: "SSI pools agree. A mouse-only note: 35B vaccination cross-reacted to serotype 29 — limited clinical evidence across serogroups; do not present as 35 → 29 protection." }
+      ];
+
+      var STATUS = {
+        doc:  { cls: "doc",  label: "Documented" },
+        part: { cls: "part", label: "Partially documented" }
+      };
+
+      function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+      }
+      function chipsInto(container, items, crossItems) {
+        items.forEach(function (s) { container.appendChild(el("span", "chip", s)); });
+        (crossItems || []).forEach(function (s) {
+          var c = el("span", "chip cross", s + " ◐");
+          c.title = "Reached by cross-reactivity, not a formulation polysaccharide";
+          container.appendChild(c);
+        });
+      }
+
+      /* ---------------- vaccine cards ---------------- */
+      (function renderVaccines() {
+        var grid = document.getElementById("vaccine-grid");
+        VACCINES.forEach(function (v) {
+          var card = el("article", "card");
+          var head = el("div", "card-head");
+          var titleWrap = el("div");
+          titleWrap.appendChild(el("h3", null, v.title));
+          titleWrap.appendChild(el("p", "brand", v.brand));
+          head.appendChild(titleWrap);
+          var badge = el("span", "badge doc", "Documented");
+          head.appendChild(badge);
+          card.appendChild(head);
+          var count = el("p", "meta");
+          var b = el("b", null, v.serotypes.length + (v.cross ? " + " + v.cross.length + " by cross-reactivity" : "") + " serotypes");
+          count.appendChild(b);
+          card.appendChild(count);
+          var chips = el("div", "chips");
+          chipsInto(chips, v.serotypes, v.cross);
+          card.appendChild(chips);
+          var carrier = el("div", "carrier");
+          carrier.appendChild(el("b", null, "Carrier protein"));
+          carrier.appendChild(document.createTextNode(v.carrier));
+          card.appendChild(carrier);
+          card.appendChild(el("p", "meta", v.note));
+          var src = el("p", "src", "Sources: ");
+          v.src.forEach(function (pair, i) {
+            if (i) src.appendChild(document.createTextNode(" · "));
+            var a = el("a", null, pair[0]);
+            a.href = pair[1]; a.target = "_blank"; a.rel = "noopener";
+            src.appendChild(a);
+          });
+          card.appendChild(src);
+          grid.appendChild(card);
+        });
+      })();
+
+      /* ---------------- serotype index ---------------- */
+      var activeVaxFilter = "all";
+      (function renderFilters() {
+        var row = document.getElementById("vax-filters");
+        var all = el("button", "fbtn", "All vaccines");
+        all.type = "button"; all.setAttribute("aria-pressed", "true"); all.dataset.vax = "all";
+        row.appendChild(all);
+        VAXKEYS.forEach(function (k) {
+          var btn = el("button", "fbtn", k.name);
+          btn.type = "button"; btn.setAttribute("aria-pressed", "false"); btn.dataset.vax = k.key;
+          row.appendChild(btn);
+        });
+        row.addEventListener("click", function (ev) {
+          var btn = ev.target.closest("button"); if (!btn) return;
+          activeVaxFilter = btn.dataset.vax;
+          row.querySelectorAll("button").forEach(function (b) {
+            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          });
+          renderSerotypes();
+        });
+      })();
+
+      function renderSerotypes() {
+        var q = document.getElementById("sero-search").value.trim().toUpperCase();
+        var grid = document.getElementById("sero-grid");
+        grid.textContent = "";
+        var shown = 0;
+        SEROTYPES.forEach(function (st) {
+          if (activeVaxFilter !== "all" && st.in.indexOf(activeVaxFilter) === -1 && (st.cross || []).indexOf(activeVaxFilter) === -1) return;
+          if (q && st.s.toUpperCase().indexOf(q) !== 0 && st.s.toUpperCase().indexOf(q) === -1) return;
+          shown++;
+          var card = el("article", "sero");
+          var head = el("div", "sero-head");
+          head.appendChild(el("span", "sero-name", st.s));
+          head.appendChild(el("span", "sero-group", "serogroup " + st.g));
+          card.appendChild(head);
+          var vc = el("div", "vax-chips");
+          VAXKEYS.forEach(function (k) {
+            var on = st.in.indexOf(k.key) !== -1;
+            var cross = (st.cross || []).indexOf(k.key) !== -1;
+            var chip = el("span", "vchip" + (on ? " on" : cross ? " cross" : ""), k.short + (cross ? " ◐" : ""));
+            if (cross) chip.title = "Reached by documented cross-reactivity / indication, not a formulation polysaccharide";
+            vc.appendChild(chip);
+          });
+          card.appendChild(vc);
+          if (st.note) card.appendChild(el("p", "note", st.note));
+          grid.appendChild(card);
+        });
+        document.getElementById("sero-empty").classList.toggle("hidden", shown > 0);
+      }
+      document.getElementById("sero-search").addEventListener("input", renderSerotypes);
+      renderSerotypes();
+
+      /* ---------------- compare ---------------- */
+      function diseaseSet(v) {
+        var set = {};
+        v.serotypes.forEach(function (s) { set[(s === "20" || s === "20A") ? "20/20A" : s] = true; });
+        (v.cross || []).forEach(function (s) { set[s] = true; });
+        return set;
+      }
+      function fillSelect(id, selectedKey) {
+        var sel = document.getElementById(id);
+        VACCINES.forEach(function (v) {
+          var opt = el("option", null, v.title + " — " + v.brand.split(" — ")[0]);
+          opt.value = v.key;
+          if (v.key === selectedKey) opt.selected = true;
+          sel.appendChild(opt);
+        });
+        sel.addEventListener("change", renderCompare);
+      }
+      function renderCompare() {
+        var a = VACCINES.filter(function (v) { return v.key === document.getElementById("cmp-a").value; })[0];
+        var b = VACCINES.filter(function (v) { return v.key === document.getElementById("cmp-b").value; })[0];
+        var sa = diseaseSet(a), sb = diseaseSet(b);
+        var shared = [], onlyA = [], onlyB = [];
+        Object.keys(sa).forEach(function (s) { (sb[s] ? shared : onlyA).push(s); });
+        Object.keys(sb).forEach(function (s) { if (!sa[s]) onlyB.push(s); });
+        var order = ["1","2","3","4","5","6A","6B","7F","8","9N","9V","10A","11A","12F","14","15A","15B","15C","16F","17F","18C","19A","19F","20/20A","22F","23A","23B","23F","24F","31","33F","35B"];
+        function byOrder(x, y) { return order.indexOf(x) - order.indexOf(y); }
+        shared.sort(byOrder); onlyA.sort(byOrder); onlyB.sort(byOrder);
+        var out = document.getElementById("compare-out");
+        out.textContent = "";
+        [["Shared by both (" + shared.length + ")", shared],
+         ["Only in " + a.title + " (" + onlyA.length + ")", onlyA],
+         ["Only in " + b.title + " (" + onlyB.length + ")", onlyB]].forEach(function (col) {
+          var box = el("div", "compare-col");
+          box.appendChild(el("h4", null, col[0]));
+          if (!col[1].length) { box.appendChild(el("p", "meta", "— none —")); }
+          else { var c = el("div", "chips"); chipsInto(c, col[1]); box.appendChild(c); }
+          out.appendChild(box);
+        });
+      }
+      fillSelect("cmp-a", "pcv20");
+      fillSelect("cmp-b", "pcv21");
+      renderCompare();
+
+      /* ---------------- serogroup cards ---------------- */
+      var sgFilter = "all";
+      function renderSerogroups() {
+        var grid = document.getElementById("sg-grid");
+        grid.textContent = "";
+        SEROGROUPS.forEach(function (sg) {
+          if (sgFilter === "doc" && sg.status !== "doc") return;
+          if (sgFilter === "part" && sg.status !== "part") return;
+          if (sgFilter === "single" && !sg.single) return;
+          var card = el("article", "card");
+          var head = el("div", "card-head");
+          var t = el("div");
+          t.appendChild(el("h3", null, "Serogroup " + sg.g));
+          if (sg.single) t.appendChild(el("p", "brand", "Single-serotype group (serological sense)"));
+          head.appendChild(t);
+          var st = STATUS[sg.status];
+          head.appendChild(el("span", "badge " + st.cls, st.label));
+          card.appendChild(head);
+          var chips = el("div", "chips");
+          sg.members.forEach(function (m) {
+            chips.appendChild(el("span", "chip" + (m.v ? "" : " off"), m.s));
+          });
+          card.appendChild(chips);
+          card.appendChild(el("p", "meta", "Filled chips are in at least one vaccine; greyed members are in no vaccine."));
+          card.appendChild(el("p", "meta", sg.note));
+          grid.appendChild(card);
+        });
+      }
+      document.getElementById("sg-filters").addEventListener("click", function (ev) {
+        var btn = ev.target.closest("button"); if (!btn) return;
+        sgFilter = btn.dataset.sg;
+        this.querySelectorAll("button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        renderSerogroups();
+      });
+      renderSerogroups();
+    </script>
+  </body>
+</html>

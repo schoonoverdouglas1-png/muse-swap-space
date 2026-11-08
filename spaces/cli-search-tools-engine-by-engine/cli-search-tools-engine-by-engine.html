@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>CLI search tools, engine by engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7f2; --surface:#ffffff; --surface2:#eef1ec; --ink:#171c19; --muted:#5b665f; --line:#dde2db;
+  --teal:#0b6b5d; --teal-bg:#dff2ec; --amber:#8a5a00; --amber-bg:#fdf0cd; --red:#9b2c2c; --red-bg:#fde8e3;
+  --grey:#5a4a7a; --grey-bg:#ece8f5; --code-bg:#141a17; --code-ink:#e8f0e9; --radius:14px;
+  --shadow:0 1px 3px rgba(20,30,25,.07),0 8px 24px rgba(20,30,25,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#101312; --surface:#181d1a; --surface2:#1f2621; --ink:#eef2ee; --muted:#a7b3aa; --line:#2c3530;
+    --teal:#5fd3bc; --teal-bg:#12332d; --amber:#f2c96b; --amber-bg:#3a2f10; --red:#ff9a8a; --red-bg:#3d1e1a;
+    --grey:#c4b5fd; --grey-bg:#2a243d; --code-bg:#0b0e0c; --code-ink:#e8f0e9; --shadow:0 1px 3px rgba(0,0,0,.4);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-underline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 72px}
+.mono{font-family:"IBM Plex Mono",monospace}
+
+/* Hero */
+.hero{padding:44px 0 28px;border-bottom:2px solid var(--ink)}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600}
+h1{font-family:"Newsreader",serif;font-size:clamp(36px,6vw,62px);line-height:.98;letter-spacing:-.02em;margin:14px 0 16px;max-width:14ch}
+.lede{font-size:18px;line-height:1.6;color:var(--muted);max-width:68ch;margin:0}
+.lede strong{color:var(--ink)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)}
+.meta-row b{color:var(--ink)}
+
+/* Verdict tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 0}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.tile .n{font-size:34px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.tile .l{font-weight:700;font-size:14px;margin-top:6px}
+.tile .d{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45}
+.tile.green{border-top:4px solid var(--teal)} .tile.amber{border-top:4px solid #d9a441} .tile.violet{border-top:4px solid #7c6bb0} .tile.red{border-top:4px solid #c0533f}
+
+.bottomline{margin-top:16px;background:var(--ink);color:#f2f4f2;border-radius:var(--radius);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+@media(prefers-color-scheme:dark){.bottomline{background:#e8ede9;color:#141a17}}
+.bottomline .bl-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding-top:4px;white-space:nowrap}
+.bottomline p{margin:0;font-size:15.5px;line-height:1.6}
+.bottomline p+p{margin-top:8px;opacity:.85;font-size:14px}
+
+/* Controls */
+.controls{position:sticky;top:0;z-index:20;background:var(--bg);padding:18px 0 12px;border-bottom:1px solid var(--line)}
+.controls h2{font-size:13px;font-family:"IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;border-radius:999px;font:600 13.5px "IBM Plex Sans",sans-serif;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.searchrow{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.searchrow input{flex:1;min-width:220px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:400 15px "IBM Plex Sans",sans-serif}
+.count{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);align-self:center}
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.jump a{font-family:"IBM Plex Mono",monospace;font-size:12px;text-decoration:none;background:var(--surface2);padding:5px 9px;border-radius:999px;color:var(--ink)}
+.jump a:hover{text-decoration:underline}
+
+/* Section heads */
+.sec-head{margin:38px 0 6px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-head h2{font-family:"Newsreader",serif;font-size:30px;margin:0;letter-spacing:-.01em}
+.sec-head p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* Table */
+.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 14px;background:var(--surface2);border-bottom:1px solid var(--line)}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface2)}
+td.engine{font-weight:700;white-space:nowrap}
+td .sub{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.badge.free{background:var(--teal-bg);color:var(--teal)}
+.badge.card{background:var(--amber-bg);color:var(--amber)}
+.badge.grey{background:var(--grey-bg);color:var(--grey)}
+.badge.none{background:var(--red-bg);color:var(--red)}
+@media(max-width:760px){
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tbody tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  tbody td{border:none;padding:3px 0}
+  tbody td::before{content:attr(data-label);display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1px}
+  td.engine{font-size:16px}
+}
+
+/* SearXNG banner */
+.searx{margin-top:16px;border:1.5px dashed var(--teal);background:var(--teal-bg);border-radius:var(--radius);padding:18px 20px}
+.searx h3{margin:0 0 6px;font-size:17px}
+.searx p{margin:0;font-size:14.5px;line-height:1.6}
+.searx p+p{margin-top:8px}
+.searx code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--surface);padding:1px 6px;border-radius:5px}
+
+/* Engine cards */
+.engine-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px;box-shadow:var(--shadow);scroll-margin-top:110px}
+.engine-card[hidden]{display:none}
+.ec-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.ec-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.1em}
+.ec-top h3{font-family:"Newsreader",serif;font-size:26px;margin:4px 0 4px;line-height:1.05}
+.ec-tag{color:var(--muted);font-size:14.5px;max-width:62ch;margin:0}
+.verdict-line{margin-top:14px;padding:13px 15px;border-radius:10px;font-size:14.5px;line-height:1.55}
+.verdict-line.free{background:var(--teal-bg)} .verdict-line.card{background:var(--amber-bg)} .verdict-line.grey{background:var(--grey-bg)} .verdict-line.none{background:var(--red-bg)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fact{padding:13px 14px;border-right:1px solid var(--line);background:var(--surface)}
+.fact:last-child{border-right:none}
+.fact dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin:0 0 5px}
+.fact dd{margin:0;font-size:13.5px;line-height:1.5}
+@media(max-width:820px){.facts{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:none}.fact:nth-child(1),.fact:nth-child(2){border-bottom:1px solid var(--line)}}
+@media(max-width:480px){.facts{grid-template-columns:1fr}.fact{border-right:none;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:none}}
+.codeblock{margin-top:16px;background:var(--code-bg);border-radius:12px;overflow:hidden}
+.codeblock-head{display:flex;justify-content:space-between;align-items:center;padding:9px 12px 9px 16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.codeblock-head span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fb3a4}
+.copy-btn{appearance:none;border:1px solid rgba(255,255,255,.25);background:transparent;color:#e8f0e9;padding:6px 12px;border-radius:999px;font:600 12.5px "IBM Plex Sans",sans-serif;cursor:pointer}
+.copy-btn.copied{background:#2f7d6b;border-color:#2f7d6b}
+.codeblock pre{margin:0;padding:15px 16px;overflow:hidden}
+.codeblock code{font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.65;color:var(--code-ink);white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.note{margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.note b{color:var(--ink)}
+.sources{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.sources span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+
+/* Open questions */
+.openq{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-top:16px}
+.openq ul{margin:10px 0 0;padding-left:20px}
+.openq li{margin:8px 0;font-size:14.5px;line-height:1.6}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.6}
+.empty{padding:28px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);margin-top:16px}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr}.bottomline{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Deep research · Terminal tools · Free tiers</div>
+  <h1>CLI search tools, engine by engine</h1>
+  <p class="lede">For every free search engine in the rotation, what can an agent on Ubuntu actually call from the terminal today — <strong>officially, for free, and without a payment card?</strong> The honest answer is narrower than the list of engines: two clean routes, a few card-gated ones, and several doors that have already closed.</p>
+  <div class="meta-row">
+    <span>Snapshot <b>8 November 2026</b></span>
+    <span>Platform <b>Ubuntu Linux · terminal</b></span>
+    <span>Engines covered <b>11</b></span>
+    <span>Packaging checked <b>apt · pip · curl · Docker</b></span>
+  </div>
+
+  <div class="tiles" aria-label="Summary counts">
+    <div class="tile green"><div class="n">2</div><div class="l">Free, no card, official</div><div class="d">Tavily and Marginalia — plus self-hosted SearXNG as infrastructure.</div></div>
+    <div class="tile amber"><div class="n">3</div><div class="l">Free only with a card</div><div class="d">Brave, Gemini grounding, and Mojeek's one-off trial credit.</div></div>
+    <div class="tile violet"><div class="n">2</div><div class="l">Grey scrapers only</div><div class="d">DuckDuckGo via <span class="mono">ddgr</span> and Google via <span class="mono">googler</span> — both in apt, both unreliable.</div></div>
+    <div class="tile red"><div class="n">4</div><div class="l">No free route</div><div class="d">Bing (retired), Ecosia, Startpage, and Duck.ai.</div></div>
+  </div>
+
+  <div class="bottomline">
+    <div class="bl-label">Bottom line</div>
+    <div>
+      <p><strong>If you want a legitimate free CLI route today, start with Tavily for general web search and Marginalia for the non-commercial web.</strong> Everything else either asks for a card before the “free” part starts, survives only as a scraper the engine actively blocks, or no longer exists.</p>
+      <p>Bot-block behaviour (403 / 429 / captcha) is IP- and time-dependent. The figures below rest on published live tests from July–October 2026 and vendor pages checked 8 Nov 2026 — not on a fresh test in this run.</p>
+    </div>
+  </div>
+</header>
+
+<div class="controls" role="region" aria-label="Filter engines">
+  <h2>Filter by verdict</h2>
+  <div class="pills" id="pills">
+    <button class="pill" data-filter="all" aria-pressed="true">All 11 engines</button>
+    <button class="pill" data-filter="free" aria-pressed="false">✅ Free — no card</button>
+    <button class="pill" data-filter="card" aria-pressed="false">⚠️ Card-gated free</button>
+    <button class="pill" data-filter="grey" aria-pressed="false">⚠️ Grey only</button>
+    <button class="pill" data-filter="none" aria-pressed="false">❌ No route</button>
+  </div>
+  <div class="searchrow">
+    <input id="q" type="search" placeholder="Search engines, tools, packages — try “ddgr”, “apt”, “Tavily”…" aria-label="Search engines and tools">
+    <span class="count" id="count">Showing 11 of 11</span>
+  </div>
+  <nav class="jump" aria-label="Jump to engine">
+    <a href="#tavily">1 Tavily</a><a href="#bing">2 Bing</a><a href="#duckduckgo">3 DuckDuckGo</a><a href="#brave">4 Brave</a><a href="#google">5 Google</a><a href="#mojeek">6 Mojeek</a><a href="#ecosia">7 Ecosia</a><a href="#startpage">8 Startpage</a><a href="#marginalia">9 Marginalia</a><a href="#gemini">10 Gemini</a><a href="#duckai">11 Duck.ai</a><a href="#searxng">SearXNG</a>
+  </nav>
+</div>
+
+<section aria-labelledby="matrix-h">
+  <div class="sec-head"><h2 id="matrix-h">The matrix</h2><p>One row per engine — best terminal method, what “free” really requires, and whether to build on it.</p></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Engine</th><th>Best terminal method</th><th>Status</th><th>Free limit</th><th>Verdict</th></tr></thead>
+      <tbody id="matrixBody">
+        <tr data-cat="free" data-search="tavily hosted developer search serper serpapi eggsearch"><td class="engine" data-label="Engine">Hosted developer search<span class="sub">Tavily as headline example</span></td><td data-label="Method">Tavily API via curl / pip SDK</td><td data-label="Status">Official · Key required · No card</td><td data-label="Free limit">1,000 credits / month</td><td data-label="Verdict"><span class="badge free">Free — no card</span></td></tr>
+        <tr data-cat="none" data-search="bing microsoft azure grounding retired"><td class="engine" data-label="Engine">Bing</td><td data-label="Method">— (was Bing API v7)</td><td data-label="Status">Was official, retired 11 Aug 2025</td><td data-label="Free limit">None</td><td data-label="Verdict"><span class="badge none">No route</span></td></tr>
+        <tr data-cat="grey" data-search="duckduckgo ddgr ddgs instant answer apt pip"><td class="engine" data-label="Engine">DuckDuckGo</td><td data-label="Method">ddgr / ddgs scrape; Instant Answers API</td><td data-label="Status">Grey for results; official only for instant answers</td><td data-label="Free limit">Unlimited in theory; throttled in practice</td><td data-label="Verdict"><span class="badge grey">Grey only</span></td></tr>
+        <tr data-cat="card" data-search="brave search api subscription token mcp"><td class="engine" data-label="Engine">Brave Search</td><td data-label="Method">Brave Search API</td><td data-label="Status">Official · Key + card required</td><td data-label="Free limit">$5 credit / mo ≈ 1,000 requests</td><td data-label="Verdict"><span class="badge card">Card-gated</span></td></tr>
+        <tr data-cat="grey" data-search="google googler custom search cse apt"><td class="engine" data-label="Engine">Google</td><td data-label="Method">googler scrape; Custom Search (closing)</td><td data-label="Status">Grey / official-but-closing</td><td data-label="Free limit">Existing CSE only: 100/day until 1 Jan 2027</td><td data-label="Verdict"><span class="badge grey">Grey only — no legitimate new route</span></td></tr>
+        <tr data-cat="card" data-search="mojeek api independent index"><td class="engine" data-label="Engine">Mojeek</td><td data-label="Method">Mojeek Search API</td><td data-label="Status">Official · Bank card to open account</td><td data-label="Free limit">One-off trial credit only</td><td data-label="Verdict"><span class="badge card">Card-gated</span></td></tr>
+        <tr data-cat="none" data-search="ecosia no api staan eusp"><td class="engine" data-label="Engine">Ecosia</td><td data-label="Method">—</td><td data-label="Status">No API</td><td data-label="Free limit">None — page returns 403</td><td data-label="Verdict"><span class="badge none">No route</span></td></tr>
+        <tr data-cat="none" data-search="startpage no api captcha proof of work"><td class="engine" data-label="Engine">Startpage</td><td data-label="Method">— (scrapers only)</td><td data-label="Status">No API</td><td data-label="Free limit">None — captcha / proof-of-work</td><td data-label="Verdict"><span class="badge none">No route</span></td></tr>
+        <tr data-cat="free" data-search="marginalia curl public key api2"><td class="engine" data-label="Engine">Marginalia</td><td data-label="Method">curl, API-Key: public</td><td data-label="Status">Official · No signup, no card</td><td data-label="Free limit">Shared limit → HTTP 503 at busy times</td><td data-label="Verdict"><span class="badge free">Free — no card</span></td></tr>
+        <tr data-cat="card" data-search="gemini google search grounding ai studio google-genai"><td class="engine" data-label="Engine">Gemini + grounding</td><td data-label="Method">Gemini API google_search tool</td><td data-label="Status">Official · Billing must be enabled</td><td data-label="Free limit">5,000/mo on billing-enabled projects</td><td data-label="Verdict"><span class="badge card">Card-gated</span></td></tr>
+        <tr data-cat="none" data-search="duck ai duckai chat no api playwright ban"><td class="engine" data-label="Engine">Duck.ai</td><td data-label="Method">— (unofficial bridges only)</td><td data-label="Status">No API</td><td data-label="Free limit">Browser-only daily limit</td><td data-label="Verdict"><span class="badge none">No route</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="searx" id="searxng">
+    <h3>Cross-cutting: self-hosted SearXNG — free infrastructure, grey upstreams</h3>
+    <p>SearXNG is not a CLI. It's an open-source metasearch service you host yourself (Docker), aggregating 70+ engines — the free fallback that fills the same tool slots for Bing, DuckDuckGo, Google, Ecosia and Startpage. Enable <code>json</code> in <code>settings.yml</code> (otherwise JSON requests get 403), then query it with <code>curl 'http://localhost:8080/search?q=…&amp;format=json'</code>.</p>
+    <p><strong>Cost &amp; footprint:</strong> free, no key, no apt package. RAM is <strong>256 MB minimum, 512 MB recommended, plus 50–100 MB for Valkey/Redis</strong> — confirming the ~150–300 MB ballpark at the low end. Public instances usually disable JSON, so self-hosting is the reliable path — and it inherits the blocking behaviour of whatever engines it scrapes.</p>
+    <p class="sources"><span>Sources — index</span> <a href="https://selfhosting.sh/apps/searxng/">selfhosting.sh/apps/searxng</a> · <a href="https://railway.com/deploy/searxng-search-api">railway.com/deploy/searxng-search-api</a> · <a href="https://www.bitdoze.com/searxng-self-host-privacy-search/">bitdoze.com/searxng-self-host-privacy-search</a></p>
+  </div>
+</section>
+
+<section aria-labelledby="details-h">
+  <div class="sec-head"><h2 id="details-h">Engine by engine</h2><p>Full detail, install routes, and copyable terminal examples.</p></div>
+  <div id="cards">
+
+  <!-- 1 Tavily -->
+  <article class="engine-card" id="tavily" data-cat="free" data-search="tavily hosted developer search api serper serpapi eggsearch ketch pip curl credits">
+    <div class="ec-top"><div><div class="ec-num">01 · HOSTED DEVELOPER SEARCH</div><h3>Tavily &amp; the hosted APIs</h3><p class="ec-tag">The category behind most agent-framework <span class="mono">web_search</span> tools — Tavily is the headline example. Serper and SerpApi sit in the same slot.</p></div><span class="badge free">✅ Usable free today</span></div>
+    <div class="verdict-line free"><strong>Verdict:</strong> The cleanest legitimate free route in this whole report. Official API, free key, no card — 1,000 credits a month, hard stop at zero.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd>Tavily REST API (<span class="mono">api.tavily.com</span>) via curl or pip SDK <span class="mono">tavily-python</span>. Wrappers: <span class="mono">eggsearch</span> (single Rust binary, MCP + CLI), <span class="mono">ketch</span>, Hermes <span class="mono">web_search</span>.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><strong>Official / sanctioned</strong> — the vendor's own product, not a scrape. Serper/SerpApi are sanctioned by the vendor you pay, but grey upstream (they obtain Google results Google offers no API for).</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>Tavily Researcher: <strong>1,000 credits/month, no credit card</strong>. Basic search = 1 credit, advanced = 2. Alternatives: Serper 2,500 free queries <em>one-time</em>, no card; SerpApi 250 searches/month free.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>No apt package. pip SDKs / plain curl. <span class="mono">eggsearch</span> is a standalone Rust binary (GitHub / cargo).</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Tavily</span><button class="copy-btn" type="button">Copy</button></div><pre><code>pip install tavily-python
+
+# Or plain curl — key from a free signup, no card
+curl -X POST https://api.tavily.com/search \
+  -H "Authorization: Bearer $TAVILY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "your search terms", "max_results": 5}'</code></pre></div>
+    <p class="note"><b>Watch-out:</b> Google sued SerpApi in Dec 2025 over anti-bot circumvention; the case was unresolved as of Aug 2026. That continuity/legal risk belongs to the SERP-API route, not to Tavily itself — but it's why “vendor-sanctioned” and “upstream-legitimate” are kept separate here.</p>
+    <p class="sources"><span>Sources</span> Tavily pricing — <strong>verified live 2026-11-08</strong> — <a href="https://www.tavily.com/pricing">tavily.com/pricing</a> · Serper free grant (index) — <a href="https://keirolabs.cloud/blog/serper-api-guide-2026">keirolabs.cloud/blog/serper-api-guide-2026</a> · <a href="https://parallel.ai/articles/best-free-web-search-api">parallel.ai/articles/best-free-web-search-api</a> (vendor pages checked 27 Oct 2026)</p>
+  </article>
+
+  <!-- 2 Bing -->
+  <article class="engine-card" id="bing" data-cat="none" data-search="bing microsoft azure grounding retired 410 gone foundry">
+    <div class="ec-top"><div><div class="ec-num">02 · MICROSOFT</div><h3>Bing</h3><p class="ec-tag">The official results API existed for years — and was retired completely. What replaced it returns answers, not results.</p></div><span class="badge none">❌ Not usable free</span></div>
+    <div class="verdict-line none"><strong>Verdict:</strong> No official Bing results API exists any more. Only paid Azure grounding (answers, not results) or grey, captcha-prone scraping of bing.com.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd>Formerly Bing Web Search API v7 via Azure. Successor: <strong>Grounding with Bing Search</strong> in Azure AI Foundry / AI Agents. Grey fallback: SearXNG's bing engine, <span class="mono">openserp</span>, SERP APIs.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd>The old API was official — and is dead. Grounding is official but Microsoft states developers/end users have <strong>no access to the raw content</strong> returned; you get an LLM answer with citations.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd><strong>None.</strong> Retirement covered every tier (F1/S1–S9, Custom F0/S1–S4); endpoints return <strong>HTTP 410 Gone</strong>, no new keys. Grounding is paid Azure only — <strong>$14 per 1,000 transactions</strong> per Microsoft's Sept 2026 listing, plus model costs. Free-credit Azure subscriptions don't qualify.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>Azure SDKs (pip <span class="mono">azure-ai-*</span>). No apt CLI for Bing search.</dd></div>
+    </dl>
+    <p class="note"><b>Price caveat:</b> Some Oct 2026 secondary reads still cite $35/1,000 for Grounding. Treat the price as in flux — either way it's paid-Azure-only with no free tier, so the verdict is unaffected.</p>
+    <p class="sources"><span>Sources — index, quoting Microsoft Learn</span> <a href="https://www.searxncrawl.io/bing-google-search-api-alternative/">searxncrawl.io/bing-google-search-api-alternative</a> · <a href="https://fe.tonywang.io/blog/bing-search-api-alternatives">fe.tonywang.io/blog/bing-search-api-alternatives</a> · <a href="https://serplify.io/blog/bing-search-api-alternatives/">serplify.io/blog/bing-search-api-alternatives</a> — “Bing Search APIs will be retired on August 11, 2025… decommissioned completely”</p>
+  </article>
+
+  <!-- 3 DDG -->
+  <article class="engine-card" id="duckduckgo" data-cat="grey" data-search="duckduckgo ddgr ddgs instant answer apt pip html ratelimit 202 captcha">
+    <div class="ec-top"><div><div class="ec-num">03 · PRIVACY SEARCH</div><h3>DuckDuckGo</h3><p class="ec-tag">Two tools everyone reaches for — <span class="mono">ddgr</span> and <span class="mono">ddgs</span> — and one official API that isn't actually web search.</p></div><span class="badge grey">⚠️ Grey only for results</span></div>
+    <div class="verdict-line grey"><strong>Verdict:</strong> Works free at low volume from a residential IP via <span class="mono">ddgr</span>/<span class="mono">ddgs</span>, unreliable under automation. The only official API (Instant Answers) does not return search results.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong><span class="mono">ddgr</span></strong> (CLI, scrapes the HTML version), <strong><span class="mono">ddgs</span></strong> (pip library + CLI, formerly <span class="mono">duckduckgo_search</span>), and the official Instant Answer API at <span class="mono">api.duckduckgo.com</span>.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><span class="mono">ddgr</span>/<span class="mono">ddgs</span> are <strong>grey scrapers</strong> — <span class="mono">ddgr</span> states it “isn't affiliated to DuckDuckGo in any way”; DDG's terms prohibit scraping. Instant Answer API is official but returns a Wikipedia-style abstract for entity queries, empty for most others.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>All free, <strong>no key, no card</strong>, no published limits. In practice: <span class="mono">ddgs</span> raises <span class="mono">RatelimitException: 202</span>, bursts and datacenter/VPN IPs are throttled almost immediately, and the HTML endpoint serves bot-check pages. ~1 req/s is the community-safe pace.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>✅ <strong><span class="mono">ddgr</span> in apt</strong> — Ubuntu noble <span class="mono">ddgr 2.2-1 [universe]</span>, also snap and standalone .deb. <span class="mono">ddgs</span> via pip only.</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — DuckDuckGo (grey)</span><button class="copy-btn" type="button">Copy</button></div><pre><code>sudo apt install ddgr
+ddgr "your search terms"
+
+# pip alternative
+pip install ddgs
+ddgs text -q "your search terms"
+
+# Official — but abstracts only, NOT web results
+curl "https://api.duckduckgo.com/?q=ubuntu&format=json"</code></pre></div>
+    <p class="sources"><span>Sources — index</span> <a href="https://packages.ubuntu.com/eu/noble/misc/">packages.ubuntu.com/eu/noble/misc</a> · <a href="https://www.browserfoundry.cloud/blog/duckduckgo-search-api">browserfoundry.cloud/blog/duckduckgo-search-api</a> · <a href="https://link.sc/blog/duckduckgo-search-api-guide">link.sc/blog/duckduckgo-search-api-guide</a> · <a href="https://keirolabs.cloud/blog/duckduckgo-search-api">keirolabs.cloud/blog/duckduckgo-search-api</a></p>
+  </article>
+
+  <!-- 4 Brave -->
+  <article class="engine-card" id="brave" data-cat="card" data-search="brave search api subscription token card credit 429 mcp npm">
+    <div class="ec-top"><div><div class="ec-num">04 · INDEPENDENT INDEX</div><h3>Brave Search</h3><p class="ec-tag">A real official API over Brave's own 30B+ page index — whose free plan quietly became a card-gated credit in February 2026.</p></div><span class="badge card">⚠️ Legitimate, not card-free</span></div>
+    <div class="verdict-line card"><strong>Verdict:</strong> If a card on file is acceptable, ~1,000 free official queries/month. If “free” means no card, Brave no longer qualifies. The grey scrape rate-limits hard (429).</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong>Brave Search API</strong> — <span class="mono">GET api.search.brave.com/res/v1/web/search</span> with header <span class="mono">X-Subscription-Token</span>, via curl, community SDKs, or Brave's official MCP server (npm <span class="mono">@brave/brave-search-mcp-server</span>).</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd>API is <strong>official</strong>. Scraping <span class="mono">search.brave.com</span> (SearXNG / eggsearch engines) is grey.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>Old free plan (2,000/mo, later 5,000) <strong>ended Feb 2026</strong>. Now: Search at <strong>$5 per 1,000 requests with $5 in free credits every month (≈1,000 requests)</strong>, 50 req/s. <strong>A credit card is required to activate any plan</strong>, including to use the free credits (anti-fraud), and attribution is required to keep the credit.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>No apt/pip first-party CLI; curl or the npm MCP server.</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Brave Search API</span><button class="copy-btn" type="button">Copy</button></div><pre><code>curl -H "Accept: application/json" \
+  -H "X-Subscription-Token: $BRAVE_API_KEY" \
+  "https://api.search.brave.com/res/v1/web/search?q=your+search+terms"</code></pre></div>
+    <p class="note"><b>Consumer-page behaviour:</b> In a Jul 2026 live test series, Brave's rendered results page was the one consumer channel that worked — then returned <strong>persistent HTTP 429s that ~20 minutes of paced retries never cleared</strong>.</p>
+    <p class="sources"><span>Sources</span> Official pricing (index) — <a href="https://api-dashboard.search.brave.com/documentation/pricing">api-dashboard.search.brave.com/documentation/pricing</a> · Card/credit corroboration — <a href="https://apiserpent.com/blog/free-brave-search-api">apiserpent.com/blog/free-brave-search-api</a> (Brave's own pages, 23 Oct 2026) · <a href="https://scrapegraphai.com/blog/brave-search-api">scrapegraphai.com/blog/brave-search-api</a> · 429 live test — <a href="https://github.com/directiveforge/directiveforge/blob/HEAD/research/2026-07-11-user-pain-raw/2c-reddit.md">github.com/directiveforge/directiveforge</a></p>
+  </article>
+
+  <!-- 5 Google -->
+  <article class="engine-card" id="google" data-cat="grey" data-search="google googler custom search cse programmable apt javascript unusual traffic 429">
+    <div class="ec-top"><div><div class="ec-num">05 · THE BIG INDEX</div><h3>Google</h3><p class="ec-tag"><span class="mono">googler</span> is sitting in apt right now — and Google's defences are exactly why being packaged doesn't mean working.</p></div><span class="badge grey">⚠️ Grey only — no legitimate new route</span></div>
+    <div class="verdict-line grey"><strong>Verdict:</strong> Grey <span class="mono">googler</span> is in apt but unreliable against current defences — there is no legitimate new route. The practical free-ish Google route is a third-party SERP API trial (Serper: 2,500 one-time, no card — vendor-sanctioned, grey upstream).</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong><span class="mono">googler</span></strong> (CLI scraper), <strong>Custom Search JSON API</strong> (Programmable Search Engine), third-party SERP APIs (§1), SearXNG's google engine.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><span class="mono">googler</span> is a <strong>grey scraper</strong>; Google's terms prohibit automated access and <span class="mono">robots.txt</span> disallows <span class="mono">/search</span>. Custom Search was official but returned results from a <em>configured</em> engine, not google.com as such.</dd></div>
+      <div class="fact"><dt>Free tier / status</dt><dd>Custom Search is <strong>closed to new customers</strong> (new keys fail, 403 reported; new engines since 20 Jan 2026 limited to ≤50 sites). Existing customers keep <strong>100 free/day, then $5/1,000, cap 10,000/day — only until discontinuation on 1 January 2027</strong>.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>✅ <strong><span class="mono">googler</span> in apt</strong> — <span class="mono">googler 4.3.13-1 [universe]</span> (Ubuntu questing; also Debian bookworm), plus a standalone GitHub script.</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Google (grey, expect breakage)</span><button class="copy-btn" type="button">Copy</button></div><pre><code>sudo apt install googler
+googler "your search terms"
+# Since Jan 2025 Google requires JavaScript to serve results —
+# plain HTTP often gets a JS shell, consent page, or 429.</code></pre></div>
+    <p class="note"><b>Raw-page fetching:</b> Confirmed hostile — plain HTTP gets a JS shell, consent interstitial, or “unusual traffic” page (sometimes HTTP 200, sometimes 429), so <span class="mono">googler</span>-style parsing frequently returns zero results, especially from datacenter IPs. Google's suggested replacements (Vertex / Agent Search) are site-restricted to 50 domains, not full-web search.</p>
+    <p class="sources"><span>Sources — index</span> <a href="https://cloro.dev/blog/google-search-api/">cloro.dev/blog/google-search-api</a> · <a href="https://www.browserfoundry.cloud/blog/google-custom-search-api-alternative">browserfoundry.cloud/blog/google-custom-search-api-alternative</a> · <a href="https://packages.ubuntu.com/fi/questing/misc/">packages.ubuntu.com/fi/questing/misc</a> · <a href="https://webscraping.ai/blog/scrape-google-search-results">webscraping.ai/blog/scrape-google-search-results</a></p>
+  </article>
+
+  <!-- 6 Mojeek -->
+  <article class="engine-card" id="mojeek" data-cat="card" data-search="mojeek api independent index bank card trial 403 captcha altcha">
+    <div class="ec-top"><div><div class="ec-num">06 · INDEPENDENT INDEX</div><h3>Mojeek</h3><p class="ec-tag">An official API over Mojeek's own ~9B-page index — gated behind a bank card before the free credit even starts.</p></div><span class="badge card">❌ No ongoing free tier</span></div>
+    <div class="verdict-line card"><strong>Verdict:</strong> The API exists and is legit, but free use is a one-off trial credit behind a bank card. The consumer page 403s / captchas automated callers.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong>Mojeek Search API</strong> (official, JSON/XML, curl with API key). Grey: scraping <span class="mono">mojeek.com/search</span> (eggsearch / SearXNG engines).</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd>API is <strong>official</strong>. HTML scraping is grey — and blocked.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd><strong>No recurring free tier.</strong> Mojeek's own FAQ: sign up to the Startup Plan and claim a free credit — but <strong>“a bank card is required to open an account”</strong> (no automatic payments, via Stripe). Paid PAYG thereafter: Startup ≈£2 per 1,000 queries in the Jul 2026 live read.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>No apt/pip CLI; API key + curl.</dd></div>
+    </dl>
+    <p class="note"><b>HTML behaviour &amp; price caveat:</b> Bare request → <strong>HTTP 403</strong>; with a browser user-agent → HTTP 200 serving an ALTCHA/captcha challenge, not results. A Personal tier at £1/1,000 is cited elsewhere — check Mojeek's live pricing page before relying on the exact tier ladder; the card-required fact comes from Mojeek's own FAQ and is solid.</p>
+    <p class="sources"><span>Sources</span> Official (index) — <a href="https://www.mojeek.com/services/search/web-search-api/">mojeek.com/services/search/web-search-api</a> · Live block test — <a href="https://github.com/katrielmoses/mailaccess/blob/HEAD/docs/research/search-engine-federation-2026-07-15.md">github.com/katrielmoses/mailaccess</a></p>
+  </article>
+
+  <!-- 7 Ecosia -->
+  <article class="engine-card" id="ecosia" data-cat="none" data-search="ecosia no api 403 cloudflare staan eusp openserp">
+    <div class="ec-top"><div><div class="ec-num">07 · TREE-PLANTING SEARCH</div><h3>Ecosia</h3><p class="ec-tag">No developer API was found at all — and the consumer page is behind Cloudflare with a consistent 403 for automated callers.</p></div><span class="badge none">❌ No route at all</span></div>
+    <div class="verdict-line none"><strong>Verdict:</strong> No official API and the consumer page 403s automated callers. Do not build on Ecosia scraping.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd>No named CLI and no public developer search API found. Grey only: SearXNG's ecosia engine, <span class="mono">openserp</span> (browser-rendered), eggsearch-style scrapers.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd>Grey only. Historically Bing/Google-backed; since Aug 2025 partly its own EUSP/Staan index in France/Germany — Staan is B2B partner infrastructure with <strong>no free public developer API, key signup, or pricing documented</strong> in any source found.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>N/A — no API to have one.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>None.</dd></div>
+    </dl>
+    <p class="note"><b>HTML behaviour:</b> <strong>HTTP 403</strong> in repeated live tests (Jul 2026 federation test: 403 on every attempt; another test: loaded JS-empty, then 403 on retry).</p>
+    <p class="sources"><span>Sources — index</span> <a href="https://github.com/katrielmoses/mailaccess/blob/HEAD/docs/research/search-engine-federation-2026-07-15.md">github.com/katrielmoses/mailaccess</a> · Staan background — <a href="https://ppc.land/ecosia-launches-european-search-index-in-france/">ppc.land/ecosia-launches-european-search-index-in-france</a></p>
+  </article>
+
+  <!-- 8 Startpage -->
+  <article class="engine-card" id="startpage" data-cat="none" data-search="startpage no api captcha proof of work google bing relay anti abuse">
+    <div class="ec-top"><div><div class="ec-num">08 · PRIVACY FRONT-END</div><h3>Startpage</h3><p class="ec-tag">A privacy relay to Google and Bing with no index of its own — and an anti-abuse system built specifically to stop people doing this.</p></div><span class="badge none">❌ No reliable route</span></div>
+    <div class="verdict-line none"><strong>Verdict:</strong> No legitimate programmatic route exists, and grey scraping is specifically targeted by Startpage's anti-abuse system.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd>No official API or CLI. Grey scrapers only: SearXNG's startpage engine, <span class="mono">eggsearch</span>'s vendored Startpage HTML scraper.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd>Grey only. Startpage relays queries to <strong>Google and Bing</strong> and actively defends against automation (“subjected to automated abuse and scraping on a daily basis… strong anti-abuse measures”), including captcha and, per one survey, a <strong>proof-of-work challenge</strong>.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>N/A — no API.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>None.</dd></div>
+    </dl>
+    <p class="note"><b>In live tests:</b> “Flatly refused” in the Jul 2026 cross-engine test series; other tooling documents captcha-detection as a routine Startpage failure mode.</p>
+    <p class="sources"><span>Sources — index</span> <a href="https://www.searchengines.net/startpage/">searchengines.net/startpage</a> · <a href="https://fe.tonywang.io/docs/startpage">fe.tonywang.io/docs/startpage</a> · <a href="https://github.com/directiveforge/directiveforge/blob/HEAD/research/2026-07-11-user-pain-raw/2c-reddit.md">github.com/directiveforge/directiveforge</a></p>
+  </article>
+
+  <!-- 9 Marginalia -->
+  <article class="engine-card" id="marginalia" data-cat="free" data-search="marginalia curl public key api2 official niche noncommercial 503">
+    <div class="ec-top"><div><div class="ec-num">09 · SMALL INDEPENDENT INDEX</div><h3>Marginalia Search</h3><p class="ec-tag">The surprise of the list: a documented official API whose shared key is literally the word <span class="mono">public</span>. No signup. Just curl.</p></div><span class="badge free">✅ Usable free today</span></div>
+    <div class="verdict-line free"><strong>Verdict:</strong> The only engine-native, keyless, card-free official API in this list. Expect 503s on the shared key at busy times — and niche coverage.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong>Official public API — plain curl.</strong> New: <span class="mono">GET api2.marginalia-search.com/search</span> with header <span class="mono">API-Key: public</span>. Old API (<span class="mono">api.marginalia.nu/public/…</span>) is deprecated. Also via SearXNG.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><strong>Official / sanctioned</strong> — Marginalia's documented developer API. Results licensed <strong>CC-BY-NC-SA 4.0</strong> (non-commercial; commercial use needs a commercial key by email).</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd><strong>No signup, no card.</strong> The shared key <span class="mono">public</span> works immediately but often hits a rate limit (new API) / returns <strong>HTTP 503</strong> when the shared limit is hit (old API), and can't use custom filters. A free personal key is available by emailing contact@marginalia-search.com.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>Nothing to install — curl on any Ubuntu box; optionally SearXNG via Docker.</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Marginalia (official, keyless)</span><button class="copy-btn" type="button">Copy</button></div><pre><code>curl -H "API-Key: public" \
+  "https://api2.marginalia-search.com/search?query=your+search+terms"</code></pre></div>
+    <p class="note"><b>Coverage caveat:</b> Marginalia deliberately indexes the non-commercial, text-heavy web — personal sites, blogs, wikis, forums. It's weak or absent for news, commerce and mainstream topics (it does not index Reddit at all in tests). A complement, not a Google replacement.</p>
+    <p class="sources"><span>Source — verified live 2026-11-08</span> <a href="https://about.marginalia-search.com/article/api/">about.marginalia-search.com/article/api</a></p>
+  </article>
+
+  <!-- 10 Gemini -->
+  <article class="engine-card" id="gemini" data-cat="card" data-search="gemini google search grounding billing ai studio google-genai cli 429 tokens">
+    <div class="ec-top"><div><div class="ec-num">10 · AI ANSWER ENGINE</div><h3>Google Gemini with search grounding</h3><p class="ec-tag">Google's sanctioned replacement story: a model-written answer with citations — not a raw results list, and not free-tier eligible.</p></div><span class="badge card">⚠️ Only with billing on</span></div>
+    <div class="verdict-line card"><strong>Verdict:</strong> Official and excellent for grounded answers, but NOT free from a terminal without enabling billing (card). With billing on, 5,000 grounded searches/month are included before the $14/1,000 rate.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd><strong>Gemini API</strong> with the <span class="mono">google_search</span> tool — curl to the Gemini Developer API, pip <span class="mono">google-genai</span> SDK, or Google's <span class="mono">gemini</span> CLI. Key from Google AI Studio.</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><strong>Official.</strong></dd></div>
+      <div class="fact"><dt>Free tier — the catch</dt><dd>For <strong>Gemini 3 and newer, grounding is NOT on the API Free Tier</strong>: calls from a project without billing return <strong>HTTP 429</strong>, and Google's pricing page lists grounding as “Not available” in the Free Tier column. Billing-enabled projects get <strong>5,000 free search requests/month (shared, daily cap 1,500/day), then $14/1,000</strong> — plus per-token charges; one prompt can trigger several billable searches.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>pip (<span class="mono">google-genai</span>) / npm (<span class="mono">@google/gemini-cli</span>) / curl. No apt package.</dd></div>
+    </dl>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Gemini grounding, Route A: pip SDK</span><button class="copy-btn" type="button">Copy</button></div><pre><code># Route A — Python SDK (pip). Enable billing first:
+# without it, grounded calls on Gemini 3+ return HTTP 429.
+pip install google-genai
+
+python3 - &lt;&lt;'PY'
+from google import genai
+from google.genai import types
+client = genai.Client()  # uses GEMINI_API_KEY
+resp = client.models.generate_content(
+    model="your-gemini-3-model",
+    contents="Your question",
+    config=types.GenerateContentConfig(
+        tools=[types.Tool(google_search=types.GoogleSearch())]))
+print(resp.text)
+PY</code></pre></div>
+    <div class="codeblock"><div class="codeblock-head"><span>Terminal — Gemini grounding, Route B: Gemini CLI (npm)</span><button class="copy-btn" type="button">Copy</button></div><pre><code># Route B — the separate Gemini CLI (npm, NOT the pip SDK)
+npm install -g @google/gemini-cli
+gemini "Answer with live web grounding: your question"</code></pre></div>
+    <p class="note"><b>Legacy exception &amp; source conflict:</b> Gemini 2.5 Flash/Flash-Lite pricing lists 500 grounded requests/day free — but new users report 2.5 models returning 404 / “no longer available to new users”, so don't plan on it. Several Oct 2026 summaries say “5,000 free/month” without the billing gate; Google's own staff clarification and the pricing page's Free-Tier column resolve it — the 5,000 are free <em>on a billing-enabled project</em>. Grounding is free to try interactively in AI Studio's web UI, which is not a CLI route.</p>
+    <p class="sources"><span>Sources — index</span> Google staff reply — <a href="https://discuss.ai.google.dev/t/google-search-grounding/191945">discuss.ai.google.dev/t/google-search-grounding/191945</a> · Google pricing via <a href="https://aistudio.google.com/docs/pricing">aistudio.google.com/docs/pricing</a> · Corroboration — <a href="https://infro.io/blog/gemini-api-pricing-2026">infro.io/blog/gemini-api-pricing-2026</a></p>
+  </article>
+
+  <!-- 11 Duck.ai -->
+  <article class="engine-card" id="duckai" data-cat="none" data-search="duck ai duckai chat no api playwright chrome ban 418 vqd bridges">
+    <div class="ec-top"><div><div class="ec-num">11 · AI CHAT</div><h3>Duck.ai</h3><p class="ec-tag">DuckDuckGo's AI chat is free in a browser — and has no public API. Every bridge to it is reverse-engineered.</p></div><span class="badge none">❌ No legitimate route</span></div>
+    <div class="verdict-line none"><strong>Verdict:</strong> No legitimate CLI/programmatic route exists. Unofficial browser-driving bridges work until they break or get the IP banned; do not build an agent on them.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Tool / method</dt><dd>No official tool. Unofficial bridges only (<span class="mono">duckapi</span> / DuckAI2API) exposing an OpenAI-compatible endpoint by <strong>driving the real duck.ai site in Chrome via Playwright</strong> or reverse-engineering its protocol (anti-bot tokens such as <span class="mono">x-fe-signals</span> / <span class="mono">vqd</span>).</dd></div>
+      <div class="fact"><dt>Official or grey?</dt><dd><strong>Grey / reverse-engineered.</strong> The bridge projects themselves state: “Duck.ai has no public API”, and warn use may violate Duck.ai's terms. The closest official DuckDuckGo surface remains the Instant Answers API (§3) — a different, non-chat, non-search product.</dd></div>
+      <div class="fact"><dt>Free tier</dt><dd>Duck.ai itself is free/anonymous in a browser with a <strong>daily usage limit (resets midnight UTC; exact count unpublished, varies by model)</strong> — with no sanctioned programmatic way to consume it. Bridges risk a <strong>persistent per-IP ban: HTTP 418 <span class="mono">ERR_BN_LIMIT</span></strong>, no Retry-After.</dd></div>
+      <div class="fact"><dt>Packaging</dt><dd>GitHub clones / pip installs of unofficial projects only. Nothing in apt, nothing official on pip/npm.</dd></div>
+    </dl>
+    <p class="note"><b>Open verification point:</b> Multiple sources confirm DuckDuckGo's only developer API is Instant Answers and that Duck.ai has no API — but no primary DuckDuckGo help page was found that explicitly directs Duck.ai developers to the Instant Answers API. Treat that specific wording as plausible but not primary-source-verified.</p>
+    <p class="sources"><span>Sources — index</span> <a href="https://github.com/hirotomasato/duckapi/blob/main/README.md">github.com/hirotomasato/duckapi</a> · <a href="https://github.com/wuyouseo/DuckAI2API">github.com/wuyouseo/DuckAI2API</a> · <a href="https://github.com/emahboubinia/duckai-openai-api">github.com/emahboubinia/duckai-openai-api</a></p>
+  </article>
+
+  </div>
+  <div class="empty" id="emptyState" hidden>No engine matches that filter. Try clearing the search, or pick “All 11 engines”.</div>
+</section>
+
+<section aria-labelledby="openq-h">
+  <div class="sec-head"><h2 id="openq-h">Open questions</h2><p>What the research could not settle — stated plainly, not filled in.</p></div>
+  <div class="openq">
+    <ul>
+      <li><strong>Which hosted backend is “the” one?</strong> The original ask named no single vendor for the hosted developer-search category. Tavily is reported as the archetype; Exa, Parallel, Firecrawl and Keenable sit in the same category with differing no-card free allowances that would need a re-check if one specific backend was meant.</li>
+      <li><strong>Duck.ai → Instant Answers wording:</strong> confirmed that Instant Answers is DuckDuckGo's only developer API and Duck.ai has none — but no primary DuckDuckGo page explicitly redirecting Duck.ai developers to it was located.</li>
+      <li><strong>Bing Grounding price:</strong> $14/1,000 (Sept 2026 Microsoft-derived listings) vs $35/1,000 (older/other reads). Paid either way; verdict unaffected.</li>
+      <li><strong>Mojeek tier ladder:</strong> £1/1,000 “Personal” vs £2/1,000 “Startup” appears inconsistently across sources. The card-required free-credit fact is from Mojeek's own FAQ and is solid.</li>
+      <li><strong>Bot-block behaviour is a moving target:</strong> DDG captcha, Brave 429, Mojeek/Ecosia 403 and Google unusual-traffic outcomes are IP- and time-dependent, drawn from published Jul–Oct 2026 live tests.</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="pick-h">
+  <div class="sec-head"><h2 id="pick-h">What to actually install</h2></div>
+  <div class="openq">
+    <p style="margin:0;font-size:15px;line-height:1.65"><strong>For a working free setup today:</strong> sign up for a Tavily key (no card) for general web search, use Marginalia's <span class="mono">public</span> key for the independent web, and keep <span class="mono">ddgr</span> from apt as a low-volume DuckDuckGo fallback — paced at ~1 request/second, with the understanding that it's a grey scraper that can captcha at any time. Add self-hosted SearXNG (512 MB RAM) only if running a small Docker service is acceptable. Skip Ecosia, Startpage and Duck.ai entirely for programmatic use, and don't plan around Bing or Google Custom Search — both are gone for new users.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Research snapshot: 8 November 2026. “Verified live” sources (Tavily pricing, Marginalia API docs) were fetched in full during the research run; all other sources are marked “index” (search-index full text). Prices, free tiers and block behaviour change without notice — re-check the vendor page linked on each card before committing to a route. This page is a snapshot, not a live feed.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var filter='all', query='';
+  var pills=document.querySelectorAll('#pills .pill');
+  var cards=document.querySelectorAll('.engine-card');
+  var rows=document.querySelectorAll('#matrixBody tr');
+  var countEl=document.getElementById('count');
+  var emptyEl=document.getElementById('emptyState');
+  var qEl=document.getElementById('q');
+  function matches(el){
+    var cat=el.getAttribute('data-cat');
+    var hay=(el.getAttribute('data-search')||'')+' '+el.textContent.toLowerCase();
+    var okCat=(filter==='all'||cat===filter);
+    var okQ=(!query||hay.toLowerCase().indexOf(query)!==-1);
+    return okCat&&okQ;
+  }
+  function apply(){
+    var shown=0;
+    cards.forEach(function(c){ var m=matches(c); c.hidden=!m; if(m)shown++; });
+    rows.forEach(function(r){ r.style.display=matches(r)?'':'none'; });
+    countEl.textContent='Showing '+shown+' of '+cards.length;
+    emptyEl.hidden=shown!==0;
+  }
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      pills.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      p.setAttribute('aria-pressed','true');
+      filter=p.getAttribute('data-filter');
+      apply();
+    });
+  });
+  qEl.addEventListener('input',function(){ query=qEl.value.trim().toLowerCase(); apply(); });
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var block=btn.closest('.codeblock');
+      var code=block?block.querySelector('code'):null;
+      if(!code) return;
+      var text=code.textContent;
+      function done(){ btn.textContent='Copied ✓'; btn.classList.add('copied'); setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied');},1800); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); done(); }catch(e){}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>

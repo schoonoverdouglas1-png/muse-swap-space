@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>Cascade Tick Research</title>
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface2:#efeae0; --ink:#1c2320; --muted:#5b6660;
+  --line:#d8d2c4; --accent:#1f5c3d; --accent-ink:#ffffff; --warn-bg:#fdf3e0; --warn-line:#c98a1b; --warn-ink:#6b4a08;
+  --bad:#8f2d22; --good:#1f5c3d; --chip:#e6efe9;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#141816; --surface:#1e2421; --surface2:#262d29; --ink:#e8ebe8; --muted:#a8b3ac; --line:#3a423d; --accent:#5cb386; --accent-ink:#0f1a13; --warn-bg:#2e2614; --warn-line:#c98a1b; --warn-ink:#f0d48a; --bad:#e88a7d; --chip:#22352a; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:16px}
+.wrap{max-width:1060px;margin:0 auto;padding:24px 18px 64px}
+h1{font-family:var(--serif);font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 8px;font-weight:700}
+h2{font-family:var(--serif);font-size:clamp(22px,3.4vw,30px);margin:40px 0 6px;line-height:1.2;border-bottom:2px solid var(--accent);padding-bottom:8px}
+h3{font-size:17px;margin:22px 0 6px}
+p{margin:8px 0}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.lede{font-size:18px;color:var(--muted);max-width:72ch}
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:10px;padding:14px 16px;margin:18px 0}
+.note strong{color:var(--warn-ink)}
+.scope{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:16px 0}
+.verdicts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0}
+.vcard{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:14px 16px}
+.vcard h3{margin:0 0 6px;font-size:15px}
+.vcard p{font-size:14.5px;margin:0}
+.vcard.no{border-top-color:var(--bad)}
+.vcard.mid{border-top-color:var(--warn-line)}
+.tag{display:inline-block;background:var(--chip);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;margin:2px 2px 2px 0}
+.tag.no{background:transparent;border:1px solid var(--bad);color:var(--bad)}
+.tag.yes{border:1px solid var(--good)}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;font-size:14.5px}
+th{background:var(--surface2);text-align:left;padding:10px 12px;font-size:13px;letter-spacing:.02em;border-bottom:1px solid var(--line);vertical-align:top}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td .sub{color:var(--muted);font-size:13px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 4px}
+button.fbtn{font:inherit;font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+button.fbtn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+input[type="search"]{font:inherit;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:min(360px,100%)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0}
+.chart figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.sub{color:var(--muted);font-size:13px}
+.bar-row{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}
+.bar-label{flex:0 0 190px;font-size:14px;line-height:1.3}
+.bar-track{flex:1 1 180px;position:relative;height:18px;background:var(--surface2);border-radius:4px;min-width:140px}
+.bar-seg{position:absolute;top:0;height:18px;background:var(--accent);border-radius:4px}
+.bar-seg.hot{background:#b3541e}
+.bar-val{flex:0 0 auto;font-size:14px;font-weight:600}
+@media(max-width:560px){.bar-label{flex-basis:100%}.bar-val{flex-basis:100%}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.panel h3{margin-top:0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:5px 0}
+.src{font-size:13.5px;color:var(--muted)}
+.src a{word-break:break-all}
+.callout{border-left:4px solid var(--accent);background:var(--surface);padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0}
+.gaps li{margin:8px 0}
+footer{margin-top:44px;border-top:1px solid var(--line);padding-top:16px;font-size:13.5px;color:var(--muted)}
+@media(max-width:680px){
+  table,thead,tbody,tr,td,th{display:block;width:100%}
+  thead{display:none}
+  tr{border-bottom:2px solid var(--line);padding:6px 0}
+  td{border-bottom:1px solid var(--line)}
+  td::before{content:attr(data-l);display:block;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:2px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<h1>Cascade Tick Research</h1>
+<p class="lede">Which ticks bite people in the Cascade Mountain Range, what they actually carry, how that relates to the equine encephalitis viruses and the standard arbovirus antibody panel (ARBOP) — and a direct test of the idea that a smaller virus might live in the cold-blooded tick while a larger or different one lives in the warm-blooded mammal.</p>
+
+<div class="scope">
+<strong>How to read this page — four tracks, kept separate.</strong> Tick (the vector) ≠ virus or organism ≠ disease ≠ test. A positive antibody means the immune system reacted at some point; it is <em>not</em> proof the organism is present now. A positive PCR means nucleic acid was detected in that tube; it is not by itself a disease diagnosis. This is a general research analysis — not a medical recommendation for any person, no test order, and no laboratory was contacted. For your situation, testing decisions belong to <strong>you first, your clinician second</strong>.
+</div>
+
+<div class="verdicts">
+  <div class="vcard"><h3>The one established Cascade tick virus</h3><p><strong>Colorado tick fever virus (CTFV)</strong>, carried by the Rocky Mountain wood tick <em>Dermacentor andersoni</em> (and found in <em>D. occidentalis</em>). It is the textbook tick-plus-mammal virus of this region.</p></div>
+  <div class="vcard mid"><h3>Powassan — real, but not proven Cascade</h3><p>Powassan virus is a genuine tick-borne flavivirus with a Mayo blood PCR (POWVB), but US human cases concentrate in the Northeast and Great Lakes. No Washington case series was found — do not list it as Cascade-endemic without that qualifier.</p></div>
+  <div class="vcard no"><h3>Equine viruses are not tick viruses here</h3><p>Eastern, Western, and Venezuelan equine encephalitis viruses are <strong>mosquito-borne</strong> alphaviruses. A tick role appears only as a possible overwintering or experimental route in older veterinary summaries — not an established Cascade cycle.</p></div>
+  <div class="vcard no"><h3>Small-in-bug / large-in-mammal: not supported</h3><p>Arboviruses replicate in <em>both</em> hosts as the <em>same</em> virus. Size is set by viral family, not by the last host. The Cascade tick virus CTFV (~60–80&nbsp;nm) is actually <em>larger</em> than the equine alphaviruses (~60–70&nbsp;nm). Full test in §3.</p></div>
+</div>
+
+<h2>1 &nbsp;The ticks of the Cascades — and what each carries</h2>
+<p>Oregon has about 20 hard-tick species, but only four are commonly found on humans there. Washington DOH names <em>Ixodes pacificus</em> (western Washington and the eastern Cascade slopes), <em>Dermacentor similis</em> and <em>D. andersoni</em> (eastern Washington), plus soft ticks. “Indigenous” here means established and native in the WA/OR/CA Cascades — not a tick found once on a travelling dog.</p>
+<p class="src">Taxonomy note: the western dog tick is now <em>Dermacentor similis</em>, split from the eastern <em>D. variabilis</em>. Older sources still call western specimens <em>D. variabilis</em> — read them as <em>D. similis</em>. Sources: <a href="https://ehs.oregonstate.edu/sites/ehs.oregonstate.edu/files/2026-07/Tick_and_Tick-Borne_Disease_Awareness%20.pdf">Oregon State / Oregon Extension tick summary</a> · <a href="https://doh.wa.gov/data-and-statistical-reports/washington-tracking-network-wtn/tick-data">Washington DOH tick data</a></p>
+
+<div class="toolbar" role="group" aria-label="Filter ticks">
+  <button class="fbtn" data-f="all" aria-pressed="true">All ticks</button>
+  <button class="fbtn" data-f="bite" aria-pressed="false">Main human-biting only</button>
+  <button class="fbtn" data-f="virus" aria-pressed="false">Carries a virus</button>
+  <input type="search" id="tickSearch" placeholder="Search ticks or pathogens…" aria-label="Search ticks"/>
+</div>
+
+<table id="tickTable">
+<thead><tr><th style="width:22%">Tick</th><th style="width:28%">Where in the Cascades / habitat</th><th style="width:14%">Bites humans?</th><th>Pathogens carried (organism → disease)</th></tr></thead>
+<tbody>
+<tr data-bite="1" data-virus="0"><td data-l="Tick"><strong>Western black-legged tick</strong><br><em>Ixodes pacificus</em> (hard tick)</td><td data-l="Where">Western WA/OR/CA and eastern slopes of the Cascades; forested, brushy areas</td><td data-l="Bites humans?"><span class="tag yes">Yes — principal western Lyme vector</span></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>Borrelia burgdorferi</em> → Lyme disease; <em>Anaplasma phagocytophilum</em> → human granulocytic anaplasmosis; <em>Borrelia miyamotoi</em> → hard-tick relapsing fever. WA DOH: <em>I. pacificus</em> ticks infected with <em>B. miyamotoi</em> have been identified in WA, but no human cases reported to date. <strong>Parasitic:</strong> <em>Babesia</em> spp. are listed for <em>Ixodes</em> generally — but do not automatically attribute western babesiosis to this tick (see winter tick row).</td></tr>
+<tr data-bite="1" data-virus="1"><td data-l="Tick"><strong>Rocky Mountain wood tick</strong><br><em>Dermacentor andersoni</em> (hard tick)</td><td data-l="Where">Eastern WA, eastern Cascade slopes, northwestern US; woodland and grassy shrub</td><td data-l="Bites humans?"><span class="tag yes">Yes</span></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>Rickettsia rickettsii</em> → Rocky Mountain spotted fever; <em>Francisella tularensis</em> → tularemia; <em>Coxiella burnetii</em> → Q fever (also found naturally infected). <strong>Viral:</strong> Colorado tick fever virus → Colorado tick fever. <strong>Not an organism:</strong> tick paralysis, from a salivary neurotoxin.</td></tr>
+<tr data-bite="1" data-virus="1"><td data-l="Tick"><strong>Pacific Coast tick</strong><br><em>Dermacentor occidentalis</em> (hard tick)</td><td data-l="Where">Most of California, <strong>southern Oregon</strong>, northern Baja; adults on large mammals including humans, peak April–May</td><td data-l="Bites humans?"><span class="tag yes">Yes in CA / southern OR; marginal in WA Cascades</span></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>Rickettsia philipii</em> (strain 364D) → Pacific Coast tick fever (eschar, fever, headache; milder than RMSF); <em>R. rickettsii</em> → RMSF; <em>F. tularensis</em> → tularemia; <em>C. burnetii</em> → Q fever. <strong>Viral:</strong> found naturally infected with Colorado tick fever virus. Tick paralysis in livestock reported.</td></tr>
+<tr data-bite="1" data-virus="0"><td data-l="Tick"><strong>Western dog tick</strong><br><em>Dermacentor similis</em> (hard tick; older literature: <em>D. variabilis</em>)</td><td data-l="Where">Eastern and southwestern WA; sunny edges of woods, grass and shrub</td><td data-l="Bites humans?"><span class="tag yes">Yes</span></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>R. rickettsii</em> → RMSF; <em>F. tularensis</em> → tularemia. Tick paralysis also reported for <em>Dermacentor</em> species.</td></tr>
+<tr data-bite="0" data-virus="0"><td data-l="Tick"><strong>Winter tick</strong><br><em>Dermacentor albipictus</em> (hard tick)</td><td data-l="Where">Western US including WA/CA; associated with mule deer</td><td data-l="Bites humans?"><span class="tag">Enzootic vector — human bite is not the headline route</span></td><td data-l="Pathogens"><strong>Parasitic:</strong> <em>Babesia duncani</em> → western babesiosis. The evidence paper found the enzootic vector is <em>D. albipictus</em>, reservoir likely mule deer (<em>Odocoileus hemionus</em>); <em>I. pacificus</em>, <em>D. occidentalis</em> and <em>D. variabilis</em> <strong>failed</strong> to transmit <em>B. duncani</em> in xenodiagnostic studies. The first human <em>B. duncani</em> case was in Washington State. <span class="src">Source: <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC10016146/">PMC10016146</a></span></td></tr>
+<tr data-bite="1" data-virus="0"><td data-l="Tick"><strong>Soft tick</strong><br><em>Ornithodoros hermsi</em> (Argasidae)</td><td data-l="Where">Coniferous forest at <strong>1,500–8,000 ft</strong>; rodent nests, burrows, cabins; eastern Cascade slopes and NE Washington (Selkirks)</td><td data-l="Bites humans?"><span class="tag yes">Yes — but differently</span><div class="sub">Brief nocturnal cabin bites, under 30 minutes, painless, often unnoticed — not questing in grass.</div></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>Borrelia hermsii</em> → soft-tick relapsing fever (STRF). WA DOH: STRF is the <strong>most commonly reported tick-borne disease acquired in Washington</strong>, the majority from the eastern Cascade slopes. <span class="src">Source: <a href="https://doh.wa.gov/you-and-your-family/illness-and-disease-z/relapsing-fever">WA DOH relapsing fever</a></span></td></tr>
+<tr data-bite="0" data-virus="0"><td data-l="Tick"><strong>Brown dog tick</strong><br><em>Rhipicephalus sanguineus</em> (hard tick)</td><td data-l="Where">Nationwide, dog-associated; present in WA/OR/CA but not a Cascade-forest specialist</td><td data-l="Bites humans?"><span class="tag">Occasional human bite</span></td><td data-l="Pathogens"><strong>Bacterial:</strong> <em>R. rickettsii</em> → RMSF (principal listed association). Included for completeness; not a main Cascade wilderness tick.</td></tr>
+<tr data-bite="0" data-virus="0"><td data-l="Tick"><strong>Eastern black-legged / deer tick</strong><br><em>Ixodes scapularis</em></td><td data-l="Where"><strong>Not indigenous to the Cascades.</strong> Reported in the San Juan Islands, WA, as likely dog-travel introductions</td><td data-l="Bites humans?"><span class="tag no">No — non-native in WA</span></td><td data-l="Pathogens">Carries the eastern pathogen set in its home range (Lyme, anaplasmosis, babesiosis, Powassan lineage 2). Do not use it to infer Cascade endemicity.</td></tr>
+</tbody>
+</table>
+
+<div class="note"><strong>Two panel traps to keep straight.</strong> <em>Ehrlichia chaffeensis / ewingii</em> (human monocytic ehrlichiosis) are principally Lone Star tick organisms from the eastern/southern US. They appear in Mayo's tick panel because the panel is <em>national</em> — panel inclusion does not mean local circulation. Likewise, <em>Babesia microti</em> is principally northeastern / upper-Midwestern; western human babesiosis is <em>B. duncani</em>.</div>
+
+<h2>2 &nbsp;Tick viruses vs the equine encephalitis viruses — shared, or separate?</h2>
+<p><strong>Separate cycles, with one shared logic.</strong> The three equine encephalitis viruses are alphaviruses (family <em>Togaviridae</em>) carried by <strong>mosquitoes</strong>, with wild birds as the main reservoir. Horses and humans are generally dead-end hosts for Eastern and Western equine encephalitis (not enough virus in the blood to infect the next mosquito) — but equids <em>are</em> amplifying hosts for Venezuelan equine encephalitis.</p>
+
+<table>
+<thead><tr><th>Virus</th><th>Principal vector</th><th>Reservoir / amplifying host</th><th>Geography &amp; Cascade relevance</th></tr></thead>
+<tbody>
+<tr><td data-l="Virus"><strong>Eastern equine encephalitis virus (EEEV)</strong></td><td data-l="Vector"><em>Culiseta melanura</em> (enzootic, freshwater-swamp birds) + bridge <em>Aedes</em> species</td><td data-l="Host">Wild swamp birds</td><td data-l="Relevance">Eastern / Gulf Coast US. <strong>Not a Cascade tick virus, not a Cascade mosquito mainstay.</strong> Mayo's own ARBOP page calls EEE “a low-prevalence cause of human disease in the Eastern and Gulf Coast states.”</td></tr>
+<tr><td data-l="Virus"><strong>Western equine encephalitis virus (WEEV)</strong></td><td data-l="Vector"><em>Culex tarsalis</em> (principal) + passerine birds</td><td data-l="Host">Passerine / domestic birds; small mammals minor</td><td data-l="Relevance"><strong>The western one.</strong> Historically western US, including eastern WA Yakima Valley outbreaks 1939–1942. WA DOH: other than West Nile, the last WA-acquired human arboviral infection was St. Louis encephalitis in 2023; “prior to that, western equine encephalitis was reported in 1988.” WEEV is itself a recombinant of an EEE-like virus and a Sindbis-like virus. <strong>Disagreement, not resolved:</strong> last documented North American human case is cited as 1994 in the complete-genome analysis and 1999 in secondary summaries — do not quote a single “last case” year without its source. Human and equine disease has essentially disappeared.</td></tr>
+<tr><td data-l="Virus"><strong>Venezuelan equine encephalitis virus (VEEV)</strong></td><td data-l="Vector"><em>Culex</em> (including <em>Cx. melanconium</em>), <em>Aedes</em> species</td><td data-l="Host">Rodents (enzootic) + <strong>equids as epidemic amplifiers</strong> (high-titre viraemia)</td><td data-l="Relevance">Central / South America and southern US epizootics; <strong>not endemic to the Cascades</strong>. Only epizootic subtypes I-AB / I-AC typically cause equine encephalomyelitis.</td></tr>
+<tr><td data-l="Virus">Related alphaviruses</td><td data-l="Vector">Mosquito-borne</td><td data-l="Host">Birds / rodents</td><td data-l="Relevance">Chikungunya, Sindbis, Ross River, Madariaga (South American EEE lineage), Highlands J (eastern WEE subtype). None is a Cascade tick virus.</td></tr>
+</tbody>
+</table>
+<p class="src">Source: <a href="https://www.dovepress.com/equine-viral-encephalitis-prevalence-impact-and-management-strategies-peer-reviewed-fulltext-article-VMRR">Equine viral encephalitis review (DovePress)</a> · <a href="https://doh.wa.gov/public-health-provider-resources/notifiable-conditions/arboviral-disease">WA DOH arboviral disease</a></p>
+
+<h3>Is there a tick link at all for EEE / WEE / VEE?</h3>
+<p>Only weak and secondary — and it must not be presented as the cycle. Older veterinary summaries list “other vectors or overwintering hosts” for WEEV as possibly including <em>Dermacentor andersoni</em> ticks, the assassin bug <em>Triatoma sanguisuga</em> and the cliff-swallow bug, and note epidemic VEEV “may also be transmitted by ticks,” citing a 1937 paper, “The tick as a vector for the virus disease equine encephalomyelitis.” That is <strong>experimental / historical, not an established field cycle</strong> in the Cascades, and no Cascade human tick-bite WEEV / EEEV / VEEV transmission series was found.</p>
+<div class="callout"><strong>The established answer:</strong> different viruses circulate in ticks versus in the mosquito–bird–mammal equine cycle. They overlap only in that both groups are arboviruses, and both can infect mammals — horses and humans included — as dead-end or amplifying hosts.</div>
+
+<h3>Viruses documented in BOTH ticks and mammals — the same virus, both hosts</h3>
+<div class="two">
+<div class="panel"><h3>Colorado tick fever virus (CTFV)</h3><p><strong>Tick:</strong> <em>D. andersoni</em> (principal), also <em>D. occidentalis</em>. <strong>Mammal:</strong> humans, rodents and other mammals. <strong>Disease:</strong> Colorado tick fever — biphasic (“saddleback”) fever, leukopenia, thrombocytopenia; rarely meningitis / encephalitis. Genome: double-stranded RNA, 12 segments, non-enveloped <em>Coltivirus</em>. This is the textbook Cascade tick-plus-mammal virus.</p></div>
+<div class="panel"><h3>Powassan virus (POWV)</h3><p>Lineages 1 and 2 (lineage 2 = deer tick virus). <strong>Tick:</strong> <em>Ixodes</em> species — <em>I. cookei / marxi</em> for lineage 1; <em>I. scapularis</em> for lineage 2 in the east. <strong>Mammal:</strong> groundhogs, skunks, squirrels, white-footed mice, humans (dead-end; neuroinvasive disease in a minority). <strong>Cascade qualifier:</strong> human disease is northeastern / Great Lakes–concentrated per CDC; no WA/OR/CA Cascade human case series was found. A national tick-plus-mammal virus, not a proven Cascade one.</p></div>
+</div>
+<p><strong>For contrast:</strong> the tick-borne encephalitis virus complex (European / Far Eastern / Siberian TBEV) is a tick-plus-mammal virus in <em>Eurasia</em> — not a US Cascade virus — listed only to prevent conflation with Powassan, its North American flavivirus relative. And the mosquito analogues that share the same dual-host logic with a mosquito vector instead: West Nile, St. Louis encephalitis, La Crosse, and Jamestown Canyon viruses.</p>
+
+<h3>Tick-only viruses — and the honest gap</h3>
+<p>Arthropod-specific viruses are defined as reproducing exclusively in arthropods, with “no defined ability to infect vertebrates” — in the flavivirus literature, examples include cell-fusing agent virus, Palm Creek virus, and Parramatta River virus. Jingmenviruses span a spectrum: some (like Jingmen tick virus) infect both arthropods and vertebrates; others are arthropod-only.</p>
+<div class="note"><strong>Gap, stated plainly:</strong> no named Cascade-specific tick-only virus — one found in Cascade <em>D. andersoni</em>, <em>I. pacificus</em> or <em>O. hermsi</em> and proven unable to infect vertebrates — was identified in this research. Tick virome surveys find many such sequences nationally, but naming one for the Cascades specifically would be speculation. The reverse also holds: flaviviruses include “no-known-vector” viruses with no established arthropod vector, and most mammalian viruses are not arboviruses at all. A virus found in a mammal does not make it tick-borne.</div>
+
+<h2>3 &nbsp;Your hypothesis, tested: small virus in the bug, larger virus in the mammal?</h2>
+<p>The idea, in plain terms: ticks are cold-blooded (their temperature follows the air) and humans are warm-blooded (a steady ~37&nbsp;°C) — so could a small virus sit in the tick, and a larger or different virus sit in the mammal, with the bite passing one, the other, or both?</p>
+<div class="note"><strong>Verdict: not supported as a within-bite mechanism.</strong> It is supported only in two narrower senses: different organisms can genuinely co-infect and be co-transmitted by one bite, and — over evolutionary time — arthropod-specific viruses may be the ancestors of dual-host arboviruses. Neither is one virus turning into a larger, different virus inside the mammal.</div>
+
+<h3>What arboviruses actually do in two hosts</h3>
+<p>Arboviruses are <em>defined</em> by the dual-host requirement: the same virus must replicate in both the arthropod and the vertebrate. Dengue, for example, grows in <em>Aedes</em> mosquitoes at 25–30&nbsp;°C and in humans at 37&nbsp;°C. After a blood meal, the virus must infect the midgut, escape it, spread through the haemolymph, infect the salivary glands, and be shed in saliva — the <strong>extrinsic incubation period (EIP)</strong> — before the next bite can transmit it. Ticks add routes mosquitoes don't have: <strong>transstadial</strong> passage (stage to stage as the tick moults), <strong>transovarial</strong> passage (female → eggs, documented for POWV, <em>Babesia</em> and <em>Rickettsia</em>), and <strong>co-feeding transmission</strong> between ticks feeding close together on the same host, with no viraemia needed.</p>
+
+<h3>Temperature: it changes speed, not identity</h3>
+<ul>
+<li>Within optimal limits, warmer conditions <strong>shorten the extrinsic incubation period</strong> and increase vector efficiency. A virus taking ~14 days to become transmissible at 25&nbsp;°C might take ~7 days at 30&nbsp;°C.</li>
+<li>The relationship is <strong>unimodal — “Goldilocks,” not “hotter = more.”</strong> Too cold slows metabolism and replication; too hot harms the vector's survival.</li>
+<li>In vertebrates, arboviruses must replicate at 37–39&nbsp;°C. The binding constraint is usually vector fitness, not a hard viral temperature ceiling.</li>
+<li><strong>Insect-specific viruses are the exception that proves the rule:</strong> unlike arboviruses, which can replicate at temperatures up to 42&nbsp;°C, insect-specific viruses replicate only at ambient temperatures, and one insect-specific bunyavirus's replication was hindered by elevated temperatures where arboviral bunyaviruses were not. But lowering the temperature alone is <em>not sufficient</em> to let an insect-specific virus replicate in mammalian cells — temperature is one host-range barrier among several (entry, innate immunity, post-entry blocks), not a size switch. <span class="src">Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6458977/">PMC6458977</a></span></li>
+</ul>
+
+<h3>Size: set by family, identical in tick and mammal</h3>
+<figure class="chart" style="margin:0">
+<p style="margin:0 0 12px"><strong>Virion diameter (nm) — the same particle, whichever host it came from</strong></p>
+<div class="bar-row"><span class="bar-label">Flavivirus<br><span class="sub">Powassan, West Nile, dengue</span></span><span class="bar-track"><span class="bar-seg" style="left:33.3%;width:16.7%"></span></span><span class="bar-val">40–60 nm, typically ~50</span></div>
+<div class="bar-row"><span class="bar-label">Alphavirus<br><span class="sub">EEE, WEE, VEE, chikungunya</span></span><span class="bar-track"><span class="bar-seg" style="left:50%;width:8.3%"></span></span><span class="bar-val">60–70 nm</span></div>
+<div class="bar-row"><span class="bar-label">Coltivirus<br><span class="sub">Colorado tick fever virus</span></span><span class="bar-track"><span class="bar-seg hot" style="left:50%;width:16.7%"></span></span><span class="bar-val">60–80 nm — the Cascade tick virus</span></div>
+<div class="bar-row"><span class="bar-label">Orthobunyavirus<br><span class="sub">La Crosse / California serogroup</span></span><span class="bar-track"><span class="bar-seg" style="left:66.7%;width:33.3%"></span></span><span class="bar-val">80–120 nm</span></div>
+<p class="sub" style="margin:10px 0 0">Scale: 0–120 nm. Each bar spans the family's documented size range.</p>
+<figcaption>Genome types: alphavirus — enveloped, (+)ssRNA ~11.7 kb · flavivirus — enveloped, (+)ssRNA ~10.9 kb · coltivirus — non-enveloped, dsRNA in 12 segments · orthobunyavirus — enveloped, (−)ssRNA in 3 segments. Source: <a href="https://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=mmed.section.2894">NCBI Medical Microbiology</a>. The prediction fails on its own example: the established Cascade tick virus (CTFV, up to ~80 nm) is <em>larger</em> than the equine alphaviruses (~70 nm) and the tick flavivirus Powassan (~50 nm).</figcaption>
+</figure>
+<p>There is no documented process by which a bite converts a small tick virus into a larger mammal virus, or by which the mammal harbours a systematically larger version of the same virus. What <em>does</em> change between hosts: viral titre (load), tissue tropism, duration and persistence — often a persistent, low-harm infection in the vector versus an acute, sometimes cell-damaging infection in the vertebrate — and immune evasion. Not particle diameter, and not genome identity.</p>
+
+<h3>What is documented that could <em>look</em> like the hypothesis</h3>
+<ol>
+<li><strong>Co-infection / co-transmission.</strong> One <em>Ixodes</em> tick can carry <em>B. burgdorferi</em> + <em>A. phagocytophilum</em> + <em>Babesia</em> spp. + <em>B. miyamotoi</em>, and one bite can transmit more than one organism. Those are <em>different</em> organisms with different sizes — not one virus changing size.</li>
+<li><strong>Evolutionary origin.</strong> Insect-specific viruses and arboviruses are evolutionarily related; arboviruses may have been insect-specific viruses that, through evolution, acquired the ability to expand their host range to vertebrates. A phylogenetic hypothesis over evolutionary time — not a per-bite transformation.</li>
+<li><strong>Recombination.</strong> WEEV is a recombinant of an EEE-like virus and a Sindbis-like virus — again an ancient evolutionary event, not a tick-to-mammal size change.</li>
+<li><strong>Serology confusion.</strong> An antibody to one flavivirus or alphavirus can cross-react with a related virus (EEE ↔ WEE; St. Louis ↔ dengue). That can <em>look</em> like “a different virus in the mammal” if antibody results are misread as organism identification — which is exactly why the four tracks on this page are kept separate.</li>
+</ol>
+
+<h2>4 &nbsp;Mayo Clinic Laboratories blood PCRs — what exists, and what doesn't</h2>
+<p>Blood only — whole blood, serum or plasma, <strong>not spinal fluid</strong>. All tests below are performed at Mayo Clinic Laboratories, Rochester, unless noted. Whole blood EDTA is the norm for tick PCRs; plasma is not the listed specimen for TIKLB, PBORB, POWVB or BRBST. Serum PCR exists only for POWVS (Powassan, serum) — see the note under the table.</p>
+
+<div class="toolbar"><input type="search" id="pcrSearch" placeholder="Search test ID, name, or organism…" aria-label="Search Mayo blood PCR tests"/></div>
+
+<table id="pcrTable">
+<thead><tr><th>Mayo ID</th><th>Test</th><th>Specimen</th><th>Detects</th><th>Notes / limits</th></tr></thead>
+<tbody>
+<tr><td data-l="Mayo ID"><strong>TIKLB</strong></td><td data-l="Test">Tick-Borne Panel, Molecular Detection, PCR, Blood (reporting name: Tick-Borne DNA Panel, PCR, B; LOINC 101647-6; unit 618311) — a profile of the three components below, always performed together</td><td data-l="Specimen">Whole blood EDTA, 1 mL (min 0.3 mL), refrigerated 7 days</td><td data-l="Detects">See BABPB, EPCRB, BMIPB</td><td data-l="Notes">Should not be used to screen healthy patients. Method: real-time PCR / DNA probe hybridisation. <a href="https://www.mayocliniclabs.com/test-catalog/overview/618311">Mayo catalog 618311</a></td></tr>
+<tr><td data-l="Mayo ID"><strong>BABPB</strong> (in TIKLB, also standalone)</td><td data-l="Test">Babesia species PCR, B</td><td data-l="Specimen">Whole blood EDTA</td><td data-l="Detects"><em>Babesia microti, B. duncani, B. divergens</em>/MO-1</td><td data-l="Notes">Positive = <em>Babesia</em> DNA present, consistent with active/recent infection. A negative does not always rule out babesiosis (low or sporadic parasitaemia).</td></tr>
+<tr><td data-l="Mayo ID"><strong>EPCRB</strong> (in TIKLB, also standalone)</td><td data-l="Test">Ehrlichia/Anaplasma, PCR, B</td><td data-l="Specimen">Whole blood EDTA</td><td data-l="Detects"><em>Anaplasma phagocytophilum, Ehrlichia chaffeensis, E. ewingii/canis</em> (indistinguishable from <em>E. canis</em>), <em>E. muris eauclairensis</em></td><td data-l="Notes">The Cascade-relevant member is <em>A. phagocytophilum</em>; the <em>Ehrlichia</em> species are principally eastern/southern US — the panel is national.</td></tr>
+<tr><td data-l="Mayo ID"><strong>BMIPB</strong> (in TIKLB, also standalone)</td><td data-l="Test">Borrelia miyamotoi Detection, PCR, B</td><td data-l="Specimen">Whole blood EDTA</td><td data-l="Detects"><em>Borrelia miyamotoi</em> (primary). Supportive data: three other relapsing-fever <em>Borrelia</em> (<em>B. hermsii, B. parkeri, B. turicatae</em>) were also detected at a lower melting temperature and “may be detected and differentiated”</td><td data-l="Notes"><strong>Partial, not a dedicated <em>B. hermsii</em> test</strong> — a <em>B. hermsii</em> signal is possible via this assay, but the report wording for non-<em>miyamotoi</em> species must be checked on the actual report. TIKLB explicitly does <strong>not</strong> detect <em>B. burgdorferi</em> or <em>B. mayonii</em>.</td></tr>
+<tr><td data-l="Mayo ID"><strong>PBORB</strong></td><td data-l="Test">Lyme Disease, Molecular Detection, PCR, Blood (reporting: Lyme Disease PCR, B; LOINC 90892-1). Standalone — not in TIKLB</td><td data-l="Specimen">Whole blood EDTA, 1 mL (min 0.3 mL), do not aliquot</td><td data-l="Detects"><em>B. burgdorferi, B. mayonii, B. garinii / B. afzelii</em></td><td data-l="Notes">Does <strong>not</strong> detect <em>B. miyamotoi</em>. Mayo cautions blood is not the preferred source for <em>B. burgdorferi</em> DNA (serology preferred; blood PCR more useful for <em>B. mayonii</em>, which has higher spirochaetaemia).</td></tr>
+<tr><td data-l="Mayo ID"><strong>POWVB</strong></td><td data-l="Test">Powassan Virus, RNA, Molecular Detection, PCR, Blood (reporting: Powassan Virus, PCR, Blood; LOINC 34456-4). Standalone — not in TIKLB</td><td data-l="Specimen">Whole blood EDTA, 1 mL (min 0.3 mL), do not aliquot</td><td data-l="Detects">Powassan virus <strong>lineage 1 and lineage 2 (deer tick virus)</strong> RNA</td><td data-l="Notes">Greatest utility in the first few days of illness; after 7 days RT-PCR is less sensitive and serology is preferred. An adjunct to serology, not for asymptomatic screening. <a href="https://www.mayocliniclabs.com/test-catalog/Overview/617484">Mayo catalog 617484</a></td></tr>
+<tr><td data-l="Mayo ID"><strong>BRBST</strong></td><td data-l="Test">Tickborne Bacterial, PCR and Sequencing, Blood (reporting: Tickborne Bacterial PCR+Sequence, B; LOINC 76575-0). Standalone, <strong>second-tier</strong></td><td data-l="Specimen">Whole blood EDTA, min 0.5 mL</td><td data-l="Detects">Broad-range: 16S rRNA PCR + next-generation sequencing to identify pathogenic tick-borne bacteria in normally sterile blood; explicitly includes organisms with similar presentation such as <em>Coxiella burnetii</em> (Q fever) and leptospirosis</td><td data-l="Notes">Only when routine testing is negative; <strong>not a test of cure</strong> (nucleic acid may persist). Report in 14–28 days. In principle this is the Mayo route by which <em>Rickettsia</em>, <em>Francisella</em> or <em>B. hermsii</em> DNA <em>could</em> be identified from blood — but it is not a species-specific PCR for any of them, and a negative broad-range result does not exclude them.</td></tr>
+<tr><td data-l="Mayo ID"><strong>CBBRP</strong></td><td data-l="Test">Coxiella burnetii (Q Fever), Molecular Detection, PCR, Blood (reporting: Coxiella burnetii (Q fever) PCR, B; LOINC 90443-3)</td><td data-l="Specimen">Whole blood EDTA, 1 mL (min 0.5 mL)</td><td data-l="Detects"><em>Coxiella burnetii</em> DNA (aroE target)</td><td data-l="Notes">Q fever is tick-associated (also airborne / animal routes); <em>Dermacentor</em> species are vectors, but <em>C. burnetii</em> is not exclusive to ticks.</td></tr>
+</tbody>
+</table>
+<p class="src">Related Powassan tests on Mayo's tick-borne menu (not whole-blood): <strong>POWVS</strong> (serum PCR — exact ordering details not individually verified, a gap), <strong>POWV</strong> (Powassan IgM ELISA, serum — antibody, not PCR), <strong>POWVU</strong> (urine PCR; urine may stay positive ≥7 days longer). <strong>POWVC</strong> is a spinal-fluid PCR and is outside this page's blood-only scope.</p>
+
+<h3>Not found at Mayo as a blood PCR — routed to public health / CDC instead</h3>
+<table>
+<thead><tr><th>Pathogen / virus</th><th>Mayo blood PCR?</th><th>Where testing is routed</th></tr></thead>
+<tbody>
+<tr><td data-l="Pathogen"><strong>Colorado tick fever virus</strong></td><td data-l="Mayo blood PCR?"><span class="tag no">None found</span></td><td data-l="Route">State / local health department → CDC Arbovirus Diagnostic Laboratory (Fort Collins) and/or commercial / state labs. CDC: diagnosis is generally by testing <strong>serum</strong> for viral RNA or virus-specific IgM and neutralising antibodies; RT-PCR is more sensitive early. Timing per CDC: serum RT-PCR &lt;14 days from onset; antibody testing ≥14 days (antibodies delayed 14–21 days). APHL's Sep 2026 menu lists CTF under PRNT (test 3170); its 2025 shared-service FAQ routes molecular specimens for Colorado tick fever to <strong>CDC</strong>, while most other arbovirus serology goes to Wadsworth. <strong>Caution from CDC itself:</strong> “Some tests are not currently available at CDC. Please refer to the Test Directory” — current CTF availability must be confirmed via the state lab at time of need. <a href="https://www.cdc.gov/colorado-tick-fever/hcp/clinical-diagnosis/">CDC CTF clinical diagnosis</a></td></tr>
+<tr><td data-l="Pathogen"><strong><em>Rickettsia rickettsii</em> (RMSF) / <em>R. philipii</em> (Pacific Coast tick fever)</strong> — species-specific blood PCR</td><td data-l="Mayo blood PCR?"><span class="tag no">None found</span></td><td data-l="Route">No Mayo “Rickettsia PCR, blood” test surfaced (TIKLB's specificity panel lists <em>R. rickettsii</em> only as a non-cross-reacting organism). The only Mayo blood route found is <strong>BRBST</strong> broad-range sequencing — do not present it as a dedicated RMSF/PCTF PCR. Otherwise: serology (IFA, acute + convalescent), and for RMSF, skin-biopsy PCR via reference / public-health routes. <strong>Gap:</strong> the exact public-health blood-PCR route for <em>R. philipii</em> was not verified. Pacific Coast tick fever source: <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC5051964/">PMC5051964</a></td></tr>
+<tr><td data-l="Pathogen"><strong><em>Francisella tularensis</em> (tularemia)</strong> — species-specific blood PCR</td><td data-l="Mayo blood PCR?"><span class="tag no">None found</span></td><td data-l="Route">Mayo has <strong>TULAB</strong> — <em>Francisella tularensis</em> Antibody, IgM and IgG, ELISA, Serum (antibody, not PCR). A blood-PCR route, if any, would be BRBST or a state public-health / CDC select-agent laboratory — <strong>not verified (gap)</strong>. Tularemia is a select agent; handling and routing are restricted — another reason not to assume a routine Mayo PCR exists.</td></tr>
+<tr><td data-l="Pathogen"><strong><em>Borrelia hermsii</em> (soft-tick relapsing fever)</strong> — dedicated blood PCR</td><td data-l="Mayo blood PCR?"><span class="tag no">None found as a standalone test</span></td><td data-l="Route">Partial via <strong>BMIPB / TIKLB</strong> (relapsing-fever <em>Borrelia</em> detection at lower melting temperature) and via <strong>BRBST</strong>. Definitive STRF diagnosis in guidelines also uses blood-smear microscopy during febrile episodes and public-health PCR that differentiates relapsing-fever <em>Borrelia</em> species. <strong>Gap:</strong> an exact standalone <em>B. hermsii</em> blood PCR at Mayo.</td></tr>
+<tr><td data-l="Pathogen"><strong>EEEV / WEEV / VEEV</strong> — blood PCR at Mayo</td><td data-l="Mayo blood PCR?"><span class="tag no">None found</span></td><td data-l="Route">Mayo testing for these is antibody IFA (ARBOP / ABOPC), not PCR. Public-health route (APHL / Wadsworth menu, Sep 2026): <strong>EEEV</strong> — Arbovirus Summer Panel (Molecular) 5470 (spinal fluid, with whole blood as an alternative specimen) + serology 606 + PRNT 3170; <strong>WEEV</strong> — serology 606 + PRNT 3170 only, no molecular test listed; <strong>VEEV</strong> is not in the APHL endemic menu excerpt found. Wadsworth's Arbovirus Screen, Serology, Serum 606 covers California serogroup, chikungunya, EEE, Powassan, SLE, WNV, WEE. PRNT confirmation runs through CDC / Wadsworth on specimens submitted by public-health labs — public-health labs, not direct patient ordering, submit to the reference centre.</td></tr>
+<tr><td data-l="Pathogen"><strong>West Nile virus</strong> (mosquito-borne, for contrast)</td><td data-l="Mayo blood PCR?"><span class="tag">Outside tick scope</span></td><td data-l="Route">Mayo has WNV serology/PCR in its mosquito-borne menu (not detailed here). Public-health / CDC route as above; included in Wadsworth 606.</td></tr>
+</tbody>
+</table>
+
+<div class="note"><strong>Blood vs spinal fluid discipline.</strong> <strong>ABOPC</strong> is the spinal-fluid counterpart of ARBOP (IgG/IgM IFA; cutoffs &lt;1:1 in spinal fluid vs &lt;1:10 in serum), and <strong>POWVC / BMIYC</strong> are spinal-fluid PCRs. They must not be substituted for a blood result — and a spinal-fluid antibody cannot distinguish production inside the nervous system from blood contamination or blood–brain barrier breakdown (Mayo's own caution).</div>
+
+<h2>5 &nbsp;How this relates to the arbovirus antibody panel (ARBOP)</h2>
+<p><strong>ARBOP — Arbovirus Antibody Panel, IgG and IgM, Serum</strong> (IFA; serum 0.5 mL, min 0.15 mL; LOINC 49093-8; Rochester). Its four components are not available separately: <strong>CAVP</strong> — California virus (La Crosse) IgG+IgM; <strong>EEEP</strong> — Eastern equine; <strong>STLP</strong> — St. Louis; <strong>WEEP</strong> — Western equine. Reference: IgG and IgM &lt;1:10 for each. IgM is reliably detected 1–3 weeks after onset, peaks, then declines within 3 months; a single IgG ≥1:10 indicates exposure, and a ≥4-fold rise in paired sera indicates recent infection. Spinal-fluid counterpart: <strong>ABOPC</strong>. <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">Mayo catalog 83267</a></p>
+
+<table>
+<thead><tr><th>Cascade / tick-picture item</th><th>Covered by ARBOP?</th><th>Why / caveat</th></tr></thead>
+<tbody>
+<tr><td data-l="Item"><strong>Western equine encephalitis virus</strong></td><td data-l="Covered?"><span class="tag yes">Yes — antigen present</span></td><td data-l="Caveat">The one panel member with a genuine western-US history. But a positive WEE IgG/IgM is <strong>antibody, not virus</strong>, and EEE ↔ WEE cross-reactivity exists (the infecting virus's titre is typically ≥8-fold higher). Given WEEV's near-disappearance, a positive in a Cascade patient needs public-health / CDC PRNT confirmation and epidemiologic correlation — it does not prove a tick bite caused it.</td></tr>
+<tr><td data-l="Item"><strong>Eastern equine encephalitis virus</strong></td><td data-l="Covered?"><span class="tag yes">Yes — antigen present</span></td><td data-l="Caveat">But EEEV is an <strong>eastern mosquito</strong> virus, not a Cascade tick virus. Its inclusion reflects a national encephalitis panel, not Cascade tick ecology.</td></tr>
+<tr><td data-l="Item"><strong>St. Louis encephalitis virus</strong></td><td data-l="Covered?"><span class="tag yes">Yes — antigen present</span></td><td data-l="Caveat">A mosquito (<em>Culex</em>) virus, historically western US (Yakima Valley 1939–42; a WA case in 2023). <strong>Not tick-borne.</strong> Cross-reacts with dengue antigens — travel history is needed to attribute a result.</td></tr>
+<tr><td data-l="Item"><strong>California (La Crosse) virus</strong></td><td data-l="Covered?"><span class="tag yes">Yes — as “California (LaCrosse)”</span></td><td data-l="Caveat"><strong>A misleading name for this question.</strong> The panel antigen is La Crosse virus, a <strong>mosquito-borne</strong> orthobunyavirus (California serogroup) whose human disease concentrates in the Midwest / mid-Atlantic / east, in children. The prototype California encephalitis virus was itself a western mosquito virus (rare human disease since 1943). Neither is tick-borne, and “California” in the name does not make it a Cascade tick test.</td></tr>
+<tr><td data-l="Item"><strong>Venezuelan equine encephalitis virus</strong></td><td data-l="Covered?"><span class="tag no">No</span></td><td data-l="Caveat">Despite the “equine” name, VEEV is <strong>absent</strong> from ARBOP. Do not assume the panel covers all equine viruses.</td></tr>
+<tr><td data-l="Item"><strong>West Nile virus</strong></td><td data-l="Covered?"><span class="tag no">No — separate testing</span></td><td data-l="Caveat">The commonest western mosquito encephalitis virus is not in ARBOP. Flavivirus cross-reactivity (e.g. St. Louis antigen vs dengue / West Nile) can confuse IFA interpretation.</td></tr>
+<tr><td data-l="Item"><strong>Jamestown Canyon virus, snowshoe hare virus</strong> (other California-serogroup mosquito viruses, widespread including the west)</td><td data-l="Covered?"><span class="tag no">No — not as named antigens</span></td><td data-l="Caveat"><strong>Gap for specificity:</strong> whether ARBOP's La Crosse antigen cross-detects Jamestown Canyon antibody at a reportable level was not verified. Possible cross-reactivity is not a specific result.</td></tr>
+<tr><td data-l="Item"><strong>Colorado tick fever virus</strong></td><td data-l="Covered?"><span class="tag no">No</span></td><td data-l="Caveat">No CTFV antigen in ARBOP — and no Mayo blood PCR either. A person bitten by a Cascade tick who has a negative ARBOP has <strong>not</strong> been tested for the actual Cascade tick virus.</td></tr>
+<tr><td data-l="Item"><strong>Powassan virus</strong></td><td data-l="Covered?"><span class="tag no">No</span></td><td data-l="Caveat">Separate Mayo tests: POWV IgM ELISA (serum) and POWVB / POWVS PCR. Not in ARBOP, despite being a flavivirus like St. Louis and West Nile.</td></tr>
+<tr><td data-l="Item"><strong>All Cascade tick bacteria and parasites</strong> — Lyme <em>B. burgdorferi</em>, <em>B. miyamotoi</em>, <em>B. hermsii</em>, <em>A. phagocytophilum</em>, <em>Babesia duncani / microti</em>, <em>Rickettsia</em> spp., <em>F. tularensis</em>, <em>C. burnetii</em></td><td data-l="Covered?"><span class="tag no">No</span></td><td data-l="Caveat">ARBOP is a virus-antibody panel only. These need TIKLB / PBORB / BRBST / CBBRP blood PCR, or organism-specific serology (e.g. Lyme two-tier testing; TICKS / STICK panels — antibody, not PCR — appear in Mayo's tick menu but are outside the blood-PCR question).</td></tr>
+<tr><td data-l="Item"><strong>Tick paralysis</strong> (toxin, not infection)</td><td data-l="Covered?"><span class="tag no">No test exists</span></td><td data-l="Caveat">Diagnosis is clinical, plus tick removal. No organism or antibody test applies.</td></tr>
+</tbody>
+</table>
+
+<div class="callout"><strong>Bottom line:</strong> ARBOP is a <strong>mosquito-encephalitis antibody panel, not a tick panel</strong>. Its overlap with the Cascade picture is exactly one historically western virus (WEEV) plus three non-tick viruses included for the national encephalitis differential. A negative ARBOP does not exclude Cascade tick-borne infection, and a positive ARBOP does not identify a tick, a tick-borne organism, or current infection — that takes paired titres, PRNT, exposure history, and clinical correlation.</div>
+
+<h2>6 &nbsp;Open questions — what could not be verified</h2>
+<ol class="gaps">
+<li><strong>No Mayo blood PCR found</strong> for Colorado tick fever virus, <em>Rickettsia rickettsii</em>, <em>R. philipii</em>, or <em>Francisella tularensis</em> (species-specific), or a dedicated <em>Borrelia hermsii</em> PCR. BRBST is the only Mayo blood route that could in principle identify the bacterial three — but it is broad-range and second-tier, not species-specific.</li>
+<li><strong>No Cascade-specific tick-only virus</strong> was named and verified, and <strong>no Cascade human Powassan case series</strong> was found (Powassan is northeastern / Great Lakes–concentrated).</li>
+<li>Exact <strong>POWVS</strong> (serum Powassan PCR) ordering details, Mayo Rickettsia-antibody test IDs, and the <strong>current CDC Colorado tick fever test-directory status</strong> were not individually verified — CDC itself warns some CTF tests are “not currently available at CDC.”</li>
+<li><strong>WEEV “last case” year disagrees across sources</strong> — 1994 in the genome paper, 1999 in secondary summaries, and WA-specific 1988 per WA DOH. Reported here as a disagreement, not resolved.</li>
+<li>Whether ARBOP's La Crosse antigen <strong>cross-detects Jamestown Canyon virus antibody</strong> at a clinically reportable level — not verified.</li>
+<li><em>Ehrlichia</em> species and <em>B. microti</em> in TIKLB reflect a <strong>national panel, not Cascade endemicity</strong>; local prevalence of each TIKLB organism in the Cascades specifically (versus the Pacific Northwest generally) was not quantified from a Cascade-only dataset.</li>
+<li><em>Dermacentor similis</em> vs <em>variabilis</em> taxonomy varies by source vintage; older literature cited as <em>D. variabilis</em> for western specimens should be read as <em>D. similis</em> under current taxonomy.</li>
+<li>Not every Mayo page received live-browser confirmation: TIKLB, ARBOP, ABOPC, POWVB, the WA relapsing-fever and arboviral pages, and the CDC CTF page were opened; other Mayo pages are index / search results. <strong>Test availability can change — re-check the Mayo catalog at time of use.</strong></li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="src" style="list-style:none;padding-left:0">
+<li>Mayo TIKLB — <a href="https://www.mayocliniclabs.com/test-catalog/overview/618311">mayocliniclabs.com/test-catalog/overview/618311</a></li>
+<li>Mayo ARBOP (serum) — <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">mayocliniclabs.com/test-catalog/overview/83267</a></li>
+<li>Mayo ABOPC (spinal fluid — contrast only) — <a href="https://www.mayocliniclabs.com/test-catalog/overview/83897">mayocliniclabs.com/test-catalog/overview/83897</a></li>
+<li>Mayo POWVB — <a href="https://www.mayocliniclabs.com/test-catalog/Overview/617484">mayocliniclabs.com/test-catalog/Overview/617484</a></li>
+<li>Mayo BRBST setup (PDF) — <a href="https://www.mayocliniclabs.com/test-catalog/download-setup?format=pdf&unit_code=620148">mayocliniclabs.com/test-catalog/download-setup?format=pdf&amp;unit_code=620148</a></li>
+<li>PBORB — <a href="https://bjhlab.testcatalog.org/show/PBORB">bjhlab.testcatalog.org/show/PBORB</a></li>
+<li>Mayo CBBRP — <a href="https://test.mayocliniclabs.com/api/sitecore/TestCatalog/DownloadTestCatalog?testId=62248">test.mayocliniclabs.com … testId=62248</a></li>
+<li>CDC Colorado tick fever, clinical diagnosis — <a href="https://www.cdc.gov/colorado-tick-fever/hcp/clinical-diagnosis/">cdc.gov/colorado-tick-fever/hcp/clinical-diagnosis</a></li>
+<li>WA DOH relapsing fever — <a href="https://doh.wa.gov/you-and-your-family/illness-and-disease-z/relapsing-fever">doh.wa.gov/…/relapsing-fever</a></li>
+<li>WA DOH arboviral disease — <a href="https://doh.wa.gov/public-health-provider-resources/notifiable-conditions/arboviral-disease">doh.wa.gov/…/arboviral-disease</a></li>
+<li>WA DOH tick-borne guideline (PDF) — <a href="https://doh.wa.gov/sites/default/files/2025-08/420-218-Guideline-Tickborne_0.pdf">doh.wa.gov … 420-218-Guideline-Tickborne_0.pdf</a></li>
+<li>APHL arbovirus reference centre test menus (PDF) — <a href="https://aphl.org/docs/default-source/infectious-diseases-documents/vector-borne-diseases/arbovirusreferencecenter_testmenus.pdf?sfvrsn=75ba9d05_2">aphl.org … arbovirusreferencecenter_testmenus.pdf</a></li>
+<li><em>Babesia duncani</em> vector study — <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC10016146/">PMC10016146</a></li>
+<li>Pacific Coast tick fever — <a href="https://pmc.ncbi.nlm.nih.gov:443/articles/PMC5051964/">PMC5051964</a></li>
+<li>Insect-specific viruses and temperature — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6458977/">PMC6458977</a></li>
+<li>Virus sizes, NCBI Medical Microbiology — <a href="https://www.ncbi.nlm.nih.gov/books/bv.fcgi?rid=mmed.section.2894">ncbi.nlm.nih.gov/books … section.2894</a></li>
+<li>Equine viral encephalitis review — <a href="https://www.dovepress.com/equine-viral-encephalitis-prevalence-impact-and-management-strategies-peer-reviewed-fulltext-article-VMRR">dovepress.com … equine-viral-encephalitis</a></li>
+<li>Oregon State tick awareness (PDF) — <a href="https://ehs.oregonstate.edu/sites/ehs.oregonstate.edu/files/2026-07/Tick_and_Tick-Borne_Disease_Awareness%20.pdf">ehs.oregonstate.edu … Tick_and_Tick-Borne_Disease_Awareness.pdf</a></li>
+<li>Wadsworth test catalog — <a href="https://www.wadsworth.org/clims/test-catalog">wadsworth.org/clims/test-catalog</a></li>
+<li>Jingmenviruses — <a href="https://www.nature.com/articles/s44298-025-00106-z?error=cookies_not_supported&code=508e520a-7d55-4716-9154-290522c15fa0">nature.com/articles/s44298-025-00106-z</a></li>
+</ul>
+
+<footer>Built from a sourced deep-research report dated Nov 3, 2026. Every test ID, window, and availability above should be re-checked with the performing laboratory at the time of use — catalogs change. Nothing on this page is a test order or a recommendation for any person.</footer>
+
+</main>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.fbtn');
+  var rows=document.querySelectorAll('#tickTable tbody tr');
+  var search=document.getElementById('tickSearch');
+  var mode='all';
+  function apply(){
+    var q=(search.value||'').toLowerCase();
+    rows.forEach(function(r){
+      var ok=true;
+      if(mode==='bite'&&r.getAttribute('data-bite')!=='1')ok=false;
+      if(mode==='virus'&&r.getAttribute('data-virus')!=='1')ok=false;
+      if(q&&r.textContent.toLowerCase().indexOf(q)===-1)ok=false;
+      r.style.display=ok?'':'none';
+    });
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');mode=b.getAttribute('data-f');apply();
+  });});
+  search.addEventListener('input',apply);
+  var ps=document.getElementById('pcrSearch');
+  var prows=document.querySelectorAll('#pcrTable tbody tr');
+  ps.addEventListener('input',function(){
+    var q=ps.value.toLowerCase();
+    prows.forEach(function(r){r.style.display=(!q||r.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});
+  });
+})();
+</script>
+</body>
+</html>

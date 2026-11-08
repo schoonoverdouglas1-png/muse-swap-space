@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Mosquito and Tick Shared Viruses",
+  "slug": "mosquito-and-tick-shared-viruses",
+  "managedCronJobs": []
+}

@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Mayo ARBO Panels by Country",
+  "slug": "mayo-arbo-panels-by-country",
+  "managedCronJobs": []
+}

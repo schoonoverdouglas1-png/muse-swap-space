@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Meta AI Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f4f2ec;
+    --surface:#fffdf8;
+    --surface-2:#ece8dc;
+    --ink:#1c1a16;
+    --ink-soft:#4c473e;
+    --ink-faint:#7a7466;
+    --line:#d8d2c2;
+    --accent:#0f5c46;
+    --accent-soft:#dcebe2;
+    --warn:#8a4b12;
+    --warn-soft:#f3e3cd;
+    --blue:#1d4e89;
+    --blue-soft:#dde7f2;
+    --ai:#6d28c9;
+    --ai-soft:#e9e0fb;
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141311;
+      --surface:#1e1c18;
+      --surface-2:#26231e;
+      --ink:#ede8dc;
+      --ink-soft:#c6c0b0;
+      --ink-faint:#948d7c;
+      --line:#3a362d;
+      --accent:#5fc49c;
+      --accent-soft:#1d332a;
+      --warn:#e0a35c;
+      --warn-soft:#3a2b18;
+      --blue:#8ab4e0;
+      --blue-soft:#22344a;
+      --ai:#c4aef7;
+      --ai-soft:#322452;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:28px 20px 64px}
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif;line-height:1.15;margin:0}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  /* ---------- Intro ---------- */
+  .intro{padding:10px 0 26px;border-bottom:2px solid var(--ink)}
+  .intro .where{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 12px;
+  }
+  .intro h1{font-size:clamp(32px,6vw,46px);font-weight:700;letter-spacing:-.01em}
+  .intro .lede{font-size:18px;color:var(--ink-soft);max-width:62ch;margin:14px 0 0}
+  .intro .lede strong{color:var(--ink)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:13px;color:var(--ink-faint)}
+  .meta-row b{color:var(--ink-soft);font-weight:600}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .sec-head .num{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent);font-weight:600}
+  .sec-head h2{font-size:27px;font-weight:700}
+  .sec-sub{color:var(--ink-soft);max-width:66ch;margin:0 0 20px}
+
+  /* ---------- Timeline ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .filters button{
+    font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+    padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink-soft);
+  }
+  .filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .pin-legend{
+    display:flex;flex-wrap:wrap;gap:6px 20px;margin:-6px 0 20px;
+    font-size:13px;color:var(--ink-faint);
+  }
+  .pin-legend .key{display:inline-flex;align-items:center;gap:7px}
+  .pin-legend .dot{
+    width:11px;height:11px;border-radius:50%;flex:none;
+    background:var(--bg);border:2.5px solid var(--accent);
+  }
+  .pin-legend .dot.flag{border-color:var(--warn)}
+  .pin-legend .dot.ai{
+    border-color:var(--ai);background:var(--ai);
+    box-shadow:0 0 0 3px var(--ai-soft);
+  }
+
+  .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+  .tl-item{position:relative;padding:0 0 26px 26px}
+  .tl-item:last-child{padding-bottom:4px}
+  .tl-item::before{
+    content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2.5px solid var(--accent);
+  }
+  .tl-item.flag::before{border-color:var(--warn)}
+  /* AI pin: the work Meta AI built gets its own color — a filled violet
+     pin with a soft halo, distinct from chat (green) and flag (amber). */
+  .tl-item.build::before{
+    border-color:var(--ai);background:var(--ai);
+    box-shadow:0 0 0 3px var(--ai-soft);
+  }
+  .tl-time{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);letter-spacing:.04em}
+  .tl-tag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+    padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:1px;
+    background:var(--accent-soft);color:var(--accent);
+  }
+  .tl-item.flag .tl-tag{background:var(--warn-soft);color:var(--warn)}
+  .tl-item.build .tl-tag{background:var(--ai-soft);color:var(--ai)}
+  .tl-item h3{font-size:19px;font-weight:600;margin:4px 0 4px}
+  .tl-item p{margin:0;color:var(--ink-soft);max-width:64ch}
+  .tl-item p + p{margin-top:6px}
+  .tl-item.hidden{display:none}
+
+  /* ---------- Packet ---------- */
+  .packet{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 8px;
+  }
+  .packet .packet-name{
+    font-family:"Newsreader",Georgia,serif;font-size:22px;font-weight:700;margin:0 0 2px;
+  }
+  .packet .packet-sub{color:var(--ink-faint);font-size:13.5px;margin:0 0 16px}
+  .packet ul{list-style:none;margin:0;padding:0}
+  .packet li{
+    display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line);align-items:flex-start;
+  }
+  .packet .doc-num{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--accent);
+    border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap;margin-top:2px;
+  }
+  .packet li h3{font-family:inherit;font-size:16px;font-weight:700;line-height:1.35}
+  .packet li p{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px}
+
+  .figures{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .figure{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;
+  }
+  .figure .big{font-family:"Newsreader",Georgia,serif;font-size:30px;font-weight:700;line-height:1.05}
+  .figure .lbl{font-size:13px;color:var(--ink-soft);margin-top:6px}
+  .figure .lbl b{color:var(--ink)}
+
+  .pick{
+    margin-top:16px;background:var(--accent-soft);border-radius:var(--radius);padding:18px 20px;
+  }
+  .pick h3{font-size:21px;font-weight:700}
+  .pick p{margin:6px 0 0;color:var(--ink-soft)}
+  .pick p b{color:var(--ink)}
+
+  /* ---------- Two-col notes ---------- */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .note{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+  }
+  .note h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  .note p{margin:0;color:var(--ink-soft);font-size:15px}
+  .note p + p{margin-top:8px}
+  .note.warn h3{color:var(--warn)}
+
+  /* ---------- Status ---------- */
+  .status{
+    border:1px solid var(--line);border-radius:var(--radius);background:var(--surface-2);
+    padding:20px 22px;
+  }
+  .status ul{margin:0;padding-left:20px;color:var(--ink-soft)}
+  .status li + li{margin-top:8px}
+  .status b{color:var(--ink)}
+
+  footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:13px}
+
+  @media (max-width:640px){
+    .figures{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr}
+    .wrap{padding:22px 16px 52px}
+    .packet li{flex-direction:column;gap:6px}
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .tl-item,.figure,.note{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= INTRO ================= -->
+  <header class="intro">
+    <p class="where">Found in Facebook Messenger · the Meta AI thread</p>
+    <h1>Meta AI Chat</h1>
+    <p class="lede">The record of Douglas's conversation with <strong>Meta AI</strong> — a separate app with no
+    connection to this one. Meta share links never came through here, but the chat itself lives in Messenger
+    as a thread between Douglas and Meta AI, and that thread could be read directly. This space holds what
+    Meta did there: the work it built, the gaps it filled on its own, and the two places it said plainly
+    what it could not do.</p>
+    <div class="meta-row">
+      <span><b>Thread:</b> Meta AI, in Facebook Messenger</span>
+      <span><b>Read:</b> Saturday, November 7, 2026</span>
+      <span><b>Span read:</b> the last week, mostly Nov 7</span>
+    </div>
+  </header>
+
+  <!-- ================= TIMELINE ================= -->
+  <section aria-labelledby="timeline-h">
+    <div class="sec-head"><span class="num">01</span><h2 id="timeline-h">The day in the thread</h2></div>
+    <p class="sec-sub">Everything below happened on Saturday, November 7, 2026, in the Meta AI thread —
+    times are Central, as they appeared in Messenger.</p>
+
+    <div class="filters" role="group" aria-label="Filter the timeline">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="chat" aria-pressed="false">Chat events</button>
+      <button type="button" data-filter="build" aria-pressed="false">What Meta built</button>
+      <button type="button" data-filter="flag" aria-pressed="false">Flags</button>
+    </div>
+
+    <p class="pin-legend" aria-label="Timeline pin colors">
+      <span class="key"><span class="dot" aria-hidden="true"></span>Chat event</span>
+      <span class="key"><span class="dot ai" aria-hidden="true"></span>Built by Meta AI</span>
+      <span class="key"><span class="dot flag" aria-hidden="true"></span>Flag</span>
+    </p>
+
+    <ol class="timeline">
+      <li class="tl-item" data-kind="chat">
+        <span class="tl-time">4:30 AM</span><span class="tl-tag">Chat</span>
+        <h3>Story undo</h3>
+        <p>The thread opens for the day with a story undo — the earliest item in the span that could be read.</p>
+      </li>
+
+      <li class="tl-item flag" data-kind="flag">
+        <span class="tl-time">6:35 AM</span><span class="tl-tag">Flag</span>
+        <h3>A Gemini link that didn't come through</h3>
+        <p>Douglas sent Meta a Gemini share link. Meta said it didn't come through — the same wall the
+        Meta share links hit in the other direction. Links between these apps are not a working road;
+        pasted text is.</p>
+      </li>
+
+      <li class="tl-item" data-kind="chat">
+        <span class="tl-time">6:35 AM</span><span class="tl-tag">Chat</span>
+        <h3>The SP23D brief, pasted in</h3>
+        <p>Douglas pasted his SP23D brief directly into the thread, and Meta assessed it: turning the PN23M
+        23-serotype pneumococcal panel from a retrospective vaccine check into a real-time monitoring tool.</p>
+      </li>
+
+      <li class="tl-item build" data-kind="build">
+        <span class="tl-time">1:12 PM</span><span class="tl-tag">Built</span>
+        <h3>PROPOSED SP23D — the paper</h3>
+        <p>Meta wrote the SP23D paper for Dr. Van Dyke at Mayo, then produced a clean presentation version,
+        ready to print. Two thresholds anchor it: <b>≥0.3&nbsp;µg/mL per serotype</b> as the active-illness
+        cutoff, and <b>≥9.7&nbsp;µg/mL aggregate</b> as the Systemic Load Index.</p>
+      </li>
+
+      <li class="tl-item flag" data-kind="flag">
+        <span class="tl-time">1:13 PM</span><span class="tl-tag">Flag</span>
+        <h3>Meta couldn't reach the earlier chats</h3>
+        <p>Meta said plainly that it could not access Douglas's past chats in that app. Everything it built
+        afterward was rebuilt from what he pasted into this thread — not recovered from his earlier work
+        with Meta.</p>
+      </li>
+
+      <li class="tl-item build" data-kind="build">
+        <span class="tl-time">1:34 PM</span><span class="tl-tag">Built</span>
+        <h3>All 23 serotypes ranked — and one picked: 19A</h3>
+        <p>Meta analyzed all 23 serotypes and ranked them for SP23D value, then picked one serotype for both
+        Mayo and Quest to look at: <b>19A</b> — on the bacterial side, ST320 multidrug-resistant; on the fungal
+        side, it co-exists with Candida biofilms.</p>
+        <p>Meta also looked for the most complete published table combining fungal and bacterial elements
+        matching PN23M, and reported there isn't a single one — only the official PN23M table, plus separate
+        resistance tables.</p>
+      </li>
+
+      <li class="tl-item build" data-kind="build">
+        <span class="tl-time">1:49 PM</span><span class="tl-tag">Built</span>
+        <h3>The master packet, locked and named</h3>
+        <p>Meta assembled and named the finished packet: <b>“Mayo and Quest for PN23M Counterpart Proposal.”</b>
+        Its four pieces are listed in the next section.</p>
+      </li>
+
+      <li class="tl-item" data-kind="chat">
+        <span class="tl-time">During the day</span><span class="tl-tag">Chat</span>
+        <h3>Videos, offered up by Meta</h3>
+        <p>Meta also made videos for Douglas — and offered them itself. That work ran on Meta's side: it used
+        none of his Muse tokens or allotment. Meta donating its own compute to the research is a real help,
+        and it cost his allotment here nothing.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= PACKET ================= -->
+  <section aria-labelledby="packet-h">
+    <div class="sec-head"><span class="num">02</span><h2 id="packet-h">What Meta built</h2></div>
+    <p class="sec-sub">The locked master packet from 1:49 PM, and the numbers and the pick that hold it together.</p>
+
+    <div class="packet">
+      <p class="packet-name">Mayo and Quest for PN23M Counterpart Proposal</p>
+      <p class="packet-sub mono">LOCKED BY META AI · NOV 7, 2026 · 1:49 PM CST</p>
+      <ul>
+        <li>
+          <span class="doc-num">DOC 1</span>
+          <div>
+            <h3>Letter 1 — to Mayo / Dr. Van Dyke</h3>
+            <p>Copied to Quest. The primary letter carrying the SP23D proposal.</p>
+          </div>
+        </li>
+        <li>
+          <span class="doc-num">DOC 2</span>
+          <div>
+            <h3>Letter 2 — to Quest</h3>
+            <p>Copied to Dr. Van Dyke. The counterpart letter, so both laboratories hold the same proposal.</p>
+          </div>
+        </li>
+        <li>
+          <span class="doc-num">DOC 3</span>
+          <div>
+            <h3>The handout</h3>
+            <p>The working numbers on one page: the 4–6 week and 6+ month windows, the 0.3 and 9.7 thresholds,
+            and the 2003 correction.</p>
+          </div>
+        </li>
+        <li>
+          <span class="doc-num">DOC 4</span>
+          <div>
+            <h3>Reference-table page</h3>
+            <p>Deliberately carries no titer column — so Mayo and Quest can look at Douglas's labs themselves,
+            in parallel, rather than reading his numbers off the page.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="figures">
+      <div class="figure">
+        <div class="big">≥0.3 µg/mL</div>
+        <div class="lbl"><b>Per-serotype cutoff</b> — Meta's proposed line for active illness on a single serotype.</div>
+      </div>
+      <div class="figure">
+        <div class="big">≥9.7 µg/mL</div>
+        <div class="lbl"><b>Systemic Load Index</b> — the aggregate across the panel, Meta's proposed whole-picture threshold.</div>
+      </div>
+      <div class="figure">
+        <div class="big">4–6 wk · 6+ mo</div>
+        <div class="lbl"><b>The two windows</b> — the short and long follow-up windows set out in the handout.</div>
+      </div>
+    </div>
+
+    <div class="pick">
+      <h3>The pick: serotype 19A</h3>
+      <p>Of all 23 serotypes ranked, Meta chose <b>19A</b> as the one for both Mayo and Quest to look at.
+      Bacterial side: <b>ST320, multidrug-resistant</b>. Fungal side: <b>19A co-exists with Candida biofilms</b> —
+      the one serotype where the bacterial and fungal halves of the research meet.</p>
+    </div>
+  </section>
+
+  <!-- ================= FLAGS ================= -->
+  <section aria-labelledby="flags-h">
+    <div class="sec-head"><span class="num">03</span><h2 id="flags-h">Two honest limits</h2></div>
+    <p class="sec-sub">Meta did its best to fill its gaps — and said so where the gaps were. Both of these
+    were stated by Meta itself, in the thread.</p>
+
+    <div class="cols">
+      <div class="note warn">
+        <h3>It rebuilt, it didn't remember</h3>
+        <p>At 1:13 PM Meta said it couldn't access Douglas's past chats there. The SP23D paper and packet were
+        rebuilt from the brief he pasted at 6:35 AM — good work from what it was given, but not a continuation
+        of his earlier Meta conversations.</p>
+      </div>
+      <div class="note warn">
+        <h3>Links don't cross between the apps</h3>
+        <p>The Gemini share link Douglas sent at 6:35 AM didn't come through for Meta — the mirror image of the
+        Meta share links that arrive here as a block page. What crosses reliably is pasted text and exported
+        files, and that's how this record got here: the thread itself, read in Messenger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATUS ================= -->
+  <section aria-labelledby="status-h">
+    <div class="sec-head"><span class="num">04</span><h2 id="status-h">Where it stands</h2></div>
+    <div class="status">
+      <ul>
+        <li><b>Recorded, not yet tested.</b> The 0.3 cutoff, the 9.7 index, the 19A pick, the windows, and the
+        2003 correction are Meta's work with Douglas. They have not yet been checked against his PN23M panels
+        and serotype tables.</li>
+        <li><b>A second version is being written.</b> Ember is writing her own version of the SP23D paper in its
+        own chat — starting from Meta's packet, then testing every load-bearing claim three ways, with held /
+        broke / gap verdicts.</li>
+        <li><b>Nothing has gone to any clinician.</b> The packet stays with Douglas for review first. No letter
+        has been sent to Mayo or Quest.</li>
+        <li><b>The videos stand as Meta made them.</b> They were Meta's contribution, run on Meta's side, and
+        Douglas was impressed with them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    A record of the Meta AI thread in Facebook Messenger, read November 7, 2026. Claims in the packet are
+    Meta AI's work with Douglas, presented here as he and Meta left them — testing them is a separate step,
+    in a separate chat.
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var items = document.querySelectorAll('.tl-item');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        var f = btn.getAttribute('data-filter');
+        items.forEach(function (item) {
+          var show = (f === 'all') || (item.getAttribute('data-kind') === f);
+          item.classList.toggle('hidden', !show);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

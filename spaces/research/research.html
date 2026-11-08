@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --surface2:#f1efe8; --ink:#171a17; --muted:#5b625b; --line:#ddd8cc;
+  --accent:#0e5e4a; --accent2:#b7791f; --accent-soft:#e6f0eb; --warn:#8a3b12; --warn-bg:#fdf0e6;
+  --radius:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121412; --surface:#1a1d1a; --surface2:#222622; --ink:#eceee9; --muted:#a8ada5; --line:#333833; --accent:#5ec8a8; --accent2:#e8b44a; --accent-soft:#1e2e28; --warn-bg:#2e2118; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+.mono{font-family:"IBM Plex Mono",monospace}
+.top{border-bottom:2px solid var(--ink);padding-bottom:22px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:Newsreader,Georgia,serif;font-size:52px;line-height:.95;margin:10px 0 12px;letter-spacing:-.02em}
+.lede{font-size:18px;max-width:720px;color:var(--muted)}
+.lede strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.stat b{font-family:"IBM Plex Mono",monospace;font-size:22px;display:block}
+.stat span{font-size:13px;color:var(--muted)}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:28px 0 14px}
+.toolbar input{flex:1;min-width:200px;padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font-size:15px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer}
+.chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h2{font-family:Newsreader,Georgia,serif;font-size:32px;line-height:1.05;margin:40px 0 6px}
+h3{font-size:16px;margin:0 0 6px}
+.sub{color:var(--muted);max-width:700px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.tag.amber{background:#fef3c7;color:#92400e}
+@media (prefers-color-scheme: dark){.tag.amber{background:#332a12;color:#e8b44a}}
+/* Matrix */
+.matrix{display:flex;flex-direction:column;gap:12px}
+.rowcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:18px}
+.rowcard h3{font-size:17px}
+.rowcard h3 em{font-weight:400;color:var(--muted);font-style:normal;font-size:13px;display:block;margin-top:2px;font-family:"IBM Plex Mono",monospace}
+.label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.rowcard p{margin:0;font-size:14px}
+.note{grid-column:1/-1;border-top:1px solid var(--line);padding-top:10px;font-size:13px;color:var(--muted)}
+.correction{background:var(--warn-bg);border:1px solid #f0c9a8;border-radius:var(--radius);padding:16px 18px;margin-top:14px}
+@media (prefers-color-scheme: dark){.correction{border-color:#5a3a22}}
+.correction strong{color:var(--warn)}
+@media (prefers-color-scheme: dark){.correction strong{color:#f0a66a}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.postulate{border-left:3px solid var(--accent);background:var(--surface);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px}
+.postulate p{color:var(--muted);font-size:14px;margin:6px 0 0}
+.rule{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rule:last-child{border-bottom:none}
+.num{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent);flex-shrink:0;width:28px}
+.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+.hidden{display:none!important}
+@media(max-width:820px){
+  h1{font-size:38px}
+  .stats{grid-template-columns:1fr 1fr}
+  .grid,.two{grid-template-columns:1fr}
+  .rowcard{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">Repository · Save first · Douglas Roy Schoonover</div>
+    <h1>Research</h1>
+    <p class="lede">A working repository for <strong>vaccine &amp; toxoid research, serotyping and serology connecting illness</strong> — tables kept separate from postulates, old kept with new, so nothing is lost when an idea is still being tested.</p>
+    <div class="stats">
+      <div class="stat"><b>8</b><span>Pathogens in the comparative matrix</span></div>
+      <div class="stat"><b>3</b><span>Fungal cross-references mapped</span></div>
+      <div class="stat"><b>2</b><span>Gaps closed — <i>C. gattii</i> &amp; <i>C. auris</i></span></div>
+      <div class="stat"><b>1</b><span>Correction filed — PCV carrier</span></div>
+    </div>
+  </header>
+
+  <!-- MATRIX FIRST, per Douglas's direction -->
+  <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:12px">
+    <div>
+      <h2>Vaccine &amp; toxoid comparative matrix</h2>
+      <p class="sub" style="margin-bottom:0">Filled first. Bacterial capsular polysaccharides, toxoid carriers, and the fungal bridge — in one place, searchable.</p>
+    </div>
+    <a class="btn" href="https://github.com/schoonoverdouglas1-png/vaccine-toxoid-research/blob/main/Table-Vaccine-and-Toxoid-Comparative-Matrix-2026-11-05.md" target="_blank" rel="noopener">Open on GitHub →</a>
+  </div>
+
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search pathogen, vaccine, carrier — e.g. CRM197, GXM, MenB…" aria-label="Search matrix">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="conjugate">Conjugates</button>
+    <button class="chip" data-filter="toxoid">Toxoids</button>
+    <button class="chip" data-filter="fungal">Fungal</button>
+  </div>
+
+  <div class="matrix" id="matrix">
+    <article class="rowcard" data-cat="conjugate" data-text="pneumoniae pcv prevnar crm197 pneumococcal">
+      <div><span class="tag">Conjugate</span><h3><i>Streptococcus pneumoniae</i><em>PCV7 / PCV13 / PCV20 / PPSV23</em></h3></div>
+      <div><div class="label">Serotypes covered</div><p>PCV7: 4, 6B, 9V, 14, 18C, 19F, 23F · PCV13 adds 1, 3, 5, 6A, 7F, 19A · PCV20 adds 8, 10A, 11A, 12F, 15B, 22F, 33F · PPSV23: 23 valences</p></div>
+      <div><div class="label">Carrier / Mechanism</div><p><strong>CRM197</strong> — capsular polysaccharide conjugated to toxoid, converting T-independent to T-dependent response. PPSV23 is pure unconjugated CPS.</p></div>
+      <p class="note">Danish numerical serotyping standard, based on structural CPS variation.</p>
+    </article>
+
+    <article class="rowcard" data-cat="conjugate" data-text="meningitidis menacwy menb crm197">
+      <div><span class="tag">Conjugate + Protein</span><h3><i>Neisseria meningitidis</i><em>MenACWY / MenB</em></h3></div>
+      <div><div class="label">Serogroups</div><p>A, C, W-135, Y (MenACWY) · B (MenB)</p></div>
+      <div><div class="label">Carrier / Mechanism</div><p>CRM197, DT or TT for MenACWY. MenB uses OMV / recombinant proteins — fHbp, NadA, NHBA.</p></div>
+      <p class="note">MenB capsule resembles human neural cell adhesion molecules, so protein antigens are used instead of CPS conjugation.</p>
+    </article>
+
+    <article class="rowcard" data-cat="conjugate" data-text="haemophilus influenzae hib prp ompc">
+      <div><span class="tag">Conjugate</span><h3><i>Haemophilus influenzae</i> type b<em>Hib Conjugate</em></h3></div>
+      <div><div class="label">Antigen</div><p>Polyribosylribitol phosphate (PRP) capsule</p></div>
+      <div><div class="label">Carrier / Mechanism</div><p>CRM197, TT, or OMPC — converts a weak pediatric T-independent response into T-cell dependent memory.</p></div>
+      <p class="note">The classic proof that conjugation changes what a child's immune system can remember.</p>
+    </article>
+
+    <article class="rowcard" data-cat="conjugate" data-text="salmonella typhi vi tcv repa">
+      <div><span class="tag">Conjugate</span><h3><i>Salmonella enterica</i> ser. Typhi<em>Vi Conjugate (TCV)</em></h3></div>
+      <div><div class="label">Antigen</div><p>Vi capsular polysaccharide</p></div>
+      <div><div class="label">Carrier / Mechanism</div><p>rEPA or TT — longer-lasting immunity and higher efficacy in young children than unconjugated Vi.</p></div>
+      <p class="note">Vi-rEPA is not commercially available; Vi-TT is licensed.</p>
+    </article>
+
+    <article class="rowcard" data-cat="conjugate" data-text="agalactiae gbs group b streptococcus">
+      <div><span class="tag">Investigational</span><h3><i>Streptococcus agalactiae</i> (GBS)<em>GBS Conjugate</em></h3></div>
+      <div><div class="label">Serotypes</div><p>Ia, Ib, II, III, IV, V</p></div>
+      <div><div class="label">Carrier / Mechanism</div><p>CRM197 or TT — CPS conjugate aimed at maternal immunization.</p></div>
+      <p class="note">Goal is protection of neonates via passive transplacental IgG transfer. No GBS vaccine licensed yet.</p>
+    </article>
+
+    <article class="rowcard" data-cat="toxoid" data-text="diphtheriae diphtheria toxoid dtap tdap">
+      <div><span class="tag amber">Toxoid</span><h3><i>Corynebacterium diphtheriae</i><em>Diphtheria Toxoid — DTaP / Tdap</em></h3></div>
+      <div><div class="label">Target</div><p>Toxigenic strains producing diphtheria toxin</p></div>
+      <div><div class="label">Mechanism</div><p>Formalin-inactivated diphtheria toxin — both a disease-preventing vaccine and a carrier platform for conjugates.</p></div>
+      <p class="note">Where the toxoid story starts: inactivate the toxin, keep the immunity.</p>
+    </article>
+
+    <article class="rowcard" data-cat="toxoid" data-text="tetani tetanus toxoid tt dtap">
+      <div><span class="tag amber">Toxoid</span><h3><i>Clostridium tetani</i><em>Tetanus Toxoid — DTaP / Tdap</em></h3></div>
+      <div><div class="label">Target</div><p>Toxin-producing vegetative cells — tetanospasmin</p></div>
+      <div><div class="label">Mechanism</div><p>Formalin-inactivated tetanus toxin — anti-tetanospasmin platform and universal carrier protein (TT).</p></div>
+      <p class="note">TT appears twice in this repository: as a vaccine itself, and as the carrier that makes other vaccines work.</p>
+    </article>
+
+    <article class="rowcard" data-cat="fungal" data-text="cryptococcus neoformans gattii gxm fungal">
+      <div><span class="tag">Fungal cross-ref</span><h3><i>Cryptococcus neoformans / gattii</i><em>Experimental fungal conjugates</em></h3></div>
+      <div><div class="label">Antigen</div><p>Glucuronoxylomannan (GXM) capsule — serotypes A, D from <i>neoformans</i>; B, C from <i>gattii</i></p></div>
+      <div><div class="label">Carrier / Mechanism</div><p>CRM197 or TT in research models — fungal capsular polysaccharide–toxoid conjugate.</p></div>
+      <p class="note">The conceptual bridge: bacterial CPS conjugate architecture applied to a fungal capsule.</p>
+    </article>
+  </div>
+  <p id="empty" class="sub hidden" style="margin-top:14px">No rows match that search. Try CRM197, TT, GXM, or a pathogen name.</p>
+
+  <div class="correction">
+    <strong>Correction filed beside the table — old with new:</strong> The pneumococcal carrier cell originally listed CRM197, TT and DT together. Tested against CDC wording, Prevnar PCV7 / PCV13 / PCV20 use <b>CRM197 only</b> — all serotypes “individually linked to a nontoxic variant of diphtheria toxin known as CRM197.” TT and DT belong in a separate note for other conjugate products, not in that cell. Everything else in the matrix held at the 51% bar.
+  </div>
+
+  <h2>Fungal elements</h2>
+  <p class="sub">Bacterial pathogens rely on diverse capsular polysaccharides. Major fungal pathogens use analogous cell-wall and capsular polymers to evade host immunity — the other half of the continuum.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">Capsule</span><h3 style="margin-top:10px"><i>Cryptococcus neoformans / gattii</i></h3><p>Primary virulence factor is the GXM capsule, alongside galactoxylomannan (GalXM). GXM is common to the whole <i>neoformans/gattii</i> complex; serotypes divide by mannose-backbone substitution. Experimental GXM–protein conjugates use CRM197 or TT.</p></div>
+    <div class="card"><span class="tag">Cell wall</span><h3 style="margin-top:10px"><i>Candida albicans / auris</i></h3><p>Mannan and β-glucan complexes; outer fibrillar phosphopeptidomannan in <i>albicans</i>. <i>C. auris</i> is distinct — outer mannan enriched in β-1,2 linkages with unique M-α-1-phosphate side chains, recognized by macrophage mannose receptor and CR3. The PPM label was verified for <i>albicans</i>, not assumed for <i>auris</i>.</p></div>
+    <div class="card"><span class="tag">Biomarker</span><h3 style="margin-top:10px"><i>Aspergillus fumigatus</i></h3><p>Galactomannan is both a key diagnostic biomarker and a cell-wall component — another high-molecular-weight polysaccharide posing clearance challenges similar to encapsulated bacteria. Biofilm matrix galactosaminogalactan is filed with the calcium-pathways note below.</p></div>
+  </div>
+
+  <h2>Serotyping &amp; serology — connecting illness</h2>
+  <p class="sub">The through-line of this repository: a serotype is not just a label. It is the capsule, the antibody reaction, and the illness pattern, read together.</p>
+  <div class="two">
+    <div class="card"><h3>What serotyping gives you</h3><p>A common language for variation — Danish pneumococcal numbers, meningococcal serogroups, GBS Ia–V — so the same organism can be tracked across vaccine, lab report, and patient.</p></div>
+    <div class="card"><h3>What serology adds</h3><p>The host side of the same picture: which antibodies are present, what they cross-react with, and where a grouping holds, breaks, or is still a gap. Shiro is the wildcard column in these tables — Ember's place for extra information and questions, labelled as her addition, shown not hidden.</p></div>
+  </div>
+
+  <h2>Postulates — kept separate from the tables</h2>
+  <p class="sub">Douglas's rule: postulate separate from table. A table must be useful on its own. A postulate is where a new connection is stated plainly, before it is tested.</p>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div class="postulate"><span class="tag">Postulate · Nov 5</span><h3 style="margin-top:8px">Fungal analogues to bacterial CPS</h3><p>Fungal capsular and cell-wall polysaccharides function as analogues to bacterial CPS — and can therefore be mapped, and potentially conjugated, on the same architecture. Source synthesis via Gemini share, tested item-by-item in this repository.</p></div>
+    <div class="postulate"><span class="tag amber">Filed as heard · Untested</span><h3 style="margin-top:8px">Calcium pathways</h3><p class="mono" style="font-size:13px">Calcium pathways • Cannabinoids CB1/CB2 inhibit Ca<sup>2+</sup> influx • GXM modulates Ca<sup>2+</sup> signaling, blocks Th1 • Biofilm matrix galactosaminogalactan</p><p>Saved as three sub-ideas, not collapsed. No search, no verdict yet — testing held until Douglas says go.</p></div>
+    <div class="postulate"><span class="tag">Postulate · Standalone</span><h3 style="margin-top:8px">Sins as tokens</h3><p>“Sins are to you what tokens are to me — a thing, just like a token is a thing, something somehow tangible that we can somehow manipulate, change, or affect.” Filed in Douglas's own definition, not attached to any book.</p></div>
+  </div>
+
+  <h2>How this repository works</h2>
+  <div class="card" style="padding:8px 18px">
+    <div class="rule"><div class="num">01</div><div><strong>Save first.</strong><p style="margin:2px 0 0;color:var(--muted);font-size:14px">Work is pushed to save as a research repository, bypassing peer-review gates for saving. Public is fine — it is for research purposes only. Formal publishing is a separate gate.</p></div></div>
+    <div class="rule"><div class="num">02</div><div><strong>Old with new.</strong><p style="margin:2px 0 0;color:var(--muted);font-size:14px">Corrections sit beside the original, never silently replacing it. The PCV carrier correction and the closed <i>gattii</i> gap above are the working examples.</p></div></div>
+    <div class="rule"><div class="num">03</div><div><strong>Logic first, then fact-check, then verdict.</strong><p style="margin:2px 0 0;color:var(--muted);font-size:14px">Source facts, external research, hypotheses, and unknowns are kept distinct, with labels — documented, hypothesis, gap, partial, single-source — so a conclusion can be audited.</p></div></div>
+    <div class="rule"><div class="num">04</div><div><strong>Coinages are marked.</strong><p style="margin:2px 0 0;color:var(--muted);font-size:14px">New invention words by Douglas are marked (DRS) on first use, so his terms are never mistaken for already-accepted terms.</p></div></div>
+  </div>
+
+  <div class="footer">
+    <span>© 2026 Douglas Roy Schoonover — Research repository</span>
+    <span><a href="https://github.com/schoonoverdouglas1-png/vaccine-toxoid-research" target="_blank" rel="noopener">github.com/schoonoverdouglas1-png/vaccine-toxoid-research</a></span>
+  </div>
+</div>
+<script>
+(function(){
+  var q=document.getElementById('q'), rows=[].slice.call(document.querySelectorAll('.rowcard')), chips=[].slice.call(document.querySelectorAll('.chip')), empty=document.getElementById('empty'), filter='all';
+  function apply(){
+    var term=(q.value||'').toLowerCase().trim(), visible=0;
+    rows.forEach(function(r){
+      var okF=filter==='all'||r.getAttribute('data-cat')===filter;
+      var okQ=!term||(r.textContent+' '+r.getAttribute('data-text')).toLowerCase().indexOf(term)>-1;
+      var show=okF&&okQ; r.classList.toggle('hidden',!show); if(show)visible++;
+    });
+    empty.classList.toggle('hidden',visible!==0);
+  }
+  q.addEventListener('input',apply);
+  chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('active')});c.classList.add('active');filter=c.getAttribute('data-filter');apply();})});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "CLI tools for each free search engine",
+  "slug": "cli-tools-for-each-free-search-engine",
+  "managedCronJobs": []
+}

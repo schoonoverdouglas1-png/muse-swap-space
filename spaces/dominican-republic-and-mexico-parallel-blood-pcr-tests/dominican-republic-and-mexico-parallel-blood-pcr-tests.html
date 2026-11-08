@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Dominican Republic and Mexico Parallel Blood PCR Tests</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface2:#efece4; --ink:#1c2226; --muted:#5a656d; --line:#d8d2c4;
+  --teal:#0f5e5a; --teal-ink:#0a4340; --amber:#9a6a12; --amber-bg:#fdf3d7; --red:#8f2d2d; --red-bg:#fbecec;
+  --green:#1f6b3a; --green-bg:#e6f3e9; --blue-bg:#e8eef5; --blue:#234a6b;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121416; --surface:#1b1e21; --surface2:#24282c; --ink:#edebe4; --muted:#a8b0b5; --line:#353a3e;
+  --teal:#5ec2b8; --teal-ink:#8fd8d0; --amber:#e0b45a; --amber-bg:#2e2a18; --red:#f09191; --red-bg:#2e1d1d;
+  --green:#7cc98f; --green-bg:#1a2a1e; --blue-bg:#1c2836; --blue:#9dbfd9; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;font-size:16px}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+h1,h2{font-family:"IBM Plex Serif",Georgia,serif;line-height:1.15}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);margin:0 0 12px;letter-spacing:-.02em}
+h2{font-size:1.55rem;margin:0 0 10px}
+h3{font-size:1.05rem;margin:0 0 6px}
+p{margin:0 0 12px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.86em;font-weight:600}
+.lede{font-size:1.12rem;color:var(--muted);max-width:760px}
+.hero{padding:36px 0 22px;border-bottom:3px solid var(--ink)}
+.kicker{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--teal);margin-bottom:10px}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:700px){.answer{grid-template-columns:1fr}}
+.answer-card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--teal);padding:18px;border-radius:6px}
+.answer-card.warn{border-top-color:var(--red)}
+.answer-card b.big{display:block;font-size:1.05rem;margin-bottom:6px}
+.scope{background:var(--amber-bg);border:1px solid var(--amber);border-radius:var(--radius);padding:16px 18px;margin:20px 0}
+.scope strong{color:var(--amber)}
+section{padding:30px 0 6px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card ul{margin:8px 0 0;padding-left:18px}
+.card li{margin:4px 0}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;vertical-align:middle}
+.tag.found{background:var(--green-bg);color:var(--green)}
+.tag.notfound{background:var(--red-bg);color:var(--red)}
+.tag.ph{background:var(--blue-bg);color:var(--blue)}
+.tag.excl{background:var(--surface2);color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 12px;align-items:center}
+.controls input{flex:1 1 220px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 13px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem;font-weight:600}
+.chip[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+@media(prefers-color-scheme:dark){.chip[aria-pressed="true"]{color:#0c1211}}
+.tablewrap{overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{text-align:left;background:var(--surface2);padding:11px 12px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+td{padding:13px 12px;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;min-width:130px}
+.src{font-size:.8rem;color:var(--muted)}
+@media(max-width:820px){
+  table,thead,tbody,tr,td{display:block}
+  thead{display:none}
+  tr{border-top:1px solid var(--line);padding:8px 0}
+  tr:first-child{border-top:none}
+  td{border:none;padding:6px 14px}
+  td::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+}
+.equine{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.equine{grid-template-columns:1fr}}
+.eq{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.eq header{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.callout{border-left:4px solid var(--teal);background:var(--surface);padding:16px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:16px 0}
+.callout.red{border-left-color:var(--red)}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+@media(max-width:700px){.statrow{grid-template-columns:1fr}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center}
+.stat b{display:block;font-family:"IBM Plex Serif",serif;font-size:1.9rem}
+.stat span{font-size:.85rem;color:var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:700}
+.gaps li{margin:8px 0}
+footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+footer li{margin:5px 0;word-break:break-all}
+.small{font-size:.88rem;color:var(--muted)}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Blood PCR only · No spinal tap · Research dated 3 Nov 2026</div>
+  <h1>The DR &amp; Mexico tests your US panels don’t cover</h1>
+  <p class="lede">Your two known US panels leave out the main Dominican Republic and Mexico arboviruses. The parallels are not one international panel — they are separate blood PCRs, public-health send-outs, and in-country reference labs, each with its own code, specimen, and ordering route.</p>
+  <p class="small">General laboratory information only, not a recommendation for any person. Research status: <strong>index only — not verified live in a research browser.</strong> Re-check any test, code, and approval requirement with the performing laboratory at order time. A clinician and the performing laboratory must confirm availability, specimen, and timing.</p>
+</header>
+
+<div class="answer">
+  <div class="answer-card warn">
+    <b class="big">Mayo ARBOP does not cover them</b>
+    <p><span class="mono">ARBOP — Arbovirus Antibody Panel, IgG and IgM, Serum</span> is serum IFA for only 4 viruses: California (La Crosse), Eastern equine, St. Louis, and Western equine.</p>
+    <p style="margin:0">It contains <strong>no dengue, Zika, chikungunya, West Nile, Oropouche, Mayaro, yellow fever, or Venezuelan equine test</strong> — and it is antibody, not PCR.</p>
+  </div>
+  <div class="answer-card warn">
+    <b class="big">Mayo CSFME contains no arbovirus at all</b>
+    <p><span class="mono">CSFME — Meningitis/Encephalitis Pathogen Panel, PCR, Spinal Fluid</span> is the BioFire FilmArray panel, <strong>CSF only</strong>, 14 targets.</p>
+    <p style="margin:0">For a DR/Mexico exposure, the meningitis/encephalitis gap is not a different bacterial panel. It is the arboviral CNS gap — see §1 below.</p>
+  </div>
+</div>
+
+<div class="scope" role="note">
+  <strong>Scope you set — kept throughout this page:</strong> Blood PCR only (serum, plasma, or EDTA whole blood). CSF-only panels are listed <em>only</em> in the Excluded section, to show what was ruled out and why — they are not presented as options. Serum antibody tests are blood tests but are <em>not</em> PCR, so they are noted separately and are not in the recommended list. “Mail” means a clinician draws blood and the clinic ships it to a reference lab — no direct-to-patient home blood-PCR kit for these arboviruses was verified.
+</div>
+
+<section aria-labelledby="known">
+  <h2 id="known">1 · What you already had — and what it misses</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>ARBOP — serum antibody panel <span class="tag excl">Not PCR</span></h3>
+      <p class="small">Mayo Clinic Laboratories · Serum IFA · IgG + IgM for each:</p>
+      <ul><li>California (La Crosse)</li><li>Eastern equine encephalitis</li><li>St. Louis encephalitis</li><li>Western equine encephalitis</li></ul>
+      <p class="src">Source: <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">Mayo ARBOP catalog</a></p>
+    </div>
+    <div class="card">
+      <h3>CSFME — CSF PCR panel <span class="tag excl">Excluded — CSF only</span></h3>
+      <p class="small">14 targets: <em>E. coli</em> K1, <em>H. influenzae</em>, <em>L. monocytogenes</em>, <em>N. meningitidis</em>, <em>S. agalactiae</em>, <em>S. pneumoniae</em>, CMV, enterovirus, HSV-1, HSV-2, HHV-6, human parechovirus, VZV, <em>Cryptococcus neoformans/gattii</em>.</p>
+      <p>These are the common global causes — not country-specific. No DR-only meningitis pathogen requiring a different blood PCR was found.</p>
+      <p class="src">Source: <a href="https://www.mayocliniclabs.com/test-catalog/Overview/622764">Mayo CSFME catalog</a></p>
+    </div>
+  </div>
+  <div class="callout">
+    <h3>Why arboviruses are the CNS gap</h3>
+    <p style="margin:0">Dengue, chikungunya, Zika, West Nile, St. Louis, Eastern / Western / Venezuelan equine, Oropouche and Mayaro can all present with CNS disease — chikungunya and Zika with meningoencephalitis, myelitis and Guillain-Barré; Oropouche rarely with meningitis/encephalitis; dengue with meningoencephalitis, transverse myelitis, ADEM and Guillain-Barré — and <strong>none is on CSFME</strong>.</p>
+  </div>
+</section>
+
+<section aria-labelledby="endemic">
+  <h2 id="endemic">2 · What circulates in each country</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Dominican Republic</h3>
+      <ul>
+        <li><strong>Dengue is endemic</strong>, with regular outbreaks. 2026 Ministry data cited in press (epidemiologic week 41, 11–17 Oct) reported 474 confirmed cases in 2026 vs 265 in the same period of 2025, still described as within the endemic corridor.</li>
+        <li><strong>Zika and chikungunya are emerging</strong> — chikungunya in 2014 and Zika in 2016 were the first/only reported outbreaks of each at the time of a 2021 analysis.</li>
+        <li>Oropouche risk is flagged in general DR travel guidance, but <strong>no DR-specific Oropouche endemic case count was verified</strong> — do not overstate DR Oropouche endemicity.</li>
+        <li>Meningococcal disease occurs but fell from 18 cases in 2016 to 2 in 2021 (Global Meningococcal Initiative summary). No DR-specific meningitis panel was found.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Mexico</h3>
+      <ul>
+        <li><strong>Dengue is hyperendemic — all four serotypes DENV-1–4 circulating</strong>, with DENV-3 predominance in 2023 (63.9% in one surveillance analysis).</li>
+        <li>Chikungunya first recorded 2014, epidemic 2015, then declining; Zika first reported in southern Mexico Nov 2015, peak 2016, then declining; both now considered endemic with possible outbreaks.</li>
+        <li>West Nile is present in several Mexican states but only 13 officially confirmed human cases 2002–2023.</li>
+        <li>Venezuelan equine encephalitis is described as endemic in the Americas and “hidden under the dengue umbrella” — an epidemiologic claim, not proof of a routine Mexican human test.</li>
+        <li>Serologic traces of Mayaro in Veracruz; historical yellow fever. T'Ho virus appeared in a Chiapas bat/opossum PRNT study — a research finding, <strong>not</strong> a routine human blood-PCR test.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small">Americas-wide co-circulation context: dengue, chikungunya, Zika, plus Mayaro, Oropouche and yellow fever are described as concurrently circulating in the Americas.</p>
+</section>
+
+<section aria-labelledby="list">
+  <h2 id="list">3 · Recommended list — blood PCR only</h2>
+  <p>Filter by ordering route, or search by virus, code, or lab. Every row is serum, plasma, or EDTA whole blood. Antibody/antigen tests that fail the PCR-only filter are listed after the table so they are not mistaken for PCR.</p>
+  <div class="controls" role="group" aria-label="Filter tests">
+    <button class="chip" data-filter="all" aria-pressed="true">All routes</button>
+    <button class="chip" data-filter="mayo" aria-pressed="false">Mayo send-out</button>
+    <button class="chip" data-filter="ph" aria-pressed="false">Public health / CDC</button>
+    <button class="chip" data-filter="commercial" aria-pressed="false">Other commercial</button>
+    <button class="chip" data-filter="incountry" aria-pressed="false">In-country (DR / Mexico)</button>
+    <input id="q" type="search" placeholder="Search virus, code, or lab…" aria-label="Search tests">
+  </div>
+  <p id="count" class="small" aria-live="polite"></p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Pathogen</th><th>Exact test / code</th><th>Lab &amp; blood specimen</th><th>How ordered / shipped</th><th>Vs ARBOP / CSFME</th></tr></thead>
+    <tbody id="rows">
+      <tr data-route="mayo"><td data-l="Pathogen">Dengue 1–4</td><td data-l="Test"><span class="mono">DENGS</span> — Dengue Virus, Molecular Detection, PCR, Serum</td><td data-l="Lab">Mayo, Rochester · Serum 0.5 mL (min 0.3 mL); centrifuge &amp; aliquot within 2 h</td><td data-l="Ordering">Provider send-out to Mayo; not a patient self-mail kit. Acute-phase; &gt;1 week may be PCR-negative and need serology</td><td data-l="Difference"><strong>Additional.</strong> Not in ARBOP or CSFME</td></tr>
+      <tr data-route="mayo"><td data-l="Pathogen">Chikungunya</td><td data-l="Test"><span class="mono">CHIKS</span> — Chikungunya Virus, PCR, Molecular Detection, Serum</td><td data-l="Lab">Mayo, Rochester · Serum 0.5 mL (min 0.3 mL); ideally &lt;7 days from onset</td><td data-l="Ordering">Provider send-out to Mayo. (CSF version CHIKC is excluded)</td><td data-l="Difference"><strong>Additional.</strong> Not in ARBOP or CSFME</td></tr>
+      <tr data-route="mayo"><td data-l="Pathogen">Zika</td><td data-l="Test"><span class="mono">VZIKS</span> — Zika Virus, PCR, Molecular Detection, Serum</td><td data-l="Lab">Mayo, Rochester · Serum 0.5 mL</td><td data-l="Ordering">Provider send-out. Mayo strongly recommends concurrent dengue + chikungunya RNA/IgM. Urine version VZIKU is not blood — excluded</td><td data-l="Difference"><strong>Additional.</strong> Not in ARBOP/CSFME</td></tr>
+      <tr data-route="mayo"><td data-l="Pathogen">West Nile</td><td data-l="Test"><span class="mono">WNVS</span> — West Nile Virus, RNA, PCR, Serum</td><td data-l="Lab">Mayo, Rochester · Serum 0.5 mL; page notes whole blood may be more sensitive — up to 87% vs serum 26%</td><td data-l="Ordering">Provider send-out; first few days only for PCR. Serology (WNS) is usual method but is not PCR</td><td data-l="Difference"><strong>Additional.</strong> ARBOP does not include West Nile at all</td></tr>
+      <tr data-route="mayo"><td data-l="Pathogen">Powassan <span class="small">(not DR/Mexico — closest US analogue, common confusion)</span></td><td data-l="Test"><span class="mono">POWVS</span> — Powassan Virus, RNA, PCR, Serum (lineages 1 &amp; 2)</td><td data-l="Lab">Mayo, Rochester · Serum; first 7 days, with POWV IgM serology</td><td data-l="Ordering">Provider send-out to Mayo</td><td data-l="Difference"><strong>Additional</strong> to ARBOP/CSFME. Do not order as a DR/Mexico substitute</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Dengue + Chikungunya + Zika — one assay</td><td data-l="Test">Florida BPHL <span class="mono">Arbovirus, Trioplex PCR — Code 1550</span> (CDC Trioplex, FDA-authorised EUA)</td><td data-l="Lab">Florida Bureau of Public Health Labs · Serum preferred 1–2 mL, &lt;14 days; EDTA whole blood 1 mL only with paired serum</td><td data-l="Ordering"><strong>Public-health routed, not patient mail-order.</strong> Requisition DH1847 with authoriser, bite/travel history, onset dates; 3–10 business days</td><td data-l="Difference">The closest public-health equivalent to “the panel ARBOP is not” — the DR/Mexico trio in blood, in one test</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Dengue, Chikungunya, Zika, Oropouche, Yellow fever — travel panel</td><td data-l="Test">Wadsworth / APHL <span class="mono">Arbovirus Travel Panel PCR — 6150</span>; individually Dengue 2510, Chikungunya 2630, Oropouche 6210, Yellow Fever 4491, Zika 3031</td><td data-l="Lab">NY Wadsworth Center, as APHL Arbovirus Reference Center · Dengue plasma/serum; others serum (± urine/whole blood); acute &lt;7 days</td><td data-l="Ordering"><strong>Only via a state/local/territorial public-health lab.</strong> Patient/clinician cannot ship directly as a commercial order</td><td data-l="Difference"><strong>Additional &amp; broader than Mayo commercial blood PCR</strong> — adds Oropouche &amp; yellow fever PCR</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">West Nile, Powassan, Heartland — summer panel</td><td data-l="Test">Wadsworth / APHL <span class="mono">Arbovirus Summer Panel — 5470</span></td><td data-l="Lab">Wadsworth / APHL · Serum, urine, whole blood</td><td data-l="Ordering">Via PHL only; season 1 June–30 Nov or travel/mosquito history</td><td data-l="Difference"><strong>Additional.</strong> US-endemic viruses ARBOP misses by PCR; not DR/Mexico-specific</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Individual PCRs: Dengue, WNV, Chikungunya, EEE, Zika, Yellow fever, Mayaro, St. Louis</td><td data-l="Test">Florida BPHL <span class="mono">Arbovirus, PCR</span> — DEN 1680, WNV 1688, CHIK 1532, EEE 1682, ZIK 1537, YF 1689, MAY 1527, SLE 1686</td><td data-l="Lab">Florida BPHL · Serum preferred 1–2 mL; EDTA whole blood with paired serum. EEE/SLE/WN acute serum &lt;5 days</td><td data-l="Ordering"><strong>Pre-approval required</strong> from regional epidemiology + lab notification; start via county health dept; DH1847</td><td data-l="Difference"><strong>Additional — and the only verified human blood-PCR route found for Eastern equine and Mayaro.</strong> No WEE and no VEE code in this menu</td></tr>
+      <tr data-route="commercial"><td data-l="Pathogen">Oropouche</td><td data-l="Test">Quest Diagnostics <strong>Oropouche virus PCR</strong> — <em>no test code was published in the announcement found</em></td><td data-l="Lab">Quest, San Juan Capistrano, CA · Blood RT-PCR for early infection</td><td data-l="Ordering">Provider prescription, clinical purposes, available end of July 2025 per announcement (15 July 2025); developed under CDC contracts Sept 2024</td><td data-l="Difference"><strong>Additional.</strong> First commercial US Oropouche PCR found; before July 2025 it was CDC/public-health only</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Oropouche (public-health route)</td><td data-l="Test">CDC <strong>Oropouche virus RT-PCR and PRNT</strong></td><td data-l="Lab">CDC Arbovirus Diseases Branch, Fort Collins, via state health dept · Serum RT-PCR 0–7 days; PRNT &gt;7 days; acute + convalescent sera ≥2 weeks apart preferred</td><td data-l="Ordering">All specimens through state health departments on CDC Form 50.34 / CSTOR; results via health dept to physician. No direct patient shipment</td><td data-l="Difference"><strong>Additional, public-health-only before Quest.</strong> PRNT confirmation is generally not offered commercially</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Mayaro</td><td data-l="Test">CDC <strong>Mayaro virus molecular and serologic testing</strong> (PCR is the blood form)</td><td data-l="Lab">CDC Arbovirus Diagnostic Lab, Fort Collins, via state health dept · Serum; exact volume/code must be checked in current CDC Test Directory — not stated in the page found</td><td data-l="Ordering">Through state health departments only. CDC: “Testing for Mayaro virus infection is currently only available at CDC” (Florida MAY 1527 is the state-PHL exception)</td><td data-l="Difference"><strong>Additional, CDC-only in the US</strong> per CDC page</td></tr>
+      <tr data-route="ph"><td data-l="Pathogen">Yellow fever</td><td data-l="Test">Wadsworth <span class="mono">4491</span> and Florida <span class="mono">YF 1689</span> — RT-PCR</td><td data-l="Lab">Wadsworth / Florida BPHL · Serum, whole blood; acute serum (Florida)</td><td data-l="Ordering">PHL-routed, pre-approval as above</td><td data-l="Difference"><strong>Additional, but limited DR/Mexico relevance:</strong> yellow fever is endemic in tropical South America and Africa, not established as endemic in DR or Mexico in sources found</td></tr>
+      <tr data-route="incountry"><td data-l="Pathogen">Dengue / Zika / Chikungunya — Mexico in-country</td><td data-l="Test"><strong>TaqMan Arbovirus Triplex RT-qPCR Kit (ZIKV/DENV/CHIKV)</strong></td><td data-l="Lab">InDRE, Mexico City + state public-health labs · Blood/serum RT-qPCR in acute phase</td><td data-l="Ordering"><strong>In-country surveillance route, not a verified US mail-order route.</strong> No patient-facing code or mail-in instruction found</td><td data-l="Difference">Parallel in <em>method</em> to CDC Trioplex (same trio, same acute-serum logic), different <em>system</em></td></tr>
+      <tr data-route="incountry"><td data-l="Pathogen">Dengue — Dominican Republic in-country</td><td data-l="Test"><strong>Real-time RT-qPCR for DENV 1–4</strong> + whole-genome sequencing</td><td data-l="Lab">Laboratorio Central de Salud Pública / Dr. Defilló National Reference Lab, Santo Domingo · Serum/blood-derived nucleic acid; exact routine volume not stated</td><td data-l="Ordering"><strong>In-country reference route.</strong> Early DR Zika confirmation was by CDC RT-PCR in the US. No DR mail-order code for a US-based person was found</td><td data-l="Difference">Parallel in method to US dengue PCR, but <strong>not orderable from the US by mail on evidence found</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p id="empty" class="small hidden">No tests match that filter and search. Clear the search or choose “All routes.”</p>
+
+  <details>
+    <summary>Blood tests that are NOT in this list — antibody / antigen / urine (not blood PCR)</summary>
+    <p style="margin-top:10px">Mayo ARBOP, ABOPC (CSF), CHIKV (chikungunya IgM/IgG ELISA), DENGM (dengue IgG/IgM), DENVP (dengue IgG/IgM + NS1 antigen), DNSAG (NS1 antigen alone), VZIKM (Zika IgM), WNS/WNC (West Nile IgG/IgM), POWV (Powassan IgM), and the individual ARBOP components EEEP / WEEP / CAVP / STLP are all <strong>antibody/antigen, not PCR</strong>. They remain clinically relevant after the PCR window closes (generally &gt;7 days), but they fail the PCR-only filter. Mayo VZIKU (Zika PCR, urine) and POWVU (Powassan PCR, urine) are PCR but <strong>not blood</strong>, so they are also excluded.</p>
+  </details>
+</section>
+
+<section aria-labelledby="routes">
+  <h2 id="routes">4 · Who actually offers what — and the PRNT bottleneck</h2>
+  <div class="grid2">
+    <div class="card"><h3>Mayo Clinic Laboratories</h3><p>Commercial send-out, provider-ordered: DENGS, CHIKS, VZIKS, WNVS, POWVS serum PCR. Mayo’s own mosquito-borne algorithm splits by exposure: US → ARBOP/ABOPC; <strong>outside-US → add CHIKV, CHIKS, CHIKC, DENGM, DENVP, DNSAG, DENGS, DENGC, VZIKM, VZIKU, VZIKS</strong>; WNS/WNC in any region.</p><p><strong>No Mayo blood PCR found for:</strong> Oropouche, Mayaro, Venezuelan equine, Western equine, Eastern equine, St. Louis, yellow fever, Jamestown Canyon, California serogroup (other than antibody). No Mayo Oropouche or Mayaro code was found.</p></div>
+    <div class="card"><h3>CDC / US public health</h3><p>Travel Panel 6150, Summer Panel 5470, Florida Trioplex 1550 and individual codes, CDC Oropouche and Mayaro. <strong>Neutralisation (PRNT) is the key public-health-only method</strong> — Philadelphia guidance: “Neutralization tests that help differentiate arboviral pathogens are only available through public health laboratories.”</p><p>Not orderable by a patient directly; requires clinician + state health department + prior approval for many viruses, and acute timing (&lt;7 days for most RT-PCR, &lt;5 days for Florida EEE/SLE/WN serum, &lt;14 days for Florida Trioplex serum).</p></div>
+    <div class="card"><h3>Other commercial US labs</h3><p>Quest Oropouche PCR (July 2025). NYC guidance lists ARUP, Eurofins-Viracor, Labcorp, Mayo, Quest as preferred commercial options for dengue/chik/Zika IgM/PCR/NS1. <strong>Exact Quest/Labcorp/ARUP codes for dengue/chik/Zika PCR were not extracted — a gap; do not invent them.</strong></p></div>
+    <div class="card"><h3>Local-only / in-country &amp; Canada</h3><p>Mexico: InDRE network Triplex RT-qPCR. DR: Dr. Defilló DENV RT-qPCR + sequencing. <strong>No verified US mail-order route, code, or patient-facing ordering page found for either.</strong></p><p>Canada: Public Health Ontario VEE and EEE serology + PCR — Ontario-clinician route only, PHO microbiologist approval, referred to CDC Fort Collins / Canada’s National Microbiology Laboratory. Not a US patient mail-order service.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="equine">
+  <h2 id="equine">5 · Equine encephalitis viruses — human blood parallels</h2>
+  <p>“Equine” means the virus was first associated with equine disease — <strong>not</strong> that the test is for horses. Human and veterinary tests share virus names but have different codes, labs, and validity.</p>
+  <div class="callout red"><h3>⚠ Veterinary trap — do not order an animal test for a human</h3><p style="margin:0">Zoologix <span class="mono">S0054 / S0055 / S0056</span> (VEE / EEE / WEE RT-PCR, EDTA whole blood or CNS tissue), Guelph <span class="mono">eeepn, xweevvn</span>, and Texas A&amp;M TVMDL <span class="mono">8186 / 8055</span> are <strong>animal tests</strong> on equine assay sheets. They are listed here only so they are not mistaken for human parallels.</p></div>
+  <div class="equine">
+    <div class="eq"><header><h3>Eastern equine (EEEV)</h3><span class="tag found">Blood PCR found</span></header>
+      <p><strong>Florida BPHL EEE 1682</strong> — acute serum &lt;5 days, pre-approval via county health dept. (CSF/brain tissue forms excluded.)</p>
+      <p><strong>PHO EEE Serology and PCR</strong> — serology preferred (HI screen, CDC Fort Collins PRNT confirmation); PCR at NML is case-by-case, “not routinely recommended,” “not a sensitive test,” only for immunocompromised patients per PHO. <em>No separate numeric PHO code in the excerpt — code gap.</em></p>
+      <p class="small">Non-PCR: Mayo EEEP antibody (ARBOP component).</p></div>
+    <div class="eq"><header><h3>Western equine (WEEV)</h3><span class="tag notfound">No blood PCR found</span></header>
+      <p><strong>No Mayo, Florida, Wadsworth, or PHO human WEE PCR code was found.</strong> Florida’s menu lists EEE, SLE, DEN, WN, CHIK, ZIK, YF, MAY — no WEE. Wadsworth menus list no WEE PCR.</p>
+      <p>The only verified human WEE test in the US menus searched is Mayo <span class="mono">WEEP</span> antibody (ARBOP component) — antibody, not PCR.</p>
+      <p class="small">Conclusion: if the question is “parallel blood PCR to ARBOP’s WEE antibody,” the answer on evidence found is <strong>none verified</strong> — confirm with CDC Fort Collins / a state PHL, do not invent a test.</p></div>
+    <div class="eq"><header><h3>Venezuelan equine (VEEV)</h3><span class="tag ph">Public-health referral</span></header>
+      <p><strong>PHO VEE Serology and PCR</strong> — PCR on serum, minimum 5.0 mL blood or 1.0 mL serum, red-top or SST; <strong>requires PHO microbiologist approval</strong>; performed at CDC Fort Collins if criteria are met; turnaround set at submission (not routine). CSF form excluded.</p>
+      <p>Timing limit (BMJ Best Practice): viraemia may be detected only <strong>up to 3 days after onset</strong>; ELISA cross-reacts with other alphaviruses and needs PRNT confirmation.</p>
+      <p class="small">No Mayo, Florida, or Wadsworth human VEE PCR code was found — in North America it is effectively a public-health referral, not a commercial panel item.</p></div>
+    <div class="eq"><header><h3>Madariaga (MADV)</h3><span class="tag notfound">No distinct code found</span></header>
+      <p>Madariaga is the reclassification of former South American EEE lineages II–IV (see naming, §8). <strong>No distinct human blood-PCR code was found.</strong></p>
+      <p>Whether an EEE assay detects Madariaga depends on primers — <em>that is speculation, marked as such; do not assume Florida 1682 or PHO EEE PCR covers it.</em> The only defensible route on evidence found is to ask CDC Fort Collins / a reference lab — unverified.</p>
+      <p class="small">Human disease documented in Haiti (2015–16) and Panama (2010, 14 cases, mainly children) — a real, if rare, human pathogen in the region.</p></div>
+  </div>
+  <p class="small" style="margin-top:14px"><strong>Also in this differential:</strong> St. Louis — Florida <span class="mono">SLE 1686</span>, acute serum &lt;5 days; otherwise ARBOP antibody only. Jamestown Canyon / California serogroup — Wadsworth lists PCR as <strong>CSF only, requires NPL approval</strong>, so excluded from the blood list. Minnesota PHL serum panel “ARBO” lists WNV, Powassan, Jamestown Canyon, EEE, WEE, California-group and SLE, but the excerpt does not break out which analytes are PCR vs serology — <strong>do not cite it as a proven Jamestown Canyon blood-PCR code</strong>; it is a lead to verify. Chikungunya’s differential also includes Barmah Forest, o’nyong-nyong, Ross River and Sindbis — no human blood PCR for those was searched for or found, and they are not DR/Mexico endemic tests on evidence found.</p>
+</section>
+
+<section aria-labelledby="excluded">
+  <h2 id="excluded">6 · Excluded — CSF-only panels (not options)</h2>
+  <p>Listed only to show what was excluded and why, under the no-spinal-tap scope.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Excluded test</th><th>Why excluded</th></tr></thead>
+    <tbody>
+      <tr><td data-l="Test">Mayo CSFME (BioFire FilmArray, 14 targets)</td><td data-l="Why">CSF only, 1 mL spinal fluid, refrigerated ≤7 days, frozen not acceptable</td></tr>
+      <tr><td data-l="Test">Mayo ABOPC — Arbovirus Antibody Panel, Spinal Fluid</td><td data-l="Why">CSF only; also not available for NY State clients per its test definition</td></tr>
+      <tr><td data-l="Test">Mayo CHIKC, DENGC, WNC, POWVC (CSF versions)</td><td data-l="Why">CSF versions of blood tests in §3 — the blood version is the option, the CSF version is not</td></tr>
+      <tr><td data-l="Test">Quest Meningoencephalitis Panel, CSF — Code 12600</td><td data-l="Why">CSF only, 5 mL preferred; Quest LDT, not FDA-cleared; not available for NY patient testing</td></tr>
+      <tr><td data-l="Test">BioFire FilmArray ME via other labs (e.g. Cleveland Clinic MGEBF) &amp; QIAstat-Dx ME</td><td data-l="Why">CSF via lumbar puncture in every version found. The EU QIAstat version has 16 targets vs US 9 — an international difference in target count, <strong>not</strong> in specimen; it does not create a blood option</td></tr>
+      <tr><td data-l="Test">Wadsworth Viral Encephalitis Panel – Summer, 686; California serogroup / Cache Valley PCR</td><td data-l="Why">CSF only (NPL approval for the latter), even though Wadsworth Summer Panel 5470 is the blood parallel for other viruses</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="adapt">
+  <h2 id="adapt">7 · Can a spinal-fluid PCR panel be run on blood?</h2>
+  <p class="lede" style="font-size:1rem">Short answer from what laboratories actually do: <strong>a CSF-validated assay is not automatically valid on blood.</strong> Changing the specimen changes the test’s regulatory status and requires a new validation. <strong>No laboratory was found offering the BioFire or QIAstat meningitis/encephalitis panel validated on blood as a clinical test.</strong></p>
+  <div class="statrow">
+    <div class="stat"><b>~90% / ~50%</b><span>Sensitivity when a blood-culture panel (BCID2) was repurposed for CSF in a study — ~90% when Gram stain positive, only ~50% when Gram stain negative. Repurposing is not equivalence.</span></div>
+    <div class="stat"><b>87% vs 26%</b><span>West Nile PCR sensitivity: whole blood up to 87% vs serum 26% (Mayo’s own page) — even within blood fractions, the matrix changes the answer.</span></div>
+    <div class="stat"><b>26% vs 9.2%</b><span>Enterovirus RT-PCR positivity in CSF without red cells vs with red cells — blood contamination itself inhibits the test.</span></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Physically possible ≠ clinically validated</h3><p>PCR chemistry does not know what tube the sample came from — a lab could physically produce a signal. But the panel’s published performance (~90% sensitivity, 97% specificity <em>in CSF</em>) would not apply, and the result would need a disclaimer and director-approved validation to be reportable.</p><p>Under CLIA (42 CFR 493.1253), a <strong>modified</strong> FDA-cleared test needs full establishment of performance before reporting: accuracy, precision, analytical sensitivity, analytical specificity including interfering substances, reportable range, and reference interval — in the <em>true matrix</em> (real blood, not CSF). Changing specimen type is explicitly listed as a modification that moves a test into LDT-style validation.</p></div>
+    <div class="card"><h3>What labs do instead</h3><ul><li><strong>Validate each specimen separately:</strong> Mayo has CHIKS (serum) <em>and</em> CHIKC (CSF); DENGS <em>and</em> DENGC; POWVS / POWVC / POWVU — separate IDs, volumes, and limits of detection. If swapping were accepted, none of that would be necessary.</li><li><strong>Validate multi-matrix from the start:</strong> CDC Trioplex was authorised for serum, whole blood, urine, CSF and amniotic fluid — prospective validation, not retrospective adaptation.</li><li><strong>Study repurposing and report the loss</strong> (BCID2-on-CSF study, left) — presented as a study of utility, not a validated clinical offering.</li></ul></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Documented limits on blood</h3>
+    <p><strong>Matrix inhibitors:</strong> heme/haemoglobin binds DNA polymerase and inhibits amplification; immunoglobulins, lactoferrin, heparin, bilirubin and lipids are also documented inhibitors in blood/plasma/serum, while CSF rarely has endogenous inhibitors. Diluting to reduce inhibitors also dilutes the target below the limit of detection.</p>
+    <p><strong>Different limits by specimen, same assay:</strong> HSV PCR limit of detection is higher in blood (30 TCID<sub>50</sub>/mL) than in CSF (5–40) in the Children’s Minnesota listing.</p>
+    <p style="margin:0"><strong>Compartment biology — the decisive limit:</strong> many meningitis/encephalitis pathogens cause CNS disease without the pathogen being in blood at testing time, so a negative blood result does not exclude CNS infection. The reverse also fails: HHV-6 integrates into host DNA and is detectable in blood in many healthy people, so a positive blood result does not prove CNS disease. <strong>Blood and CSF results are not interchangeable in either direction.</strong></p>
+  </div>
+  <p class="small">Not speculation: the CLIA requirement, the CSF-only intended uses, the repurposing sensitivity loss, the inhibitor mechanisms, and per-specimen LOD differences are all documented in the sources below. Speculation, flagged as such in the research: any claim that a specific lab <em>could</em> validate ME-on-blood successfully, what its sensitivity <em>would</em> be, or that a future multi-matrix cartridge <em>will</em> appear. Vendor marketing about “one cartridge handles CSF, blood, or swab” is not evidence of a validated blood ME panel.</p>
+</section>
+
+<section aria-labelledby="names">
+  <h2 id="names">8 · Is the US at the forefront? Why do names differ?</h2>
+  <div class="callout"><h3>Forefront — a qualified yes</h3><p><strong>Yes</strong> for reference, multiplex, and FDA-authorised work: CDC Fort Collins is the US arbovirus reference lab; CDC’s Puerto Rico Dengue Branch developed Trioplex, “the first Zika PCR test to gain FDA authorization”; BioFire and QIAstat are the FDA-cleared CSF syndromic panels.</p><p style="margin:0"><strong>No</strong> for sole leadership: the US lagged commercially on Oropouche until Quest in July 2025, still routes Mayaro and Venezuelan equine essentially only through CDC, and has no human WEE blood PCR found — while InDRE is a WHO Collaborating Centre for Arboviruses, PAHO/WHO sets regional guidelines, and Fiocruz-type and European work (Institut Pasteur, altona kits, QIAstat EU 16-target version) is part of the same ecosystem. “Forefront” depends on the virus.</p></div>
+  <p>Different names usually do <strong>not</strong> mean different viruses. Four mechanisms explain most of it:</p>
+  <div class="grid2">
+    <div class="card"><h3>1 · Place of first isolation, kept</h3><p>Zika (Zika Forest, Uganda), West Nile (West Nile district, Uganda), La Crosse (Wisconsin), Powassan (Ontario), Oropouche (Oropouche River, Trinidad), Mayaro (Trinidad), St. Louis, California encephalitis (first serogroup virus found in California, 1943). WHO’s 2015 best practices bar geographic names for <em>new</em> diseases — but do not rename diseases already in common usage, so these stay.</p></div>
+    <div class="card"><h3>2 · Taxonomic renaming (2023)</h3><p>ICTV renamed genus <em>Flavivirus</em> → <em>Orthoflavivirus</em>, with binomial species names: dengue → <em>Orthoflavivirus denguei</em>, Zika → <em>O. zikaense</em>, West Nile → <em>O. nilense</em>, yellow fever → <em>O. flavi</em>. <strong>Virus common names did not change.</strong> A lab still writing “Flavivirus genus” is using pre-2023 taxonomy, not describing a different virus.</p></div>
+    <div class="card"><h3>3 · Serogroup vs species</h3><p>“California encephalitis” is both a virus and a <strong>serogroup</strong> (La Crosse, Jamestown Canyon, snowshoe hare, Tahyna, Inkoo, Trivittatus, Guaroa…). ARBOP’s target is listed as “California Virus (La Crosse)” because La Crosse is the actual assay target, and cross-reactivity means a “California” result may reflect another member — hence reports as “California serogroup,” “California (La Crosse),” or “La Crosse” without implying three infections.</p></div>
+    <div class="card"><h3>4 · Splits &amp; old group names</h3><p><strong>EEE → EEEV + Madariaga:</strong> North American lineage I stays EEEV; Central/South American lineages II–IV are now Madariaga virus — so older Central/South American literature saying “EEEV” actually means MADV. Old “Arbovirus Group A / B” became Alphavirus / Flavivirus (now Orthoflavivirus) — and “arbovirus” itself is an ecological term, not a taxonomic group. Dengue is one species with four serotypes (DENV-1–4); Powassan lineages 1 and 2 (deer tick virus) are both reported as “Powassan” in one test.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="gaps">
+  <h2 id="gaps">9 · Open questions — gaps, not findings</h2>
+  <ol class="gaps">
+    <li><strong>No verified direct patient mail-order route</strong> for InDRE (Mexico) or Dr. Defilló (DR) tests from the US; no named private DR/Mexico test code with mail-in instructions was found. Private labs in-country almost certainly offer dengue/chik/Zika PCR, but names, codes, specimen requirements, and cross-border shipping legality were not verified.</li>
+    <li><strong>No human blood-PCR code found for Western equine</strong>, and <strong>no distinct code for Madariaga</strong>. Confirm with CDC Fort Collins / a state PHL before assuming coverage.</li>
+    <li><strong>No Quest / Labcorp / ARUP codes</strong> for dengue, chikungunya, or Zika PCR were extracted; NYC guidance names the labs but not the codes.</li>
+    <li><strong>No laboratory found offering the BioFire/QIAstat ME panel on blood</strong> as a validated clinical test; no sensitivity/specificity for ME-on-blood exists to quote.</li>
+    <li><strong>Exact CDC Test Directory codes</strong> for current Mayaro, VEE, and Oropouche orders were not verified against the live Directory (beyond a Boston Children’s note of CDC-10283 for arbovirus neutralisation). CDC pages warn “Some tests are not currently available at CDC” — check at order time.</li>
+    <li><strong>Minnesota PHL ARBO serum panel:</strong> which analytes are PCR vs serology is not broken out — do not cite it as a proven Jamestown Canyon or WEE blood-PCR code without the full menu.</li>
+    <li><strong>DR Oropouche and Mexico yellow-fever endemicity</strong> are not established in sources found — do not present either as endemic on this evidence.</li>
+    <li><strong>All sources are index snippets, not live-verified pages.</strong> Menus (PHO, Wadsworth, Florida BPHL, Quest) change; re-check codes and approvals at order time.</li>
+  </ol>
+</section>
+
+<footer>
+  <h3 style="color:var(--ink)">Sources — research dated 3 Nov 2026 (index only)</h3>
+  <ul>
+    <li>Mayo ARBOP: <a href="https://www.mayocliniclabs.com/test-catalog/overview/83267">mayocliniclabs.com/test-catalog/overview/83267</a> · CSFME: <a href="https://www.mayocliniclabs.com/test-catalog/Overview/622764">mayocliniclabs.com/test-catalog/Overview/622764</a> · Mosquito-borne algorithm: <a href="https://news.mayocliniclabs.com/n1/96e99366cea7b0de/uploads/2025/05/Mosquito-borne_Disease_Laboratory_Testing.pdf">Mayo mosquito-borne disease PDF</a></li>
+    <li>Mayo singles: <a href="https://www.mayocliniclabs.com/test-catalog/overview/603833">CHIKS</a> · <a href="https://www.mayocliniclabs.com/test-catalog/overview/617486">POWVS</a> · <a href="https://childrenscolorado.testcatalog.org/show/DENGS">DENGS</a></li>
+    <li>Florida: <a href="https://www.floridahealth.gov/community-environmental-public-health/public-health-laboratories/testing/virology/arbovirus-trioplex-pcr/">Trioplex 1550</a> · <a href="https://www.floridahealth.gov/community-environmental-public-health/public-health-laboratories/testing/virology/arbovirus-pcr/">Arbovirus PCR codes</a></li>
+    <li>Wadsworth / APHL: <a href="https://www.wadsworth.org/programs/id/virology/services/arbovirus-testing">wadsworth.org arbovirus testing</a> · <a href="https://aphl.org/docs/default-source/infectious-diseases-documents/vector-borne-diseases/arbovirusreferencecenter_testmenus.pdf?sfvrsn=75ba9d05_2">APHL Reference Center test menu</a></li>
+    <li>CDC: <a href="https://www.cdc.gov/oropouche/php/reporting/index.html">Oropouche testing</a> · <a href="https://www.cdc.gov/mayaro-virus/hcp/clinical-diagnosis-treatment/index.html">Mayaro diagnosis</a> · Quest: <a href="https://newsroom.questdiagnostics.com/2025-07-15-Quest-Diagnostics-Introduces-Testing-for-Oropouche-Virus">Quest Oropouche launch, 15 July 2025</a> · NYC guidance: <a href="https://www.nyc.gov/assets/doh/downloads/pdf/cd/dengue-chikungunya-zika-oropouche-testing.pdf">nyc.gov testing PDF</a></li>
+    <li>PHO: <a href="http://www.PublicHealthOntario.ca/fr/Laboratory-Services/Test-Information-Index/Venezuelan-Equine-Encephalitis-Serology">VEE serology/PCR</a> · <a href="https://WWW.PUBLICHEALTHONTARIO.CA/en/Laboratory-Services/Test-Information-Index/Eastern-Equine-Encephalitis-Serology">EEE serology/PCR</a> · Minnesota PHL: <a href="https://forms.web.health.state.mn.us/idl/test/861">Arbovirus serum panel</a></li>
+    <li>Endemicity: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7794562/">DR dengue/Zika/chikungunya analysis</a> · <a href="https://www.idsociety.org/science-speaks-blog/2025/the-growing-risk-of-arboviruses-in-the-americas/">Arboviruses in the Americas (IDSA)</a> · <a href="https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2026.1864621/full">Mexico InDRE Triplex</a></li>
+    <li>CSF→blood: <a href="https://journals.asm.org/doi/10.1128/spectrum.02770-25">ASM repurposing study (BCID2 on CSF)</a> · <a href="https://www.labmanager.com/qpcr-and-dpcr-in-clinical-diagnostics-validation-under-clia-and-cap-36122">CLIA validation &amp; specimen-type modification</a> · <a href="https://www.qiagen.com/es-us/products/diagnostics-and-clinical-research/infectious-disease/qiastat-dx-syndromic-testing/qiastat-dx-na">QIAstat-Dx ME</a> · <a href="https://testdirectory.questdiagnostics.com/test/test-detail/12600/meningoencephalitis-encephalitis-panel-csf?p=r&cc=MASTER">Quest CSF panel 12600</a></li>
+    <li>Naming: <a href="https://en.wikipedia.org/wiki/Orthoflavivirus">Orthoflavivirus renaming</a> · <a href="https://en.wikipedia.org/wiki/EEEV">EEEV / Madariaga split</a> · Veterinary (not human): <a href="https://www.zoologix.com/horse/Datasheets/EquineEncephalitis.htm">Zoologix equine sheet</a></li>
+  </ul>
+  <p>Built from finished deep research dated 3 Nov 2026. Every value above carries the hedge its source attached; gaps are marked as gaps. Nothing on this page orders a test.</p>
+</footer>
+</div>
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip'), rows=document.querySelectorAll('#rows tr'),
+      q=document.getElementById('q'), count=document.getElementById('count'), empty=document.getElementById('empty'),
+      filter='all';
+  function apply(){
+    var term=q.value.trim().toLowerCase(), n=0;
+    rows.forEach(function(r){
+      var okF = filter==='all' || r.getAttribute('data-route')===filter;
+      var okQ = !term || r.textContent.toLowerCase().indexOf(term)>-1;
+      var show = okF && okQ;
+      r.classList.toggle('hidden', !show);
+      if(show) n++;
+    });
+    count.textContent = n + (n===1?' test':' tests') + ' shown — blood PCR only.';
+    empty.classList.toggle('hidden', n!==0);
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    c.setAttribute('aria-pressed','true'); filter=c.getAttribute('data-filter'); apply();
+  });});
+  q.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+</html>

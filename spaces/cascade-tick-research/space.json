@@ -1,0 +1,8 @@
+{
+  "runtime": "static",
+  "platformVersion": 15,
+  "entry": "index.html",
+  "name": "Cascade Tick Research",
+  "slug": "cascade-tick-research",
+  "managedCronJobs": []
+}

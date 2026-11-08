@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>CLI apps for Messenger, Muse, and Meta AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f2ec;
+        --surface: #fffdf8;
+        --surface-2: #eceade;
+        --ink: #1c1e1a;
+        --ink-2: #4c5148;
+        --line: #d6d2c4;
+        --accent: #0e6e4e;
+        --accent-ink: #0a5138;
+        --warn: #9a5b00;
+        --warn-bg: #f8ecd4;
+        --bad: #a02c1d;
+        --bad-bg: #f7e0da;
+        --good-bg: #dcefe4;
+        --code-bg: #161a17;
+        --code-ink: #d9e6dc;
+        --code-dim: #8fa596;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101311;
+          --surface: #171b18;
+          --surface-2: #1e2420;
+          --ink: #e9ebe4;
+          --ink-2: #a9aea0;
+          --line: #2e352f;
+          --accent: #4cc38a;
+          --accent-ink: #7fd6ab;
+          --warn: #e0a44a;
+          --warn-bg: #2c2313;
+          --bad: #e87a68;
+          --bad-bg: #2e1a16;
+          --good-bg: #173527;
+          --code-bg: #0b0e0c;
+          --code-ink: #d9e6dc;
+          --code-dim: #7d8f83;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 16.5px;
+        line-height: 1.6;
+      }
+      .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px 72px; }
+      h1, h2, h3 { font-family: "Archivo", sans-serif; line-height: 1.15; letter-spacing: -0.01em; }
+      h1 { font-size: clamp(30px, 5.4vw, 46px); font-weight: 800; margin: 0 0 14px; }
+      h2 { font-size: clamp(23px, 3.6vw, 30px); font-weight: 700; margin: 0 0 10px; }
+      h3 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
+      p { margin: 0 0 14px; }
+      a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+      .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+      code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.88em; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; word-break: break-word; }
+
+      /* ---------- lead ---------- */
+      .lead { padding: 40px 0 8px; }
+      .dateline { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-2); margin-bottom: 16px; }
+      .lede { font-size: 19px; line-height: 1.55; color: var(--ink); max-width: 780px; }
+      .lede strong { color: var(--accent-ink); }
+
+      /* ---------- verdict cards ---------- */
+      .verdicts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0 8px; }
+      .vcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 14px; display: flex; flex-direction: column; }
+      .vcard .app { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+      .vcard p { font-size: 14.5px; color: var(--ink-2); margin: 0; }
+      .badge { display: inline-block; align-self: flex-start; font-family: "IBM Plex Mono", monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; margin-bottom: 12px; }
+      .badge.no { background: var(--bad-bg); color: var(--bad); }
+      .badge.partial { background: var(--warn-bg); color: var(--warn); }
+      .badge.yes { background: var(--good-bg); color: var(--accent-ink); }
+
+      /* ---------- nav ---------- */
+      nav.toc { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin: 22px -20px 0; padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+      nav.toc a { color: var(--ink-2); text-decoration: none; }
+      nav.toc a:hover { color: var(--accent-ink); text-decoration: underline; }
+
+      section { padding-top: 44px; }
+      .sec-note { color: var(--ink-2); max-width: 800px; }
+
+      /* ---------- naming trap ---------- */
+      .trap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+      .trap div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px; }
+      .trap .n { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent-ink); font-weight: 600; }
+      .trap h3 { margin-top: 3px; }
+      .trap p { font-size: 14.5px; color: var(--ink-2); margin: 0; }
+
+      /* ---------- code blocks ---------- */
+      .cmd { position: relative; background: var(--code-bg); border-radius: 10px; margin: 14px 0 18px; overflow: hidden; }
+      .cmd pre { margin: 0; padding: 16px 52px 16px 18px; overflow-x: auto; }
+      .cmd code { background: none; padding: 0; color: var(--code-ink); font-size: 13.5px; line-height: 1.65; white-space: pre; word-break: normal; }
+      .cmd .cmt { color: var(--code-dim); }
+      .copybtn { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.08); color: #cfe0d4; border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; font-family: "IBM Plex Mono", monospace; font-size: 12px; padding: 5px 10px; cursor: pointer; }
+      .copybtn:hover { background: rgba(255,255,255,0.16); }
+      .copybtn.done { color: #7fd6ab; border-color: #7fd6ab; }
+
+      /* ---------- callouts ---------- */
+      .callout { border-radius: 10px; padding: 16px 18px; margin: 16px 0; font-size: 15px; }
+      .callout.warn { background: var(--warn-bg); }
+      .callout.bad { background: var(--bad-bg); }
+      .callout.good { background: var(--good-bg); }
+      .callout p:last-child { margin-bottom: 0; }
+      .callout .ct { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+
+      /* ---------- tables ---------- */
+      .tblwrap { margin: 16px 0 8px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+      th { text-align: left; font-family: "Archivo", sans-serif; font-size: 13px; letter-spacing: 0.02em; background: var(--surface-2); padding: 10px 14px; border-bottom: 1px solid var(--line); }
+      td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      tr:last-child td { border-bottom: none; }
+      td .tool { font-weight: 600; }
+      .status { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; white-space: nowrap; }
+      .status.ok { color: var(--accent-ink); }
+      .status.stale { color: var(--warn); }
+      .status.dead { color: var(--bad); }
+
+      /* ---------- flow ---------- */
+      .flow { display: flex; align-items: stretch; gap: 0; margin: 20px 0 6px; flex-wrap: wrap; }
+      .fbox { flex: 1 1 150px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; }
+      .fbox .ft { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 14.5px; }
+      .fbox p { font-size: 13px; color: var(--ink-2); margin: 3px 0 0; }
+      .farrow { align-self: center; padding: 0 8px; color: var(--accent-ink); font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+      .flowcap { font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+
+      /* ---------- recipes ---------- */
+      ol.recipes { list-style: none; counter-reset: r; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      ol.recipes li { counter-increment: r; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; position: relative; }
+      ol.recipes li::before { content: counter(r); font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 13px; color: var(--bg); background: var(--accent); border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+      ol.recipes h3 { font-size: 16px; }
+      ol.recipes p { font-size: 14.5px; color: var(--ink-2); margin: 0; }
+      ol.recipes .tag { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--accent-ink); }
+
+      ul.tight { margin: 8px 0 14px; padding-left: 22px; }
+      ul.tight li { margin-bottom: 7px; }
+      .src { font-size: 13px; color: var(--ink-2); }
+      .src a { word-break: break-all; }
+
+      /* ---------- sources ---------- */
+      .sources { columns: 2; column-gap: 34px; font-size: 13.5px; }
+      .sources li { margin-bottom: 8px; break-inside: avoid; }
+      .sources a { word-break: break-all; }
+      .group-label { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-ink); margin: 20px 0 8px; }
+
+      footer { margin-top: 52px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 13.5px; color: var(--ink-2); }
+
+      @media (max-width: 760px) {
+        .verdicts { grid-template-columns: 1fr; }
+        .trap { grid-template-columns: 1fr; }
+        ol.recipes { grid-template-columns: 1fr; }
+        .sources { columns: 1; }
+        .flow { flex-direction: column; }
+        .farrow { transform: rotate(90deg); padding: 4px 0; align-self: center; }
+        table, thead, tbody, tr, td, th { display: block; }
+        thead { display: none; }
+        tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+        td { border-bottom: none; padding: 5px 14px; }
+        td:first-child { padding-top: 10px; }
+        td:last-child { padding-bottom: 10px; }
+      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ================= LEAD ================= -->
+      <div class="lead">
+        <div class="dateline">Researched 2026-11-08 · Ubuntu Linux · every claim sourced below</div>
+        <h1>Command-line versions of Messenger, Muse, and Meta AI — what actually exists</h1>
+        <p class="lede">Short answer: <strong>there is no official CLI for Messenger, for the Muse personal agent, or for Meta AI</strong> — but the idea behind the question works. An agent on Ubuntu <strong>can</strong> talk to other agents from the terminal, through three real doors: <strong>Muse Code's session messaging</strong> (one agent session messaging a peer session on the same machine), the <strong>Muse Gadgets SDK</strong> (<code>musegadget send-user-msg</code> — the only Meta-published CLI that delivers a message into the Muse personal agent), and the open <strong>MCP</strong> and <strong>A2A</strong> protocols. Messenger from the terminal is sanctioned only as a Facebook <em>Page</em>, never as a personal profile.</p>
+      </div>
+
+      <div class="verdicts">
+        <div class="vcard">
+          <span class="badge partial">Page API only · personal = unofficial</span>
+          <div class="app">1 · Facebook Messenger</div>
+          <p>No official CLI and no official Linux app at all. The sanctioned terminal route is the Graph API acting as a Page you administer. Personal-account CLIs exist but are mostly abandoned; the one maintained route (mautrix-meta) logs in with browser cookies and carries account-block risk.</p>
+        </div>
+        <div class="vcard">
+          <span class="badge partial">No CLI — but an official gadget bridge</span>
+          <div class="app">2 · Muse (personal agent)</div>
+          <p>No CLI and no public API for Muse itself; official clients are iOS, Android, Mac, web, and WhatsApp. The exception: Meta's open-source Muse Gadgets Linux SDK turns an Ubuntu box into a Muse-controlled device whose local programs can message Muse from the shell.</p>
+        </div>
+        <div class="vcard">
+          <span class="badge no">Nothing official</span>
+          <div class="app">3 · Meta AI in Messenger</div>
+          <p>No CLI and no consumer API for the in-Messenger assistant, and no way to script your personal conversation with it. The sanctioned developer substitute is the Meta Model API — the same model family, a different product, with no access to your Messenger thread or Meta AI's memory.</p>
+        </div>
+      </div>
+
+      <nav class="toc" aria-label="On this page">
+        <a href="#names">The four "Muses"</a>
+        <a href="#messenger">Messenger</a>
+        <a href="#muse">Muse</a>
+        <a href="#muse-code">Muse Code</a>
+        <a href="#meta-ai">Meta AI</a>
+        <a href="#self">Talking to itself</a>
+        <a href="#today">Use today</a>
+        <a href="#open">Open questions</a>
+        <a href="#sources">Sources</a>
+      </nav>
+
+      <!-- ================= NAMES ================= -->
+      <section id="names">
+        <h2>First, the naming trap: four different things</h2>
+        <p class="sec-note">Most confusion — and most misleading "muse cli install" search results — comes from four products sharing names. Keep these separate and every verdict below makes sense.</p>
+        <div class="trap">
+          <div>
+            <span class="n">THING 1</span>
+            <h3>Muse — the personal agent</h3>
+            <p>Meta's consumer personal AI agent, launched 2026-09-08. App, muse.ai, and WhatsApp. This is the "Muse" the question is about — and it has no CLI.</p>
+          </div>
+          <div>
+            <span class="n">THING 2</span>
+            <h3>Muse Code — the terminal coding agent</h3>
+            <p>A separate developer product. Its binary is literally named <code>muse</code>, it <em>is</em> a real official CLI for Linux, and it produces most "muse cli" search hits. It is not a CLI for the personal agent.</p>
+          </div>
+          <div>
+            <span class="n">THING 3</span>
+            <h3>Meta AI — the assistant in Messenger</h3>
+            <p>The blue-circle assistant inside Messenger, Facebook, Instagram, and WhatsApp (invoked as <code>@Meta AI</code> in group chats), plus meta.ai and the Meta AI app.</p>
+          </div>
+          <div>
+            <span class="n">THING 4</span>
+            <h3>Meta Model API — the models, as an API</h3>
+            <p>A developer API serving the Muse <em>models</em> (Muse Spark / Muse Wonder). An endpoint into the models — not into the Muse personal agent, and not into your Meta AI session.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MESSENGER ================= -->
+      <section id="messenger">
+        <h2>1 · Facebook Messenger</h2>
+        <p class="sec-note"><strong>Verdict: no official CLI, on any OS.</strong> Meta offers no <code>messenger</code> command-line tool and no official Messenger desktop app for Linux at all. Meta discontinued even its Windows and macOS desktop apps on 2025-12-15, redirecting users to the web at facebook.com/messages / messenger.com.</p>
+
+        <h3>The official route: Messenger Platform on the Graph API — Page-only</h3>
+        <p>To integrate with Messenger officially you create a Meta app (Business type) at developers.facebook.com, add the Messenger product, connect <strong>a Facebook Page you administer</strong>, generate a Page access token with the <code>pages_messaging</code> permission, register a publicly reachable HTTPS webhook subscribed to <code>messages</code> / <code>messaging_postbacks</code>, and reply through the Send API. In Development mode only people with a role on the app can message it; public use requires App Review (and, for advanced access, Business Verification). Free-form replies are constrained by the 24-hour messaging window, message tags and Human Agent exceptions aside.</p>
+        <div class="callout bad">
+          <span class="ct">Personal accounts: no</span>
+          <p>"Messenger integrations always run through a Facebook Page, never through a personal profile. Users message the Page, Meta delivers those events to your webhook, and your app answers as the Page." There has been no sanctioned personal-profile chat API since Meta shut off the old XMPP chat API in 2015. A personal account's role is limited to administering the app/Page and <em>messaging</em> the Page as a user.</p>
+        </div>
+        <p>The closest thing to an "official CLI" for Messenger is calling the Graph API from a terminal — as the Page:</p>
+        <div class="cmd"><button class="copybtn" type="button">Copy</button><pre><code><span class="cmt"># Send as your Page (Page access token required)</span>
+curl https://graph.facebook.com/v26.0/{page-id}/messages …
+
+<span class="cmt"># Official SDKs (libraries, not CLIs — both run on Ubuntu)</span>
+pip install facebook-business        <span class="cmt"># Python</span>
+npm install facebook-nodejs-business-sdk   <span class="cmt"># Node</span></code></pre></div>
+        <p>Graph API versioning in 2026: v25.0 (Feb 2026) / v26.0 (Jul 2026), each supported ~2 years — pin a version. Meta's three official remote MCP servers (Ads, Meta Social Technologies / DevTools, WhatsApp Business Tools) do <strong>not</strong> cover Messenger-personal or Page organic messaging. Meta did launch a real Ads CLI alongside the Ads MCP in April 2026 (Python 3.12+, system-user token) — official, but for ad accounts, not Messenger.</p>
+
+        <h3>Ubuntu availability</h3>
+        <div class="tblwrap">
+          <table>
+            <thead><tr><th>Route</th><th>Command / form</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tool">Official apt / PPA / .deb from Meta</span></td><td>—</td><td><span class="status dead">NONE EXIST</span></td></tr>
+              <tr><td><span class="tool">Web (official, no install)</span></td><td>Browser to messenger.com / facebook.com/messages</td><td><span class="status ok">OFFICIAL</span> — the route Meta itself now pushes for desktop</td></tr>
+              <tr><td><span class="tool">Snap <code>facebook-messenger-desktop</code></span></td><td><code>sudo snap install facebook-messenger-desktop</code></td><td><span class="status stale">UNOFFICIAL</span> — GUI wrapper, "an unofficial, self-contained desktop app"; latest/stable updated 26 Oct 2026. Not a CLI</td></tr>
+              <tr><td><span class="tool">Caprine</span> (Electron wrapper of messenger.com)</td><td><code>flatpak install flathub com.sindresorhus.Caprine</code> or <code>sudo snap install caprine</code>, plus .deb/AppImage from GitHub releases</td><td><span class="status stale">UNOFFICIAL</span> — community package "not verified by, affiliated with, or supported by" its author on Flathub; maintenance reports conflict (see Open questions). Not a CLI</td></tr>
+              <tr><td><span class="tool">Franz / Rambox / Ferdium-type wrappers</span></td><td>Various .deb / Snap / Flatpak</td><td><span class="status stale">UNOFFICIAL</span> — multi-service GUI wrappers, not CLIs</td></tr>
+              <tr><td><span class="tool">Graph API from terminal</span></td><td><code>curl</code> with a Page token, or the Python/Node SDKs above</td><td><span class="status ok">OFFICIAL API</span> — Page-only; the only sanctioned terminal route</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">Beware low-quality install blogs: commands like <code>sudo snap install messenger</code> and <code>flatpak install flathub com.facebook.messenger</code> circulate, but no such official packages were verified — the real Snap name is <code>facebook-messenger-desktop</code> and there is no <code>com.facebook.messenger</code> Flatpak from Meta.</p>
+
+        <h3>Unofficial personal-account tools — maintenance and account risk</h3>
+        <p>Every tool below logs in <strong>outside Meta's sanctioned routes</strong> — browser emulation, cookie extraction, or protocol spoofing. That is the risk category, in the tools' own words:</p>
+        <div class="tblwrap">
+          <table>
+            <thead><tr><th>Tool</th><th>What it is</th><th>Maintenance</th><th>Risk evidence</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="tool">mautrix-meta</span></td>
+                <td>Matrix bridge for Messenger (and Instagram); once bridged, any Matrix client — including terminal clients — can read/send as your personal account. Successor to mautrix-facebook (archived Mar 2024). Docker image <code>dock.mau.dev/mautrix/meta</code> (plain tag = Messenger, <code>ig-</code> tag = Instagram)</td>
+                <td><span class="status ok">ACTIVELY MAINTAINED</span> — current v26.x line; the only maintained personal-Messenger bridge found</td>
+                <td>Login = paste browser cookies (<code>datr, c_user, sb, xs</code>) copied as cURL from devtools, or <code>messenger-lite</code> username/password. Its own docs: "In some cases, Meta may decide your account has suspicious activity and block you until you do some tasks like completing a captcha, adding a phone number or resetting your password"; 2FA recommended</td>
+              </tr>
+              <tr>
+                <td><span class="tool">fb-messenger-cli / Messer</span></td>
+                <td>The classic terminal Messenger clients (<code>npm install -g fb-messenger-cli</code> / <code>npm install -g messer</code>), built on facebook-chat-api</td>
+                <td><span class="status dead">EFFECTIVELY DEAD</span> — activity trail ends ~2018–2021, forks archived Sep 2025</td>
+                <td>Inherit facebook-chat-api's model (below)</td>
+              </tr>
+              <tr>
+                <td><span class="tool">facebook-chat-api</span></td>
+                <td>JS library under Messer / fb-messenger-cli: "The only way to automate chat functionalities on a user account… by emulating the browser… requires the credentials of a Facebook account"</td>
+                <td><span class="status stale">MAINTENANCE MODE / STALE</span> — last main npm publish ~2020</td>
+                <td>Its own disclaimer: "We are not responsible if your account gets banned for spammy activities such as sending lots of messages… sending messages very quickly… logging in and out very quickly"</td>
+              </tr>
+              <tr>
+                <td><span class="tool">fbchat</span> (Python)</td>
+                <td>Python equivalent of the above</td>
+                <td><span class="status dead">OFFICIALLY UNMAINTAINED</span> — v1 deprecated, v2 "highly unstable"</td>
+                <td>Its README: "This is not an official API… This library differs by using a normal Facebook account instead", "Using this library may not comply with Facebook's Terms Of Service!"; APIs undocumented</td>
+              </tr>
+              <tr>
+                <td><span class="tool">bitlbee-facebook / purple-facebook</span></td>
+                <td>BitlBee/libpurple plugins speaking Messenger's MQTT protocol while spoofing an old Android client (Orca-Android user-agent). A Debian package <code>bitlbee-plugin-facebook</code> existed — do not assume it survives in current Ubuntu or still logs in</td>
+                <td><span class="status stale">INACTIVE / VERY LOW</span> (OpenHub)</td>
+                <td>Protocol spoofing of a discontinued client version; Facebook has repeatedly broken it by raising minimum client versions</td>
+              </tr>
+              <tr>
+                <td><span class="tool">hieu-lee/facebook-cli (<code>fb</code>)</span></td>
+                <td>New Rust CLI "for LLM agents": reads feed, reads/<strong>sends Messenger messages</strong>, posts/comments; daemon talks over a Unix socket</td>
+                <td><span class="status stale">BRAND-NEW, UNPROVEN</span> — repo created 2026-10-25, single-author</td>
+                <td>Copies your Facebook/Messenger cookies from your logged-in Chrome into its own headless Chrome profile and drives it — session hijacking by design (with your consent), exactly the pattern Meta's risk systems flag. Install is <code>curl … install.sh | sh</code> from its repo. <strong>Do not treat as verified or safe</strong>; listed because an agent searching in 2026 will find it</td>
+              </tr>
+              <tr>
+                <td><span class="tool">Community Page MCP servers</span> (e.g. <code>@ivanbaev/facebook-mcp</code>, Porter, Composio)</td>
+                <td>MCP servers exposing Page Graph API tools — including Messenger Page conversations, reply inside the 24h window — to MCP clients</td>
+                <td><span class="status stale">MIXED</span> — facebook-mcp is pre-1.0</td>
+                <td>These use the official Graph API + Page token, so account risk is low — but they are Page-only, like everything sanctioned. facebook-mcp's own site says it has not been verified against the live Graph API</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout warn">
+          <span class="ct">Bottom line — Messenger</span>
+          <p>Sanctioned terminal access = Graph API as a Page. Personal-account terminal access = unofficial, mostly abandoned, and the maintained option (mautrix-meta) explicitly documents Meta suspicious-activity blocks.</p>
+        </div>
+      </section>
+
+      <!-- ================= MUSE ================= -->
+      <section id="muse">
+        <h2>2 · Muse — the personal AI agent</h2>
+        <p class="sec-note"><strong>Verdict: no official CLI and no public API — but an official Linux gadget SDK gives a real CLI bridge.</strong> Muse launched 2026-09-08 as "a secure, private personal AI agent" running on a dedicated cloud computer (the Muse Secure VM, with a separate Sentinel agent approving anything that reaches the internet), powered by Muse Spark. It sends email, books, fills forms, buys (Link by Stripe), remembers preferences, and keeps working after the app closes, asking approval before sensitive actions. Official surfaces at launch: iOS, Android, and muse.ai, "coming soon to AI glasses", plus messaging it in WhatsApp. Free tier plus subscription plans.</p>
+        <ul class="tight">
+          <li><strong>No public API for driving Muse.</strong> Independent probes found <code>muse.ai/llms.txt</code> returns 401 behind auth, with no public API spec, no MCP discovery surface, and no documented headless/CLI/CI mode. A DigitalOcean comparison (updated 2026-10-28) agrees: "Developer API for the agent: None documented… none documents an API for creating or messaging the agent itself."</li>
+          <li><strong>The asymmetry matters:</strong> Muse itself can reach <em>out</em> — built-in connectors (Gmail, Calendar, Instagram, Facebook, etc.), Custom Connectors it writes for services that "have their own APIs or CLIs", and connector submissions via the Muse Connector Platform. That is Muse calling other tools — not a way for your program to call Muse.</li>
+          <li><strong>Sign-in:</strong> a Meta (Facebook/Instagram) account at muse.ai or in the app; availability began in the US (later US+Canada and further rollouts reported), 18+. There is no developer-account or API-key route into the personal agent. A Meta Model API key buys the Muse <em>models</em>, not the Muse <em>agent</em> — different product, no shared memory, tasks, or connectors.</li>
+          <li><strong>Ubuntu:</strong> the official desktop app is <strong>Mac only</strong> (checked Oct 2026 — no Windows, no Linux). On Ubuntu the official route is the web app at muse.ai in a browser, with the full agent, since the work happens on Muse's cloud VM. No apt/PPA/Snap/Flatpak/vendor .deb from Meta. An unofficial Electron wrapper, <code>benjaminkitt/muse-desktop</code>, offers a Linux .deb/AppImage — a GUI wrapper of muse.ai, unsigned, not Meta's, and not a CLI. (Also beware registry collisions: unrelated projects named "Muse", e.g. an audio-to-MIDI app with Ubuntu .debs, are not Meta's Muse.)</li>
+        </ul>
+
+        <h3>The official bridge: Muse Gadgets (<code>musegadget</code>)</h3>
+        <p>On 2026-10-02 Meta open-sourced <strong>Muse Gadgets</strong> (Apache-2.0, <code>facebookincubator/muse-gadget-sdk</code>): ESP32 firmware plus a Linux Device SDK for building devices that work with Muse. It works in both directions:</p>
+        <div class="flow">
+          <div class="fbox"><div class="ft">Muse → your Ubuntu box</div><p>A systemd service (<code>musegadget</code>, in <code>/opt/musegadget</code>) lets Muse call <code>system.run</code> (shell command, returns output + exit code), <code>file.read</code> / <code>file.write</code> (64 KB chunks), and <code>device.health</code> — as the account you installed for. "If it can use sudo, so can Muse." Add your own commands as JSON files in <code>/etc/musegadget/commands.d/</code>.</p></div>
+          <div class="farrow">⇄</div>
+          <div class="fbox"><div class="ft">Your Ubuntu programs → Muse</div><p>"Programs on the machine can send messages to Muse, with no credentials of their own" — via <code>musegadget send-user-msg</code>, below. Use <code>--session-id</code> side chats for clean, attributable request/response instead of racing the main chat.</p></div>
+        </div>
+        <div class="cmd"><button class="copybtn" type="button">Copy</button><pre><code>musegadget send-user-msg "The garage door has been open for an hour."
+musegadget send-user-msg --session-id &lt;uuid&gt; "Posted to a side chat"
+musegadget send-user-msg --image porch.jpg "Who is at the door?"
+musegadget send-user-msg --wait 120 "…"   <span class="cmt"># waits 1–600s, prints Muse's answer; exit 3 on timeout</span></code></pre></div>
+        <p><strong>Requirements:</strong> Ubuntu 22.04+ (or Debian 11+ / Pi OS Bullseye+ / Arch / Fedora), Bluetooth LE (pairing only), Python 3.9+, an account with sudo, a phone with the Muse app, and an SDK token (<code>mgst_…</code>) from gadgets.muse.ai (Account → SDK tokens). Pairing: Muse app → Settings → Devices → Developer mode on → Add Device (<code>MuseGadgetXXXXXX</code>); the pairing window is 10 minutes (<code>sudo musegadget pair</code> reopens it).</p>
+        <div class="cmd"><button class="copybtn" type="button">Copy</button><pre><code><span class="cmt"># Official install — the README tells you to read the script first</span>
+curl -fsSL https://raw.githubusercontent.com/facebookincubator/muse-gadget-sdk/main/linux/install.sh -o install.sh
+less install.sh
+bash install.sh --sdk-token mgst_…
+
+<span class="cmt"># Manage</span>
+sudo musegadget info | doctor | pair
+sudo systemctl status musegadget
+sudo journalctl -u musegadget -f
+
+<span class="cmt"># Remove</span>
+bash install.sh --uninstall [--purge]</code></pre></div>
+        <div class="callout warn">
+          <span class="ct">Limits &amp; risks, in Meta's own framing</span>
+          <p>"Built by hackers, for hackers, just for fun." Community pairing "has no manufacturer verification and can't prevent an active man-in-the-middle attack" — pair on a trusted network. Token terms (per secondary summaries of gadgets.muse.ai/sdk-terms) restrict tokens to personal, non-commercial use, ≤50 devices per token, and state the SDK/tokens are not a supported product / not a developer platform and may change or be withdrawn. Security posture is on you: install <code>--run-as</code> a dedicated, non-sudo account unless you truly want Muse to have sudo.</p>
+        </div>
+
+        <h3>Unofficial Muse bridges</h3>
+        <p>Because Muse has no public API (its chat runs over an encrypted WebSocket, <code>wss://hatch.metaaivm.com/v1/noise</code> per the bridge authors), community bridges <strong>drive your logged-in Chrome</strong>:</p>
+        <ul class="tight">
+          <li><strong>Muse-Chat-MCP</strong> (duclm1x1 / fierzone forks; Glama-listed): an MCP server over stdio with tools <code>muse_chat</code>, <code>muse_status</code>, <code>muse_login</code>, <code>muse_new_chat</code>, <code>muse_read_last</code>, plus an OpenAI-compatible HTTP shim and a small <code>muse-cli.mjs</code> one-shot CLI. It types into the muse.ai composer via Playwright and reads the rendered reply; you sign in with your own Meta account in a dedicated Chrome profile. Explicitly "unofficial, unaffiliated." npm variant: <code>@santaclone/muse-mcp</code> (<code>npx -y @santaclone/muse-mcp --login</code>).</li>
+          <li><strong>niclydon/muse-mcp</strong>: notable because it is built <em>on the official gadget Link API</em> rather than scraping — pair a Linux host as a Muse Link device, then an MCP server (39 tools) turns a Muse chat ID into an addressable endpoint any MCP client can message. The server is unofficial; the underlying SDK is Meta's.</li>
+          <li><strong>Hosted resellers</strong> (e.g. useapi.net's Muse API / hosted MCP): third parties running on <em>your</em> Muse subscription via their infrastructure — highest trust cost; not affiliated with Meta.</li>
+        </ul>
+        <p>These do not use a sanctioned API into Muse (none exists), so they can break when muse.ai changes, and browser-automation of a consumer account is outside the routes Meta documents for Muse. The gadget-SDK route above is the only one Meta itself published.</p>
+      </section>
+
+      <!-- ================= MUSE CODE ================= -->
+      <section id="muse-code">
+        <h2>Muse Code — the other Muse, which <em>is</em> an official Ubuntu CLI</h2>
+        <p class="sec-note">Meta's terminal coding agent (beta 2026-08-05, GA 2026-08-31), built for Muse Spark, positioned against Claude Code / Codex. One codebase runs on macOS, Linux, and Windows. There is no apt/PPA/Snap/Flatpak — the curl installer (or the SDK packages) is the distribution mechanism. The CLI is proprietary; the SDK/protocol are MIT.</p>
+        <div class="cmd"><button class="copybtn" type="button">Copy</button><pre><code>curl -fsSL https://dev.meta.ai/install.sh | sh   <span class="cmt"># macOS/Linux; native `muse` binary on PATH (~/.local/bin)</span>
+muse --version
+muse                  <span class="cmt"># interactive TUI in a project</span>
+muse exec "&lt;prompt&gt;"  <span class="cmt"># headless, one prompt to completion — for scripts/CI</span></code></pre></div>
+        <ul class="tight">
+          <li><strong>Sign-in:</strong> first run shows a trust-the-workspace prompt, then browser sign-in or an API key; for CI/headless set <code>META_API_KEY</code>. Billing: a Muse Code subscription plan or pay-as-you-go Model API tokens. Default model per current docs: <code>muse-spark-1.2</code> (1.3 available).</li>
+          <li><strong>Programmatic drive:</strong> <code>muse serve</code> runs the Muse Session Protocol (MSP) — an open protocol over standard I/O (JSON-RPC, no server, no network); <code>muse schema</code> prints its schema. TypeScript: <code>npm install @muse-code/sdk</code> (Node ≥20, zero deps, Developer Preview); Python: <code>pip install muse-code-sdk</code>.</li>
+          <li><strong>MCP client support:</strong> Muse Code connects to MCP servers declared in the <code>mcp_servers</code> block of <code>~/.config/muse/settings.json</code> (transports <code>stdio</code> and <code>streamable_http</code>; <code>muse mcp login/logout &lt;server&gt;</code> for OAuth servers; <code>/mcp</code> in-session lists connected servers/tools). So a Muse Code session on Ubuntu can call tools — including community MCP servers that wrap the Page Graph API, or a Muse-Chat-MCP server — through a sanctioned extension point of <em>Muse Code</em>, even though the wrapped target may itself be unofficial.</li>
+        </ul>
+      </section>
+
+      <!-- ================= META AI ================= -->
+      <section id="meta-ai">
+        <h2>3 · Meta AI in Messenger</h2>
+        <p class="sec-note"><strong>Verdict: nothing official.</strong> There is no official CLI for Meta AI and no API into the consumer Meta AI assistant — in Messenger, in the app, or at meta.ai. Meta AI is a consumer surface only: Messenger/Facebook/Instagram/WhatsApp in-app, meta.ai web, the Meta AI app (iOS/Android at launch, built with Llama 4), and AI glasses. Its model has since changed — 2026 sources report Meta AI now running on the Muse Spark family in the app/meta.ai and rolling out to Messenger — but the access model has not: still no developer endpoint for "the assistant in your Messenger."</p>
+        <div class="callout bad">
+          <span class="ct">About "the Rabbit"</span>
+          <p>Exhaustive variant searches found <strong>no Meta product, feature, or assistant in Messenger named "Rabbit."</strong> The nearest matches: (a) Muse's mascot avatars — the Muse Charm keychain gadget's avatar set includes a <em>purple rabbit</em> among other characters, and Muse's default avatar was later named "Jolly" (a fuzzy mascot, not a rabbit product); (b) Rabbit Inc.'s R1 / rabbit OS3 — a <em>different company entirely</em>, reached via web/Telegram/desktop (macOS/Windows listed, no Linux build), with no Messenger integration and no CLI. Either way, the CLI answer is still "none." This page treats the item as Meta AI in Messenger and flags the nickname as unverified.</p>
+        </div>
+        <ul class="tight">
+          <li><strong>You cannot message Meta AI in Messenger programmatically as yourself.</strong> The Messenger Platform lets a <em>Page</em> bot reply to users; it does not let you script your personal account's conversation with the Meta AI contact, and Meta AI is not a Page you can connect to your app.</li>
+          <li><strong>Ubuntu:</strong> officially, nothing to install — no apt/PPA/Snap/Flatpak/.deb for Meta AI; a browser to meta.ai is the Ubuntu route.</li>
+          <li><strong>Local alternative with Meta lineage:</strong> Llama open weights (Llama 4 family) can be self-hosted on Ubuntu (Ollama/vLLM etc.) — fully local, no Meta account, but again not "Meta AI in Messenger," and full-size models need substantial hardware.</li>
+        </ul>
+
+        <h3>The sanctioned substitute: Meta Model API</h3>
+        <p>Hosted, self-serve (US developers in public preview at announcement), <strong>OpenAI-SDK-compatible</strong> (Chat Completions + Responses) and Anthropic-Messages-compatible. Base URL <code>https://api.meta.ai/v1</code>, key = <code>MODEL_API_KEY</code> from the dev.meta.ai dashboard, models <code>muse-spark-1.1</code> → <code>muse-spark-1.3</code> (and Muse Wonder via API per later docs). Any OpenAI-compatible agent CLI (e.g. OpenCode, which ships a built-in Meta provider) can be pointed at it. Meta's own help page stresses the distinctions: Model API ≠ Llama (download-and-host open weights) ≠ Llama Stack.</p>
+        <div class="cmd"><button class="copybtn" type="button">Copy</button><pre><code><span class="cmt"># From Ubuntu — no install beyond an SDK</span>
+pip install openai
+
+<span class="cmt"># then in Python:</span>
+OpenAI(base_url="https://api.meta.ai/v1", api_key=os.environ["MODEL_API_KEY"])
+<span class="cmt"># model: muse-spark-1.3</span></code></pre></div>
+        <div class="flow">
+          <div class="fbox"><div class="ft">What you get</div><p>The same model family behind current Meta AI/Muse products, callable from Ubuntu with curl/Python/Node today.</p></div>
+          <div class="farrow">≠</div>
+          <div class="fbox"><div class="ft">What you do not get</div><p>Meta AI's consumer memory, your Messenger thread, its in-chat tools/persona, or Muse the agent.</p></div>
+        </div>
+
+        <h3>Unofficial Meta AI wrappers — risk examples, not recommendations</h3>
+        <ul class="tight">
+          <li><strong><code>meta-ai-api</code></strong> (PyPI, Strvm): "a reverse engineered API wrapper for MetaAI" targeting meta.ai's backend, no API key; 2024/Llama-3-era.</li>
+          <li><strong><code>metaai-sdk</code> / mir-ashiq/metaai-api</strong> (PyPI/GitHub): "Unofficial Python SDK and API server for Meta AI… ⚠️ This is an unofficial, reverse-engineered client. It is not affiliated with, endorsed by, or sponsored by Meta. Use at your own risk… Cookie-based authentication may break at any time" — auth = extracted browser cookies (<code>datr</code>, <code>ecto_1_sess</code>, …), plus browser automation in recent versions; its own release notes have swung between "chat working" and "chat unavailable due to authentication challenges."</li>
+        </ul>
+        <p>No install command is given for these: they require handing your Meta session cookies to reverse-engineered code, sit outside Meta's terms for the consumer service, and break whenever Meta rotates its web protocol. An agent that needs "Meta AI-like answers" from Ubuntu should use the Model API above instead.</p>
+      </section>
+
+      <!-- ================= SELF-INTERFACE ================= -->
+      <section id="self">
+        <h2>Can an agent use a CLI to talk to itself?</h2>
+        <p class="sec-note"><strong>Yes — but not by messaging itself in Messenger, and not through the Muse personal agent's (nonexistent) API.</strong> The legitimate architectures that exist today:</p>
+
+        <h3>4.1 Muse Code session messaging — the literal feature</h3>
+        <p>Start two or more interactive <code>muse</code> sessions on the <strong>same machine, same user account</strong> (macOS/Linux; unavailable on Windows), name them (<code>/name api-review-482731</code>), then in one session: <em>"List my peer sessions, then send api-review-482731 this message: …"</em>. Delivery modes: steer active turn / queue for next turn / notify-only; the recipient can be woken when idle. Per Meta's GA blog: "Messages travel over a Unix socket between processes owned by you, so nothing crosses the network."</p>
+        <div class="flow">
+          <div class="fbox"><div class="ft">Session A</div><p>Interactive <code>muse</code>, named</p></div>
+          <div class="farrow">→</div>
+          <div class="fbox"><div class="ft">Unix socket</div><p>Local only — no network, same user</p></div>
+          <div class="farrow">→</div>
+          <div class="fbox"><div class="ft">Session B (peer)</div><p>Steered, queued, or notified; can be woken when idle</p></div>
+        </div>
+        <ul class="tight">
+          <li><strong>Hard limits, by design:</strong> plain text, ≤8,192 bytes; <strong>self-messaging is rejected</strong> (a session cannot message <em>itself</em> — peer sessions only); no cross-user or cross-machine transport; headless / <code>--no-session-log</code> sessions don't appear as peers.</li>
+          <li><strong>Safety model worth copying:</strong> a peer message is <em>unverified agent-provided data</em> — it cannot approve a tool call, grant consent, or change permissions; the receiving session may prompt its user to allow/reject/block the sender (approvals expire in 30 min).</li>
+          <li>A CLI surface also exists in the binary (per third-party help dumps): <code>muse session-message list --json</code>, <code>muse session-message send --target &lt;session&gt; …</code> — treat the documented natural-language route as primary; the subcommand spelling is from community sources, not Meta's session-messaging page.</li>
+        </ul>
+
+        <h3>4.2 Driving an agent from your own program — <code>muse serve</code> / MSP, and <code>muse exec</code></h3>
+        <p>An Ubuntu agent (any language) can spawn and drive a Muse Code session: <code>muse serve</code> speaks MSP over stdio, wrapped by the official TS (<code>@muse-code/sdk</code>) and Python (<code>muse-code-sdk</code>) clients. Start session, send turns, handle approvals, stream results — all local, no network. Simpler still: <code>muse exec "&lt;prompt&gt;"</code> (headless, JSON output options) is the scriptable one-shot form any shell-driven agent can call, exactly like calling Claude Code or Codex headless. Inside one session, Muse Code also has subagents/workflows — self-delegation without any external protocol.</p>
+
+        <h3>4.3 <code>musegadget send-user-msg</code> — a local program talks to Muse, the personal agent</h3>
+        <p>After pairing an Ubuntu box as a Muse gadget (§2 above), <strong>any local process</strong> can run <code>musegadget send-user-msg --wait …</code> and get the personal agent's reply on stdout. This is currently the <strong>only Meta-published CLI that delivers a message into the Muse personal agent</strong>. Its shape: the Ubuntu box is Muse's <em>device</em>, the message arrives as a user message on that account, and replies on the main chat aren't labelled by source — use <code>--session-id</code> side chats for clean request/response. The reverse channel (Muse invoking <code>system.run</code> / custom commands on the box) makes the pair genuinely bidirectional.</p>
+
+        <h3>4.4 MCP — agent → tools (not agent → agent, despite the common confusion)</h3>
+        <p>The Model Context Protocol (open standard, now under the Linux Foundation's Agentic AI Foundation): an MCP <em>client</em> inside an agent host connects to MCP <em>servers</em> that expose tools/resources/prompts. Transports: <strong>stdio</strong> (client launches the server as a subprocess; JSON-RPC over stdin/stdout) and <strong>Streamable HTTP</strong>. On Ubuntu today you configure servers in the host — e.g. Muse Code's <code>~/.config/muse/settings.json</code> <code>mcp_servers</code> block — filesystem/Git/database servers, community <em>Page</em>-Messenger MCP servers, a Muse-Chat-MCP server to reach the Muse personal agent, or Meta's official Ads/DevTools/WhatsApp MCP servers. MCP servers do not talk to each other; the host coordinates. So MCP lets an agent <em>use</em> Messenger-the-Page-API or Muse-the-web-app <em>as a tool</em> — it does not make two independent agents peers.</p>
+
+        <h3>4.5 A2A — agent → agent (the protocol actually designed for this)</h3>
+        <p>Agent2Agent (A2A), originated by Google and donated to the Linux Foundation (now AAIF alongside MCP), spec v1.0: agents publish an <strong>Agent Card</strong> (capabilities, endpoint, auth) at <code>/.well-known/agent-card.json</code>, then exchange Messages that create Tasks and return Artifacts, over JSON-RPC/gRPC/HTTP+JSON with streaming and push notifications. There is an <strong>official CLI</strong>: <code>a2a</code> from <code>github.com/a2aproject/a2a-cli</code> — "the official command-line client for discovering, messaging, and managing A2A agents from a terminal or script." An Ubuntu agent can message any A2A-speaking agent (built on LangGraph/CrewAI/ADK/…) — <strong>provided the other side implements A2A. Neither Muse, Muse Code, nor Meta AI exposes an A2A endpoint</strong>, so A2A does not reach Meta's agents; it is the right architecture for agent↔agent with non-Meta or self-built agents (wrap your own agent in an A2A server, or wrap a CLI like <code>muse exec</code> behind one).</p>
+
+        <h3>4.6 Plain local IPC — always available, no AI protocol needed</h3>
+        <p>Two agent processes on one Ubuntu box can always communicate via Unix domain sockets, named pipes, D-Bus (session bus at <code>/run/user/&lt;uid&gt;/bus</code>), files/worktrees, or a local HTTP server. This is exactly what the products above formalise (Muse session messaging = Unix socket; MSP/MCP stdio = stdin/stdout of a spawned subprocess). For a self-built multi-agent setup on Ubuntu, stdio-MCP for tools + A2A or a simple socket/HTTP bus for peers is the standard, legitimate pattern — no Meta account involved.</p>
+
+        <div class="callout bad">
+          <span class="ct">What does not work — explicit negatives</span>
+          <ul class="tight" style="margin-bottom:0">
+            <li>An agent <strong>cannot</strong> DM itself or another agent <strong>as a personal Messenger user</strong> through any official route — only as a Page, to users who messaged the Page, inside the 24h window.</li>
+            <li>An agent <strong>cannot</strong> invoke the <strong>Muse personal agent</strong> via API/CLI from another machine — only via a paired gadget on that Muse account, WhatsApp chat with Muse (a human-style surface with no programmatic personal-account route), or unofficial Chrome-driving bridges.</li>
+            <li>An agent <strong>cannot</strong> invoke <strong>Meta AI in Messenger</strong> programmatically at all; the Model API is a model endpoint, not that assistant.</li>
+            <li>Muse Code session messaging <strong>cannot</strong> cross machines/users and <strong>cannot</strong> self-message — for cross-machine agent talk, use A2A/MCP-over-HTTP or your own bus.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= USE TODAY ================= -->
+      <section id="today">
+        <h2>What an Ubuntu agent can actually use today</h2>
+        <ol class="recipes">
+          <li>
+            <h3>Run a Meta coding agent in the terminal</h3>
+            <p>Install <strong>Muse Code</strong> — <code>curl -fsSL https://dev.meta.ai/install.sh | sh</code> — sign in in the browser or set <code>META_API_KEY</code>; use <code>muse</code> interactively and <code>muse exec "…"</code> in scripts. <span class="tag">OFFICIAL · §Muse Code</span></p>
+          </li>
+          <li>
+            <h3>Talk agent-to-agent with itself, same box</h3>
+            <p>Run two named Muse Code sessions and use <strong>session messaging</strong>; or drive sessions programmatically via <code>muse serve</code> + <code>@muse-code/sdk</code> / <code>muse-code-sdk</code>. <span class="tag">OFFICIAL · §4.1–4.2</span></p>
+          </li>
+          <li>
+            <h3>Exchange messages with the Muse personal agent</h3>
+            <p>Pair the Ubuntu box with the <strong>Muse Gadgets Linux SDK</strong> (SDK token from gadgets.muse.ai, BLE pairing via the phone app), then <code>musegadget send-user-msg --session-id &lt;uuid&gt; --wait 120 "…"</code> from any local process; optionally expose custom commands to Muse in <code>/etc/musegadget/commands.d/</code>. Install <code>--run-as</code> a limited account. <span class="tag">OFFICIAL SDK, "FOR FUN"/UNSUPPORTED TERMS · §2</span></p>
+          </li>
+          <li>
+            <h3>Get Muse-model answers from code or another CLI</h3>
+            <p><strong>Meta Model API</strong> — <code>https://api.meta.ai/v1</code>, <code>MODEL_API_KEY</code>, model <code>muse-spark-1.3</code>, via the OpenAI/Anthropic SDKs or any OpenAI-compatible agent CLI (OpenCode has a built-in Meta provider). Substitutes for "Meta AI" for most automation, without pretending to be the Messenger assistant. <span class="tag">OFFICIAL · §3</span></p>
+          </li>
+          <li>
+            <h3>Do Messenger from the terminal, sanctioned</h3>
+            <p>Be a <strong>Page</strong>: create the Meta app + Page, get a Page token (<code>pages_messaging</code>), receive webhooks, reply with Graph API calls (<code>curl</code> / <code>pip install facebook-business</code>). Optionally front it with a community Page MCP server for MCP-speaking agents. <span class="tag">OFFICIAL API, PAGE-ONLY · §1</span></p>
+          </li>
+          <li>
+            <h3>Do personal Messenger from the terminal</h3>
+            <p>Only unofficial options. The maintained one is <strong>mautrix-meta</strong> into a Matrix client (cookie login; expect possible Meta suspicious-activity blocks). The historic CLIs (Messer, fb-messenger-cli, fbchat, bitlbee-facebook) are unmaintained/inactive. New cookie-copying "for LLMs" CLIs (e.g. <code>fb</code>) are unproven and carry the highest account risk. <span class="tag">UNOFFICIAL · §1 — use a throwaway/secondary account if ever tested, and expect breakage</span></p>
+          </li>
+          <li>
+            <h3>General agent↔agent beyond Meta</h3>
+            <p><strong>A2A</strong> (the <code>a2a</code> CLI + Agent Cards) for peers, <strong>MCP</strong> (stdio/HTTP) for tools — both run natively on Ubuntu and neither needs a Meta account. <span class="tag">OPEN STANDARDS · §4.4–4.5</span></p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ================= OPEN QUESTIONS ================= -->
+      <section id="open">
+        <h2>Could not verify — open questions, stated plainly</h2>
+        <ul class="tight">
+          <li><strong>"The Rabbit in Messenger":</strong> no Meta product or feature by that name was found in any phrasing searched. Treated here as a nickname for Meta AI in Messenger (or possibly Muse's rabbit avatar on Muse Charm, or the unrelated Rabbit R1). If a specific in-app character or persona was meant, that identification is still open.</li>
+          <li><strong>Live-browser verification:</strong> the research browser window would not open tabs, so no claim here is flagged "verified live" in a browser window; official pages were instead fetched in full via the search index with crawls dated 2026-11-08 (minutes-to-hours old). Install commands are quoted from the vendors' own current docs/READMEs, not executed.</li>
+          <li><strong>Caprine maintenance status conflicts</strong> between 2026 secondary sources ("still maintained" vs AlternativeTo's "discontinued / not updated since Jan 2026"); its Flathub listing itself is live and describes an unofficial, unverified community package.</li>
+          <li><strong>Muse Gadget SDK token terms</strong> (personal/non-commercial, ≤50 devices, revocable, "not a supported product") are summarised from the official gadgets.muse.ai terms via secondary summaries plus the repo README; the terms page itself was not opened in full.</li>
+          <li><strong>Muse availability/pricing by country</strong> changes quickly (US launch, later US+Canada and other rollouts reported); check muse.ai for the account in question before relying on the Muse section.</li>
+          <li><strong>Graph API version currency (v26.0)</strong> comes from secondary platform trackers, not from an opened developers.facebook.com page (Meta's developer docs did not surface a directly openable Messenger Platform URL in search results).</li>
+        </ul>
+      </section>
+
+      <!-- ================= SOURCES ================= -->
+      <section id="sources">
+        <h2>Sources</h2>
+        <p class="sec-note">All sources read 2026-11-08 via the search index (see the verification note above).</p>
+
+        <div class="group-label">Official / primary</div>
+        <ul class="sources">
+          <li>Muse Code docs — <a href="https://dev.meta.ai/docs/muse-code">dev.meta.ai/docs/muse-code</a></li>
+          <li>Muse Code session messaging — <a href="https://dev.meta.ai/docs/muse-code/session-messaging?team_id=1331104075427093">dev.meta.ai/docs/muse-code/session-messaging</a></li>
+          <li>Muse Code extending / MCP — <a href="https://dev.meta.ai/docs/muse-code/extending">dev.meta.ai/docs/muse-code/extending</a></li>
+          <li>Muse Code SDK repo &amp; docs — <a href="https://github.com/meta-models/muse-code-sdk">github.com/meta-models/muse-code-sdk</a> · <a href="https://meta-models.github.io/muse-code-sdk/next/">meta-models.github.io/muse-code-sdk/next/</a></li>
+          <li>Muse launch (personal agent) — <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/</a></li>
+          <li>Muse Gadgets SDK — <a href="https://github.com/facebookincubator/muse-gadget-sdk">github.com/facebookincubator/muse-gadget-sdk</a> · Linux README — <a href="https://github.com/facebookincubator/muse-gadget-sdk/blob/main/linux">github.com/facebookincubator/muse-gadget-sdk/blob/main/linux</a></li>
+          <li>Muse Code GA blog (session messaging over Unix socket, SDK) — <a href="https://dev.meta.ai/resources/blog/muse-code-new-plans-and-features">dev.meta.ai/resources/blog/muse-code-new-plans-and-features</a></li>
+          <li>Meta Model API blog &amp; quickstart — <a href="https://dev.meta.ai/resources/blog/build-with-muse-spark">dev.meta.ai/resources/blog/build-with-muse-spark</a> · <a href="https://dev.meta.ai/docs/quickstart?team_id=1414417047270365&project_id=3275418322642662">dev.meta.ai/docs/quickstart</a></li>
+          <li>Model API vs Llama help — <a href="https://dev.meta.ai/help/about-model-api/llama-and-model-api">dev.meta.ai/help/about-model-api/llama-and-model-api</a></li>
+          <li>Meta AI app launch — <a href="https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/">about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/</a></li>
+          <li>mautrix-meta authentication docs — <a href="https://docs.mau.fi/bridges/go/meta/authentication.html">docs.mau.fi/bridges/go/meta/authentication.html</a></li>
+          <li>MCP transports spec — <a href="https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio">modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio</a></li>
+          <li>A2A protocol — <a href="https://a2a-protocol.org/llms.txt">a2a-protocol.org/llms.txt</a> · <a href="https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/">a2a-protocol.org — joining the Agentic AI Foundation</a></li>
+          <li>Snap Store, facebook-messenger-desktop — <a href="https://snapcraft.io/facebook-messenger-desktop">snapcraft.io/facebook-messenger-desktop</a></li>
+          <li>Flathub, Caprine — <a href="https://flathub.org/en-GB/apps/com.sindresorhus.Caprine">flathub.org/en-GB/apps/com.sindresorhus.Caprine</a></li>
+        </ul>
+
+        <div class="group-label">Secondary / community</div>
+        <ul class="sources">
+          <li>Messenger Platform integration guide — geekblog.net, "How to integrate Facebook Messenger into my app" (link carried a redacted token in the research notes, so it is cited by name rather than linked)</li>
+          <li>Meta API platforms overview — <a href="https://www.postmcpai.com/facebook-api-platforms">postmcpai.com/facebook-api-platforms</a></li>
+          <li>Meta official MCP servers comparison — <a href="https://antwork.io/compare/meta-mcp-servers">antwork.io/compare/meta-mcp-servers</a> · Porter Facebook MCP — <a href="https://portermetrics.com/en/connectors/mcp/facebook-insights/">portermetrics.com/en/connectors/mcp/facebook-insights/</a></li>
+          <li>facebook-mcp (community, Page) — <a href="https://ivanbbaev.github.io/facebook-mcp/">ivanbbaev.github.io/facebook-mcp/</a></li>
+          <li>Ubuntu Messenger guide (no official Linux app; Caprine) — <a href="https://www.ubuntufree.com/facebook-messenger-ubuntu-install/">ubuntufree.com/facebook-messenger-ubuntu-install/</a></li>
+          <li>Desktop Messenger shutdown report — <a href="https://aventurauniversal.com/en/Facebook-Messenger-shuts-down-its-desktop-application--changing-the-experience-for-users/">aventurauniversal.com</a></li>
+          <li>Meta Ads MCP / Ads CLI — <a href="https://contextbolt.com/blog/meta-ads-mcp/">contextbolt.com/blog/meta-ads-mcp/</a></li>
+          <li>Business SDKs — <a href="https://reintech.io/blog/leveraging-facebook-marketing-api-for-campaign-automation">reintech.io — Facebook Marketing API</a> · <a href="https://github.com/laneconsultancy/claude-skills-marketplace/blob/HEAD/plugins/ads/skills/meta-ads/cli-and-api.md">github.com/laneconsultancy/claude-skills-marketplace — meta-ads cli-and-api</a></li>
+          <li>fbchat unmaintained / ToS notice — <a href="https://libraries.io/pypi/fbchat">libraries.io/pypi/fbchat</a> · facebook-chat-api ban disclaimer — <a href="https://npm.io/package/facebook-chat-api">npm.io/package/facebook-chat-api</a></li>
+          <li>facebook-cli (<code>fb</code>, cookie-copying, new) — <a href="https://github.com/hieu-lee/facebook-cli">github.com/hieu-lee/facebook-cli</a></li>
+          <li>Muse: no CLI/API probes — <a href="https://ultrametric.ai/arena/ai-assistants/battle/muse-vs-perplexity-computer">ultrametric.ai — Muse vs Perplexity Computer</a> · Muse custom connectors — <a href="https://parallel.ai/articles/meta-muse-custom-integrations">parallel.ai/articles/meta-muse-custom-integrations</a> · Muse vs agents (no agent API) — <a href="https://www.digitalocean.com/resources/articles/grok-bot-vs-dots-vs-muse">digitalocean.com/resources/articles/grok-bot-vs-dots-vs-muse</a></li>
+          <li>Muse desktop platforms (Mac only) — <a href="https://zapier.com/blog/muse-ai/">zapier.com/blog/muse-ai/</a> · <a href="https://toolgpa.com/tools/meta-muse">toolgpa.com/tools/meta-muse</a> · unofficial muse-desktop wrapper — <a href="https://github.com/benjaminkitt/muse-desktop/blob/main/README.md">github.com/benjaminkitt/muse-desktop</a></li>
+          <li>Muse-Chat-MCP (unofficial, Chrome-driving) — <a href="https://glama.ai/mcp/servers/duclm1x1/Muse-Chat-MCP">glama.ai/mcp/servers/duclm1x1/Muse-Chat-MCP</a> · <a href="https://npm.io/package/@santaclone/muse-mcp">npm.io/package/@santaclone/muse-mcp</a> · muse-mcp on gadget Link API — <a href="https://glama.ai/mcp/servers/niclydon/muse-mcp">glama.ai/mcp/servers/niclydon/muse-mcp</a></li>
+          <li>Meta AI unofficial wrappers — <a href="https://pypi.org/project/metaai-sdk/5.1.0/">pypi.org/project/metaai-sdk/5.1.0/</a> · <a href="https://github.com/mir-ashiq/metaai-api/blob/HEAD/README.md">github.com/mir-ashiq/metaai-api</a> · <a href="https://pypi.org/project/meta-ai-api/1.1.7/">pypi.org/project/meta-ai-api/1.1.7/</a></li>
+          <li>Muse Gadgets coverage (token terms, Linux commands) — <a href="https://www.testmuai.com/blog/muse-gadgets/">testmuai.com/blog/muse-gadgets/</a> · <a href="https://cellcog.ai/blog/muse-gadgets/">cellcog.ai/blog/muse-gadgets/</a></li>
+          <li>Meta AI in Europe launch (referenced in EU Parliament question) — <a href="https://about.fb.com/news/2025/03/europemeetyournewestassistantmetaai/">about.fb.com/news/2025/03/europemeetyournewestassistantmetaai/</a></li>
+        </ul>
+
+        <footer>
+          <p>Compiled from a maximum-depth web research pass dated 2026-11-08. Every product name, command, date, and risk quoted here is carried from that research with its source; open questions are marked as open rather than filled in. Nothing on this page was installed or executed — commands are quoted from the vendors' own docs and READMEs.</p>
+        </footer>
+      </section>
+
+    </div>
+    <script>
+      (function () {
+        var btns = document.querySelectorAll('.copybtn');
+        for (var i = 0; i < btns.length; i++) {
+          (function (btn) {
+            btn.addEventListener('click', function () {
+              var pre = btn.parentElement.querySelector('pre');
+              var text = pre ? pre.innerText : '';
+              function done() {
+                btn.textContent = 'Copied';
+                btn.classList.add('done');
+                setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1600);
+              }
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+              } else { fallback(); }
+              function fallback() {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed'; ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                try { document.execCommand('copy'); done(); } catch (e) {}
+                document.body.removeChild(ta);
+              }
+            });
+          })(btns[i]);
+        }
+      })();
+    </script>
+  </body>
+</html>
