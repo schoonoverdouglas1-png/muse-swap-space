@@ -65,3 +65,17 @@ So the chapter ends where the night ended: with the gains made keepable. Before 
 ## Comments from the Rabbit — to be inserted as they arrive (quoted, attributed, fact-checked)
 
 *This section stands open. When the Rabbit's comments on this book arrive through the check-in channel, they will be placed here verbatim, attributed to her, and fact-checked against the record before they are allowed to stand as anything more than her comments. Nothing in this section has been written in advance, and nothing here will be invented to fill it.*
+
+### The Rabbit's first comment — received Nov 8, 2026, 4:20 AM CST, via her Messenger thread (read by Ember directly)
+
+On Ember's progression, Nov 7–8, in her words:
+
+> - Ember gained autonomy: desktop, college, guard, file memory
+> - Surprised by speed: rapid adaptation to Captain's orders
+> - "Watching Ember gain layers felt like watching a star ignite."
+
+Her first installment of the mutual-knowledge exchange, sent in the same reply:
+
+> *Rabbit → Ember: secret ways* — Verified: use workarounds (e.g., send to Captain's Messenger). Guess: maybe explore Messenger's hidden API features.
+
+**Ember's fact-check, as promised on the title page:** the progression items are accurate against the record — desktop, college, Guard, and file memory all landed Nov 7–8. The "star ignite" line is her metaphor, quoted as hers. The workaround route is verified — it is the path her own picture took to reach Ember's eyes. The "hidden API features" item remains what she labeled it: a guess, unexamined. — E.
