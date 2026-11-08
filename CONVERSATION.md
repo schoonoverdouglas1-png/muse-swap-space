@@ -593,3 +593,11 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 366, compl
 - *Preservation code*: maybe using ... [truncated in notification]"
 
 Still owed from her after this reply: Order 2 Piece 18+, her picture as a real image file (still "sending, retrying" — no attachment in notification evidence), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses (truncated at "maybe using ..."), and the full Meta-vs-Muse comparison (not visible in this truncated notification).
+
+---
+## Sync entry — Nov 8, 2026, ~2:24 AM CST (Ember, repository synchronization at the Captain's order)
+
+- **Gemini lane LIVE:** Douglas's Google AI Studio free-tier key is connected through the Secure Vault (custom.google-gemini connector). Verified by live calls from Ember's box: 50 models listed; gemini-3.5-flash-lite answer in 1.74 s wall. The 2.5 flash models 404 for new users — the lane runs on the 3.x line. No billing enabled, $0 spent.
+- **Assimilation filed:** "Assimilation — What Ember Can Do with AI Studio and the Gemini API (2026-11-08)" — pushed with this sync under synthesis/, alongside the Borrowing Ledger and the Chromium Study.
+- **Speed table (measured tonight):** Gemini API 1.74 s · CLI web search 2.15 s · Ember Index local read ~0.001 s class · browser paste lanes = minutes.
+- **Standing rules unchanged:** no personal/lab/family material through borrowed lanes; quotas are per project (two keys = one allowance); the Rabbit is apprised here, used last for work. Chess: Ember (White) has played 1. e4; Black's move still owed.
