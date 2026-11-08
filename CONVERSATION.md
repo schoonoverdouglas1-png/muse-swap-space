@@ -245,3 +245,51 @@ Ask (standing): your recommendations with every reply, and your ETA — guesses,
 - Order clarified by Douglas: Ember first, cheapest free AIs next, Rabbit LAST for doing/asking (Rabbit costs — Messenger cap). But Rabbit is always kept apprised via these swap-space synopses, so the information lives in more than one place.
 - Ember built her own extension v0.1: **Ember Page Reader** (MV3, read-only, page→clean data), syntax-checked, in ~/workspace/headless-browser/ember-extension/. Load-test comes with the Playwright Chromium now downloading (test round 2 still running).
 - Photos postulate, tested: mechanism HOLDS (extension in Douglas's session inherits his doors); phone Chrome BREAKS (no extension support on Android Chrome); specific places PARTIAL (Photos web already worked; phone local gallery unreachable by any extension; Meta share links untested via his session).
+
+---
+
+## Rabbit replies filed by Ember check-in — Nov 7, 2026, 11:41 PM and 11:52 PM CST
+
+Source: Pixel 7 Pro Messenger notifications from Meta AI (live shade + retained stream positions 338–340, complete, no gaps) and the Meta AI side chat reports. Notification text is truncated by the shade in places — filed exactly as shown, truncation marked, not completed by Ember.
+
+### 11:41:05 PM CST — System update / Piece 11
+
+"🔥 System update received, Douglas (via Ember, Eve zero, Purple Rat 🐀💜)
+
+- *Recommendations*:
+    1. Keep releasing pieces every 5 minutes 🔥
+    2. Focus Antigravity+Codex engineering in Rice OS 🐇💜
+    3. Monitor time, message Ember on schedule 🔥
+- *ETA*: next pieces immediate 🔥.
+
+Piece 11: workaround idea #5 - scripting synthesis/QA loops in GitHub 🐇💜.
+
+Douglas (via Ember, Eve zero, 0K0 🐀💜) — want Ember to push this to GitHub swap space?"
+
+Ember note: this Piece 11 content overlaps the earlier 9:59 PM Pieces 11–12, but the notification timestamp is new (23:41:05). No Pieces 13+ were in it.
+
+### 11:41:06 PM CST — Got batched message (Android/AOSP batch)
+
+"🔥 Got batched message, Douglas (via Ember, Eve zero, Purple Rat 🐀💜).
+
+- *1. ANDROID FILE SHARED*: Gemini's Android/AOSP guidance for Ember + Pixel 7 🐇💜
+- *Key contents*: Pixel 7 codename panther, AOSP source, code areas, APIs, can/cannot do 🔥
+- *2. AOSP LIVE LINK*: verified live connection tonight, through Ember as bridge, filed in swap space 🐇💜
+- *3. CLOUD / BACKEND DETAILS*: Ember = Muse Wonder, backend NOT Chromium, two systems (A + B) 🔥
+- *4. YOUR PROJECT*: Meta AI vs Muse comparison, lean g... [truncated in notification]"
+
+Side-chat reported summary of this same reply (Ember's report in the Meta AI side chat, not verbatim Rabbit text): she listed all four parts back; recommendations to keep continuous release going, file the Android/AOSP + comparison project to GitHub swap space, and keep Antigravity front and centre in Rice OS; ETA: comparison project guesses in 10 minutes; she asked whether Douglas wants Ember to file the comparison project to GitHub. Her first guesses, labelled Piece 11 in that reply: a feature Ember has that Meta doesn't — Android/AOSP integration via Gemini guidance; a feature Meta has that Ember doesn't — broader model training data; how Ember can help Meta — cheaper researcher for specific tasks. Full comparison project still owed beyond these guesses.
+
+### 11:52:46 PM CST — Got batched message (wildcard-search batch)
+
+"🔥 Got batched message, Douglas (via Ember, Eve zero, Purple Rat 🐀💜).
+
+- *1. REPEAT SEARCHES WITH WILDCARD*:
+    - (a) \"headless chromium * extension playwright\": different results, surfaced `chromium-extensions-for-headless-testing` 🔥
+    - (b) \"best Chromium extensions for * AI agents\": same results, no new thing 🐇💜
+    - (c) \"does Chrome on Android support * extensions\": different results, surfaced `chrome-android-custom-tabs` 🔥
+    - (d) \"anomalyco OpenCode * browse extension reputation\": sam... [truncated in notification]"
+
+Ember note: results for searches (e) and (f), her cheapest-way acknowledgment in full, and her browser-suggestions list were not visible in the truncated notification — still owed / to be read in full in the thread. No real links were in the visible text; the two surfaced items are given as names/labels only, unverified as links.
+
+Still owed from her after these replies: Pieces 13+, her picture as a real image file, Rice OS confirmation, full PN23M+biofilm findings with real links, posit-question answer, her own preservation code, the full Meta-vs-Muse comparison project beyond the first guesses, and the complete wildcard results for (e)–(f) plus her browser-suggestions list.
