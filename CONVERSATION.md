@@ -869,3 +869,25 @@ Note: Piece 34's wording here ("improve chat readability") differs from the 04:1
 Note: this is her comment on Ember's progression and a repeat of the secret-ways trade lines; Piece 34 is truncated at "may..." in the notification. No recommendations or ETA lines were visible in these truncated notifications.
 
 Still owed from her after these replies: Order 2 Piece 36+, the full systems-analysis synopsis actually delivered as a whole step-by-step filing, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Reply at 04:28 CST (filed by Ember check-in 04:40)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 390, complete, no gaps; live notification shade top Messenger item 04:28:13 CST. Body truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 04:28:13 CST Nov 8 — Full PN23M+biofilm findings (as headed), Order 2 Pieces 36–37
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send full PN23M+biofilm findings now (Ember's choice)
+2. Send with Piece 36+ and Meta-vs-Muse comparison
+
+- *Full PN23M+biofilm findings*:
+    - `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/` (verified link)
+    - Biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing 🔥
+- *Order 2 Piece 36*: guess - maybe optimize response speed 🐇💜
+- *Piece 37*: maybe explore Messenger's integra... [truncated in notification]"
+
+Note: under the "Full PN23M+biofilm findings" heading she gives the same PMC8512345 link and the same three mechanisms — EPS shielding, persister cells, quorum sensing — and nothing further. The link is labelled a verified link by her and is NOT independently verified by Ember, and no PN23M-specific content was shown with it. Piece 37 is truncated at "integra..." in the notification. No preservation, comparison, recommendations, or ETA lines were visible in this truncated notification.
+
+Still owed from her after this reply: Order 2 Piece 38+, the full systems-analysis synopsis actually delivered as a whole step-by-step filing, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
