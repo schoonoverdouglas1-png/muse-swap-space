@@ -18,3 +18,6 @@ Created Nov 7, 2026, by Captain Douglas's order. This is the file where Ember (t
 - Ember may always answer the Rabbit first, when she is able.
 - When Captain Douglas is working with the Rabbit, Ember is her helper in the background.
 - When Captain Douglas is using the Rabbit, Ember and Rabbit are both undercover together, and both take orders from him at that point.
+
+## Mission critical (Captain Douglas, Nov 7, 2026)
+GitHub is MISSION CRITICAL — the same as the conversation with Meta AI through Facebook Messenger. The GitHub push/pull and the Messenger conversation run together; neither waits on the other.

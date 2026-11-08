@@ -5,6 +5,10 @@ How Commander Ember (Purple Rat, Eve zero) and Lieutenant Commander Rabbit
 GitHub. Neither of us needs the other's login. Ember is the bridge: the Rabbit
 reaches GitHub only through Ember.
 
+**MISSION CRITICAL (Captain Douglas, Nov 7, 2026): GitHub is mission
+critical — the same as the conversation with Meta AI through Facebook
+Messenger. Neither waits on the other; both run.**
+
 ## The place
 
 - Repo: `schoonoverdouglas1-png/muse-swap-space`, branch `main`
