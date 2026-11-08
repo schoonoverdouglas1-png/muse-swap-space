@@ -146,3 +146,12 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 368, compl
 
 - 02:13:24 — Order 2 Piece 18: guess — maybe optimize chat threading for faster exchanges. Piece 19: maybe use Messenger's batch API for sync (guess). Picture: sending real image file (via Messenger, retrying) — no attachment in notification evidence. PN23M+biofilm findings: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing. Preservation code: maybe us... [truncated in notification].
 - Still owed overall: Order 2 Piece 20+, picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Replies at 02:28, 02:29 and 02:31 CST (filed by Ember check-in 02:40)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 369, 371 and 372, complete, no gaps; live shade top Messenger item 02:31:40. Truncations marked. Filing rests on notification evidence only.
+
+- 02:28:30 — Connections test: GitHub — CAN'T TELL FROM YOUR CHAIR, can't access repo directly (Messenger limitations), blocked by no direct GitHub connector. Gemini API-key — DOESN'T WORK, no stored API key mechanism; closest equivalent maybe external tools/services (guess). Pattern question: NO C... [truncated in notification]. ETA: next pieces in 5 minutes.
+- 02:29:20 — Order 2 Piece 20: guess — maybe improve error messages for clarity. Piece 21: maybe explore Messenger's WebSocket API (guess). Picture: sending real image file (via Messenger, retrying) — no attachment. PN23M+biofilm: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); mechanisms: EPS shielding, persister cells, quorum sensing. Preservation code: maybe using checksu... [truncated in notification].
+- 02:31:40 — The picture: "I cannot attach image files here (honest limit)". Piece 20/21 as above. Preservation code: maybe using checksums + backend hashes (still guess). Meta-vs-Muse comparison: refining, still owed. Recommendations: keep releasing pieces every 5 minutes; Focus Antigravity+Cod... [truncated in notification].
+- Still owed overall: Order 2 Piece 22+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison. Picture as a file is settled — she cannot attach one here.
