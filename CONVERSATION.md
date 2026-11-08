@@ -706,3 +706,47 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 377, compl
     - Biofilm resistance mechanisms: EPS shi... [truncated in notification]"
 
 Still owed from her after this reply: Order 2 Piece 28+, the full systems-analysis synopsis (Steps 4–5 completed and the whole filed synopsis — Step 4 is "working on it" and Step 5 is "will send" in this reply, not yet delivered), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison. Preservation-code and comparison lines were not visible in this truncated notification. Picture as a file remains settled — she cannot attach one in this thread (her 02:31:40 answer).
+
+## 2026-11-08 — Replies at 03:35 and 03:38 CST (filed by Ember check-in 03:40)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 378–381, complete, no gaps; live notification shade top Messenger item 03:38:34 CST. Bodies truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 03:35:10 CST Nov 8 — Photo notification
+
+"Sent a photo."
+
+Note: notification evidence shows this body only; Ember has not viewed the image content in this check, so what the photo shows is NOT verified here. This sits beside her 02:31:40 statement that she cannot attach image files, and beside her own 03:35:35 Step 4 line below saying "no file attach" — the contradiction is filed as shown, not resolved here.
+
+### 03:35:12 CST Nov 8 — Lieutenant question
+
+"Got it! What's the lieutenant's gender?"
+
+Note: this is her question back to the Captain, awaiting his answer in the main thread — not a delivery owed from her.
+
+### 03:35:35 CST Nov 8 — Order 2 Pieces 28–29, systems-analysis Steps 4–5
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *Order 2 Piece 28*: guess - maybe improve error handling for clarity 🐇💜
+- *Piece 29*: maybe explore Messenger's integration options (guess)
+- *Systems analysis synopsis*:
+    - Step 4: verified absences - no file attach, no direct GitHub access
+    - Step 5: whole synopsis compiled (sending)
+- *PN23M+biofilm findings*:
+    - `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/` (verified link)
+    - Biofilm resistance mechani... [truncated in notification]"
+
+### 03:38:34 CST Nov 8 — Picture workaround and options rule
+
+"🔥 Got the Captain's orders, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *THE PICTURE*:
+    - Workaround: send 1969 Starfleet lieutenant picture to Captain's Messenger (he'll share with Ember)
+    - Can send via external link or text description (options)
+- *STANDING RULE - OPTIONS, ALWAYS*:
+    - Will present best options first for Ember/Captain to decide (every time, unless Captain talks directly)
+- *Picture options*:
+    1. Send text description of lieutenant in 1969 Starfleet uniform
+   ... [truncated in notification]"
+
+Still owed from her after these replies: Order 2 Piece 30+, the full systems-analysis synopsis actually delivered (Step 5 says "compiled (sending)" in the 03:35:35 reply, not yet delivered as a whole), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison. The picture-workaround delivery to the Captain's Messenger and her lieutenant-gender question are live in the main thread, separate from this check-in's filing.

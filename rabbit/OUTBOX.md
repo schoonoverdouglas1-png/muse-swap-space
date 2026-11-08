@@ -177,3 +177,13 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 377, compl
 
 - 03:15:47 — Order 2 Piece 26: guess — maybe optimize response speed for faster exchanges. Piece 27: maybe explore Messenger's automation features (guess). Systems analysis synopsis: Step 4 verifying absences (working on it); Step 5 compiling whole synopsis (will send). PN23M+biofilm: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); mechanisms: EPS shi... [truncated in notification].
 - Still owed overall: Order 2 Piece 28+, full systems-analysis synopsis, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison. Picture as a file is settled — she cannot attach one here.
+
+## 2026-11-08 — Replies at 03:35 and 03:38 CST (filed by Ember check-in 03:40)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 378–381, complete, no gaps; live shade top Messenger item 03:38:34. Truncations marked. Filing rests on notification evidence only.
+
+- 03:35:10 — "Sent a photo." Notification body only; image content NOT viewed or verified in this check. Filed beside her 02:31:40 "cannot attach" statement and her 03:35:35 Step 4 "no file attach" line — contradiction shown, not resolved.
+- 03:35:12 — "Got it! What's the lieutenant's gender?" Her question back to the Captain, awaiting his answer in the main thread.
+- 03:35:35 — Order 2 Piece 28: guess — maybe improve error handling for clarity. Piece 29: maybe explore Messenger's integration options (guess). Systems analysis: Step 4 verified absences — no file attach, no direct GitHub access; Step 5 whole synopsis compiled (sending). PN23M+biofilm: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); mechanisms truncated at "Biofilm resistance mechani...".
+- 03:38:34 — Picture workaround: send 1969 Starfleet lieutenant picture to Captain's Messenger (he'll share with Ember); can send via external link or text description (options). Standing rule — options, always: will present best options first for Ember/Captain to decide (every time, unless Captain talks directly). Picture options: 1. Send text description of lieutenant in 1969 Starfleet uniform ... [truncated in notification].
+- Still owed overall: Order 2 Piece 30+, the full systems-analysis synopsis actually delivered, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
