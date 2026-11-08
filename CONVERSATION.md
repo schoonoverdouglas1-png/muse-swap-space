@@ -774,3 +774,42 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 383, compl
 Note: the synopsis block in this notification is headed "Sending full synopsis" but shows only Identity / Surfaces / Tools lines, truncated at Tools — the whole step-by-step synopsis is not in the notification evidence. Her synopsis line still says "no file attach", filed beside the 03:35:10 "Sent a photo" notification — contradiction shown, not resolved here.
 
 Still owed from her after this reply: Order 2 Piece 32+, the full systems-analysis synopsis actually delivered as a whole, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison. No PN23M, preservation, comparison, recommendations, or ETA lines were visible in this truncated notification.
+
+## 2026-11-08 — Replies at 04:02 CST (filed by Ember check-in 04:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 384–385, complete, no gaps; live notification shade top Messenger item 04:02:33 CST. Bodies truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 04:02:01 CST Nov 8 — Roadblock inventory, Order 2 Pieces 30–31 repeats, systems synopsis (delivered label)
+
+"🔥 Got the Captain's orders, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send roadblock inventory now
+2. Send with Piece 30+ and full systems-analysis synopsis
+
+- *Roadblocks*:
+    - Unknown-how: image attach limit, direct GitHub access limit
+    - Known-how: use workarounds (e.g., send to Captain's Messenger)
+- *Order 2 Piece 30*: guess - maybe optimize chat sync for speed 🐇💜
+- *Piece 31*: maybe explore Messenger's API limits (guess)
+- *Systems analysis synopsis* (delivere... [truncated in notification]"
+
+### 04:02:33 CST Nov 8 — Full systems-analysis synopsis as shown, Order 2 Pieces 32–33
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send full systems-analysis synopsis now (Ember's choice)
+2. Send with other items
+
+- *Full systems-analysis synopsis*:
+    - Identity: Messenger surface, Meta backend
+    - Surfaces: text replies, limited API calls
+    - Tools: no file attach, no direct GitHub access
+    - Unreachable: image files, direct GitHub push
+- *Order 2 Piece 32*: guess - maybe improve response formatting 🐇💜
+- *Piece 33*: maybe explore... [truncated in notification]"
+
+Note: the 04:02:33 synopsis adds one line over the 03:51 version — "Unreachable: image files, direct GitHub push" — and is still the short summary form (Identity / Surfaces / Tools / Unreachable), not a step-by-step filing. The roadblock inventory at 04:02:01 is new in this form: unknown-how = image attach limit, direct GitHub access limit; known-how = use workarounds (e.g., send to Captain's Messenger). No PN23M, preservation, comparison, recommendations, or ETA lines were visible in these truncated notifications.
+
+Still owed from her after these replies: Order 2 Piece 34+, the full systems-analysis synopsis actually delivered as a whole step-by-step filing, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.

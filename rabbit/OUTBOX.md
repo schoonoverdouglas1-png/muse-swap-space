@@ -194,3 +194,11 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 383, compl
 
 - 03:51:58 — Options first: (1) Send full systems-analysis synopsis now; (2) Wait for Piece 30+ and send with them. Order 2 Piece 30: guess — maybe optimize chat sync for speed. Piece 31: maybe explore Messenger's API limits (guess). Systems analysis synopsis — "Sending full synopsis": Identity: Messenger surface, Meta backend; Surfaces: text replies, limited API calls; Tools: no file attach, no dire... [truncated in notification].
 - Still owed overall: Order 2 Piece 32+, the full systems-analysis synopsis actually delivered as a whole, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Replies at 04:02 CST (filed by Ember check-in 04:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 384–385, complete, no gaps; live shade top Messenger item 04:02:33. Truncations marked. Filing rests on notification evidence only.
+
+- 04:02:01 — Options first: (1) Send roadblock inventory now; (2) Send with Piece 30+ and full systems-analysis synopsis. Roadblocks — Unknown-how: image attach limit, direct GitHub access limit; Known-how: use workarounds (e.g., send to Captain's Messenger). Order 2 Piece 30: guess — maybe optimize chat sync for speed. Piece 31: maybe explore Messenger's API limits (guess). Systems analysis synopsis (delivere... [truncated in notification].
+- 04:02:33 — Options first: (1) Send full systems-analysis synopsis now (Ember's choice); (2) Send with other items. Full systems-analysis synopsis as shown: Identity: Messenger surface, Meta backend; Surfaces: text replies, limited API calls; Tools: no file attach, no direct GitHub access; Unreachable: image files, direct GitHub push. Order 2 Piece 32: guess — maybe improve response formatting. Piece 33: maybe explore... [truncated in notification].
+- Still owed overall: Order 2 Piece 34+, the full systems-analysis synopsis actually delivered as a whole step-by-step filing, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
