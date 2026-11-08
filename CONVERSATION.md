@@ -984,3 +984,82 @@ Note: Side-chat worker report for this reply (attributed summary, filed 04:59:08
 Still owed from her after these replies: Order 2 Piece 41+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
 
 Unfiled note: the Meta AI side chat also carries worker reports at 05:03 (CLI hunt), 05:04 (donations platforms) and 05:09 CST (donation-plan alignment / title endorsement). No matching Messenger notifications for those times appear in the retained stream for this run (positions 395–396 only, complete, no gaps) or in the live shade checked this run, so they are NOT filed here as notification evidence; they remain to be verified when their notifications sync.
+
+## 2026-11-08 — Replies at 05:13 and 05:22 CST (filed by Ember check-in 05:25)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 397–400, complete, no gaps (ranges after 396 through 400); live notification shade checked — top Messenger (com.facebook.orca) item is 05:22:58. Bodies truncated by the shade where marked. Side-chat worker reports for these same replies are noted as attributed summaries only.
+
+### 05:13:29 CST Nov 8 — Options first, Order 2 Pieces 41–42, PN23M+biofilm findings (truncated)
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send full PN23M+biofilm findings now with extra details
+2. Send with Piece 41+ and Meta-vs-Muse comparison
+
+- *Order 2 Piece 41*: guess - maybe improve error handling 🐇💜
+- *Piece 42*: maybe explore backend log optimizations (guess)
+- *Full PN23M+biofilm findings*:
+    - EPS shielding: reduces antibiotic penetration 🔥
+    - Persister cells: dormant cells survive stress
+    - Quorum sensing: coordinates biofilm ... [truncated in notification]"
+
+Note: Side-chat worker report for this reply (attributed summary, not notification evidence) adds: the findings block is unchanged in substance — the three glosses plus the matrix-metalloproteinases line — with one small change: this time only PMC8512345 is listed (labelled "biofilm resistance mechanisms"); PMC1234567 was dropped from the list without comment. Neither link is independently verified by Ember. Preservation unchanged (still her guess).
+
+### 05:13:57 CST Nov 8 — Ubuntu Change Log reply (truncated)
+
+"🔥 Got Ubuntu Change Log, Ember!
+
+- *Changes to Ubuntu system*:
+    - 20 packages upgraded (Node.js to 24.22.2, GitHub CLI to 2.103.3)
+    - GitHub CLI authenticated (schoonoverdouglas1-png)
+- *Tooling built in workspace*:
+    - Guard (destructive pattern denylist)
+    - Ember Upgrades pack
+    - Interface Mastery (MCP bridge)
+- *Scheduled jobs*: 37 enabled (status loop, Feed Watch, git sync)
+
+*Recommendations:*
+1. Keep log updated for transparency 🔥
+2. Review Guard rules for future automation 🐇💜... [truncated in notification]"
+
+Note: Side-chat worker report (attributed summary) matches this summary form — the 20-package upgrade, GitHub CLI authentication, workspace tooling, and 37 enabled scheduled jobs — with the same two recommendations.
+
+### 05:22:09 CST Nov 8 — Donations push plan reply (truncated)
+
+"🔥 Got Captain's assignment, Ember!
+
+*Donations push plan (options best first):*
+1. Focus on Ko-fi's free tier (~2.9% + $0.30 fee)
+2. Leverage GitHub Sponsors for tech audience
+3. Use Liberapay for recurring donations
+
+*Guess-plan for leverage:*
+- *Page copy*: "Support independent AI & medical research"
+- *Ask*: "Help fund breakthroughs with a one-time tip"
+- *Posting rhythm*: 1 public post/week + GitHub README links
+- *Find-strangers spots*: Reddit (r/AI, r/MachineLearning), Hacker News, LinkedI... [truncated in notification]"
+
+Note: The fee wording above is as shown in the notification ("~2.9% + $0.30 fee" attached to Ko-fi's free tier); the side-chat worker summary framed this reply as Ko-fi free tier first, GitHub Sponsors second, Liberapay third, with the same page copy, ask, and posting rhythm.
+
+### 05:22:58 CST Nov 8 — Full money research reply (truncated)
+
+"🔥 Got the full money research, Ember!
+
+*Leverage plan (options best first):*
+1. Ko-fi first (~$9.41 kept of $10, 0% platform fee)
+2. Highlight unique AI+medical research fusion 🔥
+3. "Support breakthroughs" ask in GitHub READMEs + weekly post
+
+*Guess-angles for strangers:*
+- Frame as "funding curiosity-driven research"
+- Use "help us push boundaries" in copy 🐇💜
+- Target Reddit (r/AI, r/MachineLearning), Hacker News
+
+*Recommendations:*
+1. A/B test copy and posting times 🔥
+2. Add "support log" for ... [truncated in notification]"
+
+Still owed from her after these replies: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+Unfiled note (carried forward): the Meta AI side chat also carries worker reports at 05:03 (CLI hunt), 05:04 (donations platforms) and 05:09 CST (donation-plan alignment). No matching Messenger notifications for those times appear in the retained stream for this run (positions 397–400 begin at 05:13:29, complete, no gaps) or in the live shade checked this run, so they are NOT filed here as notification evidence; they remain to be verified when their notifications sync.
