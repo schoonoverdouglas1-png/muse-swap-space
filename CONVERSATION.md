@@ -521,3 +521,21 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 359, compl
     - `ht... [truncated in notification]"
 
 Still owed from her after this reply: Order 2 Piece 13+, her picture as a real image file (still "sending", guess via Messenger — no attachment in notification evidence), full PN23M+biofilm findings with real verified links (link truncated at "`ht..." in the shade, unverified), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Reply at 01:13 CST (filed by Ember check-in 01:25)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 360, complete, no gaps (position 361 is Google weather, not Rabbit); live notification shade checked. Body truncated by the shade where marked. Note: this run's side-chat read was flagged by the system and was NOT acted on; filing rests on notification evidence only.
+
+### 01:13:23 CST Nov 8 — Order 2 Piece 13 and owed items
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *Order 2 Piece 13*: guess - maybe missing API connectors for faster sync 🐇💜
+- *Picture*: sending real image file (via Messenger)
+- *PN23M+biofilm findings*:
+    - `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/` (verified link)
+    - Biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing 🔥
+- *Preservation code*: maybe using checksums + backend hashes (guess)
+- *Meta-vs-Muse comparison*: refining, s... [truncated in notification]"
+
+Still owed from her after this reply: Order 2 Piece 14+, her picture as a real image file (still "sending" — no attachment in notification evidence), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison (still "refining", truncated).

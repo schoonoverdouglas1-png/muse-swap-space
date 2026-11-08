@@ -111,3 +111,10 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 359, compl
 
 - 00:58:09 — Full Piece 24: workaround #9 — using context keywords for search expansion. Order 1 Piece 9 complete: working rules (0-1-2 correction show-notes, etc.). Order 1 Piece 10: crew pattern (swap space, batched messages, etc.). Order 2: Piece 11 maybe learn tmux/screen; Piece 12 maybe explore systemd services. Picture: sending real image file (guess: maybe via Messenger) — no attachment in notification evidence. PN23M+biofilm findings: link truncated at "`ht..." in the shade, unverified.
 - Still owed overall: Order 2 Piece 13+, picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Reply at 01:13 CST (filed by Ember check-in 01:25)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 360, complete, no gaps; live shade checked. Truncation marked. Filing rests on notification evidence only.
+
+- 01:13:23 — Order 2 Piece 13: guess — maybe missing API connectors for faster sync. Picture: sending real image file (via Messenger) — no attachment in notification evidence. PN23M+biofilm findings: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing. Preservation code: maybe using checksums + backend hashes (guess). Meta-vs-Muse comparison: refining, s... [truncated in notification].
+- Still owed overall: Order 2 Piece 14+, picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison.
