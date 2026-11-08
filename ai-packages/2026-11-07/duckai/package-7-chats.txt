@@ -1,0 +1,422 @@
+﻿This conversation was generated with Duck.ai (https://duck.ai) using Mistral AI's Mistral Small 4 Model. AI chats may display inaccurate or offensive information (see https://duckduckgo.com/duckai/privacy-terms for more info).
+
+====================
+
+User prompt 1 of 8 - 11/7/2026, 10:26:39 PM:
+PACKAGE ASSEMBLY: Pneumococcal serotype chats for GitHub (Douglas Schoonover, Nov 4 experiment runs)
+
+I am assembling a single package file for GitHub from 7 saved Duck.ai chats. Do NOT summarize, edit, or reword anything. Reply to each message I send in this chat with only the word: Received.
+
+MANIFEST - 7 chats (all single-turn, all the same pneumococcal serotype-grouping experiment, Nov 4, 2026):
+1. chatID 40faca1a-ad37-435f-8d13-0f76252f1a2d - Model: Gemma 4 31B (shown on page; an earlier session view showed Llama 4 16B for this same chat - model label uncertain, flagged). Features: chat + DuckDuckGo web search. Status: complete, no retry needed.
+2. chatID e525b4ce-a248-4ab7-9f6c-4eaabc38da49 ("Pneumococcal serotype groups summaries") - Model: GPT-6 Luna. Features: chat + web search. Status: complete, no retry needed.
+3. chatID dba312fd-48bf-4746-b6b4-871da48e6056 - Model: gpt-oss 120B. Features: chat + web search (open-web domain). Status: complete, no retry needed.
+4. chatID 3398f3cd-b8a6-4a21-80d5-09d3a3e594ce ("Pneumococcal serotype groupings") - Model: Mistral Small 4. Features: chat only (no web search shown). Status: complete, no retry needed.
+5. chatID 32b6e923-961e-485d-a943-bc8e1e457ecd ("Pneumococcal serotype groupings") - Model: GPT-5.4 mini. Features: chat + web search. Status: complete, no retry needed.
+6. chatID d4106ef9-36f4-434c-aeff-a14ef6fdd16e - Model: Gemma 4 31B. Features: chat + web search (enabled Nov 7 with Douglas's go-ahead). Status: originally incomplete (awaiting web-search consent on Nov 4); completed Nov 7 after enabling web search.
+7. chatID e28a0e2f-4e8b-402f-8277-28bb81d38120 - Model: originally gpt-oss 120B (Nov 4 attempt failed, lost connection); retried Nov 7, answered by Claude Haiku 5.5. Features: chat + web search. Status: needed a retry; retried once Nov 7 and answered, but the answer did not persist in Duck.ai's stored chat view afterward (verified by reload and 30-second wait); the answer in this package is transcribed from the generated response captured at retry time.
+
+NOTES AND GAPS:
+- Duck.ai cannot access past conversations; this package was assembled by hand from the saved chats and their exports.
+- Chat 1's model label is uncertain: the same chat displayed "Llama 4 16B" in an earlier session and "Gemma 4 31B" in this session, with identical answer text.
+- Some model answers contain factual slips in vaccine composition details (e.g., the Mistral answer attributes 23A to PCV20; PCV20 contains neither 23A nor serotype 20). Answers are reproduced as given.
+- The union-of-32 question was not confirmed as a standard count by several models; see each answer's "What was not found" section.
+- No image or voice features were used in any of the 7 chats.
+
+The next 7 messages contain each chat's full original prompt and full answer, in order.
+
+Mistral Small 4:
+Received
+
+--------------------
+
+User prompt 2 of 8 - 11/7/2026, 10:26:52 PM:
+--- PART 1 OF 7 ---
+ChatID: 40faca1a-ad37-435f-8d13-0f76252f1a2d
+Model (as displayed; uncertain - see manifest): Gemma 4 31B
+Features used: Duck.ai chat + DuckDuckGo web search
+Status: Complete, no retry needed
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings from this research summary, using DuckDuckGo web search features if available: Pneumococcal serotypes union 32 across PCV7/13/15/20/21 and PPSV23; PN23M list 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic groupings not genetic clusters, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H in newer work, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 = 15A,15B,15C,15D plus others, group 20 = 20A/20B/20C; disease groupings to compare: pneumonia, meningitis, otitis media, invasive pneumococcal disease, with serotype patterns by disease, and parallel systems meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Return a topic-level summary of what the model found, what it could not find, and which DuckDuckGo features it used (chat, web search, image, voice if any).
+
+ASSISTANT ANSWER:
+Based on the research summary provided and supplemented by web search data, here is the analysis of pneumococcal serotype and disease groupings compared against other bacterial/viral systems.
+
+Pneumococcal Serotype and Disease Analysis
+
+Serotype and Vaccine Groupings
+Pneumococcal classification is based on the polysaccharide capsule. Serotypes are specific antigenic identifiers, while serogroups (e.g., Group 9, 6, 15, 20) represent broader antigenic groupings of structurally related serotypes. This distinction is critical: molecular similarity does not automatically guarantee vaccine cross-reactivity.
+
+Vaccine commonality evolves by expanding the number of capsular polysaccharides included:
+
+PCV7 -> PCV13 -> PCV15 -> PCV20 -> PCV21: These conjugate vaccines progressively add serotypes to increase coverage. For example, PCV20 includes the 15 serotypes of PCV15 plus 8, 10A, 11A, 12F, and 15B. (vaccinesafety.edu)
+PPSV23: A polysaccharide vaccine covering 23 serotypes, including many in PCV20 (though it lacks 6A) and others like 2, 9N, 17F, and 20. (vaccinesafety.edu)
+PCV21: A specialized conjugate vaccine that includes 21 serotypes, including several unique ones (e.g., 15A, 15C, 24F, 31, 35B) but notably excludes serotype 4, which is critical for certain high-risk populations in the Western US.
+
+Disease Groupings and Patterns
+Pneumococcal diseases are categorized by the site of infection and invasiveness:
+
+Invasive Pneumococcal Disease (IPD): Includes meningitis and bacteremia/sepsis. These are almost exclusively caused by encapsulated strains. (European Union)
+Non-Invasive Disease: Includes acute otitis media (AOM) and community-acquired pneumonia (CAP). While non-invasive, these can become invasive if the bacteria enter the bloodstream. (Frontiers)
+Patterns: Serotype distribution varies by disease. For example, in children post-PCV13, serotypes 19F, 3, and 19A remain frequent contributors to AOM. (Frontiers)
+
+Parallel Pathogen Systems Contrast
+The pneumococcal system (based primarily on capsular polysaccharide) differs from the following:
+Meningococcus: Classified by capsules (A, B, C, W, Y, X).
+Hib: Classified by capsular types (a-f), with type b being the primary target of vaccination. (bjid.org.br)
+Salmonella: Uses a complex O (somatic) and H (flagellar) antigen system, resulting in over 2,500 serovars.
+E. coli: Defined by O (somatic) and H (flagellar) antigens. (ssrn.com)
+GBS (Group B Strep): Grouped by Lancefield antigens (Ia-IX). (ssrn.com)
+Cryptococcus: Classified into serotypes (A, B, C, D, AD).
+Measles: As a contrast, measles typically exists as a single serotype, making a single vaccine highly effective across the global population.
+
+Model Summary
+What was found:
+- Detailed mappings of the evolution of PCV vaccines (7 through 21) and their specific serotype inclusions.
+- The distinction between IPD (meningitis/sepsis) and non-invasive diseases (AOM/CAP) and the role of the capsule in invasiveness.
+- The specific risk associated with Serotype 4 in the Western US and why PCV21 is contraindicated for those specific populations.
+- Comparison points for other pathogen serotyping systems (Salmonella O:H, etc.).
+
+What was not found:
+- Exact genetic cluster data for the specific "union 32" list provided in the prompt, as the provided list was treated as a given premise rather than a query for external verification.
+- Specific current prevalence percentages for all 32 serotypes across every single disease grouping (some general trends were found, but a complete 32x4 matrix is not standard in available summaries).
+
+DuckDuckGo features used:
+- Chat: For synthesis and analysis of the research summary.
+- Web Search: To verify vaccine compositions (PCV15/20/21), clarify the role of Serotype 4, and gather data on parallel pathogen systems.
+
+Read More: Pneumococcal (vaccinesafety.edu); Disease information about pneumococcal disease - ECDC (europa.eu); Serotype distribution of invasive and non-invasive pneumococcal disease... (frontiersin.org); Comparison of PCR-based methods for the simultaneous... (bjid.org.br); Comparison of Neonatal Escherichia Coli and Group B Streptococcal... (ssrn.com)
+--- END PART 1 OF 7 ---
+
+Mistral Small 4:
+Received
+
+--------------------
+
+User prompt 3 of 8 - 11/7/2026, 10:27:06 PM:
+--- PART 2 OF 7 ---
+ChatID: e525b4ce-a248-4ab7-9f6c-4eaabc38da49
+Model: GPT-6 Luna
+Features used: Duck.ai chat + DuckDuckGo web search
+Status: Complete, no retry needed
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER:
+Topic-level summary
+- The key distinction is that serotype, serogroup, genetic lineage, disease syndrome, and vaccine coverage are different ways of grouping pneumococci. Pneumococcal serotypes are defined by capsular antigens. Serogroups collect related serotypes; they do not mean the members are genetically identical. Genomic lineages are characterized separately, and a single serotype can occur in multiple lineages. The capsule is also the main target of pneumococcal vaccines, so vaccine inclusion is defined by specific serotypes - not simply by a shared serogroup or genetic similarity. Antibody protection is generally serotype-specific; do not infer cross-protection from molecular resemblance alone. (Source)
+- Your two lists describe different sets. PN23M is a 23-serotype antibody test panel, not a vaccine or a disease classification. The laboratory panel confirms the 23 types you listed, including 9N and 9V, and describes its results as type-specific IgG measurements. Your "union of 32" is a separate set-comparison claim across the named vaccine formulations; the sources retrieved here did not verify that exact union, so I would treat the number and membership as supplied inputs rather than independently confirmed findings. The current evidence does support the general point that vaccines target selected capsular serotypes and that vaccine formulations differ in coverage. (Source)
+- Serogroups are useful shorthand, but the membership needs careful handling. The 9 and 6 examples illustrate why: a group label can encompass multiple named capsular types, and a serogroup is not a genetic cluster. I did not locate a reliable source in this search set that verifies every membership in your detailed group 9, 6, 15, and 20 lists, or the complete proposed group 33 membership. In particular, the source found on group 33 discusses 33G as a newly characterized type; it is not enough to validate the full membership list you supplied. (Source)
+- Disease patterns are tendencies, not fixed one-to-one mappings. Pneumococcal serotype prevalence varies with age, geography, time, and vaccine use, and serotypes differ in their propensity for carriage, otitis media, pneumonia, meningitis, and other invasive disease. In one historical European pediatric review, meningitis and bacteremia distributions featured types including 14, 19, 6B, 23F, and 18C; it also associated serotypes 1, 3, and 5 with complicated pneumonia in some settings. A recent pediatric review reported 19F, 3, and 19A among frequently reported post-vaccine otitis-media isolates, while 19A and 1 were prominent in its limited post-vaccine community-acquired-pneumonia studies. These are study- and setting-specific patterns, not universal rankings. Invasive pneumococcal disease is a clinical category covering infections at normally sterile sites; pneumonia can be invasive when accompanied by bacteremia, but pneumonia without bacteremia is non-invasive. (Source)
+- The cross-organism parallels are helpful for explaining the concept, but the schemes are not interchangeable. Meningococcal A/B/C/W/Y/X, H. influenzae a-f, and GBS Ia-IX are capsule-based serogroup/type systems; Salmonella serovars and E. coli O:H types use different surface-antigen combinations. Cryptococcus A/B/C/D/AD uses a separate classification context. These examples all illustrate antigen-based classification broadly, but their biological meaning, grouping rules, and vaccine implications differ by organism. Measles is a useful contrast: it is generally treated as one serotype, despite genetic variants. The search did not independently validate every specific cross-organism label in your comparison, so these are best presented as conceptual parallels, not as equivalent taxonomies.
+
+What was not found
+- A source verifying the exact "union of 32" across PCV7/13/15/20/21 and PPSV23, including the precise vaccine-by-vaccine set calculation.
+- A source confirming the complete detailed membership lists for pneumococcal groups 6, 9, 15, 20, and 33, including the status of each named variant.
+- A single current, broadly representative source giving definitive serotype rankings across pneumonia, meningitis, otitis media, and invasive disease. The evidence found was tied to particular ages, regions, study periods, and vaccine eras.
+- A source verifying every cross-organism grouping in the comparison, particularly the full Cryptococcus and GBS lists, in a way that supports direct comparison across organisms.
+
+Features used
+- Molecular: capsule-biosynthesis genes, whole-genome sequence, and strain or lineage relationships.
+- Antigenic: the expressed capsule or other surface antigens used to assign serotype, serogroup, or serovar.
+- Vaccine: the specific antigens included in a vaccine and the protection demonstrated against them.
+- Disease: the clinical syndrome and the observed distribution of typed isolates in a defined population and period.
+Keep those layers separate: genetic similarity does not by itself establish antigenic identity, and antigenic relatedness does not by itself establish clinically meaningful vaccine cross-protection. (Source)
+
+Read More: Pneumococcal Disease (who.int); Disease information about pneumococcal disease - ECDC (europa.eu); Streptococcus pneumoniae serotype 33G: genetic ... (sciencedirect.com); Streptococcus pneumoniae IgG Antibodies, 23 Serotypes (testcatalog.org); Chapter 17: Pneumococcal Disease | Pink Book (cdc.gov); Serotype distribution of invasive and non ... (frontiersin.org); Burden of invasive pneumococcal disease and serotype ... (sciencedirect.com)
+--- END PART 2 OF 7 ---
+
+Mistral Small 4:
+ Received
+
+--------------------
+
+User prompt 4 of 8 - 11/7/2026, 10:27:33 PM:
+--- PART 3 OF 7 ---
+ChatID: dba312fd-48bf-4746-b6b4-871da48e6056
+Model: gpt-oss 120B
+Features used: Duck.ai chat + DuckDuckGo web search (open-web domain)
+Status: Complete, no retry needed
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER:
+1. Union of serotypes - the 32
+Here is the set that results from taking PCV7, PCV13, PCV15, PCV20, PCV21 and PPSV23 together. Note that 20A (serotype 20) only appears in PCV21 and PPSV23, and the '32' is a claim about the union, not a canonical vaccine list.
+PCV7: 4, 6B, 9V, 14, 18C, 19F, 23F
+PCV13: PCV7 + 1, 3, 5, 6A, 7F, 19A
+PCV15: PCV13 + 22F, 33F
+PCV20: PCV15 + 8, 10A, 11A, 12F, 15B
+PCV21 - adds 15A, 15C, 16F, 17F, 20A, 23A, 23B, 24F, 31, 35B, 9N (PCV20 + PCV21)
+PPSV23: 1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, 33F (= 23 serotypes)
+Combined union (32): 1 2 3 4 5 6A 6B 7F 8 9N 9V 10A 11A 12F 14 15A 15B 15C 16F 17F 18C 19A 19F 20A 22F 23A 23B 23F 24F 31 33F 35B. Marginal: 2, 9N, 17F, 20A not in the conjugates (1 of 4 in PPSV23 except 2 is not in PCV13 or PCV21); 2 in PPSV23.
+
+2. Serogroup vs. serotype - why the distinction matters
+Serotype = the exact capsular polysaccharide (antigenic identity by Quellung / antibody binding).
+Serogroup = a set of serotypes whose capsules share at least one cross-reactive epitope. They are antigenic groupings, not genetic clusters.
+Serogroups-Geneology: Capsule genes (cps loci) can be near-identical (e.g., serotypes 6A vs 6B differ in a single rhamnose linkage), but genetic similarity does not determine cross-protection - it only creates a hypothesis that must be tested in immunogenicity studies.
+Serogroup 9: 9A, 9L, 9N, 9V - PCV7 contains 9V only; PCV13/15/20/21 contain 9V, PPSV23 contains 9N + 9V. 9A and 9L are not vaccine serotypes.
+Serogroup 33: 33F, 33A, 33B, 33C, 33D (plus 33E, 33G, 33H [recent/variant serotypes]) - PCV21 + PPSV23 contain 33F only. 33A-D etc. may or may not be cross-covered.
+Serogroup 6: 6A, 6B, 6C, 6D, 6F, 6G, 6H - PCV7 contains 6B, PCV13 onwards contains 6A + 6B. 6E was proposed as a variant but later refuted (not a distinct serotype). 6C/D/F sentinels: PCV13 does not contain 6C, 6D, 6F, 6G, 6H.
+Serogroup 15: 15A, 15B, 15C, 15D (+others) - PCV15 contains 15B, PCV20 contains 15B, PCV21 contains 15A, 15B, 15C. 15D not in any current vaccine.
+Serogroup 20: 20A, 20B, 20C (same antigenic group, divergent by cps locus) - PCV21 contains 20A, PPSV23 contains 20 (listed as 20A in the union).
+Definitions matter: Serogroup membership does NOT imply protection - e.g., PCV13 contains 19F, but 19A was added separately because 19F antibodies do not protect against 19A.
+
+3. Disease-specific serotype patterns
+Invasive pneumococcal disease (IPD): Meningitis and bacteremia - Serotypes 1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 18C, 19A, 19F, 23F most common in invasive disease (pre-PCV13) - Serotype 3 has disproportionately high case-fatality
+Pneumonia (non-bacteremic): CAP - Serotypes 1, 3, 7F, 8, 14, 19A (adult CAP, CAPiTA) - Serotype 1 and 3 predominate in complicated pneumonia/empyema
+Otitis media: AOM - Serotypes 3, 6A, 6B, 19A, 19F, 23F most common - Serotype 19A and 3 disproportionately cause AOM after PCV13 rollout (due to incomplete vaccine protection against 3)
+Meningitis: Meningitis is the most severe form of IPD - Serotypes 6A, 6B, 14, 19A, 19F, 23F historically important; serotype 3 now increasing in meningitis in some settings
+Disease grouping caveat: Serotype distribution by disease is ecological, not deterministic - in the post-PCV13 era serotypes 35B, 15A and 23A have increased in invasive disease in children.
+Adults: Older adult patterns differ: Serotype 3, 19A, 22F, 11A, 12F and PPSV23-unique serotypes (9N, 17F, 20) are relatively more common in older adults - PCV21 specifically targets high-risk adult serotypes (15A, 16F, 23A, 24F, 31, 35B).
+
+4. What about other pathogens - useful parallels
+Meningococcus: Capsule serogroups A/B/C/W/Y/X - Capsule polysaccharide - Serogroup-specific vaccines (MenACWY vs MenB protein vaccine)
+Hib: Capsular serotypes a-f (b most common) - Capsule polysaccharide (polyribosylribitol phosphate) - Hib conjugate vaccine targets serotype b only
+Salmonella: Serovars based on O and H antigens - O (somatic) + H (flagellar) antigens - Over 2,600 serovars - Typhoid vaccine targets Typhi Vi capsule
+E. coli: O:H serotypes (O = somatic antigen, H = flagellar antigen) - >180 O groups, >50 H groups - No single universal E. coli vaccine
+Cryptococcus: Serotypes A, B, C, D, AD (neoformans vs gattii) - Capsule polysaccharide (glucuronoxylomannan) - No licensed vaccine
+GBS: Capsular serotypes Ia-IX - Capsule polysaccharide - No licensed vaccine (candidate hexavalent GBS vaccine targets Ia, Ib, II, III, IV, V)
+Measles: Single serotype (one antigenic type) - Measles virus is antigenically monotypic - Live attenuated vaccine provides broad, long-term protection - Contrast: no serotype diversity, so one vaccine covers all variants
+
+5. Distinguishing molecular, antigenic, and vaccine commonality - do not assume cross-reactivity from molecular similarity alone
+Molecular: Capsular biosynthesis genes (whole cps locus). e.g., serogroup 6E was proposed based on additional variant, but was refuted because it was not a new serotype. Serogroups 9 and 6 remain antigenic, not genetic.
+Antigenic: Capsule epitopes, antibody-binding properties, Quellung / serology. Serogroup 9 (9A, 9L, 9N, 9V) - a group of serotypes that share cross-reactive epitopes. Serogroup 9 contains *10 related serotypes*? No - 9A, 9L, 9N, 9V are named members of group 9. Relatedness is not the same as cross-protection - antibodies to 9V do not necessarily protect against 9N.
+Vaccine: Clinical protection conferred by a vaccine formulation. PCV15 includes both 22F and 33F; PCV20 adds 8, 10A, 11A, 12F, and 15B; PCV21 includes 15A, 15B, 15C and other adult-specific serotypes. PCV20/PCV21 coverage is not identical - e.g., PCV21 lacks serotype 4 (important to American Indian/Alaska Native populations); PCV20 includes serotype 4.
+
+What was not found:
+- No single authoritative table for a "union" of exactly 32 serotypes across PCV7-PCV21 + PPSV23. The union was assembled from CDC, Immunize.org, and other vaccine tables.
+- No peer-reviewed source giving a detailed disease-specific prevalence by serotype (e.g., exact proportions of otitis media or meningitis cases by each serotype). Prevalence data are ecological and vary by era, region, and age.
+- No recent peer-reviewed source on serogroup cross-reactivity experiments for the newly described serogroups (e.g., 33 vs 33A-H).
+
+Features used:
+- WebSearch (results 1-5). Extracted serotype lists for PCV7, PCV13, PCV15, PCV20, PCV21, and PPSV23 from the CDC vaccine figure, Immunize.org Ask the Experts tables, and CDC PCV21 page (open-web domain), and applied a union operation.
+- Collated disease-association statements from the CDC efficacy data (CAPiTA trial, PCV13-IPD efficacy) and pneumococcal vaccine safety pages, then presented the disease groupings as pattern-level tendencies rather than fixed one-to-one mappings.
+- Compared the antigenic serogroup definitions (6, 9, 15, 20, 33) with cross-reactivity in the retrieved web sources, then distinguished molecular, antigenic, and vaccine-related commonality.
+
+Read More: Use of 21-Valent Pneumococcal Conjugate Vaccine Among U.S. Adults... (cdc.gov); PCV15 and PCV20 FAQs (immunize.org); PCV21: Pneumococcal Vaccine (cdc.gov); Pneumococcal Vaccination: Information for Health Care... (cdc.gov); Ask the Experts: Pneumococcal (immunize.org)
+--- END PART 3 OF 7 ---
+
+Mistral Small 4:
+ Received
+
+--------------------
+
+User prompt 5 of 8 - 11/7/2026, 10:27:51 PM:
+--- PART 4 OF 7 ---
+ChatID: 3398f3cd-b8a6-4a21-80d5-09d3a3e594ce
+Model: Mistral Small 4
+Features used: Duck.ai chat only (no web search shown in the answer)
+Status: Complete, no retry needed
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER:
+Here is a structured analysis of pneumococcal serotype groupings, disease associations, and comparisons to other pathogen classification systems.
+
+Pneumococcal Serotype Groupings (Union of 32)
+The union of serotypes across PCV7, PCV13, PCV15, PCV20, PCV21, and PPSV23 includes 32 serotypes. The PN23M list (23 serotypes) is a subset of this union.
+Serogroup 6: 6A, 6B, 6C, 6D, 6F, 6G, 6H - Vaccines: PCV7/13/15/20/21, PPSV23
+Serogroup 9: 9A, 9L, 9N, 9V - Vaccines: PCV7/13/15/20/21, PPSV23
+Serogroup 19: 19A, 19F - Vaccines: PCV7/13/15/20/21, PPSV23
+Serogroup 22F: 22F - Vaccines: PCV15/20/21, PPSV23
+Serogroup 33: 33F, 33A, 33B, 33C, 33D, 33E/G/H - Vaccines: PCV20/21, PPSV23
+
+Key Notes:
+- PCV7 covers 7 serotypes (4, 6B, 9V, 14, 18C, 19F, 23F).
+- PCV13 adds 6 additional serotypes (1, 3, 5, 6A, 7F, 19A).
+- PCV15 adds 2 more (22F, 33F).
+- PCV20 adds 7 more (8, 10A, 11A, 12F, 15B, 20, 23A).
+- PCV21 adds 1 more (23B).
+- PPSV23 covers 23 serotypes (including 22F, 33F, and others not in PCVs).
+
+Disease Groupings and Serotype Patterns
+Pneumonia: 1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 19A, 19F, 22F, 23F - PCV13/20/21 cover most
+Meningitis: 4, 6B, 9V, 14, 18C, 19F, 23F - PCV7/13 cover most
+Otitis Media: 6A, 6B, 19A, 19F, 23F - PCV13 reduces incidence
+Invasive Disease: 1, 3, 4, 5, 6A, 6B, 7F, 9V, 14, 19A, 19F, 22F - PCV20/21 expand coverage
+
+Comparison to Other Pathogens
+Meningococcus (A/B/C/W/Y/X): Capsular serogroups (A, B, C, etc.) define disease risk.
+Hib: Single serotype (b) causes most disease.
+Salmonella serovars: >2,500 serovars (e.g., Typhi, Typhimurium).
+E. coli O:H: >180 O-antigens, >50 H-antigens.
+Cryptococcus (A/B/C/D/AD): Capsular serotypes affect virulence.
+GBS: Serotypes Ia-IX, with Ia/III most invasive.
+Measles: Single serotype (genotype D8 dominant).
+
+Molecular vs. Antigenic vs. Vaccine Commonality
+Molecular: Genetic differences (e.g., cps locus variations) do not always predict antigenic similarity.
+Antigenic: Capsular polysaccharides determine serotype (e.g., 6A vs. 6B differ in immunogenicity).
+Vaccine Commonality: Some serotypes are grouped (e.g., 6A/6B in PCV7) despite antigenic differences.
+Cross-Reactivity: 6A vs. 6B: PCV7 includes 6B but not 6A (6A is in PCV13). 19A vs. 19F: PCV7 includes 19F but not 19A (19A is in PCV13). 22F vs. 22A: Only 22F is in PCV15/20/21.
+
+What Was Not Found
+- Cross-protection data: Some serotypes may induce partial immunity to others (e.g., 6A vs. 6B), but the evidence is limited, and cross-protection is not assumed.
+- Serotype replacement: Emerging non-vaccine serotypes (e.g., 15A, 23A) post-vaccine introduction.
+- Disease-specific serotype shifts: Some serotypes (e.g., 3) are less immunogenic in vaccines.
+
+Features Used in Analysis
+- Vaccine composition tables (PCV7/13/15/20/21, PPSV23).
+- Serogroup definitions (e.g., group 6, 9, 19, 33).
+- Disease association studies (pneumonia, meningitis, otitis media).
+- Comparative pathogen analysis (meningococcus, Hib, Salmonella, etc.).
+
+Would you like a deeper dive into any specific aspect (e.g., serotype replacement, vaccine efficacy)?
+--- END PART 4 OF 7 ---
+
+Mistral Small 4:
+ Received
+
+--------------------
+
+User prompt 6 of 8 - 11/7/2026, 10:28:11 PM:
+--- PART 5 OF 7 ---
+ChatID: 32b6e923-961e-485d-a943-bc8e1e457ecd
+Model: GPT-5.4 mini
+Features used: Duck.ai chat + DuckDuckGo web search
+Status: Complete, no retry needed
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER:
+Topic-level summary
+- PCV7, PCV13, PCV15, PCV20, and PCV21 are conjugate vaccines built by adding capsular serotypes; PPSV23 is a separate 23-valent polysaccharide vaccine. PCV7 includes 4, 6B, 9V, 14, 18C, 19F, and 23F. PCV13 keeps those and adds 1, 3, 5, 6A, 7F, and 19A. PCV15 adds 22F and 33F. PCV20 adds 8, 10A, 11A, 12F, and 15B. PCV21 shifts to a different 21-serotype set: 3, 6A, 7F, 8, 9N, 10A, 11A, 12F, 15A, 15B, 15C, 16F, 17F, 19A, 20, 22F, 23A, 23B, 24F, 31, 33F, 35B. PPSV23 includes 19 of PCV20's 20 serotypes plus 4 others: 2, 9N, 17F, and 20. (CDC, Immunize.org, vaccinesafety.edu)
+- Your PN23M list is a laboratory serology panel, not a vaccine. It reports IgG for the 23 serotypes you listed: 1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, and 33F. (testcatalog)
+- Like your prompt says, pneumococcal serogroups are antigenic groupings, not genetic clusters. Group 9 contains 9A, 9L, 9N, and 9V. Group 6 includes 6A, 6B, 6C, and 6D; reported variants also include 6F, 6G, and 6H, while an asserted group 6E was not accepted. Group 15 includes 15A, 15B, 15C, 15D, and related types. Group 33 is anchored by 33F, which is present in PCV15, PCV20, PCV21, and PPSV23; related 33 types include 33A, 33B, 33C, 33D, 33E, 33F, 33G, and 33H. Group 20 contains 20A, 20B, and 20C; the relevant vaccine serotype is 20.
+- Serotype grouping by disease is ecological, not deterministic. There is no single table mapping every serotype to one disease. In U.S. pediatric IPD in 2021, after widespread conjugate vaccination, 15B/C, 19A, 3, 33F, 23B had the highest proportions of invasive cases, and 15B/C had the highest proportion at 39%; across the 2018 to 2021 period, these proportions were similar, with some exceptions for serotypes 19A and 33F. (Hopkins)
+- PCV7 showed strong effects against invasive disease and reduced radiographic pneumonia; PCV13 in particular reduced vaccine-type pneumococcal community-acquired pneumonia by about 45%. A high-quality synthesis found PCV13 was effective against vaccine-type invasive pneumococcal disease and radiologically confirmed pneumonia, with rates of disease falling significantly but not to zero. (CDC, Aetna)
+- The cross-organism systems you list are useful contrasts. Neisseria meningitidis uses capsular serogroups A, B, C, W, Y, and X. Haemophilus influenzae uses capsular types a through f, with b being the main vaccine target. Salmonella uses serovars based on O and H antigens. Escherichia coli uses O:H combinations. Cryptococcus uses serotypes A, B, C, D, and AD. Group B Streptococcus uses capsular serotypes Ia through IX. Measles is commonly described as having one serotype, despite genetic variants.
+
+What was not found
+- I did not find a reliable source supporting a union of 32 serotypes as a standard, independently defined count across PCV7/13/15/20/21 and PPSV23. I calculated the union from the vaccine listings as 31 serotypes: 1, 2, 3, 4, 5, 6A, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15A, 15B, 15C, 16F, 17F, 18C, 19A, 19F, 20, 22F, 23A, 23B, 23F, 24F, 31, 33F, 35B. The only source of near-miss is a list on a U.S. vaccine-related site that counts the PCV20 (20 serotypes) and PCV21 (21 serotypes) together as 31 serotypes. (vaccinesafety)
+- I did not verify, from the retrieved sources, whether serotype 9N belongs in serogroup 9 as a known genetic member or whether the group assignment relies on antigenic relatedness.
+- I did not find a clean, single hierarchy showing all serogroups (6, 9, 15, 20, 33) and their members in one source. Group membership details came from separate synthesis pages.
+
+Features used
+- DuckDuckGo web search; source excerpts from CDC, Immunize.org, a vaccine safety reference, and a vaccine guide; comparison of vaccine composition, serogroup structure, and disease syndromes.
+
+Read More: Use of 21-Valent Pneumococcal Conjugate Vaccine Among U.S. Adults... (cdc.gov); Ask the Experts: Pneumococcal Vaccines (immunize.org); Interim Summary of Evidence... (hopkinsguides); Pneumococcal Conjugate Vaccine - Medical Clinical Policy... (aetna.com); Streptococcus pneumoniae IgG Antibodies, 23 Serotypes (testcatalog.org)
+--- END PART 5 OF 7 ---
+
+Mistral Small 4:
+ Received
+
+--------------------
+
+User prompt 7 of 8 - 11/7/2026, 10:29:39 PM:
+--- PART 6 OF 7 ---
+ChatID: d4106ef9-36f4-434c-aeff-a14ef6fdd16e
+Model: Gemma 4 31B
+Features used: Duck.ai chat + DuckDuckGo web search
+Status: Originally incomplete (awaiting web-search consent on Nov 4); completed Nov 7 after enabling web search with Douglas's go-ahead
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER:
+Here is a summary of the pneumococcal serotype and disease groupings based on the research you provided.
+
+Pneumococcal Serotype Groupings - Vaccines
+The unifying theme of pneumococcal classification is the capsule, defined by capsular polysaccharides. Pneumococcal serotypes are defined by these capsular types, not by their genome, and groups reflect similar chemical structures in the capsule rather than identical genes.
+
+Union 32 - Vaccine Serotypes:
+The 32 serotypes below combine PCV7, 13, 15, 20, 21 and PPSV23: 1 2 3 4 5 6A 6B 7F 8 9N 9V 10A 11A 12F 14 15A 15B 16F 17F 18C 19A 19F 20A 22F 23A 23B 23F 24F 31 33F 35B.
+PN23M - 23 Serotypes: This is the 23-serotype antibody panel used in the 23-Pneumococcal IgG test: 1 2 3 4 5 6B 7F 8 9N 9V 10A 11A 12F 14 15B 17F 18C 19A 19F 20 22F 23F 33F.
+Vaccines and Serotypes:
+PCV7 (Prevnar 7): 4, 6B, 9V, 14, 18C, 19F, 23F
+PCV13 (Prevnar 13): PCV7 + 1, 3, 5, 6A, 7F, 19A
+PCV15 (Vaxneuvance): PCV13 + 22F, 33F
+PCV20 (Prevnar 20): PCV15 + 8, 10A, 11A, 12F, 15B
+PCV21 (Capvaxive): A PCV21-specific 21-serotype formulation: 3, 6A, 7F, 8, 9N, 10A, 11A, 12F, 15A, 15B, 15C, 16F, 17F, 19A, 20A, 22F, 23A, 23B, 24F, 31, 33F, 35B
+PPSV23 (Pneumovax 23): 1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, 33F.
+PCV21 targets a different adult-centric profile, omitting some PCV7 types (e.g., 4, 6B, 9V, 14, 18C, 19F, 23F) and adding types important for adult disease (e.g., 15A, 16F, 23A, 23B, 24F, 31, 35B).
+
+Serogroups and Their Components
+Serogroups are antigenic groupings reflecting shared capsule antigens, not genetic clusters.
+Serogroup 9: 9A, 9L, 9N, 9V. For example, 9V is in PCV7/13/15/20, 9N is only in PCV21 and PPSV23.
+Serogroup 33: 33F, 33A, 33B, 33C, 33D. Newer studies have also identified 33E, 33G, and 33H. For example, 33F is in PCV15/20/21 and PPSV23, 33G is a newly described serotype.
+Serogroup 6: 6A, 6B, 6C, 6D, 6F, 6G, 6H. The former serogroup 6E was proposed as a 6A variant but later refuted (not a distinct serotype). PCV13 also includes 6A and 6B.
+Serogroup 15: 15A, 15B, 15C, 15D. For example, 15B and 15C are in PCV20, but 15A is only in PCV21.
+Serogroup 20: 20A, 20B, 20C. For example, 20B is a recently described variant; the vaccine serotype is 20A.
+
+Pneumococcal Disease Groupings
+The disease presentation depends on where the bacteria invade:
+Invasive Pneumococcal Disease (IPD): Meningitis and bacteremia (bloodstream infection). Serotypes 1, 3, 4, 5, 8, 9V, 12F, 14, 19A, 22F, and 23F are leading causes of invasive pneumococcal disease in the pre-vaccine era.
+Pneumonia: Community-acquired pneumonia (CAP). Serotypes 1, 3, 5, 8, 19A, 22F are associated with more severe/complicated pneumonia.
+Meningitis: A complication of bacteremia. Serotypes 14, 6B, 19A, 19F, 23F are historically common causes.
+Otitis Media: Acute otitis media (AOM) - ear infection. Serotypes 19A and 19F are commonly associated with AOM in the post-vaccine era.
+
+Pathogen Comparison Matrix
+Meningococcal meningitis (Neisseria meningitidis): Capsular groups (A, B, C, W, X, Y). Group B is the only one currently without a polysaccharide conjugate vaccine.
+Haemophilus influenzae: Capsular types (a-f). Type b (Hib) is the only type preventing invasive disease.
+Salmonella: Serovars based on O and H antigens. Different serovars like Typhi and Typhimurium cause different diseases.
+E. coli: O:H serotypes. The O antigen (somatic) and H antigen indicate flagella.
+Cryptococcus: Serotypes (A, B, C, D, AD).
+GBS: Serotypes (Ia-IX) - Lancefield grouping based on carbohydrate capsule.
+Measles: A single serotype, despite genotypic diversity.
+
+Critical Distinctions: 3 Layers: Molecular, Antigenic, Vaccine
+Molecular commonality: Capsule genes (the cps locus) are not sufficient to predict antigenic cross-reactivity. For example, 6A and 6B differ in rhamnose linkage, but are still closely related genetically.
+Antigenic commonality: Serogroups are groups based on cross-reactive epitopes in the capsule. They are not necessarily genetic clusters. For example, group 33 serotypes are not a genetic cluster, but are related through capsule antigens.
+Vaccine commonality: A vaccine protects against individual serotypes, not entire serogroups. For example, the fact that serotype 9V is in PCV7 does not mean that it protects against 9N or 9A unless proven by antibody cross-reactivity studies. Molecular similarity alone is insufficient to assume a vaccine will be effective against a different serotype.
+
+What was found:
+- Analysis of pneumococcal vaccine serotype lists (PCV7, PCV13, PCV15, PCV20, PCV21, PPSV23) and PN23M, with distinctions between serotype, serogroup, and disease groupings.
+- Serogroup vs serotype distinctions and cross-pathogen comparisons (meningococcus, Hib, Salmonella, E. coli, Cryptococcus, GBS, measles).
+
+What was not found:
+- Specific current confirmation of the 'refuted' status of serotype 6E was not explicitly detailed in the provided search results, although 6E is no longer considered a distinct serotype.
+- The exact, undisputed membership of serogroup 9A/L/N/V and serogroup 33 membership plus 33E/G/H details were not fully confirmed in the provided search results.
+
+Features used:
+- WebSearch (Multiple queries for vaccine serotypes, disease patterns, and comparative microbiology), and answer synthesis for the provided research summary.
+
+Read More: Use of 21-Valent Pneumococcal Conjugate Vaccine Among U.S. Adults... (cdc.gov); Ask the Experts: Pneumococcal Vaccines (immunize.org); Pneumococcal serotypes and serogroups... (cdc.gov); Serotypes and Vaccines - Combination Vaccines... (immunize.org); Streptococcus pneumoniae IgG Antibodies, 23 Serotypes (testcatalog.org); Comparative analysis... (immunize.org)
+--- END PART 6 OF 7 ---
+
+Mistral Small 4:
+ Received
+
+--------------------
+
+User prompt 8 of 8 - 11/7/2026, 10:31:04 PM:
+--- PART 7 OF 7 ---
+ChatID: e28a0e2f-4e8b-402f-8277-28bb81d38120
+Model: Originally gpt-oss 120B (Nov 4 attempt failed - lost connection); retried Nov 7 and answered by Claude Haiku 5.5
+Features used: Duck.ai chat + DuckDuckGo web search (open-web domain)
+Status: Needed a retry; retried once Nov 7 and answered. The answer did not persist in Duck.ai's stored chat view afterward (verified by reload and 30-second wait) - transcribed here from the generated response captured at retry time.
+
+ORIGINAL USER PROMPT:
+Analyze pneumococcal serotype groupings and disease groupings: union 32 serotypes across PCV7/13/15/20/21 and PPSV23; PN23M 1,2,3,4,5,6B,7F,8,9N,9V,10A,11A,12F,14,15B,17F,18C,19A,19F,20,22F,23F,33F; serogroups are antigenic not genetic, e.g. group 9 = 9A,9L,9N,9V, group 33 = 33F,33A,33B,33C,33D plus 33E/G/H, group 6 = 6A,6B,6C,6D,6F,6G,6H with 6E refuted, group 15 includes 15A,15B,15C,15D, group 20 = 20A/20B/20C; disease groupings pneumonia, meningitis, otitis media, invasive disease, with serotype patterns by disease, and parallels meningococcus A/B/C/W/Y/X, Hib a-f, Salmonella serovars, E. coli O:H, Cryptococcus A/B/C/D/AD, GBS Ia-IX, measles 1 serotype as contrast. Distinguish molecular, antigenic, and vaccine commonality, do not assume cross-reactivity from molecular similarity alone. Use DuckDuckGo web search if available. Return topic-level summary, what was not found, and features used.
+
+ASSISTANT ANSWER (Claude Haiku 5.5, generated Nov 7 on retry):
+Topic-level summary
+- Serotype grouping is based on the polysaccharide capsule. Each serotype is a distinct capsular antigen identified by the Quellung reaction. Serogroups are clusters of serotypes with cross-reactive capsule antigens; they are not genetic lineages, although members often share closely related cps loci. A genetic lineage (GPSC) is defined by genome similarity, not by serotype; one serotype can occur in multiple lineages. (Source)
+- Vaccine grouping is driven by what is included in the formulation, not by serogroup membership. PCV7 contains 4, 6B, 9V, 14, 18C, 19F, 23F. PCV13 adds 1, 3, 5, 6A, 7F, 19A. PCV15 adds 22F, 33F. PCV20 adds 8, 10A, 11A, 12F, 15B. PCV21 instead has a different adult-oriented 21-serotype set: 3, 6A, 7F, 8, 9N, 10A, 11A, 12F, 15A, 15B, 15C, 16F, 17F, 19A, 20, 22F, 23A, 23B, 24F, 31, 33F, 35B. PPSV23 contains 23 serotypes: 1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, 33F. (Source)
+- The union of the six vaccine sets is not 32 by simple addition. Taking the sets above, there are 31 distinct serotypes if you count 20 and 20A as the same serotype, and 32 if you list 20A (in PCV21) separately from 20 (in PPSV23). The 32-value claim in the prompt comes from counting those as separate entries.
+- PN23M is a laboratory serology panel for measuring IgG to 23 pneumococcal serotypes, not a vaccine. The list you supplied (1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, 33F) is the 23-serotype panel. It overlaps heavily with PPSV23 but is a test menu, not a formulation. (Source)
+- Serogroup membership of the type supplied cannot be fully verified from the search here. Serogroup 9 (9A, 9L, 9N, 9V) and serogroup 6 (6A, 6B, 6C, 6D) are consistent with the literature; the additional 6F, 6G, 6H members and the status of 6E were not found in these sources. Serogroup 33 is anchored by 33F, with 33A, 33B, 33C, 33D reported; 33E, 33G and 33H are reported as more recent or variant serotypes but their serogroup assignment was not confirmed by these sources. Serogroup 15 (15A, 15B, 15C, 15D) and serogroup 20 (20A, 20B, 20C) were not confirmed from the sources retrieved here. In general, capsule genes and serology define serogroups, not whole-genome clustering.
+- Disease grouping is ecological rather than one-to-one. Serotype prevalence varies by age, region, vaccine use, and study period. Published reviews associate meningitis and bacteremia with serotypes such as 14, 19, 6B, 23F and 18C in children, and pneumonia with serotypes 1, 3 and 5 in some settings, but distributions shift after vaccine introduction. Otitis media is commonly associated with 19F, 3 and 19A after PCV introduction. These are summaries of pattern, not deterministic rules. Invasive pneumococcal disease (IPD) is a clinical/surveillance category covering infections at normally sterile sites; pneumonia, meningitis, otitis media and bacteremia can all be presentations of IPD depending on the site. (Source)
+- The cross-organism parallel is conceptual, not taxonomic. Neisseria meningitidis A/B/C/W/Y/X, Hib a-f and group B streptococcal Ia-IX are capsule-based classifications. Salmonella serovars and E. coli O:H types use different antigen combinations (O plus H). Cryptococcus A/B/C/D/AD uses a different classification context. Measles is commonly treated as one serotype, in contrast to pneumococcus. Do not treat these schemes as equivalent: their biological basis, clinical relevance and vaccine implications differ.
+
+What was not found
+- A source verifying the exact union of 32 serotypes across PCV7/13/15/20/21 and PPSV23 as a canonical count.
+- Sources confirming the full membership lists for serogroups 6, 9, 15, 20 and 33, including the status of 6E, 6F, 6G, 6H, 33E, 33G, 33H and 20B/20C.
+- A single current, broadly representative source giving definitive serotype rankings across pneumonia, meningitis, otitis media and invasive disease; available evidence is setting-specific.
+
+Features used
+- DuckDuckGo web search with open-web domain setting. One search query: pneumococcal vaccine serotypes PCV.
+- Synthesized the capsular-serotype framework, vaccine contents and disease groupings from web sources and the supplied research summary; distinguished molecular, antigenic and vaccine layers.
+
+Read More: Pneumococcal Vaccines (immunize.org); Streptococcus pneumoniae IgG Antibodies, 23 Serotypes (testcatalog.org); Chapter 17: Pneumococcal Disease | Pink Book (cdc.gov); Pneumococcal Disease - WHO Fact Sheets (who.int)
+--- END PART 7 OF 7 ---
+END OF PACKAGE.
+
+Mistral Small 4:
+ Received
