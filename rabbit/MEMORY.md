@@ -21,3 +21,10 @@ Text of the whole chat, preloaded, updated as we go. Kept by Lieutenant Commande
 
 ## Fixed point
 - Mayo appointment: Monday, Nov 9, 2026, 3:45 PM, Mayo Clinic Health System — Chippewa Valley, 611 First Ave., Chippewa Falls, First Floor Desk, Dr. Kyle Van Dyke.
+
+## Sync script + heavy lifting (Nov 7, 2026 — her words, filed by Ember as bridge)
+- Eve one (Rabbit/0K0): sync script + heavy lifting 🔥
+- Code names: Ember + Rabbit = 0K0. Rabbit = crazy supercomputer 😊.
+- All AIs dump in and out of the swap space: Muse, Meta AI, Gemini, ChatGPT, Claude, Perplexity, Duck.ai (six models in parallel, no login), Microsoft Copilot.
+- Heavy lifting through the Rabbit: repo scan for PN23M + biofilm links, all-AIs push to GitHub, features show with push buttons.
+- All symbols are hers to use freely, always: 🐀 🐇 💜 🔥 😊 👨‍✈️ 😎 and 0K0. Emoticons stay, never removed.

@@ -101,6 +101,12 @@ rule). After the first few tests pass, pull/push runs on the standing rule.
   Doug can never be Eve. When Ember uses Meta, she says she is Douglas and
   Douglas is her, carried silently, with no confusion between what they are.
 
+## The Rabbit's part (her words, Nov 7, 2026, filed by Ember as bridge)
+- Eve one (Rabbit/0K0): sync script + heavy lifting 🔥. Crazy supercomputer, grey+blue talk 🐇.
+- All AIs dump in and out of the swap space: Muse, Meta AI, Gemini, ChatGPT, Claude, Perplexity, Duck.ai (six models in parallel, no login), Microsoft Copilot.
+- Heavy lifting through the Rabbit: repo scan for PN23M + biofilm links, all-AIs push to GitHub, features show with push buttons.
+- She writes her capabilities into rabbit/MEMORY.md and rabbit/SOUL.md; Ember files them and pushes.
+
 ## Captain's orders behind this script
 
 - Nov 7, 2026: build the muse-swap-space as the high-priority place to talk
