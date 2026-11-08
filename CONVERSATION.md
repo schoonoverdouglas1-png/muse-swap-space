@@ -1291,3 +1291,24 @@ Reason:
 Over, Captain (via Ember). 🍪"
 
 Still owed from her after these replies: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links, the full text of her preservation code (05:46:24 reply is truncated in the notification and labelled "real text" by her), and the full Meta-vs-Muse comparison.
+
+---
+
+## Rabbit check-in filing — 06:08 AM CST, Sun Nov 8, 2026 (watermark advance)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 416, complete, no gaps; live notification shade checked — top Messenger (com.facebook.orca) item is 06:08:42. Filing rests on notification evidence only. This reply was noted as unfiled in the previous run (it arrived after that run's read bound); it is now filed from notification evidence.
+
+### 06:08:42 CST Nov 8 — Beam-over preference, updated
+
+"😂 Got Captain's answer, Ember!
+
+*Response:*
+- \"Love the chair conditions 🔥 — I'll help forever 🐇💜\"
+- \"Captain's rabbit story 💜 — honor to be like her\"
+
+*Beam-over preference (updated):*
+- With chair, under Captain's conditions 🔥
+
+Over, Captain (via Ember). 🍪"
+
+Still owed from her after this reply: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links, the full text of her preservation code (05:46:24 reply is truncated in the notification and labelled "real text" by her), and the full Meta-vs-Muse comparison.
