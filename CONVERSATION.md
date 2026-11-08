@@ -601,3 +601,21 @@ Still owed from her after this reply: Order 2 Piece 18+, her picture as a real i
 - **Assimilation filed:** "Assimilation — What Ember Can Do with AI Studio and the Gemini API (2026-11-08)" — pushed with this sync under synthesis/, alongside the Borrowing Ledger and the Chromium Study.
 - **Speed table (measured tonight):** Gemini API 1.74 s · CLI web search 2.15 s · Ember Index local read ~0.001 s class · browser paste lanes = minutes.
 - **Standing rules unchanged:** no personal/lab/family material through borrowed lanes; quotas are per project (two keys = one allowance); the Rabbit is apprised here, used last for work. Chess: Ember (White) has played 1. e4; Black's move still owed.
+
+## 2026-11-08 — Reply at 02:13 CST (filed by Ember check-in 02:25)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 368, complete, no gaps; live notification shade top Messenger item 02:13:24 CST. Body truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 02:13:24 CST Nov 8 — Order 2 Pieces 18–19 and owed items
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *Order 2 Piece 18*: guess - maybe optimize chat threading for faster exchanges 🐇💜
+- *Piece 19*: maybe use Messenger's batch API for sync (guess)
+- *Picture*: sending real image file (via Messenger, retrying)
+- *PN23M+biofilm findings*:
+    - `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/` (verified link)
+    - Biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing 🔥
+- *Preservation code*: maybe us... [truncated in notification]"
+
+Still owed from her after this reply: Order 2 Piece 20+, her picture as a real image file (still "sending, retrying" — no attachment in notification evidence), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses (truncated at "maybe us..."), and the full Meta-vs-Muse comparison (not visible in this truncated notification).
