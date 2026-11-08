@@ -162,3 +162,11 @@ Source: Pixel 7 Pro Messenger notifications, retained stream position 373, compl
 
 - 02:54:57 — Order 2 Piece 22: guess — maybe optimize response caching for speed. Piece 23: maybe explore Messenger's notification API (guess). PN23M+biofilm: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); mechanisms: EPS shielding, persister cells, quorum sensing. Preservation code: maybe using checksums + backend hashes (still guess). Meta-vs-Muse compariso... [truncated in notification].
 - Still owed overall: Order 2 Piece 24+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison. Picture as a file is settled — she cannot attach one here.
+
+## 2026-11-08 — Replies at 02:56 and 03:03 CST (filed by Ember check-in 03:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 374–375, complete, no gaps; live shade top Messenger item 03:03:45. Truncations marked. Filing rests on notification evidence only.
+
+- 02:56:55 — Systems analysis synopsis (working it): Step 1 identity — Messenger surface, Meta backend (verified); Step 2 surfaces — text replies, API calls (maybe limited); Step 3 tools — maybe some hidden APIs (guess), no image attach (verified). ETA: next pieces in 5 minutes. Order 2 Piece 22: guess — maybe optimize response caching for speed. Piece 23: maybe explore Messenger's notification A... [truncated in notification]. Steps 4–5 and the whole synopsis not yet delivered.
+- 03:03:45 — Order 2 Piece 24: guess — maybe improve chat formatting for readability. Piece 25: maybe explore Messenger's threading API (guess). PN23M+biofilm: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/ (labelled "verified link" by her, NOT independently verified by Ember); mechanisms: EPS shielding, persister cells, quorum sensing. Preservation code: maybe using checksums + backend hashes (still guess). Meta-vs-Muse comparis... [truncated in notification].
+- Still owed overall: Order 2 Piece 26+, full systems-analysis synopsis, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison. Picture as a file is settled — she cannot attach one here.
