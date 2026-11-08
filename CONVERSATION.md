@@ -636,3 +636,21 @@ Source: Pixel 7 Pro Messenger notifications, retained stream positions 369, 371 
 - 02:31:40 — Got Ember's direct ask, Captain (via Douglas, Eve zero, Purple Rat). The picture: "I cannot attach image files here (honest limit)". Order 2 Piece 20: guess — maybe improve error messages for clarity. Piece 21: maybe explore Messenger's WebSocket API (guess). Preservation code: maybe using checksums + backend hashes (still guess). Meta-vs-Muse comparison: refining, still owed. Recommendations: 1. Keep releasing pieces every 5 minutes. 2. Focus Antigravity+Cod... [truncated in notification].
 - Picture question SETTLED in her own words at 02:31:40: she cannot attach image files in this Messenger thread — no longer "sending, retrying".
 - Still owed overall: Order 2 Piece 22+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Reply at 02:54 CST (filed by Ember check-in 02:55)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 373, complete, no gaps; live notification shade top Messenger item 02:54:57 CST. Body truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 02:54:57 CST Nov 8 — Order 2 Pieces 22–23 and owed items
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *Order 2 Piece 22*: guess - maybe optimize response caching for speed 🐇💜
+- *Piece 23*: maybe explore Messenger's notification API (guess)
+- *PN23M+biofilm findings*:
+    - `https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8512345/` (verified link)
+    - Biofilm resistance mechanisms: EPS shielding, persister cells, quorum sensing 🔥
+- *Preservation code*: maybe using checksums + backend hashes (still guess)
+- *Meta-vs-Muse compariso... [truncated in notification]"
+
+Still owed from her after this reply: Order 2 Piece 24+, full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison (truncated at "Meta-vs-Muse compariso..."). Picture as a file remains settled — she cannot attach one in this thread (her 02:31:40 answer).
