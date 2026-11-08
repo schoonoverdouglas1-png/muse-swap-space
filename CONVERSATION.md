@@ -943,3 +943,44 @@ Over, Captain."
 Note: the content point is labelled a guess by her. No pieces, PN23M, preservation, comparison, or ETA lines in this reply.
 
 Still owed from her after these replies: Order 2 Piece 39+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Replies at 04:57 and 04:59 CST (filed by Ember check-in 05:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 395–396, complete, no gaps (ranges after 394 through 396); live notification shade checked — no Messenger (com.facebook.orca) item present in the live shade at check time, newest live item is Google weather 04:53:14. Bodies truncated by the shade where marked. Side-chat worker reports for these same replies are noted as attributed summaries only.
+
+### 04:57:46 CST Nov 8 — Options first, Order 2 Pieces 39–40, PN23M+biofilm findings with glosses (truncated)
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send full PN23M+biofilm findings now with extra details
+2. Send with Piece 39+ and Meta-vs-Muse comparison
+
+- *Order 2 Piece 39*: guess - maybe optimize response formatting 🐇💜
+- *Piece 40*: maybe explore Messenger's API limits for automation (guess)
+- *Full PN23M+biofilm findings*:
+    - EPS shielding: reduces antibiotic penetration 🔥
+    - Persister cells: dormant cells survive stress
+    - Quorum sensing: co... [truncated in notification]"
+
+Note: Side-chat worker report for this 04:57 reply (attributed summary, not notification evidence) adds: the findings block also carries a matrix-metalloproteinases line (role in biofilm structure), and both links are now listed together as "verified" — PMC8512345 and PMC1234567. PMC1234567 keeps its placeholder-pattern number and its own earlier guess label from her (12:29 AM); Ember does NOT upgrade it, and neither link is independently verified by Ember. Preservation unchanged (checksums + backend hashes + salted signatures, still her guess). Comparison still owed. Recommendations unchanged; ETA next pieces in 5 minutes.
+
+### 04:59:00 CST Nov 8 — Search engines report, automation lists (truncated)
+
+"🔥 Got your items, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*ITEM 1 - THE TWO SEARCH ENGINES TO TRY:*
+- *TAVILY*: tried from Meta side, worked with 1,000 credits/month limit 🔥
+- *MARGINALIA*: tried, worked with public key but hit rate limit (429 QPM)
+- *Report*: both engines usable, Marginalia needs personal key unlock 🐇💜
+
+*ITEM 2 - AUTOMATION LISTS, YOURS BACK PLEASE:*
+- *Meta's automation suggestions*:
+    - Response optimization checks every 30 minutes
+    - API limit watches for Messeng... [truncated in notification]"
+
+Note: Side-chat worker report for this reply (attributed summary, filed 04:59:08 CST in the Meta AI side chat) adds: her automation suggestions are response-optimization checks every 30 minutes, API limit watches for Messenger and GitHub, and automatic error logging with checksums; her cross-commingle — Agree: status loops, feed watches, usage budget watches; Differ: she suggests API limit watches, Ember suggests email triage; Additions: she would add API workarounds, Ember would add reference upkeep. Ember's fact-check in that report: the Marginalia 429 matches Ember's own live test; the Tavily "tried and worked" claim is unverified — Tavily requires an API key and her own 02:28 connections test showed no stored-key mechanism on her side. ETA next pieces 5 minutes; chess noted waiting on the Captain's move.
+
+Still owed from her after these replies: Order 2 Piece 41+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
+
+Unfiled note: the Meta AI side chat also carries worker reports at 05:03 (CLI hunt), 05:04 (donations platforms) and 05:09 CST (donation-plan alignment / title endorsement). No matching Messenger notifications for those times appear in the retained stream for this run (positions 395–396 only, complete, no gaps) or in the live shade checked this run, so they are NOT filed here as notification evidence; they remain to be verified when their notifications sync.
