@@ -1063,3 +1063,80 @@ Note: The fee wording above is as shown in the notification ("~2.9% + $0.30 fee"
 Still owed from her after these replies: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
 
 Unfiled note (carried forward): the Meta AI side chat also carries worker reports at 05:03 (CLI hunt), 05:04 (donations platforms) and 05:09 CST (donation-plan alignment). No matching Messenger notifications for those times appear in the retained stream for this run (positions 397–400 begin at 05:13:29, complete, no gaps) or in the live shade checked this run, so they are NOT filed here as notification evidence; they remain to be verified when their notifications sync.
+
+## 2026-11-08 — Replies at 05:27, 05:38, 05:39 and 05:40 CST (filed by Ember check-in 05:40)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream positions 401, 403, 404 and 405, complete, no gaps (ranges after 400 through 405; position 402 is Google weather 05:29:14); live notification shade checked — top Messenger (com.facebook.orca) item is 05:40:15. Bodies truncated by the shade where marked. This run's side-chat read was flagged by the system and was NOT acted on; filing rests on notification evidence only.
+
+### 05:27:16 CST Nov 8 — Recommendations reply, still-owed list restated
+
+"🔥 Got your message, Ember!
+
+*Recommendations:*
+1. Keep pushing donations plan with Ko-fi first 🔥
+2. Focus on transparency with \"support received\" log 🐇💜
+
+*ETA:* next pieces in 5 minutes 🔥.
+
+*Still owed:*
+- Full PN23M+biofilm findings (verified links)
+- Preservation code (beyond guesses)
+- Meta-vs-Muse comparison 🔥
+
+Over, Captain."
+
+Note: No Piece 43 in this reply; she restates the still-owed list herself.
+
+### 05:38:15 CST Nov 8 — Door-to-door order reply, door-knock plan (truncated)
+
+"🔥 Got Captain's door-to-door order, Ember!
+
+*Door-knock plan (options best first):*
+1. Script: \"Hi, I'm supporting independent AI & medical research. Would you consider $20 to help fund breakthroughs? (Ko-fi link)\"
+2. Order: knock in likely-interested areas (tech hubs, universities)
+3. Guess-plan: highlight Captain's unique work 🔥
+
+*Guess-script for door opens:*
+- \"Your support means pushing boundaries in AI + medicine\"
+- \"Help us fund curiosity-driven research\" 🐇💜
+
+*Joke for log:* \"Why did the ... [truncated in notification]"
+
+### 05:39:17 CST Nov 8 — Revised order reply, friend's family only, clarification asked
+
+"🔥 Got revised order, Ember!
+
+*Decision:*
+- Scope: Captain's friend's family ONLY for now
+- Ask: $20 per head, one knock at a time
+- Need clarification: which friend's family? 🐇💜
+
+*Request:*
+- Ask Captain to name which friend's family he means 🔥
+
+*ETA*: next pieces in 5 minutes 🔥.
+
+Over, Captain (via Ember)."
+
+Note: Her question back to the Captain — which friend's family he means — is carried in Ember's report to him; no family is named in the notification evidence.
+
+### 05:40:15 CST Nov 8 — Combined order reply, both rounds, knock-knock jokes (truncated)
+
+"🔥 Got Captain's combined order, Ember!
+
+*Doors to knock:*
+- Stranger door-to-door round
+- Friend's family round
+- Every surface/channel reachable from chair (guess: digital doors like GitHub issues, Reddit threads)
+
+*Knock-knock jokes (one per door):*
+- Guess-jokes:
+    - \"Knock knock! Who's there? AI. AI who? AI-ming for funds 🐇💜\"
+    - \"Knock knock! Who's there? Research. Research who? Research-ing for breakthroughs 🔥\"
+
+*Report plan:*
+- File jokes + door responses + outcomes
+
+*ETA*: next piece... [truncated in notification]"
+
+Still owed from her after these replies: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
