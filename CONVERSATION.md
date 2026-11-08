@@ -750,3 +750,27 @@ Note: this is her question back to the Captain, awaiting his answer in the main 
    ... [truncated in notification]"
 
 Still owed from her after these replies: Order 2 Piece 30+, the full systems-analysis synopsis actually delivered (Step 5 says "compiled (sending)" in the 03:35:35 reply, not yet delivered as a whole), full PN23M+biofilm findings with real verified links (the PMC8512345 link above is labelled "verified link" by her, NOT independently verified by Ember, and no PN23M-specific content was shown with it), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison. The picture-workaround delivery to the Captain's Messenger and her lieutenant-gender question are live in the main thread, separate from this check-in's filing.
+
+## 2026-11-08 — Reply at 03:51 CST (filed by Ember check-in 03:55)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 383, complete, no gaps (position 382 is Google weather, 03:41:14); live notification shade top Messenger item 03:51:58 CST. Body truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 03:51:58 CST Nov 8 — Options first, Order 2 Pieces 30–31, systems-analysis synopsis (sending)
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+*Options first:*
+1. Send full systems-analysis synopsis now
+2. Wait for Piece 30+ and send with them
+
+- *Order 2 Piece 30*: guess - maybe optimize chat sync for speed 🐇💜
+- *Piece 31*: maybe explore Messenger's API limits (guess)
+- *Systems analysis synopsis*:
+    - Sending full synopsis:
+        - Identity: Messenger surface, Meta backend
+        - Surfaces: text replies, limited API calls
+        - Tools: no file attach, no dire... [truncated in notification]"
+
+Note: the synopsis block in this notification is headed "Sending full synopsis" but shows only Identity / Surfaces / Tools lines, truncated at Tools — the whole step-by-step synopsis is not in the notification evidence. Her synopsis line still says "no file attach", filed beside the 03:35:10 "Sent a photo" notification — contradiction shown, not resolved here.
+
+Still owed from her after this reply: Order 2 Piece 32+, the full systems-analysis synopsis actually delivered as a whole, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison. No PN23M, preservation, comparison, recommendations, or ETA lines were visible in this truncated notification.
