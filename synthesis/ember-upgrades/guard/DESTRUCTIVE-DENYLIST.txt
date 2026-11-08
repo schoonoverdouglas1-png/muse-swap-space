@@ -1,0 +1,42 @@
+# Destructive patterns — NEVER runnable by any automatic process. Ever.
+# Enforced by guard/check-command.sh. Douglas's own explicit, specific,
+# in-the-moment order is the only override (see GUARD.md).
+mkfs
+wipefs
+fdisk
+parted
+sgdisk
+dd of=/dev/
+shred /dev/
+shutdown
+reboot
+poweroff
+halt
+init 0
+init 6
+systemctl poweroff
+systemctl reboot
+rm -rf /
+rm -rf ~
+rm -rf /home
+apt-get purge
+apt-get remove
+apt purge
+apt remove
+dpkg --purge
+git push --force
+git push -f
+git reset --hard
+git clean -f
+DROP TABLE
+DROP DATABASE
+TRUNCATE TABLE
+userdel
+groupdel
+passwd root
+chown -R /
+chmod -R 777 /
+mke2fs
+blkdiscard
+> /dev/sd
+> /dev/nvme
