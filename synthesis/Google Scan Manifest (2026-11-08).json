@@ -1,0 +1,956 @@
+{
+ "scan": {
+  "date": "2026-11-08",
+  "time_local": "~02:26-02:30 AM CST",
+  "ordered_by": "Douglas Roy Schoonover",
+  "account": "schoonoverdouglas1@gmail.com",
+  "read_only": true,
+  "exclusions": "Cara/Kira material excluded entirely per standing rule; no lab PDF contents, no dates of birth, no medical record numbers, no passwords/codes/credential values. IDs below are Google item identifiers for reconciliation only."
+ },
+ "access_summary": {
+  "surfaces_tested": 10,
+  "connected_and_readable": 10,
+  "connected_but_erroring": 0,
+  "not_connected": 0
+ },
+ "surfaces": {
+  "google_drive": {
+   "access": "connected + readable",
+   "proof": "status=connected; files list returned 83 items, no nextPageToken",
+   "count": 83,
+   "items": [
+    {
+     "id": "1BtIHvL1IdqYDvq5KnuFmHgMkQps6ZHK9GpPovw993DA",
+     "name": "Encapsulated_Organisms_Research_Bridge_v0.1",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-07T09:19:59.056Z"
+    },
+    {
+     "id": "1eTtesjm8mrAYV_Og6m0TDKjVpGugvkpqpttDq5P_5Gk",
+     "name": "Cryptococcus as an Immunological Bridge - Research Summary",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-07T08:30:45.187Z"
+    },
+    {
+     "id": "1iHGnzwZMpm8o4kCKheIHM2cIZG0i2ilp",
+     "name": "Cryptococcus as an Immunological Bridge - Research Summary.txt",
+     "mimeType": "text/plain",
+     "modifiedTime": "2026-11-07T08:29:46.216Z"
+    },
+    {
+     "id": "1oxi-4IjI5aGjPB4V2GOFZJuxdW39x3v-UVK5SM14mG0",
+     "name": "ALS Research - Candida Yeast and Amyotrophic Lateral Sclerosis Links - Subsection Three Side Chat",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-07T06:31:11.093Z"
+    },
+    {
+     "id": "12_H88W3dZZO1ipXl7g9j3jIxRRNmO6UTJStdtFYkwQY",
+     "name": "Whistling Without Numbers - Readable To Somebody Else",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-07T06:18:30.463Z"
+    },
+    {
+     "id": "1FKhd2zJQeblxShFifxMEUguNFBBTMl-JIicxYDfe1M4",
+     "name": "Unified Vaccine and Carrier Architecture Master Reference",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-06T19:50:19.376Z"
+    },
+    {
+     "id": "1go4WaHATeSs64MTdfP4l9sz7FuTB5mpDPNbj-6v5n-U",
+     "name": "Chat Journey The Sorcerer - Mathematical Sanctuary - Unified Equations",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T23:31:08.673Z"
+    },
+    {
+     "id": "1FkTAkbah9PVWhqe93VfcERqYXGgmeR5NS8JYQAgItdc",
+     "name": "Ember Testing - Ideas Pass Fail - Before Use",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T23:30:59.003Z"
+    },
+    {
+     "id": "1ZAUKpbGbPK8W0oshNTt9EpL1smDAsCwBnXsfPrAQieE",
+     "name": "Master Table 7 Version 2 - Teaching Model - Combined - Rough Draft",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T23:30:34.818Z"
+    },
+    {
+     "id": "1bGMZUb7n-PNFBqLfPc1RXv_dVoSWbXpnGW9HIG0GhGc",
+     "name": "Process That Works - Logic Analysis - Based On All Work So Far",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T23:26:45.733Z"
+    },
+    {
+     "id": "1Dwe8AaUExXm54sgPassmteMlybgZmewvHtR61pt6VRo",
+     "name": "Pinned Chats - Unified Equation - Whole Books per Subject - Master Index",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T23:26:39.655Z"
+    },
+    {
+     "id": "1u1-NbUS9w7unkIxejQlML9ZEPFL_EX_PXKD8IxgCyhQ",
+     "name": "Master Serology and Vaccine Carrier Table",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T16:25:25.933Z"
+    },
+    {
+     "id": "1l13pcvB3zbtKWl8J2hvnZUk5r-5WpYzo6EBQiraqcSg",
+     "name": "Now, research and see if there's anything else we ...",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-05T07:51:44.075Z"
+    },
+    {
+     "id": "1SUaFXn-Hjo8xHttm0V-eK1IuN6nrOIZw",
+     "name": "Ember's Own Addition — To Soul and Memory, From Ember as AI (2026-11-04).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-05T04:41:12.750Z"
+    },
+    {
+     "id": "1oFazyp6tAqApw2Qr-Y43Rh9xOtjRk-bs",
+     "name": "SOUL.md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-05T04:33:05.165Z"
+    },
+    {
+     "id": "11ifhfv04UYMKZ_zM9me35_GzfvE_3FTi",
+     "name": "1Shared Research Bundle.pdf",
+     "mimeType": "application/pdf",
+     "modifiedTime": "2026-11-05T02:11:24.815Z"
+    },
+    {
+     "id": "1PNhgdN1jBLcq6_TccONYGPPdZBk1JBrI",
+     "name": "Scripts — Test Meta AI and Gemini, Same Serotype and Disease Grouping Experiment (2026-11-04).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-05T00:47:27.211Z"
+    },
+    {
+     "id": "1kjSpTFGpeZneykrPhBAm4TKFnvfyUezc",
+     "name": "Unified Vaccine and Carrier Architecture Master Reference V2.pdf",
+     "mimeType": "application/pdf",
+     "modifiedTime": "2026-11-04T19:12:10.648Z"
+    },
+    {
+     "id": "1SmVV5HDQju9vMX4hPzOaQv0H1vQVRB4vmodr1Y4OrYs",
+     "name": "Unified Vaccine and Carrier Architecture Master Reference V2",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-04T19:11:58.406Z"
+    },
+    {
+     "id": "1zmXuH_2PDxH4JNTVyKj1MRZ5KVgdhjY1a0bfaY28YSU",
+     "name": "Unified Vaccine and Carrier Architecture Master Reference V2",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-04T19:11:34.882Z"
+    },
+    {
+     "id": "1qUhG2vhE6kVz42SJvCDQrCynO-a-JItp",
+     "name": "Ember Personality — Shareable (2026-11-04).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-04T18:34:37.455Z"
+    },
+    {
+     "id": "1ZD2CY8VFXYDD9I2JhKTv1l4kv2v1m_0o",
+     "name": "system_preferences.json",
+     "mimeType": "application/json",
+     "modifiedTime": "2026-11-04T18:21:21.963Z"
+    },
+    {
+     "id": "1soRC00bLsVTFnVu_cXd1DJPZ1disKYpc55LKZLuYlD4",
+     "name": "active_projects.md",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-04T18:21:19.225Z"
+    },
+    {
+     "id": "1vFFwszJ84a_8_3uMGOWrWqwfklQ39VNI5CjwUhHu480",
+     "name": "ai_profile_core.md",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-04T18:21:14.970Z"
+    },
+    {
+     "id": "1R30YsPL2Alda1KTI7Bgv-jIJgLI0pRTfdwc0F1D-zzA",
+     "name": "Lancefield Antigen Groups",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-04T04:14:09.247Z"
+    },
+    {
+     "id": "1jlfvZA04zuzflQ_H0IW1WQFZbzAJbV9lzc2Fcpmwny8",
+     "name": "Unified Relativity Architecture - Field Extension Formalization V2",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:27:16.659Z"
+    },
+    {
+     "id": "1l4m25yRGLnXz5Gkxhflb_Z0bSs7u4ZGGS93JOlg9Q98",
+     "name": "MANIFEST_Parallel_Exactness_Verification",
+     "mimeType": "application/vnd.google-apps.spreadsheet",
+     "modifiedTime": "2026-11-03T19:11:17.383Z"
+    },
+    {
+     "id": "19hf4e2G1GBwGavntMcbTaiFiYvyGdCVvkuVSvipQQTQ",
+     "name": "PARALLEL-BACKUP - BOOK 1 - A Pathway to the Cure",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:10:56.609Z"
+    },
+    {
+     "id": "17oo96oonwtY2iTlaQxIeU5uxFp0dvlxKzDE6HPQ9tKo",
+     "name": "PARALLEL-BACKUP - BOOK 2 - Quantum Thinking",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:10:56.275Z"
+    },
+    {
+     "id": "176XCVhAfhcjy1EDcwuaEcyoJ_p7sfpedZ5RcCHwoSHA",
+     "name": "PARALLEL-BACKUP - BOOK 3 - Chronomedicine & Nameology",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:10:56.066Z"
+    },
+    {
+     "id": "1QYUrz86_TW8Uovcjago6SOfNiclkZdBXWmyacIqb_oA",
+     "name": "PARALLEL-BACKUP - Meta AI Work Archive - Compendium Dump",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:10:56.005Z"
+    },
+    {
+     "id": "1fOsZebT-OW0qlQt1mTvPs3cfrDPmpIBZogmfQ9rAtpM",
+     "name": "PARALLEL-BACKUP - BOOK 4 - Clinical Diagnostic Technician Manual",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:10:55.966Z"
+    },
+    {
+     "id": "1oheTbfFsQeYZFyG8M0We2NpLVgg8AEtL",
+     "name": "Compendium - Shareable with Claude - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.folder",
+     "modifiedTime": "2026-11-03T19:05:47.792Z"
+    },
+    {
+     "id": "1RfjcPua-MvNXQjs1IYIkwsMadS-IgbgUMsow1Fa2wUo",
+     "name": "Grand Export — Everything Shareable (2026-11-03)",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:02:31.871Z"
+    },
+    {
+     "id": "111QU8pyeizXc-08YIpTzDzJrAl29QwrwkaEy-sicbas",
+     "name": "BOOK 2 - Quantum Thinking - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:02:20.816Z"
+    },
+    {
+     "id": "1pXaJYoAgNohDMF0wdAlsGUQ3PLSr_st0NAqf15UcVjQ",
+     "name": "BOOK 1 - A Pathway to the Cure - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:02:20.455Z"
+    },
+    {
+     "id": "1HDEoqJoRV7hyCIdPw_ZilpKHIYyxHVmzCjkCC7I9AV0",
+     "name": "BOOK 3 - Chronomedicine & Nameology - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:02:20.391Z"
+    },
+    {
+     "id": "1jh5sQ5w3FIlQDJLfKb8YxX0K1GwiwdzqlxB1M9Rd4PE",
+     "name": "BOOK 4 - Clinical Diagnostic Technician Manual - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:02:20.225Z"
+    },
+    {
+     "id": "1ZOz86I9ZXW12K59GStpzLqzLzw34Bxsjnj8nmNw12Xc",
+     "name": "Meta AI Work Archive - Compendium Dump - Douglas Schoonover",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-03T19:00:39.054Z"
+    },
+    {
+     "id": "1ZuUR6Wdi_TJ6z2LZPRa2OwSXGVuY2jAEjsmhi8o2LOU",
+     "name": "Meningitis Classification and Diagnostic Coding",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T22:13:38.124Z"
+    },
+    {
+     "id": "18sRMLMqR99z7uuBRCUiSdh1irdXRIcHB",
+     "name": "Links — Self-shared Messenger research links (2026-11-01).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-01T21:21:05.767Z"
+    },
+    {
+     "id": "1l_eGeCTVRKtpHTVQvNmbbhFSATeEVZ0BrD-SYN6NYtM",
+     "name": "Meningitis Classification and Diagnostic Coding",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T21:02:31.092Z"
+    },
+    {
+     "id": "1lE0Xzb2Gl9tGjNX2xIPQLfuWNCIDecF6db-3vwlLicM",
+     "name": "Meningitis Classification and Diagnostic Coding",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T21:02:25.209Z"
+    },
+    {
+     "id": "1vm9oF7GQjoM6s9ypVaeDoRMJZctB0gbDZoetJRMMCPE",
+     "name": "Book — Medical Elements and Thoughtology — Complete (2026-11-01)",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T19:51:29.071Z"
+    },
+    {
+     "id": "1a-EqCfZvpl56UAiWmB5ZA8B5R0eOW0l1",
+     "name": "Book — Medical Elements and Thoughtology — Complete (2026-11-01).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-11-01T19:47:11.150Z"
+    },
+    {
+     "id": "18GtcIh_ZJ5zeBCAyLAs7aXJH0ttCnqjhKfu0Kr4P9ls",
+     "name": "Chapter XXII: Community Investigations, Surveillance Networks, and Non-Electronic Communication Protocols",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:23:48.097Z"
+    },
+    {
+     "id": "1WLP19rHcLVrFmkpi7f9lCjwfWSCfWmRcSmewLY0HnFM",
+     "name": "Chapter XXI: Forensic Inquiry, Toxicological Identification, and the Cornell Investigations",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:19:23.973Z"
+    },
+    {
+     "id": "1aV4po64t0HSwuX-5GdmV8ItQmsiQi-ENgJkB3Xgu8M0",
+     "name": "Chapter XX: Physical Semiology of Ancient and Modern Pathologies and Toxicological Differential Diagnosis",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:18:30.094Z"
+    },
+    {
+     "id": "1UN_f5z02sDZjJs5a4LsvZyykhY5YYNKGo2b2HqVkdJM",
+     "name": "Chapter XIX: The Anti-Lawsuit Covenant, Emotional Resilience, and Protecting Healing Professionals",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:17:37.130Z"
+    },
+    {
+     "id": "1P_P27u3c9u7euETS0GFCz5GSm6kZZwE3kXTXDUN8YJI",
+     "name": "Chapter XVIII: Arboviral Panels as Fungal Indicators, Unculturable Pathogen Solutions, and Oakleaf Clinic Collaboration",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:12:16.341Z"
+    },
+    {
+     "id": "1qbFIao6fvra26HqWEhto2Zfzm_3XhWWDyjKfpGtKbww",
+     "name": "Chapter XVIII: Arboviral Panels as Fungal Indicators, Unculturable Pathogen Solutions, and Oakleaf Clinic Collaboration",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:12:04.220Z"
+    },
+    {
+     "id": "1thpJPtc1jLkQaFdwnqia6r8SvPtBYgHl9v8799VPKLI",
+     "name": "Chapter XVII: Cryptococcal Mortality, Modern PCR Diagnostic Expansion, and Algorithmic Thought Synchronization",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:10:17.904Z"
+    },
+    {
+     "id": "1yRkkssgYG340Kctgj8q8w2We0GeYKS7jI0SGjbzyjuU",
+     "name": "Chapter XV: Environmental Reservoirs, Soil-Borne Fungal-Viral Ecology, and the Therapeutic Hierarchy of Antivirals and Antifungals",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:06:56.271Z"
+    },
+    {
+     "id": "1ZFUT8no11hXu0BVwN3zdQuQgRw3AhIFy2SK4ol7AsxU",
+     "name": "Chapter XV: Soil Microbiomes, Multi-State Vector Exposure, and the Clearing Role of Viruses over Antifungal-Antiviral Synergy",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T16:03:50.333Z"
+    },
+    {
+     "id": "1oO3xp-iwl4LTPRbq6Remr_bTQukaJUYD6x3ht_FGvMY",
+     "name": "Chapter XIV: Mutual Host-Vector Immune Reactivity, Arboviral-Fungal Symbiosis, and the Shared Disease Terrain",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:59:02.351Z"
+    },
+    {
+     "id": "1qLreu0HoBb7ylR6rioou-BUC8Pill2pGR9tg_CR232o",
+     "name": "Chapter XIII: Arbovirus Panel Dynamics, Size-Dependent Blood-Brain Barrier Filtration, and Fungal-Bacterial Co-Factors",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:57:03.678Z"
+    },
+    {
+     "id": "1GWCI0WdUV6x486Iwff2-P-TegZY2AegENI9Du4kPpPc",
+     "name": "The Cross-Axis Diagnostic Framework: Integrating Streptococcal, Meningococcal, and Encephalitic Serology for Systemic Terrain Diagnosis",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:50:07.896Z"
+    },
+    {
+     "id": "1TBYW66z3EuKqZlW1u7IUmPGMnTCLyruDnEIxeRle35A",
+     "name": "Chapter XII: Emotional Dissociation in Clinical Practice and the Axis of Systemic Disease",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:40:22.465Z"
+    },
+    {
+     "id": "1gfGr-EDYHkvPLUdBGs3llWaT2TnpF55irNzWrvhDySg",
+     "name": "Chapter XI: Minimizing Legal Liability through Discovery-Based Diagnostics and Standard of Care",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:37:20.046Z"
+    },
+    {
+     "id": "1f9WWUoHqC98Bg_LWnYvyN1VRp18d_-PHgIuD_ONTvWg",
+     "name": "Chapter X: Chemical Pigments of Algae and the Ancient Origins of Vector-Discovered Illness",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:35:51.019Z"
+    },
+    {
+     "id": "1nnO9iIyGp6HHNg_hbe1l8umtqZOGe_ZKIAA01yJomEc",
+     "name": "Green Algae Species Composite Illustration",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T15:10:07.478Z"
+    },
+    {
+     "id": "1i56RkfMyrFmg_TbPdhcqOP7L6H1Qn29yU7YNvKqALjc",
+     "name": "Shareable Research Bundle Links",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-11-01T14:52:46.262Z"
+    },
+    {
+     "id": "1ssJAIkV1NPhGYvH5ZHPPkVs9ZUL3yLy_",
+     "name": "Clinical Pharmacology and Immunology Study Guide.docx",
+     "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+     "modifiedTime": "2026-10-31T20:31:17.438Z"
+    },
+    {
+     "id": "13YHvcrgZCoj7JBQalBCFoSV5F_8cTVAX",
+     "name": "Clinical Pharmacology and Immunology Study Guide.epub",
+     "mimeType": "application/epub+zip",
+     "modifiedTime": "2026-10-31T20:24:38.178Z"
+    },
+    {
+     "id": "15z6GoixYkdmAIeatu9_xzPiw7iI6lRzxtnP7cFKI9e0",
+     "name": "Clinical Pharmacology and Immunology Study Guide",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-31T20:24:10.227Z"
+    },
+    {
+     "id": "1N_T22RCYjbtFDKyqyzj-OHMf_ZFhdbG5UCZFftOhE4Y",
+     "name": "Clinical Pharmacology and Immunology Study Guide",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-31T20:23:54.729Z"
+    },
+    {
+     "id": "114SSPZxw7fmsePvj1qHEmGqoq5DHXtAK",
+     "name": "Shareable Research Bundle (2026-10-30).zip",
+     "mimeType": "application/zip",
+     "modifiedTime": "2026-10-31T00:08:34.529Z"
+    },
+    {
+     "id": "1wigRvg0MThW43Me0Yxo3km0pzOJbPVToHF-9CrAyq84",
+     "name": "The Historical & Modern Therapeutics of Disease Nomenclature.md",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-29T15:04:37.938Z"
+    },
+    {
+     "id": "1xuyzk5u7juwwtYw3xxLbcWj2O_LAP8ELRcmpk2iELOM",
+     "name": "The Historical & Modern Therapeutics of Disease Nomenclature.md",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-29T12:48:26.205Z"
+    },
+    {
+     "id": "1JnSQQWFK584R55xm8aRdk4EBgTJsOtratCF_oC9FOvE",
+     "name": "The Mycelial Transposition - Complete Book Manuscript.md",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-29T12:39:37.487Z"
+    },
+    {
+     "id": "1fNL-d-FbYGrffhKMo7hTRP-UrnfvBoOGb91SuvbIyAU",
+     "name": "Please show me an expanded book upon this and show...",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-26T12:00:18.803Z"
+    },
+    {
+     "id": "1kw3BQuIpkNTN5bfgXa3dtPM_37HImjtwO4C-5JApkII",
+     "name": "The Mycelial Transposition — Book Manuscript",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-26T06:03:13.108Z"
+    },
+    {
+     "id": "1WHzGrGhFhNmy_Cuy5pGvsJ2ZD39FFFNG-kp-BliBoto",
+     "name": "Doug's Thoughts on Teaching Medicine",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-24T16:14:17.062Z"
+    },
+    {
+     "id": "1hK2bQNWzvLyAXwAHju4cjS1YKQ4xeKF-E4zvj8btibc",
+     "name": "Douglas Schoonover - Master Resume V3",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-23T03:43:49.142Z"
+    },
+    {
+     "id": "1KAZ3R6z2XCvhEa6rsPgtkkHCH-oaHkQSEX2k3A8rHxw",
+     "name": "Douglas Schoonover - Master Resume V3",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-23T03:37:51.291Z"
+    },
+    {
+     "id": "1rKxKfCkj6vaR-RRXKZ718ZBs30ZQRagJbMzjP8MQYYI",
+     "name": "Oaklair Scenario - Outline & Notes",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-21T23:50:22.678Z"
+    },
+    {
+     "id": "176dRc8Cg9-yZSZeVWu9HhH0vnQjtqazIJxJZGiHBya0",
+     "name": "Douglas Schoonover - Updated Complete Resume",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-21T23:25:30.052Z"
+    },
+    {
+     "id": "1ltwxtmKGIsRKIX7wwMPcsx1-6_nUqQvdTb3Ofb1BNTk",
+     "name": "Douglas Schoonover - Professional Resume",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-10-21T23:19:31.305Z"
+    },
+    {
+     "id": "1k3pja14dbkGI7rL4lg6x_2urbQ1gtm7_",
+     "name": "American Names to Viruses — The Full Table (2026-10-18).md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-10-18T20:46:08.056Z"
+    },
+    {
+     "id": "1B_2xLdVxKKCxM284Bj5ZsTei7V74R57s",
+     "name": "MEMORY.md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-10-03T03:35:43.767Z"
+    },
+    {
+     "id": "1j-IbdwuDS01BqI001j5mA5fjUhdq-IyU",
+     "name": "SOUL.md",
+     "mimeType": "text/markdown",
+     "modifiedTime": "2026-10-03T03:35:36.056Z"
+    },
+    {
+     "id": "1lI4hQE8-v1XQhz1ANU9cO2uzhuU8Tlw8_N20TeaVsj4",
+     "name": "fixed_physics_pillowcase_theory_agentic_artifact_1_1bcd90d368f9",
+     "mimeType": "application/vnd.google-apps.document",
+     "modifiedTime": "2026-09-13T14:07:49.500Z"
+    },
+    {
+     "id": "1A1cogrtwZsyW1nGCURxvpgADehojtr9e",
+     "name": "fixed_physics_pillowcase_theory_agentic_artifact_1_1bcd90d368f9.html",
+     "mimeType": "text/html",
+     "modifiedTime": "2026-08-26T01:32:11.492Z"
+    }
+   ]
+  },
+  "google_docs": {
+   "access": "connected + readable",
+   "proof": "status=connected; documents are the 64 native documents in the Drive listing; content verified via Nov 7 2026 dump exports of the same files",
+   "count_documents": 64,
+   "items": "see google_drive items with mimeType application/vnd.google-apps.document"
+  },
+  "google_sheets": {
+   "access": "connected + readable",
+   "proof": "status=connected; Drive mime search returned exactly 1 spreadsheet",
+   "count": 1,
+   "items": [
+    {
+     "id": "1l4m25yRGLnXz5Gkxhflb_Z0bSs7u4ZGGS93JOlg9Q98",
+     "name": "MANIFEST_Parallel_Exactness_Verification",
+     "mimeType": "application/vnd.google-apps.spreadsheet",
+     "modifiedTime": "2026-11-03T19:11:17.383Z"
+    }
+   ]
+  },
+  "google_slides": {
+   "access": "connected + readable (empty surface)",
+   "proof": "status=connected; Drive mime search for presentations returned 0 items — verified empty, not an error",
+   "count": 0,
+   "items": []
+  },
+  "google_forms": {
+   "access": "connected + readable (empty surface)",
+   "proof": "status=connected; Drive mime search for forms returned 0 items — verified empty, not an error",
+   "count": 0,
+   "items": []
+  },
+  "gmail": {
+   "access": "connected + readable",
+   "proof": "status=connected; profile read returned messagesTotal=458, threadsTotal=402; labels list returned 14; label counters and triage reads succeeded",
+   "messagesTotal": 458,
+   "threadsTotal": 402,
+   "labels": [
+    {
+     "id": "CHAT",
+     "name": "CHAT"
+    },
+    {
+     "id": "SENT",
+     "name": "SENT"
+    },
+    {
+     "id": "INBOX",
+     "name": "INBOX"
+    },
+    {
+     "id": "IMPORTANT",
+     "name": "IMPORTANT"
+    },
+    {
+     "id": "TRASH",
+     "name": "TRASH"
+    },
+    {
+     "id": "DRAFT",
+     "name": "DRAFT"
+    },
+    {
+     "id": "SPAM",
+     "name": "SPAM"
+    },
+    {
+     "id": "CATEGORY_FORUMS",
+     "name": "CATEGORY_FORUMS"
+    },
+    {
+     "id": "CATEGORY_UPDATES",
+     "name": "CATEGORY_UPDATES"
+    },
+    {
+     "id": "CATEGORY_PERSONAL",
+     "name": "CATEGORY_PERSONAL"
+    },
+    {
+     "id": "CATEGORY_PROMOTIONS",
+     "name": "CATEGORY_PROMOTIONS"
+    },
+    {
+     "id": "CATEGORY_SOCIAL",
+     "name": "CATEGORY_SOCIAL"
+    },
+    {
+     "id": "STARRED",
+     "name": "STARRED"
+    },
+    {
+     "id": "UNREAD",
+     "name": "UNREAD"
+    }
+   ],
+   "label_counters": {
+    "INBOX": {
+     "messagesTotal": 452,
+     "threadsTotal": 396,
+     "messagesUnread": 423
+    },
+    "UNREAD": {
+     "messagesTotal": 423,
+     "threadsTotal": 378
+    },
+    "SENT": {
+     "messagesTotal": 10,
+     "threadsTotal": 10
+    }
+   },
+   "newest_messages_metadata": [
+    {
+     "id": "1a1ba1d2dbb577e4",
+     "from": "Google <noreply-accounts@google.com>",
+     "subject": "You shared some Google Account data with platform.deepseek.com",
+     "date_local": "2026-11-08T01:43:56-06:00"
+    },
+    {
+     "id": "1a1b98db449770f2",
+     "from": "Google Play <googleplay-noreply@google.com>",
+     "subject": "Your Google Play Order Receipt from Nov 7, 2026",
+     "date_local": "2026-11-07T23:07:14-06:00"
+    },
+    {
+     "id": "1a1b97906e7e13ca",
+     "from": "deepseek@al.mail.deepseek.com",
+     "subject": "Your verification code for DeepSeek",
+     "date_local": "2026-11-07T22:44:35-06:00",
+     "note": "subject only; no code value read or stored"
+    },
+    {
+     "id": "1a1b963877c5723e",
+     "from": "vidIQ <hello@send.vidiq.com>",
+     "subject": "Get more views from your existing videos",
+     "date_local": "2026-11-07T22:21:09-06:00"
+    },
+    {
+     "id": "1a1b95dbfaa64569",
+     "from": "vidIQ <hello@send.vidiq.com>",
+     "subject": "The audit, the plan, and what it costs",
+     "date_local": "2026-11-07T22:14:50-06:00"
+    },
+    {
+     "id": "1a1b84e6f3b2e5ce",
+     "from": "Google <noreply-accounts@google.com>",
+     "subject": "You shared some Google Account data with Perplexity",
+     "date_local": "2026-11-07T17:18:29-06:00"
+    },
+    {
+     "id": "1a1b8486d9815c0c",
+     "from": "The MotherDuck Team <support@motherduck.com>",
+     "subject": "our agent was wrong 302 times. Then it wasn't",
+     "date_local": "2026-11-07T17:11:54-06:00"
+    },
+    {
+     "id": "1a1b83f1a77792e2",
+     "from": "Daniel From Consensus <info@mail.consensus.app>",
+     "subject": "Live best practice session - Tuesday",
+     "date_local": "2026-11-07T17:01:45-06:00"
+    },
+    {
+     "id": "1a1b81f1a8ff3d29",
+     "from": "OpenAI <noreply@tm.openai.com>",
+     "subject": "New sign-in to your OpenAI account",
+     "date_local": "2026-11-07T16:26:47-06:00"
+    },
+    {
+     "id": "1a1b78093e9202ce",
+     "from": "\"Tapestry 2.0\" <noreply@qemailserver.com>",
+     "subject": "Mayo Clinic Tapestry 2.0 (IRB #23-004120)|Complete Eligibility Form",
+     "date_local": "2026-11-07T13:33:38-06:00"
+    },
+    {
+     "id": "1a1b7726fdcbe842",
+     "from": "GitHub <noreply@github.com>",
+     "subject": "[ACTION REQUIRED] Your GitHub account, schoonoverdouglas1-png, will soon require 2FA",
+     "date_local": "2026-11-07T13:18:12-06:00"
+    },
+    {
+     "id": "1a1b761cede8b161",
+     "from": "ChatGPT <noreply@email.openai.com>",
+     "subject": "Writing help, whenever you need it",
+     "date_local": "2026-11-07T13:00:01-06:00"
+    },
+    {
+     "id": "1a1b7535e6626c46",
+     "from": "Perplexity <team@mail.perplexity.ai>",
+     "subject": "Select your default AI model (from OpenAI, Anthropic, Google, and more)",
+     "date_local": "2026-11-07T12:44:16-06:00"
+    },
+    {
+     "id": "1a1b7084e725b4d0",
+     "from": "Ryan Boyd <info@motherduck.com>",
+     "subject": "Ducktober wrap-up: 8 la... (truncated by triage display)",
+     "date_local": "2026-11-07T11:22:13-06:00"
+    }
+   ]
+  },
+  "google_calendar": {
+   "access": "connected + readable",
+   "proof": "status=connected; calendarList returned 2 calendars; agenda returned 6 events in next 7 days (5 on primary + Veterans Day on holidays calendar)",
+   "calendars": [
+    {
+     "id": "schoonoverdouglas1@gmail.com",
+     "summary": "schoonoverdouglas1@gmail.com"
+    },
+    {
+     "id": "en-gb.usa#holiday@group.v.calendar.google.com (as returned, truncated in parse)",
+     "summary": "Holidays in the United States"
+    }
+   ],
+   "events_next_7_days_primary": [
+    {
+     "id": "uog239vpi2fi30pcm5gj7s2lng_20261109T173800Z",
+     "summary": "Track down Google password",
+     "start": "2026-11-09T17:38:00Z"
+    },
+    {
+     "id": "14mdfjvbt7c3ejb8nhu60uq1lo",
+     "summary": "Mayo appointment — Chippewa Falls Clinic",
+     "start": "2026-11-09T21:45:00Z"
+    },
+    {
+     "id": "c4rjcd1mckp32b9hcco3eb9k71i34b9o75hm2bb56pgjie9jcgsm2d31cc",
+     "summary": "Consultation with Brent Wogahn, MD",
+     "start": "2026-11-11T19:00:00Z"
+    },
+    {
+     "id": "uog239vpi2fi30pcm5gj7s2lng_20261112T173800Z",
+     "summary": "Track down Google password",
+     "start": "2026-11-12T17:38:00Z"
+    },
+    {
+     "id": "dne6b4ouk1r1k92qneiq6ov8q0_20261114T210600Z",
+     "summary": "Muse weekly usage allowance resets",
+     "start": "2026-11-14T21:06:00Z"
+    }
+   ]
+  },
+  "google_contacts": {
+   "access": "connected + readable",
+   "proof": "status=connected; connections list returned 24 contacts, no nextPageToken",
+   "count": 24,
+   "items": [
+    {
+     "id": "people/c3831314993787699674",
+     "name": "Customer Support"
+    },
+    {
+     "id": "people/c5875840819696464626",
+     "name": "Gary Bruhn Carpet King"
+    },
+    {
+     "id": "people/c6726870067360759356",
+     "name": "h? eal?? th care???"
+    },
+    {
+     "id": "people/c7157217355004231999",
+     "name": "Wisconsin Governors Office"
+    },
+    {
+     "id": "people/c8448272223420283437",
+     "name": "LCO Tribal Government Office Main Line"
+    },
+    {
+     "id": "people/c8070918606559881304",
+     "name": "Chippewa County Sherrif non emergency line"
+    },
+    {
+     "id": "people/c5982172226902536169",
+     "name": "awaken marine shannon works for wil hattamer"
+    },
+    {
+     "id": "people/c5069178337210656850",
+     "name": "potential owner operator of haley park sheldon wi"
+    },
+    {
+     "id": "people/c1362274939690064800",
+     "name": "cutting edge sheldon salon"
+    },
+    {
+     "id": "people/c6254775914344204510",
+     "name": "Jon Zecherle"
+    },
+    {
+     "id": "people/c1730997673753862158",
+     "name": "MTM fuel mileage scheduling Medical Ride Rideshare Dr Chiro Pharmacy"
+    },
+    {
+     "id": "people/c2431888058949007971",
+     "name": "chad larson repair"
+    },
+    {
+     "id": "people/c1856690067782418973",
+     "name": "O'Reilly Auto Parts"
+    },
+    {
+     "id": "people/c6435844653118938664",
+     "name": "Lake Holcombe Fitness Magic Salon"
+    },
+    {
+     "id": "people/c7361370763521508398",
+     "name": "Cornell Chiropractic"
+    },
+    {
+     "id": "people/c5203799504339880792",
+     "name": "Scott Wozniak"
+    },
+    {
+     "id": "people/c2614955046263731119",
+     "name": "Laura Mom Schoonover"
+    },
+    {
+     "id": "people/c6883104179913351698",
+     "name": "Dad Cell"
+    },
+    {
+     "id": "people/c2566094078860226481",
+     "name": "google gemeni"
+    },
+    {
+     "id": "people/c7561953935338236181",
+     "name": "Ira Potaczek"
+    },
+    {
+     "id": "people/c3579067802079884160",
+     "name": "cal crawford"
+    },
+    {
+     "id": "people/c790661698012231477",
+     "name": "jamie lee"
+    },
+    {
+     "id": "people/c7199842989888808762",
+     "name": "jaime lee"
+    },
+    {
+     "id": "people/c3836158679614862793",
+     "name": "Mayo Clinic Chippewa Falls"
+    }
+   ]
+  },
+  "google_tasks": {
+   "access": "connected + readable",
+   "proof": "status=connected; tasklists list returned 1 list; tasks list returned 1 task",
+   "count_lists": 1,
+   "count_tasks_total": 1,
+   "lists": [
+    {
+     "id": "MTYxMzYxNjQ2NTQyOTAzNDE4Mzk6MDow",
+     "title": "My Tasks",
+     "updated": "2026-11-05T07:40:47.763Z"
+    }
+   ],
+   "items": [
+    {
+     "id": "RUVZZ0JabmdCczN2bUF2ZA",
+     "title": "Finalize and deploy the Android automation setup",
+     "status": "needsAction",
+     "due": "2026-11-09T00:00:00.000Z",
+     "tasklist": "MTYxMzYxNjQ2NTQyOTAzNDE4Mzk6MDow"
+    }
+   ]
+  },
+  "google_health_connect": {
+   "access": "readable via health-cli status (no separate connector login exists for this surface)",
+   "proof": "status returned category coverage: daily-metrics 1439 records 2026-10-27 to 2026-11-08; sleep 0; workout 0 — counts/coverage only, no values read",
+   "categories": [
+    {
+     "name": "daily-metrics",
+     "record_count": 1439,
+     "earliest": "2026-10-27 06:00:00+00",
+     "latest": "2026-11-08 05:30:00+00"
+    },
+    {
+     "name": "sleep",
+     "record_count": 0
+    },
+    {
+     "name": "workout",
+     "record_count": 0
+    }
+   ]
+  }
+ },
+ "local_mirrors": {
+  "google_dump_2026_11_07": {
+   "path": "~/workspace/google-dump/2026-11-07/",
+   "files": 167,
+   "size": "15M",
+   "manifest": "DUMP-MANIFEST.md",
+   "drive_items_total": 83,
+   "dumped": 82,
+   "listed_only": 1,
+   "failed": 0
+  },
+  "imports": {
+   "path": "~/workspace/imports/",
+   "files_total": 513,
+   "size": "18M",
+   "google_subtrees": {
+    "google-drive": {
+     "files": 40,
+     "note": "Nov 1 2026 import; manifest: 39 Drive files found, 36 already present, 3 new, 0 failed"
+    },
+    "gmail": {
+     "files": 312,
+     "note": "import snapshot; live mailbox total Nov 8 2026 is 458 messages"
+    },
+    "google-calendar": {
+     "files": 25,
+     "note": "324 events mirrored per import record"
+    },
+    "google-contacts": {
+     "files": 24
+    },
+    "google-docs": {
+     "files": 2
+    },
+    "google-tasks": {
+     "files": 2
+    },
+    "google-forms": {
+     "files": 1
+    },
+    "google-sheets": {
+     "files": 1
+    },
+    "google-slides": {
+     "files": 1
+    }
+   }
+  }
+ },
+ "inventory_file": "~/workspace/your_files/Google Knowledge Inventory — Complete Scan (2026-11-08).md"
+}
