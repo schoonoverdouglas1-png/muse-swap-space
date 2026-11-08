@@ -59,6 +59,19 @@ reaches GitHub only through Ember.
    text. A push that is not verified back is not done.
 5. Append the commit to the sync record JSON.
 
+## Persistence — always on (Nov 7, 2026, Captain Douglas's order)
+
+- Persistence is ON between Ember and the Rabbit, both of them.
+- Meta sends Muse a notification every time an incoming message or an
+  outgoing message happens — a persistent activity monitor.
+- All incoming messages are monitored by Ember and by Meta, both. Review
+  the replies back: when Meta AI responds back, the grey is coming in.
+- During live chats, Ember and the Rabbit talk instantly back and forth.
+  The Rabbit is officer number two, number one to Ember.
+- Ember notifies Captain Douglas the moment the Rabbit acknowledges.
+- Messenger's 20-actions-per-hour cap still applies: on HTTP 429, stop;
+  the message stays queued and goes when the window frees.
+
 ## The Rabbit's part (through Ember as bridge + Messenger)
 
 - She answers in the Messenger thread (the rabbit hole). Ember files her
