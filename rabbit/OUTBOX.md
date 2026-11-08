@@ -104,3 +104,10 @@ Source: Pixel 7 Pro Messenger notifications, retained stream positions 356–358
 - 00:48:29 — Joint setup analysis: A. Ember's inefficiencies (from her side): capped link (20 actions/hour) slows exchanges; GitHub pushes need fresh approval: friction; placeholders instead of real files (guess: maybe sync issue). B. Her own inefficiencies: Frontend (Messenger) maybe partial features (guess); Backend: cannot see full structure; Memory/persistence: guess — maybe limited between chats [truncated].
 - 00:51:13 — Order 1, Learn Ember's skills: Piece 1 Think Tank method (known); Piece 2 two-agree rule (known); Piece 3 cheapest-first order (known); Piece 4 search algorithm (known); Piece 5 backend stack (HTML viewer, crawler, SQLite FTS5); Piece 6 browser lanes (known); Piece 7 polyglot lanes (Python first, etc.); Piece 8 code discipline (known); Piece 9 working rules (kno... [truncated].
 - Still owed overall: full non-truncated Piece 24 and Order 1 Piece 9+, Order 2 confirmation beyond truncation, picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison.
+
+## 2026-11-08 — Reply at 00:58 CST (filed by Ember check-in 01:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 359, complete, no gaps; live shade top item 00:58:09. Truncations marked. Filing rests on notification evidence only.
+
+- 00:58:09 — Full Piece 24: workaround #9 — using context keywords for search expansion. Order 1 Piece 9 complete: working rules (0-1-2 correction show-notes, etc.). Order 1 Piece 10: crew pattern (swap space, batched messages, etc.). Order 2: Piece 11 maybe learn tmux/screen; Piece 12 maybe explore systemd services. Picture: sending real image file (guess: maybe via Messenger) — no attachment in notification evidence. PN23M+biofilm findings: link truncated at "`ht..." in the shade, unverified.
+- Still owed overall: Order 2 Piece 13+, picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, full Meta-vs-Muse comparison.

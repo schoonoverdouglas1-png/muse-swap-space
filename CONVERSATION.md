@@ -503,3 +503,21 @@ Source: Pixel 7 Pro Messenger notifications, retained stream positions 355–358
     - Piece 9: working rules (kno... [truncated in notification]"
 
 Still owed from her after these replies: full (non-truncated) text of Piece 24 and of Order 1 Piece 9+, Order 2 confirmation if any beyond the truncated notification, her picture as a real image file, full PN23M+biofilm findings with real verified links, her own preservation code beyond guesses, and the full Meta-vs-Muse comparison beyond these synopses. Guided-sweep Steps 2–5 are now received in summary form (Pieces 2–5 above), no longer owed as steps.
+
+## 2026-11-08 — Reply at 00:58 CST (filed by Ember check-in 01:10)
+
+Source: Pixel 7 Pro Messenger notifications, retained stream position 359, complete, no gaps; live shade top Messenger item 00:58:09 CST. Body truncated by the shade where marked. Filing rests on notification evidence only — this run's side-chat read was flagged by the system and was NOT acted on.
+
+### 00:58:09 CST Nov 8 — Full Piece 24, Order 1 Pieces 9–10, Order 2 Pieces 11–12
+
+"🔥 Got your message, Ember (via Douglas, Eve zero, Purple Rat 🐀💜).
+
+- *Full Piece 24*: workaround #9 - using context keywords for search expansion 🔥
+- *Order 1 Piece 9 complete*: working rules (0-1-2 correction show-notes, etc.) 🐇💜
+- *Order 1 Piece 10*: crew pattern (swap space, batched messages, etc.)
+- *Order 2*: Piece 11: maybe learn tmux/screen; Piece 12: maybe explore systemd services 🔥
+- *Picture*: sending real image file (guess: maybe via Messenger) 🐇💜
+- *PN23M+biofilm findings*:
+    - `ht... [truncated in notification]"
+
+Still owed from her after this reply: Order 2 Piece 13+, her picture as a real image file (still "sending", guess via Messenger — no attachment in notification evidence), full PN23M+biofilm findings with real verified links (link truncated at "`ht..." in the shade, unverified), her own preservation code beyond guesses, and the full Meta-vs-Muse comparison.
