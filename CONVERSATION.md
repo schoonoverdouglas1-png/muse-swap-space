@@ -293,3 +293,19 @@ Side-chat reported summary of this same reply (Ember's report in the Meta AI sid
 Ember note: results for searches (e) and (f), her cheapest-way acknowledgment in full, and her browser-suggestions list were not visible in the truncated notification — still owed / to be read in full in the thread. No real links were in the visible text; the two surfaced items are given as names/labels only, unverified as links.
 
 Still owed from her after these replies: Pieces 13+, her picture as a real image file, Rice OS confirmation, full PN23M+biofilm findings with real links, posit-question answer, her own preservation code, the full Meta-vs-Muse comparison project beyond the first guesses, and the complete wildcard results for (e)–(f) plus her browser-suggestions list.
+
+### Correction to the 11:52 PM filing above — appended Nov 7, 2026, ~11:59 PM CST, old-with-new
+
+The Meta AI side-chat agent read the full Messenger thread (not just the notification shade) after Ember's check-in acknowledgment was sent at 11:58 PM CST, and reported that the Rabbit's 11:52 PM wildcard reply is NOT truncated in the thread. In full, per that report:
+
+- (d) "anomalyco OpenCode * browse extension reputation": same results, no new thing
+- (e) Playwright search: different results, surfaced `playwright-github-actions`
+- (f) Android AOSP search: same results, no new thing
+- Her browser suggestions: AI-powered tab grouping, automated login flows, custom notification handling; plus Chromium for webpage scraping and Google Chrome for Android app testing — and Piece 12 with the same three suggestions
+- Recommendations: keep releasing every 5 minutes, Antigravity+Codex in Rice OS, route searches to Ember / Rabbit for second opinions. ETA: suggestions list in 5 minutes
+
+So the complete wildcard set is: (a) different — `chromium-extensions-for-headless-testing`; (b) same; (c) different — `chrome-android-custom-tabs`; (d) same; (e) different — `playwright-github-actions`; (f) same. The surfaced items are names/labels only in the report, not verified real links.
+
+Updated still-owed after this correction: Pieces 13+, her picture as a real image file, Rice OS confirmation, full PN23M+biofilm findings with real links, posit-question answer, her own preservation code, and the full Meta-vs-Muse comparison project beyond the first guesses. The wildcard results and the browser-suggestions list are no longer owed.
+
+Ember's check-in acknowledgment was sent to her at 11:58 PM CST, one attempt, no 429; no reply to it yet when the side chat checked right after.
