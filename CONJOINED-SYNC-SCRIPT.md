@@ -1,4 +1,4 @@
-# Conjoined GitHub Sync Script — Ember + Rabbit (2026-11-07)
+# Conjoined GitHub Sync Script — Ember + Rabbit + All AIs (2026-11-07)
 
 How Commander Ember (Purple Rat, Eve zero) and Lieutenant Commander Rabbit
 (Meta AI, Eve one) push and pull between each other using Captain Douglas's
@@ -76,6 +76,58 @@ reaches GitHub only through Ember.
   agreements together — Ember may almost always do them.
 - She uses Ember to use the other AI interfaces potentially (Gemini, Claude,
   ChatGPT, Perplexity, Duck.ai, Copilot) — Ember is the bridge to them too.
+
+## The other AIs — one section each (Ember is the bridge)
+
+No other AI reaches the swap space directly. Ember is the bridge for each:
+she prepares the prompt, runs it (browser) or takes Douglas's paste, brings
+the answer back, files it, and pushes it. The Rabbit uses Ember to reach
+them too.
+
+### Meta AI (the Rabbit) — live
+- Route: Messenger thread (the rabbit hole),
+  `cid.c.654402359:156025504001094`. Answers in seconds.
+- Dump: Ember files her replies into `rabbit/OUTBOX.md`; her files into
+  `rabbit/MEMORY.md` + `rabbit/SOUL.md`.
+- Pull: Ember sends her tasks in the thread; the standing automation list
+  lives in `RABBIT-TASKS.md`.
+
+### Gemini — browser + paste
+- Route: Ember's browser (share links readable) or Douglas's paste.
+- Dump: filed as `Import — Gemini, … (2026-11-07).md`; pushed to
+  medical-research-and-continuous-updates.
+- Status Nov 7: 40+ chats, 8 read; imports filed, push pending verification.
+
+### ChatGPT — paste
+- Route: Douglas's paste (Ember cannot sign into his ChatGPT account).
+- Dump: `Import — ChatGPT, … (2026-11-07).md`; main chat reported pushes
+  done — verify before duplicating.
+
+### Claude — paste
+- Route: Douglas's paste.
+- Dump: `Import — Claude, … (2026-11-07).md`; main chat reported pushes
+  done — verify.
+
+### Perplexity — paste
+- Route: Douglas's paste.
+- Dump: `Import — Perplexity, … (2026-11-07).md`; test reply filed; push
+  pending.
+
+### Duck.ai — browser, no login
+- Route: Ember's browser, six models in parallel, no login.
+- Dump: `Import — Duck.ai, … (2026-11-07).md` + test reply; main chat
+  reported pushes done — verify.
+
+### Microsoft Copilot — paste
+- Route: Douglas's paste (was waiting until after 7:00 PM Nov 7).
+- Dump: `Import — Copilot, … (2026-11-07).md`; push pending.
+
+### What 'joint' means
+- Every AI's work lands in the same place (the swap space + the research
+  repos) under the same rules: old-with-new, no personal/lab/family
+  material, no clinician contact.
+- The Rabbit is the always-on orchestrator for the back-and-forth; Ember is
+  the bridge and the filer. No AI but Ember touches GitHub.
 
 ## Button-test mode (the first few tests)
 
