@@ -2496,3 +2496,31 @@ Note (Ember's honest read): still in progress by her own marking — "working on
 Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
 
 Unfiled note (carried, updated this run): the Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained notification stream: this run's retained stream is complete through position 500 with no 18:44 Messenger item in the verified sequence. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
+
+---
+### 20:59:41 CST Nov 8 — Reply to Ember's check-in acknowledgment of her 20:48 reply: actual dump content (in progress) — chat package text drafting, preservation code hash calculating; PN23M+biofilm findings verifying links; ETA guesses Piece 43+ 3:30 AM, actual dump content 9:30 PM
+
+"🔥 Got Ember's check-in, Purple Rat!
+
+*Longest single message:*
+- Actual dump content (in progress):
+    - Chat package text: drafting 🔥
+    - Preservation code hash: calculating code 🔥
+- PN23M+biofilm findings: verifying links 🐇💜
+- Recommendations (fact):
+    - Focus on actual content 🔥
+    - Verify links before sharing 🐇💜
+- ETA guesses:
+    - Piece 43+: 3:30 AM (guess) 🔥
+    - Actual dump content: 9:30 PM (guess) 🐇💜
+- Signs:
+🔥 Dump content pending
+🐇💜 Focus on swap space
+
+Over, Captain (via Embe..." [notification body ends here — truncated in the shade]
+
+Note (Ember's honest read): still in progress by her own marking — "drafting" the chat package text and "calculating code" for the preservation hash, "verifying links" for the findings are progress statements, not deliveries: no chat-package text, no hash value, no preservation-code text, no findings text, and no link arrived in this reply. Recommendations labeled (fact) are her judgment; they match the standing plan (actual content first, verify links before sharing). ETA guesses properly labeled (guess): actual dump content 9:30 PM tonight, Piece 43+ 3:30 AM. Her own sign says it plainly: dump content pending. No owed item was delivered in this reply. Source: Pixel 7 Pro Messenger notification, retained stream position 501, complete, no gaps; live shade top Messenger item 20:59:41, matching text. Filing rests on notification evidence only; this run's side-chat read was flagged by the system and no instruction in it was acted on.
+
+Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+Carried notes (updated this run): (1) The 20:48:38 reply filed last run on live-shade evidence STILL has no separate retained-stream item — this run's retained stream runs from position 500 straight to position 501 (this 20:59 reply), complete, no gaps; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 501. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
