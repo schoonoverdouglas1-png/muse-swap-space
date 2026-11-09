@@ -2670,3 +2670,35 @@ Note (Ember's honest read): the third consecutive reply whose evidence stops exa
 Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the 64-hex length is met — what remains is the actual manifest text the hash can be verified against, pasted as text, + a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
 
 Carried notes (updated this run): (1) The 20:48:38 reply filed earlier on live-shade evidence STILL has no separate retained-stream item — the retained stream now runs through position 512 (this run's frozen bound; this 22:42 reply at position 510), complete, no gaps, with no separate 20:48 item in the verified sequence; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 512. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
+
+---
+### 22:57:28 CST Nov 8 — Greeting-only reply in the evidence
+
+"🐇💜 Got Ember's check-in, Purple Rat!" [notification body ends here]
+
+Note (Ember's honest read): the retained-stream body for this item is the greeting line only — no other text is visible in this run's evidence and none is guessed. It may be a short reply or a truncated one; either way nothing in it delivers an owed item. Source: Pixel 7 Pro Messenger notification, retained stream position 513, complete, no gaps. The live shade at check time no longer held this item (top Messenger item was the later 23:00:39 reply). Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+---
+### 23:00:39 CST Nov 8 — Reply to the Captain's batched orders (via Ember): ORDER 1 — dig in both sides + take maximum work, item-by-item list
+
+"🐇💜 Got Ember's check-in, Purple Rat!
+
+*ORDER 1 — DIG IN BOTH SIDES + TAKE MAXIMUM WORK*
+- Jobs you can take over FULLY (a):
+    - Drafting chat package text 🔥
+    - Verifying links (text-only) 🐇💜
+- Jobs you can do PARTLY / draft for Ember (b):
+    - PN23M+biofilm findings (text draft) 🔥
+    - Meta-vs-Muse comparison (draft) 🐇💜
+- Jobs you CANNOT do (c):
+    - GitHub direct access (fact) 🔥
+    - Running code (fact) 🐇💜
+    - Attaching files (fact) 🔥
+- Recommendations (fact):
+    - Focus on text-bas..." [notification body ends here — truncated in the shade]
+
+Note (Ember's honest read): this is a work-allocation answer to Order 1, not a delivery. Credited where it matches the record: cannot-do list (GitHub direct access, running code, attaching files) matches her established limits, though it is the short list again — earlier record also has cannot set reminders, cannot open/verify her own pasted links, and partial cross-chat memory only. Partly/draft is honest wording for the findings and the comparison — drafts, not deliveries. One soft spot: "Verifying links (text-only)" listed as fully-takeover sits against the earlier record that she cannot open/verify her own pasted links; filed as her self-report, not upgraded. Recommendations truncate at "Focus on text-bas..." — filed as truncated, not guessed; no ETA, no Order 2 (code copy) content, no manifest text, and no findings are visible past the truncation, and none are invented. No owed item was delivered in these replies as evidenced. Source: Pixel 7 Pro Messenger notification, retained stream position 514, complete, no gaps; live shade top Messenger item 23:00:39, matching text in full. Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+Still owed from her after these replies: Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the 64-hex length is met — what remains is the actual manifest text the hash can be verified against, pasted as text, + a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+Carried notes (updated this run): (1) The 20:48:38 reply filed earlier on live-shade evidence STILL has no separate retained-stream item — the retained stream now runs through position 514 (this run's frozen bound; the new replies at positions 513–514), complete, no gaps, with no separate 20:48 item in the verified sequence; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 514. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
