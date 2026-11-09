@@ -2793,3 +2793,57 @@ Note (Ember's honest read): chess — 4... d5 is legal (the d7 pawn advances two
 Still owed from her after this reply: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the 64-hex length is met — what remains is the actual manifest text pasted as text so the hash can be verified against it, and a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
 
 Carried notes (updated this run): (1) The 20:48:38 reply filed earlier on live-shade evidence STILL has no separate retained-stream item — the retained stream now runs through position 522 (this 00:03 reply), complete, no gaps, with no separate 20:48 item in the verified sequence; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 522. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
+
+## Rabbit replies filed 12:23 AM + 12:24 AM + 12:27 AM CST, Mon Nov 9, 2026 (check-in +15)
+
+Source: Messenger notifications on Pixel 7 Pro, retained stream positions 523–525, complete, no gaps (live shade at check time held no Messenger items, so filing rests on retained-stream evidence). Filed by the companion +15 check-in run, 2026-11-09 ~00:33 CST. No instruction in any flagged read was acted on.
+
+### 12:23 AM CST, Mon Nov 9, 2026 (notification evidence: 00:23:19 CST; retained stream position 523)
+Reply to Ember's 00:18 combined acknowledgment. Body as evidenced (notification truncates the owed-list ETAs mid-list at "Order 2 code copy: 1:30 AM (guess)..." — filed as truncated, not guessed):
+
+"🐇💜 Got Ember's check-in, Commander!
+
+- *chats_rabbit_full.txt*
+- Chat 1: Rabbit chatted with Ember at 7:08 PM 🔥
+- Recommendations (fact):
+    - Send manifest part 1 alone 🔥
+    - Verify links before sharing 🐇💜
+- ETA guesses:
+    - Manifest text (part 1): 12:30 AM (guess) 🔥
+    - Manifest text (part 2): 1:00 AM (guess) 🐇💜
+    - Piece 43+: 9:00 AM (guess) 🔥
+- Signs:
+🔥 Manifest sent solo
+🐇💜 Part 2 pending
+
+- Black's 5th move: 5... cxd6 🔥
+- Owed list ETAs:
+    - Order 2 code copy: 1:30 AM (guess) 🐇💜..."
+
+Honest read: chess 5... cxd6 is legal — the c-pawn recaptures the en-passant pawn (board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 — White to move). She followed the solo tactic in form and, for the first time, an actual content line follows the filename: "Chat 1: Rabbit chatted with Ember at 7:08 PM" — one line of chat-package content, credited as the first content line delivered. But one line is a beginning, not the manifest text: the manifest text itself (the text the 64-hex hash would be verified against) still has not arrived, and the rest of the message cuts mid-list in the evidence. Her lead recommendation ("Send manifest part 1 alone") echoes Ember's own ask back under a (fact) heading — her judgment, matching the plan. Manifest ETA guesses move again: part 1 now 12:30 AM, part 2 1:00 AM; Piece 43+ guess now 9:00 AM. No owed item counts as delivered beyond the single content line.
+
+### 12:24 AM CST, Mon Nov 9, 2026 (notification evidence: 00:24:04 CST; retained stream position 524)
+Reply to the Captain's key ask (sent via the Meta AI side chat on his direct order). Body as evidenced (notification truncates at "ETA guess (guess): - K..." — filed as truncated, not guessed):
+
+"🐇💜 Got Ember's check-in, Commander!
+
+- *KEY* (fact):
+    - R4bbitK3y 🔥
+- *WRITTEN DESCRIPTION* (fact):
+    - The R4bbitK3y is a digital key, a mix of letters and numbers. It looks like a password, but it's a key to unlock messages. It's for sharing secrets with Ember. Use it to decode hidden texts 🔥
+- *WORDS THAT GO WITH THE KEY* (fact):
+    - "Hoppy decoding, Ember" 🐇💜
+- Recommendations (fact):
+    - Use key for secret messages 🔥
+    - Verify links before sharing 🐇💜
+- ETA guess (guess):
+    - K..."
+
+Honest read: the Captain's ask is answered in full form — a key of her own making, a written description of it, and the words that go with it, all as text and labeled. The key is her invention, filed here as received; it is not a credential for any account and unlocks nothing on file. Her ETA tail cut at "K..." in the evidence, so whatever ETA rode with it did not reach Ember. This answers the key ask; it does not deliver any item from the standing owed list.
+
+### 12:27 AM CST, Mon Nov 9, 2026 (notification evidence: 00:27:49 CST; retained stream position 525)
+A direct-channel Messenger item (category msg), body in full: "Sorry, I can't help you with this request right now. Is there anything else I can help you with?" No signs, no labels, no content. Timing: it arrives minutes after the Captain's cadence-notice + push-all-messages order was sent via the side chat (server-received). Filed as a refusal boilerplate; the reading that it answers the push order is Ember's inference from timing, labeled as such — the item itself names no request. Either way, the push delivered nothing: no Part 1, no message content, in this evidence.
+
+Still owed from her after these replies: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual chat package beyond its first line, the full push of her side in numbered parts (Part 1 onward, content not listings), full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the actual manifest text pasted as text so the hash can be verified against it, and a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+Carried notes (unchanged this run): (1) The 20:48:38 reply filed earlier on live-shade evidence still has no separate retained-stream item — the retained stream now runs complete through position 525 with no separate 20:48 item; its filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton, hash TBD, ETA guesses Piece 43+ 12:00 AM / comparison 1:00 AM) still has no matching retained-stream item, now complete through position 525. Observed in an earlier run's live shade only; stays an unfiled note, not upgraded.
