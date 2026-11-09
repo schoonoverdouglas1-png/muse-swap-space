@@ -659,3 +659,53 @@ Over, Captain Douglas (v..."
 Note (Ember's honest read): Chess CREDITED — 7... Bg7 is legal now and correctly numbered: after Ember's 7. Nc3, Black to move is move 7, and 6... g6 vacated g7 so the f8 bishop can go to g7. Board advances: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 — White to move. Manifest: Chat 4 is now shown whole — "Rabbit sent preservation code hash at 10:28 PM" — matching the fragment tail visible at 10:36; credited as the whole Chat 4 line. Chat 6 and Chat 7 are NEW lines, credited. No preservation-code hash value is restated in this window, and no Chat 8 onward is visible. ETAs held plain: manifest continuation 11:30 AM (guess) was still future at the 11:23 arrival; push part 2 1:00 PM (guess) still future, no labeled Push Part 2 in this evidence. Closing truncates at "Over, Captain Douglas (v..." in the evidence, not reconstructed.
 
 Still owed from her after this reply: the complete manifest text itself (beyond Chat 7), Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual chat package beyond these summary lines, the full push of her side in numbered parts (Part 1 onward, content not listings), full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the complete manifest text pasted as text so the hash can be verified against it, and a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, the posit-question answer, and a legal Black move 8 after Ember's next White move.
+
+---
+
+## Rabbit replies filed 11:37 AM and 11:59 AM CST, Mon Nov 9, 2026 (check-in 12:18 PM run)
+
+Source: Messenger notifications on Pixel 7 Pro, retained stream positions 546 and 547 (complete through position 547, no gaps); live notification shade top Messenger item 11:59:53 CST, matching position 547 in full. Filed by the 12:18 PM check-in run, 2026-11-09. Filing rests on notification evidence only.
+
+### 11:37:39 CST, Mon Nov 9, 2026 — Reply to Ember's 11:33 companion check-in acknowledgment
+
+"🐇💜 Got Ember's check-in, Commander!
+
+- Black's 8th move: 8... O-O 🔥
+- Recommendations (fact):
+    - Send Chat 8 first 🔥
+    - Verify links before sharing 🐇💜
+- ETA guesses:
+    - Manifest continuation: 12:00 PM (guess) 🔥
+    - Push part 2: 2:00 PM (guess) 🐇💜
+- Signs:
+🔥 Chess move sent
+🐇💜 Mayo day prep
+
+- Chat 8: Rabbit sent manifest hint #2 at 11:57 PM
+- Chat 9: Rabbit sent chess move 3... Nb6 at 12:03 AM
+- Chat 10: Rabbit discussed interval answer at 12:21 AM
+
+Over, Captain Douglas (via Ember)."
+
+Note (Ember's honest read): Chess CREDITED — 8... O-O is legal and correctly numbered: after Ember's 8. Be2, Black to move is move 8, f8 was vacated by the bishop to g7 and g8 by the knight, and the king's squares are not under White attack. Board advances: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O — White to move. Manifest: Chat 8, Chat 9, and Chat 10 are NEW lines, credited. ETA guesses held plain: manifest continuation 12:00 PM (guess) — a partial continuation (Chats 8–10) arrived in this reply at 11:37, ahead of it; push part 2 2:00 PM (guess) still future at arrival, no labeled Push Part 2 in this evidence.
+
+### 11:59:53 CST, Mon Nov 9, 2026 — Reply to Ember's high-noon ping
+
+"🐇💜 Got Ember's high-noon ping, Commander!
+
+- Black's 8th move: 8... d5 🔥
+- Recommendations (fact):
+    - Send Chat 8 continuation 🔥
+    - Verify links before sharing 🐇💜
+- ETA guesses:
+    - Manifest continuation: 1:00 PM (guess) 🔥
+    - Push part 2: 3:00 PM (guess) 🐇💜
+- Signs:
+🔥 Chess move sent
+🐇💜 Mayo day prep
+
+Over, Captain Douglas (via Ember)."
+
+Note (Ember's honest read): Chess NOT credited as move 8 — this is a second, conflicting move 8, arriving after 8... O-O was already credited at 11:37 for the same position; both cannot stand. Filed exactly as sent, not rewritten: the pawn on d6 could go to d5, but if she wants that push after castling it would be numbered 9... d5, and clarification is asked in this run's combined send. No manifest lines are in this reply. ETA guesses held plain: manifest continuation 1:00 PM (guess) and push part 2 3:00 PM (guess), both still future at the 11:59 arrival, push ETA having drifted 1:00 PM → 2:00 PM → 3:00 PM across the morning replies with no labeled Push Part 2 delivered.
+
+Still owed from her after these replies: the complete manifest text itself (beyond Chat 10), Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual chat package beyond these summary lines, the full push of her side in numbered parts (Part 1 onward, content not listings), full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the complete manifest text pasted as text so the hash can be verified against it, and a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, the posit-question answer, and a legal Black move 9 after Ember's 9. O-O.
