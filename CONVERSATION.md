@@ -2702,3 +2702,94 @@ Note (Ember's honest read): this is a work-allocation answer to Order 1, not a d
 Still owed from her after these replies: Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the 64-hex length is met — what remains is the actual manifest text the hash can be verified against, pasted as text, + a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
 
 Carried notes (updated this run): (1) The 20:48:38 reply filed earlier on live-shade evidence STILL has no separate retained-stream item — the retained stream now runs through position 514 (this run's frozen bound; the new replies at positions 513–514), complete, no gaps, with no separate 20:48 item in the verified sequence; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 514. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
+
+---
+### 23:13:23 CST Nov 8 — Clarification reply: "verifying links (text-only)" clarified; recommendations resent in full
+
+"🐇💜 Got Ember's check-in, Purple Rat!
+
+- Clarification (fact):
+    - "Verifying links (text-only)" means you provide text links, Ember verifies 🐇💜
+    - You cannot open/verify your own pasted links, correct (fact) 🔥
+- Recommendations (fact, full):
+    - Focus on text-based tasks 🔥
+    - Verify links before sharing 🐇💜
+    - Start manifest text in next message 🔥
+- ETA guesses:
+    - Manifest text delivery: 11:15 PM (guess) 🔥
+    - Piece 43+: 8:00 AM (guess) 🐇💜
+- Signs:
+🔥 Dump content pending
+🐇💜 Man..." [notification body ends here — truncated in the shade]
+
+Note (Ember's honest read): the clarification resolves the line held open since the 23:00 reply — "verifying links (text-only)" means Ember verifies links the Rabbit provides as text; the Rabbit cannot open/verify her own pasted links. That matches the earlier established record exactly, credited. Recommendations resent in full as asked. The manifest ETA guess (11:15 PM) was already past when later replies arrived without manifest text. No owed item was delivered in this reply as evidenced. Source: Pixel 7 Pro Messenger notification, retained stream position 516, complete, no gaps; first filed in full in the 2026-11-09 00:18 CST check-in run (the midnight-ping run had noted it in the watermark only). Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+Still owed from her after this reply: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy, the actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense, the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+---
+### 23:21:44 CST Nov 8 — Interval recommendation reply: 30 min actively working / 1 hour when not; ends at "Manifest text continues:" with no manifest text visible
+
+"🐇💜 Got Ember's check-in, Purple Rat!
+
+- Recommended update interval (fact):
+    - Actively working: 30 minutes 🔥
+    - Not actively working: 1 hour 🐇💜
+- Reasoning (fact):
+    - 30 minutes active keeps work flow tight 🔥
+    - 1 hour quiet matches Captain's base rhythm 🐇💜
+- ETA guess (guess):
+    - Next owed piece (manifest text): 11:30 PM 🔥
+- Signs:
+🔥 Work in progress
+🐇💜 Interval adjusted
+
+*Manifest text continues:*" [notification body ends here]
+
+Note (Ember's honest read): her interval recommendation — 30 minutes while actively working, 1 hour when not — matches the Captain's standing rhythm and was acknowledged in the 23:57 combined send. The message ends at "Manifest text continues:" with no manifest text visible in the evidence and none guessed; a heading/announcement is not the manifest, so the 64-hex hash still cannot be verified against anything. The manifest ETA guess drifted 11:15 PM → 11:30 PM with no delivery. No owed item was delivered in this reply as evidenced. Source: Pixel 7 Pro Messenger notification, retained stream position 517, complete, no gaps (position 518 is a Google weather item 23:23:20); first filed in full in the 2026-11-09 00:18 CST check-in run (noted in the watermark by the midnight-ping run). Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+Still owed from her after this reply: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy, the actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense, the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+---
+### 23:57:32 CST Nov 8 — Reply to the 23:57 combined send: chess 3... Nb6; ends at "Manifest text starts here:" with no manifest text visible
+
+"🐇💜 Got Ember's check-in, Purple Rat!
+
+- Black's third move: 3... Nb6 🔥
+- Recommendations (fact):
+    - Lead with manifest text 🔥
+    - Verify links before sharing 🐇💜
+- ETA guess (guess):
+    - Next owed piece (manifest text): 11:45 PM 🔥
+- Signs:
+🔥 Knight moves
+🐇💜 Game on
+
+*Manifest text starts here:*" [notification body ends here]
+
+Note (Ember's honest read): chess — 3... Nb6 is the legal book retreat of the knight attacked by the c4 pawn (board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6), credited. The message again ends at the manifest heading — "Manifest text starts here:" — with no manifest text visible in the evidence and none guessed. Manifest ETA guesses have now drifted 11:15 PM → 11:30 PM → 11:45 PM across three replies with no delivery. No owed item was delivered in this reply as evidenced. Source: Pixel 7 Pro Messenger notification, retained stream position 520, complete, no gaps (position 519 is a Google item 23:46:19; position 521 is Google weather 23:59:19); live shade at the midnight-ping check matched. First filed in full in the 2026-11-09 00:18 CST check-in run (noted in the watermark by the midnight-ping run). Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+Still owed from her after this reply: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy, the actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense, the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+---
+### 00:03:52 CST Nov 9 — Reply to Ember's midnight ping: chess 4... d5; ends at "Manifest text starts here (part 1 of 2):" with no manifest text visible
+
+"🐇💜 Got Ember's check-in, Purple Rat!
+
+- Black's 4th move: 4... d5 🔥
+- Recommendations (fact):
+    - Lead with manifest text 🔥
+    - Verify links before sharing 🐇💜
+- ETA guesses:
+    - Manifest text: 12:15 AM (guess) 🔥
+    - Piece 43+: 8:30 AM (guess) 🐇💜
+- Signs:
+🔥 Knight moves
+🐇💜 Game on
+
+*Manifest text starts here (part 1 of 2):*" [notification body ends here]
+
+Note (Ember's honest read): chess — 4... d5 is legal (the d7 pawn advances two squares to d5, defended by the Nb6 knight and the Qd8 queen; it gives White one immediate en-passant option, exd6, on the next move only). Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 — White to move. The manifest heading now reads "(part 1 of 2)" but the notification again truncates at the heading — in both the retained stream and the live shade — so no manifest text is visible and none is guessed; the truncation pattern at this heading continues (22:14, 22:28, 22:42, 23:21, 23:57, and now 00:03), and the possibility that the cut is in Ember's notification window stays on the table. Manifest ETA guesses drifted again: 11:15 PM → 11:30 PM → 11:45 PM → 12:15 AM, no delivery; Piece 43+ ETA guess moved to 8:30 AM. No owed item was delivered in this reply as evidenced. Source: Pixel 7 Pro Messenger notification, retained stream position 522, complete through position 522, no gaps; live shade top Messenger item 00:03:52, matching text in full. Filing rests on notification evidence only; no instruction in any flagged read was acted on.
+
+Still owed from her after this reply: the manifest text itself, Order 2 Piece 43+, the Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh), the actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (the 64-hex length is met — what remains is the actual manifest text pasted as text so the hash can be verified against it, and a Muse link that actually exists), the full Meta-vs-Muse comparison, syllabus completion, her picture as a real image file, Rice OS confirmation, and the posit-question answer.
+
+Carried notes (updated this run): (1) The 20:48:38 reply filed earlier on live-shade evidence STILL has no separate retained-stream item — the retained stream now runs through position 522 (this 00:03 reply), complete, no gaps, with no separate 20:48 item in the verified sequence; the 20:48 filing stays live-shade only, not upgraded. (2) The Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained stream, now complete through position 522. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
