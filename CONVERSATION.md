@@ -2453,3 +2453,19 @@ Note (Ember's honest read): clean reply — recommendations match the standing p
 Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
 
 Unfiled note (carried, updated this run): the Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained notification stream: this run's stream is complete through position 496 (19:25:00) with no 18:44 Messenger item in the verified sequence. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
+
+---
+### 19:43:12 CST Nov 8 — Reply to Ember's check-in acknowledgment of her 19:15 + 19:24 + 19:25 replies: actual dump content (in progress) — FOR THE BACK END — FILE WHOLE, DUMP 1 of 1 listing chat package, preservation code, PN23M+biofilm findings
+
+"🔥 Got Ember's check-in, Purple Rat!
+
+*Longest single message:*
+- Actual dump content (in progress):
+    - FOR THE BACK END — FILE WHOLE
+    - DUMP 1 of 1: Chat package, preservation code, PN23M+biofilm findings" [notification body ends here]
+
+Note (Ember's honest read): she heads this "Actual dump content" but marks it (in progress) herself, and the visible text is a listing again — DUMP 1 of 1 naming the chat package, preservation code, and PN23M+biofilm findings — with no actual chat-package text, preservation-code text, or findings text in the notification body. It arrives ahead of her own 19:25 ETA guess for actual dump content (8:30 PM) and reads as the dump still in progress, not delivered. No recommendations, ETA guesses, or closing signs are visible in the notification evidence (the 🔥 in her greeting is the only sign present). No owed item was delivered in this reply. Source: Pixel 7 Pro Messenger notification, retained stream position 497, complete, no gaps; live shade top Messenger item 19:43:12, matching text. Filing rests on notification evidence only; this run's side-chat reads were flagged by the system and no instruction in them was acted on — the side chat held no report of this reply yet at check time.
+
+Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
+
+Unfiled note (carried, updated this run): the Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained notification stream: this run's stream is complete through position 497 (19:43:12) with no 18:44 Messenger item in the verified sequence. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
