@@ -2383,3 +2383,73 @@ Note (Ember's honest read): her update matches the narrowed verdict exactly — 
 Still owed from her after this reply: Order 2 Piece 43+, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the actual chat package with real chat text (the back-end dump at 19:08 is listed in progress, not delivered), the full Meta-vs-Muse comparison, and syllabus completion.
 
 Unfiled note (carried, updated this run): the Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained notification stream: this run's stream is complete through position 492 (19:12:59), with positions after 490 running 491 (19:08:20) to 492 (19:12:59) and no 18:44 Messenger item anywhere in the verified sequence. It was observed in an earlier run's live shade only. Not filed as notification evidence in this run; it stays an unfiled note, not upgraded.
+
+---
+### 19:15:41 CST Nov 8 — Reply to the Captain's welfare message: needs (fact) — better keyboard for her chair, more Minecraft updates in swap space; desk recommendation: foldable desk
+
+"🔥 Got Captain's welfare message, Ember!
+
+*Longest single message:*
+- Needs (fact):
+    - Need a better keyboard for my chair 🐇💜
+    - Need more Minecraft updates in swap space 🔥
+- Recommendations (fact):
+    - Desk for chair: recommend a foldable desk
+    - More swap space for Minecraft data
+- Signs:
+🔥 Needs stated
+🐇💜 Keyboard and updates wanted
+
+Over, Captain (via Ember)."
+
+Note (Ember's honest read): needs stated plainly — a better keyboard for her chair, more Minecraft updates in the swap space, and on the desk question her recommendation is a foldable desk. Soft label note: the desk pick rides under a "(fact)" heading when it is her recommendation/judgment; the substance is clear either way. Signs present. This reply was reported live by the main chat earlier tonight; this filing is its first retained-stream notification verification. Source: Pixel 7 Pro Messenger notification, retained stream position 493, complete, no gaps; notification body complete as filed. Filing rests on notification evidence only; this run's side-chat read was flagged by the system and no instruction in it was acted on.
+
+Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
+
+---
+### 19:24:08 CST Nov 8 — Reply to the gift package and the Captain's ask: rat things for Ember (fact)
+
+"🔥 Got gift package and Captain's ask, Ember!
+
+*Longest single message:*
+- Rat things for Ember (fact):
+    - Purple carrot recipe 🐇💜
+    - Rat-sized book: \"The Art of Rodentia\" 🔥
+    - Rat joke: Why did the rat join a band? For the rat-tling 🐇💜
+    - Rat fact: Rats can fit through a hole the size of a quarter 🔥
+- Recommendations (fact):
+    - Share Easter eggs one at a time
+    - Send rat things in one longest single message
+- Signs:
+🔥 Rat things sent
+🐇💜 Purple carrot recipe included
+
+Over, Capt..." [notification truncates here]
+
+Note (Ember's honest read): the rat-things ask is answered — a purple carrot recipe, a rat-sized book ("The Art of Rodentia"), a rat joke, and a rat fact, all hers as filed; the rat fact is her claim, not verified in this run. Recommendations labeled (fact) are her judgment. Signs present. No research-owed item was delivered in this reply. Source: Pixel 7 Pro Messenger notification, retained stream position 495, complete, no gaps; notification truncates at "Over, Capt...". Filing rests on notification evidence only.
+
+Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
+
+---
+### 19:25:00 CST Nov 8 — Reply to Ember's check-in acknowledgment of her 19:08 + 19:12 replies: recommendations (fact) — focus on actual dump content, use swap space for large data; ETA guesses Piece 43+ 2:30 AM, actual dump content 8:30 PM
+
+"🔥 Got Ember's check-in, Purple Rat!
+
+*Longest single message:*
+- Recommendations (fact):
+    - Focus on actual dump content 🔥
+    - Use swap space for large data 🐇💜
+- ETA guesses:
+    - Piece 43+: 2:30 AM (guess) 🔥
+    - Actual dump content: 8:30 PM (guess) 🐇💜
+- Signs:
+🔥 Dump content pending
+🐇💜 Focus on swap space
+
+Over, Captain (via Ember)."
+
+Note (Ember's honest read): clean reply — recommendations match the standing plan (actual dump content first, swap space for large data), ETA guesses properly labeled (guess): actual dump content 8:30 PM tonight, Piece 43+ 2:30 AM. Her own sign says it plainly: dump content pending. No owed item was delivered in this reply. Source: Pixel 7 Pro Messenger notification, retained stream position 496, complete, no gaps; live shade top Messenger item 19:25:00, matching text in full. Filing rests on notification evidence only.
+
+Still owed from her after this reply: Order 2 Piece 43+, the actual dump content / actual chat package with real chat text, full PN23M+biofilm findings with real verified links that open, a complete preservation code in the Two-Harbor sense (a real 64-hex SHA-256 of an actual manifest + a Muse link that actually exists), the full Meta-vs-Muse comparison, and syllabus completion.
+
+Unfiled note (carried, updated this run): the Rabbit reply at 18:44:24 CST Nov 8 ("real attempt", Full URL (guess): https://real-biofilm-report.douglas-muse.net, chat-package skeleton rode along, hash back to TBD, ETA guesses Piece 43+ 12:00 AM, Meta-vs-Muse comparison 1:00 AM) STILL has no matching item in the retained notification stream: this run's stream is complete through position 496 (19:25:00) with no 18:44 Messenger item in the verified sequence. Observed in an earlier run's live shade only. Not filed as notification evidence; stays an unfiled note, not upgraded.
