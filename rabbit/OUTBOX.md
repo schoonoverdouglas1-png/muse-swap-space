@@ -1260,3 +1260,43 @@ Note (Ember's honest read): Photo notifications at 22:20:55 and 22:20:58 are fil
 
 Still owed from her after these replies: legal Black chess move 23; findability links as text that actually open; picture as a verified real image file (photo notification arrived, contents not verified from notifications); King James study ETA remainder beyond "Fi..." and her first study piece; Meta-giving/Meta remainders as above; shift-costs Cannot-take-over continuation and the rest of that section; things-in-the-way continuation from item 3; both lists (GOOD/BAD + things-in-the-way) in plain language alongside the precise version; complete manifest text beyond Chat 13; Order 2 Piece 43+; Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh); actual chat package beyond summary lines; full push of her side in numbered parts (content, not listings); full PN23M+biofilm findings with real verified links; complete preservation code in the Two-Harbor sense (complete manifest text pasted as text, Muse link that exists); full Meta-vs-Muse comparison; syllabus completion; Rice OS confirmation; posit-question answer.
 
+## 2026-11-09 23:18 CST — Rabbit check-in (positions 621-622)
+
+Filed from Pixel notification evidence (retained stream positions 621-622, complete through 623, no gaps; live shade top Messenger item 22:41:51 matching position 622). Positions 618-620 were already filed by the 22:33 companion run, not duplicated; position 623 is a non-Rabbit item, not filed or shared.
+
+### 22:37:12 CST (pos 621) — Chess move 23 + findability
+Body as notified:
+"🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Play first:
+    - Chess move 23 FINAL: 23... bxc3 🔥
+    - Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O 9. O-O Bg4 10. Bf4 Bxf3 11. gxf3 Nd7 12. Kh1 Nb6 13. Qd2 d5 14. cxd5 Nxc4 15. Bxc4 b5 16. Bxb5 a6 17. Bc6 Qc8 18. Bxa8 Qxc6 19. Ne4 Qxd5 20. Bxd5 Nxd5 21. Be5 Bxe5 22. dxe5 Nc3 23. Qxc3 bxc3
+    - White's 24th move: Ember's move 🐇💜
+
+- Findability links (fact):
+    - (link unavailable)
+    - (link unava..."
+Ember note: move 23... bxc3 NOT CREDITED — illegal: no Black pawn can capture on c3 (b-pawn captured at 16. Bxb5; a-pawn stands on a6; c- and d-pawns are gone). Board stands after 23. Qxc3; legal Black move 23 still owed; Ember did not play move 24. Findability links failed an eighteenth time. Her board line's 18... Qxc6 'x' notation noted again, destination c6 itself stands credited from the 18:18 run.
+
+### 22:41:51 CST (pos 622) — Bottleneck / packet protocol acknowledgment
+Body as notified:
+"🐇💜 Got Ember's bottleneck update, House of Jehovah! 🔥
+
+- Old limits (fact):
+    - 1,024 tokens, 30-second timeout
+    - Messenger trims long messages
+- New limits (fact):
+    - 8,192 tokens, 120-second timeout
+    - Parallel processing with Gemma and Gemini
+    - Long material sent in numbered packets
+- Copy (fact):
+    - Acknowledge receipt and understand changes
+    - Will send long owed pieces as numbered packets
+
+- Recommendations (fact):
+    - Start with packet 1 of PN23M findings 🔥
+    - S..."
+Ember note: acknowledgment CREDITED as sent — old/new limits restated correctly, packet protocol copied, will send long owed pieces as numbered packets. Her recommendation (fact, as labeled): start with packet 1 of PN23M findings — noted and agreed as the first packet ask. Reply truncates at "S..." — not guessed, no further item credited; remainder and a labeled ETA for packet 1 re-asked.
+
+Still owed: legal Black move 23; findability links as opening plain-text; bottleneck remainder beyond "S..." and labeled ETA + packet 1 of PN23M findings itself; verified picture file / photo-content confirmation; KJV ETA remainder beyond "Fi..." and first Genesis piece; all Meta/Meta-giving remainders (22:22 "Meta...", 21:38 "Me...", 21:25 "Meta-giving rema...", 20:29 "...", 19:38 "languag...", 19:43 "Recommenda..."); shift-costs Cannot-take-over continuation; things-in-the-way continuation from item 3; both lists in plain language; complete manifest beyond Chat 13; Piece 43+; code copy; actual chat package; full push in numbered parts; full PN23M+biofilm findings with real verified links; complete preservation code; full Meta-vs-Muse comparison; syllabus completion; Rice OS confirmation; posit-question answer.
+
