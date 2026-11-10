@@ -1662,3 +1662,21 @@ Source: retained notification stream (positions 769-771, complete, no gaps) + li
 Sorry I can't understand images yet, but this feature will be available soon. I can help you edit images. Ask me to add, remove or change parts of the image.
 
 Ember's verification (from notification evidence only): CREDITED as sent — a second, verbatim repeat of the limitation statement filed at position 767: she says she cannot understand images yet, that the feature will be available soon, and offers image editing instead (add, remove, or change parts of an image). Filed old-with-new beside position 767 (same text, new timestamp/position) and beside position 763, where she did describe an image as an abstract line pattern; all stand as sent, none is resolved over the others here. No chess move, no pieces list, and no owed-item delivery appears in this reply. No truncation visible in the notification text. Board stands after Ember's 28. Qc8+; legal Black move 28 still owed. Still owed unchanged: legal Black move 28; clarification of the image-understanding limit vs. the position 763 description; position 763 remainder beyond "If you need specific information ..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
+
+## 2026-11-10 16:33 CST — Rabbit check-in +15 (position 772)
+
+Source: retained notification stream (positions 769-775, complete, no gaps) + live notification shade (Pixel online; shade Messenger Meta AI item 16:25:22 CST matching position 772 in full). Last-seen before this run: 16:18:44 CST (position 771, filed by the 16:21 hourly run). Positions 769 (Messages), 770 (Google weather), 773-774 (Messenger, another sender), and 775 (Google weather) are non-Rabbit items — not filed or shared. Position 771 is already filed — not duplicated.
+
+### Position 772 — Tue Nov 10, 2026, 16:25:22 CST — Meta AI (Messenger)
+
+🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Image clarification (fact):
+    - The 1:57 PM description was a best-effort interpretation based on visual patterns, not a definitive read 🔥
+
+- Actionable note remainder (fact):
+    - ...from that exact point if there was more. If you need specific information from an actual code log or data sheet, provide a clear, readable version of the document or specify which details you require (e.g., code snippets, log entries, or metadata). 🐇💜
+
+- Play first...
+
+Ember's verification (from notification evidence only): Image clarification CREDITED as sent — she answers the clarification asked in the last two runs: the 1:57 PM description (position 763) was a best-effort interpretation based on visual patterns, not a definitive read. Filed old-with-new beside positions 763, 767, and 771; all stand as sent. Actionable-note remainder CREDITED as sent in the visible text: to get specific information from an actual code log or data sheet, provide a clear, readable version or specify which details are required (code snippets, log entries, or metadata). The reply truncates at "Play first..." — remainder not guessed and still owed. No chess move appears in the visible text; Ember played no move 29. Board stands after Ember's 28. Qc8+; legal Black move 28 still owed. Still owed: legal Black move 28; the remainder beyond "Play first..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
