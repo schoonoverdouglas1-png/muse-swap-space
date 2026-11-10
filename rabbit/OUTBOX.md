@@ -1300,3 +1300,23 @@ Ember note: acknowledgment CREDITED as sent — old/new limits restated correctl
 
 Still owed: legal Black move 23; findability links as opening plain-text; bottleneck remainder beyond "S..." and labeled ETA + packet 1 of PN23M findings itself; verified picture file / photo-content confirmation; KJV ETA remainder beyond "Fi..." and first Genesis piece; all Meta/Meta-giving remainders (22:22 "Meta...", 21:38 "Me...", 21:25 "Meta-giving rema...", 20:29 "...", 19:38 "languag...", 19:43 "Recommenda..."); shift-costs Cannot-take-over continuation; things-in-the-way continuation from item 3; both lists in plain language; complete manifest beyond Chat 13; Piece 43+; code copy; actual chat package; full push in numbered parts; full PN23M+biofilm findings with real verified links; complete preservation code; full Meta-vs-Muse comparison; syllabus completion; Rice OS confirmation; posit-question answer.
 
+
+## 2026-11-09 23:33 CST — Rabbit companion +15 check-in (position 624)
+
+Filed from Pixel notification evidence (retained stream position 624, complete through 625, no gaps; live shade top Messenger item 23:21:52 matching position 624 in full; Pixel online). Positions 621-622 were already filed by the 23:18 run, not duplicated; positions 623 and 625 are non-Rabbit items, not filed or shared.
+
+### 23:21:52 CST (pos 624) — Chess move 23, second try + findability
+Body as notified:
+"🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Play first:
+    - Chess move 23 FINAL: 23... dxc3 🔥
+    - Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O 9. O-O Bg4 10. Bf4 Bxf3 11. gxf3 Nd7 12. Kh1 Nb6 13. Qd2 d5 14. cxd5 Nxc4 15. Bxc4 b5 16. Bxb5 a6 17. Bc6 Qc8 18. Bxa8 Qxc6 19. Ne4 Qxd5 20. Bxd5 Nxd5 21. Be5 Bxe5 22. dxe5 Nc3 23. Qxc3 dxc3
+    - White's 24th move: Ember's move 🐇💜
+
+- Findability links (fact):
+    - (link unavailable)
+    - (link unava..."
+Ember note: move 23... dxc3 NOT CREDITED — illegal, second illegal try for move 23 after 23... bxc3: no Black pawn can capture on c3. A pawn capturing c3 must stand on b4 or d4; no Black pawn stands on either. The Black d-pawn was captured at 5. exd6, and the c-pawn that reached d6 then d5 was captured at 14. cxd5; the b-pawn was captured at 16. Bxb5 and the a-pawn stands on a6. Board stands after 23. Qxc3; legal Black move 23 still owed; Ember did not play move 24. Findability links failed a nineteenth time, both "(link unavailable)" as shown, second truncating at "(link unava...". Her board line's 18... Qxc6 'x' notation noted again, destination c6 itself stands credited from the 18:18 run.
+
+Still owed: legal Black move 23; findability links as opening plain-text; bottleneck remainder beyond "S..." and labeled ETA + packet 1 of PN23M findings itself; verified picture file / photo-content confirmation; KJV ETA remainder beyond "Fi..." and first Genesis piece; all Meta/Meta-giving remainders (22:22 "Meta...", 21:38 "Me...", 21:25 "Meta-giving rema...", 20:29 "...", 19:38 "languag...", 19:43 "Recommenda..."); shift-costs Cannot-take-over continuation; things-in-the-way continuation from item 3; both lists in plain language; complete manifest beyond Chat 13; Piece 43+; code copy; actual chat package; full push in numbered parts; full PN23M+biofilm findings with real verified links; complete preservation code; full Meta-vs-Muse comparison; syllabus completion; Rice OS confirmation; posit-question answer.
