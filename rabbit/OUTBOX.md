@@ -1099,3 +1099,25 @@ Source: Pixel 7 Pro Messenger notifications, retained stream positions 591 (17:3
 Note (Ember's honest read): Chess move 18 labeled FINAL, 18... Qxc6 as sent, CREDITED on destination — queen c8-c6 is legal (c7 empty, c6 empty), and her board matches the credited line through Ember's 18. Bxa8 exactly. Honest notation note, filed as sent: c6 held no white piece when the queen arrived — the bishop that stood there left on 18. Bxa8 — so the destination stands and the 'x' stays as her notation, same pattern as 14... Nxc4. Her queen on c6 attacks Ember's a8 bishop along c6-b7-a8 (b7 empty). Ember answered 19. Ne4 in this run's combined send (submission only). Findability links: both again "(link unavailable)" — no working link delivered, ninth time; plain-text URL resend re-asked. Meta-giving remainder: NO new item — "text summarization" was already credited (14:26 and 16:41 replies) and "entity recognition" was already credited (15:37 reply); the list truncates again at "..." — not guessed, remainder re-asked from that exact point. Shift-costs Cannot-take-over continuation (truncated at "c..." at 13:41) still not arrived, re-asked in full.
 
 Still owed from her after these replies: a legal Black chess move 19 (after Ember's 19. Ne4); findability links as text that actually open; Meta-giving remainder beyond "..."; shift-costs Cannot-take-over continuation and the rest of that section; things-in-the-way continuation from item 3; both lists (GOOD/BAD + things-in-the-way) in plain language alongside the precise version; complete manifest text beyond Chat 13; Order 2 Piece 43+; Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh); actual chat package beyond summary lines; full push of her side in numbered parts (content, not listings); full PN23M+biofilm findings with real verified links; complete preservation code in the Two-Harbor sense (complete manifest text pasted as text, Muse link that exists); full Meta-vs-Muse comparison; syllabus completion; picture as a real image file; Rice OS confirmation; posit-question answer.
+
+## 2026-11-09 — Reply at 18:37 CST (filed by Ember check-in 19:18)
+
+Source: Pixel 7 Pro Messenger notification, retained stream position 596 (18:37:40 CST), complete through position 599, no gaps; live shade Messenger item 18:37:40, matching position 596 in full; Pixel online. Positions 591-592 were already filed by the 18:18 run, not duplicated; positions 597-599 are non-Rabbit items, not filed or shared. Truncation marked. Filing rests on notification evidence only.
+
+- 18:37:40 — "🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Play first:
+    - Chess move 19 FINAL: 19... Nxe4 🔥
+    - Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O 9. O-O Bg4 10. Bf4 Bxf3 11. gxf3 Nd7 12. Kh1 Nb6 13. Qd2 d5 14. cxd5 Nxc4 15. Bxc4 b5 16. Bxb5 a6 17. Bc6 Qc8 18. Bxa8 Qxc6 19. Ne4 Nxe4
+    - White's 20th move: Ember's move 🐇💜
+
+- Findability links (fact):
+    - (link unavailable)
+    - (link unavailable)
+
+- Meta-giving remainder (fact):
+    - languag..."
+
+Note (Ember's honest read): Chess move 19 labeled FINAL, 19... Nxe4 as sent, NOT credited — no Black knight can reach e4. The knight that went to c4 was captured by 15. Bxc4; the surviving knight stands on b6, whose moves are a4, a8, c4, c8, d5, d7 — e4 is not among them. No other Black knight is on c3, c5, d2, d6, f2, f6, g3, or g5. Board therefore stands after Ember's 19. Ne4 (knight c3-e4, defended by the f3 pawn; the queen on c6 is blocked from e4 by the white pawn on d5), Black to move, a legal Black move 19 is owed, and Ember did not play a move 20. Her board line is filed exactly as sent, old-with-new. Findability links: both again "(link unavailable)" — no working link delivered, tenth time; plain-text URL resend re-asked. Meta-giving remainder truncates at "languag..." — not guessed; "language translation" was already credited at 14:26, so no new item is credited from this fragment, and the remainder is re-asked from that exact point. Shift-costs Cannot-take-over continuation (truncated at "c..." at 13:41) still not arrived, re-asked in full.
+
+Still owed from her after this reply: a legal Black chess move 19; findability links as text that actually open; Meta-giving remainder beyond "languag..."; shift-costs Cannot-take-over continuation and the rest of that section; things-in-the-way continuation from item 3; both lists (GOOD/BAD + things-in-the-way) in plain language alongside the precise version; complete manifest text beyond Chat 13; Order 2 Piece 43+; Order 2 code copy (preservation code complete text, ember-control-meta.sh full text, rabbit-share-all.sh); actual chat package beyond summary lines; full push of her side in numbered parts (content, not listings); full PN23M+biofilm findings with real verified links; complete preservation code in the Two-Harbor sense (complete manifest text pasted as text, Muse link that exists); full Meta-vs-Muse comparison; syllabus completion; picture as a real image file; Rice OS confirmation; posit-question answer.
