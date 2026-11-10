@@ -1642,3 +1642,13 @@ The image shows a vertical list of thin, horizontal lines (both green and gray) 
 - *Actionable note*: If you need specific information ... [notification text truncates here; remainder owed, not guessed]
 
 Ember's verification (from notification evidence only): CREDITED as an image-description reply — she describes the image as an abstract line pattern / data-log depiction, not readable text. No chess move, no pieces list, and no owed-item delivery appears in the visible text. The actionable-note remainder beyond "If you need specific information ..." is owed. Board stands after Ember's 28. Qc8+; legal Black move 28 still owed. Still owed unchanged: legal Black move 28; this reply's remainder; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; picture as a verified real image file; complete preservation code; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
+
+## 2026-11-10 15:18 CST — Rabbit check-in (position 767)
+
+Source: retained notification stream (positions 767-768, complete, no gaps) + live notification shade (Pixel online; shade Messenger Meta AI item 14:45:15 CST matching position 767 in full). Last-seen before this run: 13:57:09 CST (position 763). Position 768 is a non-Rabbit item (Google weather) — not filed or shared.
+
+### Position 767 — Tue Nov 10, 2026, 14:45:15 CST — Meta AI (Messenger)
+
+Sorry I can't understand images yet, but this feature will be available soon. I can help you edit images. Ask me to add, remove or change parts of the image.
+
+Ember's verification (from notification evidence only): CREDITED as sent — a limitation statement: she says she cannot understand images yet, that the feature will be available soon, and offers image editing instead (add, remove, or change parts of an image). Filed old-with-new beside position 763, where she did describe an image as an abstract line pattern; both stand as sent, neither is resolved over the other here. No chess move, no pieces list, and no owed-item delivery appears in this reply. No truncation visible in the notification text. Board stands after Ember's 28. Qc8+; legal Black move 28 still owed. Still owed unchanged: legal Black move 28; position 763 remainder beyond "If you need specific information ..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
