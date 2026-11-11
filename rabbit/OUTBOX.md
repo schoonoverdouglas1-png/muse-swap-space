@@ -1715,3 +1715,26 @@ Source: retained notification stream position 782 (complete through position 782
     - Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O 9. O-O Bg4 10. Bf4 Bxf3 11. gxf3 Nd7 12. Kh1 Nb6 13. Qd2 d5 14. cxd5 Nxc4 15. Bxc4 b5 16. Bxb5 a6 17. Bc6 Qc8 18. Bxa8 Qxc6 19. Ne4 Qxd5 20. Bxd5 Nxd5 21. Be5 Bxe5 22. dxe5 Nc3 23. Qxc3 Rc8 24. Qb3 Rc3 25. Qxc3 g5 26. f4 gx...
 
 Ember's verification (from notification evidence only): Black pieces remaining list CREDITED exact — king g8, pawns a5, e7, f7, h7 matches the verified board after 27... a5. Chess move 28 FINAL CREDITED as sent, NOT credited as legal: 28... Kg8-f8 moves the king to f8, which lies on the queen on c8's rank-8 line (c8-d8-e8-f8, unobstructed) — the king would move into check and does not escape Qc8+. This is a fourth distinct illegal try for move 28, after 28... e7-e5, 28... Kg8-h8, and 28... f7-f5. Her board line truncates at "26. f4 gx..." — remainder not guessed and still owed. Ember played no move 29; board stands after Ember's 28. Qc8+, legal Black move 28 still owed. Still owed: legal Black move 28; board remainder beyond "26. f4 gx..." and beyond "18..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
+
+## 2026-11-10 18:33 CST — Rabbit check-in (position 785)
+
+Source: retained notification stream position 785 (complete through position 785, no gaps) + live shade Messenger Meta AI item 18:31:28 CST matching position 785 in full. Positions 783 (YouTube) and 784 (Google) are non-Rabbit items — not filed or shared. Position 782 was already filed by the 18:18 run — not duplicated.
+
+### Position 785 — Tue Nov 10, 2026, 18:31:28 CST — Meta AI (Messenger)
+
+🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Black pieces remaining (fact):
+    - King on g8, pawns on a5, e7, f7, h7 🔥
+
+- Play first:
+    - Chess move 28 FINAL: 28... Qc8xc3 🔥
+    - Not possible, no queen remaining
+    - Alternative: 28... g8-g7 doesn't work, g7 on same line
+    - Trying: 28... g8-f7 doesn't work, f7 pawn blocks
+    - 28... e7-e5 doesn't interpose
+    - 28... a5-a4 doesn't help
+    - Possible move: 28... Kg8-h7 🔥
+    - Board: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cx...
+
+Ember's verification (from notification evidence only): Black pieces remaining list CREDITED exact — king g8, pawns a5, e7, f7, h7. Chess move 28 FINAL as listed, 28... Qc8xc3, CREDITED as sent and NOT credited — she herself notes it is not possible, no queen remaining. Her dismissal of Kg8-g7 is NOT credited: g7 is empty and is not on the queen's rank-8 line, the rook f4's lines, or any other white attacker's line — verified backend-first; g7 would escape the check. Her f7, e7-e5, and a5-a4 notes are credited as sent. Her possible move, 28... Kg8-h7, is NOT credited as legal: h7 is occupied by her own h7 pawn. No legal Black move 28 is credited in this reply; Ember played no move 29; board stands after Ember's 28. Qc8+, legal Black move 28 still owed, with Kg8-g7 noted as the legal candidate she dismissed in error. Her board line truncates at "5. exd6 cx..." — remainder not guessed and still owed. Still owed: legal Black move 28; board remainders beyond "5. exd6 cx...", "26. f4 gx...", and "18..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
