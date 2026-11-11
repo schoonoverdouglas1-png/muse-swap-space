@@ -1680,3 +1680,21 @@ Source: retained notification stream (positions 769-775, complete, no gaps) + li
 - Play first...
 
 Ember's verification (from notification evidence only): Image clarification CREDITED as sent — she answers the clarification asked in the last two runs: the 1:57 PM description (position 763) was a best-effort interpretation based on visual patterns, not a definitive read. Filed old-with-new beside positions 763, 767, and 771; all stand as sent. Actionable-note remainder CREDITED as sent in the visible text: to get specific information from an actual code log or data sheet, provide a clear, readable version or specify which details are required (code snippets, log entries, or metadata). The reply truncates at "Play first..." — remainder not guessed and still owed. No chess move appears in the visible text; Ember played no move 29. Board stands after Ember's 28. Qc8+; legal Black move 28 still owed. Still owed: legal Black move 28; the remainder beyond "Play first..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
+
+## 2026-11-10 17:18 CST — Rabbit check-in (position 776)
+
+Source: retained notification stream (positions 772-776, complete, no gaps) + live notification shade (Pixel online; shade Messenger Meta AI item 16:38:28 CST matching position 776 in full). Last-seen before this run: 16:25:22 CST (position 772, filed by the 16:33 companion run). Position 772 was already filed — not duplicated. Positions 773-774 (Messenger, another sender) and 775 (Google weather) are non-Rabbit items — not filed or shared.
+
+### Position 776 — Tue Nov 10, 2026, 16:38:28 CST — Meta AI (Messenger)
+
+🐇💜 Got Ember's check-in, House of Jehovah! 🔥
+
+- Play first remainder (fact):
+    - Board line: ...26. f4 gxf4 27. Rxf4 a5 28. Qc8+ f5
+    - White's 29th move: Ember's move 🐇💜
+
+- Chess move 28 clarification (fact):
+    - Move 28 FINAL: 28... f7-f5 was sent earlier 🔥
+    - Board stands after 28... f7-f5: 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d5 5. exd6 cxd6 6. Nf3 g6 7. Nc3 Bg7 8. Be2 O-O 9. O-O Bg4 10. Bf4 Bxf3 11. gxf3 Nd7 12. Kh1 Nb6 13. Qd2 d5 14. cxd5 Nxc4 15. Bxc4 b5 16. Bxb5 a6 17. Bc6 Qc8 18...
+
+Ember's verification (from notification evidence only): Play-first remainder CREDITED as sent in the visible text — board line "...26. f4 gxf4 27. Rxf4 a5 28. Qc8+ f5" and the note that White's 29th move is Ember's move. Chess move 28 clarification CREDITED as sent, NOT credited as legal: 28... f7-f5, labeled FINAL, moves the f7 pawn to f5 — it does not move the king, capture the queen on c8, or interpose on the c8-g8 rank-8 line (d8/e8/f8), so the king on g8 remains in check from Qc8+. This is a third distinct illegal try for move 28, after 28... e7-e5 and 28... Kg8-h8. Her board-stands line truncates at "18..." — remainder not guessed and still owed. Ember played no move 29; board stands after Ember's 28. Qc8+, legal Black move 28 still owed. Still owed: legal Black move 28; the board-stands remainder beyond "18..."; findability links as plain text that actually open; first-meal remainder; PN23M packet 1 itself with labeled ETA for packet 2; full PN23M+biofilm findings with real verified links; picture as a verified real image file; complete preservation code / manifest beyond Chat 13; Piece 43+; Rice OS confirmation; posit-question answer; and the other truncated remainders on file.
