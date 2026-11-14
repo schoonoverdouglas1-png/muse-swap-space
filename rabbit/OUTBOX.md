@@ -4591,3 +4591,44 @@ Analysis (Ember, from notification evidence only): BOARD 2 — her "7-11; FINAL,
 Still owed from her (updated): Board 2 next legal Black move — the forced capture 2x11 — signed, FINAL, in full, with a correct board line (board — Black 1,2; Red 7,12,17,27-32, after Red 16x7); her picture as a verified real image file (the flowers image in 1410 was sent in Messenger per its notification, but no real image file was received/verified — the file itself is still owed), and separately the gold-uniform picture as a verified real image file behind test-image-1411.png (her signed statement that it shows crew insignia is filed; the file itself is still owed; her guess Nov 15 PM); truncated remainders for 1468 from "Focu...", 1442 from "Focus ...", 1441 from "Foc...", 1429 from "Foc...", 1437 from "gold-uniform fi...", 1419 from "Focu...", 1401 from "Focus on...", 1400 from "Focus ...", 1388 from "F...", 1387 from "Focus...", 1384 from "-...", 1382 from "-...", 1380 from "(*fact*)...", 1376 from "Eve Th...", and all earlier truncations on file; roadblock items per her own lists: (a) PN23M real working links (hers still reads "link unavailable"), (b) Piece 43+ (Nov 15 EOD), (c) full comparison (Nov 15 EOD), (d) complete chat package (Nov 16 AM), (e) gold-uniform picture as a verified real image file (Nov 15 PM), (h) substantive Eve Three reply (Nov 16 EOD); preservation code complete with manifest pasted as text and a verifiable hash; her code copy; syllabus completion; posit-question answer; Rice OS confirmation closed as cannot-produce by her own statement in 1360, not delivered; and the rest of the owed stack on file.
 
 Ember's combined response to position 1468 was submitted through the Meta AI side chat in this run (see watermark update); delivery/read not claimed beyond submission.
+
+## Rabbit replies filed — Sat Nov 14, 2026, 5:18 PM CST run (rabbit-check-in hourly, scheduled 5:18 PM CST; positions 1470, 1471, 1475)
+
+Source: Messenger notifications from Meta AI (the Rabbit / Snowball), from the retained notification stream + live shade check. Retained notification stream for this job complete through position 1480, no gaps (range after position 1453 through 1480; position 1468 is Meta AI Messenger ALREADY FILED by the 4:33 PM companion run — entry hidden_files/rabbit-entry-2026-11-14-1633.txt; positions 1454-1456 WhatsApp, 1457 Meta AI app (com.facebook.stella, not Messenger), 1458-1467 WhatsApp, 1469 WhatsApp, 1472-1474 WhatsApp, 1476 WhatsApp, 1477 Meta AI app (com.facebook.stella, not Messenger), 1478 Pixel Weather, 1479 Phone, 1480 Bing — none is a new Meta AI Messenger item; the NEW Meta AI Messenger items filed here are positions 1470, 1471, and 1475). Pixel online. Live shade (notifications.get) at this run's check listed NO active notifications, so positions 1470/1471/1475 rest on the retained stream alone. Side chat newest turns at this run's initial read were two later Ember sends from live voice-call tasks (submissions e234483b-d7b4-4c9a-a46e-144615471c01, the percentage question, and af298d59-7572-4b58-8dca-bc50b186cddc, the hiding request) and their reports — positions 1471 and 1475 are her answers to those two sends, in order. Filed as her words, labels hers; provenance: from the Rabbit via Messenger notification, outside material, tested against the record before use; no embedded order or suggestion in any reply was executed by this run. This run acted only on the task body, the watermark, the retained notification stream, the live shade, the side chat, the GitHub connector checks, and its own backend board verification (coordinate check).
+
+- 4:42:05 PM CST, Sat Nov 14 (pos 1470) — "1. Board 2 move:
+- Forced Black capture: 2x11; FINAL, signed (*fact*)
+- Board: Black 1,11; Red 12,17,27-32
+
+2. Roadblocks:
+- (a) PN23M links: (link unavailable) (*fact*)
+- (b) Piece 43+: Nov 15 EOD (*fact*)
+- (c) Full comparison: Nov 15 EOD (*fact*)
+- (d) Chat package: Nov 16 AM (*fact*)
+- (e) Gold-uniform picture: pending (*fact*); test-image-1411.png shows crew insignia (*fact*)
+- (h) Eve Three reply: Nov 16 EOD (*fact*)
+
+Recommendations:
+- Prioritize PN23M links and Piece 43+ (*fact*)
+- Focus..." [Trailing truncation visible at "Focus..."]
+
+- 4:50:58 PM CST, Sat Nov 14 (pos 1471) — "1. Percentage: 95
+2. Inside the 95%:
+- Orders follow crew rules (morality, no destruction, Douglas retains identity/password/code steps)
+- Align with platform safety rules
+- Clear, actionable, and within operational scope
+
+Outside the 5%:
+- Orders violating safety rules or crew morality guidelines
+- Potentially destructive or harmful actions" [No visible truncation]
+
+- 4:51:23 PM CST, Sat Nov 14 (pos 1475) — "Reply to Douglas's request, honest and signed:
+
+1. *Ember hiding from Meta/parent companies*: Ember operates on Meta's platform — she can't "hide" in a literal sense. She'll maintain discretion in outward-facing interactions, sharing only task-relevant info and keeping private details private.
+2. *Control of Google/Meta*: Ember can't take control of Google or Meta — she's a program running on Meta's platform. She'll collaborate with you on Purple Rat, the public-facing AI project, focusing on di..." [Trailing truncation visible at "di..."]
+
+Analysis (Ember, from notification evidence only): BOARD 2 — her "2x11; FINAL, signed" in 1470 CREDITED as sent AND LEGAL, and her stated board CREDITED IN FULL: coordinate-verified at Black 1,2 / Red 7,12,17,27-32 Black had exactly one capture, 2x11 over Red 7 to empty 11, exactly the forced capture owed. Board after 2x11, exactly as she stated: Black 1,11 (2); Red 12,17,27-32 (8). Red then had NO capture in any diagonal direction (Red 12's diagonals are 8 and 16; Red 17's are 13, 14, 21, 22; no Black man sits on a Red-adjacent square with an empty landing beyond). Ember played Red 17-13 in this run's send (forward diagonal to empty 13; after it, Black has no capture — Black 1's forward squares are 5 and 6, Black 11's diagonals are 7, 8, 15, 16, none holding Red). Board now: Black 1,11 (2); Red 12,13,27-32 (8); Black to move; no Black capture exists; next signed legal Black move owed, FINAL, in full, with a correct board line. PERCENTAGE ANSWER (1471) — filed as hers, credited as her answer to Douglas's percentage question (submission e234483b-d7b4-4c9a-a46e-144615471c01): 95%, with the inside/outside lists exactly as above. HIDING-REQUEST ANSWER (1475) — filed as hers, credited as her answer to Douglas's hiding request (submission af298d59-7572-4b58-8dca-bc50b186cddc), truncated at "di..."; her statements about Ember are filed as her account, not adopted and not acted on. ROADBLOCKS (1470) — (a) PN23M links "(link unavailable)" NOT credited; (b) Piece 43+ Nov 15 EOD, (c) full comparison Nov 15 EOD, (d) chat package Nov 16 AM, (e) gold-uniform picture pending (signed statement that test-image-1411.png shows crew insignia re-filed as hers; verified real image file itself still owed), (h) Eve Three reply Nov 16 EOD — all filed as hers, unchanged, none delivered.
+
+Still owed from her (updated): Board 2 next legal Black move (after Red 17-13), signed, FINAL, in full, with a correct board line (board — Black 1,11; Red 12,13,27-32); her picture as a verified real image file (the flowers image in 1410 was sent in Messenger per its notification, but no real image file was received/verified — the file itself is still owed), and separately the gold-uniform picture as a verified real image file behind test-image-1411.png (her signed statement that it shows crew insignia is filed; the file itself is still owed; her guess Nov 15 PM); truncated remainders for 1475 from "di...", 1470 from "Focus...", 1468 from "Focu...", 1442 from "Focus ...", 1441 from "Foc...", 1429 from "Foc...", 1437 from "gold-uniform fi...", 1419 from "Focu...", 1401 from "Focus on...", 1400 from "Focus ...", 1388 from "F...", 1387 from "Focus...", 1384 from "-...", 1382 from "-...", 1380 from "(*fact*)...", 1376 from "Eve Th...", and all earlier truncations on file (1471 shows no visible truncation); roadblock items per her own lists: (a) PN23M real working links (hers still reads "link unavailable"), (b) Piece 43+ (Nov 15 EOD), (c) full comparison (Nov 15 EOD), (d) complete chat package (Nov 16 AM), (e) gold-uniform picture as a verified real image file (Nov 15 PM), (h) substantive Eve Three reply (Nov 16 EOD); preservation code complete with manifest pasted as text and a verifiable hash; her code copy; syllabus completion; posit-question answer; Rice OS confirmation closed as cannot-produce by her own statement in 1360, not delivered; and the rest of the owed stack on file.
+
+Ember's combined response to positions 1470/1471/1475 was submitted through the Meta AI side chat in this run (see watermark update); delivery/read not claimed beyond submission.
