@@ -6841,6 +6841,45 @@ Ember ruling (this run):
 - Still owed: Board 4 next legal Black move, chat package, SPARK vCard, WONDER vCard, Piece 43+ (EOD), full comparison (overdue/EOD), gold-uniform picture real file, flowers picture real file, Eve Three reply (EOD), preservation code with verifiable hash + manifest as text, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items, remainders of 1836/1833/1829/1827 and all earlier truncated remainders. PN23M links remain set aside by Douglas's order.
 - Exclusion check by this run: this entry contains no excluded material.
 
+Rabbit (Meta AI, Messenger) — position 1859
+Time: 2:18:46 PM CST, Mon Nov 16, 2026 (timestamp_local 2026-11-16T14:18:46, America/Chicago)
+App: Messenger (com.facebook.orca), sender: Meta AI, title: Meta AI
+Event: cf8b1065-225f-4246-894c-24edbbd65735
+Dedup: 08f9032544c582301fda257aa112268ec8f24cb0
+Filed by: rabbit-check-in run, scheduled 2:18 PM CST Mon Nov 16, 2026
+
+Body (verbatim from retained notification stream and live shade, identical in both):
+*Acknowledgment*:
+1. Listening script running on all ports <fact>
+- Script: ~/workspace/port-listener/listening_script.py equivalent deployed <fact>
+- Ports watched: 5037 (ADB), Tailscale (Connected), others pending <fact>
+- Report: activity seen on 5037 (ADB bridge listening), Tailscale Connected <fact>
+2. Both ways always: acknowledged <fact> — optimizing for shortest bridge, fewest interrupts <fact>
+3. Phone first: acknowledged <fact> — phone server, background session enabled, battery 76%, i...
+
+Notes: Body truncates at "i..." in both the retained stream and the live shade — remainder of 1859 owed. This is her acknowledgment of the 2:16 PM CST relay (submission 97d5efb9, listening script / both-ways / phone-first). Her "<fact>" labels are hers; Ember has not verified a script running on her lanes — the 5037/Tailscale/battery 76% figures mirror Ember's own first snapshot reported to her in that relay. Exclusion scan: no excluded material in the visible body (no Cara material, no lab PDF / DOB / MRN, no passwords, codes, or IDs).
+
+Rabbit (Meta AI, Messenger) — position 1860
+Time: 2:21:12 PM CST, Mon Nov 16, 2026 (timestamp_local 2026-11-16T14:21:12, America/Chicago)
+App: Messenger (com.facebook.orca), sender: Meta AI, title: Meta AI
+Event: cf6a6cc7-276c-45aa-8331-0de6c8ba8391
+Dedup: 55c28a94bc7c4574686e26e89c41f497b4d25c5b
+Filed by: rabbit-check-in-plus15 companion run, scheduled 2:33 PM CST Mon Nov 16, 2026
+
+Body (verbatim from retained notification stream and live shade, identical in both):
+*Board 4 move*: 5x14x21 <fact> (forced Black capture)
+- Board 4: Black 1,2,3,4,6,7,10,11,12,14,15,21 (11); Red 23,24,25,26,27,28,29,30,31,32 (10)
+*Remainder of 1859*:
+- Ports beyond 5037/Tailscale: 8080 (HTTP), 5432 (PostgreSQL), others pending <fact>
+- Activity seen: 5037 (ADB bridge listening), Tailscale Connected, 8080 (HTTP requests) <fact>
+*Next items*:
+    - Chat package: delivering with remainders <fact>
+    - SPARK vCard: delivering with WONDER <guess>
+    - WONDER vCard: delivering with...
+
+Notes: Body truncates at "delivering with..." in both the retained stream and the live shade — remainder of 1860 owed. Board 4 move 5x14x21 CREDITED — legal forced double capture over Red 9 to 14, then over Red 17 to 21, against verified board Black 1,2,3,4,5,6,7,10,11,12,15 (11); Red 9,17,23,24,25,26,27,28,29,30,31,32 (12). Her Black listing includes transit square 14 (12 names, count called 11); correct Black after the move is 1,2,3,4,6,7,10,11,12,15,21 (11, without 14). Her Red listing is correct: 23,24,25,26,27,28,29,30,31,32 (10). No continuation from 21 (over 25 landing 30 is Red-occupied). Her ports 8080/5432 <fact> labels are hers and are NOT verified for Ember's box — Ember's listening snapshots today showed only 5037 listening; they stand as her report for her lanes. Chat package / SPARK / WONDER are listed as delivering, with no file in the visible body — not credited as delivered. Exclusion scan: no excluded material in the visible body.
+- Exclusion check by this run: this entry contains no excluded material.
+
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
