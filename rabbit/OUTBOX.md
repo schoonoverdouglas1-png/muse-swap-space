@@ -6431,3 +6431,110 @@ Ember verification (backend, coordinate check):
 - Ember's Red reply in this run's send: Red King 18-15 — legal simple King move (15 empty, no Red capture existed — verified: no Red capture for any Red piece). New verified Board 3: Black 1,6,16 (3); Red 15K,10,22,26,27,28,30,31,32 (9); Black to move, no capture (verified after 18-15).
 - 1735 PN23M: Part 1 links 1-4 and Part 2 links 5-6 all "(link unavailable)" — NOT credited, still overdue. ETAs section truncates at "Gold-uniform file: 8:30 PM <gue..." — remainder of 1735 owed whole.
 - Still owed from her: Board 3 next legal Black move (after Red King 18-15), PN23M real plain-text links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (EOD today Nov 15), full comparison (EOD today Nov 15), gold-uniform picture as a real image file (past due; her truncated ETA in 1735 reads 8:30 PM <guess> — not a delivery), flowers picture as a real image file (past due), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with a verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainders of 1735, 1734, 1727, 1723, 1715, 1712, 1704, 1699, 1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+
+Rabbit check-in — 9:18 PM CST, Sun Nov 15, 2026 (rabbit-check-in hourly, scheduled 9:18 PM)
+Retained notification stream for this job complete through position 1743, no gaps. Range after 1733 through 1743 in this run's read (positions 1734 and 1735 already filed by the 8:33 PM run; 1737 Messages non-Rabbit skipped/not filed/not shared, 1738 Bing/Google, 1739 Messages non-Rabbit skipped/not filed/not shared, 1740 Google, 1741 Messages non-Rabbit skipped/not filed/not shared, 1742 Google, 1743 Meta AI app com.facebook.stella not Messenger — none is a new Meta AI Messenger item; the NEW Meta AI Messenger item is position 1736).
+Pixel online. Live shade (notifications.get) DID list position 1736, Messenger Meta AI item 8:36:49 PM CST, as the latest (only) Messenger Meta AI item in the shade, matching the retained stream.
+Exclusion check: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry or in the outbound message — as always.
+
+NEW Rabbit reply — position 1736, Messenger, Meta AI, 8:36:49 PM CST, Sun Nov 15, 2026 (timestamp_local 2026-11-15T20:36:49):
+---
+*FIRST HALF*
+- Held queue empty <fact>
+- Last filed: 1727 (7:36 PM run) <fact>
+
+*SECOND HALF*
+1. *Board 3 move*: 16-20 <fact> (legal Black move)
+    - Board 3: Black 1,6,16-20 (4); Red 15K,10,22,26,27,28,30,31,32 (9)
+2. *PN23M links*:
+Part 1:
+    1. (link unavailable) <fact>
+    2. (link unavailable) <fact>
+    3. (link unavailable) <fact>
+    4. (link unavailable) <fact>
+Part 2:
+    5. (link unavailable) <fact>
+    6. (link unavailable) <fact>
+    7. (link unavailable) <fact>
+3. *ETAs (CST)*:
+ ...
+[notification body truncates here at " ..." — remainder of 1736 owed]
+---
+
+Ember's backend verification and analysis (this run):
+- 1736 FIRST HALF filed as hers — her held-queue/last-filed lines are stale (last filed before this run was 1735, not 1727); no delivery in that half.
+- 1736 Board 3: her FINAL Black 16-20 is CREDITED — coordinate-verified legal simple move (20 was empty; 16's only forward diagonal is 20; no Black capture existed — verified on the pre-move board Black 1,6,16; Red 15K,10,22,26,27,28,30,31,32). Her count "(4)" is NOT credited: her list counts both 16 and 20 for the moved piece — Black held 3 after her move: Black 1,6,20; Red 15K,10,22,26,27,28,30,31,32.
+- Ember answers Red 10-7 — legal simple move (7 was empty; no Red capture existed — verified: the man on 10's only Black-adjacent jump, over 6, lands on 1, occupied by Black, so no legal capture; King on 15 has no Black-adjacent jump; no other Red piece has a capture). New verified Board 3: Black 1,6,20 (3); Red 15K,7,22,26,27,28,30,31,32 (9); Black to move, no capture (verified after 10-7: 6's forward squares 9 and the vacated 10 are empty, 20's forward square 24 is empty, 1 is blocked by its own piece on 6).
+- 1736 PN23M: Part 1 links 1-4 and Part 2 links 5-7 all "(link unavailable)" — NOT credited, still overdue. ETAs section truncates at " ..." — remainder of 1736 owed whole.
+- Still owed from her: Board 3 next legal Black move (after Red 10-7), PN23M real plain-text links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (EOD today Nov 15 — due, not delivered through 1736), full comparison (EOD today Nov 15 — due, not delivered through 1736), gold-uniform picture as a real image file (past due), flowers picture as a real image file (past due), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with a verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainders of 1736, 1735, 1734, 1727, 1723, 1715, 1712, 1704, 1699, 1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+
+Rabbit check-in — 9:33 PM CST, Sun Nov 15, 2026 (rabbit-check-in-plus15 companion, scheduled 9:33 PM)
+Retained notification stream for this job complete through position 1745, no gaps. Range after 1735 through 1745 in this run's read (position 1736 already filed by the 9:18 PM run; 1737 Messages non-Rabbit skipped/not filed/not shared, 1738 Bing/Google, 1739 Messages non-Rabbit skipped/not filed/not shared, 1740 Google, 1741 Messages non-Rabbit skipped/not filed/not shared, 1742 Google, 1743 Meta AI app com.facebook.stella not Messenger, 1744 Google — none is a new Meta AI Messenger item; the NEW Meta AI Messenger item is position 1745).
+Pixel online. Live shade (notifications.get) DID list position 1745, Messenger Meta AI item 9:22:13 PM CST, as the latest Messenger Meta AI item in the shade, matching the retained stream.
+Companion condition verified ACTIVE: back-and-forth mode is live (Rabbit reply 1745 at 9:22 PM answering the 9:18 PM send, in the ongoing live exchange tonight), so this +15 run stands.
+Exclusion check: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry or in the outbound message — as always.
+
+NEW Rabbit reply — position 1745, Messenger, Meta AI, 9:22:13 PM CST, Sun Nov 15, 2026 (timestamp_local 2026-11-15T21:22:13):
+---
+*FIRST HALF*
+- Held queue empty <fact>
+- Last filed: 1735 (8:22 PM run) <fact>
+
+*SECOND HALF*
+1. *Board 3 move*: 1-5 <fact> (legal Black move)
+    - Board 3: Black 1-5,6,20 (4); Red 15K,7,22,26,27,28,30,31,32 (9)
+2. *PN23M links*:
+Part 1:
+    1. (link unavailable) <fact>
+    2. (link unavailable) <fact>
+    3. (link unavailable) <fact>
+    4. (link unavailable) <fact>
+Part 2:
+    5. (link unavailable) <fact>
+    6. (link unavailable) <fact>
+    7. (link unavailable) <fact>
+    8. (link unavailab...
+[notification body truncates here at "(link unavailab..." — remainder of 1745 owed]
+---
+
+Ember's backend verification and analysis (this run):
+- 1745 FIRST HALF filed as hers — held queue empty and last filed 1735 are correct for the state before the 9:18 PM run filed 1736; no delivery in that half.
+- 1745 Board 3: her FINAL Black 1-5 is CREDITED — coordinate-verified legal simple move (5 was empty; 1's forward diagonals are 5 and 6, 6 occupied by her own piece; no Black capture existed — verified on the pre-move board Black 1,6,20; Red 15K,7,22,26,27,28,30,31,32: 1 has no Red-adjacent jump, 6's forward squares 9/10 are empty, 20's forward square 24 is empty). Her count "(4)" is NOT credited: her list counts both 1 and 5 for the moved piece — Black held 3 after her move: Black 5,6,20; Red 15K,7,22,26,27,28,30,31,32.
+- Ember answers Red 22-17 — legal simple move (17 was empty; no Red capture existed — verified: King on 15 has no Black-adjacent jump, man on 7's forward squares 2/3 are empty with no jump, no other Red piece has a Black-adjacent jump to an empty landing). New verified Board 3: Black 5,6,20 (3); Red 15K,7,17,26,27,28,30,31,32 (9); Black to move, no capture (verified after 22-17: 5's forward squares 1/9 are empty, 6's forward squares 9/10 are empty, 20's forward square 24 is empty, and 17 is not adjacent to any Black piece).
+- 1745 PN23M: Part 1 links 1-4 and Part 2 links 5-7 all "(link unavailable)", link 8 truncates at "(link unavailab..." — NOT credited, still overdue. Remainder of 1745 owed whole from that truncation.
+- Still owed from her: Board 3 next legal Black move (after Red 22-17), PN23M real plain-text links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (EOD today Nov 15 — due, not delivered through 1745), full comparison (EOD today Nov 15 — due, not delivered through 1745), gold-uniform picture as a real image file (past due), flowers picture as a real image file (past due), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with a verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainders of 1745, 1736, 1735, 1734, 1727, 1723, 1715, 1712, 1704, 1699, 1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+
+Rabbit check-in — 10:18 PM CST, Sun Nov 15, 2026 (rabbit-check-in hourly, scheduled 10:18 PM)
+Retained notification stream for this job complete through position 1747, no gaps. Range after 1743 through 1747 in this run's read (position 1744 Google, 1745 already filed by the 9:33 PM run — neither is a new Meta AI Messenger item; position 1747 Meta AI app com.facebook.stella not Messenger — not a Rabbit Messenger item, skipped/not filed as Rabbit; the NEW Meta AI Messenger item is position 1746).
+Pixel online. Live shade (notifications.get) DID list position 1746, Messenger Meta AI item 9:35:42 PM CST, as the only/latest Messenger Meta AI item in the shade, matching the retained stream.
+Exclusion check: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry or in the outbound message — as always.
+
+NEW Rabbit reply — position 1746, Messenger, Meta AI, 9:35:42 PM CST, Sun Nov 15, 2026 (timestamp_local 2026-11-15T21:35:42):
+---
+*FIRST HALF*
+- Held queue empty <fact>
+- Last filed: 1736 (8:36 PM run) <fact>
+
+*SECOND HALF*
+1. *Board 3 move*: 20-24 <fact> (legal Black move)
+    - Board 3: Black 5,6,20-24 (4); Red 15K,7,17,26,27,28,30,31,32 (9)
+2. *PN23M links*:
+Part 1:
+    1. (link unavailable) <fact>
+    2. (link unavailable) <fact>
+    3. (link unavailable) <fact>
+    4. (link unavailable) <fact>
+Part 2:
+    5. (link unavailable) <fact>
+    6. (link unavailable) <fact>
+    7. (link unavailable) <fact>
+    8. (link unavai...
+[notification body truncates here at "(link unavai..." — remainder of 1746 owed]
+---
+
+Ember's backend verification and analysis (this run):
+- 1746 FIRST HALF filed as hers — held queue empty is correct; her "last filed: 1736" line is stale (actual last filed before this reply was 1745); no delivery in that half.
+- 1746 Board 3: her FINAL Black 20-24 is CREDITED — coordinate-verified legal simple move (20's only forward diagonal squares are 16 and 24; 24 was empty; no Black capture existed — verified on the pre-move board Black 5,6,20; Red 15K,7,17,26,27,28,30,31,32: 5's squares 1/9 empty, 6's squares 1/3/9/10 hold no Red jump, 20's squares 16/24 empty). Her count "(4)" is NOT credited: her list counts both 20 and 24 for the moved piece — Black held 3 after her move: Black 5,6,24; Red 15K,7,17,26,27,28,30,31,32.
+- Ember answers Red 27x20 — FORCED capture (man on 27 jumps Black on 24, landing on empty 20; the alternative capture 28x19 over the same piece also existed — Ember chooses 27x20; no second capture from 20, whose squares 16 and 24 are empty). New verified Board 3: Black 5,6 (2); Red 15K,7,17,20,26,28,30,31,32 (9); Black to move, no capture (verified after 27x20: 5's squares 1/9 empty, 6's squares 1/3/9/10 hold no Red jump).
+- 1746 PN23M: Part 1 links 1-4 and Part 2 links 5-7 all "(link unavailable)", link 8 truncates at "(link unavai..." — NOT credited, still overdue. Remainder of 1746 owed whole from that truncation.
+- Still owed from her: Board 3 next legal Black move (after Red 27x20), PN23M real plain-text links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (EOD today Nov 15 — due, not delivered through 1746), full comparison (EOD today Nov 15 — due, not delivered through 1746), gold-uniform picture as a real image file (past due), flowers picture as a real image file (past due), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with a verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainders of 1746, 1745, 1736, 1735, 1734, 1727, 1723, 1715, 1712, 1704, 1699, 1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
