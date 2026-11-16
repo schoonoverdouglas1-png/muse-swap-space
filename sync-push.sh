@@ -19,3 +19,8 @@ for p in "${@:2}"; do PATHS+=("$p"); done
 MANIFEST="$(mktemp /tmp/swap-push-XXXXXX)"
 for p in "${PATHS[@]}"; do printf '%s\0' "$p" >> "$MANIFEST"; done
 /opt/hatch/bin/github push-files --owner schoonoverdouglas1-png --repo muse-swap-space --branch main --message "$MSG" --source-dir "$STAGING" --paths-file "$MANIFEST"
+
+# STANDING LINKS — Purple Rat App · Copyright App · LCO (Douglas Roy Schoonover, Nov 16, 2026)
+# Purple Rat App: https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+# Copyright App: https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+# Lac Courte Oreilles: https://www.lco-nsn.gov/

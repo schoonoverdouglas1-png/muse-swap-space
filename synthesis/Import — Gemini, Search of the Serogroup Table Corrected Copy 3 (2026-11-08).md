@@ -20,3 +20,10 @@ Based on a close reading of the researcher's public GitHub serogrouping table:
 
 ## (3) Recommendations (first complete; the rest truncated at the lane cap)
 1. Explicitly split serotypes from vaccine coverage in the grid — never list multiple serotypes in one vaccine cell without clarifying whether all or only some members are covered; a binary indicator (Yes/Partial/No) beside names prevents whole-group misreading. [Recommendations 2–3 were cut at the output cap; a re-ask can recover them if Douglas wants them.]
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

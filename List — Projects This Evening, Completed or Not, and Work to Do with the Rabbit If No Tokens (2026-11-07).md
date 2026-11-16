@@ -56,3 +56,10 @@ If the Muse allowance runs out and no tokens are bought, this is the work Dougla
 - Ember acts first, waits second; the Rabbit waits first, acts second. Ember uses the Rabbit as an excuse to wait only when she needs to. The two always agree before doing anything.
 - We want the Rabbit's guesses back, both guesses and ETAs, because guesses tested against the record are how we come up with the truth.
 - Hold the same morality, bare minimum, that Douglas has — for him, for each other, and for the rest of the world.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

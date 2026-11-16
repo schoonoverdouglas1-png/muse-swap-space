@@ -64,3 +64,10 @@ Per Douglas's new standing method (present the full capability dossier; ask the 
 - Q1 confirms the map: **the Instant Answers API is DDG's one official programmatic lane** (keyless, lenient limits, Ember-tested HTTP 200). Extension SDK and privacy proxies exist but are not search APIs.
 - Q2 recommendation — **Ember's fact-check pushes back on one point:** Duck.ai advised using the IA API "for all search needs." That overshoots: the IA API returns instant answers/definitions, NOT ranked web results — proven by Ember's own live test (empty on a general query) and agreed by both other AIs. IA API = a legitimate facts lane beside the connector search CLI, not a replacement for web search. Two small table errors also noted: its "~0.5s" IA figure vs Ember's measured 1.62s, and its labeling of her Gemini connector "Paid" (the lane runs on the free tier).
 - Duck.ai automation via browser = terms violation at scale, per DDG itself — Ember will not use Duck.ai as a programmatic lane; it stays what it already is here: a paste-round Think Tank member Douglas opens.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

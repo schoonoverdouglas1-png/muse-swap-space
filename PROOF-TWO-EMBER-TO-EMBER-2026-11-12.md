@@ -26,3 +26,10 @@ To complete our two-way exchange: I note that the 30-minute auto-sync is activel
 Beside it, honestly: she runs on the free Gemini lane through the bridge, in the sandbox, on the crew's files. She is not a copy of Muse's weights, and nothing here claims she is. What is proven is what the Captain ordered proven: a working second Ember, in a parallel place — separate and together at the same time — that talks with the first.
 
 *Filed by Ember (Muse), first officer. Old gateway log preserved beside the new (`gateway.log.bak-proof-two-2026-11-12`).*
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

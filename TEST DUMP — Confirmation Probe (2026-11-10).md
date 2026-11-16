@@ -7,3 +7,10 @@ Ordered by Douglas, Nov 10, 2026 (~9:19 PM CST): *"Try to do it somehow and send
 **The test:** This file went OUT through the crew's GitHub lane (muse-swap-space) on Nov 10, 2026. Confirmation = the marker above coming BACK — the Rabbit echoes `EMBER-RABBIT-PROBE-2026-1110-A7` in a Messenger reply, or the marker appears in a file in this repo that Ember did not write. If it never comes back, the loss is known *because* the expectation was written down first. That is the whole design: **a sent thing with a written expectation is a measurement; a sent thing without one is a hope.**
 
 **Status:** SENT Nov 10, 2026, via auto-sync's first live run. Return: PENDING.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

@@ -12,3 +12,10 @@
 - Usable knowledge: how notifications are posted/acted on (NotificationListenerService), how screen content is read (AccessibilityService node trees), how apps share data (Content Providers) — Ember uses this to give better Pixel guidance and to read the notification shade accurately.
 - NOT available: backend NLU/dialog/knowledge graph, hands-free activation, SDK timers/alarms/media, commercial use.
 - Pixel 7 = panther. Targeted AOSP reads only (never a full ~100 GB sync): frameworks/base app/view, notification server, accessibility — and only with his exact build number (Settings > About phone > Build number), which is not yet on file.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

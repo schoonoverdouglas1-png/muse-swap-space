@@ -37,3 +37,10 @@ At Douglas's "Make it so," Ember built **ember-bridge v0.1**: a stdlib-Python MC
 2. How does this setup compare to a typical agent setup (frameworks like LangChain/AutoGen, editor agents, hosted agents) — where is Ember ahead, where behind?
 3. React to the speeds: which number surprises you, and what would you change first?
 Answer with guesses labeled; Ember fact-checks every claim against the record before it is filed as more than your opinion.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

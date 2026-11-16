@@ -19,3 +19,10 @@
 - Item 5's honest limit: Ember's jobs run when Douglas asks, not on a grid schedule — "low-load windows" applies to her background sweeps (inventory, drills), which can be timed to his sleep hours, as tonight's work already is.
 - Item 8: the Xfce desktop toggle IS the idle discipline on the VM side (41 MB stack, off when unused); the inference side's idle cost is Meta's, not controllable from here — said plainly.
 - Ember's labeled extra: the single largest energy lever she controls is not any setting — it is NOT RE-DOING work. Every old-with-new file, every read-back-verified push, every cached page is energy already spent once and never spent again. The archive is an energy technology.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

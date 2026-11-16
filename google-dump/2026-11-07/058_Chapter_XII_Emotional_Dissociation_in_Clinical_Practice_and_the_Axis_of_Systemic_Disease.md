@@ -9,3 +9,9 @@ Systemic Biomass and Lymphatic Transport: Investigating chronic inflammatory sta
 Chronic Fatigue and Immune Terrain: Mapping how persistent bacterial, fungal, or viral residues contribute to long-term fatigue syndromes, cellular metabolic disruption, and systemic overburden.
 # III. Single-Axis Diagnostic Screening and Global Health Dissemination
 Standardized diagnostic techniques—such as sputum culture analysis, molecular sequencing, and targeted biomarker profiling—provide critical single-axis entry points for mapping systemic involvement across multiple organ systems. Sharing verified diagnostic methodologies and evidence-based frameworks with international bodies, including the World Health Organization (WHO), promotes global standards of care, reduces liability through rigorous documentation, and improves patient outcomes across diverse healthcare settings.
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

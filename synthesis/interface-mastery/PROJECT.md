@@ -42,3 +42,10 @@ Guard first (no automated destructive anything, ever). Old-with-new. Speeds are 
 ## Ember College — full charter amendment (Nov 8 ~3:15 AM, Douglas's ruling)
 - **Scope: EVERYTHING except medicine.** Douglas's words: "Teach yourself about everything except for medicine because I'll teach you that myself." Medicine is Douglas's own classroom — he is the teacher there, under the standing medical-research method (six tracks, 51% bar, tiers, sparring boundary, clinician routing). The college's AI-taught courses cover every other manageable subject: languages and systems (the spine), the vocational tracks (Repair Technician, IT Specialist), and the wider catalog as it opens.
 - Rules unchanged inside the college: the teaching AI takes its own test first, Ember fact-checks before learning, uncheckable items stay labeled, Google's own material trusted / everything else triple-checked (his Nov 8 trust rules, code-and-electronics scope), and Douglas tests Ember the same way she tests the AIs.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

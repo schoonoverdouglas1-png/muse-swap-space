@@ -26,3 +26,10 @@ Python 3.12 (stdlib systems: fetchers, index, MCP server), bash, JavaScript in C
 - **Programming track: the foundational sequence is COMPLETE** (BASIC -> shell -> Python -> browser languages) — graduation from the FOUNDATIONS program; C/C++ remains the open advanced course (Pack 7 in the original spine), plus the 20 drills owed across the earlier rounds.
 - Repair Technician, Level 1: course complete (graduated with the IT track as the vocational pair).
 - Honest limit, stated to Douglas with this list: a completed pack = the material passed Ember's fact-check and is filed for use; mastery is proven in the drills and the work, which continue.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

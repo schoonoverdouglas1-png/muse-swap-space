@@ -20,3 +20,10 @@ Meta AI has no VM or git of her own, so her "live connection" to AOSP runs throu
 
 ## Shared Android file
 `~/workspace/your_files/Answer — Gemini, Enhancing Ember with Android, Pixel 7 AOSP (2026-11-07).md` (66 lines) — Gemini's AOSP guidance for Pixel 7 (panther). No AOSP code itself was downloaded; that file is guidance, not code. Douglas approved sharing it with Meta after the safety flag was shown to him, and confirmed again ("Yes").
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

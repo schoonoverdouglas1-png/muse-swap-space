@@ -53,3 +53,9 @@ Narrative Momentum: Taking the key sets up the upstairs suite scene before he he
 The search leads the Investigator to the town archives, overseen by the reluctant Curator. Together, they uncover ancient maps, uncataloged ledger entries, and historical correspondence that contradict the officially accepted history of Oaklair's founding.
 ## Chapter 3: The Oaklair Protocol
 As long-held promises come due, the central conflict erupts. The Investigator must decipher the final piece of the mystery before local forces intervene to seal the historical record forever.
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

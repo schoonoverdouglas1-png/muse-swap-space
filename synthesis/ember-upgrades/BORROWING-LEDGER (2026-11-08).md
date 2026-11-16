@@ -61,3 +61,10 @@ Method (standing): one benchmark prompt for all (a small systems-reasoning quest
 - **CORRECTIONS to earlier ledger rows (fact-check discipline):** **SambaNova free tier is NOT publicly verifiable** — its public pricing shows pay-as-you-go only, credit details behind sign-in; combined with the Aug 2026 tester 402 report, SambaNova drops from "test early" to UNPROVEN — do not plan on it. **Cerebras is TRIAL-ONLY** ($5 one-time credit AFTER adding a payment method, 30-day expiry) — not a standing free lane. **Mistral's free plan is chat/Studio only; its API is paid** — remove as API candidate. **Hugging Face: Playground/Spaces/ZeroGPU free, but Inference Providers API gives free users NO credits** (pay-as-you-go) — API row downgraded. **Cohere: behind sign-in, unverifiable publicly.** **Replicate: limited free runs on select models, then billing required** (GitHub-only sign-in).
 - **CLOSED (paid-only, verified on their own pages):** Together AI ($15 minimum prepaid), Fireworks AI, Perplexity API, DeepInfra. **GitHub Models RETIRED — third confirmation** (GitHub's own docs + 404s).
 - Sign-up decisions remain Douglas's per candidate. Verified test order now: Groq -> OpenRouter -> NVIDIA NIM -> Cloudflare Workers AI.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

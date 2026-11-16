@@ -96,3 +96,9 @@ Within interconnected ecosystems and shared living spaces, biological terrains d
 # III. Universal Law of Medicine and Existence
 Synthesizing thermodynamic conservation, quantum field resonance, and ecological succession yields a unified universal law of medicine: biological existence is an inherently self-correcting thermodynamic continuum that continuously expends free energy to resolve entropic stagnation and maintain informational harmony across all scales.
 For clinical practitioners, this paradigm shifts the foundational view of clinical pathology. Disease states do not signify chaotic or malevolent destruction, but rather ordered, highly conserved attempts by the biological organism to recalibrate corrupted terrains, process bio-accumulated toxicity, and re-establish homeostatic equilibrium. Effective clinical intervention must therefore abandon unmitigated suppression in favor of intelligent terrain alignment—supporting the body's natural clearing sequences while harmonizing the host's thermodynamic, bioelectric, and structural matrix with universal law.
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

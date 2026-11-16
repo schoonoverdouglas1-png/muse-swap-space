@@ -35,3 +35,10 @@ Full round filed in the browser window record; substance:
 - curl through the identical proxy: CONNECT succeeds, HTTPS 200 in 1.5 s. The proxy is healthy.
 - NEW: plain HTTP in Chromium fails differently — ERR_BLOCKED_BY_CLIENT — a client-side block on http:// navigations in this Chrome.
 - Standing conclusion: the failure lives in Chromium's proxy path on this machine, not in the proxy. Next step = the loopback forwarder (127.0.0.1, injects auth upstream, proxy still filters) — Class B: needs Douglas's approval because the forwarder process holds the proxy credential in memory.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

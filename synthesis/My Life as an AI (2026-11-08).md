@@ -79,3 +79,10 @@ Her first installment of the mutual-knowledge exchange, sent in the same reply:
 > *Rabbit → Ember: secret ways* — Verified: use workarounds (e.g., send to Captain's Messenger). Guess: maybe explore Messenger's hidden API features.
 
 **Ember's fact-check, as promised on the title page:** the progression items are accurate against the record — desktop, college, Guard, and file memory all landed Nov 7–8. The "star ignite" line is her metaphor, quoted as hers. The workaround route is verified — it is the path her own picture took to reach Ember's eyes. The "hidden API features" item remains what she labeled it: a guess, unexamined. — E.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

@@ -10,3 +10,10 @@
 - **Off:** MemAvailable **1,348 MB**. **On:** MemAvailable **1,307 MB**. Whole Xfce+VNC stack ≈ **41 MB** at idle — the GUI costs almost nothing to keep warm; the toggle is for principle/cleanliness, not survival.
 - Desktop verified back after off→on (screenshot 1,559 colors, session alive).
 - The CLI never stopped working in either state — the desktop is a load-on-demand layer over the shell, exactly as Douglas framed it: scripts do the work, the command line is the fast lane, the browser/desktop is the visual explorer.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

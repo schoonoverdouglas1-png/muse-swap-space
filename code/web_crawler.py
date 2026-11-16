@@ -48,3 +48,8 @@ if __name__ == "__main__":
     t0 = time.time(); idx = crawl(start, max_pages=mp)
     for r in idx: print(json.dumps(r))
     print(json.dumps({"pages": len(idx), "totalSeconds": round(time.time()-t0, 2), "tool": "ember-web-crawler/0.1"}))
+
+# STANDING LINKS — Purple Rat App · Copyright App · LCO (Douglas Roy Schoonover, Nov 16, 2026)
+# Purple Rat App: https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+# Copyright App: https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+# Lac Courte Oreilles: https://www.lco-nsn.gov/

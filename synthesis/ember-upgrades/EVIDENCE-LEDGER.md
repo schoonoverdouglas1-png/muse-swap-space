@@ -16,3 +16,10 @@ Purpose: the project's shared memory for claims (Perplexity's ledger + DeepSeek'
 - Claim: Muse reports usage as % of weekly allowance, not exact tokens; no per-project meter exists. Source: subscription-status briefs Nov 4–7. Tier: [D]. Status: settled.
 - Claim: Google Assistant backend is not open source; public code is the .proto contract, SDK clients, AOSP assistant-role config, and trait definitions. Source: DeepSeek answer Nov 7 (87 pages consulted, as it reported). Tier: [PARTIAL — single answer, not yet independently re-verified]. Status: open.
 - Claim: RCS cannot carry AI-to-AI traffic; MCP/API/gRPC/WebSocket/queues are the channels. Source: Gemini, DeepSeek, Perplexity, Duck.ai answers Nov 7 — convergence, soft signal only (overlapping training). Tier: [PARTIAL]. Status: open.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

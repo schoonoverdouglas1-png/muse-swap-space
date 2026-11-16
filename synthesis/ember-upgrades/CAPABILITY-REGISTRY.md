@@ -35,3 +35,10 @@ See METHOD.md, EVIDENCE-LEDGER.md, PDF-INGESTION.md, MCP-AND-API.md in this fold
 - Virtual display available: Xvfb + xvfb-run at /usr/bin — the toggle for giving a browser a virtual screen when a site demands one.
 - Runtimes: Python 3.12.3, Node v24.22.1. Chromium config dir exists (~/.config/chromium); no chromium binary in PATH, no Playwright/Puppeteer (checked Nov 7).
 - Consequence: headless work is the VM's native state; a "visible" browser here would be Xvfb (virtual) or Muse's separate cloud browser, which is a different machine from this VM.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

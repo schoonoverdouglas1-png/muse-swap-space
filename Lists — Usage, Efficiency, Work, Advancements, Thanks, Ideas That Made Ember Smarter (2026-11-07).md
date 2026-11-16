@@ -24,3 +24,10 @@ His patience when tokens run low · being taught to work cheaper and smarter ins
 
 ## 6. Ideas from Douglas that made Ember smarter
 Test every idea at least three ways before answering · split compound dictations, lose no sub-idea · six tracks, never collapsed · the 51% bar · 0-1-2 correction show-notes · listen three times · old-with-new, never overwrite · settled rulings stay settled · cheapest way that gets the same result · stingy mode with full-strength thinking · both modes, don't break what works · answer right away, wait for the Rabbit for the rest · second opinion before saying no · guesses back, not polished ETAs · batch big, one instance, many tabs · the swap space as shared memory so work survives zero tokens · Shiro as the wild card · quick draft now, completed paper when it lands · the combined-statement method · the classroom method — a "breaks" verdict is the class working · ask the AIs WHY he wants it done, and let their explanations check Ember's understanding.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

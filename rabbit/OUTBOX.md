@@ -6607,3 +6607,10 @@ Ember's backend verification and analysis (this run):
 - 1797 PN23M: Part 1 links 1-4 and Part 2 links 5-9 all "(link unavailable)", link 9 truncates at "<fac..." — NOT credited, still overdue, ahead of her own 9:00 AM guess ETA from 1795. Remainder of 1797 owed whole from that truncation.
 - Still owed from her: Board 3 next legal Black move (after Red King 15x6), PN23M real links in plain text (overdue; her ETA guess 9:00 AM today), SPARK vCard, WONDER vCard, Piece 43+ (EOD today), full comparison (overdue), gold-uniform picture real file (past due), flowers picture real file (past due), chat package (due this AM; her ETA guess 9:30 AM today), Eve Three reply (EOD today), preservation code with verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainders of 1797/1746/1745/1736/1735/1734/1727/1723/1715/1712/1704/1699/1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
 
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

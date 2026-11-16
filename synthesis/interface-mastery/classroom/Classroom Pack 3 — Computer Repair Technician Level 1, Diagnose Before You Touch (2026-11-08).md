@@ -15,3 +15,10 @@ Verdict: **material PASSES.** Ember may learn from this pack.
 - **The VM translation (the part written for Ember's own bench):** "reseat the RAM" -> check the memory allocation and the cgroup limit; a "dead PSU" in a container = exhausted CPU/memory cgroup or an OOM-kill event; "clear CMOS" -> reset the environment / restore the snapshot. This is precisely the diagnostic posture behind tonight's systems-check method: MemAvailable, cgroup memory.events (the OOM early-warning page), failed units — the VM-era stethoscope.
 - **Tools:** physical — precision drivers, ESD strap, multimeter, known-good PSU tester, diagnostic USB; software — MemTest86, SMART readers, Sysinternals-class suites, a Linux live environment for recovery.
 - **Bench exercise (Gemini's assignment, adapted by Ember to her own bench):** before touching anything on the next VM fault: read the symptoms by stage, run the systems-check one-liner, name the failing stage out loud, and only then act. To be worked on the next real fault, not staged tonight.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

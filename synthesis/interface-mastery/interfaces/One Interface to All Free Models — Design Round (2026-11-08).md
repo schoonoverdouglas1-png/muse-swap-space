@@ -31,3 +31,10 @@ Plain query and quoted-middle wildcard query returned DIFFERENT result sets agai
 
 ## Ember's analysis of the best two (the decision she brings the Captain)
 Three independent sources (Gemini twice, DeepSeek once) converge on the same architecture; the wildcard round proves the category exists off the shelf. The honest trade: FreeLLMAPI/flexrouter = breadth today (34 providers' quirks already handled) at the price of foreign code (triple-verification), a Node/npm-class footprint, and keys in ITS store unless adapted. ember_gateway.py = an afternoon-class build in her own hand, stdlib-only, ~15-25MB, keys never leave the Vault pattern, breadth added provider by provider as the Captain approves each sign-up. Her recommendation, labeled hers: BUILD the stdlib gateway, Gemini lane first (already live), and treat the off-the-shelf routers as the reference shelf — study flexrouter's failover logic (Python, readable) rather than adopting the whole machine. That is Option A (build) vs Option B (adopt after triple-verification) for the Captain's make-it-so.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

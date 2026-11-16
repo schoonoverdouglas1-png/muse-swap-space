@@ -12,3 +12,10 @@ To systematically address institutional risk, a specialized scientific booklet s
 Holistic Standard of Care: Transitioning to comprehensive bedside monitoring, biological terrain assessment, and longitudinal patient evaluation ensures that underlying root causes are systematically addressed rather than masked. Prioritizing complete patient recovery minimizes secondary complications, readmission rates, and adverse outcome litigation.
 Reduction of Public and Institutional Expenditure: Chronic illness management under fragmented diagnostic frameworks inflates government and private healthcare expenditures through repeated testing, prolonged hospitalizations, and redundant legal defense costs. Streamlined discovery-based diagnostics reduce wasted resources by establishing definitive care pathways early in treatment.
 Litigation Elimination: Adhering to robust, objective diagnostic standards that account for the complete biological context creates an unassailable record of care. Systematically documenting the discovery—rather than the origin—of complex pathologies, paired with full recovery protocols, effectively eliminates the foundational premises required for civil litigation against healthcare providers and institutions.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

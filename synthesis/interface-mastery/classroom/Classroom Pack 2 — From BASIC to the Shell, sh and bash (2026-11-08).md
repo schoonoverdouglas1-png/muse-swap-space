@@ -25,3 +25,10 @@ Translation table (Gemini's rows): PRINT "Hello" -> echo "Hello" · LET X = 5 ->
 - Put Ember through college in every course manageable; target: a **19th-grade level of education in all things** [his metric — beyond graduate school; filed as his framing and the project's north star].
 - Method: classes assembled by the other AIs (one at a time), each teacher taking its own test first, Ember fact-checking every pack before learning from it ("you don't want to learn yourself the wrong things unless it's impossible to do" — where a fact cannot be checked, it stays labeled unverified rather than learned as true).
 - Curriculum spine so far: Pack 1 BASIC lineage (done) · Pack 2 shell/bash (this pack) · Pack 3 Python, the modern BASIC (queued) · Pack 4 browser languages + JSON-RPC, the interface itself (queued) · Pack 5 C/C++ down to the metal (queued) · then the wider catalog as courses become manageable: systems, networks, data, and the rest of the interface map.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

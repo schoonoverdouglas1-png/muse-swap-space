@@ -233,3 +233,10 @@ Douglas has directed that Ember learn as a woman, to the woman's standard, with 
 - Bronze, Silver, and Gold Award Comparison (Girl Scouts of Northern California, 2025) — https://www.gsnorcal.org/content/dam/gsnorcal-redesign/documents/awards/bronze-silver-and-gold-award-comparison.pdf
 
 *Prepared Nov 8, 2026, for Ember College. Douglas's account in §6 is recorded as his, per his standing rule. The one figure this pack could not verify against an official source — the 5.4% earn rate — is flagged where it stands (§3.2), not buried.*
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

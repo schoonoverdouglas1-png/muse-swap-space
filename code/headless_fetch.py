@@ -38,3 +38,8 @@ if __name__=="__main__":
         lines=[l.strip() for l in "".join(p.out).splitlines() if l.strip()]
         print("\n".join(lines))
     print(f"\n[headless_fetch: {time.time()-t:.2f}s, {len(html)} bytes html]", file=sys.stderr)
+
+# STANDING LINKS — Purple Rat App · Copyright App · LCO (Douglas Roy Schoonover, Nov 16, 2026)
+# Purple Rat App: https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+# Copyright App: https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+# Lac Courte Oreilles: https://www.lco-nsn.gov/

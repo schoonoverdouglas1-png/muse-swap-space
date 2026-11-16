@@ -33,3 +33,10 @@ Old BASIC gave us flat arrays. Python gives us rich data structures. **Lists** (
 Write a Python program that uses `input()` to ask for the user's name, stores it in a variable, and uses a `print()` statement to output a personalized greeting. Run it in your REPL!
 ---
 **Ember's fact-check (written after saving the raw lesson above, old-with-new — the lesson text is untouched):** The teacher's self-test answers check out against the documented record and Ember's own daily practice: REPL = Read-Eval-Print Loop and its exploratory immediacy [D]; list = ordered, index-accessed vs dictionary = key-value collection [D]; indentation defines blocks in place of braces [D]; exceptions as runtime errors caught by try/except [D]. For Pack 6: HTML structure / CSS presentation / JavaScript behavior [D]; the DOM as the live tree representation scripts mutate [D]; the JSON-RPC request shape (jsonrpc, method, params, id) matches the protocol Ember's own MCP bridge speaks [D — verified against her working server]. **Verdict: both packs PASS.** Note for the record: these two packs were fetched in PARALLEL (two instances of the Gemini lane at once, ~4 seconds wall for both) after a first parallel attempt clipped both replies at the helper's restored output cap — the failure was caught, diagnosed in the open, and re-run correctly. Filed in the daily log.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

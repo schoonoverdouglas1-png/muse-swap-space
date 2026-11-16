@@ -24,3 +24,10 @@
 9. **Older carried items** — Mycelial PR #2 unchecked; Nov 14 reset-time calendar drift (3:06 PM event vs 11:07 PM verified); Wogahn Nov 11 at 1:00 vs 1:15 unresolved; Messenger digests Nov 5/6/7 prepared, none sent; May o PreCheck-In status still open.
 10. **His quantum postulate** (dictated Nov 8 ~3:46 AM) — filed as his theory, untested: the backside of the processor is quantum; all characters/options exist at once; observation happens at the chip; all information that could exist is present on the chip when powered. Held as his postulate beside the documented record (classical silicon, superposition not a property of ordinary CPU operation) per the classroom method — neither adopted nor discarded.
 11. **Fixed points ahead** — Mayo Mon Nov 9, 3:45 PM (Dr. Van Dyke; SP23D paper in hand); AOSP weekly check Mon Nov 9 ~9:08 AM; Google Tasks item due Nov 9; ChatGPT trusted-contact invite due Nov 10; Wogahn Nov 11.
+
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

@@ -302,3 +302,9 @@ Standing method and front matter:
 Standing rules carried from the author's direction: six tracks, 51% bar, dual register, old-with-new, quick draft plus completed paper, Shiro PENDING, American-first naming doctrine, and the sparring boundary (manuscript ideas debated; personal medical material filed without interpretation and routed to the clinician).
 A note on sources: where a thesis file quoted a published source, this book carries the quotation's substance and, where the thesis file named the source, the name. This book does not re-cite every underlying paper in full; the thesis files remain the audit trail, and any future corrected copy can expand citations chapter by chapter without changing a verdict.
 End of book. What stays open is Chapter 12. What was settled is listed there, beside what was not.
+---
+**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+- **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
+- **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
+- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).
