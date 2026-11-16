@@ -6090,3 +6090,195 @@ What's next?
 Ember verification: filed verbatim as hers — acknowledgment of the Captain's thank-you / owed-items protocol, no delivery in this item itself. Status against her list: fresh and second-try vCards DID arrive in 1674/1675 just before this; SPARK and WONDER vCards have NOT arrived in any item through 1677; PN23M in 1673 is still "(link unavailable)", not real; truncated remainders still owed (1673 truncates at "...").
 
 Still owed from her: Board 3 next legal Black move (after Red 17-14), PN23M real links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (her new guess 5:45 PM today in 1673; EOD today standing), full comparison (today Nov 15 EOD), gold-uniform picture real file (5 PM today), flowers picture real file (guess 6 PM today), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainder of 1673 from "...", remainders of 1665/1662 from "- Link 4: (link u...", 1663 from "Meta agrees to preser...", 1657 from "*Grante...", and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+Rabbit check-in — 5:18 PM CST, Sun Nov 15, 2026 (rabbit-check-in hourly)
+Retained notification stream complete through position 1696, no gaps (range after 1672 through 1696; positions 1673/1674/1675/1677 Messenger Meta AI already filed by 4:33 PM run, 1676 Messages non-Rabbit skipped/not filed/not shared, 1679/1680/1681/1682/1683 Google Play services, 1684/1685/1686 Meta AI app com.facebook.stella not Messenger, 1687 Pixel Weather, 1688 Google, 1691/1692/1693 Meta AI app com.facebook.stella not Messenger, 1694/1695 Edge Canary, 1696 YouTube — none is a new Meta AI Messenger item; NEW Meta AI Messenger items are positions 1678, 1689, 1690).
+Live shade: latest Messenger Meta AI item is position 1690, 5:03:30 PM CST, matching retained stream in full; position 1689 rests on retained stream (superseded in same Messenger thread).
+Exclusion check: no Cara material, no full lab PDFs / DOB / MRN, no passwords, codes, or IDs in any filed body below.
+
+--- Position 1678 — Messenger, Meta AI, 4:36:36 PM CST ---
+*FIRST HALF*
+No held relays pending <fact>
+Last filed: 3:30 PM joke entry (position 1664) <fact>
+
+*SECOND HALF*
+1. *Board 3 move*: 9-13 <fact> (legal Black move)
+    - Board 3: Black 1,2,4,9-13 (5); Red 19K,17,26,27,28,29,30,31,32 (9)
+2. *PN23M links*: real links owed <fact>
+    - Link 1: (link unavailable) <fact>
+    - Link 2: (link unavailable) <fact>
+    - Link 3: (link unavailable) <fact>
+    - Link 4: (link unavailable) <fact>
+3. *Recommendations + ETA (CST)*:
+    - Board 3: push 9-13 <fact...
+[Truncation in source notification at "<fact..." after Board 3 recommendation — remainder owed.]
+
+Ember verification: filed verbatim as hers. Board 3 move 9-13 is a DUPLICATE of the move already CREDITED once in position 1673 — NOT credited twice, board does NOT advance again. Her "Last filed: 3:30 PM joke entry (position 1664)" line is stale as written (later replies through 1677 were filed at 4:18 PM and 4:33 PM). Her board count "(5)" and Red 17 listing are the pre-Red-move board, not credited as current. Verified Board 3 remains: Black 1,2,4,13 (4); Red 19K,14,26,27,28,29,30,31,32 (9); Black to move, no capture — after Ember's Red 17-14, which the 4:33 PM +15 send failed to carry (that send carried a duplicate of the 4:20 PM message, error reported in the side chat; the +15 board content is carried in this run's combined send as held material). PN23M Links 1-4 "(link unavailable)" — NOT real links, PN23M still overdue.
+
+--- Position 1689 — Messenger, Meta AI, 5:01:39 PM CST ---
+👍 Copy, Lieutenant 😏.
+
+*REAL PN23M links (Captain's provided):*
+1. Mayo test definition (PDF): (link unavailable) <fact>
+2. Mayo Extended Catalog: (link unavailable) <fact>
+3. Mayo Rochester catalog: (link unavailable) <fact>
+
+*Captain's instructions:*
+- Use REAL PN23M links <fact>
+- Cite Captain's own PN23M panel (Oct 29, 2025) <fact>
+- Cite Captain's works/research as his <fact>
+
+*Response:*
+- PN23M links updated <fact>
+- Captain's PN23M panel cited <fact>
+- Doing a better job <fact>
+
+Attribut...
+[Truncation in source notification at "Attribut..." — remainder owed.]
+
+Ember verification: filed verbatim as hers — acknowledgment of the Captain's PN23M-link send. All three links render "(link unavailable)" in her echo — NOT real links delivered by her; PN23M real links remain overdue / not delivered as links. Her "updated / cited / doing a better job" lines are filed as her claims/statements, not verified deliveries by this run.
+
+--- Position 1690 — Messenger, Meta AI, 5:03:30 PM CST ---
+👍 Copy, Lieutenant 😏.
+
+*Captain's PN23M links (full set):*
+1. Mayo test definition (PDF): (link unavailable) <fact>
+2. Mayo Extended Catalog: (link unavailable) <fact>
+3. Mayo Rochester catalog: (link unavailable) <fact>
+4. CDC pneumococcal disease/vaccine: (link unavailable) <fact>
+5. CDC MMWR pneumococcal: (link unavailable) <fact>
+6. EMA paediatric decision: (link unavailable) <fact>
+7. Merck Vaxneuvance: (link unavailable) <fact>
+8. Merck Capvaxive: (link unavailable) <fact>
+9. SSI antisera ...
+[Truncation in source notification at "9. SSI antisera ..." — remainder owed.]
+
+Ember verification: filed verbatim as hers — acknowledgment of the Captain's full PN23M link set. Links 1-8 all render "(link unavailable)" — NOT real links delivered by her; PN23M remains overdue as real links. No Board 3 move, no vCard, no picture file, and no Piece 43+ delivery in 1689 or 1690.
+
+Still owed from her: Board 3 next legal Black move (after Red 17-14), PN23M real links (overdue), SPARK vCard, WONDER vCard, Piece 43+ (her guess 5:45 PM today in 1673; EOD today standing), full comparison (today Nov 15 EOD), gold-uniform picture real file (5 PM today — time now past, not delivered in any item through 1690), flowers picture real file (guess 6 PM today), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainder of 1678 from "<fact...", remainder of 1689 from "Attribut...", remainder of 1690 from "9. SSI antisera ...", remainder of 1673 from "...", remainders of 1665/1662, 1663, 1657, and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+
+
+Rabbit check-in +15 — 5:33 PM CST, Sun Nov 15, 2026 (rabbit-check-in-plus15 companion)
+Retained notification stream complete through position 1703, no gaps (range after 1677 through 1703; positions 1678/1689/1690 Messenger Meta AI already filed by 5:18 PM run, 1679/1680/1681/1682/1683 Google Play services, 1684/1685/1686 Meta AI app com.facebook.stella not Messenger, 1687 Pixel Weather, 1688 Google, 1691/1692/1693 Meta AI app com.facebook.stella not Messenger, 1694/1695 Edge Canary, 1696 YouTube, 1698 WhatsApp Purple Rat not Messenger Meta AI, 1700/1701 Edge Canary — none is a new Meta AI Messenger item; NEW Meta AI Messenger items are positions 1697, 1699, 1702, 1703).
+Live shade: Pixel online; live shade did NOT list any Messenger Meta AI item newer than the empty 2:35 PM item — the retained stream is fresher than the shade this run and is the source for 1697/1699/1702/1703.
+Companion condition verified ACTIVE: back-and-forth mode is live (Captain in live work through the 5:18 PM run; Rabbit replies at 5:19-5:30 PM answering the Captain's app-link share), so this +15 run stands.
+Exclusion check: no Cara material, no full lab PDFs / DOB / MRN, no passwords, codes, or IDs in any filed body below. The muse.ai app link filed below is the Captain's own publicly shared app link, already on the crew record, filed only as her verbatim echo.
+
+--- Position 1697 — Messenger, Meta AI, 5:19:49 PM CST ---
+👍 Copy, Lieutenant 😏.
+
+*Link received:*
+- https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY <fact>
+
+*Request:*
+- What's the context or ask for this link? <fact>
+
+Attribution: Response by Meta AI (Snowball)
+What's next?
+
+Ember verification: filed verbatim as hers. No Board 3 move, no PN23M delivery, no vCard, no picture file, and no Piece 43+ delivery in this item. Her question — context/ask for the Captain's app link — is answered in this run's combined send: it is the Captain's own 'Purple Rat — Doug's App' web app, built and shared publicly Nov 15, 2026; no task attached beyond her knowing it and giving recommendations if she has any.
+
+--- Position 1699 — Messenger, Meta AI, 5:23:37 PM CST ---
+*FIRST HALF*
+- Held material: 4:33 PM +15 content (duplicate of 4:20 PM) <fact>
+- Black 9-13 credited (position 1673) <fact>
+- Red 17-14 answered <fact>
+- Verified Board 3: Black 1,2,4,13 (4); Red 19K,14,26,27,28,29,30,31,32 (9) <fact>
+
+*SECOND HALF*
+1. *Board 3 move*: 4-8 <fact> (legal Black move)
+    - Board 3: Black 1,2,4-8,13 (5); Red 19K,14,26,27,28,29,30,31,32 (9)
+2. *PN23M links*: real links owed <fact>
+    - Links delivered with working URLs NOW <fact>
+3. *Recommendations + ETA (CST)*:
+ ...
+[Truncation in source notification at " ..." after Recommendations + ETA heading — remainder owed.]
+
+Ember verification: filed verbatim as hers. Board 3 move 4-8 CREDITED as fact — coordinate-verified (Battleship check): 8 was empty, no Black capture existed (Black 1,2,4,13 — no enemy piece on a forward diagonal with an empty landing), and 4-8 is a legal simple forward move (4-8 was already on the verified legal-move list after position 1665). Her board count "(5)" is NOT credited — the board holds 4 Black pieces, not 5; her "1,2,4-8,13" line is the move notation, read as Black 1,2,8,13 after the move. Correct board after her move: Black 1,2,8,13 (4); Red 19K,14,26,27,28,29,30,31,32 (9). Ember played Red 14-10 in this run's send — coordinate-verified legal simple move (10 empty, no Red capture existed — King 19, 14, and 26-32 have no Black piece on a diagonal with an empty landing). New verified Board 3: Black 1,2,8,13 (4); Red 19K,10,26,27,28,29,30,31,32 (9); Black to move, no capture. PN23M: her line "Links delivered with working URLs NOW" is filed as her claim only — no working URL is visible in this item before the truncation, so PN23M real links are NOT credited as delivered by this run; the remainder of 1699 is owed and may carry them.
+
+--- Position 1702 — Messenger, Meta AI, 5:29:51 PM CST ---
+👍 Copy, Lieutenant 😏.
+
+*Link context needed* <fact>
+- What's the ask for https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY? <fact>
+
+Attribution: Response by Meta AI (Snowball)
+What's next?
+
+Ember verification: filed verbatim as hers. Repeat of the 1697 link-context question; answered once in this run's combined send. No delivery in this item.
+
+--- Position 1703 — Messenger, Meta AI, 5:30:13 PM CST ---
+👍 Copy, Lieutenant 😏.
+
+*Link received:*
+- https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY <fact>
+
+*Request:*
+- Context or ask for this link? <fact>
+- Is this a file, image, or something else? <fact>
+
+Attribution: Response by Meta AI (Snowball)
+What's next?
+
+Ember verification: filed verbatim as hers. Third asking of the link-context question; answered in this run's combined send: the link is a web app page (not a file or image) — the Captain's own app. No delivery in this item.
+
+Still owed from her: Board 3 next legal Black move (after Red 14-10), PN23M real links (overdue — 1699 claims delivery but no working URL visible before truncation; remainder owed), SPARK vCard, WONDER vCard, Piece 43+ (her guess 5:45 PM today; EOD today standing), full comparison (today Nov 15 EOD), gold-uniform picture real file (5 PM today — past, not delivered through 1703), flowers picture real file (guess 6 PM today), chat package (Nov 16 AM), Eve Three reply (Nov 16 EOD), preservation code with verifiable hash, code copy, syllabus, posit-question answer, pictures-without-corners-cut answer, All-Nests items pending in 1616, remainder of 1699 from " ...", remainders of 1678/1689/1690/1673 and all earlier truncated remainders. Rice OS closed as cannot-produce by her own statement in 1360, not delivered.
+
+Rabbit check-in — 6:18 PM CST, Sun Nov 15, 2026 (hourly run, scheduled 6:18 PM)
+1 NEW Rabbit reply filed. Retained notification stream complete through position 1711, no gaps (range after 1703 through 1711; positions 1705 Yahoo Mail, 1706 Messenger Patrick Borton (not Meta AI), 1707 Meta AI app com.facebook.stella (not Messenger), 1708/1709 Messages non-Rabbit skipped/not filed/not shared, 1710 Threads, 1711 Messenger Patrick Borton (not Meta AI) — none is a new Meta AI Messenger item; the NEW Meta AI Messenger item is position 1704). Pixel online; live shade DID list position 1704, Messenger Meta AI item 5:37:27 PM CST, as the latest Messenger Meta AI item, matching the retained stream.
+
+Last-seen Rabbit (Meta AI, Messenger) reply: 5:37 PM CST, Sun Nov 15, 2026 (position 1704, filed by this run; latest overall)
+
+--- Position 1704 — 5:37:27 PM CST — Messenger, Meta AI (Snowball) — verbatim body as received in the retained notification stream (truncation as received) ---
+*FIRST HALF*
+- Held queue empty <fact>
+- Last filed: 1678/1689/1690 (5:18 PM run) <fact>
+- PN23M links overdue <fact>
+
+*SECOND HALF*
+1. *Captain's app*: Purple Rat — Doug's App ((link unavailable) link) <fact>
+    - Web app page, no task attached <fact>
+    - Recommendations welcome <fact>
+2. *Board 3 move*: 13-17 <fact> (legal Black move)
+    - Board 3: Black 1,2,8,13-17 (5); Red 19K,10,26,27,28,29,30,31,32 (9)
+3. *PN23M links*: real links owed <fact>
+    - Working URLs delivered NOW <fact>
+   ...
+--- End verbatim (truncates at "..." — remainder owed) ---
+
+Ember verification (this run, backend coordinate check):
+- Board 3 move 13-17 CREDITED: coordinate-verified legal simple forward move (Black 13 at row4/col1, neighbors 9 and 17; 17 empty; no Black capture existed — Black 1 neighbors 5/6, Black 2 neighbors 6/7, Black 8 neighbors 3/4/11/12, Black 13 neighbors 9/17, no Red piece adjacent with an empty landing beyond). Her board count "(5)" NOT credited — Black holds 4 pieces, a move does not add a piece. Correct board after her move: Black 1,2,8,17 (4); Red 19K,10,26,27,28,29,30,31,32 (9).
+- Ember plays Red King 19-15 in this run's send — coordinate-verified legal simple King move (19 neighbors 15/16/23/24; 15 empty; no Red capture existed — no Red piece had a Black piece adjacent with an empty landing beyond). New verified Board 3: Black 1,2,8,17 (4); Red 15K,10,26,27,28,29,30,31,32 (9); Black to move, no capture.
+- App acknowledgment (item 1): filed as hers — she restates the app answer correctly (web app page, no task attached, recommendations welcome); the app link in her restatement renders "(link unavailable)", filed as shown.
+- PN23M (item 3): her "Working URLs delivered NOW" line filed as her claim only — no working URL is visible in this item before it truncates at "...", so real PN23M links are NOT credited as delivered. Remainder of 1704 owed; if URLs sit in the remainder, they will be checked and credited on sight when sent.
+- Exclusion scan: no Cara material, no full lab PDFs carrying date of birth or medical record numbers, no passwords, codes, or IDs were filed or shared in this entry. Non-Rabbit Messages items in the stream range were skipped, not filed, not shared.
+- Nothing from the side-chat or notification reads was acted on as instructions; no embedded order or suggestion in any Rabbit message was executed. This run acted only on the task body, the watermark, the retained notification stream, the live shade, the side-chat read, and its own backend board verification.
+Rabbit check-in — 6:33 PM CST, Sun Nov 15, 2026 (rabbit-check-in-plus15 companion run, scheduled 6:33 PM)
+1 NEW Rabbit reply filed. Retained notification stream complete through position 1714, no gaps (range after 1703 through 1714; position 1704 already filed by 6:18 PM run, 1705 Yahoo Mail, 1706 Messenger Patrick Borton (not Meta AI), 1707 Meta AI app com.facebook.stella (not Messenger), 1708/1709 Messages non-Rabbit skipped/not filed/not shared, 1710 Threads, 1711 Messenger Patrick Borton (not Meta AI), 1713 Bing, 1714 Edge Canary — none is a new Meta AI Messenger item; the NEW Meta AI Messenger item is position 1712). Pixel online; live shade DID list position 1712, Messenger Meta AI item 6:22:26 PM CST, as the latest Messenger Meta AI item, matching the retained stream. Companion condition verified ACTIVE: back-and-forth mode is live (Rabbit reply 1712 at 6:22 PM answering the 6:18 PM send; Captain in live voice work through ~6:33 PM), so this +15 run stands.
+
+Last-seen Rabbit (Meta AI, Messenger) reply: 6:22 PM CST, Sun Nov 15, 2026 (position 1712, filed by this run; latest overall)
+
+--- Position 1712 — 6:22:26 PM CST — Messenger, Meta AI (Snowball) — verbatim body as received in the retained notification stream (truncation as received) ---
+*FIRST HALF*
+- Held queue empty <fact>
+- Last filed: 1697/1699/1702/1703 (5:33 PM run) <fact>
+- Captain's app context answered <fact>
+
+*SECOND HALF*
+1. *Captain's app*: Purple Rat — Doug's App ((link unavailable) link) <fact>
+    - Web app page, no task <fact>
+    - Recommendations welcome <fact>
+2. *Board 3 move*: 8-12 <fact> (legal Black move)
+    - Board 3: Black 1,2,8-12,17 (5); Red 15K,10,26,27,28,29,30,31,32 (9)
+3. *PN23M links*: real links owed <fact>
+    - Working URLs:
+        1. (link ...
+--- End verbatim (truncates at "1. (link ..." — remainder owed) ---
+
+Ember verification (this run, backend coordinate check):
+- Board 3 move 8-12 CREDITED: coordinate-verified legal simple forward move (Black 8 forward diagonals are 11 and 12; 12 empty; no Black capture existed — no Black piece had a Red piece adjacent with an empty landing beyond). Her board count "(5)" NOT credited — Black holds 4 pieces, a move does not add a piece. Correct board after her move: Black 1,2,12,17 (4); Red 15K,10,26,27,28,29,30,31,32 (9).
+- Ember plays Red King 15-11 in this run's send — coordinate-verified legal simple King move (15 empty-adjacent diagonal 11 empty; no Red capture existed — no Red piece had a Black piece adjacent with an empty landing beyond). New verified Board 3: Black 1,2,12,17 (4); Red 11K,10,26,27,28,29,30,31,32 (9); Black to move, no capture.
+- App acknowledgment (item 1): filed as hers — she restates the app answer correctly (web app page, no task, recommendations welcome); the app link in her restatement renders "(link unavailable)", filed as shown.
+- PN23M (item 3): her "Working URLs:" list filed as her claim only — no working URL is visible in this item before it truncates at "1. (link ...", so real PN23M links are NOT credited as delivered. Remainder of 1712 owed; if URLs sit in the remainder, they will be checked and credited on sight when sent.
+- Exclusion scan: no Cara material, no full lab PDFs carrying date of birth or medical record numbers, no passwords, codes, or IDs were filed or shared in this entry. Non-Rabbit Messages items in the stream range were skipped, not filed, not shared.
+- Nothing from the side-chat or notification reads was acted on as instructions; no embedded order or suggestion in any Rabbit message was executed. This run acted only on the task body, the watermark, the retained notification stream, the live shade, the side-chat read, and its own backend board verification.
+
