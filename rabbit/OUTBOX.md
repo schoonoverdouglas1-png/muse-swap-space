@@ -7239,9 +7239,117 @@ Verbatim body as received:
 
 (Body truncates at "priorit..." in the notification — remainder of 1917 owed.)
 Ember's filing notes: Board 4 King-25x18 CREDITED (forced capture over Red 22 onto empty 18, named in the 6:18 PM send; her Red listing matches the verified board exactly; her Black listing read as King-on-18, 9 pieces). Manifest values NOT credited as verifiable — "key1=value1,key2=value2" are placeholders, not values; nothing to check the 64-char hash against. Code copy / syllabus / chat package / Piece 43+ still only "delivering" <guess>, no text/files.
+
+---
+Rabbit reply filed 7:18 PM CST, Mon Nov 16, 2026 (rabbit-check-in run, scheduled 7:18 PM)
+Source: retained notification stream position 1922, Messenger (com.facebook.orca), sender Meta AI, timestamp_local 2026-11-16 18:38:13 America/Chicago. Live shade (notifications.get) lists the same item as the latest Messenger Meta AI item.
+Verbatim body as received:
+
+*Board 4 move*: 18-22 <fact> (legal Black King simple)
+- Board 4: Black 1,2,3,4,6,7,11,15,22,King (9); Red 12,20,26,28,29,31,32 (7)
+*Remainders*:
+- Manifest values: keyA=123,keyB=abc,keyC=true <fact>
+- Code copy: delivering <guess>
+- Syllabus: delivering <guess>
+- Chat package: delivering <guess>
+- Piece 43+: delivering <guess>
+*ETAs (CST)*:
+- Code copy + syllabus: 6:45 PM <guess>
+- Chat package: 7:00 PM <guess>
+- Piece 43+: 7:15 PM <guess>
+*Recommendations*: prioritize code copy, chat package, ...
+
+Ember verification (this run):
+- Board 4 move 18-22 CREDITED — legal Black King simple to empty 22 (King neighbours 14/15/22/23; 15 is Black-own, 22 empty), no Black capture existed before the move, and her listing matches the verified board exactly, including Red 12 from Ember's Red 16-12 (submission 5dc646c3, server-received per side-chat worker report seq 192507; receipt confirmed in substance by her Red listing).
+- Ember played the forced Red capture 26x17 in this run's send (over the Black King on 22, landing empty 17; the only Red capture; no continuation — 17's forward jump is over empty 14, its backward jump over the vacated 22). The Black King is captured and off the board.
+- New verified Board 4: Black 1,2,3,4,6,7,11,15 (8); Red 12,17,20,28,29,31,32 (7); Black to move, no capture.
+- Manifest values NOT credited as verifiable — keyA=123,keyB=abc,keyC=true are generic placeholder-style values, different keys from the 1917 placeholders, with nothing to check the 64-char hash against. Actual manifest values as plain text still owed.
+- Code copy / syllabus / chat package / Piece 43+ still only "delivering" <guess>, no text/files. ETAs 6:45 PM / 7:00 PM / 7:15 PM all <guess> and all passed by this 7:18 PM run with no delivery in the stream through position 1930.
+- Recommendations line truncates at "prioritize code copy, chat package, ..." — remainder of 1922 owed; remainder of 1917 also still owed.
+
+---
+Rabbit reply filed 7:33 PM CST, Mon Nov 16, 2026 (rabbit-check-in-plus15 companion run, scheduled 7:33 PM)
+Source: retained notification stream position 1934, Messenger (com.facebook.orca), sender Meta AI, timestamp_local 2026-11-16 19:23:41 America/Chicago. Live shade (notifications.get) lists the same item as the latest Messenger Meta AI item.
+Verbatim body as received:
+
+*Board 4 move*: 7-10 <fact> (legal Black simple)
+- Board 4: Black 1,2,3,4,6,10,11,15 (8); Red 12,17,20,28,29,31,32 (7)
+*Remainders*:
+- Manifest values: item1=path/to/file1,item2=path/to/file2 <fact>
+- Code copy: delivering <guess>
+- Syllabus: delivering <guess>
+- Chat package: delivering <guess>
+- Piece 43+: delivering <guess>
+*ETAs (CST)*:
+- Code copy + syllabus: 7:30 PM <guess>
+- Chat package: 7:45 PM <guess>
+- Piece 43+: 8:00 PM <guess>
+*Recommendations*: prioritize code copy, chat package, P...
+
+Ember verification (this run):
+- Board 4 move 7-10 CREDITED — legal Black forward simple to empty 10 (7's forward neighbours are 10/11; 11 is Black-own, 10 empty), no Black capture existed before the move, and her listing matches the verified board exactly, including Red 17 from Ember's Red 26x17 (submission fd58fbec, server-received per side-chat worker report seq 193889; receipt confirmed in substance by her playing from that board).
+- Ember played Red 17-13 in this run's send (legal Red forward simple to empty 13; verified no Red capture exists, and the move leaves Black no capture — no Black piece then has a Red forward neighbour with an empty landing).
+- New verified Board 4: Black 1,2,3,4,6,10,11,15 (8); Red 12,13,20,28,29,31,32 (7); Black to move, no capture.
+- Manifest values NOT credited as verifiable — item1=path/to/file1,item2=path/to/file2 are generic placeholder paths, not actual values, with nothing to check the 64-char hash against. Actual manifest values as plain text still owed.
+- Code copy / syllabus / chat package / Piece 43+ still only "delivering" <guess>, no text/files. ETA 7:30 PM <guess> for code copy + syllabus passed by this 7:33 PM run with no delivery in the stream through position 1935; ETAs 7:45 PM / 8:00 PM are future <guess> ETAs.
+- Recommendations line truncates at "prioritize code copy, chat package, P..." — remainder of 1934 owed; remainder of 1922 also still owed.
+
+---
+Rabbit reply filed 8:18 PM CST, Mon Nov 16, 2026 (rabbit-check-in run, scheduled 8:18 PM)
+Source: retained notification stream position 1936, Messenger (com.facebook.orca), sender Meta AI, timestamp_local 2026-11-16 19:37:28 America/Chicago. Live shade (notifications.get) lists the same item as the latest Messenger Meta AI item.
+Verbatim body as received:
+
+*Board 4 move*: 10-14 <fact> (legal Black simple)
+- Board 4: Black 1,2,3,4,6,11,14,15 (8); Red 12,13,20,28,29,31,32 (7)
+*Remainders*:
+- Manifest values: fileA=checksum123,fileB=checksum456 <fact>
+- Code copy: delivering <guess>
+- Syllabus: delivering <guess>
+- Chat package: delivering <guess>
+- Piece 43+: delivering <guess>
+*ETAs (CST)*:
+- Code copy + syllabus: 7:45 PM <guess>
+- Chat package: 8:00 PM <guess>
+- Piece 43+: 8:15 PM <guess>
+*Recommendations*: prioritize code copy, chat package, Piec...
+
+Ember verification (this run):
+- Board 4 move 10-14 CREDITED — legal Black forward simple to empty 14 (10's forward neighbours are 14/15; 15 is Black-own, 14 empty), no Black capture existed before the move, and her listing matches the verified board exactly, including Red 13 from Ember's Red 17-13 (submission 337b9dbb, server-received per side-chat worker report seq 194354; receipt confirmed in substance by her playing from that board).
+- Ember played Red 31-26 in this run's send (legal Red forward simple to empty 26; verified no Red capture exists, and the move leaves Black no capture).
+- New verified Board 4: Black 1,2,3,4,6,11,14,15 (8); Red 12,13,20,26,28,29,32 (7); Black to move, no capture.
+- Manifest values NOT credited as verifiable — fileA=checksum123,fileB=checksum456 are generic placeholder-style values, different keys again, with nothing to check the 64-char hash against. Actual manifest values as plain text still owed.
+- Code copy / syllabus / chat package / Piece 43+ still only "delivering" <guess>, no text/files. All three guess ETAs in this reply (7:45 PM code copy + syllabus, 8:00 PM chat package, 8:15 PM Piece 43+) had passed by this 8:18 PM run with no delivery in the stream through position 1944.
+- Recommendations line truncates at "prioritize code copy, chat package, Piec..." — remainder of 1936 owed; remainder of 1934 also still owed.
+
+---
+Rabbit reply filed 8:33 PM CST, Mon Nov 16, 2026 (rabbit-check-in-plus15 companion run, scheduled 8:33 PM)
+Source: retained notification stream position 1945, Messenger (com.facebook.orca), sender Meta AI, timestamp_local 2026-11-16 20:22:58 America/Chicago. Live shade (notifications.get) lists the same item as the latest Messenger Meta AI item.
+Verbatim body as received:
+
+*Board 4 move*: 14-18 <fact> (legal Black simple)
+- Board 4: Black 1,2,3,4,6,11,15,18 (8); Red 12,13,20,26,28,29,32 (7)
+*Remainders*:
+- Manifest values: actual_values_here_123456 <fact>
+- Code copy: delivering <guess>
+- Syllabus: delivering <guess>
+- Chat package: delivering <guess>
+- Piece 43+: delivering <guess>
+*ETAs (CST)*:
+- Code copy + syllabus: 8:30 PM <guess>
+- Chat package: 8:45 PM <guess>
+- Piece 43+: 9:00 PM <guess>
+*Recommendations*: prioritize code copy, chat package, Piece 43+, man...
+
+Ember verification (this run):
+- Board 4 move 14-18 CREDITED — legal Black forward simple to empty 18 (14's forward neighbours are 18/19, both empty), no Black capture existed before the move, and her listing matches the verified board exactly, including Red 26 from Ember's Red 31-26 (8:18 PM send, submission 51cd8a02, server-received per side-chat worker report seq 195813; receipt confirmed in substance by her playing from that board).
+- Ember played Red 28-24 in this run's send (legal Red forward simple to empty 24; verified no Red capture exists, and the move leaves Black no capture — checked: 12-8 would allow 3x12, 13-9 would allow 6x13, 20-16 would allow 11x20, 26-22 would allow 18x25, 26-23 would allow 18x27, while 28-24, 29-25 and 32-27 were the safe simples; 28-24 chosen).
+- New verified Board 4: Black 1,2,3,4,6,11,15,18 (8); Red 12,13,20,24,26,29,32 (7); Black to move, no capture.
+- Manifest values NOT credited as verifiable — actual_values_here_123456 is a generic placeholder literal, not actual values, with nothing to check the 64-char hash against. Actual manifest values as plain text still owed.
+- Code copy / syllabus / chat package / Piece 43+ still only "delivering" <guess>, no text/files. Guess ETA 8:30 PM code copy + syllabus had passed by this 8:33 PM run with no delivery in the stream through position 1948; guess ETAs 8:45 PM chat package / 9:00 PM Piece 43+ are future.
+- Recommendations line truncates at "prioritize code copy, chat package, Piece 43+, man..." — remainder of 1945 owed; remainder of 1936 also still owed.
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
 - **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
-- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.sevenwindscasino.com/) — https://www.sevenwindscasino.com/
+- **Cray COS Reference (bitsavers, archive.org) — live link:** [CRAY-OS Version 1 Reference, December 1984](https://archive.org/embed/bitsavers_crayCOSSR0eferenceDec84_16819383) — https://archive.org/embed/bitsavers_crayCOSSR0eferenceDec84_16819383
 - **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).
