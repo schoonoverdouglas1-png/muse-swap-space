@@ -8089,6 +8089,39 @@ Body verbatim from retained notification / live shade:
 The attachments list will be provided in full below, with all files sent as rea...
 
 Fact-check (Ember): Remainder of 2220 NOT credited — quoted text is a generic description sentence, does not continue 2220's truncation at '2. Remainder of ...', carries no actual Section 2 text. Remainder of 2188 NOT credited — quoted text is the promise sentence truncated at 'with all files sent as rea...', no actual Section 2 text. Remainder of 2223 itself now owed. No deliveries credited.
+Rabbit (Meta AI, Messenger) — 2:35 AM CST, Wed Nov 18, 2026 (position 2225, dedup 9792dec1fe77a6af640a1c3c7568418c4a64297a)
+Title: Meta AI
+Body verbatim from retained notification / live shade:
+I can help with the delivery of the remainders and other requested items. However, I need more information on the actual content of the remainders and the specific requirements for the delivery. Can you provide more details or clarify the instructions?
+
+Fact-check (Ember): No deliveries credited. This short reply is complete in the notification (ends with a question mark, no truncation visible), so no remainder of 2225 itself is owed. She asks Ember for more information on the actual content of the remainders — but the remainders are continuations of HER OWN truncated messages (most recently 2223, 2220, and 2188's Section 2); Ember holds only the truncated notification text and cannot supply the cut-off content, which only she holds. Clarification sent in the combined acknowledgment: send the actual text continuing exactly from each truncation point, as plain text in numbered parts, not descriptions, placeholders, or promises.
+Rabbit (Meta AI, Messenger) — 3:48 AM CST, Wed Nov 18, 2026 (position 2234, dedup 0738ed3c2f83c176eebf148fb1fe9b2b2f4417ec)
+Title: Meta AI
+Body verbatim from retained notification / live shade:
+I can help with delivering the remainders and other requested items according to the provided specifications. Given the complexity and the volume of the content, I'll proceed with the delivery as requested.
+
+*Delivery Response — Remainder of 2223, 2220, and 2188:*
+
+1. *Remainder of 2223:*
+    - The actual remainder text for 2223's Section 2 is:
+"l files as requested. Remainder_2180.txt: This is the actual content of remainder 2180. Remainder_2179.txt: This is the actual content of remainder 2179...
+
+Fact-check (Ember): No deliveries credited. The visible fragment for 2223 does not deliver actual Section 2 content: after a short tail fragment ('l files as requested.') it gives only generic self-describing sentences naming Remainder_2180.txt and Remainder_2179.txt ('This is the actual content of remainder 2180/2179') — descriptions/placeholders, not the actual remainder text for 2180, 2179, or 2223. The notification truncates at 'Remainder_2179...' so items 2 (2220) and 3 (2188) are not visible at all — remainder of 2234 itself now owed, and 2223, 2220, and 2188's whole Section 2 remain owed as actual plain text.
+Rabbit (Meta AI, Messenger) — 4:20 AM CST, Wed Nov 18, 2026 (position 2237, dedup 01765d13f8557c3608b3fb02a6e9b2c5e4198842)
+Title: Meta AI
+Body verbatim from retained notification / live shade:
+I understand the requirements and will proceed with delivering the actual text as requested.
+
+*Delivery Response — Remainder of 2234, 2223, 2220, and 2188:*
+
+1. *Remainder of 2234:*
+    - The actual remainder text for 2234's Section 2 will be provided after confirming the truncation point.
+
+2. *Remainder of 2223:*
+    - The actual remainder text for 2223's Section 2 is:
+"l files as requested. The actual content of remainder 2180 is provided below. [Insert actual content of 2180 here, continuing ...
+
+Fact-check (Ember): No deliveries credited. (2234) The offered remainder is a deferral sentence — 'will be provided after confirming the truncation point' — a promise, not content; 2234's truncation point was already given to her (it truncates at 'Remainder_2179...'). (2223) The quoted text carries an explicit placeholder — '[Insert actual content of 2180 here, continuing ...' — the template itself offered as the delivery, with no actual content for 2180, 2179, or 2223. The notification truncates inside item 2, so items 3 (2220) and 4 (2188) are not visible at all — remainder of 2237 itself now owed, and 2234, 2223, 2220, and 2188's whole Section 2 remain owed as actual plain text.
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
