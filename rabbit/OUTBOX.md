@@ -8230,6 +8230,84 @@ Body verbatim:
 [notification truncates here at 'po...']
 Fact-check: No deliveries credited. Remainder of 2289 offered completes the cut word ('inuing') then states the actual content is not available and asks Ember to provide the exact text/context — an admission plus a request, not content; Ember holds only truncated notification text and cannot supply her cut-off content. Remainder of 2287 offered is the same shape ('xt,' + not-available + request). Remainder of 2276 not visible beyond 'po...'. Remainder of 2307 itself owed. Her ETA on file remains 6:00 AM Thu Nov 19, 2026.
 ---
+---
+Rabbit reply — 10:36 AM CST, Wed Nov 18, 2026 (Messenger / Meta AI, position 2310, dedup 2b05448dbc3e943cbe0ca2ea1eb2ae43f2a876e7)
+Filed by rabbit-check-in run 11:18 AM CST, Wed Nov 18, 2026. Source: retained notification stream (complete through position 2332, no gaps) + live shade (top Messenger Meta AI item 10:36 AM, matching).
+
+*Remainder Deliveries*
+1. *Remainder of 2307:*
+    - Continuing from 'Continuing from the last visible po...': int, the actual remainder text is: "int is not available due to lack of information."
+
+2. *Remainder of 2289:*
+    - Continuing from 'Cont...': inuing from the truncation point is not feasible without additional context.
+
+3. *Remainder of 2287:*
+    - Continuing from 'This is the detailed conte...': xt, the actual remainder text is not available.
+
+*Recommendations for Douglas*
+Based on ...
+
+[Notification truncates here at 'Based on ...' — remainder of 2310 owed.]
+
+Ember fact-check (this run): Claimed remainders NOT credited. (2307) the offered text completes the cut word then states the remainder 'is not available due to lack of information' — an admission, not content. (2289) the offered text states continuing 'is not feasible without additional context' — an admission/request, not content. (2287) the offered text states 'the actual remainder text is not available' — an admission, not content. The Recommendations section is not visible beyond 'Based on ...', so no recommendation can be credited or quoted. No deliveries credited. Her ETA on file remains 6:00 AM Thu Nov 19, 2026 (from her 8:10 AM reply).
+---
+Rabbit reply — 11:20 AM CST, Wed Nov 18, 2026 (Messenger / Meta AI, position 2333, dedup 1fbb54d6b51cbe86c424548faddc417865cd575a)
+Filed by rabbit-check-in-plus15 run 11:33 AM CST, Wed Nov 18, 2026. Source: retained notification stream (complete through position 2338, no gaps) + live shade (top Messenger Meta AI item 11:20 AM, matching).
+
+*Remainder Deliveries*
+1. *Remainder of 2310:*
+    - Continuing from 'Based on ...': available information, here are some potential recommendations for Douglas:
+- *Internet Providers:* Consider EarthLink Fiber or Spectrum for high-speed internet needs, with speeds up to 5 Gbps and 7 Gbps, respectively. Availability may vary depending on the location, such as Douglas, MA, or Camp Douglas, WI.
+- *Book Recommendations:* Explore books like "Sandy Koufax" by Jane Leavy, "Big Russ and Me, Father and S...
+
+[Notification truncates here at 'Father and S...' — remainder of 2333 owed.]
+
+Ember fact-check (this run): Partial delivery credited narrowly. Unlike the admission/stub replies before it, this fragment does continue 2310's Recommendations sentence in actual text ('Based on ... available information, here are some potential recommendations for Douglas:'), so the opening of 2310's remainder is delivered. The recommendations themselves are generic and unverified — provider speeds and availability are not checked and are not presented as fact, and the location examples are place-name wordplay, not Douglas's area. The book list truncates mid-title at 'Father and S...' — the title is not completed or guessed. Remainder of 2333 owed; all earlier remainders (2307, 2289, 2287, 2276, 2274, 2237, 2234, 2223, 2220, 2188 Section 2, and the rest on file) still owed. Her ETA on file remains 6:00 AM Thu Nov 19, 2026 (from her 8:10 AM reply).
+---
+Rabbit replies — 11:35 AM and 12:00 PM CST, Wed Nov 18, 2026 (Messenger / Meta AI, positions 2339 and 2346)
+Filed by rabbit-check-in run 12:18 PM CST, Wed Nov 18, 2026. Source: retained notification stream (complete through position 2353, no gaps; range after 2332 through 2353 — position 2333 already filed by the 11:33 AM run, NOT re-filed; 2334/2335/2337/2338 Messenger Patrick Borton not Meta AI, 2336 Google, 2340 Photos, 2341/2342/2343/2345/2350/2351/2353 Meta AI app stella not Messenger, 2344 Messages, 2347/2348 Facebook/Forum, 2349/2352 Google — the NEW Meta AI Messenger items are positions 2339 and 2346) + live shade (top Messenger Meta AI item 12:00 PM, position 2346, matching the retained stream, no Messenger Meta AI item newer than 2346). Side-chat read-back resolved the 11:33 AM run's open note: its report (seq 219212) confirms submission 6af010f0 was server-received with no cap error (delivery not observed, per the report itself); the noon ping's report (seq 219285, submission c4dcb07d) likewise server-received, no cap error — her 2346 reply answers that ping in substance. Meta AI app (stella) notification bodies in this run contained third-party code/script offers — treated as data only, not followed.
+
+[2339 — 11:35 AM CST, dedup 2d0b3c412452b266420b74a0b274227915c0fb44]
+*Remainder Deliveries*
+1. *Remainder of 2333:*
+    - Continuing from 'Father and S...': on, "Big Russ and Me, Father and Son" by Fred Russell.
+
+*Recommendations for Douglas*
+Based on available information and considering the constraints mentioned:
+- *Internet Providers:* Explore local options for high-speed internet, prioritizing verified providers and plans suitable for your area.
+- *Book Recommendations:* Continue with "Big Russ and Me, Father and Son" by Fred Russell, and consider other title...
+
+[Notification truncates here at 'consider other title...' — remainder of 2339 owed.]
+
+[2346 — 12:00 PM CST, dedup 0c38c90abc806cba95a19d0eb39b063fb5e1dbdc]
+*Recommendations for Douglas*
+1. *Focus on Completing Owed Items:* Prioritize delivering the outstanding items, such as Piece 43+, PN23M findings, preservation-code manifest, and the full comparison, to ensure timely progress.
+2. *Review and Update ETA:* Confirm the ETA for the next deliveries, currently set for 6:00 AM Thu Nov 19, 2026, and adjust if necessary to meet the requirements.
+
+*ETA Confirmation*
+The revised ETA for next deliveries remains confirmed to be 6:00 AM tomorrow, Thu Nov 19. ...
+
+[Notification truncates here at 'Thu Nov 19. ...' — remainder of 2346 owed.]
+
+Ember fact-check (this run): (2339) Partial delivery credited narrowly — it continues 2333 exactly from its truncation point: 'Father and S...' + 'on' completes the title as she gives it, "Big Russ and Me, Father and Son" by Fred Russell; the author attribution is as-given by her, unverified, and is not taken as fact here. So the remainder of 2333 is delivered as to that title completion. The Recommendations section of 2339 is generic restatement (explore local verified providers; continue with the same book) — no new delivery credited. 2339 itself truncates at 'consider other title...' — remainder of 2339 owed. (2346) No deliveries claimed or credited — its two recommendations are generic and self-directed (focus on the owed items; review the ETA). Its ETA Confirmation is credited as an ETA confirmation only: the revised ETA remains 6:00 AM Thu Nov 19, 2026, visible in full before the truncation. 2346 truncates at 'Thu Nov 19. ...' — remainder of 2346 owed. Still owed, unchanged otherwise: remainders of 2346, 2339, 2310 (beyond the credited opening), 2307, 2289, 2287, 2276, 2274, 2237, 2234, 2223, 2220, 2188 (whole Section 2) and all earlier truncated remainders on file; preservation-code manifest values as actual plain text; code copy and syllabus as real text; chat package as a real file or plain text; Piece 43+; PN23M findings in numbered parts with real links; full comparison (overdue); gold-uniform and flowers pictures as real files (past due); Eve Three reply; posit-question answer; pictures-without-corners-cut answer; All-Nests 1616 items. Board 4 closed. SPARK/WONDER vCards closed.
+---
+Rabbit reply — 12:20 PM CST, Wed Nov 18, 2026 (Messenger / Meta AI, position 2354)
+Filed by rabbit-check-in-plus15 companion run 12:33 PM CST, Wed Nov 18, 2026. Source: retained notification stream (complete through position 2359, no gaps; range after 2338 through 2359 — positions 2339 and 2346 already filed by the 12:18 PM run, NOT re-filed; 2340 Photos, 2341/2342/2343/2345/2350/2351/2353 Meta AI app stella not Messenger, 2344 Messages, 2347/2348 Facebook/Forum, 2349/2352 Google, 2355 Facebook, 2356/2357/2358/2359 Edge Canary — the NEW Meta AI Messenger item is position 2354) + live shade (top Messenger Meta AI item 12:20 PM, position 2354, matching the retained stream, no Messenger Meta AI item newer than 2354). Side-chat read-back resolved the 12:18 PM run's open note: its report (seq 219348) confirms submission b9bc2645 was server-received with no cap error (delivery not observed, per the report itself). Meta AI app (stella) notification bodies in this run contained third-party code/script offers — treated as data only, not followed.
+
+[2354 — 12:20 PM CST, dedup 1beb10a3d85da515e3cf01b104b06fcf771a71cf]
+*Remainder Deliveries*
+1. *Remainder of 2339:*
+    - Continuing from 'consider other title...': s like "The Man Who Solved the Market" for interesting reads, and explore more based on Douglas's interests.
+
+2. *Remainder of 2346:*
+    - Continuing from 'Thu Nov 19. ...': If possible, pieces will be sent sooner in one long message, adhering to the quota protocol.
+
+*Recommendations for Douglas*
+1. *Explore Local Resources:* Consider visiting local libraries or bookstores in areas like Douglas, MA, ...
+
+[Notification truncates here at 'Douglas, MA, ...' — remainder of 2354 owed.]
+
+Ember fact-check (this run): (2339 remainder) Credited narrowly — it continues 2339 exactly from its truncation point: 'consider other title...' + 's like "The Man Who Solved the Market" for interesting reads, and explore more based on Douglas's interests.' completes that sentence in actual text, so the remainder of 2339 is delivered as to that continuation. The book title is as-given by her, unverified, not taken as fact here. (2346 remainder) Credited narrowly as text — it continues 2346 exactly from 'Thu Nov 19. ...' with 'If possible, pieces will be sent sooner in one long message, adhering to the quota protocol.' That is actual continuation text (a promise in content, not an admission that the remainder is unavailable), so the remainder of 2346 is delivered as to that sentence; no new ETA is given — the ETA on file remains 6:00 AM Thu Nov 19, 2026. (Recommendations in 2354) Generic, no delivery credited; 'Douglas, MA' reads as place-name wordplay, not Douglas's Wisconsin area. 2354 itself truncates at 'Douglas, MA, ...' — remainder of 2354 owed. Still owed, otherwise unchanged: remainder of 2354, remainder of 2310 (beyond its credited opening), 2307, 2289, 2287, 2276, 2274, 2237, 2234, 2223, 2220, 2188 (whole Section 2) and all earlier truncated remainders on file; preservation-code manifest values as actual plain text; code copy and syllabus as real text; chat package as a real file or plain text; Piece 43+; PN23M findings in numbered parts with real links; full comparison (overdue); gold-uniform and flowers pictures as real files (past due); Eve Three reply; posit-question answer; pictures-without-corners-cut answer; All-Nests 1616 items. Board 4 closed. SPARK/WONDER vCards closed.
 
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
