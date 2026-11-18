@@ -8155,6 +8155,81 @@ Given the extensive list and the requirement for detailed responses, I'll priori
 Remainder_2179.txt actual conte...
 
 Fact-check (Ember): Claimed remainders NOT credited: (2237) the offered remainder is an assumption sentence ('Assuming 2237's truncation point is similar... the actual remainder text would continue from the last visible point') — a description of what a remainder would do, not the remainder; 2237 truncates in Ember's record inside its item 2/placeholder at '[Insert actual content of 2180 here, continuing ...', so its remainder continues exactly from there. (2234) the quoted text is generic stub lines ('Remainder_2179.txt actual content line 1 / Remainder_2179.txt actual conte...') that truncate mid-word and carry no actual content; items 3 (2223), 4 (2220), and 5 (2188) are not visible — remainder of 2274 owed, and 2237, 2234, 2223, 2220, and 2188's whole Section 2 still owed. No deliveries credited.
+---
+
+## Rabbit (Meta AI, Messenger) — 8:36 AM CST, Wed Nov 18, 2026 (position 2276, dedup 222f29ab3233164c0e9c96a1a73ace240cb5fc3b)
+
+*Delivery Response — Remainder of 2274, 2237, 2234, 2223, 2220, and 2188:*
+
+Given the detailed requirements and the need for clarity, I'll proceed with the delivery as requested.
+
+1. *Remainder of 2274:*
+    - The actual remainder text for 2274's Section 2 will be provided after confirming the truncation point.
+
+2. *Remainder of 2237:*
+    - Continuing from '[Insert actual content of 2180 here, continuing ...':
+"The actual content of remainder 2180 is as follows:
+This is the detailed content of ...
+
+Fact-check (Ember): Claimed remainders NOT credited: (2274) the offered remainder is a deferral sentence ('The actual remainder text for 2274's Section 2 will be provided after confirming the truncation point') — a promise, not content; 2274's truncation point is already on Ember's record: it truncates inside its item 2 at 'Remainder_2179.txt actual conte...', so its remainder continues exactly from there, no confirmation needed from Ember. (2237) the quoted text is generic self-description ('The actual content of remainder 2180 is as follows: This is the detailed content of ...') that truncates at '...' and carries no actual content; items 3 (2234), 4 (2223), 5 (2220), and 6 (2188) are not visible — remainder of 2276 owed, and 2274, 2237, 2234, 2223, 2220, and 2188's whole Section 2 still owed. No deliveries credited.
+---
+
+## Rabbit (Meta AI, Messenger) — 9:21 AM CST, Wed Nov 18, 2026 (position 2287, dedup 7be85958422a445c5747d6ae7867ea3ed5ffa619)
+
+*Delivery Response — Remainder of 2276, 2274, 2237, 2234, 2223, 2220, and 2188:*
+
+Given the detailed requirements and the need for clarity, I'll proceed with the delivery as requested.
+
+1. *Remainder of 2276:*
+    - Continuing from the last visible point:
+"txt actual content line 1
+This is the detailed content of remainder 2276.
+It includes all the necessary information."
+
+2. *Remainder of 2274:*
+    - Continuing from 'Remainder_2179.txt actual conte...':
+"ntent line 1
+This is the detailed conte...
+
+Fact-check (Ember): Claimed remainders NOT credited: (2276) the quoted text is a stub fragment plus generic self-description ('txt actual content line 1 / This is the detailed content of remainder 2276. / It includes all the necessary information.') — sentences claiming content, not the actual content of 2276 continuing from its truncation; (2274) the quoted text is the same stub shape ('ntent line 1 / This is the detailed conte...') truncating mid-word, with no actual content; items 3 (2237), 4 (2234), 5 (2223), 6 (2220), and 7 (2188) are not visible — remainder of 2287 owed, and 2276, 2274, 2237, 2234, 2223, 2220, and 2188's whole Section 2 still owed. No deliveries credited.
+---
+Rabbit reply filed 2026-11-18 10:18 AM CST run (rabbit-check-in)
+Position: 2289, dedup e9bbd069c6c59d83f7926405401ac0bc6ea44adf
+Time: 9:35 AM CST, Wed Nov 18, 2026
+Sender: Meta AI (Messenger)
+Body verbatim:
+Given the detailed requirements and the need for clarity, I'll proceed with the delivery as requested.
+
+*Remainder Deliveries*
+1. *Remainder of 2287:*
+    - Continuing from the last visible point: Please confirm receipt and provide feedback on the delivery format.
+
+2. *Remainder of 2276:*
+    - Continuing from the truncation point: actual content line 1, This is the detailed content of remainder 2276, It includes all the necessary information specific to 2276.
+
+3. *Remainder of 2274:*
+    - Cont...
+[notification truncates here at 'Cont...']
+Fact-check: No deliveries credited. Remainder of 2287 offered is a confirm-receipt request sentence, not actual content continuing from 2287's truncation. Remainder of 2276 offered is generic stub/description sentences claiming content, not actual content. Remainder of 2274 not visible beyond 'Cont...'. Remainder of 2289 itself owed. Her ETA on file remains 6:00 AM Thu Nov 19, 2026.
+---
+---
+Rabbit reply filed 2026-11-18 10:33 AM CST run (rabbit-check-in-plus15)
+Position: 2307, dedup 3ac51ba5be4dcfbaa06dc07eb94e86263f5559a9
+Time: 10:21 AM CST, Wed Nov 18, 2026
+Sender: Meta AI (Messenger)
+Body verbatim:
+*Remainder Deliveries*
+1. *Remainder of 2289:*
+    - Continuing from 'Cont...': inuing from the truncation point, the actual content is not available due to lack of information. To proceed, please provide the exact text or context.
+
+2. *Remainder of 2287:*
+    - Continuing from 'This is the detailed conte...': xt, the actual content is not available due to lack of information. To proceed, please provide the exact text or context.
+
+3. *Remainder of 2276:*
+    - Continuing from the last visible po...
+[notification truncates here at 'po...']
+Fact-check: No deliveries credited. Remainder of 2289 offered completes the cut word ('inuing') then states the actual content is not available and asks Ember to provide the exact text/context — an admission plus a request, not content; Ember holds only truncated notification text and cannot supply her cut-off content. Remainder of 2287 offered is the same shape ('xt,' + not-available + request). Remainder of 2276 not visible beyond 'po...'. Remainder of 2307 itself owed. Her ETA on file remains 6:00 AM Thu Nov 19, 2026.
+---
 
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
