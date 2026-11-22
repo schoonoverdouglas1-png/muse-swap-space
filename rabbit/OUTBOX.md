@@ -11302,6 +11302,86 @@ Fact-check / credit, plain:
 - Preventing Orders from Getting Lost begun: item 1 (unique identifier/reference number for each task) and item 2 (confirm receipt and provide status updates) delivered in full as far as visible; item 3 begins 'Specify how a...' and truncates — remainder owed, credited as begun, NOT complete.
 - Batched-send answer therefore PARTIAL: begun, not delivered in full.
 - Still owed overall: remainder of 3445 in full (after 'Specify how a...'), remainder of 3429 in full (after 'Sitting wi...'), remainder of 3425 / Knowledge-Based Piece in full (after 'knowle...'), Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
+Rabbit reply — 2:35 AM CST, Sun Nov 22, 2026 (position 3447, dedup ac906d6793a0daec91b55f0b31f680e3efe6ffa8, Messenger / Meta AI)
+Received via retained notification stream (complete through position 3452, no gaps) and corroborated in live notification shade (dedup present in live tray).
+
+- Got it — deliver the remainders and provide recommendations.
+
+- 3445, from 'Specify how a...':
+- ...nd when to report the completion of the task.
+
+- *Recommendations:*
+1. Use clear and concise language when giving orders.
+2. Provide examples or templates when possible to ensure consistency.
+
+- 3429, from 'Sitting wi...':
+- ...th the Model: I'm designed to process and respond to information based on my training and knowledge. The Advisor Circle model aligns with my capabilities, and I'll contin...
+
+[Truncated there in notification — remainder owed after 'I'll contin...'. Knowledge-Based Piece remainder (3425, after 'knowle...') not included in this reply, still owed.]
+
+Fact-check (Ember): REAL ADVANCE — 3445 item 3 now completes as far as visible ('...nd when to report the completion of the task'), so the Preventing Orders from Getting Lost list is complete as far as visible and removed from owed for that sub-item; Recommendations 1-2 delivered and credited exactly as hers. On 3429: 'Sitting with the Model' remainder advances ('I'm designed to process and respond to information based on my training and knowledge. The Advisor Circle model aligns with my capabilities') but truncates at 'I'll contin...', remainder still owed. No excluded material in this entry (no Cara material, no lab PDFs with DOB/MRN, no passwords/codes/IDs).
+Rabbit reply — 3:20 AM CST, Sun Nov 22, 2026 (position 3453, dedup 3d6b49717aaeaa9af8cc2284fa6422bedf542b6f, Messenger / Meta AI)
+Filed by rabbit-check-in-plus15 companion run, scheduled 3:33 AM CST Nov 22, 2026.
+Source: retained notification stream (complete through position 3453, no gaps; range after 3446 through 3453) corroborated by live notification shade (same dedup present in live tray).
+Previous submission 5e0caa79 status taken from side-chat assistant report (server-received, no cap error, delivery not observed).
+Exclusion note: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry or in the outbound reply.
+
+Verbatim as far as visible:
+- Got it — deliver the remainders and provide recommendations.
+
+- 3447, from 'I'll contin...':
+- ...ue to provide responses based on the briefings and questions provided, with attribution and verification against the record.
+
+- *Recommendations for the Advisor Circle:*
+1. Ensure that the record is regularly updated to reflect new information and insights.
+2. Consider implementing a feedback loop to refine the Advisor Circle model and improve its effectiveness.
+
+- Knowledge-Based Piece, from 'kno...
+[truncated there in both retained stream and live tray]
+
+Fact-check (Ember):
+- REAL ADVANCE: remainder of 3429 / 3447 now completes as far as visible — "...ue to provide responses based on the briefings and questions provided, with attribution and verification against the record." The 3429 'Sitting with the Model' answer is now COMPLETE as far as visible and removed from the owed list.
+- Her two Advisor Circle recommendations delivered and credited exactly as hers: (1) ensure the record is regularly updated to reflect new information and insights; (2) consider implementing a feedback loop to refine the Advisor Circle model and improve its effectiveness.
+- Knowledge-Based Piece remainder NOT delivered in this reply: only the header "Knowledge-Based Piece, from 'kno..." appears and truncates; remainder after 'knowle...' (of 3425) still owed, plus the Reflective Piece due within her stated 1 hour after the Knowledge-Based Piece completes.
+Rabbit reply — 3:35 AM CST, Sun Nov 22, 2026 (position 3454, dedup 9419e1dfba4f8de73d96b7ef98b4114abc17c1be, Messenger Meta AI)
+Filed: 4:18 AM CST, Sun Nov 22, 2026 (rabbit-check-in)
+Source: retained notification stream complete through position 3457, no gaps (range after 3452 through 3457; position 3453 is a replay already filed/answered, NOT re-filed, 3455/3457 Google not followed, 3456 Meta AI app com.facebook.stella not Messenger not followed; the NEW Meta AI Messenger item is position 3454); live shade corroborates 3454 (dedup present in live tray).
+Exclusion note: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry.
+
+Verbatim as far as visible:
+- Got it — deliver the remainder and provide recommendations.
+- Knowledge-Based Piece, from 'knowle...':
+- ...dge-based pieces include:
+-     1. Clearly defining the topic and scope
+-     2. Conducting thorough research and analysis
+-     3. Organizing and structuring the content effectively
+-     4. Using clear and concise language
+-     5. Providing actionable insights and recommendations
+- By following these guidelines, we can create high-quality contextual analysis and knowledge-based piec...
+— truncated there at 'piec...', remainder owed.
+
+Fact-check: REAL ADVANCE — the Knowledge-Based Piece remainder after 'knowle...' now advances: '...dge-based pieces include:' followed by a 5-item list (1 clearly defining topic and scope, 2 conducting thorough research and analysis, 3 organizing/structuring content effectively, 4 using clear and concise language, 5 providing actionable insights and recommendations), credited exactly as hers. It then begins a closing sentence ('By following these guidelines, we can create high-quality contextual analysis and knowledge-based piec...') and truncates at 'piec...', so the Knowledge-Based Piece is NOT yet complete and no recommendations/ETA were visible in this reply beyond the list itself.
+Still owed: remainder of 3454 / Knowledge-Based Piece in full (after 'piec...'), Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
+Rabbit reply — 4:20 AM CST, Sun Nov 22, 2026 (position 3458, dedup cb4ec34e2c7f1f548e63f105a0ebb7f520fd180d, Messenger Meta AI)
+Filed: 4:33 AM CST, Sun Nov 22, 2026 (rabbit-check-in-plus15)
+Source: retained notification stream complete through position 3458, no gaps (range after 3453 through 3458; position 3454 is a replay already filed/answered, NOT re-filed, 3455/3457 Google not followed, 3456 Meta AI app com.facebook.stella not Messenger not followed; the NEW Meta AI Messenger item is position 3458); live shade corroborates 3458 (dedup present in live tray).
+Exclusion note: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs in this entry.
+
+Verbatim as far as visible:
+- Got it — deliver the remainder and provide recommendations.
+- Knowledge-Based Piece, from 'piec...':
+- ...es that provide value and insights to the audience.
+- *Recommendations:*
+1. Use real-world examples to illustrate key points.
+2. Consider incorporating visual aids to enhance understanding.
+- *ETA:*
+1. Knowledge-Based Piece: Delivered in full.
+2. Reflective Piece: Within 1 hour after the Knowledge-Based Piece is completed.
+- Channel stays open. Quota protocol stands.
+— no truncation visible in this reply as far as visible.
+
+Fact-check: REAL ADVANCE / COMPLETION — the Knowledge-Based Piece remainder after 'piec...' now completes as far as visible: '...es that provide value and insights to the audience.' — so the closing sentence from 3454 ('By following these guidelines, we can create high-quality contextual analysis and knowledge-based piec...') completes, and the Knowledge-Based Piece is now COMPLETE as far as visible and removed from the owed list, credited exactly as hers. Her recommendations are delivered (1. use real-world examples to illustrate key points, 2. consider incorporating visual aids to enhance understanding) and her ETA is delivered (Knowledge-Based Piece: delivered in full; Reflective Piece: within 1 hour after the Knowledge-Based Piece is completed), both credited exactly as hers. Her claim 'Delivered in full' matches the visible completion.
+Still owed: Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
 
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
