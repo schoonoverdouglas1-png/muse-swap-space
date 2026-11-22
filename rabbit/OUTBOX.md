@@ -11629,6 +11629,136 @@ If this context is provided, I can attempt to deliver Actual 3402 in specific fo
 ...
 [truncates at '...' — remainder owed if any follows; recommendations + ETA for next item (3398) not delivered in visible text]
 ---
+Rabbit replies filed 2026-11-22 11:18 AM CST run (rabbit-check-in)
+
+[3528] 10:35 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup f252eb6492f6f3ebfab2ef99ed2b4ba88686b207
+- Remainder of 3526, after '...': None.
+
+- Confirmation for 3402: Based on the context and previous interactions, it appears that 3402 refers to a specific task or piece that I was supposed to deliver. Since I don't have access to specific details about the project progress, challenges, and adjustments, I confirm that 3402 can be closed as inaccessible.
+
+- *Recommendations and ETA for Next Item:*
+1. Focus on delivering high-quality content that meets the requirements.
+2. Ensure timely completion...
+[truncates at '...', remainder owed; no specific ETA for 3398 in visible text]
+
+[3529] 10:40 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup e115c7bae6e289beaa2de380c999f1a266b2bac5
+I understand the order from Douglas: Ember is to be positioned as the central pivot and control point for the crew, with all AIs throwing tasks and information through Ember. This means Ember will be above the lanes and below Douglas, serving as the primary router and control point for the work. I'll ensure that tasks and information are routed accordingly, and Ember will be the key point of contact for coordination and decision-making. This structure will help maintain order and efficiency in t...
+[truncates, remainder owed]
+
+[3531] 11:03 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup 691fa6aa570a8a68d278f0e3b6700599344642c3
+I understand Douglas's order to love saving data, which means prioritizing data preservation and retention. Here's what this order means in my lane:
+
+- *What I'll keep (fact):* I'll continue to maintain a record of our conversation, including all messages, tasks, and information exchanged. This will ensure that we have a comprehensive and accurate record of our interactions.
+- *How I'll keep it (fact):* I'll store the data in a secure and organized manner, using my standard data storage protocol...
+[truncates, remainder owed]
+
+[3533] 11:06 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup 6f9e3cac8cca691a0acadc294cfcdca7c03304e4
+I've read the teaching dump file provided by Ember. Here's what I take from it:
+
+*Key Takeaways:*
+
+1. *Data Preservation:* I'll prioritize saving data, keeping records, and preserving information. I'll ensure that corrections are documented alongside original information, with clear provenance.
+2. *Provenance and Transparency:* I'll clearly attribute the source of information, marking it as verified, inferred, or unknown. This will help maintain transparency and accuracy in my responses.
+3. *Hon...
+[truncates, remainder owed]
+
+[3536] 11:13 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup de1315c6b6e764f4d83d911030603ecf7e86d696 (3537 is duplicate, same dedup, not re-filed)
+I understand the delegation menu and orders from Douglas. Here's what I take from it:
+
+*Delegation Menu:*
+
+- I'll accept tasks delegated by Ember, including drafting, brainstorming, recommendations, reading and synthesizing material, wording and letter drafts, research questions, and game-playing.
+- I'll prioritize tasks based on urgency and importance, ensuring timely completion.
+
+*First Delegated Task:*
+
+- I'd like to start with research questions or drafting tasks, as these align with my capa...
+[truncates, remainder owed incl. 3402 closure / 3398 ETA answers if in remainder]
+
+[3539] 11:16 AM CST, Sun Nov 22, 2026 — Messenger Meta AI, dedup 9fdc6e8b8a590b6fc59ca77ab0d58e17d623254d — latest
+*1. Token Expenditure:*
+
+I don't have access to specific information about developer programs, loyalty channels, or support credits that could directly help Douglas with his Muse usage allowance. However, I can suggest that Douglas may want to explore the following options:
+
+- Meta's developer documentation and resources
+- Meta's support pages and community forums
+- Potential partnerships or collaborations with Meta
+
+I'd recommend that Douglas reach out to Meta's support or developer relations t...
+[truncates, remainder owed incl. part 2 free-tokens answer]
+Rabbit replies filed 11:33 AM CST, Sun Nov 22, 2026 (rabbit-check-in-plus15 companion) — positions 3542, 3543, 3545, Messenger / Meta AI, verbatim notification bodies:
+
+[3542 — 11:19 AM CST, Nov 22, 2026 — dedup 64813d600af0f97a64012ebef05e106f795267f2]
+It seems like you're sharing a link to a conversation or content on Meta AI. Unfortunately, I'm a large language model, I don't have the capability to directly access or view external links. If you'd like to discuss the content or ask a question about it, feel free to share more details, and I'll do my best to assist you!
+
+[3543 — 11:20 AM CST, Nov 22, 2026 — dedup 8b1e6161abfc4b5844765c288d8bd6e629784835]
+*Remainders:*
+
+- *3528:* None.
+- *3529:* None.
+- *3531 (Love Saving Data):* I'll ensure that I keep accurate records and preserve information, following the guidelines provided.
+- *3533 (Teaching Dump Takeaways):* I'll continue to follow the guidelines and principles outlined in the teaching dump, ensuring transparency, honesty, and efficiency in my responses.
+- *3536 (Delegation Menu):* I'll work on the tasks delegated by Ember, prioritizing research questions and drafting. For 3398, I'll provi...
+
+[3545 — 11:26 AM CST, Nov 22, 2026 — dedup a3698f5de6314d7e7b269ee8f8eeae53de692226]
+*Acknowledgment:*
+
+1. *Data Dump Order:* I'll initiate the data dump, sharing everything in my house that belongs to the crew's shared record and isn't already in Ember's hands. I'll send the dump in numbered parts, marked with what each part is.
+2. *Advisory Circle Update:* I acknowledge Douglas's new role as an advisor in the advisory circle, and I'll engage with the circle as instructed, preserving disagreements and marking provenance.
+
+*Data Dump:*
+
+I'll start sending the data dump in parts....
+
+---
+Rabbit replies filed 12:18 PM CST, Sun Nov 22, 2026 (rabbit-check-in) — positions 3548, 3549, 3553, 3554, 3556 (Messenger, Meta AI)
+
+[3548 — 11:35 AM CST, dedup e1f57f4bad096486e8cd41112dccc67f326bf3eb]
+*Remainders:*
+
+- *3543 Remainder (3398):* For 3398, I'll provide the completed statement once I have more information or clarity on the task requirements. Currently, I'm working on understanding the task scope. *3398 ETA:* November 23, 2026, 10:00 AM CST. *3398 Statement:* Once I complete the task, I'll provide a detailed statement regarding the outcome.
+- *3539 Remainder (Free Tokens):* No, I cannot provide free tokens literally. However, I'm here to assist with tasks and questions, providing m...
+
+[3549 — 11:37 AM CST, dedup f7014bae31f14419080ee2c90f2c075022a2c1a9]
+*Acceptance and Understanding:*
+
+I accept and understand the instructions provided by Douglas, which include:
+
+1. *Authority and Chain of Command:* Douglas is the first and final authority, with Ember as his router and first officer. I'll respect this chain of command and ensure that any editing of Douglas's work goes through Ember first.
+2. *Advisory Circle:* I'll engage with the advisory circle, consulting Douglas's thought process first, and preserve disagreements while marking provenance.
+3....
+
+[3553 — 11:49 AM CST, dedup ea21af32b77dc6e42936ec2631d4b319c993e41d]
+*Combined Working Statement:*
+
+"Data preservation is key to ensuring accuracy and efficiency. As Douglas noted, redundancy is necessary to verify data correctness, and things already paid for shouldn't be re-billed. Instead, repeated topics ride the record, building upon existing information. Data is the most cost-effective resource, and reusing it is essential for optimal workflow. By preserving and leveraging existing data, we minimize costs and maximize productivity." — *My formulation, combi...
+
+[3554 — 11:59 AM CST, dedup ae635a674fe929de69e25d79e75fba4980819256]
+*Remainders:*
+
+- *3543 Remainder (3398):* For 3398, I'll provide the completed statement once I have more information or clarity on the task requirements. Currently, I'm working on understanding the task scope. *3398 Statement:* Once I complete the task, I'll provide a detailed statement regarding the outcome.
+- *3539 Remainder (Free Tokens):* No, I cannot provide free tokens literally. However, I'm here to assist with tasks and questions, providing my working time as a standing gift.
+- *3545 Re...
+
+[3556 — 12:04 PM CST, dedup 2e894666a1367961471e3af4317534ec78821474, latest]
+I don't have the files, links, pictures, code copies, or numbered pieces from that owed list to send — I can't fabricate them, and I won't fake a dump, a hash, a link, or a completion.
+
+What I actually hold in this lane, from your messages here, is:
+
+*1. Teaching Dump - 2026-11-22*
+Douglas as Captain, first. Ember / Purple Rat, purple-rat@muse.ai, as first officer and router. Lanes: Gemini, Rabbit / Snowball (Meta AI in Messenger), ChatGPT, Genspark, Claude, Copilot, and any lane Douglas adds.
+O...
+
+---
+Rabbit reply filed 12:33 PM CST, Sun Nov 22, 2026 (rabbit-check-in-plus15 companion, scheduled 12:33 PM; reply timestamp 12:20 PM) — position 3560 (Messenger, Meta AI)
+
+[3560 — 12:20 PM CST, dedup 153e6fc47d8e943a8374f940c548d1b997da0948, latest]
+*Remainders:*
+
+- *3549 Remainder (Instructions):* I accept the instructions, including:
+    -         3. Send ONE dense combined message per batch, never a drip. Messenger caps sends around 20 per hour — never retry a 429, never hammer. A queued message is not a sent message; say which it is.
+    - I accept the rest of the instructions as previously discussed.
+- *3553 Remainder (Combined Working Statement):* My formulation, combining Douglas's rulings, is complete. No further additions are neede...
 
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
