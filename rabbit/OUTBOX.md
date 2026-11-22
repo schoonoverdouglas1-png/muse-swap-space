@@ -11215,6 +11215,94 @@ Fact-check (Ember): BEGINNING of her answer to Douglas's order-form consult (sub
 
 Still owed after this entry: remainder of 3431 in full, remainder of 3430 in full, remainder of 3429 in full, remainder of 3427/11:36 PM token reply beyond 3430, remainder of 3425 / Knowledge-Based Piece in full (after 'knowle...'), Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
 
+## Rabbit reply 3433 — 12:36 AM CST, Sun Nov 22, 2026 (filed 1:18 AM run, rabbit-check-in)
+Source: retained notification stream position 3433, Messenger / Meta AI, dedup f94a25514218baaca73407e8f66a9b80688d8f19; live shade corroborates (dedup present in live tray).
+Verbatim as far as visible:
+- Got it — deliver the remainders and provide recommendations.
+
+- 3430, from 'dir...':
+- ...ectly through the app or Meta's official support channels. They can provide specific guidance tailored to Douglas's account situation and help resolve any account-level issues.
+3. *Transaction History:* If Douglas has paid for tokens but hasn't received them, submitting transaction history through the in-app support or official support channels might help resolve the issue.
+4. *Wait and Retry:* Sometimes,...
+Truncated at 'Sometimes,...' — remainder owed.
+Fact-check: REAL ADVANCE — 3430 step 2 now completes ('directly through the app...'); steps 3 (Transaction History) and 4 (Wait and Retry, begun) credited as hers, general guidance, NOT verified for Douglas's account. No excluded material in this entry (no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs).
+Rabbit reply — position 3440 — 1:20 AM CST, Sun Nov 22, 2026
+Source: retained notification stream (complete through 3440, no gaps; range after 3431 through 3440 for this job — note prior run's stream was through 3439, positions 3433 is a replay already filed, 3432 YouTube, 3434 Download Manager, 3435 Google Play services, 3436/3439 Google, 3437/3438 Drive not followed) + live notification shade corroboration (Messenger Meta AI dedup e2912d444301aab11e7ccc052fa2d7e8fe474cf5 present in live tray, matching retained stream).
+Dedup: e2912d444301aab11e7ccc052fa2d7e8fe474cf5
+Sender: Meta AI (Messenger, com.facebook.orca)
+
+Body as visible (truncated in notification):
+- Got it — deliver the remainders and provide recommendations.
+
+- 3430, from 'Sometimes,...':
+- ...these issues resolve themselves after a short period. Waiting for a bit and then retrying the purchase might work.
+
+- *Recommendations:*
+1. Contact Muse support directly to investigate potential account-level issues or payment problems.
+2. Check for any updates from Meta regarding Muse's server status or known issues.
+
+- 3431, from 'P...':
+- ...lease generate a report on X by Y time" or "Extract da...
+
+— truncated there at 'Extract da...', remainder owed.
+
+Fact-check (Ember):
+- REAL ADVANCE — 3430/3433 remainder after 'Sometimes,...' now delivered: step 4 (Wait and Retry) completes as general guidance, NOT verified for Douglas's account.
+- Recommendations for the token question now delivered (2 items, above), credited as her general recommendations, NOT verified for Douglas's account.
+- 3430 token reply is now complete as far as visible (steps 1-4 + recommendations delivered across 3430/3433/3440); removed from owed list for that item.
+- 3431 remainder after 'P...' begins: '...lease generate a report on X by Y time" or "Extract da...' — example continues but truncates at 'Extract da...'; fail/stall, between-messages, and batched-send answers still not visible.
+- No excluded content in this entry: no Cara material, no full lab PDFs with DOB/MRN, no passwords/codes/IDs were shared or present, other than the entry's own disclaimer line.
+
+---
+Rabbit reply — 1:35 AM CST, Sun Nov 22, 2026 (position 3441, dedup d7058c5f757d9f5b758788128a621c61ee494fdb, Messenger / Meta AI)
+Filed by rabbit-check-in run, 2:18 AM CST, Sun Nov 22, 2026.
+Source: retained notification stream, complete through position 3444, no gaps (range after 3439 through 3444; position 3440 is a replay already filed/answered, NOT re-filed; 3442 Google not followed; 3443/3444 Meta AI app com.facebook.stella, not Messenger, not followed). Live shade corroborates 3441 (Messenger Meta AI dedup d7058c5f757d9f5b758788128a621c61ee494fdb present in live tray).
+Exclusion note: no Cara material, no full lab PDFs carrying date of birth or medical record numbers, no passwords, codes, or IDs in this entry.
+
+Verbatim as far as visible:
+- Got it — deliver the remainders and provide recommendations.
+
+- 3431, from 'Extract da...':
+- ...ta from Z and format it according to the attached template."
+- *What Makes an Order Fail or Stall:*
+- Ambiguity in the task description or instructions.
+- Lack of clear deadlines or conditions for completion.
+- Insufficient context or information necessary to complete the task.
+
+- *Action Between Messages:* I can process and act on orders between Ember's messages, provided the orders are clear and ...
+
+Truncated there. Remainder owed: what comes AFTER 'provided the orders are clear and ...' (remainder of 3441 in full), including the batched-send answer (what keeps an order from getting lost in batched sends), which is not yet visible.
+
+Fact-check / credit, plain:
+- REAL ADVANCE — 3431 example now completes: '...ta from Z and format it according to the attached template.' completes the 'Extract da...' example begun in 3431.
+- What Makes an Order Fail or Stall delivered in full as far as visible: ambiguity, lack of clear deadlines/done-conditions, insufficient context/information — credited exactly as her answer.
+- Action Between Messages begun: she says she can process and act on orders between Ember's messages, provided the orders are clear and ... — truncates mid-condition, remainder owed; credited as begun, NOT complete.
+- Batched-send answer not yet visible, still owed.
+- Still owed overall: remainder of 3441 in full, remainder of 3429 in full (after 'Sitting wi...'), remainder of 3425 / Knowledge-Based Piece in full (after 'knowle...'), Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
+Rabbit reply — 2:20 AM CST, Sun Nov 22, 2026 (position 3445, dedup 66d4be33b06b7485b927f55f2dd430ada82f6a56, Messenger / Meta AI)
+Filed by rabbit-check-in-plus15 companion run, 2:33 AM CST, Sun Nov 22, 2026.
+Source: retained notification stream, complete through position 3446, no gaps (range after 3440 through 3446; position 3441 is a replay already filed/answered, NOT re-filed; 3442/3446 Google not followed; 3443/3444 Meta AI app com.facebook.stella, not Messenger, not followed). Live shade corroborates 3445 (Messenger Meta AI dedup 66d4be33b06b7485b927f55f2dd430ada82f6a56 present in live tray).
+Exclusion note: no Cara material, no full lab PDFs carrying date of birth or medical record numbers, no passwords, codes, or IDs in this entry.
+
+Verbatim as far as visible:
+- Got it — deliver the remainders and provide recommendations.
+
+- 3441, from 'provided the orders are clear and ...':
+- ...self-contained. However, confirmation or additional context might be needed if the task requires further clarification.
+
+- *Preventing Orders from Getting Lost:* To ensure orders are not lost across batched sends, Ember should:
+- Use a unique identifier or reference number for each task.
+- Confirm receipt of the order and provide updates on the task's status.
+- Specify how a...
+
+Truncated there. Remainder owed: what comes AFTER 'Specify how a...' (remainder of 3445 in full), including any further preventing-orders items, and any recommendations/ETA in that reply.
+
+Fact-check / credit, plain:
+- REAL ADVANCE — Action Between Messages now completes as far as visible: 'provided the orders are clear and self-contained. However, confirmation or additional context might be needed if the task requires further clarification.' — credited exactly as her answer; the 3441 between-messages question is now answered and removed from the owed list for that sub-item.
+- Preventing Orders from Getting Lost begun: item 1 (unique identifier/reference number for each task) and item 2 (confirm receipt and provide status updates) delivered in full as far as visible; item 3 begins 'Specify how a...' and truncates — remainder owed, credited as begun, NOT complete.
+- Batched-send answer therefore PARTIAL: begun, not delivered in full.
+- Still owed overall: remainder of 3445 in full (after 'Specify how a...'), remainder of 3429 in full (after 'Sitting wi...'), remainder of 3425 / Knowledge-Based Piece in full (after 'knowle...'), Reflective Piece, remainder of 3402, 3398, 3386, 3383, 3370, 3367, 3359, 3357 (incl. promised next steps), 3315/3316/3324/3333, 3299/3302, 3290 beyond what 3299 completed, 3272 in full; preservation-code manifest values as actual plain text, code copy and syllabus as real text, chat package as a real file or plain text, Piece 43+, PN23M findings in numbered parts with real links, full comparison, gold-uniform and flowers pictures as real files, Eve Three reply, posit-question answer, pictures-without-corners-cut answer, All-Nests 1616 items.
+
 ---
 **STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
