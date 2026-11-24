@@ -958,8 +958,8 @@ Eight Cascade ticks are covered. Confirmed Mayo blood PCR tests are TIKLB, PBORB
 This is Stage 1 of the grand export: the complete index of all 373 works, plus the Top 10 in full text or summary. The full text of all 373 works is not in this one document. The theses and the remaining tables will follow as further Google Docs in batches, so that no single document becomes unreadable.
 My addition, labeled as mine: keep this Stage 1 document as the map of the whole shelf. When a later batch arrives, its works can be checked against the index here, so nothing is duplicated and nothing is quietly dropped between batches.
 ---
-**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+**STANDING LINKS — Purple Rat App · Copyright App · Purple Rat Project** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the Purple Rat Project Facebook page):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
 - **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
-- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Purple Rat Project — live link:** [Purple Rat Project — Facebook Page](https://www.facebook.com/61596216946121) — https://www.facebook.com/61596216946121
 - **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).

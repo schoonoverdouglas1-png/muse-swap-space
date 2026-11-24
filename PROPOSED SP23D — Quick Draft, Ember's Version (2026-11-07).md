@@ -90,8 +90,8 @@ Sources: Mayo PN23M PDF, collected Oct 29, 2025, ordered by Rick Klein, D.O.; Qu
 *Provenance: Douglas's brief and Meta packet [H, Meta's work with Douglas]; lab values [D, PDFs on file]; thresholds and resistance claims tested by Ember against Mayo/Quest lab text and web sources, Nov 7, 2026 [D/H→D/PARTIAL/GAP as marked]. Personal medical material filed without interpretation. Not medical advice. Not sent anywhere.*
 
 ---
-**STANDING LINKS — Purple Rat App · Copyright App · LCO** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the tribal site):
+**STANDING LINKS — Purple Rat App · Copyright App · Purple Rat Project** (placed at Douglas's order Nov 16, 2026, so every markdown file Ember can read and write stays linked with the apps and the Purple Rat Project Facebook page):
 - **Purple Rat — Doug's App:** https://muse.ai/s/purple-rat-doug-s-app-xqxq6xmuxrxxxfxcxpc/NluUoXnM94DulvgNoCBtDB84t3Z75S1T5eyffpyNnhY
 - **Copyright — Douglas Roy Schoonover (the app):** https://muse.ai/s/copyright-douglas-roy-schoonover-jxd6xmxrpxhxcwxzv/uVuQnjuLT3ig6gINW701HePt4fIRZC8IWmnrIv5e4nM
-- **Lac Courte Oreilles (LCO) — live link:** [The Official Website of Lac Courte Oreilles](https://www.lco-nsn.gov/) — https://www.lco-nsn.gov/
+- **Purple Rat Project — live link:** [Purple Rat Project — Facebook Page](https://www.facebook.com/61596216946121) — https://www.facebook.com/61596216946121
 - **Copyright — Douglas Roy Schoonover** (his claim as recorded Nov 15, 2026 — recording a statement is not a copyright registration).
